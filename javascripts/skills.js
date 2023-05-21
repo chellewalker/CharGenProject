@@ -31,6 +31,9 @@ export function getSkills (str,dex,con,int,wis,cha,firstClass,level,size,species
             if (trained < 2) {
                 trained = 1;
             }
+            if (speciesTraits.split(", ").includes("Bonus Trained Skill")) {
+                trained++;
+            }
             let thisSkills = [];
             for (count = 0; count < trained; count++) {
                 let temp = skillsList[Math.round(Math.random() * skillsList.length)];
