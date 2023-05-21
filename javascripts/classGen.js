@@ -219,8 +219,9 @@ export function getHitPoints(firstClass,classes,con) {
     return hitPoints;
 }
 
-export function getBAB(classes) {
+export function getBAB(classes,firstClass) {
     let BAB = 0;
+    classes[firstClass]++;
 
     BAB += classes[0]*1;
     BAB += Math.floor(classes[1]*0.75);

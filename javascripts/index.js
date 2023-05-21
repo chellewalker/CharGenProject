@@ -190,7 +190,7 @@ while (check != 1) {
         if (speciesTraits.split(", ").includes("Bonus Feat (Toughness)")) {
             hitPoints += parseInt(level);
         }
-        let baseAttackBonus = getBAB(classes);
+        let baseAttackBonus = getBAB(classes,firstClass);
         let grapple = baseAttackBonus + Math.max(Math.floor((str-10)/2),Math.floor((dex-10)/2));
             if (size == "Small") {
                 grapple -= 5;
