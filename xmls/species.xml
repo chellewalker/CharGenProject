@@ -265,4 +265,46 @@
         <speciesTraits>Heightened Awareness, Superior Defenses</speciesTraits>
         <languages>Basic, Zabrak</languages>
     </species>
+    <species>
+        <name>Chistori</name>
+        <value>chistori</value>
+        <speciesID>19</speciesID>
+        <weight>1</weight>
+        <source>TotG</source>
+        <exampleNames>Cydon Prax, Desann, Grish B'reen</exampleNames>
+        <abilityMods>str,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Cold-Blooded, Damage Reduction 2, Rage</speciesTraits>
+        <languages>Chistori</languages>
+    </species>
+    <species>
+        <name>Mantellian Savrip</name>
+        <value>mantellian savrip</value>
+        <speciesID>20</speciesID>
+        <weight>1</weight>
+        <source>TotG</source>
+        <exampleNames>Kalhar, Mawkran, Clu, Taf, Mev</exampleNames>
+        <abilityMods>str,4;con,4;dex,-2;int,-4;wis,-4;cha,-4</abilityMods>
+        <size>Large</size>
+        <speed>8</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Natural Armor (+2), Natural Weapons, Poison, Primitive, Rage</speciesTraits>
+        <languages>Savrip</languages>
+    </species>
+    <species>
+        <name>Utai</name>
+        <value>utai</value>
+        <speciesID>21</speciesID>
+        <weight>1</weight>
+        <source>TotG</source>
+        <exampleNames>Senin Vant, Muerdo, Raddu Mokeur, Sorn Ag, Sven Son</exampleNames>
+        <abilityMods>con,2;cha,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Animal Handler, Cooperative, Low-Light Vision</speciesTraits>
+        <languages>Utapese</languages>
+    </species>
 </species_list>

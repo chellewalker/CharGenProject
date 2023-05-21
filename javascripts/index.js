@@ -159,6 +159,9 @@ while (check != 1) {
             if (speciesTraits.split(", ").includes("Natural Armor (+1)")) {
                 reflex += 1;
             }
+            if (speciesTraits.split(", ").includes("Natural Armor (+2)")) {
+                reflex += 2;
+            }
             if (speciesTraits.split(", ").includes("Superior Defenses")) {
                 reflex += 1;
             }
@@ -255,6 +258,9 @@ while (check != 1) {
         }
         if (size == "Large") {
             unarmed++;
+        }
+        if (speciesTraits.split(", ").includes("Natural Weapons")) {
+            unarmed = 3;
         }
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
         let initiativeDisplay = "";

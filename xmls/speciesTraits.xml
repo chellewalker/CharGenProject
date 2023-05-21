@@ -1,5 +1,12 @@
 <speciesTraits_list>
     <speciesTrait>
+        <name>Animal Handler</name>
+        <description>This character may choose to reroll any Ride check, but the result of the reroll must be accepted, even if it is worse. Additionally, this character can make Persuasion checks to change the Attitude of an undomesticated creature that has an Intelligence score of 2 or lower.</description>
+        <type>skill</type>
+        <skill>ride</skill>
+        <subtype>lowReroll</subtype>
+    </speciesTrait>
+    <speciesTrait>
         <name>Bellow</name>
         <description>As a Standard Action, this character can make a special attack roll (1d20 + its Character Level) and compare the result to the Fortitude Defense of all creatures and unattended objects in a 6-Square Cone. A successful hit deals 3d6 points of Sonic damage; if the attack misses, the target takes half damage instead.
             <br>Each use of this ability moves this character -1 step along the Condition Track.
@@ -32,6 +39,12 @@
         <type>none</type>
     </speciesTrait>
     <speciesTrait>
+        <name>Cold-Blooded</name>
+        <description>This character takes a -5 penalty to their Fortitude Defense to resist Extreme Cold.</description>
+        <type>defenses</type>
+        <type>fortitude</type>
+    </speciesTrait>
+    <speciesTrait>
         <name>Conditional Bonus Feat (Skill Focus (Gather Information))</name>
         <description>If this character has Gather Information as a Trained Skill, they gain Skill Focus (Gather Information) as a bonus Feat.</description>
         <type>none</type>
@@ -60,6 +73,16 @@
         <name>Conditional Bonus Feat (Skill Focus (Survival))</name>
         <description>If this character has Survival as a Trained Skill, they gain Skill Focus (Survival) as a bonus Feat.</description>
         <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Cooperative</name>
+        <description>This character automatically succeeds when attempting to Aid Another on a Skill Check, as long as the target is adjacent to, and can hear and understand, the character.</description>
+        <type>special</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Damage Reduction 2</name>
+        <description>This character possesses Damage Reduction 2.</description>
+        <type>damageReduction</type>
     </speciesTrait>
     <speciesTrait>
         <name>Darkvision</name>
@@ -168,6 +191,22 @@
         <name>Natural Armor (+1)</name>
         <description>This character receives a +1 Natural Armor bonus to their Reflex Defense. A Natural Armor bonus stacks with an Armor bonus.</description>
         <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Natural Armor (+2)</name>
+        <description>This character receives a +2 Natural Armor bonus to their Reflex Defense. A Natural Armor bonus stacks with an Armor bonus.</description>
+        <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Natural Weapons</name>
+        <description>When this character makes an Unarmed attack, it may choose to use its Natural Weapons, dealing 1d6 points of Slashing damage with the attack instead of normal Unarmed damage. This character is always considered armed with their Natural Weapons.</description>
+        <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Poison</name>
+        <description>If the Natural Weapons of this character deals damage to a living target, the target is also Poisoned. If the Poison succeeds on an attack roll (1d20 + the character's Character Level) against the target's Fortitude Defense, the target moves -1 step along the Condition Track.
+            <br>A target moved to the end of the Condition Track by the Poison is Immobilized, but not Unconscious.</description>
+        <type>attack</type>
     </speciesTrait>
     <speciesTrait>
         <name>Primitive</name>
