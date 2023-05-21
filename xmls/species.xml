@@ -1,0 +1,268 @@
+<species_list>
+    <species>
+        <name>Human</name>
+        <value>human</value>
+        <speciesID>0</speciesID>
+        <weight>50</weight>
+        <source>CR</source>
+        <exampleNames>Anakin, Arani, Bail, Ben, Biggs, Boba, Corran, Dack, Dané, Galak, Garm, Han, Jango, Jodo, Lando, Leia, Luke, Mace, Mara, Obi-Wan, Owen, Padmé, Qui-Gon, Sia-Lan, Rann, Talon, Vor'en, Wedge, Winter</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Feat, Bonus Trained Skill</speciesTraits>
+        <languages>Basic</languages>
+    </species>
+    <species>
+        <name>Aqualish</name>
+        <value>aqualish</value>
+        <speciesID>1</speciesID>
+        <weight>1</weight>
+        <source>CR</source>
+        <exampleNames>Calfta, Bongi, Carn'ar, Gondara, Gunda Mabin, Korai-tae, Po Nudo, Ponda Baba, Undra Lagor, Yada Munda</exampleNames>
+        <abilityMods>con,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Feat (Toughness), Breathe Underwater, Expert Swimmer</speciesTraits>
+        <languages>Aqualish, Basic</languages>
+    </species>
+    <species>
+        <name>Bothan</name>
+        <value>bothan</value>
+        <speciesID>2</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Borsk Fey'lya, Karka Kre'fey, Koth Melan, Tav Breil'lya, Tereb Ab'lon</exampleNames>
+        <abilityMods>dex,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Gather Information)), Iron Will</speciesTraits>
+        <languages>Basic, Bothese</languages>
+    </species>
+    <species>
+        <name>Cerean</name>
+        <value>cerean</value>
+        <speciesID>3</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Ki-Adi, So Leet, Sylvn, Ti-Dal, Maj-Odo</exampleNames>
+        <abilityMods>int,2;wis,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Initiative)), Intuitive Initiative</speciesTraits>
+        <languages>Basic, Cerean</languages>
+    </species>
+    <species>
+        <name>Duros</name>
+        <value>duros</value>
+        <speciesID>4</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Baniss Keeg, Elior, Kadlo, Kir Vantai, Lai Nootka, Monnda Tebbo</exampleNames>
+        <abilityMods>dex,2;int,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Expert Pilot</speciesTraits>
+        <languages>Basic, Durese</languages>
+    </species>
+    <species>
+        <name>Ewok</name>
+        <value>ewok</value>
+        <speciesID>5</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Asha, Chirpa, Deej, Kneesaa, Latara, Logray, Malani, Nippet, Paploo, Shodu, Teebo, Wicket, Wiley</exampleNames>
+        <abilityMods>dex,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Primitive, Scent, Sneaky</speciesTraits>
+        <languages>Ewokese</languages>
+    </species>
+    <species>
+        <name>Gamorrean</name>
+        <value>gamorrean</value>
+        <speciesID>6</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Gartogg, Jubnuk, Ortugg, Ugmush, Venorra, Warlug</exampleNames>
+        <abilityMods>str,2;dex,-2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Feat (Improved Damage Threshold), Great Fortitude, Primitive, Weapon Familiarity (Arg'garok)</speciesTraits>
+        <languages>Basic (understand only), Gamorrean</languages>
+    </species>
+    <species>
+        <name>Gungan</name>
+        <value>gungan</value>
+        <speciesID>7</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Fassa, Jar Jar, Rugor, Tarpals, Toba, Tobler Ceel, Yoss</exampleNames>
+        <abilityMods>dex,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>4</swimSpeed>
+        <speciesTraits>Expert Swimmer, Hold Breath, Lightning Reflexes, Low-Light Vision, Weapon Familiarity (Gungan Weaponry)</speciesTraits>
+        <languages>Basic, Gunganese</languages>
+    </species>
+    <species>
+        <name>Hutt</name>
+        <value>hutt</value>
+        <speciesID>8</speciesID>
+        <weight>1</weight>
+        <source>CR</source>
+        <exampleNames>Borga, Churabba, Dalla, Durga, Gardulla, Grelb, Grondo, Issulla, Jabba, Krova, Mardoc, Mika, Nullada, Popara, Shala, Yarella, Zonnos, Zordo</exampleNames>
+        <abilityMods>str,2;con,2;int,2;dex,-6</abilityMods>
+        <size>Large</size>
+        <speed>2</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Force Resistance, Supreme Stability, Silver Tongued</speciesTraits>
+        <languages>Basic, Huttese</languages>
+    </species>
+    <species>
+        <name>Ithorian</name>
+        <value>ithorian</value>
+        <speciesID>9</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Fandomar, Momaw, Oraltor, Tomia, Trangle, Umwaw</exampleNames>
+        <abilityMods>wis,2;cha,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bellow, Conditional Bonus Feat (Skill Focus (Knowledge (Life Sciences))), Iron Will, Survival Instinct</speciesTraits>
+        <languages>Basic, Ithorese</languages>
+    </species>
+    <species>
+        <name>Kel Dor</name>
+        <value>kel dor</value>
+        <speciesID>10</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Dorn Tlo, Plo Koon, Torin Dol</exampleNames>
+        <abilityMods>dex,2;wis,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Keen Force Sense, Low-Light Vision, Special Equipment (Antiox Breath Mask)</speciesTraits>
+        <languages>Basic, Kel Dor</languages>
+    </species>
+    <species>
+        <name>Mon Calamari</name>
+        <value>mon calamari</value>
+        <speciesID>11</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Ackbar, Bant, Cilhal, Ibtisam, Jesmin, Oro, Perit, Rekara</exampleNames>
+        <abilityMods>int,2;wis,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>4</swimSpeed>
+        <speciesTraits>Breathe Underwater, Conditional Bonus Feat (Skill Focus (Perception)), Expert Swimmer, Low-Light Vision</speciesTraits>
+        <languages>Basic, Mon Calamarian</languages>
+    </species>
+    <species>
+        <name>Quarren</name>
+        <value>quarren</value>
+        <speciesID>12</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Kelmut, Seggor, Tessek, Tsillin, Vekker, Vuhlg</exampleNames>
+        <abilityMods>con,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>4</swimSpeed>
+        <speciesTraits>Breathe Underwater, Conditional Bonus Feat (Skill Focus (Persuasion)), Expert Swimmer, Low-Light Vision</speciesTraits>
+        <languages>Basic, Quarrenese</languages>
+    </species>
+    <species>
+        <name>Rodian</name>
+        <value>rodian</value>
+        <speciesID>13</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Andoorni, Beedo, Chido, Doda, Greedo, Greeata, Kelko, Navik, Neela, Neesh, Wald</exampleNames>
+        <abilityMods>dex,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Heightened Awareness, Low-Light Vision</speciesTraits>
+        <languages>Basic, Rodese</languages>
+    </species>
+    <species>
+        <name>Sullustan</name>
+        <value>sullustan</value>
+        <speciesID>14</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Aril Nunb, Dllr Nep, Nien Nunb, Sian Tevv, Syub Snunb</exampleNames>
+        <abilityMods>dex,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Darkvision, Expert Climber, Heightened Awareness</speciesTraits>
+        <languages>Basic, Sullustese</languages>
+    </species>
+    <species>
+        <name>Trandoshan</name>
+        <value>trandoshan</value>
+        <speciesID>15</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Bossk, Fusset, Krussk, Ssuurg, Tusserk</exampleNames>
+        <abilityMods>str,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Feat (Toughness), Darkvision, Limb Regeneration, Natural Armor (+1)</speciesTraits>
+        <languages>Basic, Dosh</languages>
+    </species>
+    <species>
+        <name>Twi'lek</name>
+        <value>twi'lek</value>
+        <speciesID>16</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Bib Fortuna, Deel Surool, Firith Olan, Koyi Komad, Lyn Me, Oola, Tott Doneeta</exampleNames>
+        <abilityMods>cha,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Deceptive, Great Fortitude, Low-Light Vision</speciesTraits>
+        <languages>Basic, Ryl</languages>
+    </species>
+    <species>
+        <name>Wookiee</name>
+        <value>wookiee</value>
+        <speciesID>17</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Chewbacca, Gorwooken, Groznik, Lowbacca, Ralrra, Rorworr, Salporin</exampleNames>
+        <abilityMods>str,4;con,2;dex,-2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Expert Climber, Extraordinary Recuperation, Intimidating Presence, Rage, Weapon Familiarity (Bowcaster and Ryyk Blade)</speciesTraits>
+        <languages>Basic (understand only), Shyriiwook</languages>
+    </species>
+    <species>
+        <name>Zabrak</name>
+        <value>zabrak</value>
+        <speciesID>18</speciesID>
+        <weight>5</weight>
+        <source>CR</source>
+        <exampleNames>Aagh Odok, Eeth Koth, Kooth Aan, Bao Dur</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Heightened Awareness, Superior Defenses</speciesTraits>
+        <languages>Basic, Zabrak</languages>
+    </species>
+</species_list>

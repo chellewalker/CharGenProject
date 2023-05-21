@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascripts/index.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Saga Character Generator</title>
+</head>
+<body>
+    <div class="column">
+        <div class="left">
+            <h1>Saga Edition Character Generator</h1>
+        <div id="demo"></div>
+        <form id="form">
+
+
+            <!-- ability generation -->
+            <label for="abilities">Determine Ability Generation Method:</label>
+        <select name="abilities" id="abilities" onChange="check(this);">
+            <option value="standard">Standard Array</option>
+            <option value="planned">Planned Generation</option>
+            <option value="rolled">4d6, Dropping Lowest</option>
+        </select>
+        <div id="planned-div" style="display:none; padding-top: 1%;">
+            <label>Available Points (min/max: 15/80):
+                <input type="number" id="planPoints" name="planPoints" min="15" max="80" value="25">
+            </label>
+        </div><br><br>
+
+        <!-- class generation -->
+        <label for="level">Level Selection:</label>
+        <input type="range" id="level" name="level" min="1" max="20"> (<output id="value"></output>)
+        <br><br>
+
+        <!-- class generation -->
+        <label for="species">Starting Class:</label>
+        <select name="class" id="class">
+            <option value="random">Random</option>
+            <option value="0">Jedi</option>
+            <option value="1">Noble</option>
+            <option value="2">Scoundrel</option>
+            <option value="3">Scout</option>
+            <option value="4">Soldier</option>
+        </select><br><br>
+
+        <!-- species generation -->
+        <label for="species">Select Species:</label><br>
+        <input type="radio" id="species" name="species" value="random" checked>
+            <label for="species">Random</label>
+        <input type="radio" id="human" name="species" value="human">
+            <label for="species">Human</label>
+        <input type="radio" id="manual" name="species">
+            Manual Entry: <input type="text" id="speciesManual" name="speciesManual">
+        <br><br>
+
+        <!-- name generation -->
+        <label for="name">Character Name:</label><br>
+        <input type="radio" id="name" name="name" value="random" checked>
+            <label for="name">Random</label>
+        <input type="radio" id="manual" name="name">
+            Manual Entry: <input type="text" id="nameManual" name="nameManual">
+        <br><br>
+
+            <div style="padding-left: 10%;"><input type="button" onclick="genCharacter()" value="Generate Character">
+        </div></div>
+        <div class="right">
+            <h2>Allowed Materials</h2>
+            <input type="checkbox" id="core" name="core" value="CR" checked>
+            <label for="core">Core Rulebook</label><br>
+            <input type="checkbox" id="starships" name="starships" value="SotG" checked>
+            <label for="starships">Starships of the Galaxy</label><br>
+            <input type="checkbox" id="threats" name="threats" value="TotG" checked>
+            <label for="threats">Threats of the Galaxy</label><br>
+            <input type="checkbox" id="knights" name="knights" value="KotORCG" checked>
+            <label for="knights">Knights of the Old Republic Campaign Guide</label><br>
+            <input type="checkbox" id="force" name="force" value="FUCG" checked>
+            <label for="force">Force Unleashed Campaign Guide</label><br>
+            <input type="checkbox" id="scum" name="scum" value="SaV" checked>
+            <label for="scum">Scum and Villainy</label><br>
+            <input type="checkbox" id="clone" name="clone" value="CWCG" checked>
+            <label for="clone">Clone Wars Campaign Guide</label><br>
+            <input type="checkbox" id="legacy" name="legacy" value="LECG" checked>
+            <label for="clone">Legacy Era Campaign Guide</label><br>
+            <input type="checkbox" id="academy" name="academy" value="JATM" checked>
+            <label for="academy">Jedi Academy Training Manual</label><br>
+            <input type="checkbox" id="rebellion" name="rebellion" value="RECG" checked>
+            <label for="rebellion">Rebellion Era Campaign Guide</label><br>
+            <input type="checkbox" id="war" name="war" value="GaW" checked>
+            <label for="war">Galaxy at War</label><br>
+            <input type="checkbox" id="droids" name="droids" value="SGtD" checked>
+            <label for="droids">Scavenger's Guide to Droids</label><br>
+            <input type="checkbox" id="intrigue" name="intrigue" value="GoI" checked>
+            <label for="intrigue">Galaxy of Intrigue</label><br>
+            <input type="checkbox" id="unknown" name="unknown" value="UR" checked>
+            <label for="unknown">The Unknown Regions</label><br>
+            <input type="checkbox" id="web" name="web" value="WE" checked>
+            <label for="web">Web Enhancements</label><br>
+            <input type="checkbox" id="homebrew" name="homebrew" value="HC">
+            <label for="homebrew">Homebrew Content</label><br>
+        </div>
+        </form>
+    </div>
+    <script>
+        const value = document.querySelector("#value")
+        const input = document.querySelector("#level")
+        value.textContent = input.value
+        input.addEventListener("input", (event) => {
+            value.textContent = event.target.value
+        })
+
+        function check(elem) {
+         if (elem.value == 'planned') {
+                document.getElementById("planned-div").style.display = 'block';
+            } else {
+                document.getElementById("planned-div").style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
