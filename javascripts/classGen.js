@@ -298,13 +298,17 @@ export function availableTalents(classes,firstClass) {
     return availableTalents;
 }
 
-export function availableFeats(level,classes,firstClass) {
+export function availableFeats(level,classes,firstClass,speciesTraits) {
     let availableFeats = "";
-    if (Math.ceil(level/3) > 1) {
-        availableFeats = Math.ceil(level/3) + " Character Feats";
+    let score = Math.ceil(level/3);
+    if (speciesTraits.split(", ").includes("Bonus Feat")) {
+        score++;
+    }
+    if (score > 1) {
+        availableFeats = score + " Character Feats";
     }
     else {
-        availableFeats = Math.ceil(level/3) + " Character Feat";
+        availableFeats = score + " Character Feat";
     }
 
 

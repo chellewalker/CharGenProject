@@ -280,7 +280,7 @@ while (check != 1) {
         }
         let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits);
         let talents = availableTalents(classes,firstClass);
-        let feats = availableFeats(level,classes,firstClass);
+        let feats = availableFeats(level,classes,firstClass,speciesTraits);
         let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
