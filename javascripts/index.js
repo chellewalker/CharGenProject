@@ -1,6 +1,7 @@
 import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
+import {getSkills} from './skills.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableTalents,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
 
@@ -271,28 +272,7 @@ while (check != 1) {
         else {
             perceptionDisplay = "+" + perception;
         }
-        let trainedSkills;
-            if (firstClass == 0) {
-                trainedSkills = 2 + Math.floor((int-10)/2);
-            }
-            if (firstClass == 1) {
-                trainedSkills = 6 + Math.floor((int-10)/2);
-            }
-            if (firstClass == 2) {
-                trainedSkills = 4 + Math.floor((int-10)/2);
-            }
-            if (firstClass == 3) {
-                trainedSkills = 5 + Math.floor((int-10)/2);
-            }
-            if (firstClass == 4) {
-                trainedSkills = 3 + Math.floor((int-10)/2);
-            }
-            if (trainedSkills < 2) {
-                trainedSkills = 1 + " Trained Skill";
-            }
-            else {
-                trainedSkills += " Trained Skills";
-            }
+        let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level);
         let talents = availableTalents(classes,firstClass);
         let feats = availableFeats(level,classes,firstClass);
         let destiny = "";
@@ -321,7 +301,7 @@ while (check != 1) {
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
         "<strong>Talents:</strong> "+talents+"<br>"+
         "<strong>Feats:</strong> "+feats+"<br>"+        
-        "<strong>Skills:</strong> "+trainedSkills+"<br>"+
+        "<strong>Skills:</strong> "+skills+"<br>"+
         "<strong>Possessions:</strong> $equipment");
     }
 }}
