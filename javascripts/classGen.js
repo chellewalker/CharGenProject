@@ -300,9 +300,7 @@ export function availableTalents(classes,firstClass) {
 
 export function availableFeats(level,classes,firstClass) {
     let availableFeats = Math.ceil(level/3) + " Character Feats";
-    if (level != 1) {
-        classes[firstClass]++;
-    }
+
 
     if (Math.floor(classes[0]/2) > 0) {
         if (Math.floor(classes[0]/2) > 1) {
