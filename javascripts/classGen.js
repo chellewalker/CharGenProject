@@ -299,7 +299,13 @@ export function availableTalents(classes,firstClass) {
 }
 
 export function availableFeats(level,classes,firstClass) {
-    let availableFeats = Math.ceil(level/3) + " Character Feats";
+    let availableFeats = "";
+    if (Math.ceil(level/3) > 1) {
+        availableFeats = Math.ceil(level/3) + " Character Feats";
+    }
+    else {
+        availableFeats = Math.ceil(level/3) + " Character Feat";
+    }
 
 
     if (Math.floor(classes[0]/2) > 0) {
