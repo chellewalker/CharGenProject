@@ -273,27 +273,37 @@ while (check != 1) {
         }
         let trainedSkills;
             if (firstClass == 0) {
-                trainedSkills = 2 + Math.floor((int-10)/2) + " Trained Skills";
+                trainedSkills = 2 + Math.floor((int-10)/2);
             }
             if (firstClass == 1) {
-                trainedSkills = 6 + Math.floor((int-10)/2) + " Trained Skills";
+                trainedSkills = 6 + Math.floor((int-10)/2);
             }
             if (firstClass == 2) {
-                trainedSkills = 4 + Math.floor((int-10)/2) + " Trained Skills";
+                trainedSkills = 4 + Math.floor((int-10)/2);
             }
             if (firstClass == 3) {
-                trainedSkills = 5 + Math.floor((int-10)/2) + " Trained Skills";
+                trainedSkills = 5 + Math.floor((int-10)/2);
             }
             if (firstClass == 4) {
-                trainedSkills = 3 + Math.floor((int-10)/2) + " Trained Skills";
+                trainedSkills = 3 + Math.floor((int-10)/2);
+            }
+            if (trainedSkills < 2) {
+                trainedSkills = 1 + " Trained Skill";
+            }
+            else {
+                trainedSkills += " Trained Skills";
             }
         let talents = availableTalents(classes,firstClass);
         let feats = availableFeats(level,classes,firstClass);
+        let destiny = "";
+        if (Math.floor(level/5) > 0) {
+            destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
+        }
 
     // output results
         document.write("<h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
         size+" "+species+" "+classList+"<br>"+
-        "<strong>Destiny Points:</strong> "+Math.floor(level/5)+"; <strong>Force Points:</strong> "+Math.floor(level/2)+""+"<br>"+
+        destiny+"<strong>Force Points:</strong> "+Math.max(Math.floor(level/2),1)+""+"<br>"+
         "<strong>Initiative:</strong> "+initiativeDisplay+"; <strong>Senses:</strong> Perception "+perceptionDisplay+"<br>"+
         "<strong>Languages:</strong> "+languages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+
