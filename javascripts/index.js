@@ -215,10 +215,38 @@ while (check != 1) {
         //let reflexClassBonus = parseXML("xmls/classes.xml","reflex",0);
         //alert(reflexClassBonus);
 
-        let meleeAttack = baseAttackBonus + Math.floor((str-10)/2);
-        let meleeDamage = Math.floor(level/2) + Math.floor((str-10)/2);
-        let rangedAttack = baseAttackBonus + Math.floor((dex-10)/2);
-        let rangedDamage = Math.floor(level/2);
+        let meleeAttackRaw = baseAttackBonus + Math.floor((str-10)/2);
+        let meleeAttack = "";
+        if (meleeAttackRaw < 0) {
+            meleeAttack = meleeAttackRaw;
+        }
+        else {
+            meleeAttack = "+" + meleeAttackRaw;
+        }
+        let meleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
+        let meleeDamage = "";
+        if (meleeDamageRaw < 0) {
+            meleeDamage = meleeDamageRaw;
+        }
+        else {
+            meleeDamage = "+" + meleeDamageRaw;
+        }
+        let rangedAttackRaw = baseAttackBonus + Math.floor((dex-10)/2);
+        let rangedAttack = "";
+        if (rangedAttackRaw < 0) {
+            rangedAttack = rangedAttackRaw;
+        }
+        else {
+            rangedAttack = "+" + rangedAttackRaw;
+        }
+        let rangedDamageRaw = Math.floor(level/2);
+        let rangedDamage = "";
+        if (rangedDamageRaw < 0) {
+            rangedDamage = rangedDamageRaw;
+        }
+        else {
+            rangedDamage = "+" + rangedDamageRaw;
+        }
         let unarmedList = ["1d2","1d3","1d4","1d6","1d8","1d10","1d12"];
         let unarmed = 2;
         if (size == "Small") {
@@ -228,7 +256,21 @@ while (check != 1) {
             unarmed++;
         }
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
+        let initiativeDisplay = "";
+        if (initiative < 0) {
+            initiativeDisplay = initiative;
+        }
+        else {
+            initiativeDisplay = "+" + initiative;
+        }
         let perception = Math.floor(level/2) + Math.floor((wis-10)/2);
+        let perceptionDisplay = "";
+        if (perception < 0) {
+            perceptionDisplay = perception;
+        }
+        else {
+            perceptionDisplay = "+" + perception;
+        }
         let trainedSkills;
             if (firstClass == 0) {
                 trainedSkills = 2 + Math.floor((int-10)/2) + " Trained Skills";
@@ -252,15 +294,15 @@ while (check != 1) {
         document.write("<h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
         size+" "+species+" "+classList+"<br>"+
         "<strong>Destiny Points:</strong> "+Math.floor(level/5)+"; <strong>Force Points:</strong> "+Math.floor(level/2)+""+"<br>"+
-        "<strong>Initiative:</strong> +"+initiative+"; <strong>Senses:</strong> Perception +"+perception+"<br>"+
+        "<strong>Initiative:</strong> "+initiativeDisplay+"; <strong>Senses:</strong> Perception "+perceptionDisplay+"<br>"+
         "<strong>Languages:</strong> "+languages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+
         "<strong>Reflex Defense:</strong> "+reflex+" (<strong>Flat-Footed:</strong> "+flatFooted+"), <strong>Fortitude Defense:</strong> "+fortitude+", <strong>Will Defense:</strong> "+will+"<br>"+
         "<strong>Hit Points:</strong> "+hitPoints+", <strong>Damage Threshold:</strong> "+damageThreshold+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Offense</strong></u></p>"+
         "<strong>Speed:</strong> "+speed+"<br>"+
-        "<strong>Melee:</strong> Unarmed +"+meleeAttack+" ("+unarmedList[unarmed]+"+"+meleeDamage+")"+"<br>"+
-        "<strong>Ranged:</strong> By Weapon +"+rangedAttack+"<br>"+
+        "<strong>Melee:</strong> Unarmed "+meleeAttack+" ("+unarmedList[unarmed]+meleeDamage+")"+"<br>"+
+        "<strong>Ranged:</strong> By Weapon "+rangedAttack+"<br>"+
         "<strong>Base Attack Bonus:</strong> +"+baseAttackBonus+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
         "<strong>Attack Options:</strong> $attack"+"<br>"+
         "<strong>Special Actions:</strong> $special"+"<br>"+
