@@ -1,5 +1,7 @@
-export function getSkills (str,dex,con,int,wis,cha,firstClass,level) {
+export function getSkills (str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits) {
+    let check = 0;
 
+    while (check == 0) {
     let skillsList = ["Acrobatics","Climb","Deception","Endurance","Gather Information","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Persuasion","Pilot","Ride","Stealth","Survival","Swim","Treat Injury","Use Computer","Use the Force"];
         let strSkills = ["Climb","Jump","Swim"];
         let dexSkills = ["Acrobatics","Initiative","Pilot","Ride","Stealth"];
@@ -44,24 +46,44 @@ export function getSkills (str,dex,con,int,wis,cha,firstClass,level) {
                 thisSkills[count] = " " + trainedSkills[count];
                 
                 if (strSkills.includes(trainedSkills[count])) {
-                    thisSkills[count] += " +" + (Math.floor(level/2)+Math.floor((str-10)/2)+5);
+                    let score = (Math.floor(level/2)+Math.floor((str-10)/2)+5);
+                    thisSkills[count] += " +" + score;
                 }
                 if (dexSkills.includes(trainedSkills[count])) {
-                    thisSkills[count] += " +" + (Math.floor(level/2)+Math.floor((dex-10)/2)+5);
+                    let score = (Math.floor(level/2)+Math.floor((dex-10)/2)+5);
+                    if (temp == "Stealth" && size == "Small") {
+                        score += 5;
+                    }
+                    if (temp == "Stealth" && size == "Large") {
+                        score -= 5;
+                    }
+                    thisSkills[count] += " +" + score;
                 }
                 if (conSkills.includes(trainedSkills[count])) {
-                    thisSkills[count] += " +" + (Math.floor(level/2)+Math.floor((con-10)/2)+5);
+                    let score = (Math.floor(level/2)+Math.floor((con-10)/2)+5);
+                    thisSkills[count] += " +" + score;
                 }
                 if (intSkills.includes(trainedSkills[count])) {
-                    thisSkills[count] += " +" + (Math.floor(level/2)+Math.floor((int-10)/2)+5);
+                    let score = (Math.floor(level/2)+Math.floor((int-10)/2)+5);
+                    thisSkills[count] += " +" + score;
                 }
                 if (wisSkills.includes(trainedSkills[count])) {
-                    thisSkills[count] += " +" + (Math.floor(level/2)+Math.floor((wis-10)/2)+5);
+                    let score = (Math.floor(level/2)+Math.floor((wis-10)/2)+5);
+                    thisSkills[count] += " +" + score;
                 }
                 if (chaSkills.includes(trainedSkills[count])) {
-                    thisSkills[count] += " +" + (Math.floor(level/2)+Math.floor((cha-10)/2)+5);
+                    let score = (Math.floor(level/2)+Math.floor((cha-10)/2)+5);
+                    thisSkills[count] += " +" + score;
                 }
             }}
             thisSkills.sort();
-    return thisSkills;
+            check = 1;
+            for (count = 0; count < trained; count++) {
+            if (thisSkills[count]) {
+                check = 0;
+            }}
+
+            return thisSkills;
+        }
+    
 }
