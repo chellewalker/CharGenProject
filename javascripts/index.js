@@ -212,13 +212,6 @@ while (check != 1) {
         if (swimSpeed != 0) {
             speed = speed + " (Walking), " + swimSpeed + " Squares (Swimming)";
         }
-        let intLanguages = "";
-        if (int > 11) {
-            intLanguages += (", " + Math.floor((int-10)/2) + " Unassigned");
-        }
-        let languages = parseXML("xmls/species.xml","languages",speciesID) + intLanguages;
-        //let reflexClassBonus = parseXML("xmls/classes.xml","reflex",0);
-        //alert(reflexClassBonus);
 
         let meleeAttackRaw = baseAttackBonus + Math.floor((str-10)/2);
         let meleeAttack = "";
@@ -291,6 +284,15 @@ while (check != 1) {
         let feats = classFeats(firstClass,classes,int,con,skills);
         let featList = listFeats(feats);
         featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
+        let intLanguages = "";
+        if (int > 11) {
+            let extraLanguages = Math.floor((int-10)/2);
+            if (feats.includes("Linguist")) {
+                extraLanguages += 1 + Math.floor((int-10)/2);
+            }
+            intLanguages += (", " + extraLanguages + " Unassigned");
+        }
+        let languages = parseXML("xmls/species.xml","languages",speciesID) + intLanguages;
         let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
