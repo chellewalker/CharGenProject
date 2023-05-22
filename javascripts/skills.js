@@ -85,7 +85,7 @@ export function getSkills (str,dex,con,int,wis,cha,firstClass,level,size,species
     
 }
 
-export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits) {
+export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits,feats) {
     let count;
     let listSkills = "";
 
@@ -103,6 +103,15 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         }
         if (strSkills.includes(trainedSkills[count])) {
             let score = (Math.floor(level/2)+Math.floor((str-10)/2)+5);
+            if (trainedSkills[count] == "Climb" && feats.includes("Skill Focus (Climb)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Jump" && feats.includes("Skill Focus (Jump)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Swim" && feats.includes("Skill Focus (Swim)")) {
+                score += 5;
+            }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score;
             }
@@ -112,6 +121,21 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         }
         if (dexSkills.includes(trainedSkills[count])) {
             let score = (Math.floor(level/2)+Math.floor((dex-10)/2)+5);
+            if (trainedSkills[count] == "Acrobatics" && feats.includes("Skill Focus (Acrobatics)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Initiative" && feats.includes("Skill Focus (Initiative)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Pilot" && feats.includes("Skill Focus (Pilot)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Ride" && feats.includes("Skill Focus (Ride)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Stealth" && feats.includes("Skill Focus (Stealth)")) {
+                score += 5;
+            }
             if (trainedSkills[count] == "Stealth" && size == "Small") {
                 score += 5;
             }
@@ -127,6 +151,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         }
         if (conSkills.includes(trainedSkills[count])) {
             let score = (Math.floor(level/2)+Math.floor((con-10)/2)+5);
+            if (trainedSkills[count] == "Endurance" && feats.includes("Skill Focus (Endurance)")) {
+                score += 5;
+            }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score;
             }
@@ -136,6 +163,33 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         }
         if (intSkills.includes(trainedSkills[count])) {
             let score = (Math.floor(level/2)+Math.floor((int-10)/2)+5);
+            if (trainedSkills[count] == "Knowledge (Bureaucracy)" && feats.includes("Skill Focus (Knowledge (Bureaucracy))")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Knowledge (Galactic Lore)" && feats.includes("Skill Focus (Knowledge (Galactic Lore))")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Knowledge (Life Sciences)" && feats.includes("Skill Focus (Knowledge (Life Sciences))")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Knowledge (Physical Sciences)" && feats.includes("Skill Focus (Knowledge (Physical Sciences))")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Knowledge (Social Sciences)" && feats.includes("Skill Focus (Knowledge (Social Sciences))")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Knowledge (Tactics)" && feats.includes("Skill Focus (Knowledge (Tactics))")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Knowledge (Technology)" && feats.includes("Skill Focus (Knowledge (Technology))")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Mechanics" && feats.includes("Skill Focus (Mechanics)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Use Computer" && feats.includes("Skill Focus (Use Computer)")) {
+                score += 5;
+            }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score;
             }
@@ -145,6 +199,15 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         }
         if (wisSkills.includes(trainedSkills[count])) {
             let score = (Math.floor(level/2)+Math.floor((wis-10)/2)+5);
+            if (trainedSkills[count] == "Perception" && feats.includes("Skill Focus (Perception)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Survival" && feats.includes("Skill Focus (Survival)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Treat Injury" && feats.includes("Skill Focus (Treat Injury)")) {
+                score += 5;
+            }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score;
             }
@@ -156,6 +219,18 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
             let score = (Math.floor(level/2)+Math.floor((cha-10)/2)+5);
             if (trainedSkills[count] == "Persuasion" && speciesTraits.split(", ").includes("Logical Reasoning")) {
                 score = (Math.floor(level/2)+Math.floor((Math.max(cha,int)-10)/2)+5);
+            }
+            if (trainedSkills[count] == "Deception" && feats.includes("Skill Focus (Deception)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Gather Information" && feats.includes("Skill Focus (Gather Information)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Persuasion" && feats.includes("Skill Focus (Persuasion)")) {
+                score += 5;
+            }
+            if (trainedSkills[count] == "Use the Force" && feats.includes("Skill Focus (Use the Force)")) {
+                score += 5;
             }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score;

@@ -195,9 +195,13 @@ while (check != 1) {
             unarmed = 3;
         }
         let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
-        let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits);
+        let feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
+        feats = speciesFeats(feats,speciesTraits,skills);
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
         if (skills.includes("Initiative")) {
+            initiative += 5;
+        }
+        if (feats.includes("Skill Focus (Initiative)")) {
             initiative += 5;
         }
         let initiativeDisplay = "";
@@ -211,6 +215,9 @@ while (check != 1) {
         if (skills.includes("Perception")) {
             perception += 5;
         }
+        if (feats.includes("Skill Focus (Perception)")) {
+            perception += 5;
+        }
         let perceptionDisplay = "";
         if (perception < 0) {
             perceptionDisplay = perception;
@@ -218,10 +225,9 @@ while (check != 1) {
         else {
             perceptionDisplay = "+" + perception;
         }
-        let feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
-        feats = speciesFeats(feats,speciesTraits,skills);
         let featList = listFeats(feats);
         featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
+        let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
         let talents = getTalents(classes,available,skills,feats,firstClass);
         talents.sort();
         let listTalents = displayTalents(talents);
