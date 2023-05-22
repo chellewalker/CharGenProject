@@ -164,7 +164,9 @@ export function speciesFeats(feats,speciesTraits,skills) {
     }
     if (speciesTraits.split(", ").includes("Bonus Feat (Skill Focus)")) {
         let check = 0;
+        let check2 = 0;
         while (check == 0) {
+            check2++;
         let randomNum = Math.round(Math.random() * 5);
         if (randomNum == 0) {
             if (skills.includes("Endurance")) {
@@ -195,6 +197,9 @@ export function speciesFeats(feats,speciesTraits,skills) {
                 feats.push("Skill Focus (Treat Injury)");
                 check = 1;
             }
+        }
+        if (check2 > 10) {
+            check = 1;
         }
         }
     }
