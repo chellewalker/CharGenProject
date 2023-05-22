@@ -249,12 +249,6 @@ while (check != 1) {
             if (size == "Large") {
                 reflex--;
             }
-            if (dex > 11) {
-                flatFooted = reflex - Math.floor((dex-10)/2);
-            }
-            else {
-                flatFooted = reflex;
-            }
             if (speciesTraits.split(", ").includes("Lightning Reflexes")) {
                 reflex += 2;
             }
@@ -266,6 +260,12 @@ while (check != 1) {
             }
             if (speciesTraits.split(", ").includes("Superior Defenses")) {
                 reflex += 1;
+            }
+            if (dex > 11) {
+                flatFooted = reflex - Math.floor((dex-10)/2);
+            }
+            else {
+                flatFooted = reflex;
             }
         let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude;
         if (speciesTraits.split(", ").includes("Great Fortitude")) {
