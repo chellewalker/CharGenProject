@@ -14,18 +14,33 @@
         <type>attack</type>
     </speciesTrait>
     <speciesTrait>
+        <name>Bonus Class Skill (Climb)</name>
+        <description>This character treats the Climb skill as a Class Skill, regardless of Heroic Class.</description>
+        <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Bonus Class Skill (Stealth)</name>
+        <description>This character treats the Stealth skill as a Class Skill, regardless of Heroic Class.</description>
+        <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
         <name>Bonus Feat</name>
         <description>This character gains one bonus Feat at 1st level.</description>
         <type>none</type>
     </speciesTrait>
     <speciesTrait>
-        <name>Bonus Feat (Toughness)</name>
-        <description>This character gains Toughness as a bonus Feat.</description>
+        <name>Bonus Feat (Improved Damage Threshold)</name>
+        <description>This character gains Improved Damage Threshold as a bonus Feat.</description>
         <type>none</type>
     </speciesTrait>
     <speciesTrait>
-        <name>Bonus Feat (Improved Damage Threshold)</name>
-        <description>This character gains Improved Damage Threshold as a bonus Feat.</description>
+        <name>Bonus Feat (Skill Focus)</name>
+        <description>This character gains Skill Focus as a bonus Feat.</description>
+        <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Bonus Feat (Toughness)</name>
+        <description>This character gains Toughness as a bonus Feat.</description>
         <type>none</type>
     </speciesTrait>
     <speciesTrait>
@@ -123,6 +138,11 @@
         <type>none</type>
     </speciesTrait>
     <speciesTrait>
+        <name>Flash of Genius</name>
+        <description>Once per encounter, this character can add a +5 circumstance bonus to to the result of one Knowledge, Mechanics, or Use Computer skill check.</description>
+        <type>special</type>
+    </speciesTrait>
+    <speciesTrait>
         <name>Force Resistance</name>
         <description>This character receives a +5 bonus to their Will Defense against any use of the Use the Force skill.</description>
         <type>none</type>
@@ -183,6 +203,11 @@
         <type>none</type>
     </speciesTrait>
     <speciesTrait>
+        <name>Logical Reasoning</name>
+        <description>This character can use their Intelligence modifier in place of their Charisma modifier on Persuasion checks.</description>
+        <type>none</type>
+    </speciesTrait>
+    <speciesTrait>
         <name>Low-Light Vision</name>
         <description>This character ignores Concealment (but not Total Concealment) from darkness.</description>
         <type>senses</type>
@@ -218,6 +243,11 @@
         <description>Once per day, this character can fly into a Rage as a Swift Action. While Raging, this character temporarily gains a +2 Rage bonus on melee attack rolls and melee damage rolls, but cannot use Skills that require patience and concentration, such as Mechanics, Stealth, or Use the Force. A fit of Rage lasts for a number of rounds equal to 5 + the character's Constitution modifier.
             <br>At the end of its Rage, the character moves -1 Persistent step along the Condition Track. The penalties imposed by this Persistent Condition persist until the character takes at least 10 minutes to recuperate, during which time the character can't engage in any strenuous activity.</description>
         <type>special</type>
+    </speciesTrait>
+    <speciesTrait>
+        <name>Reactive Claw</name>
+        <description>Once per encounter when this character damages an opponent with a melee attack, they can make a single melee attack with their Natural Weapons against that target as a Swift Action. This character must have one hand free at the time to make this attack (and thus cannot be wielding a two-handed weapon).</description>
+        <type>attack</type>
     </speciesTrait>
     <speciesTrait>
         <name>Scent</name>

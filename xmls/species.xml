@@ -307,4 +307,74 @@
         <speciesTraits>Animal Handler, Cooperative, Low-Light Vision</speciesTraits>
         <languages>Utapese</languages>
     </species>
+    <species>
+        <name>Arkanian</name>
+        <value>arkanian</value>
+        <speciesID>22</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Arkoh Adasca, Dolvan Genarik, Jaro Salaban, Kalor Nelprin, Marael Kortva, Sulan Bek</exampleNames>
+        <abilityMods>int,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Darkvision, Flash of Genius, Logical Reasoning</speciesTraits>
+        <languages>Arkanian, Basic</languages>
+    </species>
+    <species>
+        <name>Arkanian Offshoot</name>
+        <value>arkanian offshoot1</value>
+        <speciesID>23</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Edessa, Gorman, Vandrayk, Jarael, Zadawi</exampleNames>
+        <abilityMods>str,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Feat (Skill Focus), Determination</speciesTraits>
+        <languages>Arkanian, Basic</languages>
+    </species>
+    <species>
+        <name>Arkanian Offshoot</name>
+        <value>arkanian offshoot2</value>
+        <speciesID>24</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Edessa, Gorman, Vandrayk, Jarael, Zadawi</exampleNames>
+        <abilityMods>dex,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Feat (Skill Focus), Determination</speciesTraits>
+        <languages>Arkanian, Basic</languages>
+    </species>
+    <species>
+        <name>Cathar</name>
+        <value>cathar</value>
+        <speciesID>25</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Crado, Elashi, Feeth, Ferroh, Juhani, Larducias, Marnshara, Nodon, Nodak, Stragos, Sulvar, Tinisho</exampleNames>
+        <abilityMods>dex,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>8</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Class Skill (Climb), Bonus Class Skill (Stealth), Natural Weapons, Reactive Claw</speciesTraits>
+        <languages>Basic, Catharese</languages>
+    </species>
+    <species>
+        <name>Draethos</name>
+        <value>draethos</value>
+        <speciesID>26</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Crado, Elashi, Feeth, Ferroh, Juhani, Larducias, Marnshara, Nodon, Nodak, Stragos, Sulvar, Tinisho</exampleNames>
+        <abilityMods>dex,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Class Skill (Climb), Bonus Class Skill (Stealth), Natural Weapons, Reactive Claw</speciesTraits>
+        <languages>Basic, Catharese</languages>
+    </species>
 </species_list>

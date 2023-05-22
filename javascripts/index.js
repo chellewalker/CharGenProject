@@ -1,7 +1,7 @@
 import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
-import {getSkills} from './skills.js';
+import {getSkills,displaySkills} from './skills.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableTalents,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
 
@@ -278,7 +278,8 @@ while (check != 1) {
         else {
             perceptionDisplay = "+" + perception;
         }
-        let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits);
+        let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
+        let listSkills = displaySkills(skills);
         let talents = availableTalents(classes,firstClass);
         let feats = availableFeats(level,classes,firstClass,speciesTraits);
         let destiny = "";
@@ -307,7 +308,10 @@ while (check != 1) {
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
         "<strong>Talents:</strong> "+talents+"<br>"+
         "<strong>Feats:</strong> "+feats+"<br>"+        
-        "<strong>Skills:</strong> "+skills+"<br>"+
-        "<strong>Possessions:</strong> $equipment");
+        "<strong>Skills:</strong> "+listSkills+"<br>"+
+        "<strong>Possessions:</strong> $equipment<br><br>"+
+        "<div style='padding-left: 10%;'><button type='submit'>"+
+        "<a onclick='window.print();'>Download Character</a>"+
+        "</button></div>");
     }
 }}
