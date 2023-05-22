@@ -222,7 +222,7 @@ while (check != 1) {
         feats = speciesFeats(feats,speciesTraits,skills);
         let featList = listFeats(feats);
         featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
-        let talents = getTalents(classes,available,skills,feats);
+        let talents = getTalents(classes,available,skills,feats,firstClass);
         talents.sort();
         let listTalents = displayTalents(talents);
         let grapple = baseAttackBonus + Math.max(Math.floor((str-10)/2),Math.floor((dex-10)/2));
@@ -332,7 +332,9 @@ while (check != 1) {
         "<strong>Skills:</strong> "+listSkills+"<br>"+
         "<strong>Possessions:</strong> $equipment<br><br>"+
         "<div style='padding-left: 10%;'><button type='submit'>"+
-        "<a onclick='window.print();'>Download Character</a>"+
+        "<a onclick='location.href = \"index.html\"'>Make New Character</a>"+
+        "</button><button type='submit'>"+
+        "<a onclick='location.href = \"index.html\"'>Download Character</a>"+
         "</button></div>");
     }
 }}
