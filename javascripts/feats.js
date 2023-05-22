@@ -43,7 +43,7 @@ export function classFeats(firstClass,classes,int,con,skills) {
         if (feats.includes(multiclass[randomNum])) {
             if (feats.includes("Force Sensitivity") && feats.includes("Weapon Proficiency (Lightsabers)")) {
             check = 1;
-        }
+        }}
         else {
         feats.push(multiclass[randomNum]);
         check = 1;
@@ -63,7 +63,7 @@ export function classFeats(firstClass,classes,int,con,skills) {
             if (feats.includes("Weapon Proficiency (Pistols)") && feats.includes("Linguist") ||
             feats.includes("Weapon Proficiency (Pistols)") && int < 13) {
             check = 1;
-        }
+        }}
         else {
         feats.push(multiclass[randomNum]);
         check = 1;
@@ -79,7 +79,7 @@ export function classFeats(firstClass,classes,int,con,skills) {
         if (feats.includes(multiclass[randomNum])) {
             if (feats.includes("Point-Blank Shot") && feats.includes("Weapon Proficiency (Pistols)")) {
             check = 1;
-        }
+        }}
         else {
         feats.push(multiclass[randomNum]);
         check = 1;
@@ -100,7 +100,7 @@ export function classFeats(firstClass,classes,int,con,skills) {
             feats.includes("Weapon Proficiency (Pistols)") && feats.includes("Weapon Proficiency (Rifles)") && con < 13 || 
             feats.includes("Weapon Proficiency (Pistols)") && feats.includes("Weapon Proficiency (Rifles)") && skills.includes("Endurance")) {
             check = 1;
-        }
+        }}
         else {
         feats.push(multiclass[randomNum]);
         check = 1;
@@ -120,7 +120,7 @@ export function classFeats(firstClass,classes,int,con,skills) {
             if (feats.includes("Armor Proficiency (Light)") && feats.includes("Armor Proficiency (Medium)")
                 && feats.includes("Weapon Proficiency (Pistols)") && feats.includes("Weapon Proficiency (Rifles)")) {
                 check = 1;
-        }
+        }}
         else {
         feats.push(multiclass[randomNum]);
         check = 1;
