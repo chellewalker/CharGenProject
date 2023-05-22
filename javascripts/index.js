@@ -3,7 +3,7 @@ import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {language,languageList} from './language.js';
 import {getSkills,displaySkills} from './skills.js';
-import {classFeats,speciesFeats,listFeats} from './feats.js';
+import {classFeats,speciesFeats,displayFeats} from './feats.js';
 import {getTalents,displayTalents} from './talents/getTalents.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
@@ -195,7 +195,9 @@ while (check != 1) {
             unarmed = 3;
         }
         let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
-        let feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
+        let availFeats = availableFeats(level,classes,firstClass,speciesTraits);
+        let feats = [];
+        feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
         feats = speciesFeats(feats,speciesTraits,skills);
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
         if (skills.includes("Initiative")) {
@@ -225,12 +227,12 @@ while (check != 1) {
         else {
             perceptionDisplay = "+" + perception;
         }
-        let featList = listFeats(feats);
-        featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
         let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
         let talents = getTalents(classes,available,skills,feats,firstClass);
         talents.sort();
         let listTalents = displayTalents(talents);
+        feats.sort();
+        let listFeats = displayFeats(feats);
         let grapple = baseAttackBonus + Math.max(Math.floor((str-10)/2),Math.floor((dex-10)/2));
             if (size == "Small") {
                 grapple -= 5;
@@ -381,7 +383,7 @@ while (check != 1) {
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
         "<strong>Talents:</strong> "+listTalents+"<br>"+
-        "<strong>Feats:</strong> "+featList+"<br>"+        
+        "<strong>Feats:</strong> "+listFeats+"<br>"+        
         "<strong>Skills:</strong> "+listSkills+"<br>"+
         "<strong>Possessions:</strong> "+equipmentList+"<br><br>"+
         "<div style='padding-left: 10%;'><button type='submit'>"+

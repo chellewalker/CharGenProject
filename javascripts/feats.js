@@ -244,3 +244,20 @@ export function listFeats(feats) {
     
     return featList;
 }
+
+export function getFeats(characterFeats,jediFeats,nobleFeats,scoundrelFeats,scoutFeats,soldierFeats) {
+
+}
+
+export function displayFeats(feats) {
+    let featDisplay = "";
+    let count;
+    for (count = 0; count < feats.length; count++) {
+        if (count != 0) {
+            featDisplay += ", ";
+        }
+        featDisplay += feats[count];
+    }
+
+    return featDisplay;
+}

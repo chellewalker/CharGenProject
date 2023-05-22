@@ -233,68 +233,31 @@ export function getBAB(classes,firstClass) {
 }
 
 export function availableFeats(level,classes,firstClass,speciesTraits) {
-    let availableFeats = "";
+    let availableFeats = [0,0,0,0,0,0];
+    if (classes[firstClass]%2 == 0) {
+        classes[firstClass]--;
+    }
     let score = Math.ceil(level/3);
     if (speciesTraits.split(", ").includes("Bonus Feat")) {
         score++;
     }
-    if (score > 1) {
-        availableFeats = score + " Character Feats";
-    }
-    else {
-        availableFeats = score + " Character Feat";
-    }
+    availableFeats[0] = score;
 
 
     if (Math.floor(classes[0]/2) > 0) {
-        if (Math.floor(classes[0]/2) > 1) {
-            availableFeats += ", " + Math.floor(classes[0]/2);
-            availableFeats += " Jedi Feats";
-        }
-        else {
-            availableFeats += ", 1";
-            availableFeats += " Jedi Feat";
-        }
+        availableFeats[1] = Math.floor(classes[0]/2);
     }
     if (Math.floor(classes[1]/2) > 0) {
-        if (Math.floor(classes[1]/2) > 1) {
-            availableFeats += ", " + Math.floor(classes[1]/2);
-            availableFeats += " Noble Feats";
-        }
-        else {
-            availableFeats += ", 1";
-            availableFeats += " Noble Feat";
-        }
+        availableFeats[2] = Math.floor(classes[1]/2);
     }
     if (Math.floor(classes[2]/2) > 0) {
-        if (Math.floor(classes[2]/2) > 1) {
-            availableFeats += ", " + Math.floor(classes[2]/2);
-            availableFeats += " Scoundrel Feats";
-        }
-        else {
-            availableFeats += ", 1";
-            availableFeats += " Scoundrel Feat";
-        }
+        availableFeats[3] = Math.floor(classes[2]/2);
     }
     if (Math.floor(classes[3]/2) > 0) {
-        if (Math.floor(classes[3]/2) > 1) {
-            availableFeats += ", " + Math.floor(classes[3]/2);
-            availableFeats += " Scout Feats";
-        }
-        else {
-            availableFeats += ", 1";
-            availableFeats += " Scout Feat";
-        }
+        availableFeats[4] = Math.floor(classes[3]/2);
     }
     if (Math.floor(classes[4]/2) > 0) {
-        if (Math.floor(classes[4]/2) > 1) {
-            availableFeats += ", " + Math.floor(classes[4]/2);
-            availableFeats += " Soldier Feats";
-        }
-        else {
-            availableFeats += ", 1";
-            availableFeats += " Soldier Feat";
-        }
+        availableFeats[5] = Math.floor(classes[4]/2);
     }
 
     return availableFeats;
