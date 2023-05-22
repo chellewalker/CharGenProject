@@ -199,7 +199,7 @@ while (check != 1) {
         let feats = [];
         feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
         feats = speciesFeats(feats,speciesTraits,skills);
-        feats = getFeats(available,availFeats[0],availFeats[1],availFeats[2],availFeats[3],availFeats[4],availFeats[5],feats,skills,str,dex,con,int,wis,cha,baseAttackBonus);
+        feats = getFeats(available,availFeats[0],availFeats[1],availFeats[2],availFeats[3],availFeats[4],availFeats[5],feats,skills,str,dex,con,int,wis,cha,baseAttackBonus,speciesTraits);
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
         if (skills.includes("Initiative")) {
             initiative += 5;
@@ -351,6 +351,9 @@ while (check != 1) {
             equipment.push("Blaster Rifle");
         }
         equipment.sort();
+        if (speciesTraits.split(", ").includes("Special Equipment (Antiox Breath Mask)")) {
+            equipment.push("Antiox Breath Mask");
+        }
 
         let equipmentList = "";
         for (count = 0; count < equipment.length; count++) {
