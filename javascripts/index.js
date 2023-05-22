@@ -309,6 +309,28 @@ while (check != 1) {
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
         }
+        let lightsaberAttack = meleeAttack;
+        let lightsaberDamage = meleeDamage;
+        let lightsaber = "";
+        if (feats.includes("Weapon Proficiency (Lightsabers)")) {
+            lightsaber = "<strong>Melee:</strong> Lightsaber "+lightsaberAttack+" (2d8"+lightsaberDamage+")<br>";
+        }
+        let pistolAttack = rangedAttack;
+        let pistolDamage = rangedDamage;
+        let blasterPistol = "";
+        if (feats.includes("Weapon Proficiency (Pistols)")) {
+            blasterPistol = "<strong>Ranged:</strong> Blaster Pistol "+pistolAttack+" (3d6"+pistolDamage+")<br>";
+        }
+        let rifleAttack = rangedAttack;
+        let rifleDamage = rangedDamage;
+        let blasterRifle = "";
+        if (feats.includes("Weapon Proficiency (Rifles)")) {
+            blasterRifle = "<strong>Ranged:</strong> Blaster Rifle "+rifleAttack+" (3d8"+rifleDamage+")<br>";
+        }
+        let otherAttack = "";
+        if (blasterPistol == "" && blasterRifle == "") {
+            otherAttack = "<strong>Ranged:</strong> By Weapon "+rangedAttack+"<br>";
+        }
 
     // output results
         document.write("<h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
@@ -322,7 +344,10 @@ while (check != 1) {
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Offense</strong></u></p>"+
         "<strong>Speed:</strong> "+speed+"<br>"+
         "<strong>Melee:</strong> Unarmed "+meleeAttack+" ("+unarmedList[unarmed]+meleeDamage+")"+"<br>"+
-        "<strong>Ranged:</strong> By Weapon "+rangedAttack+"<br>"+
+        lightsaber+
+        blasterPistol+
+        blasterRifle+
+        otherAttack+
         "<strong>Base Attack Bonus:</strong> +"+baseAttackBonus+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
         "<strong>Species Traits ("+species+"):</strong> "+speciesTraits+""+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
@@ -334,7 +359,7 @@ while (check != 1) {
         "<div style='padding-left: 10%;'><button type='submit'>"+
         "<a onclick='location.href = \"index.html\"'>Make New Character</a>"+
         "</button><button type='submit'>"+
-        "<a onclick='location.href = \"index.html\"'>Download Character</a>"+
+        "<a onclick='print()'>Download Character</a>"+
         "</button></div>");
     }
 }}
