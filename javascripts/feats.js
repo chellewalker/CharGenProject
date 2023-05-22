@@ -1,4 +1,4 @@
-export function classFeats(firstClass,classes,int,con,skills) {
+export function classFeats(firstClass,classes,int,con,skills,speciesTraits) {
     let feats = [];
     if (firstClass == 0) {
         feats.push("Force Sensitivity");
@@ -9,31 +9,54 @@ export function classFeats(firstClass,classes,int,con,skills) {
         if (int > 12) {
             feats.push("Linguist");
         }
+        if (speciesTraits.split(", ").includes("Primitive")) {
+            feats.push("Weapon Proficiency (Simple Weapons)");
+        }
+        else {
         feats.push("Weapon Proficiency (Pistols)");
         feats.push("Weapon Proficiency (Simple Weapons)");
-    }
+    }}
     if (firstClass == 2) {
+        if (speciesTraits.split(", ").includes("Primitive")) {
+            feats.push("Point-Blank Shot");
+            feats.push("Weapon Proficiency (Simple Weapons)");
+        }
+        else {
         feats.push("Point-Blank Shot");
         feats.push("Weapon Proficiency (Pistols)");
         feats.push("Weapon Proficiency (Simple Weapons)");
-    }
+    }}
     if (firstClass == 3) {
         if (con > 12 && skills.includes("Endurance")) {
             feats.push("Shake It Off");
         }
+        if (speciesTraits.split(", ").includes("Primitive")) {
+            feats.push("Weapon Proficiency (Simple Weapons)");
+        }
+        else {
         feats.push("Weapon Proficiency (Pistols)");
         feats.push("Weapon Proficiency (Rifles)");
         feats.push("Weapon Proficiency (Simple Weapons)");
-    }
+    }}
     if (firstClass == 4) {
+        if (speciesTraits.split(", ").includes("Primitive")) {
+            feats.push("Armor Proficiency (Light)");
+            feats.push("Armor Proficiency (Medium)");
+            feats.push("Weapon Proficiency (Simple Weapons)");
+        }
+        else {
         feats.push("Armor Proficiency (Light)");
         feats.push("Armor Proficiency (Medium)");
         feats.push("Weapon Proficiency (Pistols)");
         feats.push("Weapon Proficiency (Rifles)");
         feats.push("Weapon Proficiency (Simple Weapons)");
-    }
+    }}
 
     if (classes[0] > 0 && firstClass != 0) {
+        if (skills.includes("Use the Force")) {
+            feats.push("Force Sensitivity");
+        }
+        else {
         let check = 0;
         while (check == 0) {
             let avail = 2;
@@ -48,7 +71,7 @@ export function classFeats(firstClass,classes,int,con,skills) {
         feats.push(multiclass[randomNum]);
         check = 1;
         }
-    }}
+    }}}
     if (classes[1] > 0 && firstClass != 1) {
         let check = 0;
         while (check == 0) {

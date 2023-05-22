@@ -231,7 +231,7 @@ while (check != 1) {
             perceptionDisplay = "+" + perception;
         }
         let talents = availableTalents(classes,firstClass);
-        let feats = classFeats(firstClass,classes,int,con,skills);
+        let feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
         feats = speciesFeats(feats,speciesTraits,skills);
         let featList = listFeats(feats);
         featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
@@ -313,8 +313,6 @@ while (check != 1) {
         "<strong>Melee:</strong> Unarmed "+meleeAttack+" ("+unarmedList[unarmed]+meleeDamage+")"+"<br>"+
         "<strong>Ranged:</strong> By Weapon "+rangedAttack+"<br>"+
         "<strong>Base Attack Bonus:</strong> +"+baseAttackBonus+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
-        "<strong>Attack Options:</strong> $attack"+"<br>"+
-        "<strong>Special Actions:</strong> $special"+"<br>"+
         "<strong>Species Traits ("+species+"):</strong> "+speciesTraits+""+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
