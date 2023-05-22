@@ -3,7 +3,8 @@ import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {getSkills,displaySkills} from './skills.js';
 import {classFeats,speciesFeats,listFeats} from './feats.js';
-import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableTalents,availableFeats} from './classGen.js';
+import {getTalents,displayTalents} from './talents/getTalents.js';
+import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
 
 window.genCharacter = function genCharacter() {
@@ -230,11 +231,13 @@ while (check != 1) {
         else {
             perceptionDisplay = "+" + perception;
         }
-        let talents = availableTalents(classes,firstClass);
         let feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
         feats = speciesFeats(feats,speciesTraits,skills);
         let featList = listFeats(feats);
         featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
+        let talents = getTalents(classes,available,skills,feats);
+        talents.sort();
+        let listTalents = displayTalents(talents);
         let reflex = 10 + Math.floor((dex-10)/2) + parseInt(level) + classReflex;
             if (size == "Small") {
                 reflex++;
@@ -316,7 +319,7 @@ while (check != 1) {
         "<strong>Species Traits ("+species+"):</strong> "+speciesTraits+""+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
-        "<strong>Talents:</strong> "+talents+"<br>"+
+        "<strong>Talents:</strong> "+listTalents+"<br>"+
         "<strong>Feats:</strong> "+featList+"<br>"+        
         "<strong>Skills:</strong> "+listSkills+"<br>"+
         "<strong>Possessions:</strong> $equipment<br><br>"+
