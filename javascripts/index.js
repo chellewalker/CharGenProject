@@ -3,7 +3,7 @@ import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {language,languageList} from './language.js';
 import {getSkills,displaySkills} from './skills.js';
-import {classFeats,speciesFeats,displayFeats} from './feats.js';
+import {classFeats,speciesFeats,displayFeats,getFeats} from './feats.js';
 import {getTalents,displayTalents} from './talents/getTalents.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
@@ -199,6 +199,7 @@ while (check != 1) {
         let feats = [];
         feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);
         feats = speciesFeats(feats,speciesTraits,skills);
+        feats = getFeats(available,availFeats[0],availFeats[1],availFeats[2],availFeats[3],availFeats[4],availFeats[5],feats,skills,str,dex,con,int,wis,cha,baseAttackBonus);
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
         if (skills.includes("Initiative")) {
             initiative += 5;
@@ -228,7 +229,7 @@ while (check != 1) {
             perceptionDisplay = "+" + perception;
         }
         let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
-        let talents = getTalents(classes,available,skills,feats,firstClass);
+        let talents = getTalents(classes,available,skills,feats,firstClass,level);
         talents.sort();
         let listTalents = displayTalents(talents);
         feats.sort();

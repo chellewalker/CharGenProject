@@ -4,10 +4,8 @@ import {scoundrelTalents} from './scoundrelTalents.js';
 import {scoutTalents} from './scoutTalents.js';
 import {soldierTalents} from './soldierTalents.js';
 
-export function getTalents(classes,available,skills,feats,firstClass) {
-    if (classes[firstClass]%2 != 0) {
-        classes[firstClass]--;
-    }
+export function getTalents(classes,available,skills,feats,firstClass,level) {
+    classes[firstClass]--;
     let talents = [];
     let count;
 

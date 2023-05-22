@@ -245,8 +245,57 @@ export function listFeats(feats) {
     return featList;
 }
 
-export function getFeats(characterFeats,jediFeats,nobleFeats,scoundrelFeats,scoutFeats,soldierFeats) {
+export function getFeats(available,characterFeats,jediFeats,nobleFeats,scoundrelFeats,scoutFeats,soldierFeats,feats,skills,str,dex,con,int,wis,cha,BAB) {
+    let count;
 
+        for (count = 0; count < characterFeats; count++) {
+            feats.push(findFeat(available,feats,skills,"character",str,dex,con,int,wis,cha,BAB));
+        }
+
+    return feats;
+}
+
+export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB) {
+    let feat = "";
+    while (feat == "") {
+        let randomNum = Math.floor(Math.random() * 10);
+        if (randomNum == 0 && skills.includes("Acrobatics")) {
+            feat = "Acrobatic Strike";
+        }
+        if (randomNum == 1 && available.includes("CR")) {
+            feat = "Armor Proficiency (Light)";
+        }
+        if (randomNum == 2 && available.includes("CR") && feats.includes("Armor Proficiency (Light)")) {
+            feat = "Armor Proficiency (Medium)";
+        }
+        if (randomNum == 3 && available.includes("CR") && skills.includes("Armor Proficiency (Medium)")) {
+            feat = "Armor Proficiency (Heavy)";
+        }
+        if (randomNum == 4 && available.includes("CR") && str > 12 && BAB >= 1) {
+            feat = "Bantha Rush";
+        }
+        if (randomNum == 5 && available.includes("CR") && feats.includes("Weapon Proficiency (Heavy Weapons)") ||
+                randomNum == 5 && available.includes("CR") && feats.includes("Vehicular Combat")) {
+            feat = "Burst Fire";
+        }
+        if (randomNum == 6 && available.includes("CR") && feats.includes("Point-Blank Shot") && BAB >= 2) {
+            feat = "Careful Shot";
+        }
+        if (randomNum == 7 && available.includes("CR") && BAB >= 4) {
+            feat = "Charging Fire";
+        }
+        if (randomNum == 8 && available.includes("CR") && feats.includes("Power Attack") && str >= 13) {
+            feat = "Cleave";
+        }
+        if (randomNum == 9 && available.includes("CR")) {
+            feat = "Combat Reflexes";
+        }
+        if (feats.includes(feat)) {
+            feat = "";
+        }
+    }
+
+    return feat;
 }
 
 export function displayFeats(feats) {

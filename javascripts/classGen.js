@@ -1,5 +1,3 @@
-import {classXML} from './xmlGetter.js';
-
 export function classFirst(str,dex,con,int,wis,cha) {
     let jedi = 0;
     let noble = 0;
@@ -234,9 +232,6 @@ export function getBAB(classes,firstClass) {
 
 export function availableFeats(level,classes,firstClass,speciesTraits) {
     let availableFeats = [0,0,0,0,0,0];
-    if (classes[firstClass]%2 == 0) {
-        classes[firstClass]--;
-    }
     let score = Math.ceil(level/3);
     if (speciesTraits.split(", ").includes("Bonus Feat")) {
         score++;
