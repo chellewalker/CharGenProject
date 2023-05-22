@@ -2,7 +2,7 @@ import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {getSkills,displaySkills} from './skills.js';
-import {classFeats,listFeats} from './feats.js';
+import {classFeats,speciesFeats,listFeats} from './feats.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableTalents,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
 
@@ -141,56 +141,6 @@ while (check != 1) {
         let flatFooted;
         let size = parseXML("xmls/species.xml","size",speciesID);
         let speciesTraits = parseXML("xmls/species.xml","speciesTraits",speciesID);
-        let reflex = 10 + Math.floor((dex-10)/2) + parseInt(level) + classReflex;
-            if (size == "Small") {
-                reflex++;
-            }
-            if (size == "Large") {
-                reflex--;
-            }
-            if (dex > 11) {
-                flatFooted = reflex - Math.floor((dex-10)/2);
-            }
-            else {
-                flatFooted = reflex;
-            }
-            if (speciesTraits.split(", ").includes("Lightning Reflexes")) {
-                reflex += 2;
-            }
-            if (speciesTraits.split(", ").includes("Natural Armor (+1)")) {
-                reflex += 1;
-            }
-            if (speciesTraits.split(", ").includes("Natural Armor (+2)")) {
-                reflex += 2;
-            }
-            if (speciesTraits.split(", ").includes("Superior Defenses")) {
-                reflex += 1;
-            }
-        let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude;
-        if (speciesTraits.split(", ").includes("Great Fortitude")) {
-            fortitude += 2;
-        }
-        if (speciesTraits.split(", ").includes("Superior Defenses")) {
-            fortitude += 1;
-        }
-        let damageThreshold = fortitude;
-            if (size == "Large") {
-                damageThreshold += 5;
-            }
-            if (speciesTraits.split(", ").includes("Bonus Feat (Improved Damage Threshold)")) {
-                damageThreshold += 5;
-            }
-        let will = 10 + Math.floor((wis-10)/2) + parseInt(level) + classWill;
-        if (speciesTraits.split(", ").includes("Iron Will")) {
-            will += 2;
-        }
-        if (speciesTraits.split(", ").includes("Superior Defenses")) {
-            will += 1;
-        }
-        let hitPoints = getHitPoints(firstClass,classes,con);
-        if (speciesTraits.split(", ").includes("Bonus Feat (Toughness)")) {
-            hitPoints += parseInt(level);
-        }
         let baseAttackBonus = getBAB(classes,firstClass);
         let grapple = baseAttackBonus + Math.max(Math.floor((str-10)/2),Math.floor((dex-10)/2));
             if (size == "Small") {
@@ -282,8 +232,59 @@ while (check != 1) {
         }
         let talents = availableTalents(classes,firstClass);
         let feats = classFeats(firstClass,classes,int,con,skills);
+        feats = speciesFeats(feats,speciesTraits,skills);
         let featList = listFeats(feats);
         featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
+        let reflex = 10 + Math.floor((dex-10)/2) + parseInt(level) + classReflex;
+            if (size == "Small") {
+                reflex++;
+            }
+            if (size == "Large") {
+                reflex--;
+            }
+            if (dex > 11) {
+                flatFooted = reflex - Math.floor((dex-10)/2);
+            }
+            else {
+                flatFooted = reflex;
+            }
+            if (speciesTraits.split(", ").includes("Lightning Reflexes")) {
+                reflex += 2;
+            }
+            if (speciesTraits.split(", ").includes("Natural Armor (+1)")) {
+                reflex += 1;
+            }
+            if (speciesTraits.split(", ").includes("Natural Armor (+2)")) {
+                reflex += 2;
+            }
+            if (speciesTraits.split(", ").includes("Superior Defenses")) {
+                reflex += 1;
+            }
+        let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude;
+        if (speciesTraits.split(", ").includes("Great Fortitude")) {
+            fortitude += 2;
+        }
+        if (speciesTraits.split(", ").includes("Superior Defenses")) {
+            fortitude += 1;
+        }
+        let damageThreshold = fortitude;
+            if (size == "Large") {
+                damageThreshold += 5;
+            }
+            if (feats.includes("Improved Damage Threshold")) {
+                damageThreshold += 5;
+            }
+        let will = 10 + Math.floor((wis-10)/2) + parseInt(level) + classWill;
+        if (speciesTraits.split(", ").includes("Iron Will")) {
+            will += 2;
+        }
+        if (speciesTraits.split(", ").includes("Superior Defenses")) {
+            will += 1;
+        }
+        let hitPoints = getHitPoints(firstClass,classes,con);
+        if (feats.includes("Toughness")) {
+            hitPoints += parseInt(level);
+        }
         let intLanguages = "";
         if (int > 11) {
             let extraLanguages = Math.floor((int-10)/2);

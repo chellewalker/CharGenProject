@@ -132,6 +132,42 @@ export function classFeats(firstClass,classes,int,con,skills) {
     return feats;
 }
 
+export function speciesFeats(feats,speciesTraits,skills) {
+    if (speciesTraits.split(", ").includes("Bonus Feat (Improved Damage Threshold)")) {
+        feats.push("Improved Damage Threshold");
+    }
+    if (speciesTraits.split(", ").includes("Bonus Feat (Toughness)")) {
+        feats.push("Toughness");
+    }
+    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Gather Information))") && 
+        skills.includes("Gather Information")) {
+        feats.push("Skill Focus (Gather Information)");
+    }
+    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Initiative))") && 
+        skills.includes("Initiative")) {
+        feats.push("Skill Focus (Initiative)");
+    }
+    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Knowledge (Life Sciences)))") && 
+        skills.includes("Knowledge (Life Sciences)")) {
+        feats.push("Skill Focus (Knowledge (Life Sciences))");
+    }
+    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Perception))") && 
+        skills.includes("Perception")) {
+        feats.push("Skill Focus (Perception)");
+    }
+    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Persuasion))") && 
+        skills.includes("Persuasion")) {
+        feats.push("Skill Focus (Persuasion)");
+    }
+    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Survival))") && 
+        skills.includes("Survival")) {
+        feats.push("Skill Focus (Survival)");
+    }
+    
+    feats.sort();
+    return feats;
+}
+
 export function listFeats(feats) {
     let count;
     let featList = "";
