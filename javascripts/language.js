@@ -4,7 +4,7 @@ export function language(languages) {
     while (check == 0) {
     let randomNum = Math.floor(Math.random() * 16);
     if (randomNum == 0) {
-        if (languages.includes("Basic")) {
+        if (languages.includes("Basic") || languages.includes("Basic (understand only)")) {
 
         }
         else {
@@ -174,6 +174,9 @@ export function language(languages) {
             check = 1;
         }
     }
+}
+if (languages[0] == "Basic (understand only)") {
+    language += " (understand only)";
 }
     return language;
 }
