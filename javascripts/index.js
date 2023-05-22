@@ -2,6 +2,7 @@ import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {getSkills,displaySkills} from './skills.js';
+import {classFeats,listFeats} from './feats.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableTalents,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
 
@@ -287,7 +288,9 @@ while (check != 1) {
             perceptionDisplay = "+" + perception;
         }
         let talents = availableTalents(classes,firstClass);
-        let feats = availableFeats(level,classes,firstClass,speciesTraits);
+        let feats = classFeats(firstClass,classes,int,con,skills);
+        let featList = listFeats(feats);
+        featList += "; " + availableFeats(level,classes,firstClass,speciesTraits);
         let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
@@ -313,7 +316,7 @@ while (check != 1) {
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
         "<strong>Talents:</strong> "+talents+"<br>"+
-        "<strong>Feats:</strong> "+feats+"<br>"+        
+        "<strong>Feats:</strong> "+featList+"<br>"+        
         "<strong>Skills:</strong> "+listSkills+"<br>"+
         "<strong>Possessions:</strong> $equipment<br><br>"+
         "<div style='padding-left: 10%;'><button type='submit'>"+
