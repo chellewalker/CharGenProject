@@ -26,6 +26,12 @@ export function getSkills (str,dex,con,int,wis,cha,firstClass,level,size,species
         if (firstClass == 4 || classes[0] > 4) {
             classSkills += soldierSkills;
         }
+        if (speciesTraits.split(", ").includes("Bonus Class Skill (Climb)")) {
+            classSkills.push("Climb");
+        }
+        if (speciesTraits.split(", ").includes("Bonus Class Skill (Stealth)")) {
+            classSkills.push("Stealth");
+        }
 
     let trained = 0;
         let count = 0;
