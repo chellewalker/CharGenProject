@@ -262,7 +262,12 @@ while (check != 1) {
         if (speciesTraits.split(", ").includes("Natural Weapons")) {
             unarmed = 3;
         }
+        let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
+        let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits);
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
+        if (skills.includes("Initiative")) {
+            initiative += 5;
+        }
         let initiativeDisplay = "";
         if (initiative < 0) {
             initiativeDisplay = initiative;
@@ -271,6 +276,9 @@ while (check != 1) {
             initiativeDisplay = "+" + initiative;
         }
         let perception = Math.floor(level/2) + Math.floor((wis-10)/2);
+        if (skills.includes("Perception")) {
+            perception += 5;
+        }
         let perceptionDisplay = "";
         if (perception < 0) {
             perceptionDisplay = perception;
@@ -278,8 +286,6 @@ while (check != 1) {
         else {
             perceptionDisplay = "+" + perception;
         }
-        let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
-        let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits);
         let talents = availableTalents(classes,firstClass);
         let feats = availableFeats(level,classes,firstClass,speciesTraits);
         let destiny = "";
