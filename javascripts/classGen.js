@@ -234,8 +234,8 @@ export function getBAB(classes,firstClass) {
 
 export function availableTalents(classes,firstClass) {
     let availableTalents = "";
-    if (level != 1) {
-        classes[firstClass]++;
+    if (level != 1 && classes[firstClass] % 2 != 0) {
+        classes[firstClass]--;
     }
 
     if (Math.round(classes[0]/2) > 0) {
