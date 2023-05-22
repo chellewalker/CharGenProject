@@ -1,6 +1,7 @@
 import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
+import {language,languageList} from './language.js';
 import {getSkills,displaySkills} from './skills.js';
 import {classFeats,speciesFeats,listFeats} from './feats.js';
 import {getTalents,displayTalents} from './talents/getTalents.js';
@@ -143,20 +144,6 @@ while (check != 1) {
         let size = parseXML("xmls/species.xml","size",speciesID);
         let speciesTraits = parseXML("xmls/species.xml","speciesTraits",speciesID);
         let baseAttackBonus = getBAB(classes,firstClass);
-        let grapple = baseAttackBonus + Math.max(Math.floor((str-10)/2),Math.floor((dex-10)/2));
-            if (size == "Small") {
-                grapple -= 5;
-            }
-            if (size == "Large") {
-                grapple += 5;
-            }
-        let grappleDisplay;
-        if (grapple < 0) {
-            grappleDisplay = grapple;
-        }
-        else {
-            grappleDisplay = "+"+grapple;
-        }
 
         let speed = parseXML("xmls/species.xml","speed",speciesID) + " Squares";
         let swimSpeed = parseXML("xmls/species.xml","swimSpeed",speciesID);
@@ -238,6 +225,23 @@ while (check != 1) {
         let talents = getTalents(classes,available,skills,feats);
         talents.sort();
         let listTalents = displayTalents(talents);
+        let grapple = baseAttackBonus + Math.max(Math.floor((str-10)/2),Math.floor((dex-10)/2));
+            if (size == "Small") {
+                grapple -= 5;
+            }
+            if (size == "Large") {
+                grapple += 5;
+            }
+            if (talents.includes("Expert Grappler")) {
+                grapple += 2;
+            }
+        let grappleDisplay;
+        if (grapple < 0) {
+            grappleDisplay = grapple;
+        }
+        else {
+            grappleDisplay = "+"+grapple;
+        }
         let reflex = 10 + Math.floor((dex-10)/2) + parseInt(level) + classReflex;
             if (size == "Small") {
                 reflex++;
@@ -288,15 +292,19 @@ while (check != 1) {
         if (feats.includes("Toughness")) {
             hitPoints += parseInt(level);
         }
-        let intLanguages = "";
+        let languages = [];
+        languages = (parseXML("xmls/species.xml","languages",speciesID)).split(", ");
         if (int > 11) {
             let extraLanguages = Math.floor((int-10)/2);
             if (feats.includes("Linguist")) {
                 extraLanguages += 1 + Math.floor((int-10)/2);
             }
-            intLanguages += (", " + extraLanguages + " Unassigned");
+            for (count = 0; count < extraLanguages; count++) {
+                languages.push(language(languages));
+            }
         }
-        let languages = parseXML("xmls/species.xml","languages",speciesID) + intLanguages;
+        languages.sort();
+        let listLanguages = languageList(languages);
         let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
@@ -307,7 +315,7 @@ while (check != 1) {
         size+" "+species+" "+classList+"<br>"+
         destiny+"<strong>Force Points:</strong> "+Math.max(Math.floor(level/2),1)+""+"<br>"+
         "<strong>Initiative:</strong> "+initiativeDisplay+"; <strong>Senses:</strong> Perception "+perceptionDisplay+"<br>"+
-        "<strong>Languages:</strong> "+languages+"<br>"+
+        "<strong>Languages:</strong> "+listLanguages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+
         "<strong>Reflex Defense:</strong> "+reflex+" (<strong>Flat-Footed:</strong> "+flatFooted+"), <strong>Fortitude Defense:</strong> "+fortitude+", <strong>Will Defense:</strong> "+will+"<br>"+
         "<strong>Hit Points:</strong> "+hitPoints+", <strong>Damage Threshold:</strong> "+damageThreshold+"<br>"+

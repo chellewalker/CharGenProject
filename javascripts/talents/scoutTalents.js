@@ -3,7 +3,7 @@ export function scoutTalents(talents,available,skills,feats) {
     let talent = "";
     while (talent == "") {
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = 0;
+        let randomNum = Math.floor(Math.random() * 2);
 
     if (randomNum == 0) {
         talent = awarenessTalents(talents,available,skills,feats);
@@ -74,12 +74,55 @@ export function awarenessTalents(talents,available,skills,feats) {
     else if (randomNum == 5 && available.includes("CR") && talents.includes("Acute Senses") && talents.includes("Improved Initiative") && talents.includes("Uncanny Dodge I")) {
         talent = "Uncanny Dodge II";
     }
-    else if (randomNum == 4 && available.includes("FUCG") && talents.includes("Acute Senses") && talents.includes("Improved Initiative") && skills.includes("Initiative")) {
+    else if (randomNum == 6 && available.includes("FUCG") && talents.includes("Acute Senses") && talents.includes("Improved Initiative") && skills.includes("Initiative")) {
         talent = "Reset Initiative";
     }
     else if (randomNum == 7 && available.includes("SaV") && talents.includes("Acute Senses") && talents.includes("Keen Shot")) {
         talent = "Weak Point";
     }   
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function camouflageTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 10);
+
+    if (randomNum == 0 && available.includes("CR") && talents.includes("Improved Stealth")) {
+        talent = "Hidden Movement";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Improved Stealth";
+    }
+    else if (randomNum == 2 && available.includes("CR") && talents.includes("Hidden Movement") && talents.includes("Improved Stealth")) {
+        talent = "Total Concealment";
+    }
+    else if (randomNum == 3 && available.includes("GaW")) {
+        talent = "Dig In";
+    }
+    else if (randomNum == 4 && available.includes("UR") && talents.includes("Improved Stealth")) {
+        talent = "Extended Ambush";
+    }
+    else if (randomNum == 5 && available.includes("GaW")) {
+        talent = "Ghost Assailant";
+    }
+    else if (randomNum == 6 && available.includes("SaV") && talents.includes("Hidden Movement") && talents.includes("Improved Stealth")) {
+        talent = "Hide in Plain Sight";
+    }
+    else if (randomNum == 7 && available.includes("SaV")) {
+        talent = "Hunker Down";
+    }
+    else if (randomNum == 8 && available.includes("SaV") && talents.includes("Hidden Movement") && talents.includes("Improved Stealth")) {
+        talent = "Shadow Striker";
+    }
+    else if (randomNum == 9 && available.includes("GaW")) {
+        talent = "Slip By";
+    }
     if (talents.includes(talent)) {
         talent = "";
     }

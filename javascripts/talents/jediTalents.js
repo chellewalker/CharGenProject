@@ -1,6 +1,6 @@
 export function jediTalents(talents,available,skills,feats) {
     //let randomNum = Math.floor(Math.random() * 4);
-    let randomNum = 0;
+    let randomNum = Math.floor(Math.random() * 2);
     let talent;
     if (randomNum == 0) {
         talent = consularTalents(talents,available,skills,feats);
@@ -82,6 +82,68 @@ export function consularTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 19 && available.includes("KotORCG")) {
         talent = "WatchCircle Initiate";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function guardianTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 16);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Acrobatic Recovery";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Battle Meditation";
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        talent = "Elusive Target";
+    }
+    else if (randomNum == 3 && available.includes("CR")) {
+        talent = "Force Intuition";
+    }
+    else if (randomNum == 4 && available.includes("CR")) {
+        talent = "Resilience";
+    }
+    else if (randomNum == 5 && available.includes("RECG")) {
+        talent = "Close Maneuvering";
+    }
+    else if (randomNum == 6 && available.includes("GaW") && talents.includes("Block") ||
+                randomNum == 6 && available.includes("GaW") && talents.includes("Deflect")) {
+        talent = "Cover Escape";
+    }
+    else if (randomNum == 7 && available.includes("LECG")) {
+        talent = "Defensive Acuity";
+    }
+    else if (randomNum == 8 && available.includes("CWCG")) {
+        talent = "Exposing Strike";
+    }
+    else if (randomNum == 9 && available.includes("FUCG")) {
+        talent = "Forceful Warrior";
+    }
+    else if (randomNum == 10 && available.includes("JATM")) {
+        talent = "Grenade Defense";
+    }
+    else if (randomNum == 11 && available.includes("CWCG")) {
+        talent = "Guardian Strike";
+    }
+    else if (randomNum == 12 && available.includes("JATM")) {
+        talent = "Hold the Line";
+    }
+    else if (randomNum == 13 && available.includes("RECG")) {
+        talent = "Immovable";
+    }
+    else if (randomNum == 14 && available.includes("KotORCG") && talents.includes("Battle Meditation")) {
+        talent = "Improved Battle Meditation";
+    }
+    else if (randomNum == 15 && available.includes("FUCG")) {
+        talent = "Mobile Combatant";
     }
     if (talents.includes(talent)) {
         talent = "";

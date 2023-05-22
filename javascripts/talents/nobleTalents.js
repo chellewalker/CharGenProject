@@ -3,7 +3,7 @@ export function nobleTalents(talents,available,skills,feats) {
     let talent = "";
     while (talent == "") {
         //let randomNum = Math.floor(Math.random() * 16);
-        let randomNum = 0;
+        let randomNum = Math.floor(Math.random() * 2);
 
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats);
@@ -79,6 +79,40 @@ export function influenceTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 5 && available.includes("KotORCG") && talents.includes("Presence")  && skills.includes("Persuasion")) {
         talent = "Intimidating Defense";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function inspirationTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 7);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Bolster Ally";
+    }
+    else if (randomNum == 1 && available.includes("CR") && talents.includes("Bolster Ally") && talents.includes("Inspire Confidence")) {
+        talent = "Ignite Fervor";
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        talent = "Inspire Confidence";
+    }
+    else if (randomNum == 3 && available.includes("CR")) {
+        talent = "Inspire Haste";
+    }
+    else if (randomNum == 4 && available.includes("CR") && talents.includes("Bolster Ally") && talents.includes("Inspire Confidence") && talents.includes("Ignite Fervor")) {
+        talent = "Inspire Zeal";
+    }
+    else if (randomNum == 5 && available.includes("SaV") && talents.includes("Bolster Ally") && talents.includes("Inspire Confidence")) {
+        talent = "Beloved";
+    }
+    else if (randomNum == 6 && available.includes("FUCG") && talents.includes("Inspire Confidence")) {
+        talent = "Willpower";
     }
     if (talents.includes(talent)) {
         talent = "";

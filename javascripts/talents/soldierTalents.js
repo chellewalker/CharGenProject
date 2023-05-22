@@ -3,7 +3,7 @@ export function soldierTalents(talents,available,skills,feats) {
     let talent = "";
     while (talent == "") {
         //let randomNum = Math.floor(Math.random() * 13);
-        let randomNum = 0;
+        let randomNum = Math.floor(Math.random() * 2);
 
     if (randomNum == 0) {
         talent = armorTalents(talents,available,skills,feats);
@@ -70,6 +70,85 @@ export function armorTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 5 && available.includes("KotORCG") && feats.includes("Armor Proficiency (Light)")) {
         talent = "Shield Expert";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function brawlerTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 22);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Expert Grappler";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Gun Club";
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        talent = "Melee Smash";
+    }
+    else if (randomNum == 3 && available.includes("CR") && talents.includes("Melee Smash")) {
+        talent = "Stunning Strike";
+    }
+    else if (randomNum == 4 && available.includes("CR") && talents.includes("Expert Grappler")) {
+        talent = "Unbalance Opponent";
+    }
+    else if (randomNum == 5 && available.includes("CWCG") && talents.includes("Gun Club")) {
+        talent = "Bayonet Master";
+    }
+    else if (randomNum == 6 && available.includes("SaV")) {
+        talent = "Cantina Brawler";
+    }
+    else if (randomNum == 7 && available.includes("SaV")) {
+        talent = "Counterpunch";
+    }
+    else if (randomNum == 8 && available.includes("GoI") && talents.includes("Entangler")) {
+        talent = "Crowd Control";
+    }
+    else if (randomNum == 9 && available.includes("KotORCG") && talents.includes("Melee Smash")) {
+        talent = "Devastating Melee Smash";
+    }
+    else if (randomNum == 10 && available.includes("GoI")) {
+        talent = "Disarm and Engage";
+    }
+    else if (randomNum == 11 && available.includes("GoI")) {
+        talent = "Entangler";
+    }
+    else if (randomNum == 12 && available.includes("SaV") && talents.includes("Melee Smash") && talents.includes("Stunning Strike")) {
+        talent = "Experienced Brawler";
+    }
+    else if (randomNum == 13 && available.includes("LECG")) {
+        talent = "Grabber";
+    }
+    else if (randomNum == 14 && available.includes("LECG")) {
+        talent = "Hammerblow";
+    }
+    else if (randomNum == 15 && available.includes("SaV")) {
+        talent = "Make Do";
+    }
+    else if (randomNum == 16 && available.includes("SaV")) {
+        talent = "Man Down";
+    }
+    else if (randomNum == 17 && available.includes("SaV") && talents.includes("Cantina Brawler")) {
+        talent = "Pick a Fight";
+    }
+    else if (randomNum == 18 && available.includes("GoI")) {
+        talent = "Reverse Strength";
+    }
+    else if (randomNum == 19 && available.includes("LECG")) {
+        talent = "Strong Grab";
+    }
+    else if (randomNum == 20 && available.includes("SaV")) {
+        talent = "Sucker Punch";
+    }
+    else if (randomNum == 21 && available.includes("CWCG") && talents.includes("Melee Smash")) {
+        talent = "Unrelenting Assault";
     }
     if (talents.includes(talent)) {
         talent = "";
