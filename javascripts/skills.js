@@ -27,10 +27,10 @@ export function getSkills (str,dex,con,int,wis,cha,firstClass,level,size,species
             classSkills += soldierSkills;
         }
         if (speciesTraits.split(", ").includes("Bonus Class Skill (Climb)")) {
-            classSkills.push("Climb");
+            classSkills += "Climb";
         }
         if (speciesTraits.split(", ").includes("Bonus Class Skill (Stealth)")) {
-            classSkills.push("Stealth");
+            classSkills +="Stealth";
         }
 
     let trained = 0;

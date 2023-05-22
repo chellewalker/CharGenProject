@@ -162,6 +162,42 @@ export function speciesFeats(feats,speciesTraits,skills) {
     if (speciesTraits.split(", ").includes("Bonus Feat (Toughness)")) {
         feats.push("Toughness");
     }
+    if (speciesTraits.split(", ").includes("Bonus Feat (Skill Focus)")) {
+        let check = 0;
+        while (check == 0) {
+        let randomNum = Math.round(Math.random() * 5);
+        if (randomNum == 0) {
+            if (skills.includes("Endurance")) {
+                feats.push("Skill Focus (Endurance)");
+                check = 1;
+            }
+        }
+        if (randomNum == 1) {
+            if (skills.includes("Mechanics")) {
+                feats.push("Skill Focus (Mechanics)");
+                check = 1;
+            }
+        }
+        if (randomNum == 2) {
+            if (skills.includes("Pilot")) {
+                feats.push("Skill Focus (Pilot)");
+                check = 1;
+            }
+        }
+        if (randomNum == 3) {
+            if (skills.includes("Survival")) {
+                feats.push("Skill Focus (Survival)");
+                check = 1;
+            }
+        }
+        if (randomNum == 4) {
+            if (skills.includes("Treat Injury")) {
+                feats.push("Skill Focus (Treat Injury)");
+                check = 1;
+            }
+        }
+        }
+    }
     if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Gather Information))") && 
         skills.includes("Gather Information")) {
         feats.push("Skill Focus (Gather Information)");

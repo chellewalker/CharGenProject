@@ -356,6 +356,9 @@ while (check != 1) {
             }
             equipmentList += equipment[count];
         }
+        if (equipmentList == "") {
+            equipmentList += "None";
+        }
 
     // output results
         document.write("<h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
