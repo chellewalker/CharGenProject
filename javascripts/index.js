@@ -331,6 +331,25 @@ while (check != 1) {
         if (blasterPistol == "" && blasterRifle == "") {
             otherAttack = "<strong>Ranged:</strong> By Weapon "+rangedAttack+"<br>";
         }
+        let equipment = [];
+        if (lightsaber != "") {
+            equipment.push("Lightsaber");
+        }
+        if (blasterPistol != "") {
+            equipment.push("Blaster Pistol");
+        }
+        if (blasterRifle != "") {
+            equipment.push("Blaster Rifle");
+        }
+        equipment.sort();
+
+        let equipmentList = "";
+        for (count = 0; count < equipment.length; count++) {
+            if (count != 0) {
+                equipmentList += ", ";
+            }
+            equipmentList += equipment[count];
+        }
 
     // output results
         document.write("<h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
@@ -355,7 +374,7 @@ while (check != 1) {
         "<strong>Talents:</strong> "+listTalents+"<br>"+
         "<strong>Feats:</strong> "+featList+"<br>"+        
         "<strong>Skills:</strong> "+listSkills+"<br>"+
-        "<strong>Possessions:</strong> $equipment<br><br>"+
+        "<strong>Possessions:</strong> "+equipmentList+"<br><br>"+
         "<div style='padding-left: 10%;'><button type='submit'>"+
         "<a onclick='location.href = \"index.html\"'>Make New Character</a>"+
         "</button><button type='submit'>"+
