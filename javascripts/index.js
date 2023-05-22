@@ -279,7 +279,7 @@ while (check != 1) {
             perceptionDisplay = "+" + perception;
         }
         let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
-        let listSkills = displaySkills(skills);
+        let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits);
         let talents = availableTalents(classes,firstClass);
         let feats = availableFeats(level,classes,firstClass,speciesTraits);
         let destiny = "";
