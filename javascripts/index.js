@@ -145,12 +145,6 @@ while (check != 1) {
         let speciesTraits = parseXML("xmls/species.xml","speciesTraits",speciesID);
         let baseAttackBonus = getBAB(classes,firstClass);
 
-        let speed = parseXML("xmls/species.xml","speed",speciesID) + " Squares";
-        let swimSpeed = parseXML("xmls/species.xml","swimSpeed",speciesID);
-        if (swimSpeed != 0) {
-            speed = speed + " (Walking), " + swimSpeed + " Squares (Swimming)";
-        }
-
         let meleeAttackRaw = baseAttackBonus + Math.floor((str-10)/2);
         let meleeAttack = "";
         if (meleeAttackRaw < 0) {
@@ -301,6 +295,18 @@ while (check != 1) {
         let hitPoints = getHitPoints(firstClass,classes,con);
         if (feats.includes("Toughness")) {
             hitPoints += parseInt(level);
+        }
+        let speedValue = parseInt(parseXML("xmls/species.xml","speed",speciesID));
+        if (talents.includes("Long Stride")) {
+            speedValue += 2;
+        }
+        let swimSpeed = parseInt(parseXML("xmls/species.xml","swimSpeed",speciesID));
+        let speed = speedValue + " Squares";
+        if (swimSpeed != 0) {
+            if (talents.includes("Long Stride")) {
+                swimSpeed += 2;
+            }
+            speed = speed + " (Walking), " + swimSpeed + " Squares (Swimming)";
         }
         let languages = [];
         languages = (parseXML("xmls/species.xml","languages",speciesID)).split(", ");
