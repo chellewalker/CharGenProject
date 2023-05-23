@@ -3,7 +3,7 @@ export function scoutTalents(talents,available,skills,feats) {
     let talent = "";
     while (talent == "") {
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 2);
+        let randomNum = Math.floor(Math.random() * 3);
 
     if (randomNum == 0) {
         talent = awarenessTalents(talents,available,skills,feats);
@@ -122,6 +122,46 @@ export function camouflageTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 9 && available.includes("GaW")) {
         talent = "Slip By";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function fringerTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 9);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Barter";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Fringe Savant";
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        talent = "Long Stride";
+    }
+    else if (randomNum == 3 && available.includes("CR")) {
+        talent = "Jury-Rigger";
+    }
+    else if (randomNum == 4 && available.includes("SaV") && talents.includes("Long Stride")) {
+        talent = "Flee";
+    }
+    else if (randomNum == 5 && available.includes("SaV") && talents.includes("Jury-Rigger")) {
+        talent = "Keep it Together";
+    }
+    else if (randomNum == 6 && available.includes("SaV") && talents.includes("Long Stride")) {
+        talent = "Sidestep";
+    }
+    else if (randomNum == 7 && available.includes("SaV") && talents.includes("Long Stride")) {
+        talent = "Surge";
+    }
+    else if (randomNum == 8 && available.includes("SaV") && talents.includes("Long Stride") && talents.includes("Sidestep")) {
+        talent = "Swift Strider";
     }
     if (talents.includes(talent)) {
         talent = "";

@@ -3,7 +3,7 @@ export function nobleTalents(talents,available,skills,feats) {
     let talent = "";
     while (talent == "") {
         //let randomNum = Math.floor(Math.random() * 16);
-        let randomNum = Math.floor(Math.random() * 2);
+        let randomNum = Math.floor(Math.random() * 3);
 
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats);
@@ -113,6 +113,52 @@ export function inspirationTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 6 && available.includes("FUCG") && talents.includes("Inspire Confidence")) {
         talent = "Willpower";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function leadershipTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 11);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Born Leader";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Coordinate (+1)";
+    }
+    else if (randomNum == 2 && available.includes("CR") && talents.includes("Born Leader")) {
+        talent = "Distant Command";
+    }
+    else if (randomNum == 3 && available.includes("CR") && talents.includes("Born Leader")) {
+        talent = "Fearless Leader";
+    }
+    else if (randomNum == 4 && available.includes("CR") && talents.includes("Born Leader") && talents.includes("Distant Command")) {
+        talent = "Rally";
+    }
+    else if (randomNum == 5 && available.includes("CR") && talents.includes("Born Leader") && talents.includes("Coordinate (+1)")) {
+        talent = "Trust";
+    }
+    else if (randomNum == 6 && available.includes("GaW") && talents.includes("Born Leader") && talents.includes("Tactical Savvy")) {
+        talent = "Commanding Presence";
+    }
+    else if (randomNum == 7 && available.includes("UR") && talents.includes("Born Leader") && talents.includes("Coordinate (+1)")) {
+        talent = "Coordinated Leadership";
+    }
+    else if (randomNum == 8 && available.includes("KotORCG") && talents.includes("Born Leader") && skills.includes("Persuasion")) {
+        talent = "Reactionary Attack";
+    }
+    else if (randomNum == 9 && available.includes("GaW") && talents.includes("Born Leader")) {
+        talent = "Tactical Savvy";
+    }
+    else if (randomNum == 10 && available.includes("RECG")) {
+        talent = "Unwavering Ally";
     }
     if (talents.includes(talent)) {
         talent = "";

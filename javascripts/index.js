@@ -267,21 +267,9 @@ while (check != 1) {
             if (speciesTraits.split(", ").includes("Natural Armor (+2)")) {
                 reflex += 2;
             }
-            if (speciesTraits.split(", ").includes("Superior Defenses")) {
-                reflex += 1;
-            }
-            if (dex > 11) {
-                flatFooted = reflex - Math.floor((dex-10)/2);
-            }
-            else {
-                flatFooted = reflex;
-            }
         let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude;
         if (speciesTraits.split(", ").includes("Great Fortitude")) {
             fortitude += 2;
-        }
-        if (speciesTraits.split(", ").includes("Superior Defenses")) {
-            fortitude += 1;
         }
         let damageThreshold = fortitude;
             if (size == "Large") {
@@ -295,7 +283,20 @@ while (check != 1) {
             will += 2;
         }
         if (speciesTraits.split(", ").includes("Superior Defenses")) {
+            reflex += 1;
+            fortitude += 1;
             will += 1;
+        }
+        if (feats.includes("Improved Defenses")) {
+            reflex += 1;
+            fortitude += 1;
+            will += 1;
+        }
+        if (dex > 11) {
+            flatFooted = reflex - Math.floor((dex-10)/2);
+        }
+        else {
+            flatFooted = reflex;
         }
         let hitPoints = getHitPoints(firstClass,classes,con);
         if (feats.includes("Toughness")) {

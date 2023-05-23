@@ -1,6 +1,6 @@
 export function jediTalents(talents,available,skills,feats) {
     //let randomNum = Math.floor(Math.random() * 4);
-    let randomNum = Math.floor(Math.random() * 2);
+    let randomNum = Math.floor(Math.random() * 3);
     let talent;
     if (randomNum == 0) {
         talent = consularTalents(talents,available,skills,feats);
@@ -144,6 +144,76 @@ export function guardianTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 15 && available.includes("FUCG")) {
         talent = "Mobile Combatant";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function sentinelTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 19);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Clear Mind";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Dark Side Sense";
+    }
+    else if (randomNum == 2 && available.includes("CR") && talents.includes("Dark Side Sense")) {
+        talent = "Dark Side Scourge";
+    }
+    else if (randomNum == 3 && available.includes("CR") && talents.includes("Clear Mind")) {
+        talent = "Force Haze";
+    }
+    else if (randomNum == 4 && available.includes("CR") && talents.includes("Dark Side Sense")) {
+        talent = "Resist the Dark Side";
+    }
+    else if (randomNum == 5 && available.includes("FUCG")) {
+        talent = "Dampen Presence";
+    }
+    else if (randomNum == 6 && available.includes("KotORCG") && talents.includes("Sentinel Strike (+1d6)")) {
+        talent = "Dark Retaliation";
+    }
+    else if (randomNum == 7 && available.includes("LECG") && talents.includes("Dark Side Sense")) {
+        talent = "Dark Side Bane";
+    }
+    else if (randomNum == 8 && available.includes("RECG")) {
+        talent = "Gradual Resistance";
+    }
+    else if (randomNum == 9 && available.includes("JATM")) {
+        talent = "Master of the Great Hunt";
+    }
+    else if (randomNum == 10 && available.includes("SaV") && talents.includes("Clear Mind") && talents.includes("Force Haze")) {
+        talent = "Persistent Haze";
+    }
+    else if (randomNum == 11 && available.includes("GaW")) {
+        talent = "Prime Targets";
+    }
+    else if (randomNum == 12 && available.includes("RECG")) {
+        talent = "Reap Retribution";
+    }
+    else if (randomNum == 13 && available.includes("UR")) {
+        talent = "Sense Primal Force";
+    }
+    else if (randomNum == 14 && available.includes("KotORCG")) {
+        talent = "Sentinel Strike (+1d6)";
+    }
+    else if (randomNum == 15 && available.includes("KotORCG")) {
+        talent = "Sentinel's Gambit";
+    }
+    else if (randomNum == 16 && available.includes("CWCG")) {
+        talent = "Sentinel's Observation";
+    }
+    else if (randomNum == 17 && available.includes("FUCG")) {
+        talent = "Steel Resolve";
+    }
+    else if (randomNum == 18 && available.includes("CWCG") && talents.includes("Clear Mind") && talents.includes("Force Haze")) {
+        talent = "Unseen Eyes";
     }
     if (talents.includes(talent)) {
         talent = "";

@@ -3,7 +3,7 @@ export function scoundrelTalents(talents,available,skills,feats) {
     let talent = "";
     while (talent == "") {
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 2);
+        let randomNum = Math.floor(Math.random() * 3);
 
     if (randomNum == 0) {
         talent = fortuneTalents(talents,available,skills,feats);
@@ -155,6 +155,40 @@ export function misfortuneTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 15 && available.includes("SaV") && talents.includes("Dastardly Strike")) {
         talent = "Weakening Strike";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function slicerTalents(talents,available,skills,feats) {
+    let talent = "";
+    while (talent == "") {
+    let randomNum = Math.floor(Math.random() * 7);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Gimmick";
+    }
+    else if (randomNum == 1 && available.includes("CR") && talents.includes("Gimmick")) {
+        talent = "Master Slicer";
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        talent = "Trace";
+    }
+    else if (randomNum == 3 && available.includes("FUCG") && skills.includes("Use Computer")) {
+        talent = "Electronic Forgery";
+    }
+    else if (randomNum == 4 && available.includes("FUCG") && skills.includes("Use Computer")) {
+        talent = "Electronic Sabotage";
+    }
+    else if (randomNum == 5 && available.includes("FUCG") && skills.includes("Mechanics")) {
+        talent = "Security Slicer";
+    }
+    else if (randomNum == 6 && available.includes("SaV") && talents.includes("Electronic Sabotage") && skills.includes("Use Computer")) {
+        talent = "Virus";
     }
     if (talents.includes(talent)) {
         talent = "";

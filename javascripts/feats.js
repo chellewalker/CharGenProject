@@ -258,7 +258,7 @@ export function getFeats(available,characterFeats,jediFeats,nobleFeats,scoundrel
 export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB,speciesTraits) {
     let feat = "";
     while (feat == "") {
-        let randomNum = Math.floor(Math.random() * 23);
+        let randomNum = Math.floor(Math.random() * 30);
         if (randomNum == 0 && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -347,21 +347,21 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
         else if (randomNum == 19 && available.includes("CR") && feats.includes("Dual Weapon Mastery II") && dex >= 17 && BAB >= 11) {
             feat = "Dual Weapon Mastery III";
         }
-        else if (randomNum == 20 && available.includes("CR") && BAB >= 1) {
+        else if (randomNum == 20 && BAB >= 1) {
             let randomNum = Math.floor(Math.random() * 5);
-                if (randomNum == 0) {
+                if (randomNum == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
-                else if (randomNum == 1) {
+                else if (randomNum == 1 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Amphistaff)";
                 }
-                else if (randomNum == 2) {
+                else if (randomNum == 2 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Cesta)";
                 }
-                else if (randomNum == 3) {
+                else if (randomNum == 3 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Flamethrower)";
                 }
-                else if (randomNum == 4) {
+                else if (randomNum == 4 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Bowcaster)";
                 }
         }
@@ -370,6 +370,27 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
         }
         else if (randomNum == 22 && available.includes("CR") && skills.includes("Endurance")) {
             feat = "Extra Second Wind";
+        }
+        else if (randomNum == 23 && available.includes("CR") && feats.includes("Point-Blank Shot")) {
+            feat = "Far Shot";
+        }
+        else if (randomNum == 24 && available.includes("CR") && feats.includes("Force Sensitivity")) {
+            feat = "Force Boon";
+        }
+        else if (randomNum == 25 && available.includes("CR")) {
+            feat = "Force Sensitivity";
+        }
+        else if (randomNum == 26  && skills.includes("Use the Force")) {
+            feat = "Force Training";
+        }
+        else if (randomNum == 27 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {
+            feat = "Great Cleave";
+        }
+        else if (randomNum == 28 && available.includes("CR")  && feats.includes("Dodge")  && feats.includes("Mobility") && dex >= 13) {
+            feat = "Improved Charge";
+        }
+        else if (randomNum == 29 && available.includes("CR")) {
+            feat = "Improved Defenses";
         }
         if (feats.includes(feat)) {
             feat = "";
