@@ -321,12 +321,15 @@ while (check != 1) {
         }
         if (feats.includes("Martial Arts I")) {
             unarmed++;
+            reflex++;
         }
         if (feats.includes("Martial Arts II")) {
             unarmed++;
+            reflex++;
         }
         if (feats.includes("Martial Arts III")) {
             unarmed++;
+            reflex++;
         }
         let lightsaberAttack = meleeAttack;
         let lightsaberDamage = meleeDamage;
