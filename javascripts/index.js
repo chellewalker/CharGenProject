@@ -337,6 +337,12 @@ while (check != 1) {
             unarmed++;
             reflex++;
         }
+        let advancedMeleeAttack = meleeAttack;
+        let advancedMeleeDamage = meleeDamage;
+        let advancedMelee = "";
+        if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
+            advancedMelee = "<strong>Melee:</strong> Vibroblade "+advancedMeleeAttack+" (2d6"+advancedMeleeDamage+")<br>";
+        }
         let lightsaberAttack = meleeAttack;
         let lightsaberDamage = meleeDamage;
         let lightsaber = "";
@@ -355,11 +361,20 @@ while (check != 1) {
         if (feats.includes("Weapon Proficiency (Rifles)")) {
             blasterRifle = "<strong>Ranged:</strong> Blaster Rifle "+rifleAttack+" (3d8"+rifleDamage+")<br>";
         }
+        let heavyWeaponAttack = rangedAttack;
+        let heavyWeaponDamage = rangedDamage;
+        let heavyWeapon = "";
+        if (feats.includes("Weapon Proficiency (Heavy Weapons)") && size != "Small") {
+            heavyWeapon = "<strong>Ranged:</strong> Blaster Cannon "+heavyWeaponAttack+" (3d12"+heavyWeaponDamage+")<br>";
+        }
         let otherAttack = "";
         if (blasterPistol == "" && blasterRifle == "") {
             otherAttack = "<strong>Ranged:</strong> By Weapon "+rangedAttack+"<br>";
         }
         let equipment = [];
+        if (advancedMelee != "") {
+            equipment.push("Vibroblade");
+        }
         if (lightsaber != "") {
             equipment.push("Lightsaber");
         }
@@ -368,6 +383,9 @@ while (check != 1) {
         }
         if (blasterRifle != "") {
             equipment.push("Blaster Rifle");
+        }
+        if (heavyWeapon != "") {
+            equipment.push("Blaster Cannon");
         }
         equipment.sort();
         if (speciesTraits.split(", ").includes("Special Equipment (Antiox Breath Mask)")) {
@@ -401,9 +419,11 @@ while (check != 1) {
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Offense</strong></u></p>"+
         "<strong>Speed:</strong> "+speed+"<br>"+
         "<strong>Melee:</strong> Unarmed "+meleeAttack+" ("+unarmedList[unarmed]+meleeDamage+")"+"<br>"+
+        advancedMelee+
         lightsaber+
         blasterPistol+
         blasterRifle+
+        heavyWeapon+
         otherAttack+
         "<strong>Base Attack Bonus:</strong> +"+baseAttackBonus+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
         "<strong>Species Traits ("+species+"):</strong> "+speciesTraits+""+"<br>"+

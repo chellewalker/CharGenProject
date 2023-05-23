@@ -360,7 +360,7 @@
         <size>Medium</size>
         <speed>8</speed>
         <swimSpeed>0</swimSpeed>
-        <speciesTraits>Bonus Class Skill (Climb), Bonus Class Skill (Stealth), Natural Weapons, Reactive Claw</speciesTraits>
+        <speciesTraits>Bonus Class Skills (Climb and Stealth), Natural Weapons, Reactive Claw</speciesTraits>
         <languages>Basic, Catharese</languages>
     </species>
     <species>

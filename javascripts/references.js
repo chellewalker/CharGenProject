@@ -66,5 +66,10 @@ export function references() {
         available += ",";
     }
 
+    if (available == "") {
+        available += document.getElementById('core').value;
+        available += ",";
+    }
+
     return available;
 }

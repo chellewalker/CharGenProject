@@ -14,13 +14,8 @@
         <type>attack</type>
     </speciesTrait>
     <speciesTrait>
-        <name>Bonus Class Skill (Climb)</name>
-        <description>This character treats the Climb skill as a Class Skill, regardless of Heroic Class.</description>
-        <type>none</type>
-    </speciesTrait>
-    <speciesTrait>
-        <name>Bonus Class Skill (Stealth)</name>
-        <description>This character treats the Stealth skill as a Class Skill, regardless of Heroic Class.</description>
+        <name>Bonus Class Skills (Climb znd Stealth)</name>
+        <description>This character treats the Climb and Stealth skills as Class Skills, regardless of Heroic Class.</description>
         <type>none</type>
     </speciesTrait>
     <speciesTrait>
