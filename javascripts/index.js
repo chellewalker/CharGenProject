@@ -271,13 +271,6 @@ while (check != 1) {
         if (speciesTraits.split(", ").includes("Great Fortitude")) {
             fortitude += 2;
         }
-        let damageThreshold = fortitude;
-            if (size == "Large") {
-                damageThreshold += 5;
-            }
-            if (feats.includes("Improved Damage Threshold")) {
-                damageThreshold += 5;
-            }
         let will = 10 + Math.floor((wis-10)/2) + parseInt(level) + classWill;
         if (speciesTraits.split(", ").includes("Iron Will")) {
             will += 2;
@@ -292,6 +285,13 @@ while (check != 1) {
             fortitude += 1;
             will += 1;
         }
+        let damageThreshold = fortitude;
+            if (size == "Large") {
+                damageThreshold += 5;
+            }
+            if (feats.includes("Improved Damage Threshold")) {
+                damageThreshold += 5;
+            }
         if (dex > 11) {
             flatFooted = reflex - Math.floor((dex-10)/2);
         }
@@ -318,6 +318,15 @@ while (check != 1) {
         let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
+        }
+        if (feats.includes("Martial Arts I")) {
+            unarmed++;
+        }
+        if (feats.includes("Martial Arts II")) {
+            unarmed++;
+        }
+        if (feats.includes("Martial Arts III")) {
+            unarmed++;
         }
         let lightsaberAttack = meleeAttack;
         let lightsaberDamage = meleeDamage;
@@ -366,11 +375,15 @@ while (check != 1) {
         if (equipmentList == "") {
             equipmentList += "None";
         }
+        let forcePoints = Math.max(Math.floor(level/2),1);
+        if (feats.includes("Force Boon")) {
+            forcePoints += 3;
+        }
 
     // output results
         document.write("<h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
         size+" "+species+" "+classList+"<br>"+
-        destiny+"<strong>Force Points:</strong> "+Math.max(Math.floor(level/2),1)+""+"<br>"+
+        destiny+"<strong>Force Points:</strong> "+forcePoints+"<br>"+
         "<strong>Initiative:</strong> "+initiativeDisplay+"; <strong>Senses:</strong> Perception "+perceptionDisplay+"<br>"+
         "<strong>Languages:</strong> "+listLanguages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+

@@ -258,7 +258,7 @@ export function getFeats(available,characterFeats,jediFeats,nobleFeats,scoundrel
 export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB,speciesTraits) {
     let feat = "";
     while (feat == "") {
-        let randomNum = Math.floor(Math.random() * 30);
+        let randomNum = Math.floor(Math.random() * 36);
         if (randomNum == 0 && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -391,6 +391,24 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
         }
         else if (randomNum == 29 && available.includes("CR")) {
             feat = "Improved Defenses";
+        }
+        else if (randomNum == 30 && available.includes("CR")  && feats.includes("Melee Defense") && int >= 13) {
+            feat = "Improved Disarm";
+        }
+        else if (randomNum == 31 && available.includes("CR")) {
+            feat = "Improved Damage Threshold";
+        }
+        else if (randomNum == 32 && available.includes("CR") && int >= 13) {
+            feat = "Linguist";
+        }
+        else if (randomNum == 33 && available.includes("CR")) {
+            feat = "Martial Arts I";
+        }
+        else if (randomNum == 34 && available.includes("CR")  && feats.includes("Martial Arts I") && BAB >= 3) {
+            feat = "Martial Arts II";
+        }
+        else if (randomNum == 35 && available.includes("CR")  && feats.includes("Martial Arts I") && feats.includes("Martial Arts II") && BAB >= 6) {
+            feat = "Martial Arts III";
         }
         if (feats.includes(feat)) {
             feat = "";
