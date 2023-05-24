@@ -1,7 +1,7 @@
 import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
-import {language,languageList} from './language.js';
+import {getLanguages,languageList} from './language.js';
 import {getSkills,displaySkills} from './skills.js';
 import {classFeats,speciesFeats,displayFeats,getFeats} from './feats.js';
 import {getTalents,displayTalents} from './talents/getTalents.js';
@@ -308,18 +308,7 @@ while (check != 1) {
             }
             speed = speed + " (Walking), " + swimSpeed + " Squares (Swimming)";
         }
-        let languages = [];
-        languages = (parseXML("xmls/species.xml","languages",speciesID)).split(", ");
-        if (int > 11) {
-            let extraLanguages = Math.floor((int-10)/2);
-            if (feats.includes("Linguist")) {
-                extraLanguages += 1 + Math.floor((int-10)/2);
-            }
-            for (count = 0; count < extraLanguages; count++) {
-                languages.push(language(languages));
-            }
-        }
-        languages.sort();
+        let languages = getLanguages(speciesID,feats,int);
         let listLanguages = languageList(languages);
         let destiny = "";
         if (Math.floor(level/5) > 0) {

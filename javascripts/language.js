@@ -1,3 +1,5 @@
+import {parseXML} from './xmlGetter.js';
+
 export function language(languages) {
     let language;
     let check = 0;
@@ -13,7 +15,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 1) {
-        if (languages.includes("Binary")) {
+        if (languages.includes("Binary") || languages.includes("Binary (understand only)")) {
 
         }
         else {
@@ -22,7 +24,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 2) {
-        if (languages.includes("Bocce")) {
+        if (languages.includes("Bocce") || languages.includes("Bocce (understand only)")) {
 
         }
         else {
@@ -31,7 +33,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 3) {
-        if (languages.includes("Bothese")) {
+        if (languages.includes("Bothese") || languages.includes("Bothese (understand only)")) {
 
         }
         else {
@@ -40,7 +42,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 4) {
-        if (languages.includes("Cerean")) {
+        if (languages.includes("Cerean") || languages.includes("Cerean (understand only)")) {
 
         }
         else {
@@ -49,7 +51,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 5) {
-        if (languages.includes("Dosh")) {
+        if (languages.includes("Dosh") || languages.includes("Dosh (understand only)")) {
 
         }
         else {
@@ -58,7 +60,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 6) {
-        if (languages.includes("Durese")) {
+        if (languages.includes("Durese") || languages.includes("Durese (understand only)")) {
 
         }
         else {
@@ -67,7 +69,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 4) {
-        if (languages.includes("Gamorrean")) {
+        if (languages.includes("Gamorrean") || languages.includes("Gamorrean (understand only)")) {
 
         }
         else {
@@ -76,7 +78,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 5) {
-        if (languages.includes("High Galactic")) {
+        if (languages.includes("High Galactic") || languages.includes("High Galactic (understand only)")) {
 
         }
         else {
@@ -85,7 +87,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 6) {
-        if (languages.includes("Huttese")) {
+        if (languages.includes("Huttese") || languages.includes("Huttese (understand only)")) {
 
         }
         else {
@@ -94,7 +96,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 7) {
-        if (languages.includes("Ithorese")) {
+        if (languages.includes("Ithorese") || languages.includes("Ithorese (understand only)")) {
 
         }
         else {
@@ -103,7 +105,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 8) {
-        if (languages.includes("Jawa Trade Language")) {
+        if (languages.includes("Jawa Trade Language") || languages.includes("Jawa Trade Language (understand only)")) {
 
         }
         else {
@@ -112,7 +114,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 9) {
-        if (languages.includes("Kel Dor")) {
+        if (languages.includes("Kel Dor") || languages.includes("Kel Dor (understand only)")) {
 
         }
         else {
@@ -121,7 +123,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 10) {
-        if (languages.includes("Mon Calamarian")) {
+        if (languages.includes("Mon Calamarian") || languages.includes("Mon Calamarian (understand only)")) {
 
         }
         else {
@@ -130,7 +132,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 11) {
-        if (languages.includes("Quarrenese")) {
+        if (languages.includes("Quarrenese") || languages.includes("Quarrenese (understand only)")) {
 
         }
         else {
@@ -139,7 +141,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 12) {
-        if (languages.includes("Rodese")) {
+        if (languages.includes("Rodese") || languages.includes("Rodese (understand only)")) {
 
         }
         else {
@@ -148,7 +150,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 13) {
-        if (languages.includes("Ryl")) {
+        if (languages.includes("Ryl") || languages.includes("Ryl (understand only)")) {
 
         }
         else {
@@ -166,7 +168,7 @@ export function language(languages) {
         }
     }
     else if (randomNum == 15) {
-        if (languages.includes("Sullustese")) {
+        if (languages.includes("Sullustese") || languages.includes("Sullustese (understand only)")) {
 
         }
         else {
@@ -179,6 +181,23 @@ if (languages[0] == "Basic (understand only)") {
     language += " (understand only)";
 }
     return language;
+}
+
+export function getLanguages(speciesID,feats,int) {
+    let count;
+    let languages = (parseXML("xmls/species.xml","languages",speciesID)).split(", ");
+        if (int > 11) {
+            let extraLanguages = Math.floor((int-10)/2);
+            if (feats.includes("Linguist")) {
+                extraLanguages += 1 + Math.floor((int-10)/2);
+            }
+            for (count = 0; count < extraLanguages; count++) {
+                languages.push(language(languages));
+            }
+        }
+        languages.sort();
+
+    return languages;
 }
 
 export function languageList(languages) {

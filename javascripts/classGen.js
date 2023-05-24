@@ -188,6 +188,23 @@ export function classListing(firstClass,classes) {
     return classList;
 }
 
+export function getFirstHitPoints(firstClass,con) {
+    let hitPoints = 0;
+    let conMod = Math.floor((con-10)/2);
+
+    if (firstClass == 0 || firstClass == 4) {
+        hitPoints += 30 + conMod;
+    }
+    else if (firstClass == 1 || firstClass == 2) {
+        hitPoints += 18 + conMod;
+    }
+    else if (firstClass == 3) {
+        hitPoints += 24 + conMod;
+    }
+
+    return hitPoints;
+}
+
 export function getHitPoints(firstClass,classes,con) {
     let hitPoints = 0;
     let conMod = Math.floor((con-10)/2);
