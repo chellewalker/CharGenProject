@@ -62,8 +62,18 @@ export function getSkills (str,dex,con,int,wis,cha,firstClass,level,size,species
                     count--;
                 }
                 else if (classSkills.includes(temp)) {
-
+                    let randomNum = Math.round(Math.random() * 5);
                 trainedSkills[count] = temp;
+                if (randomNum == 0 && classSkills.includes("Use the Force") ||
+                    randomNum == 1 && classSkills.includes("Use the Force") ||
+                    randomNum == 2 && classSkills.includes("Use the Force")) {
+                    if (trainedSkills.includes("Use the Force")) {
+
+                    }
+                    else {
+                        trainedSkills[count] = "Use the Force";
+                    }
+                }
                 thisSkills[count] = trainedSkills[count];
                 
             }

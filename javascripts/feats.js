@@ -258,7 +258,7 @@ export function getFeats(available,characterFeats,jediFeats,nobleFeats,scoundrel
 export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB,speciesTraits) {
     let feat = "";
     while (feat == "") {
-        let randomNum = Math.floor(Math.random() * 36);
+        let randomNum = Math.floor(Math.random() * 41);
         if (randomNum == 0 && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -380,37 +380,42 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
         else if (randomNum == 25 && available.includes("CR")) {
             feat = "Force Sensitivity";
         }
-        else if (randomNum == 26  && skills.includes("Use the Force")) {
+        else if (randomNum == 26  && skills.includes("Use the Force") ||
+                    randomNum == 27  && skills.includes("Use the Force") ||
+                    randomNum == 28  && skills.includes("Use the Force") ||
+                    randomNum == 29  && skills.includes("Use the Force") ||
+                    randomNum == 30  && skills.includes("Use the Force") ||
+                    randomNum == 31  && skills.includes("Use the Force")) {
             feat = "Force Training";
         }
-        else if (randomNum == 27 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {
+        else if (randomNum == 32 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {
             feat = "Great Cleave";
         }
-        else if (randomNum == 28 && available.includes("CR")  && feats.includes("Dodge")  && feats.includes("Mobility") && dex >= 13) {
+        else if (randomNum == 33 && available.includes("CR")  && feats.includes("Dodge")  && feats.includes("Mobility") && dex >= 13) {
             feat = "Improved Charge";
         }
-        else if (randomNum == 29 && available.includes("CR")) {
+        else if (randomNum == 34 && available.includes("CR")) {
             feat = "Improved Defenses";
         }
-        else if (randomNum == 30 && available.includes("CR")  && feats.includes("Melee Defense") && int >= 13) {
+        else if (randomNum == 35 && available.includes("CR")  && feats.includes("Melee Defense") && int >= 13) {
             feat = "Improved Disarm";
         }
-        else if (randomNum == 31 && available.includes("CR")) {
+        else if (randomNum == 36 && available.includes("CR")) {
             feat = "Improved Damage Threshold";
         }
-        else if (randomNum == 32 && available.includes("CR") && int >= 13) {
+        else if (randomNum == 37 && available.includes("CR") && int >= 13) {
             feat = "Linguist";
         }
-        else if (randomNum == 33 && available.includes("CR")) {
+        else if (randomNum == 38 && available.includes("CR")) {
             feat = "Martial Arts I";
         }
-        else if (randomNum == 34 && available.includes("CR")  && feats.includes("Martial Arts I") && BAB >= 3) {
+        else if (randomNum == 39 && available.includes("CR")  && feats.includes("Martial Arts I") && BAB >= 3) {
             feat = "Martial Arts II";
         }
-        else if (randomNum == 35 && available.includes("CR")  && feats.includes("Martial Arts I") && feats.includes("Martial Arts II") && BAB >= 6) {
+        else if (randomNum == 40 && available.includes("CR")  && feats.includes("Martial Arts I") && feats.includes("Martial Arts II") && BAB >= 6) {
             feat = "Martial Arts III";
         }
-        if (feats.includes(feat)) {
+        if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training") {
             feat = "";
         }
     }

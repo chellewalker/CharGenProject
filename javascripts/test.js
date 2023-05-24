@@ -4,7 +4,7 @@ import {speciesGen} from './speciesGen.js';
 import {getLanguages,languageList} from './language.js';
 import {getSkills,displaySkills} from './skills.js';
 import {classFeats,speciesFeats,displayFeats,getFeats} from './feats.js';
-import {getTalents,displayTalents} from './talents/getTalents.js';
+import {getTalent,displayTalents} from './talents/getTalents.js';
 import {classFirst,getFirstHitPoints,classSelection,classListing,getHitPoints,getBAB,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
 
@@ -40,6 +40,7 @@ export function genCharacter() {
                 let randomName = Math.floor(Math.random() * nameArray.length);
                 name = nameArray[randomName];
         }
+        let size = parseXML("xmls/species.xml","size",speciesID);
 
         //generate ability scores
     let check = 0;
@@ -112,9 +113,13 @@ export function genCharacter() {
                 if (thisLevel == "random") {
                     thisLevel = classFirst(str,dex,con,int,wis,cha);
                     classes[thisLevel]++;
+
+                    let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
                 }
                 else {
                     classes[thisLevel]++;
+
+                    let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
                 }
                 talents.push(getTalent(thisLevel));
                 hitPoints += getFirstHitPoints(thisLevel);
