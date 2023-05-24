@@ -29,18 +29,18 @@ let check = 0;
 while (check != 1) {
 // get abilities
     let statGen = abilityGen(abilities);
-    let statLevel = level % 4;
+    let statLevel = Math.floor(level / 4);
     let count;
     for (count = 0; count < statLevel; count++) {
         let statRandom1 = Math.floor(Math.random() * 5);
         statGen[statRandom1]++;
 
-        let statRandom2 = Math.random() * 5;
+        let statRandom2 = Math.floor(Math.random() * 5);
         if (statRandom2 != statRandom1) {
         statGen[statRandom2]++;
         }
         else {
-            let statRandom3 = Math.random() * 5;
+            let statRandom3 = Math.floor(Math.random() * 5);
             statGen[statRandom3]++;
         }
     }
