@@ -188,7 +188,7 @@ while (check != 1) {
         if (speciesTraits.split(", ").includes("Natural Weapons")) {
             unarmed = 3;
         }
-        let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
+        let skills = getSkills(int,firstClass,speciesTraits,classes);
         let availFeats = availableFeats(level,classes,firstClass,speciesTraits);
         let feats = [];
         feats = classFeats(firstClass,classes,int,con,skills,speciesTraits);

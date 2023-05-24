@@ -107,25 +107,31 @@ export function genCharacter() {
         let hitPoints = 0;
         let talents = [];
         let feats = [];
+        let skills = [];
         let BAB = 0;
         for (count = 0; count < level; count++) {
             if (count == 0) {
                 if (thisLevel == "random") {
                     thisLevel = classFirst(str,dex,con,int,wis,cha);
                     classes[thisLevel]++;
-
-                    let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
                 }
                 else {
                     classes[thisLevel]++;
 
-                    let skills = getSkills(str,dex,con,int,wis,cha,firstClass,level,size,speciesTraits,classes);
                 }
+                skills = getSkills(int,thisLevel,speciesTraits,classes);
                 talents.push(getTalent(thisLevel));
                 hitPoints += getFirstHitPoints(thisLevel);
             }
             else {
-
+                thisLevel = getLevel();
+                classes[thisLevel]++;
+                if (classes[thisLevel] % 2 == 0) {
+                    feats.push(getFeat(available,thisLevel,feats,talents));
+                }
+                else {
+                    talents.push(getTalent(available,thisLevel,feats,talents));
+                }
             }
         }
 

@@ -352,7 +352,7 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
                 if (randomNum == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
-                else if (randomNum == 1 && available.includes("CR")) {
+                else if (randomNum == 1 && available.includes("LECG")) {
                     feat = "Exotic Weapon Proficiency (Amphistaff)";
                 }
                 else if (randomNum == 2 && available.includes("CR")) {
