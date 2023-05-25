@@ -51,6 +51,7 @@ export function genCharacter() {
 
         //Class generation
         let classes = [0,0,0,0,0];
+        let firstClass;
         let hitPoints = 0;
         let talents = [];
         let feats = [];
@@ -63,6 +64,7 @@ export function genCharacter() {
             if (count == 0) {
                 if (thisLevel == "random") {
                     thisLevel = classFirst(str,dex,con,int,wis,cha);
+                    firstClass = thisLevel;
                     classes[thisLevel]++;
                 }
                 else {
@@ -78,6 +80,9 @@ export function genCharacter() {
             else {
                 thisLevel = getLevel();
                 classes[thisLevel]++;
+                if (classes[thisLevel] == 1) {
+                    feats.push(multiclassFeats(thisLevel,feats,skills));
+                }
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0) {
