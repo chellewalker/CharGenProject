@@ -11,27 +11,27 @@ export function getTalents(classes,available,skills,feats,firstClass,level) {
 
     if (Math.round(classes[0]/2) > 0) {
         for (count = 0; count < Math.round(classes[0]/2); count++) {
-            talents.push (jediTalents(talents,available,skills,feats));
+            talents.push(jediTalents(talents,available,skills,feats));
         }
     }
     if (Math.round(classes[1]/2) > 0) {
         for (count = 0; count < Math.round(classes[1]/2); count++) {
-            talents.push (nobleTalents(talents,available,skills,feats));
+            talents.push(nobleTalents(talents,available,skills,feats));
         }
     }
     if (Math.round(classes[2]/2) > 0) {
         for (count = 0; count < Math.round(classes[2]/2); count++) {
-            talents.push (scoundrelTalents(talents,available,skills,feats));
+            talents.push(scoundrelTalents(talents,available,skills,feats));
         }
     }
     if (Math.round(classes[3]/2) > 0) {
         for (count = 0; count < Math.round(classes[3]/2); count++) {
-            talents.push (scoutTalents(talents,available,skills,feats));
+            talents.push(scoutTalents(talents,available,skills,feats));
         }
     }
     if (Math.round(classes[4]/2) > 0) {
         for (count = 0; count < Math.round(classes[4]/2); count++) {
-            talents.push (soldierTalents(talents,available,skills,feats));
+            talents.push(soldierTalents(talents,available,skills,feats));
         }
     }
 

@@ -2,7 +2,7 @@ import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {getLanguages,languageList} from './language.js';
-import {getSkills,displaySkills} from './skills.js';
+import {getSkills,displaySkills} from './classGen/skills.js';
 import {classFeats,speciesFeats,displayFeats,getFeats} from './feats.js';
 import {getTalents,displayTalents} from './talents/getTalents.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableFeats} from './classGen.js';
