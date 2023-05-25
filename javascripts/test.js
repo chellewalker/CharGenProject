@@ -1,6 +1,7 @@
 import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
+import {getSpeed} from './speed.js';
 import {getLanguages,languageList} from './language.js';
 import {getSkills,displaySkills} from './classGen/skills.js';
 import {getBAB} from './classGen/getBAB.js';
@@ -9,6 +10,7 @@ import {getTalent,displayTalents} from './talents/getTalents.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
 import {classFirst,getFirstHitPoints,classSelection,classListing,getBAB} from './classGen.js';
 import {abilityGen,finalAbilities} from './abilities/abilityGen.js';
+import { getSpeed } from './speed.js';
 
 export function genCharacter() {
     // get values
@@ -94,18 +96,7 @@ export function genCharacter() {
         //defenses
 
         //speed
-        let speedValue = parseInt(parseXML("xmls/species.xml","speed",speciesID));
-        if (talents.includes("Long Stride")) {
-            speedValue += 2;
-        }
-        let swimSpeed = parseInt(parseXML("xmls/species.xml","swimSpeed",speciesID));
-        let speed = speedValue + " Squares";
-        if (swimSpeed != 0) {
-            if (talents.includes("Long Stride")) {
-                swimSpeed += 2;
-            }
-            speed = speed + " (Walking), " + swimSpeed + " Squares (Swimming)";
-        }
+        let speed = getSpeed(speciesID,talents,feats);
 
         //attacks and damage
 
