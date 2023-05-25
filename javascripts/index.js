@@ -143,7 +143,7 @@ while (check != 1) {
         let flatFooted;
         let size = parseXML("xmls/species.xml","size",speciesID);
         let speciesTraits = parseXML("xmls/species.xml","speciesTraits",speciesID);
-        let baseAttackBonus = getBAB(classes,firstClass);
+        let baseAttackBonus = getBAB(classes);
 
         let meleeAttackRaw = baseAttackBonus + Math.floor((str-10)/2);
         let meleeAttack = "";

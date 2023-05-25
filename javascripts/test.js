@@ -120,12 +120,15 @@ export function genCharacter() {
 
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
+                BAB = getBAB(classes);
                 talents.push(getTalent(thisLevel));
                 hitPoints += getFirstHitPoints(thisLevel);
             }
             else {
                 thisLevel = getLevel();
                 classes[thisLevel]++;
+                BAB = getBAB(classes);
+                hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0) {
                     feats.push(getFeat(available,thisLevel,feats,talents));
                 }

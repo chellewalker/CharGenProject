@@ -205,6 +205,23 @@ export function getFirstHitPoints(firstClass,con) {
     return hitPoints;
 }
 
+export function getMoreHitPoints(thisLevel,con) {
+    let hitPoints = 0;
+    let conMod = Math.floor((con-10)/2);
+
+    if (thisLevel == 0 || thisLevel == 4) {
+        hitPoints += 6 + conMod;
+    }
+    else if (thisLevel == 1 || thisLevel == 2) {
+        hitPoints += 4 + conMod;
+    }
+    else if (thisLevel == 3) {
+        hitPoints += 5 + conMod;
+    }
+
+    return hitPoints;
+}
+
 export function getHitPoints(firstClass,classes,con) {
     let hitPoints = 0;
     let conMod = Math.floor((con-10)/2);
@@ -234,9 +251,8 @@ export function getHitPoints(firstClass,classes,con) {
     return hitPoints;
 }
 
-export function getBAB(classes,firstClass) {
+export function getBAB(classes) {
     let BAB = 0;
-    classes[firstClass]++;
 
     BAB += classes[0]*1;
     BAB += Math.floor(classes[1]*0.75);
