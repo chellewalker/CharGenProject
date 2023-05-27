@@ -156,6 +156,5 @@ export function multiclassFeat(thisLevel,feats,skills,con,int) {
         check = 1;
         }
     }}
-
     return feat;
 }

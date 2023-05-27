@@ -1,7 +1,7 @@
 export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
     let feat = "";
     while (feat == "") {
-        let randomNum = Math.floor(Math.random() * 61);
+        let randomNum = Math.floor(Math.random() * 83);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -208,8 +208,133 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                 let randomNum2 = Math.floor(Math.random() * skills.length);
                 feat = "Skill Focus ("+skills[randomNum2]+")";
         }
-        else if (randomNum == 61 && available.includes("CR")) {
+        else if (randomNum == 61 && available.includes("CR") || 
+                    randomNum == 62 && available.includes("CR")) {
             feat = "Skill Training";
+        }
+        else if (randomNum == 63 && available.includes("CR") && feats.includes("Point-Blank Shot") && feats.includes("Precise Shot") && BAB >= 4) {
+            feat = "Sniper";
+        }
+        else if (randomNum == 64 && available.includes("CR")) {
+            feat = "Strong in the Force";
+        }
+        else if (randomNum == 65 && available.includes("CR") && skills.includes("Treat Injury")) {
+            feat = "Surgical Expertise";
+        }
+        else if (randomNum == 66 && available.includes("CR") && feats.includes("Trip") && BAB >= 1) {
+            feat = "Throw";
+        }
+        else if (randomNum == 67 && available.includes("CR")) {
+            feat = "Toughness";
+        }
+        else if (randomNum == 68 && available.includes("CR") && BAB >= 1) {
+            feat = "Trip";
+        }
+        else if (randomNum == 69 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
+            feat = "Triple Attack (Advanced Melee Weapons)";
+        }
+        else if (randomNum == 69 && available.includes("CR") && feats.includes("Double Attack (Heavy Weapons)") && BAB >= 11) {
+            feat = "Triple Attack (Heavy Weapons)";
+        }
+        else if (randomNum == 69 && available.includes("CR") && feats.includes("Double Attack (Lightsabers)") && BAB >= 11) {
+            feat = "Triple Attack (Lightsabers)";
+        }
+        else if (randomNum == 69 && available.includes("CR") && feats.includes("Double Attack (Pistols)") && BAB >= 11) {
+            feat = "Triple Attack (Pistols)";
+        }
+        else if (randomNum == 69 && available.includes("CR") && feats.includes("Double Attack (Rifles)") && BAB >= 11) {
+            feat = "Triple Attack (Rifles)";
+        }
+        else if (randomNum == 69 && available.includes("CR") && feats.includes("Double Attack (Simple Weapons)") && BAB >= 11) {
+            feat = "Triple Attack (Simple Weapons)";
+        }
+        else if (randomNum == 70 && available.includes("CR") && BAB >= 8) {
+            let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                let randomNum = Math.floor(Math.random() * 6);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
+                    feat = "Triple Crit (Advanced Melee Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Heavy Weapons)")) {
+                    feat = "Triple Crit (Heavy Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 2 && feats.includes("Weapon Proficiency (Lightsabers)")) {
+                    feat = "Triple Crit (Lightsabers)";
+                    check = 1;
+                }
+                else if (randomNum == 3 && feats.includes("Weapon Proficiency (Pistols)")) {
+                    feat = "Triple Crit (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 4 && feats.includes("Weapon Proficiency (Rifles)")) {
+                    feat = "Triple Crit (Rifles)";
+                    check = 1;
+                }
+                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                    feat = "Triple Crit (Simple Weapons)";
+                    check = 1;
+                }
+            }
+        }
+        else if (randomNum == 69 && available.includes("CR") && skills.includes("Pilot")) {
+            feat = "Vehicular Combat";
+        }
+        else if (randomNum == 70 && available.includes("CR") && BAB >= 1) {
+            feat = "Weapon Finesse";
+        }
+        else if (randomNum == 71 && available.includes("CR") ||
+                    randomNum == 72 && available.includes("CR")) {
+            let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                let randomNum = Math.floor(Math.random() * 6);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
+                    feat = "Weapon Focus (Advanced Melee Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Heavy Weapons)")) {
+                    feat = "Weapon Focus (Heavy Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 2 && feats.includes("Weapon Proficiency (Lightsabers)")) {
+                    feat = "Weapon Focus (Lightsabers)";
+                    check = 1;
+                }
+                else if (randomNum == 3 && feats.includes("Weapon Proficiency (Pistols)")) {
+                    feat = "Weapon Focus (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 4 && feats.includes("Weapon Proficiency (Rifles)")) {
+                    feat = "Weapon Focus (Rifles)";
+                    check = 1;
+                }
+                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                    feat = "Weapon Focus (Simple Weapons)";
+                    check = 1;
+                }
+            }
+        }
+        else if (randomNum == 73 || randomNum == 74 || randomNum == 75) {
+            feat = "Weapon Proficiency (Advanced Melee Weapons)";
+        }
+        else if (randomNum == 76 || randomNum == 77 || randomNum == 78) {
+            feat = "Weapon Proficiency (Heavy Weapons)";
+        }
+        else if (randomNum == 79) {
+            feat = "Weapon Proficiency (Lightsabers)";
+        }
+        else if (randomNum == 80) {
+            feat = "Weapon Proficiency (Pistols)";
+        }
+        else if (randomNum == 81) {
+            feat = "Weapon Proficiency (Rifles)";
+        }
+        else if (randomNum == 82 && available.includes("CR") && feats.includes("Melee Defense") 
+                    && BAB >= 4 && dex >= 13 && int >= 13) {
+            feat = "Whirlwind Attack";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Force Training") {
             feat = "";

@@ -3,7 +3,7 @@ import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {getSpeed} from './speed.js';
 import {getLanguages,languageList} from './language.js';
-import {getSkills,displaySkills,getInitiative,getPerception} from './classGen/skills.js';
+import {getSkills,getNewSkill,displaySkills,getInitiative,getPerception} from './classGen/skills.js';
 import {getBAB} from './classGen/getBAB.js';
 import {getOutput} from './getOutput.js';
 import {displayFeats} from './feats/featDisplay.js';
@@ -21,7 +21,6 @@ import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {displayEquipment} from './equipment/display.js';
 import {getWill} from './defenses/will.js';
 import {getGrapple} from './attacks/getGrapple.js';
-import {getWeapon} from './attacks/getWeapons.js';
 import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
 import {getAdvancedMelee} from './attacks/weaponTypes/advancedMelee.js';
 import {getHeavyWeapon} from './attacks/weaponTypes/heavyWeapon.js';
@@ -82,9 +81,6 @@ window.genCharacter = function genCharacter() {
         let skills = [];
         let BAB = 0;
         for (count = 0; count < level; count++) {
-            if (count % 4 == 0) {
-                feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
-            }
             if (count == 0) {
                 if (thisLevel == "random") {
                     thisLevel = classFirst(str,dex,con,int,wis,cha);
@@ -106,18 +102,30 @@ window.genCharacter = function genCharacter() {
                 thisLevel = getLevel(firstClass,classes);
                 classes[thisLevel]++;
                 if (classes[thisLevel] == 1) {
-                    feats.push(multiclassFeat(thisLevel,feats,skills,int,con));
-                }
+                    let temp = (multiclassFeat(thisLevel,feats,skills,int,con));
+                    if (temp != "") { 
+                        feats.push(temp);
+                }}
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0) {
-                    //feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                    /*feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                    if (feats.findLast(findLast) == "Skill Training") {
+                        skills.push(getNewSkill(speciesTraits,classes,skills));
+                    }
+                    skills.sort();*/
                 }
                 else {
                     talents.push(getTalent(thisLevel,available,skills,feats,talents));
                 }
             }
-        }
+            if (count % 4 == 0) {
+            feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
+            if (feats.findLast(findLast) == "Skill Training") {
+                skills.push(getNewSkill(speciesTraits,classes,skills));
+                skills.sort();
+            }
+        }}
         talents.sort();
         feats.sort();
         let classList = classListing(firstClass,classes);
@@ -196,4 +204,8 @@ window.genCharacter = function genCharacter() {
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
     
         document.write(output);
+}
+
+function findLast(array) {
+    return array;
 }
