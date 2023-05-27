@@ -1,74 +1,57 @@
 export function references() {
-    let available = "";
+    let available = [];
 
     if (document.getElementById('core').checked) {
-        available += document.getElementById('core').value;
-        available += ",";
+        available.push(document.getElementById('core').value);
     }
     if (document.getElementById('starships').checked) {
-        available += document.getElementById('starships').value;
-        available += ",";
+        available.push(document.getElementById('starships').value);
     }
     if (document.getElementById('threats').checked) {
-        available += document.getElementById('threats').value;
-        available += ",";
+        available.push(document.getElementById('threats').value);
     }
     if (document.getElementById('knights').checked) {
-        available += document.getElementById('knights').value;
-        available += ",";
+        available.push(document.getElementById('knights').value);
     }
     if (document.getElementById('force').checked) {
-        available += document.getElementById('force').value;
-        available += ",";
+        available.push(document.getElementById('force').value);
     }
     if (document.getElementById('scum').checked) {
-        available += document.getElementById('scum').value;
-        available += ",";
+        available.push(document.getElementById('scum').value);
     }
     if (document.getElementById('clone').checked) {
-        available += document.getElementById('clone').value;
-        available += ",";
+        available.push(document.getElementById('clone').value);
     }
     if (document.getElementById('legacy').checked) {
-        available += document.getElementById('legacy').value;
-        available += ",";
+        available.push(document.getElementById('legacy').value);
     }
     if (document.getElementById('academy').checked) {
-        available += document.getElementById('academy').value;
-        available += ",";
+        available.push(document.getElementById('academy').value);
     }
     if (document.getElementById('rebellion').checked) {
-        available += document.getElementById('rebellion').value;
-        available += ",";
+        available.push(document.getElementById('rebellion').value);
     }
     if (document.getElementById('war').checked) {
-        available += document.getElementById('war').value;
-        available += ",";
+        available.push(document.getElementById('war').value);
     }
     if (document.getElementById('droids').checked) {
-        available += document.getElementById('droids').value;
-        available += ",";
+        available.push(document.getElementById('droids').value);
     }
     if (document.getElementById('intrigue').checked) {
-        available += document.getElementById('intrigue').value;
-        available += ",";
+        available.push(document.getElementById('intrigue').value);
     }
     if (document.getElementById('unknown').checked) {
-        available += document.getElementById('unknown').value;
-        available += ",";
+        available.push(document.getElementById('unknown').value);
     }
     if (document.getElementById('web').checked) {
-        available += document.getElementById('web').value;
-        available += ",";
+        available.push(document.getElementById('web').value);
     }
     if (document.getElementById('homebrew').checked) {
-        available += document.getElementById('homebrew').value;
-        available += ",";
+        available.push(document.getElementById('homebrew').value);
     }
 
     if (available == "") {
-        available += document.getElementById('core').value;
-        available += ",";
+        available.push(document.getElementById('core').value);
     }
 
     return available;

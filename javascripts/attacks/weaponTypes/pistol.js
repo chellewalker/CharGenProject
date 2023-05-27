@@ -14,7 +14,7 @@ export function getPistol(BAB,level,dex,feats) {
 
     let pistolDie = 6;
 
-    let pistolDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
+    let pistolDamageRaw = Math.floor(level/2);
     let pistolDamage = "";
     if (pistolDamageRaw < 0) {
         pistolDamage = pistolDamageRaw;

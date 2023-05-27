@@ -14,7 +14,7 @@ export function getRifle(BAB,level,dex,feats) {
 
     let rifleDie = 8;
 
-    let rifleDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
+    let rifleDamageRaw = Math.floor(level/2);
     let rifleDamage = "";
     if (rifleDamageRaw < 0) {
         rifleDamage = rifleDamageRaw;

@@ -1,6 +1,6 @@
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
@@ -35,7 +35,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
-        advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,baseAttackBonus,grappleDisplay,
+        advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
 
     let output = 
@@ -56,7 +56,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         rifleAttack+
         heavyWeaponAttack+
         otherAttack+
-        "<strong>Base Attack Bonus:</strong> +"+baseAttackBonus+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
+        "<strong>Base Attack Bonus:</strong> +"+BAB+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
         "<strong>Species Traits ("+species+"):</strong> "+speciesTraits+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
@@ -75,7 +75,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
 
         let advancedMeleeAttack = "";
@@ -117,7 +117,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         rifleAttack+
         heavyWeaponAttack+
         otherAttack+
-        "Base Attack Bonus: +"+baseAttackBonus+", Grapple: "+grappleDisplay+"\n"+
+        "Base Attack Bonus: +"+BAB+", Grapple: "+grappleDisplay+"\n"+
         "Species Traits ("+species+"): "+speciesTraits+"\n"+
         "Base Stats\n"+
         "Abilities: Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"\n"+

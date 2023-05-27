@@ -4,24 +4,37 @@ import {scoundrelTalents} from './scoundrelTalents.js';
 import {scoutTalents} from './scoutTalents.js';
 import {soldierTalents} from './soldierTalents.js';
 
-export function getTalents(thisLevel,available,skills,feats,talents) {
+export function getTalent(thisLevel,available,skills,feats,talents) {
+    let talent;
 
     if (thisLevel == 0) {
-        talents.push(jediTalents(talents,available,skills,feats));
+        talent = jediTalents(talents,available,skills,feats);
     }
     else if (thisLevel == 1) {
-        talents.push(nobleTalents(talents,available,skills,feats));
+        talent = nobleTalents(talents,available,skills,feats);
     }
     else if (thisLevel == 2) {
-        talents.push(scoundrelTalents(talents,available,skills,feats));
+        talent = scoundrelTalents(talents,available,skills,feats);
     }
     else if (thisLevel == 3) {
-        talents.push(scoutTalents(talents,available,skills,feats));
+        talent = scoutTalents(talents,available,skills,feats);
     }
     else if (thisLevel == 4) {
-        talents.push(soldierTalents(talents,available,skills,feats));
+        talent = soldierTalents(talents,available,skills,feats);
     }
-    talents.sort();
 
-    return talents;
+    return talent;
+}
+
+export function displayTalents(talents) {
+    let talentDisplay = "";
+    let count;
+    for (count = 0; count < talents.length; count++) {
+        if (count != 0) {
+            talentDisplay += ", ";
+        }
+        talentDisplay += talents[count];
+    }
+
+    return talentDisplay;
 }

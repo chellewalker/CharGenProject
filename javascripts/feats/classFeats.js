@@ -6,10 +6,10 @@ export function classFeats(firstClass,int,con,skills,speciesTraits) {
         feats.push("Weapon Proficiency (Simple Weapons)");
     }
     if (firstClass == 1) {
-        if (int > 12) {
+        if (int >= 13) {
             feats.push("Linguist");
         }
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Weapon Proficiency (Simple Weapons)");
         }
         else {
@@ -17,7 +17,7 @@ export function classFeats(firstClass,int,con,skills,speciesTraits) {
         feats.push("Weapon Proficiency (Simple Weapons)");
     }}
     if (firstClass == 2) {
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Point-Blank Shot");
             feats.push("Weapon Proficiency (Simple Weapons)");
         }
@@ -27,10 +27,10 @@ export function classFeats(firstClass,int,con,skills,speciesTraits) {
         feats.push("Weapon Proficiency (Simple Weapons)");
     }}
     if (firstClass == 3) {
-        if (con > 12 && skills.includes("Endurance")) {
+        if (con >= 13 && skills.includes("Endurance")) {
             feats.push("Shake It Off");
         }
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Weapon Proficiency (Simple Weapons)");
         }
         else {
@@ -39,7 +39,7 @@ export function classFeats(firstClass,int,con,skills,speciesTraits) {
         feats.push("Weapon Proficiency (Simple Weapons)");
     }}
     if (firstClass == 4) {
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Armor Proficiency (Light)");
             feats.push("Armor Proficiency (Medium)");
             feats.push("Weapon Proficiency (Simple Weapons)");
@@ -57,7 +57,7 @@ export function classFeats(firstClass,int,con,skills,speciesTraits) {
     return feats;
 }
 
-export function multiclassFeat(thisLevel,feats,skills) {
+export function multiclassFeat(thisLevel,feats,skills,con,int) {
     let feat = "";
     if (thisLevel == 0) {
         if (skills.includes("Use the Force")) {

@@ -78,7 +78,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                 }
             }
         }
-        else if (randomNum == 16 && available.includes("CR") && speciesTraits.split(", ").includes("Rage") && BAB >= 1) {
+        else if (randomNum == 16 && available.includes("CR") && speciesTraits.includes("Rage") && BAB >= 1) {
             feat = "Dreadful Rage";
         }
         else if (randomNum == 17 && available.includes("CR") && dex >= 13 && BAB >= 1) {
@@ -108,7 +108,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     feat = "Exotic Weapon Proficiency (Bowcaster)";
                 }
         }
-        else if (randomNum == 21 && available.includes("CR") && speciesTraits.split(", ").includes("Rage")) {
+        else if (randomNum == 21 && available.includes("CR") && speciesTraits.includes("Rage")) {
             feat = "Extra Rage";
         }
         else if (randomNum == 22 && available.includes("CR") && skills.includes("Endurance")) {

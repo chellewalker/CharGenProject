@@ -7,23 +7,26 @@ import {getSkills,displaySkills,getInitiative,getPerception} from './classGen/sk
 import {getBAB} from './classGen/getBAB.js';
 import {getOutput} from './getOutput.js';
 import {speciesFeats,displayFeats} from './feats.js';
-import {getFeat} from './feats/getFeat.js';
+//import {getFeat} from './feats/getFeat.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
-import {getTalent,displayTalents} from './talents/getTalents.js';
+import {characterFeat} from './feats/characterFeat.js';
+import {getTalent,displayTalents} from './talents/getTalent.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
 import {classFirst,classListing} from './classGen.js';
 import {finalAbilities} from './abilities/abilityGen.js';
 import {getLevel} from './classGen/levelUp.js';
 import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
+import {displayEquipment} from './equipment/display.js';
 import {getWill} from './defenses/will.js';
 import {getGrapple} from './attacks/getGrapple.js';
+import {getWeapon} from './attacks/getWeapons.js';
 import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
 
-export function genCharacter() {
+window.genCharacter = function genCharacter() {
     // get values
     let count;
-    let available = references().split(",");
+    let available = references();
     let abilities = document.getElementById('abilities').value;
     let thisLevel = document.getElementById('class').value;
     let level = document.getElementById('level').value;
@@ -60,6 +63,7 @@ export function genCharacter() {
 
         //Class generation
         let classes = [0,0,0,0,0];
+        let firstClass;
         let hitPoints = 0;
         let talents = [];
         let feats = [];
@@ -67,7 +71,7 @@ export function genCharacter() {
         let BAB = 0;
         for (count = 0; count < level; count++) {
             if (count % 4 == 0) {
-                feats.push(characterFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
+                feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
             }
             if (count == 0) {
                 if (thisLevel == "random") {
@@ -81,8 +85,8 @@ export function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel));
-                hitPoints += getFirstHitPoints(thisLevel,available,skills,feats,talents);
+                talents.push(getTalent(thisLevel,available,skills,feats,talents));
+                hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,classes,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
             }
@@ -95,13 +99,15 @@ export function genCharacter() {
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0) {
-                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                    //feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 }
                 else {
                     talents.push(getTalent(thisLevel,available,skills,feats,talents));
                 }
             }
         }
+        talents.sort();
+        feats.sort();
         let classList = classListing(firstClass,classes);
         let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
         let listTalents = displayTalents(talents);
@@ -126,15 +132,16 @@ export function genCharacter() {
 
         //attacks and damage
         let unarmed = getUnarmed(BAB,level,str,size,speciesTraits,feats);
-        let advancedMelee,heavyWeapon,lightsaber,pistol,rifle,equipment = getWeapon(BAB,level,str,dex,feats);
+        let advancedMelee,heavyWeapon,lightsaber,pistol,rifle,otherAttack,equipment = getWeapon(BAB,level,str,dex,feats);
 
         //equipment
         equipment.sort();
+        let equipmentList = displayEquipment(equipment);
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
-            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grapple,
+            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
     
         document.write(output);

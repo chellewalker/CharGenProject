@@ -12,6 +12,7 @@ export function getWeapon(BAB,level,str,dex,feats) {
     let lightsaber = "";
     let pistol = "";
     let rifle = "";
+    let otherAttack = "";
 
     if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
         advancedMelee,temp = getAdvancedMelee(BAB,level,str,feats);
@@ -34,5 +35,5 @@ export function getWeapon(BAB,level,str,dex,feats) {
         equipment.push(temp);
     }
 
-    return advancedMelee,heavyWeapon,lightsaber,pistol,rifle,equipment;
+    return advancedMelee,heavyWeapon,lightsaber,pistol,rifle,otherAttack,equipment;
 }

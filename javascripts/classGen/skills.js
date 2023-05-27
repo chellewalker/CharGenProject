@@ -26,7 +26,7 @@ export function getSkills (int,firstClass,speciesTraits,classes) {
         if (firstClass == 4 || classes[0] > 4) {
             classSkills += soldierSkills;
         }
-        if (speciesTraits.split(", ").includes("Bonus Class Skills (Climb and Stealth)")) {
+        if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
             classSkills +="Climb";
             classSkills +="Stealth";
         }
@@ -52,7 +52,7 @@ export function getSkills (int,firstClass,speciesTraits,classes) {
             if (trained < 2) {
                 trained = 1;
             }
-            if (speciesTraits.split(", ").includes("Bonus Trained Skill")) {
+            if (speciesTraits.includes("Bonus Trained Skill")) {
                 trained++;
             }
             let thisSkills = [];
@@ -121,7 +121,7 @@ export function getNewSkill(speciesTraits,classes,skills) {
         if (firstClass == 4 || classes[0] > 4) {
             classSkills += soldierSkills;
         }
-        if (speciesTraits.split(", ").includes("Bonus Class Skills (Climb and Stealth)")) {
+        if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
             classSkills +="Climb";
             classSkills +="Stealth";
         }
@@ -287,7 +287,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         }
         if (chaSkills.includes(trainedSkills[count])) {
             let score = (Math.floor(level/2)+Math.floor((cha-10)/2)+5);
-            if (trainedSkills[count] == "Persuasion" && speciesTraits.split(", ").includes("Logical Reasoning")) {
+            if (trainedSkills[count] == "Persuasion" && speciesTraits.includes("Logical Reasoning")) {
                 score = (Math.floor(level/2)+Math.floor((Math.max(cha,int)-10)/2)+5);
             }
             if (trainedSkills[count] == "Deception" && feats.includes("Skill Focus (Deception)")) {

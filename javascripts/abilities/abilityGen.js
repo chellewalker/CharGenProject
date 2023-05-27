@@ -41,9 +41,17 @@ return [str,dex,con,int,wis,cha]
 
 export function finalAbilities(abilities,level,speciesMod) {
     let check = 0;
-    while (check != 1) {
-        let statGen = abilityGen(abilities);
-        let statLevel = Math.floor(level / 4);
+    let statGen;
+    let statLevel;
+    let str;
+    let dex;
+    let con;
+    let int;
+    let wis;
+    let cha;
+    while (check == 0) {
+        statGen = abilityGen(abilities);
+        statLevel = Math.floor(level / 4);
     let count;
     for (count = 0; count < statLevel; count++) {
         let statRandom1 = Math.floor(Math.random() * 5);
@@ -58,12 +66,12 @@ export function finalAbilities(abilities,level,speciesMod) {
             statGen[statRandom3]++;
         }
     }
-        let str = statGen[0];
-        let dex = statGen[1];
-        let con = statGen[2];
-        let int = statGen[3];
-        let wis = statGen[4];
-        let cha = statGen[5];
+        str = statGen[0];
+        dex = statGen[1];
+        con = statGen[2];
+        int = statGen[3];
+        wis = statGen[4];
+        cha = statGen[5];
 
     if (typeof str !== 'undefined' &&
         typeof dex !== 'undefined' &&
@@ -98,6 +106,7 @@ export function finalAbilities(abilities,level,speciesMod) {
                     cha += Number(indAbilityMods[1]);
                 }
             }}
-        }}
+        }
+    }
     return str,dex,con,int,wis,cha;
 }
