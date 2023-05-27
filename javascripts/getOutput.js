@@ -1,5 +1,5 @@
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmed,meleeDamage,
+    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
     let destiny = "";
@@ -34,7 +34,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmed,meleeDamage,
+        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
         advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,baseAttackBonus,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
 
@@ -74,7 +74,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 }
 
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
+    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
 
@@ -110,7 +110,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         "Hit Points: "+hitPoints+", Damage Threshold: "+damageThreshold+"\n"+
         "Offense\n"+
         "Speed: "+speed+"\n"+
-        "Melee: Unarmed "+meleeAttack+" ("+unarmedList[unarmed]+meleeDamage+")"+"\n"+
+        "Melee: "+unarmed+"\n"+
         advancedMeleeAttack+
         lightsaberAttack+
         pistolAttack+

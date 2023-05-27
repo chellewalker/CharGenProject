@@ -158,6 +158,12 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         else if (randomNum == 40 && available.includes("CR")  && feats.includes("Martial Arts I") && feats.includes("Martial Arts II") && BAB >= 6) {
             feat = "Martial Arts III";
         }
+        else if (randomNum == 41 && available.includes("CR") && int >= 13) {
+            feat = "Melee Defense";
+        }
+        else if (randomNum == 42 && available.includes("CR") && str >= 13) {
+            feat = "Mighty Swing";
+        }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training") {
             feat = "";
         }

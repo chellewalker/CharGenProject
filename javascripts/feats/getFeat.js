@@ -4,7 +4,7 @@ import {scoundrelFeats} from './scoundrelFeats.js';
 import {scoutFeats} from './scoutFeats.js';
 import {soldierFeats} from './soldierFeats.js';
 
-export function getFeats(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits) {
+export function getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits) {
 
     if (thisLevel == 0) {
         feats.push(jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));

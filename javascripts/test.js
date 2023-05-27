@@ -10,7 +10,7 @@ import {speciesFeats,getFeat,displayFeats} from './feats.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
 import {getTalent,displayTalents} from './talents/getTalents.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
-import {classFirst,getFirstHitPoints,classSelection,classListing} from './classGen.js';
+import {classFirst,getFirstHitPoints,classListing} from './classGen.js';
 import {finalAbilities} from './abilities/abilityGen.js';
 import {getLevel} from './classGen/levelUp.js';
 import {getFlatFooted, getReflex} from './defenses/reflex.js';
@@ -132,7 +132,7 @@ export function genCharacter() {
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-            reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmed,meleeDamage,
+            reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grapple,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
     

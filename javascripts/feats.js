@@ -9,7 +9,7 @@ export function classFeats(firstClass,classes,int,con,skills,speciesTraits) {
         if (int > 12) {
             feats.push("Linguist");
         }
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Weapon Proficiency (Simple Weapons)");
         }
         else {
@@ -17,7 +17,7 @@ export function classFeats(firstClass,classes,int,con,skills,speciesTraits) {
         feats.push("Weapon Proficiency (Simple Weapons)");
     }}
     if (firstClass == 2) {
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Point-Blank Shot");
             feats.push("Weapon Proficiency (Simple Weapons)");
         }
@@ -30,7 +30,7 @@ export function classFeats(firstClass,classes,int,con,skills,speciesTraits) {
         if (con > 12 && skills.includes("Endurance")) {
             feats.push("Shake It Off");
         }
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Weapon Proficiency (Simple Weapons)");
         }
         else {
@@ -39,7 +39,7 @@ export function classFeats(firstClass,classes,int,con,skills,speciesTraits) {
         feats.push("Weapon Proficiency (Simple Weapons)");
     }}
     if (firstClass == 4) {
-        if (speciesTraits.split(", ").includes("Primitive")) {
+        if (speciesTraits.includes("Primitive")) {
             feats.push("Armor Proficiency (Light)");
             feats.push("Armor Proficiency (Medium)");
             feats.push("Weapon Proficiency (Simple Weapons)");
@@ -156,13 +156,13 @@ export function classFeats(firstClass,classes,int,con,skills,speciesTraits) {
 }
 
 export function speciesFeats(feats,speciesTraits,skills) {
-    if (speciesTraits.split(", ").includes("Bonus Feat (Improved Damage Threshold)")) {
+    if (speciesTraits.includes("Bonus Feat (Improved Damage Threshold)")) {
         feats.push("Improved Damage Threshold");
     }
-    if (speciesTraits.split(", ").includes("Bonus Feat (Toughness)")) {
+    if (speciesTraits.includes("Bonus Feat (Toughness)")) {
         feats.push("Toughness");
     }
-    if (speciesTraits.split(", ").includes("Bonus Feat (Skill Focus)")) {
+    if (speciesTraits.includes("Bonus Feat (Skill Focus)")) {
         let check = 0;
         let check2 = 0;
         while (check == 0) {
@@ -203,27 +203,27 @@ export function speciesFeats(feats,speciesTraits,skills) {
         }
         }
     }
-    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Gather Information))") && 
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Gather Information))") && 
         skills.includes("Gather Information")) {
         feats.push("Skill Focus (Gather Information)");
     }
-    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Initiative))") && 
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Initiative))") && 
         skills.includes("Initiative")) {
         feats.push("Skill Focus (Initiative)");
     }
-    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Knowledge (Life Sciences)))") && 
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Knowledge (Life Sciences)))") && 
         skills.includes("Knowledge (Life Sciences)")) {
         feats.push("Skill Focus (Knowledge (Life Sciences))");
     }
-    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Perception))") && 
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Perception))") && 
         skills.includes("Perception")) {
         feats.push("Skill Focus (Perception)");
     }
-    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Persuasion))") && 
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Persuasion))") && 
         skills.includes("Persuasion")) {
         feats.push("Skill Focus (Persuasion)");
     }
-    if (speciesTraits.split(", ").includes("Conditional Bonus Feat (Skill Focus (Survival))") && 
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Survival))") && 
         skills.includes("Survival")) {
         feats.push("Skill Focus (Survival)");
     }
@@ -335,7 +335,7 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
                 }
             }
         }
-        else if (randomNum == 16 && available.includes("CR") && speciesTraits.split(", ").includes("Rage") && BAB >= 1) {
+        else if (randomNum == 16 && available.includes("CR") && speciesTraits.includes("Rage") && BAB >= 1) {
             feat = "Dreadful Rage";
         }
         else if (randomNum == 17 && available.includes("CR") && dex >= 13 && BAB >= 1) {
@@ -365,7 +365,7 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
                     feat = "Exotic Weapon Proficiency (Bowcaster)";
                 }
         }
-        else if (randomNum == 21 && available.includes("CR") && speciesTraits.split(", ").includes("Rage")) {
+        else if (randomNum == 21 && available.includes("CR") && speciesTraits.includes("Rage")) {
             feat = "Extra Rage";
         }
         else if (randomNum == 22 && available.includes("CR") && skills.includes("Endurance")) {
