@@ -160,8 +160,8 @@ window.genCharacter = function genCharacter() {
         if (feats.includes("ValidFeatNotFound")) {
             failsafe = 0;
         }
-        if (safecount > 20) {
-            alert("test");
+        if (talents.includes("ValidTalentNotFound")) {
+            failsafe = 0;
         }
     }
 

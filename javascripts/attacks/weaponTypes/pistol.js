@@ -8,7 +8,6 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolAttackRaw++;
     }
 
-    while (pistolWeapon == "") {
         let randomNum = Math.floor(Math.random() * 6);
 
         if (randomNum == 0) {
@@ -42,7 +41,6 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
             pistolDice = 2;
             pistolDie = 6;
         }
-    }
 
         let pistolAttack = "";
         if (pistolAttackRaw < 0) {

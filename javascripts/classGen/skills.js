@@ -21,23 +21,23 @@ export function getClassSkills(speciesTraits,classes) {
     
         let classSkills = [];
         if (classes[0] > 0) {
-            classSkills += jediSkills;
+            classSkills.push(jediSkills);
         }
         if (classes[1] > 0) {
-            classSkills += nobleSkills;
+            classSkills.push(nobleSkills);
         }
         if (classes[2] > 0) {
-            classSkills += scoundrelSkills;
+            classSkills.push(scoundrelSkills);
         }
         if (classes[3] > 0) {
-            classSkills += scoutSkills;
+            classSkills.push(scoutSkills);
         }
         if (classes[0] > 4) {
-            classSkills += soldierSkills;
+            classSkills.push(soldierSkills);
         }
         if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
-            classSkills +="Climb";
-            classSkills +="Stealth";
+            classSkills.push("Climb");
+            classSkills.push("Stealth");
         }
 
     return classSkills;
@@ -78,14 +78,13 @@ export function getNewSkill(speciesTraits,classes,skills) {
 
             let thisSkill = "";
             while (thisSkill == "") {
-                thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
-                if (classSkills.includes(thisSkill)) {
+                thisSkill = classSkills[Math.round(Math.random() * classSkills.length)];
+                alert(classSkills);
+                alert(classSkills.length);
                 if (skills.includes(thisSkill)) {
                     thisSkill = "";
-                }}
-                else {
-                    thisSkill = "";
                 }
+            alert(thisSkill);
         }
         return thisSkill;
 }

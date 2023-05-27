@@ -10,7 +10,6 @@ export function getLightsaber(available,BAB,level,str,dex,feats,talents,size) {
         lightsaberAttackRaw++;
     }
 
-    while (lightsaberWeapon == "") {
         let randomNum = Math.floor(Math.random() * 3);
 
         if (randomNum == 0) {
@@ -28,7 +27,6 @@ export function getLightsaber(available,BAB,level,str,dex,feats,talents,size) {
             lightsaberDice = 2;
             lightsaberDie = 8;
         }
-    }
 
         let lightsaberAttack = "";
         if (lightsaberAttackRaw < 0) {

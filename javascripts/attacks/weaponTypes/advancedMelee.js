@@ -10,7 +10,6 @@ export function getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size)
         advancedMeleeAttackRaw++;
     }
 
-    while (advancedMeleeWeapon == "") {
         let randomNum = Math.floor(Math.random() * 6);
 
         if (randomNum == 0) {
@@ -43,7 +42,6 @@ export function getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size)
             advancedMeleeDice = 2;
             advancedMeleeDie = 10;
         }
-    }
 
         let advancedMeleeAttack = "";
         if (advancedMeleeAttackRaw < 0) {
