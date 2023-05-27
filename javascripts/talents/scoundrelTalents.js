@@ -1,10 +1,10 @@
 export function scoundrelTalents(talents,available,skills,feats) {
-    
+    let count = 0;
     let talent = "";
     while (talent == "") {
+        count++;
         //let randomNum = Math.floor(Math.random() * 14);
         let randomNum = Math.floor(Math.random() * 3);
-
     if (randomNum == 0) {
         talent = fortuneTalents(talents,available,skills,feats);
     }
@@ -47,13 +47,18 @@ export function scoundrelTalents(talents,available,skills,feats) {
     else if (randomNum == 13 && available.includes("UR")) {
         talent = outsiderTalents(talents,available,skills,feats);
     }
+    if (count == 20) {
+        talent = "NoValidTalent";
     }
+}
     return talent;
 }
 
 export function fortuneTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 13);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -105,7 +110,9 @@ export function fortuneTalents(talents,available,skills,feats) {
 
 export function misfortuneTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 16);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -166,7 +173,9 @@ export function misfortuneTalents(talents,available,skills,feats) {
 
 export function slicerTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 7);
 
     if (randomNum == 0 && available.includes("CR")) {

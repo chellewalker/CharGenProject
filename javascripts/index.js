@@ -7,6 +7,7 @@ import {classFeats,speciesFeats,displayFeats,getFeats} from './feats.js';
 import {getTalents,displayTalents} from './talents/getTalents.js';
 import {classFirst,classSelection,classListing,getHitPoints,getBAB,availableFeats} from './classGen.js';
 import {abilityGen} from './abilities/abilityGen.js';
+import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
 import {getOutput} from './getOutput.js';
 
 window.genCharacter = function genCharacter() {
@@ -178,17 +179,6 @@ while (check != 1) {
         else {
             rangedDamage = "+" + rangedDamageRaw;
         }
-        let unarmedList = ["1d2","1d3","1d4","1d6","1d8","1d10","1d12"];
-        let unarmed = 2;
-        if (size == "Small") {
-            unarmed--;
-        }
-        if (size == "Large") {
-            unarmed++;
-        }
-        if (speciesTraits.split(", ").includes("Natural Weapons")) {
-            unarmed = 3;
-        }
         let skills = getSkills(int,firstClass,speciesTraits,classes);
         let availFeats = availableFeats(level,classes,firstClass,speciesTraits);
         let feats = [];
@@ -196,6 +186,7 @@ while (check != 1) {
         feats = speciesFeats(feats,speciesTraits,skills);
         feats = getFeats(available,availFeats[0],availFeats[1],availFeats[2],availFeats[3],availFeats[4],availFeats[5],feats,skills,str,dex,con,int,wis,cha,baseAttackBonus,speciesTraits);
         let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
+        let unarmed = getUnarmed(baseAttackBonus,level,str,size,speciesTraits,feats);
         if (skills.includes("Initiative")) {
             initiative += 5;
         }
@@ -313,50 +304,47 @@ while (check != 1) {
         let listLanguages = languageList(languages);
         
         if (feats.includes("Martial Arts I")) {
-            unarmed++;
             reflex++;
         }
         if (feats.includes("Martial Arts II")) {
-            unarmed++;
             reflex++;
         }
         if (feats.includes("Martial Arts III")) {
-            unarmed++;
             reflex++;
         }
         let advancedMeleeAttack = meleeAttack;
         let advancedMeleeDamage = meleeDamage;
         let advancedMelee = "";
         if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
-            advancedMelee = "<strong>Melee:</strong> Vibroblade "+advancedMeleeAttack+" (2d6"+advancedMeleeDamage+")<br>";
+            advancedMelee = "Vibroblade "+advancedMeleeAttack+" (2d6"+advancedMeleeDamage+")";
         }
         let lightsaberAttack = meleeAttack;
         let lightsaberDamage = meleeDamage;
         let lightsaber = "";
         if (feats.includes("Weapon Proficiency (Lightsabers)")) {
-            lightsaber = "<strong>Melee:</strong> Lightsaber "+lightsaberAttack+" (2d8"+lightsaberDamage+")<br>";
+            lightsaber = "Lightsaber "+lightsaberAttack+" (2d8"+lightsaberDamage+")";
         }
         let pistolAttack = rangedAttack;
         let pistolDamage = rangedDamage;
         let blasterPistol = "";
         if (feats.includes("Weapon Proficiency (Pistols)")) {
-            blasterPistol = "<strong>Ranged:</strong> Blaster Pistol "+pistolAttack+" (3d6"+pistolDamage+")<br>";
+            blasterPistol = "Blaster Pistol "+pistolAttack+" (3d6"+pistolDamage+")";
         }
         let rifleAttack = rangedAttack;
         let rifleDamage = rangedDamage;
         let blasterRifle = "";
         if (feats.includes("Weapon Proficiency (Rifles)")) {
-            blasterRifle = "<strong>Ranged:</strong> Blaster Rifle "+rifleAttack+" (3d8"+rifleDamage+")<br>";
+            blasterRifle = "Blaster Rifle "+rifleAttack+" (3d8"+rifleDamage+")";
         }
         let heavyWeaponAttack = rangedAttack;
         let heavyWeaponDamage = rangedDamage;
         let heavyWeapon = "";
         if (feats.includes("Weapon Proficiency (Heavy Weapons)") && size != "Small") {
-            heavyWeapon = "<strong>Ranged:</strong> Blaster Cannon "+heavyWeaponAttack+" (3d12"+heavyWeaponDamage+")<br>";
+            heavyWeapon = "Blaster Cannon "+heavyWeaponAttack+" (3d12"+heavyWeaponDamage+")";
         }
         let otherAttack = "";
         if (blasterPistol == "" && blasterRifle == "") {
-            otherAttack = "<strong>Ranged:</strong> By Weapon "+rangedAttack+"<br>";
+            otherAttack = "By Weapon "+rangedAttack+"<br>";
         }
         let equipment = [];
         if (advancedMelee != "") {
@@ -392,7 +380,7 @@ while (check != 1) {
 
     // output results
     let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
+        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmed,meleeDamage,
         advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
 

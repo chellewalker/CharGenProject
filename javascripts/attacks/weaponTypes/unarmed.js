@@ -1,4 +1,4 @@
-export function getUnarmed(BAB,str,size,speciesTraits,feats) {
+export function getUnarmed(BAB,level,str,size,speciesTraits,feats) {
     let unarmedAttackRaw = BAB + Math.floor((str-10)/2);
         let unarmedAttack = "";
         if (unarmedAttackRaw < 0) {
@@ -40,6 +40,7 @@ export function getUnarmed(BAB,str,size,speciesTraits,feats) {
     else {
         unarmedDamage = "+" + unarmedDamageRaw;
     }
+    let string = "Unarmed " + unarmedAttack +" ("+ unarmedDice+"d"+unarmedList[unarmedDie]+unarmedDamage + ")";
 
-    return "Unarmed " + unarmedAttack +" ("+ unarmedDice,unarmedList[unarmedDie],unarmedDamage + ")";
+    return string;
 }

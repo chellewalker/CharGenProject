@@ -16,6 +16,7 @@ import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {getWill} from './defenses/will.js';
 import {getGrapple} from './attacks/getGrapple.js';
+import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
 
 export function genCharacter() {
     // get values
@@ -121,6 +122,7 @@ export function genCharacter() {
         let speed = getSpeed(speciesID,talents,feats);
 
         //attacks and damage
+        let unarmed = getUnarmed(BAB,level,str,size,speciesTraits,feats);
 
         //equipment
 

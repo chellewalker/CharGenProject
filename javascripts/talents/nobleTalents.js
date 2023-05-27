@@ -1,10 +1,10 @@
 export function nobleTalents(talents,available,skills,feats) {
-    
+    let count = 0;
     let talent = "";
     while (talent == "") {
+        count++;
         //let randomNum = Math.floor(Math.random() * 16);
         let randomNum = Math.floor(Math.random() * 3);
-
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats);
     }
@@ -53,13 +53,18 @@ export function nobleTalents(talents,available,skills,feats) {
     else if (randomNum == 15 && available.includes("UR")) {
         talent = exileTalents(talents,available,skills,feats);
     }
+    if (count == 20) {
+        talent = "NoValidTalent";
     }
+}
     return talent;
 }
 
 export function influenceTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 6);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -90,7 +95,9 @@ export function influenceTalents(talents,available,skills,feats) {
 
 export function inspirationTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 7);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -124,7 +131,9 @@ export function inspirationTalents(talents,available,skills,feats) {
 
 export function leadershipTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 11);
 
     if (randomNum == 0 && available.includes("CR")) {

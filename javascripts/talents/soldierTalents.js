@@ -1,10 +1,10 @@
 export function soldierTalents(talents,available,skills,feats) {
-    
+    let count = 0;
     let talent = "";
     while (talent == "") {
+        count++;
         //let randomNum = Math.floor(Math.random() * 13);
         let randomNum = Math.floor(Math.random() * 3);
-
     if (randomNum == 0) {
         talent = armorTalents(talents,available,skills,feats);
     }
@@ -44,13 +44,18 @@ export function soldierTalents(talents,available,skills,feats) {
     else if (randomNum == 12 && available.includes("UR")) {
         talent = warriorTalents(talents,available,skills,feats);
     }
+    if (count == 20) {
+        talent = "NoValidTalent";
     }
+}
     return talent;
 }
 
 export function armorTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 6);
 
     if (randomNum == 0 && available.includes("CR") && talents.includes("Armored Defense")) {
@@ -81,7 +86,9 @@ export function armorTalents(talents,available,skills,feats) {
 
 export function brawlerTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 22);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -160,7 +167,9 @@ export function brawlerTalents(talents,available,skills,feats) {
 
 export function commandoTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 14);
 
     if (randomNum == 0 && available.includes("CR")) {

@@ -1,7 +1,10 @@
 export function jediTalents(talents,available,skills,feats) {
-    //let randomNum = Math.floor(Math.random() * 4);
-    let randomNum = Math.floor(Math.random() * 3);
-    let talent;
+    let count = 0;
+    let talent = "";
+    while (talent == "") {
+        count++;
+        //let randomNum = Math.floor(Math.random() * 4);
+        let randomNum = Math.floor(Math.random() * 3);
     if (randomNum == 0) {
         talent = consularTalents(talents,available,skills,feats);
     }
@@ -14,13 +17,19 @@ export function jediTalents(talents,available,skills,feats) {
     else if (randomNum == 3) {
         talent = lightsaberTalents(talents,available,skills,feats);
     }
+    if (count == 20) {
+        talent = "NoValidTalent";
+    }
+}
 
     return talent;
 }
 
 export function consularTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 20);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -93,7 +102,9 @@ export function consularTalents(talents,available,skills,feats) {
 
 export function guardianTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 16);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -155,7 +166,9 @@ export function guardianTalents(talents,available,skills,feats) {
 
 export function sentinelTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 19);
 
     if (randomNum == 0 && available.includes("CR")) {

@@ -1,10 +1,10 @@
 export function scoutTalents(talents,available,skills,feats) {
-    
+    let count = 0;
     let talent = "";
     while (talent == "") {
+        count++;
         //let randomNum = Math.floor(Math.random() * 14);
         let randomNum = Math.floor(Math.random() * 3);
-
     if (randomNum == 0) {
         talent = awarenessTalents(talents,available,skills,feats);
     }
@@ -47,13 +47,18 @@ export function scoutTalents(talents,available,skills,feats) {
     else if (randomNum == 13 && available.includes("UR")) {
         talent = mobileTalents(talents,available,skills,feats);
     }
+    if (count == 20) {
+        talent = "NoValidTalent";
     }
+}
     return talent;
 }
 
 export function awarenessTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 8);
 
     if (randomNum == 0 && available.includes("CR")) {
@@ -90,7 +95,9 @@ export function awarenessTalents(talents,available,skills,feats) {
 
 export function camouflageTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 10);
 
     if (randomNum == 0 && available.includes("CR") && talents.includes("Improved Stealth")) {
@@ -133,7 +140,9 @@ export function camouflageTalents(talents,available,skills,feats) {
 
 export function fringerTalents(talents,available,skills,feats) {
     let talent = "";
-    while (talent == "") {
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
     let randomNum = Math.floor(Math.random() * 9);
 
     if (randomNum == 0 && available.includes("CR")) {

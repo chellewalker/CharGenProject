@@ -1,6 +1,6 @@
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
-    advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
+    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmed,meleeDamage,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
@@ -12,9 +12,30 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
             forcePoints += 3;
         }
 
+    let advancedMeleeAttack = "";
+    let lightsaberAttack = "";
+    let pistolAttack = "";
+    let rifleAttack = "";
+    let heavyWeaponAttack = "";
+    if (advancedMelee != "") {
+        advancedMeleeAttack = "<strong>Melee:</strong> "+advancedMelee+"<br>";
+    }
+    if (lightsaber != "") {
+        lightsaberAttack = "<strong>Melee:</strong> "+lightsaber+"<br>";
+    }
+    if (pistol != "") {
+        pistolAttack = "<strong>Ranged:</strong> "+pistol+"<br>";
+    }
+    if (rifle != "") {
+        rifleAttack = "<strong>Ranged:</strong> "+rifle+"<br>";
+    }
+    if (heavyWeapon != "") {
+        heavyWeaponAttack = "<strong>Ranged:</strong> "+heavyWeapon+"<br>";
+    }
+
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
-        advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
+        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmed,meleeDamage,
+        advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,baseAttackBonus,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
 
     let output = 
@@ -28,12 +49,12 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<strong>Hit Points:</strong> "+hitPoints+", <strong>Damage Threshold:</strong> "+damageThreshold+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Offense</strong></u></p>"+
         "<strong>Speed:</strong> "+speed+"<br>"+
-        "<strong>Melee:</strong> Unarmed "+meleeAttack+" ("+unarmedList[unarmed]+meleeDamage+")"+"<br>"+
-        advancedMelee+
-        lightsaber+
-        blasterPistol+
-        blasterRifle+
-        heavyWeapon+
+        "<strong>Melee:</strong> "+unarmed+"<br>"+
+        advancedMeleeAttack+
+        lightsaberAttack+
+        pistolAttack+
+        rifleAttack+
+        heavyWeaponAttack+
         otherAttack+
         "<strong>Base Attack Bonus:</strong> +"+baseAttackBonus+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
         "<strong>Species Traits ("+species+"):</strong> "+speciesTraits+"<br>"+
@@ -54,8 +75,29 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
-    advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
+
+        let advancedMeleeAttack = "";
+        let lightsaberAttack = "";
+        let pistolAttack = "";
+        let rifleAttack = "";
+        let heavyWeaponAttack = "";
+        if (advancedMelee != "") {
+            advancedMeleeAttack = "Melee: "+advancedMelee+"<br>";
+        }
+        if (lightsaber != "") {
+            lightsaberAttack = "Melee: "+lightsaber+"<br>";
+        }
+        if (pistol != "") {
+            pistolAttack = "Ranged: "+pistol+"<br>";
+        }
+        if (rifle != "") {
+            rifleAttack = "Ranged: "+rifle+"<br>";
+        }
+        if (heavyWeapon != "") {
+            heavyWeaponAttack = "Ranged: "+heavyWeapon+"<br>";
+        }
 
     let outputData = 
     name+" Statistics (CL "+level+")\n"+
@@ -69,11 +111,11 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         "Offense\n"+
         "Speed: "+speed+"\n"+
         "Melee: Unarmed "+meleeAttack+" ("+unarmedList[unarmed]+meleeDamage+")"+"\n"+
-        advancedMelee+
-        lightsaber+
-        blasterPistol+
-        blasterRifle+
-        heavyWeapon+
+        advancedMeleeAttack+
+        lightsaberAttack+
+        pistolAttack+
+        rifleAttack+
+        heavyWeaponAttack+
         otherAttack+
         "Base Attack Bonus: +"+baseAttackBonus+", Grapple: "+grappleDisplay+"\n"+
         "Species Traits ("+species+"): "+speciesTraits+"\n"+
