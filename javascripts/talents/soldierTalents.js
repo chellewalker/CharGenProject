@@ -44,8 +44,8 @@ export function soldierTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 12 && available.includes("UR")) {
         talent = warriorTalents(talents,available,skills,feats,BAB);
     }
-    if (count == 20) {
-        talent = "ValidTalentNotFound";
+    if (count == 500) {
+        talent = "ValidSoldierTalentNotFound";
     }
 }
     return talent;

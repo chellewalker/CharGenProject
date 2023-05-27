@@ -182,7 +182,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
         else if (randomNum == 43) {
             feat = "Weapon Proficiency (Lightsabers)";
         }
-        if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Force Training") {
+        if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training") {
             feat = "";
         }
         if (count2 == 500) {

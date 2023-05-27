@@ -5,6 +5,9 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
     let special = "";
 
     let rifleAttackRaw = BAB + Math.floor((dex-10)/2);
+    if (feats.includes("Weapon Focus (Rifles)")) {
+        rifleAttackRaw++;
+    }
 
     while (rifleWeapon == "") {
         let randomNum = Math.floor(Math.random() * 7);

@@ -24,11 +24,10 @@ while (feat == "") {
     else if (thisLevel == 4) {
         feat = soldierFeats(feats,available,skills,talents,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
-    if (feats.includes(feat)) {
+    if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training") {
         feat = "";
     }
-    if (count == 500) {
-        alert(thisLevel);
+    if (count == 50000) {
         feat = "ValidFeatNotFound";
     }
 }

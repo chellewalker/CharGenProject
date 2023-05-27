@@ -16,8 +16,8 @@ export function jediTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 3) {
         talent = lightsaberTalents(talents,available,skills,feats,BAB);
     }
-    if (count == 20) {
-        talent = "ValidTalentNotFound";
+    if (count == 500) {
+        talent = "ValidJediTalentNotFound";
     }
 }
 

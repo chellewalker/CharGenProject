@@ -1,8 +1,14 @@
-export function getLightsaber(available,BAB,level,str,feats,talents,size) {
+export function getLightsaber(available,BAB,level,str,dex,feats,talents,size) {
     let lightsaberWeapon = "";
     let lightsaberDice;
     let lightsaberDie;
     let lightsaberAttackRaw = BAB + Math.floor((str-10)/2);
+    if (feats.includes("Weapon Finesse")) {
+        lightsaberAttackRaw = BAB + Math.max(Math.floor((dex-10)/2),Math.floor((str-10)/2));
+    }
+    if (feats.includes("Weapon Focus (Lightsabers)")) {
+        lightsaberAttackRaw++;
+    }
 
     while (lightsaberWeapon == "") {
         let randomNum = Math.floor(Math.random() * 3);

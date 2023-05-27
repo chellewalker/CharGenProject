@@ -1,8 +1,14 @@
-export function getAdvancedMelee(available,BAB,level,str,feats,talents,size) {
+export function getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size) {
     let advancedMeleeWeapon = "";
     let advancedMeleeDice;
     let advancedMeleeDie;
     let advancedMeleeAttackRaw = BAB + Math.floor((str-10)/2);
+    if (feats.includes("Weapon Finesse")) {
+        advancedMeleeAttackRaw = BAB + Math.max(Math.floor((dex-10)/2),Math.floor((str-10)/2));
+    }
+    if (feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
+        advancedMeleeAttackRaw++;
+    }
 
     while (advancedMeleeWeapon == "") {
         let randomNum = Math.floor(Math.random() * 6);

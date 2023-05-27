@@ -4,6 +4,9 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
     let pistolDie;
     let special = "";
     let pistolAttackRaw = BAB + Math.floor((dex-10)/2);
+    if (feats.includes("Weapon Focus (Pistols)")) {
+        pistolAttackRaw++;
+    }
 
     while (pistolWeapon == "") {
         let randomNum = Math.floor(Math.random() * 6);

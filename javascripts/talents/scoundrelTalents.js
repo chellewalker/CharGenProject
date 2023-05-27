@@ -47,8 +47,8 @@ export function scoundrelTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 13 && available.includes("UR")) {
         talent = outsiderTalents(talents,available,skills,feats,BAB);
     }
-    if (count == 20) {
-        talent = "ValidTalentNotFound";
+    if (count == 500) {
+        talent = "ValidScoundrelTalentNotFound";
     }
 }
     return talent;

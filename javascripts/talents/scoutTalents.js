@@ -47,8 +47,8 @@ export function scoutTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 13 && available.includes("UR")) {
         talent = mobileTalents(talents,available,skills,feats,BAB);
     }
-    if (count == 20) {
-        talent = "ValidTalentNotFound";
+    if (count == 500) {
+        talent = "ValidScoutTalentNotFound";
     }
 }
     return talent;

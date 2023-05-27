@@ -29,6 +29,7 @@ import {getPistol} from './attacks/weaponTypes/pistol.js';
 import {getRifle} from './attacks/weaponTypes/rifle.js';
 
 window.genCharacter = function genCharacter() {
+    
     // get values
     let count;
     let available = references();
@@ -73,13 +74,32 @@ window.genCharacter = function genCharacter() {
             let cha = statGen[5];
 
         //Class generation
-        let classes = [0,0,0,0,0];
+    let failsafe = 0;
+    let classes = [0,0,0,0,0];
         let firstClass;
         let hitPoints = 0;
         let talents = [];
         let feats = [];
         let skills = [];
         let BAB = 0;
+        let classList;
+        let listSkills;
+        let listTalents;
+        let listFeats;
+        let initiativeDisplay;
+        let perceptionDisplay;
+        let grapple;
+        let safecount = 0;
+    while (failsafe == 0) {
+        safecount++;
+        failsafe = 1;
+        classes = [0,0,0,0,0];
+        hitPoints = 0;
+        talents = [];
+        feats = [];
+        skills = [];
+        BAB = 0;
+
         for (count = 0; count < level; count++) {
             if (count == 0) {
                 if (thisLevel == "random") {
@@ -129,13 +149,21 @@ window.genCharacter = function genCharacter() {
         }}
         talents.sort();
         feats.sort();
-        let classList = classListing(firstClass,classes);
-        let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
-        let listTalents = displayTalents(talents);
-        let listFeats = displayFeats(feats);
-        let initiativeDisplay = getInitiative(level,dex,skills,feats);
-        let perceptionDisplay = getPerception(level,wis,skills,feats);
-        let grapple = getGrapple(BAB,str,dex,size,talents);
+        classList = classListing(firstClass,classes);
+        listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
+        listTalents = displayTalents(talents);
+        listFeats = displayFeats(feats);
+        initiativeDisplay = getInitiative(level,dex,skills,feats);
+        perceptionDisplay = getPerception(level,wis,skills,feats);
+        grapple = getGrapple(BAB,str,dex,size,talents);
+
+        if (feats.includes("ValidFeatNotFound")) {
+            failsafe = 0;
+        }
+        if (safecount > 20) {
+            alert("test");
+        }
+    }
 
         //generate languages
         let languages = getLanguages(speciesID,feats,int);
@@ -164,7 +192,7 @@ window.genCharacter = function genCharacter() {
         let otherAttack = "";
 
     if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
-        temp2 = getAdvancedMelee(available,BAB,level,dex,feats,talents,size);
+        temp2 = getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size);
         advancedMelee = temp2[0];
         temp = temp2[1];
         equipment.push(temp);
@@ -176,7 +204,7 @@ window.genCharacter = function genCharacter() {
         equipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Lightsabers)")) {
-        temp2 = getLightsaber(available,BAB,level,dex,feats,talents,size);
+        temp2 = getLightsaber(available,BAB,level,str,dex,feats,talents,size);
         lightsaber = temp2[0];
         temp = temp2[1];
         equipment.push(temp);

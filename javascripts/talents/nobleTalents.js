@@ -53,8 +53,8 @@ export function nobleTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 15 && available.includes("UR")) {
         talent = exileTalents(talents,available,skills,feats,BAB);
     }
-    if (count == 20) {
-        talent = "ValidTalentNotFound";
+    if (count == 500) {
+        talent = "ValidNobleTalentNotFound";
     }
 }
     return talent;

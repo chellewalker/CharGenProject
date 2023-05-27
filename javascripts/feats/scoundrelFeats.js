@@ -54,7 +54,7 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
         else if (randomNum == 22) {
             feat = "Weapon Proficiency (Pistols)";
         }
-        if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Force Training") {
+        if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training") {
             feat = "";
         }
         if (count2 == 500) {

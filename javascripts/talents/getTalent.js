@@ -5,7 +5,10 @@ import {scoutTalents} from './scoutTalents.js';
 import {soldierTalents} from './soldierTalents.js';
 
 export function getTalent(thisLevel,available,skills,feats,talents,BAB) {
-    let talent;
+    let talent = "";
+    let count = 0;
+while (talent == "") {
+        count++;
 
     if (thisLevel == 0) {
         talent = jediTalents(talents,available,skills,feats,BAB);
@@ -22,6 +25,10 @@ export function getTalent(thisLevel,available,skills,feats,talents,BAB) {
     else if (thisLevel == 4) {
         talent = soldierTalents(talents,available,skills,feats,BAB);
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
 
     return talent;
 }

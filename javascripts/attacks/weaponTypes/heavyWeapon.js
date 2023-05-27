@@ -5,6 +5,9 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
     let special = "";
 
     let heavyWeaponAttackRaw = BAB + Math.floor((dex-10)/2);
+    if (feats.includes("Weapon Focus (Heavy Weapons)")) {
+        heavyWeaponAttackRaw++;
+    }
 
     while (heavyWeaponWeapon == "") {
         let randomNum = Math.floor(Math.random() * 5);
