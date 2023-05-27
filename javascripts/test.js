@@ -12,6 +12,7 @@ import {getTalent,displayTalents} from './talents/getTalents.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
 import {classFirst,getFirstHitPoints,classSelection,classListing} from './classGen.js';
 import {finalAbilities} from './abilities/abilityGen.js';
+import {getLevel} from './classGen/levelUp.js';
 import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {getWill} from './defenses/will.js';
