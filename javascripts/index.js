@@ -93,7 +93,7 @@ window.genCharacter = function genCharacter() {
                 BAB = getBAB(classes);
                 talents.push(getTalent(thisLevel,available,skills,feats,talents));
                 hitPoints += getFirstHitPoints(firstClass,con);
-                feats = classFeats(thisLevel,classes,int,con,skills,speciesTraits);
+                feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
             }
             else {
