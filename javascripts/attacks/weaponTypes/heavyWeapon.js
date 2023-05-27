@@ -51,7 +51,10 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
             heavyWeaponAttack = "+" + heavyWeaponAttackRaw;
         }
 
-    let heavyWeaponDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
+    let heavyWeaponDamageRaw = Math.floor(level/2);
+    if (talents.includes("Weapon Specialization (Heavy Weapons)")) {
+        heavyWeaponDamageRaw += 2;
+    }
     let heavyWeaponDamage = "";
     if (heavyWeaponDamageRaw < 0) {
         heavyWeaponDamage = heavyWeaponDamageRaw;

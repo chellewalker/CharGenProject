@@ -1,51 +1,51 @@
-export function scoundrelTalents(talents,available,skills,feats) {
+export function scoundrelTalents(talents,available,skills,feats,BAB) {
     let count = 0;
     let talent = "";
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 3);
+        let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = fortuneTalents(talents,available,skills,feats);
+        talent = fortuneTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 1) {
-        talent = misfortuneTalents(talents,available,skills,feats);
+        talent = misfortuneTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 2) {
-        talent = slicerTalents(talents,available,skills,feats);
+        talent = slicerTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 3) {
-        talent = spacerTalents(talents,available,skills,feats);
+        talent = spacerTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 4 && available.includes("SotG")) {
-        talent = outlawTalents(talents,available,skills,feats);
+        talent = outlawTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 5 && available.includes("TotG")) {
-        talent = malkiteTalents(talents,available,skills,feats);
+        talent = malkiteTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 6 && available.includes("KotORCG")) {
-        talent = runTalents(talents,available,skills,feats);
+        talent = runTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 7 && available.includes("FUCG")) {
-        talent = smugglingTalents(talents,available,skills,feats);
+        talent = smugglingTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 8 && available.includes("CWCG")) {
-        talent = opportunistTalents(talents,available,skills,feats);
+        talent = opportunistTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 9 && available.includes("LECG")) {
-        talent = biotechTalents(talents,available,skills,feats);
+        talent = biotechTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 10 && available.includes("RECG")) {
-        talent = recklessnessTalents(talents,available,skills,feats);
+        talent = recklessnessTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 11 && available.includes("GaW")) {
-        talent = brigandTalents(talents,available,skills,feats);
+        talent = brigandTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 12 && available.includes("GoI")) {
-        talent = revolutionaryTalents(talents,available,skills,feats);
+        talent = revolutionaryTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 13 && available.includes("UR")) {
-        talent = outsiderTalents(talents,available,skills,feats);
+        talent = outsiderTalents(talents,available,skills,feats,BAB);
     }
     if (count == 20) {
         talent = "ValidTalentNotFound";
@@ -54,7 +54,7 @@ export function scoundrelTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function fortuneTalents(talents,available,skills,feats) {
+export function fortuneTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -108,7 +108,7 @@ export function fortuneTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function misfortuneTalents(talents,available,skills,feats) {
+export function misfortuneTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -171,7 +171,7 @@ export function misfortuneTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function slicerTalents(talents,available,skills,feats) {
+export function slicerTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -198,6 +198,42 @@ export function slicerTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 6 && available.includes("SaV") && talents.includes("Electronic Sabotage") && skills.includes("Use Computer")) {
         talent = "Virus";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function spacerTalents(talents,available,skills,feats,BAB) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 7);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Hyperdriven";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Spacehound";
+    }
+    else if (randomNum == 2 && available.includes("CR") && talents.includes("Spacehound")) {
+        talent = "Starship Raider";
+    }
+    else if (randomNum == 3 && available.includes("CR") && talents.includes("Spacehound")) {
+        talent = "Stellar Warrior";
+    }
+    else if (randomNum == 4 && available.includes("SaV") && talents.includes("Spacehound") && talents.includes("Starship Raider")) {
+        talent = "Cramped Quarters Fighting";
+    }
+    else if (randomNum == 5 && available.includes("UR") && talents.includes("Spacehound") && talents.includes("Starship Raider")) {
+        talent = "Deep Space Raider";
+    }
+    else if (randomNum == 6 && available.includes("SaV") && talents.includes("Spacehound") && talents.includes("Stellar Warrior")) {
+        talent = "Make a Break for It";
     }
     if (talents.includes(talent)) {
         talent = "";

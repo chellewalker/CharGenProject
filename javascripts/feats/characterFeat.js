@@ -1,6 +1,8 @@
 export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
     let feat = "";
+    let count2 = 0;
     while (feat == "") {
+        count2++;
         let randomNum = Math.floor(Math.random() * 83);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
@@ -18,7 +20,8 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
             feat = "Bantha Rush";
         }
         else if (randomNum == 5 && available.includes("CR") && feats.includes("Weapon Proficiency (Heavy Weapons)") ||
-                randomNum == 5 && available.includes("CR") && feats.includes("Vehicular Combat")) {
+                randomNum == 5 && available.includes("CR") && feats.includes("Vehicular Combat") ||
+                randomNum == 5 && available.includes("CR") && talents.includes("Spacehound")) {
             feat = "Burst Fire";
         }
         else if (randomNum == 6 && available.includes("CR") && feats.includes("Point-Blank Shot") && BAB >= 2) {
@@ -338,6 +341,10 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Force Training") {
             feat = "";
+        }
+        if (count2 == 500) {
+            alert("Character");
+            feat = "ValidFeatNotFound";
         }
     }
 

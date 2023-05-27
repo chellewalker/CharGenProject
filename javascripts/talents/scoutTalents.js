@@ -1,51 +1,51 @@
-export function scoutTalents(talents,available,skills,feats) {
+export function scoutTalents(talents,available,skills,feats,BAB) {
     let count = 0;
     let talent = "";
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 3);
+        let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = awarenessTalents(talents,available,skills,feats);
+        talent = awarenessTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 1) {
-        talent = camouflageTalents(talents,available,skills,feats);
+        talent = camouflageTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 2) {
-        talent = fringerTalents(talents,available,skills,feats);
+        talent = fringerTalents(talents,available,skills,feats,BAB);
     }
-    else if (randomNum == 3) {
-        talent = survivorTalents(talents,available,skills,feats);
+    else if (randomNum == 3 && available.includes("CR")) {
+        talent = survivorTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 4 && available.includes("KotORCG")) {
-        talent = hyperspaceTalents(talents,available,skills,feats);
+        talent = hyperspaceTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 5 && available.includes("FUCG")) {
-        talent = spyTalents(talents,available,skills,feats);
+        talent = spyTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 6 && available.includes("CWCG")) {
-        talent = reconnaissanceTalents(talents,available,skills,feats);
+        talent = reconnaissanceTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 7 && available.includes("CWCG")) {
-        talent = surveillanceTalents(talents,available,skills,feats);
+        talent = surveillanceTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 8 && available.includes("LECG")) {
-        talent = versatilityTalents(talents,available,skills,feats);
+        talent = versatilityTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 9 && available.includes("RECG")) {
-        talent = unpredictableTalents(talents,available,skills,feats);
+        talent = unpredictableTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 10 && available.includes("GaW")) {
-        talent = patrolTalents(talents,available,skills,feats);
+        talent = patrolTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 11 && available.includes("GoI")) {
-        talent = espionageTalents(talents,available,skills,feats);
+        talent = espionageTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 12 && available.includes("UR")) {
-        talent = masterTalents(talents,available,skills,feats);
+        talent = masterTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 13 && available.includes("UR")) {
-        talent = mobileTalents(talents,available,skills,feats);
+        talent = mobileTalents(talents,available,skills,feats,BAB);
     }
     if (count == 20) {
         talent = "ValidTalentNotFound";
@@ -54,7 +54,7 @@ export function scoutTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function awarenessTalents(talents,available,skills,feats) {
+export function awarenessTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -93,7 +93,7 @@ export function awarenessTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function camouflageTalents(talents,available,skills,feats) {
+export function camouflageTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -138,7 +138,7 @@ export function camouflageTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function fringerTalents(talents,available,skills,feats) {
+export function fringerTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -171,6 +171,33 @@ export function fringerTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 8 && available.includes("SaV") && talents.includes("Long Stride") && talents.includes("Sidestep")) {
         talent = "Swift Strider";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function survivorTalents(talents,available,skills,feats,BAB) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Evasion";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Extreme Effort";
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        talent = "Sprint";
+    }
+    else if (randomNum == 3 && available.includes("CR")) {
+        talent = "Surefooted";
     }
     if (talents.includes(talent)) {
         talent = "";

@@ -1,21 +1,20 @@
-export function jediTalents(talents,available,skills,feats) {
+export function jediTalents(talents,available,skills,feats,BAB) {
     let count = 0;
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 4);
-        let randomNum = Math.floor(Math.random() * 3);
+        let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = consularTalents(talents,available,skills,feats);
+        talent = consularTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 1) {
-        talent = guardianTalents(talents,available,skills,feats);
+        talent = guardianTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 2) {
-        talent = sentinelTalents(talents,available,skills,feats);
+        talent = sentinelTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 3) {
-        talent = lightsaberTalents(talents,available,skills,feats);
+        talent = lightsaberTalents(talents,available,skills,feats,BAB);
     }
     if (count == 20) {
         talent = "ValidTalentNotFound";
@@ -25,7 +24,7 @@ export function jediTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function consularTalents(talents,available,skills,feats) {
+export function consularTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -100,7 +99,7 @@ export function consularTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function guardianTalents(talents,available,skills,feats) {
+export function guardianTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -164,7 +163,7 @@ export function guardianTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function sentinelTalents(talents,available,skills,feats) {
+export function sentinelTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -227,6 +226,54 @@ export function sentinelTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 18 && available.includes("CWCG") && talents.includes("Clear Mind") && talents.includes("Force Haze")) {
         talent = "Unseen Eyes";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function lightsaberTalents(talents,available,skills,feats,BAB) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 11);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        talent = "Block";
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        talent = "Deflect";
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        talent = "Lightsaber Defense (+1)";
+    }
+    else if (randomNum == 3 && available.includes("CR") && feats.includes("Weapon Focus (Lightsabers)")) {
+        talent = "Weapon Specialization (Lightsabers)";
+    }
+    else if (randomNum == 4 && available.includes("CR")) {
+        talent = "Lightsaber Throw";
+    }
+    else if (randomNum == 5 && available.includes("CR") && talents.includes("Deflect") && BAB >= 5) {
+        talent = "Redirect Shot";
+    }
+    else if (randomNum == 6 && available.includes("LECG") && feats.includes("Armor Proficiency (Light)") && feats.includes("Armor Proficiency (Medium)")) {
+        talent = "Cortosis Gauntlet Block";
+    }
+    else if (randomNum == 7 && available.includes("RECG") && talents.includes("Redirect Shot")) {
+        talent = "Precise Redirect";
+    }
+    else if (randomNum == 8 && available.includes("LECG")) {
+        talent = "Precision";
+    }
+    else if (randomNum == 9 && available.includes("KotORCG") && talents.includes("Block") && BAB >= 5) {
+        talent = "Riposte";
+    }
+    else if (randomNum == 10 && available.includes("JATM")) {
+        talent = "Shoto Focus";
     }
     if (talents.includes(talent)) {
         talent = "";

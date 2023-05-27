@@ -58,6 +58,9 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         }
 
     let rifleDamageRaw = Math.floor(level/2);
+    if (talents.includes("Weapon Specialization (Rifles)")) {
+        rifleDamageRaw += 2;
+    }
     let rifleDamage = "";
     if (rifleDamageRaw < 0) {
         rifleDamage = rifleDamageRaw;

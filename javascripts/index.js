@@ -8,7 +8,7 @@ import {getBAB} from './classGen/getBAB.js';
 import {getOutput} from './getOutput.js';
 import {displayFeats} from './feats/featDisplay.js';
 import {speciesFeats} from './feats/speciesFeats.js';
-//import {getFeat} from './feats/getFeat.js';
+import {getFeat} from './feats/getFeat.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
 import {characterFeat} from './feats/characterFeat.js';
 import {getTalent,displayTalents} from './talents/getTalent.js';
@@ -93,10 +93,11 @@ window.genCharacter = function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel,available,skills,feats,talents));
+                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
+                feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             }
             else {
                 thisLevel = getLevel(firstClass,classes);
@@ -109,18 +110,18 @@ window.genCharacter = function genCharacter() {
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0) {
-                    /*feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                     if (feats.findLast(findLast) == "Skill Training") {
                         skills.push(getNewSkill(speciesTraits,classes,skills));
                     }
-                    skills.sort();*/
+                    skills.sort();
                 }
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB));
                 }
             }
-            if (count % 4 == 0) {
-            feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
+            if (count % 3 == 0) {
+                feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             if (feats.findLast(findLast) == "Skill Training") {
                 skills.push(getNewSkill(speciesTraits,classes,skills));
                 skills.sort();

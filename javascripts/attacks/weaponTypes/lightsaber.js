@@ -33,6 +33,9 @@ export function getLightsaber(available,BAB,level,str,feats,talents,size) {
         }
 
     let lightsaberDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
+    if (talents.includes("Weapon Specialization (Lightsabers)")) {
+        lightsaberDamageRaw += 2;
+    }
     let lightsaberDamage = "";
     if (lightsaberDamageRaw < 0) {
         lightsaberDamage = lightsaberDamageRaw;

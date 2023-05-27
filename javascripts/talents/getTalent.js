@@ -4,23 +4,23 @@ import {scoundrelTalents} from './scoundrelTalents.js';
 import {scoutTalents} from './scoutTalents.js';
 import {soldierTalents} from './soldierTalents.js';
 
-export function getTalent(thisLevel,available,skills,feats,talents) {
+export function getTalent(thisLevel,available,skills,feats,talents,BAB) {
     let talent;
 
     if (thisLevel == 0) {
-        talent = jediTalents(talents,available,skills,feats);
+        talent = jediTalents(talents,available,skills,feats,BAB);
     }
     else if (thisLevel == 1) {
-        talent = nobleTalents(talents,available,skills,feats);
+        talent = nobleTalents(talents,available,skills,feats,BAB);
     }
     else if (thisLevel == 2) {
-        talent = scoundrelTalents(talents,available,skills,feats);
+        talent = scoundrelTalents(talents,available,skills,feats,BAB);
     }
     else if (thisLevel == 3) {
-        talent = scoutTalents(talents,available,skills,feats);
+        talent = scoutTalents(talents,available,skills,feats,BAB);
     }
     else if (thisLevel == 4) {
-        talent = soldierTalents(talents,available,skills,feats);
+        talent = soldierTalents(talents,available,skills,feats,BAB);
     }
 
     return talent;

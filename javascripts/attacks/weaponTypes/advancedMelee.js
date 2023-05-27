@@ -48,6 +48,9 @@ export function getAdvancedMelee(available,BAB,level,str,feats,talents,size) {
         }
 
     let advancedMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
+    if (talents.includes("Weapon Specialization (Advanced Melee Weapons)")) {
+        advancedMeleeDamageRaw += 2;
+    }
     let advancedMeleeDamage = "";
     if (advancedMeleeDamageRaw < 0) {
         advancedMeleeDamage = advancedMeleeDamageRaw;

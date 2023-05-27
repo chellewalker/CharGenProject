@@ -1,48 +1,48 @@
-export function soldierTalents(talents,available,skills,feats) {
+export function soldierTalents(talents,available,skills,feats,BAB) {
     let count = 0;
     let talent = "";
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 13);
-        let randomNum = Math.floor(Math.random() * 3);
+        let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = armorTalents(talents,available,skills,feats);
+        talent = armorTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 1) {
-        talent = brawlerTalents(talents,available,skills,feats);
+        talent = brawlerTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 2) {
-        talent = commandoTalents(talents,available,skills,feats);
+        talent = commandoTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 3) {
-        talent = weaponTalents(talents,available,skills,feats);
+        talent = weaponTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 4 && available.includes("KotORCG")) {
-        talent = rocketTalents(talents,available,skills,feats);
+        talent = rocketTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 5 && available.includes("FUCG")) {
-        talent = mercenaryTalents(talents,available,skills,feats);
+        talent = mercenaryTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 6 && available.includes("CWCG")) {
-        talent = squadTalents(talents,available,skills,feats);
+        talent = squadTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 7 && available.includes("CWCG")) {
-        talent = trooperTalents(talents,available,skills,feats);
+        talent = trooperTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 8 && available.includes("LECG")) {
-        talent = bruteTalents(talents,available,skills,feats);
+        talent = bruteTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 9 && available.includes("RECG")) {
-        talent = ambusherTalents(talents,available,skills,feats);
+        talent = ambusherTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 10 && available.includes("GaW")) {
-        talent = shockboxerTalents(talents,available,skills,feats);
+        talent = shockboxerTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 11 && available.includes("GaW")) {
-        talent = veteranTalents(talents,available,skills,feats);
+        talent = veteranTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 12 && available.includes("UR")) {
-        talent = warriorTalents(talents,available,skills,feats);
+        talent = warriorTalents(talents,available,skills,feats,BAB);
     }
     if (count == 20) {
         talent = "ValidTalentNotFound";
@@ -51,7 +51,7 @@ export function soldierTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function armorTalents(talents,available,skills,feats) {
+export function armorTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -84,7 +84,7 @@ export function armorTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function brawlerTalents(talents,available,skills,feats) {
+export function brawlerTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -165,7 +165,7 @@ export function brawlerTalents(talents,available,skills,feats) {
     return talent;
 }
 
-export function commandoTalents(talents,available,skills,feats) {
+export function commandoTalents(talents,available,skills,feats,BAB) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -213,6 +213,169 @@ export function commandoTalents(talents,available,skills,feats) {
     }
     else if (randomNum == 13 && available.includes("UR") && talents.includes("Harm's Way") && skills.includes("Initiative")) {
         talent = "Out of Harm's Way";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+}
+
+    return talent;
+}
+
+export function weaponTalents(talents,available,skills,feats,BAB) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 9);
+
+    if (randomNum == 0 && available.includes("CR")) {
+        let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                let randomNum = Math.floor(Math.random() * 6);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
+                    talent = "Devastating Attack (Advanced Melee Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Heavy Weapons)")) {
+                    talent = "Devastating Attack (Heavy Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 2 && feats.includes("Weapon Proficiency (Lightsabers)")) {
+                    talent = "Devastating Attack (Lightsabers)";
+                    check = 1;
+                }
+                else if (randomNum == 3 && feats.includes("Weapon Proficiency (Pistols)")) {
+                    talent = "Devastating Attack (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 4 && feats.includes("Weapon Proficiency (Rifles)")) {
+                    talent = "Devastating Attack (Rifles)";
+                    check = 1;
+                }
+                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                    talent = "Devastating Attack (Simple Weapons)";
+                    check = 1;
+                }
+            }
+    }
+    else if (randomNum == 1 && available.includes("CR")) {
+        let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                let randomNum = Math.floor(Math.random() * 6);
+                if (randomNum == 0 && feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
+                    talent = "Penetrating Attack (Advanced Melee Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Focus (Heavy Weapons)")) {
+                    talent = "Penetrating Attack (Heavy Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 2 && feats.includes("Weapon Focus (Lightsabers)")) {
+                    talent = "Penetrating Attack (Lightsabers)";
+                    check = 1;
+                }
+                else if (randomNum == 3 && feats.includes("Weapon Focus (Pistols)")) {
+                    talent = "Penetrating Attack (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 4 && feats.includes("Weapon Focus (Rifles)")) {
+                    talent = "Penetrating Attack (Rifles)";
+                    check = 1;
+                }
+                else if (randomNum == 5 && feats.includes("Weapon Focus (Simple Weapons)")) {
+                    talent = "Penetrating Attack (Simple Weapons)";
+                    check = 1;
+                }
+            }
+    }
+    else if (randomNum == 2 && available.includes("CR")) {
+        let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                let randomNum = Math.floor(Math.random() * 6);
+                if (randomNum == 0 && feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
+                    talent = "Weapon Specialization (Advanced Melee Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Focus (Heavy Weapons)")) {
+                    talent = "Weapon Specialization (Heavy Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 2 && feats.includes("Weapon Focus (Lightsabers)")) {
+                    talent = "Weapon Specialization (Lightsabers)";
+                    check = 1;
+                }
+                else if (randomNum == 3 && feats.includes("Weapon Focus (Pistols)")) {
+                    talent = "Weapon Specialization (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 4 && feats.includes("Weapon Focus (Rifles)")) {
+                    talent = "Weapon Specialization (Rifles)";
+                    check = 1;
+                }
+                else if (randomNum == 5 && feats.includes("Weapon Focus (Simple Weapons)")) {
+                    talent = "Weapon Specialization (Simple Weapons)";
+                    check = 1;
+                }
+            }
+    }
+    else if (randomNum == 3 && available.includes("GaW") && feats.includes("Weapon Proficiency (Heavy Weapons)")) {
+        talent = "Autofire Assault";
+    }
+    else if (randomNum == 4 && available.includes("SaW") && feats.includes("Weapon Specialization (Advanced Melee Weapons)") ||
+                randomNum == 4 && available.includes("SaW") && feats.includes("Weapon Specialization (Heavy Weapons)") ||
+                randomNum == 4 && available.includes("SaW") && feats.includes("Weapon Specialization (Lightsabers)") ||
+                randomNum == 4 && available.includes("SaW") && feats.includes("Weapon Specialization (Pistols)") ||
+                randomNum == 4 && available.includes("SaW") && feats.includes("Weapon Specialization (Rifles)") ||
+                randomNum == 4 && available.includes("SaW") && feats.includes("Weapon Specialization (Simple Weapons)")) {
+        talent = "Crushing Assault";
+    }
+    else if (randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Advanced Melee Weapons)") && int >= 13 && feats.includes("Improved Disarm") ||
+                randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Heavy Weapons)")  && int >= 13 && feats.includes("Improved Disarm") ||
+                randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Lightsabers)")  && int >= 13 && feats.includes("Improved Disarm") ||
+                randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Pistols)")  && int >= 13 && feats.includes("Improved Disarm") ||
+                randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Rifles)")  && int >= 13 && feats.includes("Improved Disarm") ||
+                randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Simple Weapons)")  && int >= 13 && feats.includes("Improved Disarm")) {
+        if (feats.includes("Weapon Specialization (Advanced Melee Weapons)")) {
+            talent = "Disarming Attack (Advanced Melee Weapons)";
+        }
+        if (feats.includes("Weapon Specialization (Heavy Weapons)")) {
+            talent = "Disarming Attack (Heavy Weapons)";
+        }
+        if (feats.includes("Weapon Specialization (Lightsabers)")) {
+            talent = "Disarming Attack (Lightsabers)";
+        }
+        if (feats.includes("Weapon Specialization (Pistols)")) {
+            talent = "Disarming Attack (Pistols)";
+        }
+        if (feats.includes("Weapon Specialization (Rifles)")) {
+            talent = "Disarming Attack (Rifles)";
+        }
+        if (feats.includes("Weapon Specialization (Simple Weapons)")) {
+            talent = "Disarming Attack (Simple Weapons)";
+        }
+    }
+    else if (randomNum == 6 && available.includes("SaW") && feats.includes("Weapon Specialization (Advanced Melee Weapons)") ||
+                randomNum == 6 && available.includes("SaW") && feats.includes("Weapon Specialization (Heavy Weapons)") ||
+                randomNum == 6 && available.includes("SaW") && feats.includes("Weapon Specialization (Lightsabers)") ||
+                randomNum == 6 && available.includes("SaW") && feats.includes("Weapon Specialization (Pistols)") ||
+                randomNum == 6 && available.includes("SaW") && feats.includes("Weapon Specialization (Rifles)") ||
+                randomNum == 6 && available.includes("SaW") && feats.includes("Weapon Specialization (Simple Weapons)")) {
+        talent = "Impaling Assault";
+    }
+    else if (randomNum == 7 && available.includes("LECG")) {
+        talent = "Improved Suppression Fire";
+    }
+    else if (randomNum == 8 && available.includes("SaW") && feats.includes("Weapon Specialization (Advanced Melee Weapons)") ||
+            randomNum == 8 && available.includes("SaW") && feats.includes("Weapon Specialization (Heavy Weapons)") ||
+            randomNum == 8 && available.includes("SaW") && feats.includes("Weapon Specialization (Lightsabers)") ||
+            randomNum == 8 && available.includes("SaW") && feats.includes("Weapon Specialization (Pistols)") ||
+            randomNum == 8 && available.includes("SaW") && feats.includes("Weapon Specialization (Rifles)") ||
+            randomNum == 8 && available.includes("SaW") && feats.includes("Weapon Specialization (Simple Weapons)")) {
+        talent = "Stinging Assault";
     }
     if (talents.includes(talent)) {
         talent = "";

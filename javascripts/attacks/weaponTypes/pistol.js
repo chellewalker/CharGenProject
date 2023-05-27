@@ -50,6 +50,9 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         }
 
     let pistolDamageRaw = Math.floor(level/2);
+    if (talents.includes("Weapon Specialization (Pistols)")) {
+        pistolDamageRaw += 2;
+    }
     let pistolDamage = "";
     if (pistolDamageRaw < 0) {
         pistolDamage = pistolDamageRaw;
