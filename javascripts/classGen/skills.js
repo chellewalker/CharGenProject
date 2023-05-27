@@ -313,3 +313,39 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
 
         return listSkills;
 }
+
+export function getInitiative(level,dex,skills,feats) {
+    let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
+        if (skills.includes("Initiative")) {
+            initiative += 5;
+        }
+        if (feats.includes("Skill Focus (Initiative)")) {
+            initiative += 5;
+        }
+        let initiativeDisplay = "";
+        if (initiative < 0) {
+            initiativeDisplay = initiative;
+        }
+        else {
+            initiativeDisplay = "+" + initiative;
+        }
+    return initiativeDisplay;
+}
+
+export function getPerception(level,wis,skills,feats) {
+    let perception = Math.floor(level/2) + Math.floor((wis-10)/2);
+        if (skills.includes("Perception")) {
+            perception += 5;
+        }
+        if (feats.includes("Skill Focus (Perception)")) {
+            perception += 5;
+        }
+        let perceptionDisplay = "";
+        if (perception < 0) {
+            perceptionDisplay = perception;
+        }
+        else {
+            perceptionDisplay = "+" + perception;
+        }
+    return perceptionDisplay;
+}

@@ -3,17 +3,22 @@ import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {getSpeed} from './speed.js';
 import {getLanguages,languageList} from './language.js';
-import {getSkills,displaySkills} from './classGen/skills.js';
+import {getSkills,displaySkills,getInitiative,getPerception} from './classGen/skills.js';
 import {getBAB} from './classGen/getBAB.js';
-import {classFeats,speciesFeats,getFeat,displayFeats} from './feats.js';
+import {getOutput} from './getOutput.js';
+import {speciesFeats,getFeat,displayFeats} from './feats.js';
+import {classFeats,multiclassFeat} from './feats/classFeats.js';
 import {getTalent,displayTalents} from './talents/getTalents.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
-import {classFirst,getFirstHitPoints,classSelection,classListing,getBAB} from './classGen.js';
-import {abilityGen,finalAbilities} from './abilities/abilityGen.js';
-import { getSpeed } from './speed.js';
+import {classFirst,getFirstHitPoints,classSelection,classListing} from './classGen.js';
+import {finalAbilities} from './abilities/abilityGen.js';
+import {getFlatFooted, getReflex} from './defenses/reflex.js';
+import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
+import {getWill} from './defenses/will.js';
 
 export function genCharacter() {
     // get values
+    let count;
     let available = references().split(",");
     let abilities = document.getElementById('abilities').value;
     let thisLevel = document.getElementById('class').value;
@@ -51,7 +56,6 @@ export function genCharacter() {
 
         //Class generation
         let classes = [0,0,0,0,0];
-        let firstClass;
         let hitPoints = 0;
         let talents = [];
         let feats = [];
@@ -59,7 +63,7 @@ export function genCharacter() {
         let BAB = 0;
         for (count = 0; count < level; count++) {
             if (count % 4 == 0) {
-                feats.push(characterFeats(available,feats,talents,skills,type,str,dex,con,int,wis,cha,BAB,speciesTraits));
+                feats.push(characterFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
             }
             if (count == 0) {
                 if (thisLevel == "random") {
@@ -69,36 +73,44 @@ export function genCharacter() {
                 }
                 else {
                     classes[thisLevel]++;
-
+                    firstClass = thisLevel;
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
                 talents.push(getTalent(thisLevel));
                 hitPoints += getFirstHitPoints(thisLevel,available,skills,feats,talents);
-                feats.push(characterFeats(available,feats,talents,skills,type,str,dex,con,int,wis,cha,BAB,speciesTraits));
+                feats = classFeats(thisLevel,classes,int,con,skills,speciesTraits);
             }
             else {
                 thisLevel = getLevel();
                 classes[thisLevel]++;
                 if (classes[thisLevel] == 1) {
-                    feats.push(multiclassFeats(thisLevel,feats,skills));
+                    feats.push(multiclassFeat(thisLevel,feats,skills,int,con));
                 }
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0) {
-                    feats.push(getFeat(available,thisLevel,feats,talents));
+                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
                 }
                 else {
                     talents.push(getTalent(thisLevel,available,skills,feats,talents));
                 }
             }
         }
+        let classList = classListing(firstClass,classes);
+        let initiativeDisplay = getInitiative(level,dex,skills,feats);
+        let perceptionDisplay = getPerception(level,wis,skills,feats);
 
         //generate languages
         let languages = getLanguages(speciesID,feats,int);
         let listLanguages = languageList(languages);
 
         //defenses
+        let reflex = getReflex(classes,dex,level,size,speciesTraits,feats);
+            let flatFooted = getFlatFooted(reflex,dex);
+        let fortitude = getFortitude(classes,con,level,speciesTraits,feats);
+            let damageThreshold = getDamageThreshold(fortitude,size,feats);
+        let will = getWill(classes,wis,level,speciesTraits,feats);
 
         //speed
         let speed = getSpeed(speciesID,talents,feats);
@@ -108,4 +120,10 @@ export function genCharacter() {
         //equipment
 
         //output
+        let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
+            reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
+            advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
+            speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
+    
+        document.write(output);
 }

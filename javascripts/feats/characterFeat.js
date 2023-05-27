@@ -1,4 +1,4 @@
-export function characterFeat(available,feats,talents,skills,type,str,dex,con,int,wis,cha,BAB,speciesTraits) {
+export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits) {
     let feat = "";
     while (feat == "") {
         let randomNum = Math.floor(Math.random() * 41);
