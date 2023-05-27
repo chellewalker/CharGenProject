@@ -50,7 +50,8 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 15 && available.includes("CR") && BAB >= 6) {
             let check = 0;
-            while (check == 0) {
+            let count = 0;
+            while (check == 0 && count < 20) {
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
                     feat = "Double Attack (Advanced Melee Weapons)";
@@ -207,7 +208,10 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                 let randomNum2 = Math.floor(Math.random() * skills.length);
                 feat = "Skill Focus ("+skills[randomNum2]+")";
         }
-        if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training") {
+        else if (randomNum == 61 && available.includes("CR")) {
+            feat = "Skill Training";
+        }
+        if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Force Training") {
             feat = "";
         }
     }

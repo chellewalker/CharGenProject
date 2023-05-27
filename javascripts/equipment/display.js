@@ -7,6 +7,9 @@ export function displayEquipment(equipment) {
         }
         equipmentDisplay += equipment[count];
     }
+    if (equipmentDisplay == "") {
+        equipmentDisplay = "None";
+    }
 
     return equipmentDisplay;
 }

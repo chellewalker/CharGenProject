@@ -1,4 +1,4 @@
-import {parseXML,lengthXML} from './xmlGetter.js';
+import {parseXML} from './xmlGetter.js';
 
 export function speciesGen(tempSpecies,available) {
     tempSpecies = tempSpecies.toLowerCase();
