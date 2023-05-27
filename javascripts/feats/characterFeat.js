@@ -1,7 +1,7 @@
 export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
     let feat = "";
     while (feat == "") {
-        let randomNum = Math.floor(Math.random() * 41);
+        let randomNum = Math.floor(Math.random() * 61);
         if (randomNum == 0 && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -204,11 +204,8 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     randomNum == 58 && available.includes("CR") || 
                     randomNum == 59 && available.includes("CR") || 
                     randomNum == 60 && available.includes("CR")) {
-            let check = 0;
-            while (check == 0) {
                 let randomNum2 = Math.floor(Math.random() * skills.length);
                 feat = "Skill Focus ("+skills[randomNum2]+")";
-            }
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training") {
             feat = "";

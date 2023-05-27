@@ -426,6 +426,7 @@ export function findFeat(available,feats,skills,type,str,dex,con,int,wis,cha,BAB
 export function displayFeats(feats) {
     let featDisplay = "";
     let count;
+    feats.sort();
     for (count = 0; count < feats.length; count++) {
         if (count != 0) {
             featDisplay += ", ";

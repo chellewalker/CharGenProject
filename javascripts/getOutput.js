@@ -12,6 +12,15 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
             forcePoints += 3;
         }
 
+        let traitDisplay = "";
+        let count;
+        for (count = 0; count < speciesTraits.length; count++) {
+            if (count != 0) {
+                traitDisplay += ", ";
+            }
+            traitDisplay += speciesTraits[count];
+        }
+
     let advancedMeleeAttack = "";
     let lightsaberAttack = "";
     let pistolAttack = "";
@@ -57,7 +66,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         heavyWeaponAttack+
         otherAttack+
         "<strong>Base Attack Bonus:</strong> +"+BAB+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
-        "<strong>Species Traits ("+species+"):</strong> "+speciesTraits+"<br>"+
+        "<strong>Species Traits ("+species+"):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
         "<strong>Talents:</strong> "+listTalents+"<br>"+
@@ -77,6 +86,15 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
+
+        let traitDisplay = "";
+        let count;
+        for (count = 0; count < speciesTraits.length; count++) {
+            if (count != 0) {
+                traitDisplay += ", ";
+            }
+            traitDisplay += speciesTraits[count];
+        }
 
         let advancedMeleeAttack = "";
         let lightsaberAttack = "";
@@ -118,7 +136,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         heavyWeaponAttack+
         otherAttack+
         "Base Attack Bonus: +"+BAB+", Grapple: "+grappleDisplay+"\n"+
-        "Species Traits ("+species+"): "+speciesTraits+"\n"+
+        "Species Traits ("+species+"): "+traitDisplay+"\n"+
         "Base Stats\n"+
         "Abilities: Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"\n"+
         "Talents: "+listTalents+"\n"+
