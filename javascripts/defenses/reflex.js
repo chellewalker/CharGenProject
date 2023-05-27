@@ -40,6 +40,15 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats) {
         if (feats.includes("Improved Defenses")) {
             reflex++;
         }
+        if (feats.includes("Martial Arts I")) {
+            reflex++;
+        }
+        if (feats.includes("Martial Arts II")) {
+            reflex++;
+        }
+        if (feats.includes("Martial Arts III")) {
+            reflex++;
+        }
 
     return reflex;
 }
@@ -48,6 +57,15 @@ export function getFlatFooted(reflex,dex) {
     let flatFooted;
     if (dex > 11) {
         flatFooted = reflex - Math.floor((dex-10)/2);
+        if (feats.includes("Martial Arts I")) {
+            flatFooted--;
+        }
+        if (feats.includes("Martial Arts II")) {
+            flatFooted--;
+        }
+        if (feats.includes("Martial Arts III")) {
+            flatFooted--;
+        }
     }
     else {
         flatFooted = reflex;

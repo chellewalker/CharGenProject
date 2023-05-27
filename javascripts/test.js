@@ -15,6 +15,7 @@ import {finalAbilities} from './abilities/abilityGen.js';
 import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {getWill} from './defenses/will.js';
+import {getGrapple} from './attacks/getGrapple.js';
 
 export function genCharacter() {
     // get values
@@ -98,8 +99,12 @@ export function genCharacter() {
             }
         }
         let classList = classListing(firstClass,classes);
+        let listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
+        let listTalents = displayTalents(talents);
+        let listFeats = displayFeats(feats);
         let initiativeDisplay = getInitiative(level,dex,skills,feats);
         let perceptionDisplay = getPerception(level,wis,skills,feats);
+        let grapple = getGrapple(BAB,str,dex,size,talents);
 
         //generate languages
         let languages = getLanguages(speciesID,feats,int);
@@ -122,7 +127,7 @@ export function genCharacter() {
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
-            advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grappleDisplay,
+            advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grapple,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
     
         document.write(output);
