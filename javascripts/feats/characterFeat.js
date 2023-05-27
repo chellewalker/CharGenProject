@@ -1,4 +1,4 @@
-export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits) {
+export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
     let feat = "";
     while (feat == "") {
         let randomNum = Math.floor(Math.random() * 41);
@@ -163,6 +163,52 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 42 && available.includes("CR") && str >= 13) {
             feat = "Mighty Swing";
+        }
+        else if (randomNum == 43 && available.includes("CR") && feats.includes("Dodge") && dex >= 13) {
+            feat = "Mobility";
+        }
+        else if (randomNum == 44 && available.includes("CR") && BAB >= 1) {
+            feat = "Pin";
+        }
+        else if (randomNum == 45 && available.includes("CR")) {
+            feat = "Point-Blank Shot";
+        }
+        else if (randomNum == 46 && available.includes("CR") && str >= 13) {
+            feat = "Power Attack";
+        }
+        else if (randomNum == 47 && available.includes("CR") && BAB >= 1 && size != "Small") {
+            feat = "Powerful Charge";
+        }
+        else if (randomNum == 48 && available.includes("CR") && feats.includes("Point-Blank Shot")) {
+            feat = "Precise Shot";
+        }
+        else if (randomNum == 49 && available.includes("CR") && BAB >= 1) {
+            feat = "Quick Draw";
+        }
+        else if (randomNum == 50 && available.includes("CR") && BAB >= 1) {
+            feat = "Rapid Shot";
+        }
+        else if (randomNum == 51 && available.includes("CR") && BAB >= 1) {
+            feat = "Rapid Strike";
+        }
+        else if (randomNum == 52 && available.includes("CR") && dex >= 13) {
+            feat = "Running Attack";
+        }
+        else if (randomNum == 53 && available.includes("CR") && con >= 13 && skills.includes("Endurance")) {
+            feat = "Shake It Off";
+        }
+        else if (randomNum == 54 && available.includes("CR") || 
+                    randomNum == 55 && available.includes("CR") || 
+                    randomNum == 56 && available.includes("CR") || 
+                    randomNum == 57 && available.includes("CR") || 
+                    randomNum == 58 && available.includes("CR") || 
+                    randomNum == 59 && available.includes("CR") || 
+                    randomNum == 60 && available.includes("CR")) {
+            let check = 0;
+            while (check == 0) {
+                let randomNum2 = Math.floor(Math.random() * skills.length);
+                feat = "Skill Focus ("+skills[randomNum2]+")";
+            }
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training") {
             feat = "";

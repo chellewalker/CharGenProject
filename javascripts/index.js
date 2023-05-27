@@ -95,7 +95,7 @@ export function genCharacter() {
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0) {
-                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits));
+                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 }
                 else {
                     talents.push(getTalent(thisLevel,available,skills,feats,talents));
