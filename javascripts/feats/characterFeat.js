@@ -2,7 +2,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     let feat = "";
     while (feat == "") {
         let randomNum = Math.floor(Math.random() * 61);
-        if (randomNum == 0 && skills.includes("Acrobatics")) {
+        if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
         else if (randomNum == 1 && available.includes("CR")) {

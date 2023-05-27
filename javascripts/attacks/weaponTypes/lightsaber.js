@@ -1,7 +1,29 @@
-export function getLightsaber(BAB,level,str,feats) {
-    let lightsaberWeapon = "Lightsaber";
-
+export function getLightsaber(available,BAB,level,str,feats,talents,size) {
+    let lightsaberWeapon = "";
+    let lightsaberDice;
+    let lightsaberDie;
     let lightsaberAttackRaw = BAB + Math.floor((str-10)/2);
+
+    while (lightsaberWeapon == "") {
+        let randomNum = Math.floor(Math.random() * 3);
+
+        if (randomNum == 0) {
+            lightsaberWeapon = "Lightsaber";
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+        }
+        if (randomNum == 1 && available.includes("CR") && size != "Large") {
+            lightsaberWeapon = "Short Lightsaber";
+            lightsaberDice = 2;
+            lightsaberDie = 6;
+        }
+        if (randomNum == 2 && available.includes("CR") && size != "Small") {
+            lightsaberWeapon = "Double-Sided Lightsaber";
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+        }
+    }
+
         let lightsaberAttack = "";
         if (lightsaberAttackRaw < 0) {
             lightsaberAttack = lightsaberAttackRaw;
@@ -9,10 +31,6 @@ export function getLightsaber(BAB,level,str,feats) {
         else {
             lightsaberAttack = "+" + lightsaberAttackRaw;
         }
-
-    let lightsaberDice = 2;
-
-    let lightsaberDie = 8;
 
     let lightsaberDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     let lightsaberDamage = "";
@@ -22,7 +40,8 @@ export function getLightsaber(BAB,level,str,feats) {
     else {
         lightsaberDamage = "+" + lightsaberDamageRaw;
     }
+
     let string = lightsaberWeapon + " " + lightsaberAttack +" ("+ lightsaberDice+"d"+lightsaberDie+lightsaberDamage + ")";
 
-    return string,lightsaberWeapon;
+    return [string,lightsaberWeapon];
 }

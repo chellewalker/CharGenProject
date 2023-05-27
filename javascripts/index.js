@@ -23,6 +23,11 @@ import {getWill} from './defenses/will.js';
 import {getGrapple} from './attacks/getGrapple.js';
 import {getWeapon} from './attacks/getWeapons.js';
 import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
+import {getAdvancedMelee} from './attacks/weaponTypes/advancedMelee.js';
+import {getHeavyWeapon} from './attacks/weaponTypes/heavyWeapon.js';
+import {getLightsaber} from './attacks/weaponTypes/lightsaber.js';
+import {getPistol} from './attacks/weaponTypes/pistol.js';
+import {getRifle} from './attacks/weaponTypes/rifle.js';
 
 window.genCharacter = function genCharacter() {
     // get values
@@ -139,7 +144,46 @@ window.genCharacter = function genCharacter() {
 
         //attacks and damage
         let unarmed = getUnarmed(BAB,level,str,size,speciesTraits,feats);
-        let advancedMelee,heavyWeapon,lightsaber,pistol,rifle,otherAttack,equipment = getWeapon(BAB,level,str,dex,feats);
+        let equipment = [];
+        let temp;
+        let temp2;
+        let advancedMelee = "";
+        let heavyWeapon = "";
+        let lightsaber = "";
+        let pistol = "";
+        let rifle = "";
+        let otherAttack = "";
+
+    if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
+        temp2 = getAdvancedMelee(available,BAB,level,dex,feats,talents,size);
+        advancedMelee = temp2[0];
+        temp = temp2[1];
+        equipment.push(temp);
+    }
+    if (feats.includes("Weapon Proficiency (Heavy Weapons)")) {
+        temp2 = getHeavyWeapon(available,BAB,level,dex,feats,talents,size);
+        heavyWeapon = temp2[0];
+        temp = temp2[1];
+        equipment.push(temp);
+    }
+    if (feats.includes("Weapon Proficiency (Lightsabers)")) {
+        temp2 = getLightsaber(available,BAB,level,dex,feats,talents,size);
+        lightsaber = temp2[0];
+        temp = temp2[1];
+        equipment.push(temp);
+    }
+    if (feats.includes("Weapon Proficiency (Pistols)")) {
+        temp2 = getPistol(available,BAB,level,dex,feats,talents,size);
+        pistol = temp2[0];
+        temp = temp2[1];
+        equipment.push(temp);
+    }
+    if (feats.includes("Weapon Proficiency (Rifles)")) {
+        temp2 = getRifle(available,BAB,level,dex,feats,talents,size);
+        rifle = temp2[0];
+        temp = temp2[1];
+        equipment.push(temp);
+    }
 
         //equipment
         equipment.sort();

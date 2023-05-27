@@ -1,7 +1,44 @@
-export function getAdvancedMelee(BAB,level,str,feats) {
-    let advancedMeleeWeapon = "Vibroblade";
-
+export function getAdvancedMelee(available,BAB,level,str,feats,talents,size) {
+    let advancedMeleeWeapon = "";
+    let advancedMeleeDice;
+    let advancedMeleeDie;
     let advancedMeleeAttackRaw = BAB + Math.floor((str-10)/2);
+
+    while (advancedMeleeWeapon == "") {
+        let randomNum = Math.floor(Math.random() * 6);
+
+        if (randomNum == 0) {
+            advancedMeleeWeapon = "Vibroblade";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 1 && available.includes("CR") && size != "Large") {
+            advancedMeleeWeapon = "Vibrodagger";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 4;
+        }
+        if (randomNum == 2 && available.includes("CR")) {
+            advancedMeleeWeapon = "Vibrobayonet";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 3 && available.includes("CR")) {
+            advancedMeleeWeapon = "Force Pike";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 8;
+        }
+        if (randomNum == 4 && available.includes("CR") && size != "Small") {
+            advancedMeleeWeapon = "Electrostaff";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 5 && available.includes("CR") && size != "Small") {
+            advancedMeleeWeapon = "Vibro-Axe";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 10;
+        }
+    }
+
         let advancedMeleeAttack = "";
         if (advancedMeleeAttackRaw < 0) {
             advancedMeleeAttack = advancedMeleeAttackRaw;
@@ -9,10 +46,6 @@ export function getAdvancedMelee(BAB,level,str,feats) {
         else {
             advancedMeleeAttack = "+" + advancedMeleeAttackRaw;
         }
-
-    let advancedMeleeDice = 2;
-
-    let advancedMeleeDie = 6;
 
     let advancedMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     let advancedMeleeDamage = "";
@@ -24,5 +57,5 @@ export function getAdvancedMelee(BAB,level,str,feats) {
     }
     let string = advancedMeleeWeapon + " " + advancedMeleeAttack +" ("+ advancedMeleeDice+"d"+advancedMeleeDie+advancedMeleeDamage + ")";
 
-    return string,advancedMeleeWeapon;
+    return [string,advancedMeleeWeapon];
 }
