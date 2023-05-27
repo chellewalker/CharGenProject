@@ -59,7 +59,13 @@ window.genCharacter = function genCharacter() {
         let size = parseXML("xmls/species.xml","size",speciesID);
 
         //generate ability scores
-        let str,dex,con,int,wis,cha = finalAbilities(abilities,level,speciesMod);
+        let statGen = finalAbilities(abilities,level,speciesMod);
+            let str = statGen[0];
+            let dex = statGen[1];
+            let con = statGen[2];
+            let int = statGen[3];
+            let wis = statGen[4];
+            let cha = statGen[5];
 
         //Class generation
         let classes = [0,0,0,0,0];
@@ -122,7 +128,7 @@ window.genCharacter = function genCharacter() {
 
         //defenses
         let reflex = getReflex(classes,dex,level,size,speciesTraits,feats);
-            let flatFooted = getFlatFooted(reflex,dex);
+            let flatFooted = getFlatFooted(reflex,dex,feats);
         let fortitude = getFortitude(classes,con,level,speciesTraits,feats);
             let damageThreshold = getDamageThreshold(fortitude,size,feats);
         let will = getWill(classes,wis,level,speciesTraits,feats);

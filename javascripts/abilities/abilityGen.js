@@ -36,7 +36,7 @@ else if (abilities == "rolled") {
     cha = statGen[5];
 }
 
-return [str,dex,con,int,wis,cha]
+return [str,dex,con,int,wis,cha];
 }
 
 export function finalAbilities(abilities,level,speciesMod) {
@@ -108,5 +108,5 @@ export function finalAbilities(abilities,level,speciesMod) {
             }}
         }
     }
-    return str,dex,con,int,wis,cha;
+    return [str,dex,con,int,wis,cha];
 }
