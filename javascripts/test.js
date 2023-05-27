@@ -82,9 +82,10 @@ export function genCharacter() {
                 talents.push(getTalent(thisLevel));
                 hitPoints += getFirstHitPoints(thisLevel,available,skills,feats,talents);
                 feats = classFeats(thisLevel,classes,int,con,skills,speciesTraits);
+                feats = speciesFeats(feats,speciesTraits,skills);
             }
             else {
-                thisLevel = getLevel();
+                thisLevel = getLevel(firstClass,classes);
                 classes[thisLevel]++;
                 if (classes[thisLevel] == 1) {
                     feats.push(multiclassFeat(thisLevel,feats,skills,int,con));
@@ -123,13 +124,15 @@ export function genCharacter() {
 
         //attacks and damage
         let unarmed = getUnarmed(BAB,level,str,size,speciesTraits,feats);
+        let advancedMelee,heavyWeapon,lightsaber,pistol,rifle,equipment = getWeapon(BAB,level,str,dex,feats);
 
         //equipment
+        equipment.sort();
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-            reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmedList,unarmed,meleeDamage,
-            advancedMelee,lightsaber,blasterPistol,blasterRifle,heavyWeapon,otherAttack,baseAttackBonus,grapple,
+            reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,meleeAttack,unarmed,meleeDamage,
+            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,baseAttackBonus,grapple,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
     
         document.write(output);

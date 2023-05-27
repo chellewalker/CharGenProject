@@ -54,7 +54,7 @@ export function nobleTalents(talents,available,skills,feats) {
         talent = exileTalents(talents,available,skills,feats);
     }
     if (count == 20) {
-        talent = "NoValidTalent";
+        talent = "ValidTalentNotFound";
     }
 }
     return talent;

@@ -45,7 +45,7 @@ export function soldierTalents(talents,available,skills,feats) {
         talent = warriorTalents(talents,available,skills,feats);
     }
     if (count == 20) {
-        talent = "NoValidTalent";
+        talent = "ValidTalentNotFound";
     }
 }
     return talent;

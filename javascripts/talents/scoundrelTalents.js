@@ -48,7 +48,7 @@ export function scoundrelTalents(talents,available,skills,feats) {
         talent = outsiderTalents(talents,available,skills,feats);
     }
     if (count == 20) {
-        talent = "NoValidTalent";
+        talent = "ValidTalentNotFound";
     }
 }
     return talent;
