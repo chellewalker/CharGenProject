@@ -20,12 +20,20 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
             }
             traitDisplay += speciesTraits[count];
         }
+        let rangedWeapon = (BAB + Math.floor((dex-10)/2));
 
     let advancedMeleeAttack = "";
     let lightsaberAttack = "";
     let pistolAttack = "";
     let rifleAttack = "";
     let heavyWeaponAttack = "";
+    let byWeapon = "";
+    if (rangedWeapon < 0) {
+        byWeapon = rangedWeapon;
+    }
+    else {
+        byWeapon = "+" + rangedWeapon;
+    }
     if (advancedMelee != "") {
         advancedMeleeAttack = "<strong>Melee:</strong> "+advancedMelee+"<br>";
     }
@@ -40,6 +48,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
     if (heavyWeapon != "") {
         heavyWeaponAttack = "<strong>Ranged:</strong> "+heavyWeapon+"<br>";
+    }
+    if (pistol == "" && rifle == "" && heavyWeapon == "") {
+        pistolAttack = "<strong>Ranged:</strong> By Weapon "+byWeapon+"<br>";
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
@@ -115,6 +126,9 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         }
         if (heavyWeapon != "") {
             heavyWeaponAttack = "Ranged: "+heavyWeapon+"<br>";
+        }
+        if (pistol == "" && rifle == "" && heavyWeapon == "") {
+            pistolAttack = "Ranged: By Weapon "+byWeapon+"<br>";
         }
 
     let outputData = 
