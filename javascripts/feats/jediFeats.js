@@ -3,7 +3,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 44);
+        let randomNum = Math.floor(Math.random() * 53);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -16,7 +16,10 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
         else if (randomNum == 3 && available.includes("CR") && dex >= 13) {
             feat = "Dodge";
         }
-        else if (randomNum == 4 && available.includes("CR") && BAB >= 6) {
+        else if (randomNum == 4 && available.includes("CR") && BAB >= 6 ||
+                    randomNum == 5 && available.includes("CR") && BAB >= 6 ||
+                    randomNum == 6 && available.includes("CR") && BAB >= 6 ||
+                    randomNum == 7 && available.includes("CR") && BAB >= 6) {
             let check = 0;
             let count = 0;
             while (check == 0 && count < 20) {
@@ -47,28 +50,23 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
                 }
             }
         }
-        else if (randomNum == 5 && available.includes("CR") && speciesTraits.includes("Rage") && BAB >= 1) {
+        else if (randomNum == 8 && available.includes("CR") && speciesTraits.includes("Rage") && BAB >= 1) {
             feat = "Dreadful Rage";
         }
-        else if (randomNum == 6 && available.includes("CR") && dex >= 13 && BAB >= 1) {
+        else if (randomNum == 9 && available.includes("CR") && dex >= 13 && BAB >= 1 ||
+                    randomNum == 10 && available.includes("CR") && dex >= 13 && BAB >= 1 ||
+                    randomNum == 11 && available.includes("CR") && dex >= 13 && BAB >= 1) {
             feat = "Dual Weapon Mastery I";
         }
-        else if (randomNum == 7 && available.includes("CR") && feats.includes("Dual Weapon Mastery I") && dex >= 15 && BAB >= 6) {
+        else if (randomNum == 12 && available.includes("CR") && feats.includes("Dual Weapon Mastery I") && dex >= 15 && BAB >= 6 ||
+                    randomNum == 13 && available.includes("CR") && feats.includes("Dual Weapon Mastery I") && dex >= 15 && BAB >= 6) {
             feat = "Dual Weapon Mastery II";
         }
-        else if (randomNum == 8 && available.includes("CR") && feats.includes("Dual Weapon Mastery II") && dex >= 17 && BAB >= 11) {
+        else if (randomNum == 14 && available.includes("CR") && feats.includes("Dual Weapon Mastery II") && dex >= 17 && BAB >= 11) {
             feat = "Dual Weapon Mastery III";
         }
-        else if (randomNum == 9 && available.includes("CR")) {
+        else if (randomNum == 15 && available.includes("CR")) {
             feat = "Force Sensitivity";
-        }
-        else if (randomNum == 10  && skills.includes("Use the Force") ||
-                    randomNum == 11  && skills.includes("Use the Force") ||
-                    randomNum == 12  && skills.includes("Use the Force") ||
-                    randomNum == 13  && skills.includes("Use the Force") ||
-                    randomNum == 14  && skills.includes("Use the Force") ||
-                    randomNum == 15  && skills.includes("Use the Force")) {
-            feat = "Force Training";
         }
         else if (randomNum == 16 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {
             feat = "Great Cleave";
@@ -112,36 +110,48 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
                     randomNum == 31 && available.includes("CR") || 
                     randomNum == 32 && available.includes("CR") || 
                     randomNum == 33 && available.includes("CR") || 
-                    randomNum == 34 && available.includes("CR")) {
+                    randomNum == 34 && available.includes("CR") || 
+                    randomNum == 35 && available.includes("CR") || 
+                    randomNum == 36 && available.includes("CR")) {
                 let randomNum2 = Math.floor(Math.random() * skills.length);
                 feat = "Skill Focus ("+skills[randomNum2]+")";
         }
-        else if (randomNum == 35 && available.includes("CR") || 
-                    randomNum == 36 && available.includes("CR")) {
+        else if (randomNum == 37 && available.includes("CR") || 
+                    randomNum == 38 && available.includes("CR") ||
+                    randomNum == 39 && available.includes("CR") ||
+                    randomNum == 40 && available.includes("CR") ||
+                    randomNum == 41 && available.includes("CR")) {
             feat = "Skill Training";
         }
-        else if (randomNum == 37 && available.includes("CR")) {
+        else if (randomNum == 42 && available.includes("CR")) {
             feat = "Strong in the Force";
         }
-        else if (randomNum == 38 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
+        else if (randomNum == 43 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11 ||
+                    randomNum == 44 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
             feat = "Triple Attack (Advanced Melee Weapons)";
         }
-        else if (randomNum == 38 && available.includes("CR") && feats.includes("Double Attack (Heavy Weapons)") && BAB >= 11) {
+        else if (randomNum == 43 && available.includes("CR") && feats.includes("Double Attack (Heavy Weapons)") && BAB >= 11 ||
+                    randomNum == 44 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
             feat = "Triple Attack (Heavy Weapons)";
         }
-        else if (randomNum == 38 && available.includes("CR") && feats.includes("Double Attack (Lightsabers)") && BAB >= 11) {
+        else if (randomNum == 43 && available.includes("CR") && feats.includes("Double Attack (Lightsabers)") && BAB >= 11 ||
+                    randomNum == 44 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
             feat = "Triple Attack (Lightsabers)";
         }
-        else if (randomNum == 38 && available.includes("CR") && feats.includes("Double Attack (Pistols)") && BAB >= 11) {
+        else if (randomNum == 43 && available.includes("CR") && feats.includes("Double Attack (Pistols)") && BAB >= 11 ||
+                    randomNum == 44 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
             feat = "Triple Attack (Pistols)";
         }
-        else if (randomNum == 38 && available.includes("CR") && feats.includes("Double Attack (Rifles)") && BAB >= 11) {
+        else if (randomNum == 43 && available.includes("CR") && feats.includes("Double Attack (Rifles)") && BAB >= 11 ||
+                    randomNum == 44 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
             feat = "Triple Attack (Rifles)";
         }
-        else if (randomNum == 38 && available.includes("CR") && feats.includes("Double Attack (Simple Weapons)") && BAB >= 11) {
+        else if (randomNum == 43 && available.includes("CR") && feats.includes("Double Attack (Simple Weapons)") && BAB >= 11 ||
+                    randomNum == 44 && available.includes("CR") && feats.includes("Double Attack (Advanced Melee Weapons)") && BAB >= 11) {
             feat = "Triple Attack (Simple Weapons)";
         }
-        else if (randomNum == 39 && available.includes("CR") && BAB >= 8) {
+        else if (randomNum == 45 && available.includes("CR") && BAB >= 8 ||
+                    randomNum == 46 && available.includes("CR") && BAB >= 8) {
             let check = 0;
             let count = 0;
             while (check == 0 && count < 20) {
@@ -172,14 +182,16 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
                 }
             }
         }
-        else if (randomNum == 40 && available.includes("CR") && BAB >= 1) {
+        else if (randomNum == 47 && available.includes("CR") && BAB >= 1 ||
+                    randomNum == 48 && available.includes("CR") && BAB >= 1) {
             feat = "Weapon Finesse";
         }
-        else if (randomNum == 41 && available.includes("CR") &&  feats.includes("Weapon Proficiency (Lightsabers)")||
-                    randomNum == 42 && available.includes("CR") && feats.includes("Weapon Proficiency (Lightsabers)")) {
+        else if (randomNum == 49 && available.includes("CR") &&  feats.includes("Weapon Proficiency (Lightsabers)")||
+                    randomNum == 50 && available.includes("CR") && feats.includes("Weapon Proficiency (Lightsabers)") ||
+                    randomNum == 51 && available.includes("CR") && feats.includes("Weapon Proficiency (Lightsabers)")) {
             feat = "Weapon Focus (Lightsabers)";
         }
-        else if (randomNum == 43) {
+        else if (randomNum == 52) {
             feat = "Weapon Proficiency (Lightsabers)";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training") {

@@ -3,7 +3,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 21);
+        let randomNum = Math.floor(Math.random() * 28);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -28,39 +28,46 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
                     feat = "Exotic Weapon Proficiency (Bowcaster)";
                 }
         }
-        else if (randomNum == 3 && available.includes("CR") && int >= 13) {
+        else if (randomNum == 3 && available.includes("CR") && int >= 13 ||
+                    randomNum == 4 && available.includes("CR") && int >= 13) {
             feat = "Linguist";
         }
-        else if (randomNum == 4 && available.includes("CR") && int >= 13) {
+        else if (randomNum == 5 && available.includes("CR") && int >= 13) {
             feat = "Melee Defense";
         }
-        else if (randomNum == 5 && available.includes("CR") || 
-                    randomNum == 6 && available.includes("CR") || 
+        else if (randomNum == 6 && available.includes("CR") || 
                     randomNum == 7 && available.includes("CR") || 
                     randomNum == 8 && available.includes("CR") || 
                     randomNum == 9 && available.includes("CR") || 
                     randomNum == 10 && available.includes("CR") || 
-                    randomNum == 11 && available.includes("CR")) {
+                    randomNum == 11 && available.includes("CR") || 
+                    randomNum == 12 && available.includes("CR") || 
+                    randomNum == 13 && available.includes("CR") || 
+                    randomNum == 14 && available.includes("CR") || 
+                    randomNum == 15 && available.includes("CR")) {
                 let randomNum2 = Math.floor(Math.random() * skills.length);
                 feat = "Skill Focus ("+skills[randomNum2]+")";
         }
-        else if (randomNum == 12 && available.includes("CR") || 
-                    randomNum == 13 && available.includes("CR")) {
+        else if (randomNum == 16 && available.includes("CR") || 
+                    randomNum == 17 && available.includes("CR") || 
+                    randomNum == 18 && available.includes("CR") || 
+                    randomNum == 19 && available.includes("CR") || 
+                    randomNum == 20 && available.includes("CR")) {
             feat = "Skill Training";
         }
-        else if (randomNum == 14 && available.includes("CR") && skills.includes("Treat Injury")) {
+        else if (randomNum == 21 && available.includes("CR") && skills.includes("Treat Injury")) {
             feat = "Surgical Expertise";
         }
-        else if (randomNum == 15 && available.includes("CR") && BAB >= 1) {
+        else if (randomNum == 22 && available.includes("CR") && BAB >= 1) {
             feat = "Weapon Finesse";
         }
-        else if (randomNum == 16 || randomNum == 17 || randomNum == 18) {
+        else if (randomNum == 23 || randomNum == 24 || randomNum == 25) {
             feat = "Weapon Proficiency (Advanced Melee Weapons)";
         }
-        else if (randomNum == 19) {
+        else if (randomNum == 26) {
             feat = "Weapon Proficiency (Pistols)";
         }
-        else if (randomNum == 20) {
+        else if (randomNum == 27) {
             feat = "Weapon Proficiency (Rifles)";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training") {

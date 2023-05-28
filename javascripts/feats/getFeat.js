@@ -1,3 +1,4 @@
+import {characterFeat} from './characterFeat.js';
 import {jediFeats} from './jediFeats.js';
 import {nobleFeats} from './nobleFeats.js';
 import {scoundrelFeats} from './scoundrelFeats.js';
@@ -24,10 +25,13 @@ while (feat == "") {
     else if (thisLevel == 4) {
         feat = soldierFeats(feats,available,skills,talents,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
-    if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training") {
-        feat = "";
+    else {
+        feat = characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
-    if (count == 50000) {
+    /*if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics") {
+        feat = "";
+    }*/
+    if (count == 5000000) {
         feat = "ValidFeatNotFound";
     }
 }

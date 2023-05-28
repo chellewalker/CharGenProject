@@ -10,7 +10,6 @@ import {displayFeats} from './feats/featDisplay.js';
 import {speciesFeats} from './feats/speciesFeats.js';
 import {getFeat} from './feats/getFeat.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
-import {characterFeat} from './feats/characterFeat.js';
 import {getTalent,displayTalents} from './talents/getTalent.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
 import {classFirst,classListing} from './classGen.js';
@@ -117,7 +116,7 @@ window.genCharacter = function genCharacter() {
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
-                feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             }
             else {
                 thisLevel = getLevel(firstClass,classes);
@@ -141,11 +140,12 @@ window.genCharacter = function genCharacter() {
                 }
             }
             if (count % 3 == 0) {
-                feats.push(characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             if (feats.findLast(findLast) == "Skill Training") {
                 skills.push(getNewSkill(speciesTraits,classes,skills));
                 skills.sort();
             }
+
         }}
         talents.sort();
         feats.sort();
@@ -157,12 +157,12 @@ window.genCharacter = function genCharacter() {
         perceptionDisplay = getPerception(level,wis,skills,feats);
         grapple = getGrapple(BAB,str,dex,size,talents);
 
-        if (feats.includes("ValidFeatNotFound")) {
+        /*if (feats.includes("ValidFeatNotFound")) {
             failsafe = 0;
         }
         if (talents.includes("ValidTalentNotFound")) {
             failsafe = 0;
-        }
+        }*/
     }
 
         //generate languages

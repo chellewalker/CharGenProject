@@ -8,7 +8,7 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
     if (feats.includes("Weapon Focus (Heavy Weapons)")) {
         heavyWeaponAttackRaw++;
     }
-
+    while (heavyWeaponWeapon == "") {
         let randomNum = Math.floor(Math.random() * 5);
 
         if (randomNum == 0) {
@@ -43,6 +43,7 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
             special = ", 2-Square Autofire";
             heavyWeaponAttackRaw -= 5;
         }
+    }
 
         let heavyWeaponAttack = "";
         if (heavyWeaponAttackRaw < 0) {
