@@ -92,6 +92,8 @@ window.genCharacter = function genCharacter() {
         let forceTraining = 0;
         let skillTraining = 0;
         let startshipTactics = 0;
+        let sneakAttack = 0;
+        let tempTalents = [];
         let tempFeats = [];
         let safecount = 0;
     while (failsafe == 0) {
@@ -198,6 +200,23 @@ window.genCharacter = function genCharacter() {
             tempFeats.push("Starship Tactics");
         }
         feats = tempFeats;
+
+        //split Talents
+        for (count = 0; count < talents.length; count++) {
+            if (talents[count] == "Sneak Attack") {
+                sneakAttack++;
+            }
+            else {
+                tempTalents.push(talents[count]);
+            }
+        }
+        if (count == talents.length && sneakAttack > 1) {
+            tempTalents.push("Sneak Attack ("+sneakAttack+"d6)");
+        }
+        else if (count == talents.length && sneakAttack == 1) {
+            tempTalents.push("Sneak Attack (+1d6)");
+        }
+        talents = tempTalents;
 
         classList = classListing(firstClass,classes);
         listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);

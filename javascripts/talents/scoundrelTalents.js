@@ -122,12 +122,12 @@ export function misfortuneTalents(talents,available,skills,feats,BAB) {
         talent = "Disruptive";
     }
     else if (randomNum == 2 && available.includes("CR")) {
-        talent = "Sneak Attack (+1d6)";
+        talent = "Sneak Attack";
     }
     else if (randomNum == 3 && available.includes("CR") && talents.includes("Disruptive")) {
         talent = "Walk the Line";
     }
-    else if (randomNum == 4 && available.includes("GaW") && talents.includes("Sneak Attack (+1d6)")) {
+    else if (randomNum == 4 && available.includes("GaW") && talents.includes("Sneak Attack")) {
         talent = "Backstabber";
     }
     else if (randomNum == 5 && available.includes("SaV")) {
@@ -142,7 +142,7 @@ export function misfortuneTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 8 && available.includes("SaV") && talents.includes("Skirmisher")) {
         talent = "Improved Skirmisher";
     }
-    else if (randomNum == 9 && available.includes("GaW") && talents.includes("Sneak Attack (+1d6)") && feats.includes("Point-Blank Shot")) {
+    else if (randomNum == 9 && available.includes("GaW") && talents.includes("Sneak Attack") && feats.includes("Point-Blank Shot")) {
         talent = "Improved Sneak Attack";
     }
     else if (randomNum == 10 && available.includes("LECG")) {
@@ -157,13 +157,13 @@ export function misfortuneTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 13 && available.includes("CWCG")) {
         talent = "Stymie";
     }
-    else if (randomNum == 14 && available.includes("SaV") && talents.includes("Skirmisher") && talents.includes("Sneak Attack (+1d6)")) {
+    else if (randomNum == 14 && available.includes("SaV") && talents.includes("Skirmisher") && talents.includes("Sneak Attack")) {
         talent = "Sudden Strike";
     }
     else if (randomNum == 15 && available.includes("SaV") && talents.includes("Dastardly Strike")) {
         talent = "Weakening Strike";
     }
-    if (talents.includes(talent)) {
+    if (talents.includes(talent) && talent != "Sneak Attack") {
         talent = "";
     }
 }
