@@ -56,7 +56,10 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolDamageRaw += 2;
     }
     let pistolDamage = "";
-    if (pistolDamageRaw < 0) {
+    if (pistolDamageRaw == 0) {
+        pistolDamage = "";
+    }
+    else if (pistolDamageRaw < 0) {
         pistolDamage = pistolDamageRaw;
     }
     else {

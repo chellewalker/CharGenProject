@@ -42,7 +42,10 @@ export function getLightsaber(available,BAB,level,str,dex,feats,talents,size) {
         lightsaberDamageRaw += 2;
     }
     let lightsaberDamage = "";
-    if (lightsaberDamageRaw < 0) {
+    if (lightsaberDamageRaw == 0) {
+        lightsaberDamage = "";
+    }
+    else if (lightsaberDamageRaw < 0) {
         lightsaberDamage = lightsaberDamageRaw;
     }
     else {

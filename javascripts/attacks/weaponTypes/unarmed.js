@@ -34,7 +34,10 @@ export function getUnarmed(BAB,level,str,size,speciesTraits,feats) {
 
     let unarmedDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     let unarmedDamage = "";
-    if (unarmedDamageRaw < 0) {
+    if (unarmedDamageRaw == 0) {
+        unarmedDamage = "";
+    }
+    else if (unarmedDamageRaw < 0) {
         unarmedDamage = unarmedDamageRaw;
     }
     else {

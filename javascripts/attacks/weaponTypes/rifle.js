@@ -64,7 +64,10 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         rifleDamageRaw += 2;
     }
     let rifleDamage = "";
-    if (rifleDamageRaw < 0) {
+    if (rifleDamageRaw == 0) {
+        rifleDamage = "";
+    }
+    else if (rifleDamageRaw < 0) {
         rifleDamage = rifleDamageRaw;
     }
     else {

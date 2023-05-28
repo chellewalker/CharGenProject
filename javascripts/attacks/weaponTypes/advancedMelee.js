@@ -58,7 +58,10 @@ export function getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size)
         advancedMeleeDamageRaw += 2;
     }
     let advancedMeleeDamage = "";
-    if (advancedMeleeDamageRaw < 0) {
+    if (advancedMeleeDamageRaw == 0) {
+        advancedMeleeDamage = "";
+    }
+    else if (advancedMeleeDamageRaw < 0) {
         advancedMeleeDamage = advancedMeleeDamageRaw;
     }
     else {

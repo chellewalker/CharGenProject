@@ -58,7 +58,10 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
         heavyWeaponDamageRaw += 2;
     }
     let heavyWeaponDamage = "";
-    if (heavyWeaponDamageRaw < 0) {
+    if (heavyWeaponDamageRaw == 0) {
+        heavyWeaponDamage = "";
+    }
+    else if (heavyWeaponDamageRaw < 0) {
         heavyWeaponDamage = heavyWeaponDamageRaw;
     }
     else {
