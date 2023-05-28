@@ -249,7 +249,7 @@ window.genCharacter = function genCharacter() {
         let speed = getSpeed(speciesID,talents,feats);
 
         //attacks and damage
-        let unarmed = getUnarmed(BAB,level,str,size,speciesTraits,feats);
+        let unarmed = getUnarmed(BAB,level,str,dex,feats,talents,size,speciesTraits);
         let equipment = [];
         let temp;
         let temp2;

@@ -1,5 +1,12 @@
-export function getUnarmed(BAB,level,str,size,speciesTraits,feats) {
+export function getUnarmed(BAB,level,str,dex,feats,talents,size,speciesTraits) {
     let unarmedAttackRaw = BAB + Math.floor((str-10)/2);
+    if (feats.includes("Weapon Finesse")) {
+        unarmedAttackRaw = BAB + Math.max(Math.floor((dex-10)/2),Math.floor((str-10)/2));
+    }
+    if (feats.includes("Weapon Focus (Simple Weapons)")) {
+        unarmedAttackRaw++;
+    }
+
         let unarmedAttack = "";
         if (unarmedAttackRaw < 0) {
             unarmedAttack = unarmedAttackRaw;
@@ -33,6 +40,9 @@ export function getUnarmed(BAB,level,str,size,speciesTraits,feats) {
     }
 
     let unarmedDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
+    if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+        unarmedDamageRaw += 2;
+    }
     let unarmedDamage = "";
     if (unarmedDamageRaw == 0) {
         unarmedDamage = "";
