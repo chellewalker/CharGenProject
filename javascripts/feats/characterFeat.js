@@ -3,7 +3,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 179);
+        let randomNum = Math.floor(Math.random() * 188);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -162,7 +162,16 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     randomNum == 54  && skills.includes("Use the Force") ||
                     randomNum == 55  && skills.includes("Use the Force") ||
                     randomNum == 56  && skills.includes("Use the Force") ||
-                    randomNum == 57  && skills.includes("Use the Force")) {
+                    randomNum == 57  && skills.includes("Use the Force") ||
+                    randomNum == 179  && skills.includes("Use the Force") ||
+                    randomNum == 180  && skills.includes("Use the Force") ||
+                    randomNum == 181  && skills.includes("Use the Force") ||
+                    randomNum == 182  && skills.includes("Use the Force") ||
+                    randomNum == 183  && skills.includes("Use the Force") ||
+                    randomNum == 184  && skills.includes("Use the Force") ||
+                    randomNum == 185  && skills.includes("Use the Force") ||
+                    randomNum == 186  && skills.includes("Use the Force") ||
+                    randomNum == 187  && skills.includes("Use the Force")) {
             feat = "Force Training";
         }
         else if (randomNum == 58 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {

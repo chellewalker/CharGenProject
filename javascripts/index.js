@@ -88,6 +88,11 @@ window.genCharacter = function genCharacter() {
         let initiativeDisplay;
         let perceptionDisplay;
         let grapple;
+        let linguist = 0;
+        let forceTraining = 0;
+        let skillTraining = 0;
+        let startshipTactics = 0;
+        let tempFeats = [];
         let safecount = 0;
     while (failsafe == 0) {
         safecount++;
@@ -149,6 +154,51 @@ window.genCharacter = function genCharacter() {
         }}
         talents.sort();
         feats.sort();
+
+        //split Linguist/Force Training/Skill Training/Starship Tactics
+        for (count = 0; count < feats.length; count++) {
+            if (feats[count] == "Linguist") {
+                linguist++;
+            }
+            else if (feats[count] == "Skill Training") {
+                skillTraining++;
+            }
+            else if (feats[count] == "Force Training") {
+                forceTraining++;
+            }
+            else if (feats[count] == "Starship Tactics") {
+                startshipTactics++;
+            }
+            else {
+                tempFeats.push(feats[count]);
+            }
+        }
+        if (count == feats.length && linguist > 1) {
+            tempFeats.push("Linguist ("+linguist+")");
+        }
+        else if (count == feats.length && linguist == 1) {
+            tempFeats.push("Linguist");
+        }
+        if (count == feats.length && forceTraining > 1) {
+            tempFeats.push("Force Training ("+forceTraining+")");
+        }
+        else if (count == feats.length && forceTraining == 1) {
+            tempFeats.push("Force Training");
+        }
+        if (count == feats.length && skillTraining > 1) {
+            tempFeats.push("Skill Training ("+skillTraining+")");
+        }
+        else if (count == feats.length && skillTraining == 1) {
+            tempFeats.push("Skill Training");
+        }
+        if (count == feats.length && startshipTactics > 1) {
+            tempFeats.push("Starship Tactics ("+startshipTactics+")");
+        }
+        else if (count == feats.length && startshipTactics == 1) {
+            tempFeats.push("Starship Tactics");
+        }
+        feats = tempFeats;
+
         classList = classListing(firstClass,classes);
         listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
         listTalents = displayTalents(talents);
@@ -166,7 +216,7 @@ window.genCharacter = function genCharacter() {
     }
 
         //generate languages
-        let languages = getLanguages(speciesID,feats,int);
+        let languages = getLanguages(speciesID,linguist,int);
         let listLanguages = languageList(languages);
 
         //defenses

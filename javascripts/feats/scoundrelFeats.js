@@ -63,8 +63,9 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
             feat = "Vehicular Combat";
         }
         else if (randomNum == 33 || randomNum == 34 || randomNum == 35) {
+            if (count2 % 2 == 0) {
             feat = "Weapon Proficiency (Advanced Melee Weapons)";
-        }
+        }}
         else if (randomNum == 36) {
             feat = "Weapon Proficiency (Pistols)";
         }

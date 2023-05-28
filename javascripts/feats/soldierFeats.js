@@ -305,8 +305,9 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
             }
         }
         else if (randomNum == 102 || randomNum == 103 || randomNum == 104) {
-            feat = "Weapon Proficiency (Advanced Melee Weapons)";
-        }
+            if (count2 % 2 == 0) {
+                feat = "Weapon Proficiency (Advanced Melee Weapons)";
+            }}
         else if (randomNum == 105 || randomNum == 106 || randomNum == 107) {
             feat = "Weapon Proficiency (Heavy Weapons)";
         }

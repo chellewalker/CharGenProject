@@ -183,13 +183,15 @@ if (languages[0] == "Basic (understand only)") {
     return language;
 }
 
-export function getLanguages(speciesID,feats,int) {
+export function getLanguages(speciesID,linguist,int) {
     let count;
     let languages = (parseXML("xmls/species.xml","languages",speciesID)).split(", ");
         if (int > 11) {
             let extraLanguages = Math.floor((int-10)/2);
-            if (feats.includes("Linguist")) {
-                extraLanguages += 1 + Math.floor((int-10)/2);
+            if (linguist > 0) {
+                for (count = 0; count < linguist; count++) {
+                    extraLanguages += 1 + Math.floor((int-10)/2);
+                }
             }
             for (count = 0; count < extraLanguages; count++) {
                 languages.push(language(languages));

@@ -80,8 +80,9 @@ export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
             feat = "Vehicular Combat";
         }
         else if (randomNum == 38 || randomNum == 39 || randomNum == 40) {
-            feat = "Weapon Proficiency (Advanced Melee Weapons)";
-        }
+            if (count2 % 2 == 0) {
+                feat = "Weapon Proficiency (Advanced Melee Weapons)";
+            }}
         else if (randomNum == 41) {
             feat = "Weapon Proficiency (Pistols)";
         }

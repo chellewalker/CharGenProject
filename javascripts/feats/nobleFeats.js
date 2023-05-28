@@ -62,8 +62,9 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
             feat = "Weapon Finesse";
         }
         else if (randomNum == 23 || randomNum == 24 || randomNum == 25) {
-            feat = "Weapon Proficiency (Advanced Melee Weapons)";
-        }
+            if (count2 % 2 == 0) {
+                feat = "Weapon Proficiency (Advanced Melee Weapons)";
+            }}
         else if (randomNum == 26) {
             feat = "Weapon Proficiency (Pistols)";
         }

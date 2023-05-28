@@ -5,7 +5,7 @@ export function getSkills (int,firstClass,speciesTraits,classes) {
         let count = 0;
 
         for (count = 0; count < trained; count++) {
-            skills.push(getNewSkill(speciesTraits,classes,skills));
+            skills.push(getFirstSkills(speciesTraits,firstClass,skills));
     }
 
     return skills;
@@ -68,6 +68,56 @@ export function getAvailSkills(int,firstClass,speciesTraits) {
             }
 
     return trained;
+}
+
+export function getFirstSkills(speciesTraits,firstClass,skills) {
+    let skillsList = ["Acrobatics","Climb","Deception","Endurance","Gather Information","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Persuasion","Pilot","Ride","Stealth","Survival","Swim","Treat Injury","Use Computer","Use the Force"];
+    
+    let classSkills = [];
+    let jediSkills = ["Acrobatics","Endurance","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Pilot","Use the Force"];
+    let nobleSkills = ["Deception","Gather Information","Initiative","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Perception","Persuasion","Pilot","Ride","Treat Injury","Use Computer"];
+    let scoundrelSkills = ["Acrobatics","Deception","Gather Information","Initiative","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Persuasion","Pilot","Stealth","Use Computer"];
+    let scoutSkills = ["Climb","Endurance","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Pilot","Ride","Stealth","Survival","Swim"];
+    let soldierSkills = ["Climb","Endurance","Initiative","Jump","Knowledge (Tactics)","Mechanics","Perception","Pilot","Swim","Treat Injury","Use Computer"];
+
+    if (firstClass == 0) {
+        classSkills = jediSkills;
+    }
+    if (firstClass == 1) {
+        classSkills = nobleSkills;
+    }
+    if (firstClass == 2) {
+        classSkills = scoundrelSkills;
+    }
+    if (firstClass == 3) {
+        classSkills = scoutSkills;
+    }
+    if (firstClass == 4) {
+        classSkills = soldierSkills;
+    }
+    if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
+        classSkills.push("Climb","Stealth");
+    }
+
+            let thisSkill = "";
+            while (thisSkill == "") {
+                thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
+                    let randomNum2 = Math.round(Math.random() * 4);
+                    if (randomNum2 == 0) {
+                        thisSkill = "Use the Force";
+                    }
+                
+                if (skills.includes(thisSkill)) {
+                    thisSkill = "";
+                }
+                if (classSkills.includes(thisSkill)) {
+
+                }
+                else {
+                    thisSkill = "";
+                }
+        }
+        return thisSkill;
 }
 
 export function getNewSkill(speciesTraits,classes,skills) {

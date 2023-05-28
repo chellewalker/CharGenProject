@@ -10,20 +10,21 @@ let feat = "";
 let count = 0;
 while (feat == "") {
     count++;
+
     if (thisLevel == 0) {
         feat = jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
     else if (thisLevel == 1) {
-        feat = nobleFeats(feats,available,skills,talents,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
+        feat = nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
     else if (thisLevel == 2) {
-        feat = scoundrelFeats(feats,available,skills,talents,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
+        feat = scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
     else if (thisLevel == 3) {
-        feat = scoutFeats(feats,available,skills,talents,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
+        feat = scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
     else if (thisLevel == 4) {
-        feat = soldierFeats(feats,available,skills,talents,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
+        feat = soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
     }
     else {
         feat = characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size);
