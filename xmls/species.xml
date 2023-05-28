@@ -461,4 +461,32 @@
         <speciesTraits>Ancient Knowledge, Bonus Feat (Weapon Focus (Simple Weapons)), Force Blind, Primitive, Rage, Weapon Familiarity (Rakatan Weapon Template)</speciesTraits>
         <languages>Rakata</languages>
     </species>
+    <species>
+        <name>Selkath</name>
+        <value>selkath</value>
+        <speciesID>33</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Qual, Shasa, Shaelas, Shelkar</exampleNames>
+        <abilityMods>cha,2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>4</swimSpeed>
+        <speciesTraits>Able Healers, Breathe Underwater, Expert Swimmer</speciesTraits>
+        <languages>Selkath</languages>
+    </species>
+    <species>
+        <name>Snivvian</name>
+        <value>snivvian</value>
+        <speciesID>34</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Bakken, Dezzen, Dezirdna, Elinselor, Geezum, Marn Heirogryph, Nejet, Prinzan, Rachalt Hyst, Rincholar, Seerna, Snagletooth, Takeel, Thasca Knarr, Wiorkettle, Zereldspidar, Zutton</exampleNames>
+        <abilityMods>wis,2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Cold Resistance, Observant</speciesTraits>
+        <languages>Snivvian</languages>
+    </species>
 </species_list>
