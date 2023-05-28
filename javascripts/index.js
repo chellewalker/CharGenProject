@@ -129,7 +129,7 @@ window.genCharacter = function genCharacter() {
                 thisLevel = getLevel(firstClass,classes);
                 classes[thisLevel]++;
                 if (classes[thisLevel] == 1) {
-                    let temp = (multiclassFeat(thisLevel,feats,skills,int,con));
+                    let temp = (multiclassFeat(thisLevel,feats,skills,int,con,speciesTraits));
                     if (temp != "") { 
                         feats.push(temp);
                 }}

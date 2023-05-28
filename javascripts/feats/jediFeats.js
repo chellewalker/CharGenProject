@@ -66,7 +66,11 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
             feat = "Dual Weapon Mastery III";
         }
         else if (randomNum == 15 && available.includes("CR")) {
-            feat = "Force Sensitivity";
+            if (speciesTraits.includes("Force Blind")) {
+            }
+            else {
+                feat = "Force Sensitivity";
+            }
         }
         else if (randomNum == 16 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {
             feat = "Great Cleave";

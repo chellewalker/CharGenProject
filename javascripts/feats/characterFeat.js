@@ -152,7 +152,11 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
             feat = "Force Boon";
         }
         else if (randomNum == 48 && available.includes("CR")) {
-            feat = "Force Sensitivity";
+            if (speciesTraits.includes("Force Blind")) {
+            }
+            else {
+                feat = "Force Sensitivity";
+            }
         }
         else if (randomNum == 49  && skills.includes("Use the Force") ||
                     randomNum == 50  && skills.includes("Use the Force") ||

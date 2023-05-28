@@ -369,12 +369,96 @@
         <speciesID>26</speciesID>
         <weight>1</weight>
         <source>KotORCG</source>
-        <exampleNames>Crado, Elashi, Feeth, Ferroh, Juhani, Larducias, Marnshara, Nodon, Nodak, Stragos, Sulvar, Tinisho</exampleNames>
-        <abilityMods>dex,2;int,-2</abilityMods>
+        <exampleNames>Odan-Urr, Omal-Zan, Uval-Nor, Shal-Orl, Tyan-Ruu</exampleNames>
+        <abilityMods>con,2;cha,-2</abilityMods>
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
-        <speciesTraits>Bonus Class Skill (Climb), Bonus Class Skill (Stealth), Natural Weapons, Reactive Claw</speciesTraits>
-        <languages>Basic, Catharese</languages>
+        <speciesTraits>Bonus Feat (Weapon Proficiency (Advanced Melee Weapons)), Low-Light Vision, Natural Armor (+1), Natural Telepath</speciesTraits>
+        <languages>Basic, Draethos</languages>
+    </species>
+    <species>
+        <name>Feeorin</name>
+        <value>feeorin</value>
+        <speciesID>27</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Bral, Crayl, Dod, Dreyla, Fein, Kren, Nor, Nym, Pryn, Sayla, Zun</exampleNames>
+        <abilityMods>str,2;con,2;int,-2;dex,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Brutal, Great Fortitude, Inborn Resilience, Low-Light Vision, Stronger by Age</speciesTraits>
+        <languages>Basic, Feeorin</languages>
+    </species>
+    <species>
+        <name>Khil</name>
+        <value>khil</value>
+        <speciesID>28</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Geld Bernar, Greldo Farnor, Tarlo Ganar, Revel Mallinor, Xamar</exampleNames>
+        <abilityMods>int,2;cha,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Cooperative Spirit, Dependable Worker, Self-Sustaining</speciesTraits>
+        <languages>Basic, Khilese</languages>
+    </species>
+    <species>
+        <name>Kissai</name>
+        <value>kissai</value>
+        <speciesID>29</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Drophan, Kalgrath, Uburluh, Zythmnr</exampleNames>
+        <abilityMods>cha,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Inspired, Warrior's Awareness, Weapon Familiarity (Massassi Lanvarok)</speciesTraits>
+        <languages>Basic, Sith</languages>
+    </species>
+    <species>
+        <name>Massassi</name>
+        <value>massassi</value>
+        <speciesID>30</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Drophan, Kalgrath, Uburluh, Zythmnr</exampleNames>
+        <abilityMods>str,4;int,-2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Duty Bound, Primitive, Warrior's Awareness, Weapon Familiarity (Massassi Lanvarok)</speciesTraits>
+        <languages>Basic</languages>
+    </species>
+    <species>
+        <name>Miraluka</name>
+        <value>miraluka</value>
+        <speciesID>31</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Damaya Guru, Embrul Joff, Jerec, Q'Anilia, Shoaneb Culu, Visas Marr, Zebron Tadro</exampleNames>
+        <abilityMods>int,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Force Training), Force Sight</speciesTraits>
+        <languages>Basic, Miralukese</languages>
+    </species>
+    <species>
+        <name>Rakata</name>
+        <value>rakata</value>
+        <speciesID>32</speciesID>
+        <weight>1</weight>
+        <source>KotORCG</source>
+        <exampleNames>Bandra, Daneel, Fralee, Orsaa, Vareen, Wauula</exampleNames>
+        <abilityMods>int,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Ancient Knowledge, Bonus Feat (Weapon Focus (Simple Weapons)), Force Blind, Primitive, Rage, Weapon Familiarity (Rakatan Weapon Template)</speciesTraits>
+        <languages>Rakata</languages>
     </species>
 </species_list>

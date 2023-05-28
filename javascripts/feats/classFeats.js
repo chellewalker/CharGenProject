@@ -1,7 +1,11 @@
 export function classFeats(firstClass,int,con,skills,speciesTraits) {
     let feats = [];
     if (firstClass == 0) {
-        feats.push("Force Sensitivity");
+        if (speciesTraits.includes("Force Blind")) {
+        }
+        else {
+            feats.push("Force Sensitivity");
+        }
         feats.push("Weapon Proficiency (Lightsabers)");
         feats.push("Weapon Proficiency (Simple Weapons)");
     }
@@ -57,9 +61,15 @@ export function classFeats(firstClass,int,con,skills,speciesTraits) {
     return feats;
 }
 
-export function multiclassFeat(thisLevel,feats,skills,con,int) {
+export function multiclassFeat(thisLevel,feats,skills,con,int,speciesTraits) {
     let feat = "";
     if (thisLevel == 0) {
+        if (speciesTraits.includes("Force Blind")) {
+        }
+        else {
+            feat = "Force Sensitivity";
+        }
+
         if (skills.includes("Use the Force")) {
             feat = "Force Sensitivity";
         }
@@ -67,6 +77,14 @@ export function multiclassFeat(thisLevel,feats,skills,con,int) {
         let check = 0;
         while (check == 0) {
             let avail = 2;
+            if (speciesTraits.includes("Force Blind") && feats.includes("Weapon Proficiency (Lightsabers)")) {
+                check = 1;
+            }
+            else if (speciesTraits.includes("Force Blind")) {
+                feat = "Weapon Proficiency (Lightsabers)";
+                check = 1;
+            }
+            else {
         let multiclass = ["Force Sensitivity","Weapon Proficiency (Lightsabers)"]
 
         let randomNum = Math.floor(Math.random() * avail);
@@ -78,7 +96,7 @@ export function multiclassFeat(thisLevel,feats,skills,con,int) {
         feat = multiclass[randomNum];
         check = 1;
         }
-    }}}
+    }}}}
     if (thisLevel == 1) {
         let check = 0;
         while (check == 0) {

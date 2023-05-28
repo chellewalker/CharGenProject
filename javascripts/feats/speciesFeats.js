@@ -24,6 +24,12 @@ export function speciesFeats(feats,speciesTraits,skills) {
         }
         }
     }
+    if (speciesTraits.includes("Bonus Feat (Weapon Focus (Simple Weapons))")) {
+        feats.push("Weapon Focus (Simple Weapons)");
+    }
+    if (speciesTraits.includes("Bonus Feat (Weapon Proficiency (Advanced Melee Weapons))")) {
+        feats.push("Weapon Proficiency (Advanced Melee Weapons)");
+    }
     if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Gather Information))") && 
         skills.includes("Gather Information")) {
         feats.push("Skill Focus (Gather Information)");
@@ -47,6 +53,10 @@ export function speciesFeats(feats,speciesTraits,skills) {
     if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Survival))") && 
         skills.includes("Survival")) {
         feats.push("Skill Focus (Survival)");
+    }
+    if (speciesTraits.includes("Conditional Bonus Feat (Force Training)") && 
+        skills.includes("Use the Force")) {
+        feats.push("Force Training");
     }
     
     feats.sort();

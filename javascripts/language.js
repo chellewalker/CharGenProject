@@ -186,6 +186,9 @@ if (languages[0] == "Basic (understand only)") {
 export function getLanguages(speciesID,linguist,int) {
     let count;
     let languages = (parseXML("xmls/species.xml","languages",speciesID)).split(", ");
+    if (speciesID == 30 && int >= 12) {
+        languages.push("Sith");
+    }
         if (int > 11) {
             let extraLanguages = Math.floor((int-10)/2);
             if (linguist > 0) {
