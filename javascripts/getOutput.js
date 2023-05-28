@@ -48,7 +48,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
 
     let output = 
-    "<h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
+    "<title>"+name+"</title><h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
         size+" "+species+" "+classList+"<br>"+
         destiny+"<strong>Force Points:</strong> "+forcePoints+"<br>"+
         "<strong>Initiative:</strong> "+initiativeDisplay+"; <strong>Senses:</strong> Perception "+perceptionDisplay+"<br>"+
