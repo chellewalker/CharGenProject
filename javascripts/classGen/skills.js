@@ -149,6 +149,7 @@ export function getNewSkill(speciesTraits,classes,skills) {
 export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits,feats) {
     let count;
     let listSkills = "";
+    trainedSkills.sort();
 
         let strSkills = ["Climb","Jump","Swim"];
         let dexSkills = ["Acrobatics","Initiative","Pilot","Ride","Stealth"];

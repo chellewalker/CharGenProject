@@ -146,7 +146,7 @@ window.genCharacter = function genCharacter() {
                     talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB));
                 }
             }
-            if (count % 3 == 0) {
+            if ((count-2) % 3 == 0) {
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             if (feats.findLast(findLast) == "Skill Training") {
                 skills.push(getNewSkill(speciesTraits,classes,skills));
