@@ -58,7 +58,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         else if (randomNum == 21 && available.includes("CR") && skills.includes("Treat Injury")) {
             feat = "Surgical Expertise";
         }
-        else if (randomNum == 22 && available.includes("CR") && BAB >= 1) {
+        else if (randomNum == 22 && available.includes("CR") && BAB >= 1 && dex >= str) {
             feat = "Weapon Finesse";
         }
         else if (randomNum == 23 || randomNum == 24 || randomNum == 25) {

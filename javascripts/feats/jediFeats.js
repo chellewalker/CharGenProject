@@ -186,8 +186,8 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
                 }
             }
         }
-        else if (randomNum == 47 && available.includes("CR") && BAB >= 1 ||
-                    randomNum == 48 && available.includes("CR") && BAB >= 1) {
+        else if (randomNum == 47 && available.includes("CR") && BAB >= 1 && dex >= str ||
+                    randomNum == 48 && available.includes("CR") && BAB >= 1 && dex >= str) {
             feat = "Weapon Finesse";
         }
         else if (randomNum == 49 && available.includes("CR") &&  feats.includes("Weapon Proficiency (Lightsabers)")||

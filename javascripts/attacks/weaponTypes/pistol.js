@@ -1,5 +1,6 @@
 export function getPistol(available,BAB,level,dex,feats,talents,size) {
     let pistolWeapon = "";
+    let weaponSize;
     let pistolDice;
     let pistolDie;
     let special = "";
@@ -12,32 +13,38 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
 
         if (randomNum == 0) {
             pistolWeapon = "Blaster Pistol";
+            weaponSize = "Small";
             pistolDice = 3;
             pistolDie = 6;
         }
         if (randomNum == 1 && available.includes("CR") && size != "Small") {
             pistolWeapon = "Heavy Blaster Pistol";
+            weaponSize = "Medium";
             pistolDice = 3;
             pistolDie = 8;
         }
         if (randomNum == 2 && available.includes("CR") && size != "Large") {
             pistolWeapon = "Hold-Out Blaster Pistol";
+            weaponSize = "Tiny";
             pistolDice = 3;
             pistolDie = 4;
         }
         if (randomNum == 3 && available.includes("CR")) {
             pistolWeapon = "Ion Pistol";
+            weaponSize = "Small";
             pistolDice = 3;
             pistolDie = 6;
             special = " (Ion)";
         }
         if (randomNum == 4 && available.includes("CR")) {
             pistolWeapon = "Sporting Blaster Pistol";
+            weaponSize = "Small";
             pistolDice = 3;
             pistolDie = 4;
         }
         if (randomNum == 5 && available.includes("CR")) {
             pistolWeapon = "Slugthrower Pistol";
+            weaponSize = "Small";
             pistolDice = 2;
             pistolDie = 6;
         }
@@ -66,6 +73,12 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolDamage = "+" + pistolDamageRaw;
     }
     let string = pistolWeapon + " " + pistolAttack +" ("+ pistolDice+"d"+pistolDie+pistolDamage + special + ")";
+    if (feats.includes("Dual Weapon Mastery I") && size == "Medium" ||
+            feats.includes("Dual Weapon Mastery I") && size == "Large" ||
+            feats.includes("Dual Weapon Mastery I") && size == "Small" && weaponSize == "Small" ||
+            feats.includes("Dual Weapon Mastery I") && size == "Small" && weaponSize == "Tiny") {
+        pistolWeapon = pistolWeapon + " (2)";
+    }
 
     return [string,pistolWeapon];
 }

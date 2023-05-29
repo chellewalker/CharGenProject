@@ -376,9 +376,9 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     randomNum == 145 && available.includes("CR") && skills.includes("Pilot")) {
             feat = "Vehicular Combat";
         }
-        else if (randomNum == 146 && available.includes("CR") && BAB >= 1 ||
-                    randomNum == 147 && available.includes("CR") && BAB >= 1 ||
-                    randomNum == 148 && available.includes("CR") && BAB >= 1) {
+        else if (randomNum == 146 && available.includes("CR") && BAB >= 1 && dex >= str ||
+                    randomNum == 147 && available.includes("CR") && BAB >= 1 && dex >= str ||
+                    randomNum == 148 && available.includes("CR") && BAB >= 1 && dex >= str) {
             feat = "Weapon Finesse";
         }
         else if (randomNum == 149 && available.includes("CR") ||
