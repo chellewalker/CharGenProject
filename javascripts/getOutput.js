@@ -58,6 +58,11 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
 
+        let space = "";
+        if (size == "Large") {
+            space = "<strong>Fighting Space:</strong> 2x2 Squares; <strong>Reach:</strong> 1 Square<br>";
+        }
+
     let output = 
     "<title>"+name+"</title><h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
         size+" "+species+" "+classList+"<br>"+
@@ -77,6 +82,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         heavyWeaponAttack+
         otherAttack+
         "<strong>Base Attack Bonus:</strong> +"+BAB+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
+        space+
         "<strong>Species Traits ("+species+"):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
@@ -131,6 +137,11 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
             pistolAttack = "Ranged: By Weapon "+byWeapon+"<br>";
         }
 
+    let space = "";
+    if (size == "Large") {
+        space = "Fighting Space: 2x2 Squares; Reach: 1 Square\n";
+    }
+
     let outputData = 
     name+" Statistics (CL "+level+")\n"+
         size+" "+species+" "+classList+"\n"+
@@ -150,6 +161,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         heavyWeaponAttack+
         otherAttack+
         "Base Attack Bonus: +"+BAB+", Grapple: "+grappleDisplay+"\n"+
+        space+
         "Species Traits ("+species+"): "+traitDisplay+"\n"+
         "Base Stats\n"+
         "Abilities: Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"\n"+
