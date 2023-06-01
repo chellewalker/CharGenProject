@@ -45,7 +45,7 @@ export function soldierTalents(talents,available,skills,feats,BAB) {
         talent = warriorTalents(talents,available,skills,feats,BAB);
     }
     if (count == 500) {
-        talent = "ValidSoldierTalentNotFound";
+        talent = "ValidTalentNotFound";
     }
 }
     return talent;
@@ -78,6 +78,9 @@ export function armorTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 
@@ -160,6 +163,9 @@ export function brawlerTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -217,6 +223,9 @@ export function commandoTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -231,8 +240,9 @@ export function weaponTalents(talents,available,skills,feats,BAB) {
 
     if (randomNum == 0 && available.includes("CR")) {
         let check = 0;
-            let count = 0;
-            while (check == 0 && count < 20) {
+            let count2 = 0;
+            while (check == 0 && count2 < 20) {
+                count2++;
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
                     talent = "Devastating Attack (Advanced Melee Weapons)";
@@ -258,12 +268,16 @@ export function weaponTalents(talents,available,skills,feats,BAB) {
                     talent = "Devastating Attack (Simple Weapons)";
                     check = 1;
                 }
+                if (count == 20) {
+                    check = 1;
+                }
             }
     }
     else if (randomNum == 1 && available.includes("CR")) {
         let check = 0;
-            let count = 0;
-            while (check == 0 && count < 20) {
+            let count2 = 0;
+            while (check == 0 && count2 < 20) {
+                count2++;
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
                     talent = "Penetrating Attack (Advanced Melee Weapons)";
@@ -289,12 +303,16 @@ export function weaponTalents(talents,available,skills,feats,BAB) {
                     talent = "Penetrating Attack (Simple Weapons)";
                     check = 1;
                 }
+                if (count == 20) {
+                    check = 1;
+                }
             }
     }
     else if (randomNum == 2 && available.includes("CR")) {
         let check = 0;
-            let count = 0;
-            while (check == 0 && count < 20) {
+            let count2 = 0;
+            while (check == 0 && count2 < 20) {
+                count2++;
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
                     talent = "Weapon Specialization (Advanced Melee Weapons)";
@@ -318,6 +336,9 @@ export function weaponTalents(talents,available,skills,feats,BAB) {
                 }
                 else if (randomNum == 5 && feats.includes("Weapon Focus (Simple Weapons)")) {
                     talent = "Weapon Specialization (Simple Weapons)";
+                    check = 1;
+                }
+                if (count == 20) {
                     check = 1;
                 }
             }
@@ -379,6 +400,9 @@ export function weaponTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 

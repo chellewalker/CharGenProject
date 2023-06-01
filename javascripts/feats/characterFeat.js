@@ -470,7 +470,8 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         else if (randomNum == 178 && available.includes("TotG") && str >= 13 && feats.includes("Burst Fire") && feats.includes("Weapon Proficiency (Heavy Weapons)")) {
             feat = "Suppression Fire";
         }
-        if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics") {
+        if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
+                feat == "Skill Focus (undefined)") {
             feat = "";
         }
         if (count2 == 500) {

@@ -13,11 +13,11 @@ export function jediTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 2) {
         talent = sentinelTalents(talents,available,skills,feats,BAB);
     }
-    else if (randomNum == 3) {
+    else if (randomNum == 3 && feats.includes("Weapon Proficiency (Lightsabers)")) {
         talent = lightsaberTalents(talents,available,skills,feats,BAB);
     }
     if (count == 500) {
-        talent = "ValidJediTalentNotFound";
+        talent = "ValidTalentNotFound";
     }
 }
 
@@ -94,6 +94,9 @@ export function consularTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -157,6 +160,9 @@ export function guardianTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 
@@ -230,6 +236,9 @@ export function sentinelTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -277,6 +286,9 @@ export function lightsaberTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 

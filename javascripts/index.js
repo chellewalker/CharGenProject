@@ -12,7 +12,7 @@ import {getFeat} from './feats/getFeat.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
 import {getTalent,displayTalents} from './talents/getTalent.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
-import {classFirst,classListing} from './classGen.js';
+import {classFirst,classListing} from './classGen/classGen.js';
 import {finalAbilities} from './abilities/abilityGen.js';
 import {getLevel} from './classGen/levelUp.js';
 import {getFlatFooted, getReflex} from './defenses/reflex.js';
@@ -28,7 +28,7 @@ import {getPistol} from './attacks/weaponTypes/pistol.js';
 import {getRifle} from './attacks/weaponTypes/rifle.js';
 
 window.genCharacter = function genCharacter() {
-    
+
     // get values
     let count;
     let available = references();
@@ -72,7 +72,7 @@ window.genCharacter = function genCharacter() {
             let wis = statGen[4];
             let cha = statGen[5];
 
-        //Class generation
+    //Class generation (2,8,8)
     let failsafe = 0;
     let classes = [0,0,0,0,0];
         let firstClass;
@@ -105,7 +105,6 @@ window.genCharacter = function genCharacter() {
         feats = [];
         skills = [];
         BAB = 0;
-
         for (count = 0; count < level; count++) {
             if (count == 0) {
                 if (thisLevel == "random") {
@@ -126,8 +125,10 @@ window.genCharacter = function genCharacter() {
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             }
             else {
+                //Soldier 1 | 
                 thisLevel = getLevel(firstClass,classes);
                 classes[thisLevel]++;
+                //alert(count+"="+thisLevel+"="+classes[thisLevel]);
                 if (classes[thisLevel] == 1) {
                     let temp = (multiclassFeat(thisLevel,feats,skills,int,con,speciesTraits));
                     if (temp != "") { 
@@ -218,6 +219,7 @@ window.genCharacter = function genCharacter() {
         }
         talents = tempTalents;
 
+        //list features
         classList = classListing(firstClass,classes);
         listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
         listTalents = displayTalents(talents);
@@ -226,15 +228,15 @@ window.genCharacter = function genCharacter() {
         perceptionDisplay = getPerception(level,wis,skills,feats);
         grapple = getGrapple(BAB,str,dex,size,talents);
 
-        /*if (feats.includes("ValidFeatNotFound")) {
+        if (feats.includes("ValidFeatNotFound")) {
             failsafe = 0;
         }
         if (talents.includes("ValidTalentNotFound")) {
             failsafe = 0;
-        }*/
+        }
     }
 
-        //generate languages
+    //generate languages
         let languages = getLanguages(speciesID,linguist,int);
         let listLanguages = languageList(languages);
 
@@ -259,6 +261,9 @@ window.genCharacter = function genCharacter() {
         let pistol = "";
         let rifle = "";
         let otherAttack = "";
+        let otherMeleeAttack = "";
+        let otherRangedAttack = "";
+        let otherBellowAttack = "";
 
     if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
         temp2 = getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size);
@@ -291,7 +296,7 @@ window.genCharacter = function genCharacter() {
         equipment.push(temp);
     }
 
-        //equipment
+    //equipment
         equipment.sort();
         let equipmentList = displayEquipment(equipment);
 

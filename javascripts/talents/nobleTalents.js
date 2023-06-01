@@ -54,7 +54,7 @@ export function nobleTalents(talents,available,skills,feats,BAB) {
         talent = exileTalents(talents,available,skills,feats,BAB);
     }
     if (count == 500) {
-        talent = "ValidNobleTalentNotFound";
+        talent = "ValidTalentNotFound";
     }
 }
     return talent;
@@ -87,6 +87,9 @@ export function influenceTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 
@@ -123,6 +126,9 @@ export function inspirationTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 
@@ -172,6 +178,9 @@ export function leadershipTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -207,6 +216,9 @@ export function lineageTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 

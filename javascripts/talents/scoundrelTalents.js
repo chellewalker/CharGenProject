@@ -48,7 +48,7 @@ export function scoundrelTalents(talents,available,skills,feats,BAB) {
         talent = outsiderTalents(talents,available,skills,feats,BAB);
     }
     if (count == 500) {
-        talent = "ValidScoundrelTalentNotFound";
+        talent = "ValidTalentNotFound";
     }
 }
     return talent;
@@ -102,6 +102,9 @@ export function fortuneTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 
@@ -166,6 +169,9 @@ export function misfortuneTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent) && talent != "Sneak Attack") {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -202,6 +208,9 @@ export function slicerTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -237,6 +246,9 @@ export function spacerTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 

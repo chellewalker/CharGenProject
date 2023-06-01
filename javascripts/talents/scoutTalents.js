@@ -48,7 +48,7 @@ export function scoutTalents(talents,available,skills,feats,BAB) {
         talent = mobileTalents(talents,available,skills,feats,BAB);
     }
     if (count == 500) {
-        talent = "ValidScoutTalentNotFound";
+        talent = "ValidTalentNotFound";
     }
 }
     return talent;
@@ -87,6 +87,9 @@ export function awarenessTalents(talents,available,skills,feats,BAB) {
     }   
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 
@@ -133,6 +136,9 @@ export function camouflageTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -175,6 +181,9 @@ export function fringerTalents(talents,available,skills,feats,BAB) {
     if (talents.includes(talent)) {
         talent = "";
     }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
 }
 
     return talent;
@@ -201,6 +210,9 @@ export function survivorTalents(talents,available,skills,feats,BAB) {
     }
     if (talents.includes(talent)) {
         talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
     }
 }
 
