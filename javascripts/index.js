@@ -139,7 +139,7 @@ window.genCharacter = function genCharacter() {
                 if (classes[thisLevel] % 2 == 0) {
                     feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                     if (feats.findLast(findLast) == "Skill Training") {
-                        skills.push(getNewSkill(speciesTraits,classes,skills));
+                        skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                     }
                     skills.sort();
                 }
@@ -150,7 +150,7 @@ window.genCharacter = function genCharacter() {
             if ((count-2) % 3 == 0) {
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             if (feats.findLast(findLast) == "Skill Training") {
-                skills.push(getNewSkill(speciesTraits,classes,skills));
+                skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                 skills.sort();
             }
 
