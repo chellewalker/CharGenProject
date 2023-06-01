@@ -29,7 +29,7 @@
                 <input type="number" id="planPoints" name="planPoints" min="15" max="80" value="25">
             </label>
         </div><br><br>
-
+        
         <!-- class generation -->
         <label for="level">Level Selection:</label>
         <input type="range" id="level" name="level" min="1" max="20"> (<output id="value"></output>)
@@ -54,6 +54,18 @@
             <label for="species">Human</label>
         <input type="radio" id="manual" name="species">
             Manual Entry: <input type="text" id="speciesManual" name="speciesManual">
+        <br><br>
+
+        <!-- alignment selection -->
+        <label for="alignment">Force Alignment:</label><br>
+        <input type="radio" id="alignment" name="alignment" value="both" checked>
+            <label for="alignment">Both</label>
+        <input type="radio" id="alignment" name="alignment" value="neither">
+            <label for="alignment">Neither</label>
+        <input type="radio" id="alignment" name="alignment" value="light">
+            <label for="alignment">Light Side</label>
+        <input type="radio" id="alignment" name="alignment" value="dark">
+            <label for="alignment">Dark Side</label>
         <br><br>
 
         <!-- name generation -->

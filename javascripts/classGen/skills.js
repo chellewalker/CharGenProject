@@ -129,7 +129,7 @@ export function getNewSkill(speciesTraits,classes,skills,feats) {
             let thisSkill = "";
             while (thisSkill == "") {
                 thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
-                    let randomNum2 = Math.round(Math.random() * 3);
+                    let randomNum2 = Math.round(Math.random() * 2);
                     if (randomNum2 == 0 && feats.includes("Force Sensitivity")) {
                         thisSkill = "Use the Force";
                     }
