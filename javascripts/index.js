@@ -19,7 +19,7 @@ import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {displayEquipment} from './equipment/display.js';
 import {getWill} from './defenses/will.js';
-import {getForcePower} from './forceAbilities/getForcePower.js';
+import {getForcePower,compressForcePowers} from './forceAbilities/getForcePower.js';
 import {getGrapple} from './attacks/getGrapple.js';
 import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
 import {getAdvancedMelee} from './attacks/weaponTypes/advancedMelee.js';
@@ -144,7 +144,7 @@ window.genCharacter = function genCharacter() {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                 }
                 if (feats.findLast(findLast) == "Force Training") {
-                    forcePowers.push(getForcePower(available,wis,light,dark));
+                    forcePowers = getForcePower(forcePowers,available,wis,light,dark);
                 }
             }
             else {
@@ -163,7 +163,7 @@ window.genCharacter = function genCharacter() {
                         skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                     }
                     if (feats.findLast(findLast) == "Force Training") {
-                        forcePowers.push(getForcePower(available,wis,light,dark));
+                        forcePowers = getForcePower(forcePowers,available,wis,light,dark);
                     }
                     skills.sort();
                 }
@@ -178,7 +178,7 @@ window.genCharacter = function genCharacter() {
                 skills.sort();
             }
             if (feats.findLast(findLast) == "Force Training") {
-                forcePowers.push(getForcePower(available,wis,light,dark));
+                forcePowers = getForcePower(forcePowers,available,wis,light,dark);
                 forcePowers.sort();
             }
 
@@ -338,6 +338,8 @@ window.genCharacter = function genCharacter() {
         temp = temp2[1];
         equipment.push(temp);
     }
+
+    forcePowers = compressForcePowers(forcePowers);
 
     //equipment
         equipment.sort();

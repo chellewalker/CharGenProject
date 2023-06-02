@@ -1,5 +1,4 @@
-export function getForcePower(available,wis,light,dark) {
-    let forcePower = [];
+export function getForcePower(forcePowers,available,wis,light,dark) {
     let temp;
     let count;
     let avail = 1 + Math.max(0,Math.floor((wis-10)/2));
@@ -60,29 +59,39 @@ export function getForcePower(available,wis,light,dark) {
             temp = "ValidForcePowerNotFound";
         }
     }
-    forcePower.push(temp);
+    forcePowers.push(temp);
 }
-    return forcePower;
+    return forcePowers;
 }
 
 export function compressForcePowers(forcePowers) {
     let tempPowerCount;
+    let tempForcePowers = [];
     let tempPower;
     let count;
 
+    for (count = 0; count < forcePowers.length; count++) {
+
+    tempPower = forcePowers[count];
     tempPowerCount = 0;
+    let count2;
 
-    if (forcePowers[count] == tempPower) {
-        tempPowerCount++;
+    for (count2 = 0; count2 < forcePowers.length; count2++) {
+
+        if (forcePowers[count2] == tempPower) {
+            tempPowerCount++;
+        }
     }
 
-    if (count == forcePowers.length && tempPowerCount > 1) {
-        tempFeats.push(tempPower+" ("+tempPowerCount+")");
-    }
-    else if (count == forcePowers.length && tempPowerCount == 1) {
-        tempFeats.push(tempPower);
-    }
-    
-    forcePowers.sort();
-    return forcePowers;
+        if (tempPowerCount > 1) {
+            tempForcePowers.push(tempPower+" ("+tempPowerCount+")");
+        }
+        else if (tempPowerCount == 1) {
+            tempForcePowers.push(tempPower);
+        }
+
+}
+
+    tempForcePowers.sort();
+    return tempForcePowers;
 }

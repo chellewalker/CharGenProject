@@ -62,7 +62,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
         advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,
-        speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
+        speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
 
         let space = "";
         if (size == "Large") {
@@ -109,9 +109,10 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
-    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
+    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers) {
 
         let traitDisplay = "";
+        let powerDisplay;
         let count;
         for (count = 0; count < speciesTraits.length; count++) {
             if (count != 0) {
