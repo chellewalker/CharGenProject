@@ -6,7 +6,7 @@ export function getForcePower(forcePowers,available,wis,light,dark) {
     for (count = 0; count < avail; count++) {
         temp = "";
     while (temp == "") {
-        let randomNum = Math.floor(Math.random() * 20);
+        let randomNum = Math.floor(Math.random() * 26);
         if (randomNum == 0 && available.includes("CR")) {
             temp = "Battle Strike";
         }
@@ -55,6 +55,36 @@ export function getForcePower(forcePowers,available,wis,light,dark) {
         if (randomNum == 15 && available.includes("CR") && light == 1) {
             temp = "Vital Transfer";
         }
+        if (randomNum == 16 && available.includes("KotORCG")) {
+            temp = "Energy Resistance";
+        }
+        if (randomNum == 17 && available.includes("KotORCG") && dark == 1) {
+            temp = "Fear";
+        }
+        if (randomNum == 18 && available.includes("KotORCG") && dark == 1) {
+            temp = "Force Scream";
+        }
+        if (randomNum == 19 && available.includes("KotORCG")) {
+            temp = "Force Whirlwind";
+        }
+        if (randomNum == 20 && available.includes("KotORCG")) {
+            temp = "Ionize";
+        }
+        if (randomNum == 21 && available.includes("KotORCG")) {
+            temp = "Kinetic Combat";
+        }
+        if (randomNum == 22 && available.includes("KotORCG")) {
+            temp = "Resist Force";
+        }
+        if (randomNum == 23 && available.includes("KotORCG")) {
+            temp = "Slow";
+        }
+        if (randomNum == 24 && available.includes("KotORCG") && light == 1) {
+            temp = "Valor";
+        }
+        if (randomNum == 25 && available.includes("KotORCG") && dark == 1) {
+            temp = "Wound";
+        }
         if (count == 25) {
             temp = "ValidForcePowerNotFound";
         }
@@ -67,6 +97,7 @@ export function getForcePower(forcePowers,available,wis,light,dark) {
 export function compressForcePowers(forcePowers) {
     let tempPowerCount;
     let tempForcePowers = [];
+    let lastPower = "";
     let tempPower;
     let count;
 
@@ -83,14 +114,20 @@ export function compressForcePowers(forcePowers) {
         }
     }
 
+    if (tempForcePowers.includes(tempPower+" ("+tempPowerCount+")")) {
+
+    }
+    else {
         if (tempPowerCount > 1) {
             tempForcePowers.push(tempPower+" ("+tempPowerCount+")");
+            lastPower = tempPower+" ("+tempPowerCount+")";
         }
         else if (tempPowerCount == 1) {
             tempForcePowers.push(tempPower);
+            lastPower= tempPower;
         }
 
-}
+}}
 
     tempForcePowers.sort();
     return tempForcePowers;
