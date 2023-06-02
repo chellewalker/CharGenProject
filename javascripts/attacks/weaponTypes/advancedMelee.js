@@ -12,7 +12,7 @@ export function getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size)
     }
 
     while (advancedMeleeWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 6);
+        let randomNum = Math.floor(Math.random() * 9);
 
         if (randomNum == 0) {
             advancedMeleeWeapon = "Vibroblade";
@@ -48,6 +48,24 @@ export function getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size)
             weaponSize = "Large";
             advancedMeleeDice = 2;
             advancedMeleeDie = 10;
+        }
+        if (randomNum == 6 && available.includes("KotORCG")) {
+            advancedMeleeWeapon = "Dire Vibroblade";
+            weaponSize = "Medium";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 7 && available.includes("KotORCG") && size != "Small") {
+            advancedMeleeWeapon = "Double Vibroblade";
+            weaponSize = "Large";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 8 && available.includes("KotORCG") && size != "Small") {
+            advancedMeleeWeapon = "Shockstaff";
+            weaponSize = "Large";
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
         }
     }
 

@@ -11,7 +11,7 @@ export function getLightsaber(available,BAB,level,str,dex,feats,talents,size) {
         lightsaberAttackRaw++;
     }
     while (lightsaberWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 3);
+        let randomNum = Math.floor(Math.random() * 4);
 
         if (randomNum == 0) {
             lightsaberWeapon = "Lightsaber";
@@ -28,6 +28,12 @@ export function getLightsaber(available,BAB,level,str,dex,feats,talents,size) {
         if (randomNum == 2 && available.includes("CR") && size != "Small") {
             lightsaberWeapon = "Double-Sided Lightsaber";
             weaponSize = "Large";
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+        }
+        if (randomNum == 3 && available.includes("KotORCG")) {
+            lightsaberWeapon = "Lightfoil";
+            weaponSize = "Medium";
             lightsaberDice = 2;
             lightsaberDie = 8;
         }

@@ -9,7 +9,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolAttackRaw++;
     }
     while (pistolWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 6);
+        let randomNum = Math.floor(Math.random() * 13);
 
         if (randomNum == 0) {
             pistolWeapon = "Blaster Pistol";
@@ -47,6 +47,52 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
             weaponSize = "Small";
             pistolDice = 2;
             pistolDie = 6;
+        }
+        if (randomNum == 6 && available.includes("TotG")) {
+            pistolWeapon = "Sonic Stunner";
+            weaponSize = "Tiny";
+            pistolDice = 3;
+            pistolDie = 6;
+            special = " (Stun)";
+        }
+        if (randomNum == 7 && available.includes("KotORCG")) {
+            pistolWeapon = "Heavy Sonic Pistol";
+            weaponSize = "Medium";
+            pistolDice = 2;
+            pistolDie = 8;
+            special = " (Sonic)";
+        }
+        if (randomNum == 8 && available.includes("KotORCG")) {
+            pistolWeapon = "Needler";
+            weaponSize = "Small";
+            pistolDice = 2;
+            pistolDie = 4;
+        }
+        if (randomNum == 9 && available.includes("KotORCG")) {
+            pistolWeapon = "Pulse-Wave Pistol";
+            weaponSize = "Small";
+            pistolDice = 2;
+            pistolDie = 6;
+        }
+        if (randomNum == 10 && available.includes("KotORCG")) {
+            pistolWeapon = "Ripper";
+            weaponSize = "Small";
+            pistolDice = 2;
+            pistolDie = 4;
+        }
+        if (randomNum == 11 && available.includes("KotORCG")) {
+            pistolWeapon = "Sonic Disruptor";
+            weaponSize = "Small";
+            pistolDice = 2;
+            pistolDie = 6;
+            special = " (Sonic)";
+        }
+        if (randomNum == 12 && available.includes("KotORCG")) {
+            pistolWeapon = "Sonic Pistol";
+            weaponSize = "Small";
+            pistolDice = 2;
+            pistolDie = 6;
+            special = " (Sonic)";
         }
     }
 

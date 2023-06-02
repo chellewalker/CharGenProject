@@ -9,7 +9,7 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         rifleAttackRaw++;
     }
     while (rifleWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 7);
+        let randomNum = Math.floor(Math.random() * 13);
 
         if (randomNum == 0) {
             rifleWeapon = "Blaster Rifle";
@@ -48,6 +48,40 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
             rifleWeapon = "Heavy Blaster Rifle";
             rifleDice = 3;
             rifleDie = 10;
+        }
+        if (randomNum == 7 && available.includes("KotORCG") && size != "Small") {
+            rifleWeapon = "Assault Blaster Rifle";
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 8 && available.includes("KotORCG")) {
+            rifleWeapon = "Commando Special Rifle";
+            rifleDice = 3;
+            rifleDie = 10;
+        }
+        if (randomNum == 9 && available.includes("KotORCG")) {
+            rifleWeapon = "Ion Carbine";
+            rifleDice = 3;
+            rifleDie = 8;
+            special = " (Ion)";
+        }
+        if (randomNum == 10 && available.includes("KotORCG")) {
+            rifleWeapon = "Pulse-Wave Rifle";
+            rifleDice = 2;
+            rifleDie = 8;
+        }
+        if (randomNum == 11 && available.includes("KotORCG") && size != "Small") {
+            rifleWeapon = "Repeating Blaster Carbine";
+            rifleDice = 3;
+            rifleDie = 10;
+            special = ", 2-Square Autofire";
+            rifleAttackRaw -= 5;
+        }
+        if (randomNum == 12 && available.includes("KotORCG")) {
+            rifleWeapon = "Sonic Rifle";
+            rifleDice = 2;
+            rifleDie = 8;
+            special = " (Sonic)";
         }
     }
 
