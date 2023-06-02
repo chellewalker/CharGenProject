@@ -1,4 +1,4 @@
-export function getForcePower(available,light,dark) {
+export function getForcePower(available,wis,light,dark) {
     let forcePower = "";
     let count = 0;
     while (forcePower == "") {

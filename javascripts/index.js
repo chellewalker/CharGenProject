@@ -136,6 +136,10 @@ window.genCharacter = function genCharacter() {
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
+                if (feats.findLast(findLast) == "Force Training") {
+                    forcePowers.push(getForcePower(available,wis,light,dark));
+                    forcePowers.sort();
+                }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             }
             else {
@@ -156,7 +160,7 @@ window.genCharacter = function genCharacter() {
                         skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                     }
                     if (feats.findLast(findLast) == "Force Training") {
-                        forcePowers.push(getForcePower(available,light,dark));
+                        forcePowers.push(getForcePower(available,wis,light,dark));
                     }
                     skills.sort();
                 }
@@ -171,7 +175,7 @@ window.genCharacter = function genCharacter() {
                 skills.sort();
             }
             if (feats.findLast(findLast) == "Force Training") {
-                forcePowers.push(getForcePower(available,light,dark));
+                forcePowers.push(getForcePower(available,wis,light,dark));
                 forcePowers.sort();
             }
 
