@@ -137,7 +137,7 @@ window.genCharacter = function genCharacter() {
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
                 if (feats.findLast(findLast) == "Force Training") {
-                    forcePowers.push(getForcePower(available,wis,light,dark));
+                    forcePowers = getForcePower(forcePowers,available,wis,light,dark);
                 }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 if (feats.findLast(findLast) == "Skill Training") {

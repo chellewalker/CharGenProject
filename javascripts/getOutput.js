@@ -1,3 +1,5 @@
+import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
+
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
@@ -55,14 +57,16 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     if (pistol == "" && rifle == "" && heavyWeapon == "") {
         pistolAttack = "<strong>Ranged:</strong> By Weapon "+byWeapon+"<br>";
     }
-    if (forcePowers != "") {
-        powerDisplay = "<strong>Force Power Suite:</strong> <i>"+forcePowers+"</i><br>";
-    }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
         advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
+
+        if (forcePowers != "") {
+            forcePowers = displayForcePowers(forcePowers);
+            powerDisplay = "<strong>Force Power Suite:</strong> "+forcePowers+"<br>";
+        }
 
         let space = "";
         if (size == "Large") {
@@ -151,6 +155,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     }
 
     if (forcePowers != "") {
+        forcePowers = displayRawForcePowers(forcePowers);
         powerDisplay = "Force Power Suite: "+forcePowers+"\n";
     }
 

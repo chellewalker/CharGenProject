@@ -132,3 +132,33 @@ export function compressForcePowers(forcePowers) {
     tempForcePowers.sort();
     return tempForcePowers;
 }
+
+export function displayForcePowers(forcePowers) {
+    let powers = "";
+    let count;
+    for (count = 0; count < forcePowers.length; count++) {
+        if (count == 0) {
+            powers += "<i>"+forcePowers[count]+"</i>";
+        }
+        else {
+            powers += ", <i>"+forcePowers[count]+"</i>";
+        }
+    }
+
+    return powers;
+}
+
+export function displayRawForcePowers(forcePowers) {
+    let rawPowers = "";
+    let count;
+    for (count = 0; count < forcePowers.length; count++) {
+        if (count == 0) {
+            rawPowers += forcePowers[count];
+        }
+        else {
+            rawPowers += ", "+forcePowers[count];
+        }
+    }
+    
+    return rawPowers;
+}
