@@ -1,4 +1,4 @@
-export function scoutTalents(talents,available,skills,feats,BAB) {
+export function scoutTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let count = 0;
     let talent = "";
     while (talent == "") {
@@ -6,46 +6,46 @@ export function scoutTalents(talents,available,skills,feats,BAB) {
         //let randomNum = Math.floor(Math.random() * 14);
         let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = awarenessTalents(talents,available,skills,feats,BAB);
+        talent = awarenessTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 1) {
-        talent = camouflageTalents(talents,available,skills,feats,BAB);
+        talent = camouflageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 2) {
-        talent = fringerTalents(talents,available,skills,feats,BAB);
+        talent = fringerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 3 && available.includes("CR")) {
-        talent = survivorTalents(talents,available,skills,feats,BAB);
+        talent = survivorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 4 && available.includes("KotORCG")) {
-        talent = hyperspaceTalents(talents,available,skills,feats,BAB);
+        talent = hyperspaceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 5 && available.includes("FUCG")) {
-        talent = spyTalents(talents,available,skills,feats,BAB);
+        talent = spyTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 6 && available.includes("CWCG")) {
-        talent = reconnaissanceTalents(talents,available,skills,feats,BAB);
+        talent = reconnaissanceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 7 && available.includes("CWCG")) {
-        talent = surveillanceTalents(talents,available,skills,feats,BAB);
+        talent = surveillanceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 8 && available.includes("LECG")) {
-        talent = versatilityTalents(talents,available,skills,feats,BAB);
+        talent = versatilityTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 9 && available.includes("RECG")) {
-        talent = unpredictableTalents(talents,available,skills,feats,BAB);
+        talent = unpredictableTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 10 && available.includes("GaW")) {
-        talent = patrolTalents(talents,available,skills,feats,BAB);
+        talent = patrolTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 11 && available.includes("GoI")) {
-        talent = espionageTalents(talents,available,skills,feats,BAB);
+        talent = espionageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 12 && available.includes("UR")) {
-        talent = masterTalents(talents,available,skills,feats,BAB);
+        talent = masterTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 13 && available.includes("UR")) {
-        talent = mobileTalents(talents,available,skills,feats,BAB);
+        talent = mobileTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";
@@ -54,7 +54,7 @@ export function scoutTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function awarenessTalents(talents,available,skills,feats,BAB) {
+export function awarenessTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -96,7 +96,7 @@ export function awarenessTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function camouflageTalents(talents,available,skills,feats,BAB) {
+export function camouflageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -144,7 +144,7 @@ export function camouflageTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function fringerTalents(talents,available,skills,feats,BAB) {
+export function fringerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -189,7 +189,7 @@ export function fringerTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function survivorTalents(talents,available,skills,feats,BAB) {
+export function survivorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {

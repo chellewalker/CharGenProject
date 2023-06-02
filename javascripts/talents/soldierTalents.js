@@ -1,4 +1,4 @@
-export function soldierTalents(talents,available,skills,feats,BAB) {
+export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let count = 0;
     let talent = "";
     while (talent == "") {
@@ -6,43 +6,43 @@ export function soldierTalents(talents,available,skills,feats,BAB) {
         //let randomNum = Math.floor(Math.random() * 13);
         let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = armorTalents(talents,available,skills,feats,BAB);
+        talent = armorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 1) {
-        talent = brawlerTalents(talents,available,skills,feats,BAB);
+        talent = brawlerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 2) {
-        talent = commandoTalents(talents,available,skills,feats,BAB);
+        talent = commandoTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 3) {
-        talent = weaponTalents(talents,available,skills,feats,BAB);
+        talent = weaponTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 4 && available.includes("KotORCG")) {
-        talent = rocketTalents(talents,available,skills,feats,BAB);
+        talent = rocketTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 5 && available.includes("FUCG")) {
-        talent = mercenaryTalents(talents,available,skills,feats,BAB);
+        talent = mercenaryTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 6 && available.includes("CWCG")) {
-        talent = squadTalents(talents,available,skills,feats,BAB);
+        talent = squadTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 7 && available.includes("CWCG")) {
-        talent = trooperTalents(talents,available,skills,feats,BAB);
+        talent = trooperTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 8 && available.includes("LECG")) {
-        talent = bruteTalents(talents,available,skills,feats,BAB);
+        talent = bruteTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 9 && available.includes("RECG")) {
-        talent = ambusherTalents(talents,available,skills,feats,BAB);
+        talent = ambusherTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 10 && available.includes("GaW")) {
-        talent = shockboxerTalents(talents,available,skills,feats,BAB);
+        talent = shockboxerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 11 && available.includes("GaW")) {
-        talent = veteranTalents(talents,available,skills,feats,BAB);
+        talent = veteranTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 12 && available.includes("UR")) {
-        talent = warriorTalents(talents,available,skills,feats,BAB);
+        talent = warriorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";
@@ -51,7 +51,7 @@ export function soldierTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function armorTalents(talents,available,skills,feats,BAB) {
+export function armorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -87,7 +87,7 @@ export function armorTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function brawlerTalents(talents,available,skills,feats,BAB) {
+export function brawlerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -171,7 +171,7 @@ export function brawlerTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function commandoTalents(talents,available,skills,feats,BAB) {
+export function commandoTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -231,7 +231,7 @@ export function commandoTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function weaponTalents(talents,available,skills,feats,BAB) {
+export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {

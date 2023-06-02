@@ -1,4 +1,4 @@
-export function scoundrelTalents(talents,available,skills,feats,BAB) {
+export function scoundrelTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let count = 0;
     let talent = "";
     while (talent == "") {
@@ -6,46 +6,46 @@ export function scoundrelTalents(talents,available,skills,feats,BAB) {
         //let randomNum = Math.floor(Math.random() * 14);
         let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = fortuneTalents(talents,available,skills,feats,BAB);
+        talent = fortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 1) {
-        talent = misfortuneTalents(talents,available,skills,feats,BAB);
+        talent = misfortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 2) {
-        talent = slicerTalents(talents,available,skills,feats,BAB);
+        talent = slicerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 3) {
-        talent = spacerTalents(talents,available,skills,feats,BAB);
+        talent = spacerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 4 && available.includes("SotG")) {
-        talent = outlawTalents(talents,available,skills,feats,BAB);
+        talent = outlawTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 5 && available.includes("TotG")) {
-        talent = malkiteTalents(talents,available,skills,feats,BAB);
+        talent = malkiteTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 6 && available.includes("KotORCG")) {
-        talent = runTalents(talents,available,skills,feats,BAB);
+        talent = runTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 7 && available.includes("FUCG")) {
-        talent = smugglingTalents(talents,available,skills,feats,BAB);
+        talent = smugglingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 8 && available.includes("CWCG")) {
-        talent = opportunistTalents(talents,available,skills,feats,BAB);
+        talent = opportunistTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 9 && available.includes("LECG")) {
-        talent = biotechTalents(talents,available,skills,feats,BAB);
+        talent = biotechTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 10 && available.includes("RECG")) {
-        talent = recklessnessTalents(talents,available,skills,feats,BAB);
+        talent = recklessnessTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 11 && available.includes("GaW")) {
-        talent = brigandTalents(talents,available,skills,feats,BAB);
+        talent = brigandTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 12 && available.includes("GoI")) {
-        talent = revolutionaryTalents(talents,available,skills,feats,BAB);
+        talent = revolutionaryTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 13 && available.includes("UR")) {
-        talent = outsiderTalents(talents,available,skills,feats,BAB);
+        talent = outsiderTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";
@@ -54,7 +54,7 @@ export function scoundrelTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function fortuneTalents(talents,available,skills,feats,BAB) {
+export function fortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -111,7 +111,7 @@ export function fortuneTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function misfortuneTalents(talents,available,skills,feats,BAB) {
+export function misfortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -177,7 +177,7 @@ export function misfortuneTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function slicerTalents(talents,available,skills,feats,BAB) {
+export function slicerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -216,7 +216,7 @@ export function slicerTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function spacerTalents(talents,available,skills,feats,BAB) {
+export function spacerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {

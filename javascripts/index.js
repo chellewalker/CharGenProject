@@ -89,6 +89,7 @@ window.genCharacter = function genCharacter() {
         let talents = [];
         let feats = [];
         let skills = [];
+        let forcePowers = [];
         let BAB = 0;
         let classList;
         let listSkills;
@@ -102,6 +103,9 @@ window.genCharacter = function genCharacter() {
         let skillTraining = 0;
         let startshipTactics = 0;
         let sneakAttack = 0;
+        let lightsaberDefense = 0;
+        let sentinelStrike = 0;
+        let coordinate = 0;
         let tempTalents = [];
         let tempFeats = [];
         let safecount = 0;
@@ -127,7 +131,7 @@ window.genCharacter = function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB));
+                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
@@ -153,7 +157,7 @@ window.genCharacter = function genCharacter() {
                     skills.sort();
                 }
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark));
                 }
             }
             if ((count-2) % 3 == 0) {
@@ -216,15 +220,30 @@ window.genCharacter = function genCharacter() {
             if (talents[count] == "Sneak Attack") {
                 sneakAttack++;
             }
+            else if (talents[count] == "Lightsaber Defense") {
+                lightsaberDefense++;
+            }
+            else if (talents[count] == "Sentinel Strike") {
+                sentinelStrike++;
+            }
+            else if (talents[count] == "Coordinate") {
+                coordinate++;
+            }
             else {
                 tempTalents.push(talents[count]);
             }
         }
-        if (count == talents.length && sneakAttack > 1) {
-            tempTalents.push("Sneak Attack ("+sneakAttack+"d6)");
+        if (count == talents.length && sneakAttack > 0) {
+            tempTalents.push("Sneak Attack (+"+sneakAttack+"d6)");
         }
-        else if (count == talents.length && sneakAttack == 1) {
-            tempTalents.push("Sneak Attack (+1d6)");
+        if (count == talents.length && lightsaberDefense > 0) {
+            tempTalents.push("Lightsaber Defense (+"+lightsaberDefense+")");
+        }
+        if (count == talents.length && sentinelStrike > 0) {
+            tempTalents.push("Sentinel Strike (+"+sentinelStrike+"d6)");
+        }
+        if (count == talents.length && coordinate > 0) {
+            tempTalents.push("Coordinate (+"+coordinate+")");
         }
         talents = tempTalents;
 

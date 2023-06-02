@@ -1,20 +1,20 @@
-export function jediTalents(talents,available,skills,feats,BAB) {
+export function jediTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let count = 0;
     let talent = "";
     while (talent == "") {
         count++;
         let randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
-        talent = consularTalents(talents,available,skills,feats,BAB);
+        talent = consularTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 1) {
-        talent = guardianTalents(talents,available,skills,feats,BAB);
+        talent = guardianTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 2) {
-        talent = sentinelTalents(talents,available,skills,feats,BAB);
+    else if (randomNum == 2 && light == 1) {
+        talent = sentinelTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 3 && feats.includes("Weapon Proficiency (Lightsabers)")) {
-        talent = lightsaberTalents(talents,available,skills,feats,BAB);
+        talent = lightsaberTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";
@@ -24,7 +24,7 @@ export function jediTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function consularTalents(talents,available,skills,feats,BAB) {
+export function consularTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -52,7 +52,7 @@ export function consularTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 6 && available.includes("FUCG")) {
         talent = "Cleanse Mind";
     }
-    else if (randomNum == 7 && available.includes("KotORCG")) {
+    else if (randomNum == 7 && available.includes("KotORCG") && forcePowers.includes("Farseeing")) {
         talent = "Collective Visions";
     }
     else if (randomNum == 8 && available.includes("CWCG")) {
@@ -79,16 +79,16 @@ export function consularTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 15 && available.includes("RECG")) {
         talent = "Recall";
     }
-    else if (randomNum == 16 && available.includes("KotORCG")) {
+    else if (randomNum == 16 && available.includes("KotORCG") && forcePowers.includes("Farseeing")) {
         talent = "Renew Vision";
     }
-    else if (randomNum == 17 && available.includes("KotORCG") && talents.includes("WatchCircle Initiate")) {
+    else if (randomNum == 17 && available.includes("KotORCG") && talents.includes("WatchCircle Initiate") && forcePowers.includes("Farseeing")) {
         talent = "Visionary Attack";
     }
-    else if (randomNum == 18 && available.includes("KotORCG") && talents.includes("WatchCircle Initiate")) {
+    else if (randomNum == 18 && available.includes("KotORCG") && talents.includes("WatchCircle Initiate") && forcePowers.includes("Farseeing")) {
         talent = "Visionary Defense";
     }
-    else if (randomNum == 19 && available.includes("KotORCG")) {
+    else if (randomNum == 19 && available.includes("KotORCG") && forcePowers.includes("Farseeing")) {
         talent = "WatchCircle Initiate";
     }
     if (talents.includes(talent)) {
@@ -102,7 +102,7 @@ export function consularTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function guardianTalents(talents,available,skills,feats,BAB) {
+export function guardianTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -169,7 +169,7 @@ export function guardianTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function sentinelTalents(talents,available,skills,feats,BAB) {
+export function sentinelTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -194,7 +194,7 @@ export function sentinelTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 5 && available.includes("FUCG")) {
         talent = "Dampen Presence";
     }
-    else if (randomNum == 6 && available.includes("KotORCG") && talents.includes("Sentinel Strike (+1d6)")) {
+    else if (randomNum == 6 && available.includes("KotORCG") && talents.includes("Sentinel Strike")) {
         talent = "Dark Retaliation";
     }
     else if (randomNum == 7 && available.includes("LECG") && talents.includes("Dark Side Sense")) {
@@ -219,7 +219,7 @@ export function sentinelTalents(talents,available,skills,feats,BAB) {
         talent = "Sense Primal Force";
     }
     else if (randomNum == 14 && available.includes("KotORCG")) {
-        talent = "Sentinel Strike (+1d6)";
+        talent = "Sentinel Strike";
     }
     else if (randomNum == 15 && available.includes("KotORCG")) {
         talent = "Sentinel's Gambit";
@@ -233,7 +233,7 @@ export function sentinelTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 18 && available.includes("CWCG") && talents.includes("Clear Mind") && talents.includes("Force Haze")) {
         talent = "Unseen Eyes";
     }
-    if (talents.includes(talent)) {
+    if (talents.includes(talent) && talent != "Sentinel Strike") {
         talent = "";
     }
     if (count == 500) {
@@ -244,7 +244,7 @@ export function sentinelTalents(talents,available,skills,feats,BAB) {
     return talent;
 }
 
-export function lightsaberTalents(talents,available,skills,feats,BAB) {
+export function lightsaberTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -258,7 +258,7 @@ export function lightsaberTalents(talents,available,skills,feats,BAB) {
         talent = "Deflect";
     }
     else if (randomNum == 2 && available.includes("CR")) {
-        talent = "Lightsaber Defense (+1)";
+        talent = "Lightsaber Defense";
     }
     else if (randomNum == 3 && available.includes("CR") && feats.includes("Weapon Focus (Lightsabers)")) {
         talent = "Weapon Specialization (Lightsabers)";
@@ -284,7 +284,7 @@ export function lightsaberTalents(talents,available,skills,feats,BAB) {
     else if (randomNum == 10 && available.includes("JATM")) {
         talent = "Shoto Focus";
     }
-    if (talents.includes(talent)) {
+    if (talents.includes(talent) && talent != "Lightsaber Defense") {
         talent = "";
     }
     if (count == 500) {
