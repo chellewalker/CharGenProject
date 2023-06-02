@@ -66,6 +66,22 @@ export function getForcePower(available,wis,light,dark) {
 }
 
 export function compressForcePowers(forcePowers) {
+    let tempPowerCount;
+    let tempPower;
+    let count;
+
+    tempPowerCount = 0;
+
+    if (forcePowers[count] == tempPower) {
+        tempPowerCount++;
+    }
+
+    if (count == forcePowers.length && tempPowerCount > 1) {
+        tempFeats.push(tempPower+" ("+tempPowerCount+")");
+    }
+    else if (count == forcePowers.length && tempPowerCount == 1) {
+        tempFeats.push(tempPower);
+    }
 
     return forcePowers;
 }
