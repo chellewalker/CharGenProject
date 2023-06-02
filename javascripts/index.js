@@ -2,6 +2,7 @@ import {parseXML} from './xmlGetter.js';
 import {references} from './references.js';
 import {speciesGen} from './speciesGen.js';
 import {getSpeed} from './speed.js';
+import {getTradition} from './forceAbilities/getTradition.js';
 import {getLanguages,languageList} from './language.js';
 import {getSkills,getNewSkill,displaySkills,getInitiative,getPerception} from './classGen/skills.js';
 import {getBAB} from './classGen/getBAB.js';
@@ -59,6 +60,7 @@ window.genCharacter = function genCharacter() {
         species = parseXML("xmls/species.xml","name",speciesID);
         let speciesMod = parseXML("xmls/species.xml","abilityMods",speciesID);
         let speciesTraits = parseXML("xmls/species.xml","speciesTraits",speciesID).split(", ");
+        let tradition = getTradition(light,dark,species);
 
         //generate name
         let name = document.querySelector('input[name="name"]:checked').value;
@@ -132,12 +134,15 @@ window.genCharacter = function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark));
+                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
                 if (feats.findLast(findLast) == "Force Training") {
                     forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                    if (talents.includes("Telekinetic Prodigy")) {
+                        forcePowers.push("Move Object");
+                    }
                 }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 if (feats.findLast(findLast) == "Skill Training") {
@@ -145,6 +150,9 @@ window.genCharacter = function genCharacter() {
                 }
                 if (feats.findLast(findLast) == "Force Training") {
                     forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                    if (talents.includes("Telekinetic Prodigy")) {
+                        forcePowers.push("Move Object");
+                    }
                 }
             }
             else {
@@ -164,11 +172,14 @@ window.genCharacter = function genCharacter() {
                     }
                     if (feats.findLast(findLast) == "Force Training") {
                         forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                        if (talents.includes("Telekinetic Prodigy")) {
+                            forcePowers.push("Move Object");
+                        }
                     }
                     skills.sort();
                 }
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition));
                 }
             }
             if ((count-2) % 3 == 0) {
