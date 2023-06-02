@@ -1,4 +1,4 @@
-export function getForcePower() {
+export function getForcePower(light,dark) {
     let forcePower = "";
     let count = 0;
     while (forcePower == "") {
@@ -7,7 +7,7 @@ export function getForcePower() {
         if (randomNum == 0 && available.includes("CR")) {
             forcePower = "Battle Strike";
         }
-        if (randomNum == 1 && available.includes("CR") && count % 2 == 0) {
+        if (randomNum == 1 && available.includes("CR") && dark == 1) {
             forcePower = "Dark Rage";
         }
         if (randomNum == 2 && available.includes("CR")) {
@@ -19,7 +19,7 @@ export function getForcePower() {
         if (randomNum == 4 && available.includes("CR")) {
             forcePower = "Force Grip";
         }
-        if (randomNum == 5 && available.includes("CR") && count % 2 == 0) {
+        if (randomNum == 5 && available.includes("CR") && dark == 1) {
             forcePower = "Force Lightning";
         }
         if (randomNum == 6 && available.includes("CR")) {
@@ -43,14 +43,17 @@ export function getForcePower() {
         if (randomNum == 12 && available.includes("CR")) {
             forcePower = "Rebuke";
         }
-        if (randomNum == 13 && available.includes("CR") && count % 2 == 0) {
+        if (randomNum == 13 && available.includes("CR") && light == 1) {
             forcePower = "Sever Force";
         }
         if (randomNum == 14 && available.includes("CR")) {
             forcePower = "Surge";
         }
-        if (randomNum == 15 && available.includes("CR")) {
+        if (randomNum == 15 && available.includes("CR") && light == 1) {
             forcePower = "Vital Transfer";
+        }
+        if (count == 25) {
+            forcePower = "ValidForcePowerNotFound";
         }
     }
     return forcePower;

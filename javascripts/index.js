@@ -31,10 +31,19 @@ window.genCharacter = function genCharacter() {
 
     // get values
     let count;
+    let light = 0;
+    let dark = 0;
     let available = references();
     let abilities = document.getElementById('abilities').value;
     let thisLevel = document.getElementById('class').value;
     let level = document.getElementById('level').value;
+    let affinity = document.getElementById('alignment').value;
+    if (affinity == "both" || affinity == "light") {
+        light = 1;
+    }
+    if (affinity == "both" || affinity == "dark") {
+        dark = 1;
+    }
     let species = "error";
     let tempSpecies = document.querySelector('input[name="species"]:checked').value;
         if (tempSpecies == "on") {
