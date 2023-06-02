@@ -56,7 +56,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         pistolAttack = "<strong>Ranged:</strong> By Weapon "+byWeapon+"<br>";
     }
     if (forcePowers != "") {
-        powerDisplay = "<strong>Force Power Suite:</strong> "+forcePowers+"<br>";
+        powerDisplay = "<strong>Force Power Suite:</strong> <i>"+forcePowers+"</i><br>";
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
@@ -149,6 +149,10 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         space = "Fighting Space: 2x2 Squares; Reach: 1 Square\n";
     }
 
+    if (forcePowers != "") {
+        powerDisplay = "Force Power Suite: "+forcePowers+"\n";
+    }
+
     let outputData = 
     name+" Statistics (CL "+level+")\n"+
         size+" "+species+" "+classList+"\n"+
@@ -169,6 +173,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         otherAttack+
         "Base Attack Bonus: +"+BAB+", Grapple: "+grappleDisplay+"\n"+
         space+
+        powerDisplay+
         "Species Traits ("+species+"): "+traitDisplay+"\n"+
         "Base Stats\n"+
         "Abilities: Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"\n"+

@@ -3,7 +3,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 206);
+        let randomNum = Math.floor(Math.random() * 242);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -193,7 +193,43 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     randomNum == 202  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
                     randomNum == 203  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
                     randomNum == 204  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
-                    randomNum == 205  && skills.includes("Use the Force") && feats.includes("Force Sensitivity")) {
+                    randomNum == 205  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 206  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 207  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 208  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 209  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 210  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 211  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 212  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 213  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 214  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 215  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 216  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 217  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 218  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 219  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 220  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 221  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 222  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 223  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 224  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 225  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 226  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 227  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 228  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 229  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 230  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 231  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 232  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 233  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 234  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 235  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 236  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 237  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 238  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 239  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 240  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
+                    randomNum == 241  && skills.includes("Use the Force") && feats.includes("Force Sensitivity")) {
             feat = "Force Training";
         }
         else if (randomNum == 58 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {
