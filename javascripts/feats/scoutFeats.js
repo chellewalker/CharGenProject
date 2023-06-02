@@ -89,7 +89,8 @@ export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         else if (randomNum == 42) {
             feat = "Weapon Proficiency (Rifles)";
         }
-        if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training") {
+        if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
+            feat == "Skill Focus (undefined)") {
             feat = "";
         }
         if (count2 == 500) {

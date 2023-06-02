@@ -8,6 +8,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
         }
 
+        forcePowers.sort();
     let forcePoints = Math.max(Math.floor(level/2),1);
         if (feats.includes("Force Boon")) {
             forcePoints += 3;
