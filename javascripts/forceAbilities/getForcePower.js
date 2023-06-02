@@ -82,6 +82,7 @@ export function compressForcePowers(forcePowers) {
     else if (count == forcePowers.length && tempPowerCount == 1) {
         tempFeats.push(tempPower);
     }
-
+    
+    forcePowers.sort();
     return forcePowers;
 }

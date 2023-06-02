@@ -140,6 +140,12 @@ window.genCharacter = function genCharacter() {
                     forcePowers.push(getForcePower(available,wis,light,dark));
                 }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                if (feats.findLast(findLast) == "Skill Training") {
+                    skills.push(getNewSkill(speciesTraits,classes,skills,feats));
+                }
+                if (feats.findLast(findLast) == "Force Training") {
+                    forcePowers.push(getForcePower(available,wis,light,dark));
+                }
             }
             else {
                 thisLevel = getLevel(firstClass,classes);
