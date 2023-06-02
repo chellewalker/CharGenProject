@@ -38,7 +38,7 @@ window.genCharacter = function genCharacter() {
     let abilities = document.getElementById('abilities').value;
     let thisLevel = document.getElementById('class').value;
     let level = document.getElementById('level').value;
-    let affinity = document.getElementById('alignment').value;
+    let affinity = document.querySelector('input[name="alignment"]:checked').value;
     if (affinity == "both" || affinity == "light") {
         light = 1;
     }
@@ -138,15 +138,12 @@ window.genCharacter = function genCharacter() {
                 feats = speciesFeats(feats,speciesTraits,skills);
                 if (feats.findLast(findLast) == "Force Training") {
                     forcePowers.push(getForcePower(available,wis,light,dark));
-                    forcePowers.sort();
                 }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             }
             else {
-                //Soldier 1 | 
                 thisLevel = getLevel(firstClass,classes);
                 classes[thisLevel]++;
-                //alert(count+"="+thisLevel+"="+classes[thisLevel]);
                 if (classes[thisLevel] == 1) {
                     let temp = (multiclassFeat(thisLevel,feats,skills,int,con,speciesTraits));
                     if (temp != "") { 
@@ -344,7 +341,7 @@ window.genCharacter = function genCharacter() {
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,
-            speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList);
+            speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
     
         document.write(output);
 }

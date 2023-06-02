@@ -1,7 +1,8 @@
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
-    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList) {
+    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,
+    forcePowers) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
@@ -28,6 +29,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let rifleAttack = "";
     let heavyWeaponAttack = "";
     let byWeapon = "";
+    let powerDisplay = "";
     if (rangedWeapon < 0) {
         byWeapon = rangedWeapon;
     }
@@ -51,6 +53,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
     if (pistol == "" && rifle == "" && heavyWeapon == "") {
         pistolAttack = "<strong>Ranged:</strong> By Weapon "+byWeapon+"<br>";
+    }
+    if (forcePowers != "") {
+        powerDisplay = "<strong>Force Power Suite:</strong> "+forcePowers+"<br>";
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
@@ -83,6 +88,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         otherAttack+
         "<strong>Base Attack Bonus:</strong> +"+BAB+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
         space+
+        powerDisplay+
         "<strong>Species Traits ("+species+"):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
