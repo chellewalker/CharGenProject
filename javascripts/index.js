@@ -19,6 +19,7 @@ import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {displayEquipment} from './equipment/display.js';
 import {getWill} from './defenses/will.js';
+import {getForcePower} from './forceAbilities/getForcePower.js';
 import {getGrapple} from './attacks/getGrapple.js';
 import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
 import {getAdvancedMelee} from './attacks/weaponTypes/advancedMelee.js';
@@ -154,6 +155,9 @@ window.genCharacter = function genCharacter() {
                     if (feats.findLast(findLast) == "Skill Training") {
                         skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                     }
+                    if (feats.findLast(findLast) == "Force Training") {
+                        forcePowers.push(getForcePower(available,light,dark));
+                    }
                     skills.sort();
                 }
                 else {
@@ -165,6 +169,10 @@ window.genCharacter = function genCharacter() {
             if (feats.findLast(findLast) == "Skill Training") {
                 skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                 skills.sort();
+            }
+            if (feats.findLast(findLast) == "Force Training") {
+                forcePowers.push(getForcePower(available,light,dark));
+                forcePowers.sort();
             }
 
         }}
