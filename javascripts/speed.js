@@ -6,27 +6,35 @@ export function getSpeed(speciesID,talents,feats) {
             speedValue += 2;
         }
         let swimSpeed = parseInt(parseXML("xmls/species.xml","swimSpeed",speciesID));
-        let speed = speedValue + " Squares";
+        let speed = speedValue + " Squares (Walking)";
         if (swimSpeed != 0) {
             if (talents.includes("Long Stride")) {
                 swimSpeed += 2;
                 if (feats.includes("Increased Agility")) {
                     swimSpeed += 2;
-                    speed = speed + " (Walking), 4 Squares (Climbing), 2 Squares (Jumping), " + swimSpeed + " Squares (Swimming)";
+                    speed = speed + ", 4 Squares (Climbing), 2 Squares (Jumping), " + swimSpeed + " Squares (Swimming)";
                 }
             }
             else if (feats.includes("Increased Agility")) {
                 swimSpeed += 2;
-                speed = speed + " (Walking), 2 Squares (Climbing), 2 Squares (Jumping), " + swimSpeed + " Squares (Swimming)";
+                speed = speed + ", 2 Squares (Climbing), 2 Squares (Jumping), " + swimSpeed + " Squares (Swimming)";
             }
             else {
-            speed = speed + " (Walking), " + swimSpeed + " Squares (Swimming)";
+            speed = speed + ", " + swimSpeed + " Squares (Swimming)";
         }}
         else if (feats.includes("Increased Agility") && talents.includes("Long Stride")) {
-            speed = speed + " (Walking), 4 Squares (Climbing), 2 Squares (Jumping), 4 Squares (Swimming)";
+            speed = speed + ", 4 Squares (Climbing), 2 Squares (Jumping), 4 Squares (Swimming)";
         }
         else if (feats.includes("Increased Agility")) {
-            speed = speed + " (Walking), 2 Squares (Climbing), 2 Squares (Jumping), 2 Squares (Swimming)";
+            speed = speed + ", 2 Squares (Climbing), 2 Squares (Jumping), 2 Squares (Swimming)";
         }
+
+        if (talents.includes("Jet Pack Training")) {
+            if (talents.includes("Improved Trajectory")) {
+                speed += ", 8 Squares (Jet Pack)";
+            }
+            else {
+                speed += ", 6 Squares (Jet Pack)";
+        }}
     return speed;
 }

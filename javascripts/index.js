@@ -354,6 +354,9 @@ window.genCharacter = function genCharacter() {
 
     //equipment
         equipment.sort();
+        if (talents.includes("Jet Pack Training")) {
+                equipment.push("Jet Pack");
+        }
         let equipmentList = displayEquipment(equipment);
 
         //output
