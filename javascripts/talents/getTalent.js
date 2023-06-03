@@ -6,7 +6,7 @@ import {scoundrelTalents} from './scoundrelTalents.js';
 import {scoutTalents} from './scoutTalents.js';
 import {soldierTalents} from './soldierTalents.js';
 
-export function getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition) {
+export function getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha) {
     let talent = "";
     let count = 0;
 while (talent == "") {
@@ -19,7 +19,7 @@ while (talent == "") {
                 talent = traditionTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,tradition);
             }
             else {
-                talent = forceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,tradition);
+                talent = forceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,tradition,cha);
             }
         }
         else {

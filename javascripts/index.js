@@ -134,7 +134,7 @@ window.genCharacter = function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition));
+                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills);
@@ -179,7 +179,7 @@ window.genCharacter = function genCharacter() {
                     skills.sort();
                 }
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha));
                 }
             }
             if ((count-2) % 3 == 0) {

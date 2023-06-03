@@ -1,4 +1,4 @@
-export function forceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,tradition) {
+export function forceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,tradition,cha) {
     let count = 0;
     let talent = "";
     while (talent == "") {
