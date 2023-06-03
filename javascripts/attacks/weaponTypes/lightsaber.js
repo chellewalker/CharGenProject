@@ -3,6 +3,18 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
     let weaponSize;
     let lightsaberDice;
     let lightsaberDie;
+    let relativeSize;
+
+    if (size == "Small") {
+        relativeSize = 0;
+    }
+    else if (size == "Medium") {
+        relativeSize = 1;
+    }
+    else if (size == "Large") {
+        relativeSize = 2;
+    }
+
     let lightsaberAttackRaw = BAB + Math.floor((str-10)/2);
     if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse")) {
         lightsaberAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((dex-10)/2),Math.floor((str-10)/2));
@@ -21,25 +33,25 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
 
         if (randomNum == 0) {
             lightsaberWeapon = "Lightsaber";
-            weaponSize = "Medium";
+            weaponSize = 1;
             lightsaberDice = 2;
             lightsaberDie = 8;
         }
         if (randomNum == 1 && available.includes("CR") && size != "Large") {
             lightsaberWeapon = "Short Lightsaber";
-            weaponSize = "Small";
+            weaponSize = 0;
             lightsaberDice = 2;
             lightsaberDie = 6;
         }
         if (randomNum == 2 && available.includes("CR") && size != "Small") {
             lightsaberWeapon = "Double-Sided Lightsaber";
-            weaponSize = "Large";
+            weaponSize = 2;
             lightsaberDice = 2;
             lightsaberDie = 8;
         }
         if (randomNum == 3 && available.includes("KotORCG")) {
             lightsaberWeapon = "Lightfoil";
-            weaponSize = "Medium";
+            weaponSize = 1;
             lightsaberDice = 2;
             lightsaberDie = 8;
         }
@@ -69,10 +81,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
     }
 
     let string = lightsaberWeapon + " " + lightsaberAttack +" ("+ lightsaberDice+"d"+lightsaberDie+lightsaberDamage + ")";
-    if (feats.includes("Dual Weapon Mastery I") && size == "Medium" && weaponSize == "Small" ||
-            feats.includes("Dual Weapon Mastery I") && size == "Medium" && weaponSize == "Medium" ||
-            feats.includes("Dual Weapon Mastery I") && size == "Large" ||
-            feats.includes("Dual Weapon Mastery I") && size == "Small" && weaponSize == "Small") {
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
         lightsaberWeapon = lightsaberWeapon + " (2)";
     }
 

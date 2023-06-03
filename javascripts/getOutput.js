@@ -1,7 +1,7 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
 
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
+    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,
     forcePowers) {
@@ -40,6 +40,8 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let pistolAttack = "";
     let rifleAttack = "";
     let heavyWeaponAttack = "";
+    let otherMelee = "";
+    let otherRanged = "";
     let otherAttack = "";
     let byWeapon = "";
     let powerDisplay = "";
@@ -48,6 +50,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
     else {
         byWeapon = "+" + rangedWeapon;
+    }
+    if (otherMeleeAttack != "") {
+        otherMelee = "<strong>Melee:</strong> "+otherMeleeAttack+"<br>";
     }
     if (advancedMelee != "") {
         advancedMeleeAttack = "<strong>Melee:</strong> "+advancedMelee+"<br>";
@@ -72,7 +77,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,damageReduction,
+        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
         advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
 
@@ -98,6 +103,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Offense</strong></u></p>"+
         "<strong>Speed:</strong> "+speed+"<br>"+
         "<strong>Melee:</strong> "+unarmed+"<br>"+
+        otherMelee+
         advancedMeleeAttack+
         lightsaberAttack+
         pistolAttack+
@@ -124,7 +130,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 }
 
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,damageReduction,
+    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers) {
 

@@ -28,6 +28,8 @@ import {getHeavyWeapon} from './attacks/weaponTypes/heavyWeapon.js';
 import {getLightsaber} from './attacks/weaponTypes/lightsaber.js';
 import {getPistol} from './attacks/weaponTypes/pistol.js';
 import {getRifle} from './attacks/weaponTypes/rifle.js';
+import {getexoticMelee} from './attacks/weaponTypes/exoticMelee.js';
+//import {getexoticRanged} from './attacks/weaponTypes/exoticRanged.js';
 import {getBellow} from './attacks/getBellow.js';
 
 window.genCharacter = function genCharacter() {
@@ -318,7 +320,6 @@ window.genCharacter = function genCharacter() {
         let otherAttack = "";
         let otherMeleeAttack = "";
         let otherRangedAttack = "";
-        let otherBellowAttack = "";
 
     if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
         temp2 = getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,size);
@@ -350,6 +351,15 @@ window.genCharacter = function genCharacter() {
         temp = temp2[1];
         equipment.push(temp);
     }
+
+        temp2 = getexoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
+        if (temp2 != "") {
+            otherMeleeAttack = temp2[0];
+            temp = temp2[1];
+            equipment.push(temp);
+        }
+
+
     if (speciesTraits.includes("Bellow")) {
         temp2 = getBellow(available,BAB,level,dex,feats,talents,size);
         otherAttack = temp2[0];
@@ -366,7 +376,7 @@ window.genCharacter = function genCharacter() {
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-            reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
+            reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
     

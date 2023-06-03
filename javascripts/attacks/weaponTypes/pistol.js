@@ -4,6 +4,18 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
     let pistolDice;
     let pistolDie;
     let special = "";
+    let relativeSize;
+
+    if (size == "Small") {
+        relativeSize = 0;
+    }
+    else if (size == "Medium") {
+        relativeSize = 1;
+    }
+    else if (size == "Large") {
+        relativeSize = 2;
+    }
+
     let pistolAttackRaw = BAB + Math.floor((dex-10)/2);
     if (feats.includes("Weapon Focus (Pistols)")) {
         pistolAttackRaw++;
@@ -13,83 +25,83 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
 
         if (randomNum == 0) {
             pistolWeapon = "Blaster Pistol";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 3;
             pistolDie = 6;
         }
         if (randomNum == 1 && available.includes("CR") && size != "Small") {
             pistolWeapon = "Heavy Blaster Pistol";
-            weaponSize = "Medium";
+            weaponSize = 1;
             pistolDice = 3;
             pistolDie = 8;
         }
         if (randomNum == 2 && available.includes("CR") && size != "Large") {
             pistolWeapon = "Hold-Out Blaster Pistol";
-            weaponSize = "Tiny";
+            weaponSize = -1;
             pistolDice = 3;
             pistolDie = 4;
         }
         if (randomNum == 3 && available.includes("CR")) {
             pistolWeapon = "Ion Pistol";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 3;
             pistolDie = 6;
             special = " (Ion)";
         }
         if (randomNum == 4 && available.includes("CR")) {
             pistolWeapon = "Sporting Blaster Pistol";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 3;
             pistolDie = 4;
         }
         if (randomNum == 5 && available.includes("CR")) {
             pistolWeapon = "Slugthrower Pistol";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 2;
             pistolDie = 6;
         }
         if (randomNum == 6 && available.includes("TotG")) {
             pistolWeapon = "Sonic Stunner";
-            weaponSize = "Tiny";
+            weaponSize = -1;
             pistolDice = 3;
             pistolDie = 6;
             special = " (Stun)";
         }
         if (randomNum == 7 && available.includes("KotORCG")) {
             pistolWeapon = "Heavy Sonic Pistol";
-            weaponSize = "Medium";
+            weaponSize = 1;
             pistolDice = 2;
             pistolDie = 8;
             special = " (Sonic)";
         }
         if (randomNum == 8 && available.includes("KotORCG")) {
             pistolWeapon = "Needler";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 2;
             pistolDie = 4;
         }
         if (randomNum == 9 && available.includes("KotORCG")) {
             pistolWeapon = "Pulse-Wave Pistol";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 2;
             pistolDie = 6;
         }
         if (randomNum == 10 && available.includes("KotORCG")) {
             pistolWeapon = "Ripper";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 2;
             pistolDie = 4;
         }
         if (randomNum == 11 && available.includes("KotORCG")) {
             pistolWeapon = "Sonic Disruptor";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 2;
             pistolDie = 6;
             special = " (Sonic)";
         }
         if (randomNum == 12 && available.includes("KotORCG")) {
             pistolWeapon = "Sonic Pistol";
-            weaponSize = "Small";
+            weaponSize = 0;
             pistolDice = 2;
             pistolDie = 6;
             special = " (Sonic)";
@@ -119,10 +131,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolDamage = "+" + pistolDamageRaw;
     }
     let string = pistolWeapon + " " + pistolAttack +" ("+ pistolDice+"d"+pistolDie+pistolDamage + special + ")";
-    if (feats.includes("Dual Weapon Mastery I") && size == "Medium" ||
-            feats.includes("Dual Weapon Mastery I") && size == "Large" ||
-            feats.includes("Dual Weapon Mastery I") && size == "Small" && weaponSize == "Small" ||
-            feats.includes("Dual Weapon Mastery I") && size == "Small" && weaponSize == "Tiny") {
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
         pistolWeapon = pistolWeapon + " (2)";
     }
 
