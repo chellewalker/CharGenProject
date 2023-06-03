@@ -275,7 +275,7 @@ window.genCharacter = function genCharacter() {
 
         //list features
         classList = classListing(firstClass,classes);
-        listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats);
+        listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents);
         listTalents = displayTalents(talents);
         listFeats = displayFeats(feats);
         initiativeDisplay = getInitiative(level,dex,skills,feats);
