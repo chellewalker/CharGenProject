@@ -1,10 +1,16 @@
-export function getLightsaber(available,BAB,level,str,dex,feats,talents,size) {
+export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size) {
     let lightsaberWeapon = "";
     let weaponSize;
     let lightsaberDice;
     let lightsaberDie;
     let lightsaberAttackRaw = BAB + Math.floor((str-10)/2);
-    if (feats.includes("Weapon Finesse")) {
+    if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse")) {
+        lightsaberAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((dex-10)/2),Math.floor((str-10)/2));
+    }
+    else if (talents.includes("Noble Fencing Style")) {
+        lightsaberAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((str-10)/2));
+    }
+    else if (feats.includes("Weapon Finesse")) {
         lightsaberAttackRaw = BAB + Math.max(Math.floor((dex-10)/2),Math.floor((str-10)/2));
     }
     if (feats.includes("Weapon Focus (Lightsabers)")) {

@@ -28,6 +28,7 @@ import {getHeavyWeapon} from './attacks/weaponTypes/heavyWeapon.js';
 import {getLightsaber} from './attacks/weaponTypes/lightsaber.js';
 import {getPistol} from './attacks/weaponTypes/pistol.js';
 import {getRifle} from './attacks/weaponTypes/rifle.js';
+import {getBellow} from './attacks/getBellow.js';
 
 window.genCharacter = function genCharacter() {
 
@@ -305,7 +306,7 @@ window.genCharacter = function genCharacter() {
         let speed = getSpeed(speciesID,talents,feats);
 
         //attacks and damage
-        let unarmed = getUnarmed(BAB,level,str,dex,feats,talents,size,speciesTraits);
+        let unarmed = getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
         let equipment = [];
         let temp;
         let temp2;
@@ -320,7 +321,7 @@ window.genCharacter = function genCharacter() {
         let otherBellowAttack = "";
 
     if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
-        temp2 = getAdvancedMelee(available,BAB,level,str,dex,feats,talents,size);
+        temp2 = getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,size);
         advancedMelee = temp2[0];
         temp = temp2[1];
         equipment.push(temp);
@@ -332,7 +333,7 @@ window.genCharacter = function genCharacter() {
         equipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Lightsabers)")) {
-        temp2 = getLightsaber(available,BAB,level,str,dex,feats,talents,size);
+        temp2 = getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size);
         lightsaber = temp2[0];
         temp = temp2[1];
         equipment.push(temp);
@@ -348,6 +349,10 @@ window.genCharacter = function genCharacter() {
         rifle = temp2[0];
         temp = temp2[1];
         equipment.push(temp);
+    }
+    if (speciesTraits.includes("Bellow")) {
+        temp2 = getBellow(available,BAB,level,dex,feats,talents,size);
+        otherAttack = temp2[0];
     }
 
     forcePowers = compressForcePowers(forcePowers);

@@ -2,7 +2,7 @@ import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForc
 
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,
     forcePowers) {
     let destiny = "";
@@ -31,6 +31,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let pistolAttack = "";
     let rifleAttack = "";
     let heavyWeaponAttack = "";
+    let otherAttack = "";
     let byWeapon = "";
     let powerDisplay = "";
     if (rangedWeapon < 0) {
@@ -54,7 +55,10 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     if (heavyWeapon != "") {
         heavyWeaponAttack = "<strong>Ranged:</strong> "+heavyWeapon+"<br>";
     }
-    if (pistol == "" && rifle == "" && heavyWeapon == "") {
+    if (other != "") {
+        otherAttack = "<strong>Ranged:</strong> "+other+"<br>";
+    }
+    if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "") {
         pistolAttack = "<strong>Ranged:</strong> By Weapon "+byWeapon+"<br>";
     }
 
@@ -112,7 +116,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grappleDisplay,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers) {
 
         let traitDisplay = "";
@@ -130,6 +134,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         let pistolAttack = "";
         let rifleAttack = "";
         let heavyWeaponAttack = "";
+        let otherAttack = "";
         if (advancedMelee != "") {
             advancedMeleeAttack = "Melee: "+advancedMelee+"<br>";
         }
@@ -145,7 +150,10 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         if (heavyWeapon != "") {
             heavyWeaponAttack = "Ranged: "+heavyWeapon+"<br>";
         }
-        if (pistol == "" && rifle == "" && heavyWeapon == "") {
+        if (other != "") {
+            otherAttack = "Ranged: "+other+"<br>";
+        }
+        if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "") {
             pistolAttack = "Ranged: By Weapon "+byWeapon+"<br>";
         }
 

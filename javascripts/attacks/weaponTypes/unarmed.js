@@ -1,6 +1,12 @@
-export function getUnarmed(BAB,level,str,dex,feats,talents,size,speciesTraits) {
+export function getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTraits) {
     let unarmedAttackRaw = BAB + Math.floor((str-10)/2);
-    if (feats.includes("Weapon Finesse")) {
+    if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse")) {
+        unarmedAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((dex-10)/2),Math.floor((str-10)/2));
+    }
+    else if (talents.includes("Noble Fencing Style")) {
+        unarmedAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((str-10)/2));
+    }
+    else if (feats.includes("Weapon Finesse")) {
         unarmedAttackRaw = BAB + Math.max(Math.floor((dex-10)/2),Math.floor((str-10)/2));
     }
     if (feats.includes("Weapon Focus (Simple Weapons)")) {
