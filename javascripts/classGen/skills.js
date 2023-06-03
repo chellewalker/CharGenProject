@@ -189,6 +189,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Swim)")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Expert Swimmer")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score + special;
@@ -226,6 +229,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
             if (trainedSkills[count] == "Ride") {
                 if (feats.includes("Skill Focus (Ride)")) {
                     score += 5;
+                }
+                if (speciesTraits.includes("Animal Handler")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             if (trainedSkills[count] == "Stealth") {
@@ -338,6 +344,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Survival)")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Survival Instinct")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Treat Injury") {
                 if (feats.includes("Skill Focus (Treat Injury)")) {
@@ -357,6 +366,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Deception)")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Deceptive")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Gather Information") {
                 if (feats.includes("Skill Focus (Gather Information)")) {
@@ -370,10 +382,19 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Persuasion)")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Silver Tongued")) {
+                    special = " (may reroll, may keep better result)";
+                }
+                else if (speciesTraits.includes("Intimidating Presence")) {
+                    special = " (may reroll to Intimidate, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Use the Force") {
                 if (feats.includes("Skill Focus (Use the Force)")) {
                     score += 5;
+                }
+                if (speciesTraits.includes("Keen Force Sense")) {
+                    special = " (may reroll to Search Your Feelings or Sense Force, may keep better result)";
                 }
             }
             if (score < 0) {
