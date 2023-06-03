@@ -219,6 +219,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Pilot)")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Expert Pilot")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Ride") {
                 if (feats.includes("Skill Focus (Ride)")) {
@@ -234,6 +237,12 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 }
                 else if (size == "Large") {
                 score -= 5;
+                }
+                if (speciesTraits.includes("Sneaky") && talents.includes("Improved Stealth")) {
+                    special = " (may reroll twice, must take second result)";
+                }
+                else if (speciesTraits.includes("Sneaky") || talents.includes("Improved Stealth")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             
@@ -317,6 +326,12 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
             if (trainedSkills[count] == "Perception") {
                 if (feats.includes("Skill Focus (Perception)")) {
                     score += 5;
+                }
+                if (speciesTraits.includes("Heightened Awareness") && talents.includes("Acute Senses")) {
+                    special = " (may reroll twice, must take second result)";
+                }
+                else if (speciesTraits.includes("Heightened Awareness") || talents.includes("Acute Senses")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             if (trainedSkills[count] == "Survival") {
