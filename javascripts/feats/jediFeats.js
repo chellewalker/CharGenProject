@@ -3,7 +3,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 53);
+        let randomNum = Math.floor(Math.random() * 60);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -197,6 +197,32 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
         }
         else if (randomNum == 52) {
             feat = "Weapon Proficiency (Lightsabers)";
+        }
+        else if (randomNum == 53 && available.includes("KotORCG") && BAB >= 6) {
+            feat = "Accelerated Strike";
+        }
+        else if (randomNum == 54 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Advanced Melee Weapons)") ||
+                    randomNum == 54 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Heavy Weapons)") ||
+                    randomNum == 54 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Lightsabers)") ||
+                    randomNum == 54 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Pistols)") ||
+                    randomNum == 54 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Rifles)") ||
+                    randomNum == 54 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Simple Weapons)")) {
+            feat = "Critical Strike";
+        }
+        else if (randomNum == 55 && available.includes("KotORCG") && dex >= 13) {
+            feat = "Flurry";
+        }
+        else if (randomNum == 56 && available.includes("KotORCG")) {
+            feat = "Force Readiness";
+        }
+        else if (randomNum == 57 && available.includes("KotORCG") && feats.includes("Rapid Strike")) {
+            feat = "Improved Rapid Strike";
+        }
+        else if (randomNum == 58 && available.includes("KotORCG")) {
+            feat = "Tumble Defense";
+        }
+        else if (randomNum == 59 && available.includes("KotORCG") && BAB >= 5) {
+            feat = "Withdrawal Strike";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

@@ -3,7 +3,7 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 110);
+        let randomNum = Math.floor(Math.random() * 120);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -316,6 +316,41 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
         }
         else if (randomNum == 109) {
             feat = "Weapon Proficiency (Rifles)";
+        }
+        else if (randomNum == 110 && available.includes("KotORCG") && BAB >= 6) {
+            feat = "Accelerated Strike";
+        }
+        else if (randomNum == 111 && available.includes("KotORCG") && str >= 13 && con >= 13) {
+            feat = "Conditioning";
+        }
+        else if (randomNum == 112 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Advanced Melee Weapons)") ||
+                    randomNum == 112 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Heavy Weapons)") ||
+                    randomNum == 112 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Lightsabers)") ||
+                    randomNum == 112 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Pistols)") ||
+                    randomNum == 112 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Rifles)") ||
+                    randomNum == 112 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Simple Weapons)")) {
+            feat = "Critical Strike";
+        }
+        else if (randomNum == 113 && available.includes("KotORCG") && dex >= 13) {
+            feat = "Flurry";
+        }
+        else if (randomNum == 114 && available.includes("KotORCG") && feats.includes("Rapid Strike")) {
+            feat = "Improved Rapid Strike";
+        }
+        else if (randomNum == 115 && available.includes("KotORCG") && feats.includes("Conditioning")) {
+            feat = "Increased Agility";
+        }
+        else if (randomNum == 116 && available.includes("KotORCG") && dex >= 13) {
+            feat = "Power Blast";
+        }
+        else if (randomNum == 117 && available.includes("KotORCG")) {
+            feat = "Sniper Shot";
+        }
+        else if (randomNum == 118 && available.includes("KotORCG")) {
+            feat = "Tumble Defense";
+        }
+        else if (randomNum == 119 && available.includes("KotORCG")) {
+            feat = "Withdrawal Strike";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

@@ -3,7 +3,7 @@ export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 43);
+        let randomNum = Math.floor(Math.random() * 47);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -88,6 +88,18 @@ export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         }
         else if (randomNum == 42) {
             feat = "Weapon Proficiency (Rifles)";
+        }
+        else if (randomNum == 43 && available.includes("KotORCG") && str >= 13 && con >= 13) {
+            feat = "Conditioning";
+        }
+        else if (randomNum == 44 && available.includes("KotORCG")) {
+            feat = "Gearhead";
+        }
+        else if (randomNum == 45 && available.includes("KotORCG") && feats.includes("Conditioning")) {
+            feat = "Increased Agility";
+        }
+        else if (randomNum == 46 && available.includes("KotORCG") && con >= 13) {
+            feat = "Poison Resistance";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

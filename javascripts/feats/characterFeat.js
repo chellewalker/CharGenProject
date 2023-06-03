@@ -3,7 +3,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 242);
+        let randomNum = Math.floor(Math.random() * 261);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -523,6 +523,68 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 178 && available.includes("TotG") && str >= 13 && feats.includes("Burst Fire") && feats.includes("Weapon Proficiency (Heavy Weapons)")) {
             feat = "Suppression Fire";
+        }
+        else if (randomNum == 242 && available.includes("KotORCG") && BAB >= 6) {
+            feat = "Accelerated Strike";
+        }
+        else if (randomNum == 243 && available.includes("KotORCG") && str >= 13 && con >= 13) {
+            feat = "Conditioning";
+        }
+        else if (randomNum == 244 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Advanced Melee Weapons)") ||
+                    randomNum == 244 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Heavy Weapons)") ||
+                    randomNum == 244 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Lightsabers)") ||
+                    randomNum == 244 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Pistols)") ||
+                    randomNum == 244 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Rifles)") ||
+                    randomNum == 244 && available.includes("KotORCG") && BAB >= 9 && feats.includes("Weapon Focus (Simple Weapons)")) {
+            feat = "Critical Strike";
+        }
+        else if (randomNum == 245 && available.includes("KotORCG") && feats.includes("Martial Arts I") && dex >= 13) {
+            feat = "Echani Training";
+        }
+        else if (randomNum == 246 && available.includes("KotORCG") && dex >= 13) {
+            feat = "Flurry";
+        }
+        else if (randomNum == 247 && available.includes("KotORCG")) {
+            feat = "Force Readiness";
+        }
+        else if (randomNum == 248 && available.includes("KotORCG")) {
+            feat = "Gearhead";
+        }
+        else if (randomNum == 249 && available.includes("KotORCG")) {
+            feat = "Implant Training";
+        }
+        else if (randomNum == 250 && available.includes("KotORCG") && feats.includes("Rapid Strike")) {
+            feat = "Improved Rapid Strike";
+        }
+        else if (randomNum == 251 && available.includes("KotORCG") && feats.includes("Conditioning")) {
+            feat = "Increased Agility";
+        }
+        else if (randomNum == 252 && available.includes("KotORCG") && feats.includes("Charging Fire")) {
+            feat = "Mandalorian Training";
+        }
+        else if (randomNum == 253 && available.includes("KotORCG") && con >= 13) {
+            feat = "Poison Resistance";
+        }
+        else if (randomNum == 254 && available.includes("KotORCG") && dex >= 13) {
+            feat = "Power Blast";
+        }
+        else if (randomNum == 255 && available.includes("KotORCG")) {
+            feat = "Quick Skill";
+        }
+        else if (randomNum == 256 && available.includes("KotORCG")) {
+            feat = "Republic Military Training";
+        }
+        else if (randomNum == 257 && available.includes("KotORCG")) {
+            feat = "Sith Military Training";
+        }
+        else if (randomNum == 258 && available.includes("KotORCG")) {
+            feat = "Sniper Shot";
+        }
+        else if (randomNum == 259 && available.includes("KotORCG")) {
+            feat = "Tumble Defense";
+        }
+        else if (randomNum == 260 && available.includes("KotORCG")) {
+            feat = "Withdrawal Strike";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
                 feat == "Skill Focus (undefined)") {

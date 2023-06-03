@@ -3,7 +3,7 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 37);
+        let randomNum = Math.floor(Math.random() * 47);
         if (randomNum == 0 && available.includes("CR") && feats.includes("Point-Blank Shot") && feats.includes("Precise Shot") && BAB >= 4) {
             feat = "Deadeye";
         }
@@ -68,6 +68,28 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
         }}
         else if (randomNum == 36) {
             feat = "Weapon Proficiency (Pistols)";
+        }
+        else if (randomNum == 37 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 38 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 39 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 40 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 41 && available.includes("SotG") && skills.includes("Mechanics")) {
+            feat = "Tech Specialist";
+        }
+        else if (randomNum == 42 && available.includes("KotORCG")) {
+            feat = "Gearhead";
+        }
+        else if (randomNum == 43 && available.includes("KotORCG")) {
+            feat = "Implant Training";
+        }
+        else if (randomNum == 44 && available.includes("KotORCG") && con >= 13) {
+            feat = "Poison Resistance";
+        }
+        else if (randomNum == 45 && available.includes("KotORCG")) {
+            feat = "Quick Skill";
+        }
+        else if (randomNum == 46 && available.includes("KotORCG")) {
+            feat = "Sniper Shot";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

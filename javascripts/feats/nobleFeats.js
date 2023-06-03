@@ -3,7 +3,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 28);
+        let randomNum = Math.floor(Math.random() * 35);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -70,6 +70,19 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         }
         else if (randomNum == 27) {
             feat = "Weapon Proficiency (Rifles)";
+        }
+        else if (randomNum == 28 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 29 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 30 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 31 && available.includes("SotG") && skills.includes("Mechanics") ||
+                    randomNum == 32 && available.includes("SotG") && skills.includes("Mechanics")) {
+            feat = "Tech Specialist";
+        }
+        else if (randomNum == 33 && available.includes("KotORCG") && dex >= 13) {
+            feat = "Flurry";
+        }
+        else if (randomNum == 34 && available.includes("KotORCG")) {
+            feat = "Quick Skill";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {
