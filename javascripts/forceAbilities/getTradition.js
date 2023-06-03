@@ -14,7 +14,8 @@ export function getTradition(light,dark,species) {
             //Jensarrai
             tradition = 2;
         }
-        else if (randomNum == 3) {
+        else if (randomNum == 3 && species == "Human" ||
+                    randomNum == 3 && species == "Zabrak") {
             //Dathomir
             tradition = 3;
         }
