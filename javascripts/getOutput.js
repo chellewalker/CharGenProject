@@ -152,29 +152,37 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
             reductionDisplay = ", Damage Reduction: "+damageReduction;
         }
 
+        let otherMelee = "";
         let advancedMeleeAttack = "";
         let lightsaberAttack = "";
+        let otherRanged = "";
         let pistolAttack = "";
         let rifleAttack = "";
         let heavyWeaponAttack = "";
         let otherAttack = "";
+        if (otherMeleeAttack != "") {
+            otherMelee = "Melee: "+otherMeleeAttack+"\n";
+        }
         if (advancedMelee != "") {
-            advancedMeleeAttack = "Melee: "+advancedMelee+"<br>";
+            advancedMeleeAttack = "Melee: "+advancedMelee+"\n";
         }
         if (lightsaber != "") {
-            lightsaberAttack = "Melee: "+lightsaber+"<br>";
+            lightsaberAttack = "Melee: "+lightsaber+"\n";
+        }
+        if (otherRangedAttack != "") {
+            otherRanged = "Ranged: "+otherRangedAttack+"\n";
         }
         if (pistol != "") {
-            pistolAttack = "Ranged: "+pistol+"<br>";
+            pistolAttack = "Ranged: "+pistol+"\n";
         }
         if (rifle != "") {
-            rifleAttack = "Ranged: "+rifle+"<br>";
+            rifleAttack = "Ranged: "+rifle+"\n";
         }
         if (heavyWeapon != "") {
-            heavyWeaponAttack = "Ranged: "+heavyWeapon+"<br>";
+            heavyWeaponAttack = "Ranged: "+heavyWeapon+"\n";
         }
         if (other != "") {
-            otherAttack = "Ranged: "+other+"<br>";
+            otherAttack = "Ranged: "+other+"\n";
         }
         if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "") {
             pistolAttack = "Ranged: By Weapon "+byWeapon+"<br>";
@@ -202,8 +210,10 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         "Offense\n"+
         "Speed: "+speed+"\n"+
         "Melee: "+unarmed+"\n"+
+        otherMelee+
         advancedMeleeAttack+
         lightsaberAttack+
+        otherRanged+
         pistolAttack+
         rifleAttack+
         heavyWeaponAttack+
