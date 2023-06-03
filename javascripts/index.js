@@ -28,8 +28,8 @@ import {getHeavyWeapon} from './attacks/weaponTypes/heavyWeapon.js';
 import {getLightsaber} from './attacks/weaponTypes/lightsaber.js';
 import {getPistol} from './attacks/weaponTypes/pistol.js';
 import {getRifle} from './attacks/weaponTypes/rifle.js';
-import {getexoticMelee} from './attacks/weaponTypes/exoticMelee.js';
-//import {getexoticRanged} from './attacks/weaponTypes/exoticRanged.js';
+import {getExoticMelee} from './attacks/weaponTypes/exoticMelee.js';
+import {getExoticRanged} from './attacks/weaponTypes/exoticRanged.js';
 import {getBellow} from './attacks/getBellow.js';
 
 window.genCharacter = function genCharacter() {
@@ -352,9 +352,15 @@ window.genCharacter = function genCharacter() {
         equipment.push(temp);
     }
 
-        temp2 = getexoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
-        if (temp2 != "") {
+        temp2 = getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
+        if (temp2[1] != "") {
             otherMeleeAttack = temp2[0];
+            temp = temp2[1];
+            equipment.push(temp);
+        }
+        temp2 = getExoticRanged(available,BAB,level,dex,feats,talents,size,speciesTraits);
+        if (temp2[1] != "") {
+            otherRangedAttack = temp2[0];
             temp = temp2[1];
             equipment.push(temp);
         }

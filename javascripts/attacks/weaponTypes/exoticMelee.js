@@ -1,4 +1,4 @@
-export function getexoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits) {
+export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits) {
     let exoticMeleeWeapon = "";
     let string = "";
     let weaponSize;

@@ -60,6 +60,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     if (lightsaber != "") {
         lightsaberAttack = "<strong>Melee:</strong> "+lightsaber+"<br>";
     }
+    if (otherRangedAttack != "") {
+        otherRanged = "<strong>Ranged:</strong> "+otherRangedAttack+"<br>";
+    }
     if (pistol != "") {
         pistolAttack = "<strong>Ranged:</strong> "+pistol+"<br>";
     }
@@ -106,6 +109,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         otherMelee+
         advancedMeleeAttack+
         lightsaberAttack+
+        otherRanged+
         pistolAttack+
         rifleAttack+
         heavyWeaponAttack+
