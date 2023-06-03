@@ -4,7 +4,7 @@ export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 16);
-        let randomNum = Math.floor(Math.random() * 4);
+        let randomNum = Math.floor(Math.random() * 5);
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -213,6 +213,39 @@ export function lineageTalents(talents,available,skills,feats,BAB,forcePowers,li
     }
     else if (randomNum == 6 && available.includes("FUCG") && talents.includes("Connections") && talents.includes("Influential Friends")) {
         talent = "Powerful Friends";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function fencingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && skills.includes("Deception") && skills.includes("Persuasion")) {
+        talent = "Noble Fencing Style";
+    }
+    else if (randomNum == 1 && talents.includes("Noble Fencing Style")) {
+        talent = "Demoralizing Defense";
+    }
+    else if (randomNum == 2 && talents.includes("Noble Fencing Style")) {
+        talent = "Leading Feint";
+    }
+    else if (randomNum == 3 && talents.includes("Noble Fencing Style") && BAB >= 5) {
+        talent = "Personal Affront";
+    }
+    else if (randomNum == 4 && talents.includes("Noble Fencing Style") && BAB >= 5) {
+        talent = "Transposing Strike";
     }
     if (talents.includes(talent)) {
         talent = "";

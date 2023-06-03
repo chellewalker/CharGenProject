@@ -4,7 +4,7 @@ export function scoundrelTalents(talents,available,skills,feats,BAB,forcePowers,
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 4);
+        let randomNum = Math.floor(Math.random() * 7);
     if (randomNum == 0) {
         talent = fortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -243,6 +243,102 @@ export function spacerTalents(talents,available,skills,feats,BAB,forcePowers,lig
     }
     else if (randomNum == 6 && available.includes("SaV") && talents.includes("Spacehound") && talents.includes("Stellar Warrior")) {
         talent = "Make a Break for It";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function outlawTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0 && skills.includes("Mechanics")) {
+        talent = "Fast Repairs";
+    }
+    else if (randomNum == 1 && skills.includes("Mechanics")) {
+        talent = "Hotwire";
+    }
+    else if (randomNum == 2 && skills.includes("Mechanics")) {
+        talent = "Quick Fix";
+    }
+    else if (randomNum == 3 && skills.includes("Mechanics")) {
+        talent = "Personalized Modifications";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function malkiteTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Malkite Techniques";
+    }
+    else if (randomNum == 1 && talents.includes("Malkite Techniques")) {
+        talent = "Modify Poison";
+    }
+    else if (randomNum == 2 && talents.includes("Malkite Techniques")) {
+        talent = "Numbing Poison";
+    }
+    else if (randomNum == 3 && talents.includes("Malkite Techniques")) {
+        talent = "Undetectable Poison";
+    }
+    else if (randomNum == 4 && talents.includes("Malkite Techniques")) {
+        talent = "Vicious Poison";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function runTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && talents.includes("Opportunistic Strike")) {
+        talent = "Cheap Shot";
+    }
+    else if (randomNum == 1 && talents.includes("Opportunistic Strike")) {
+        talent = "No Escape";
+    }
+    else if (randomNum == 2) {
+        talent = "Opportunistic Strike";
+    }
+    else if (randomNum == 3 && talents.includes("Strike and Run")) {
+        talent = "Slippery Strike";
+    }
+    else if (randomNum == 4) {
+        talent = "Strike and Run";
     }
     if (talents.includes(talent)) {
         talent = "";
