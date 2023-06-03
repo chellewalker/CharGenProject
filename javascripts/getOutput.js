@@ -10,6 +10,15 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
         }
 
+        let damageReduction = 0;
+        let reductionDisplay = "";
+        if (speciesTraits.includes("Damage Reduction 2")) {
+            damageReduction += 2;
+        }
+        if (damageReduction != 0) {
+            reductionDisplay = ", <strong>Damage Reduction:</strong> "+damageReduction;
+        }
+
         forcePowers.sort();
     let forcePoints = Math.max(Math.floor(level/2),1);
         if (feats.includes("Force Boon")) {
@@ -63,7 +72,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
+        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,damageReduction,
         advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
 
@@ -85,7 +94,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<strong>Languages:</strong> "+listLanguages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+
         "<strong>Reflex Defense:</strong> "+reflex+" (<strong>Flat-Footed:</strong> "+flatFooted+"), <strong>Fortitude Defense:</strong> "+fortitude+", <strong>Will Defense:</strong> "+will+"<br>"+
-        "<strong>Hit Points:</strong> "+hitPoints+", <strong>Damage Threshold:</strong> "+damageThreshold+"<br>"+
+        "<strong>Hit Points:</strong> "+hitPoints+reductionDisplay+", <strong>Damage Threshold:</strong> "+damageThreshold+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Offense</strong></u></p>"+
         "<strong>Speed:</strong> "+speed+"<br>"+
         "<strong>Melee:</strong> "+unarmed+"<br>"+
@@ -115,7 +124,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 }
 
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,
+    reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,damageReduction,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers) {
 
@@ -127,6 +136,10 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
                 traitDisplay += ", ";
             }
             traitDisplay += speciesTraits[count];
+        }
+        let reductionDisplay = "";
+        if (damageReduction != 0) {
+            reductionDisplay = ", Damage Reduction: "+damageReduction;
         }
 
         let advancedMeleeAttack = "";
@@ -175,7 +188,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         "Languages: "+listLanguages+"\n"+
         "Defenses\n"+
         "Reflex Defense: "+reflex+" (Flat-Footed: "+flatFooted+"), Fortitude Defense: "+fortitude+", Will Defense: "+will+"\n"+
-        "Hit Points: "+hitPoints+", Damage Threshold: "+damageThreshold+"\n"+
+        "Hit Points: "+hitPoints+reductionDisplay+", Damage Threshold: "+damageThreshold+"\n"+
         "Offense\n"+
         "Speed: "+speed+"\n"+
         "Melee: "+unarmed+"\n"+
