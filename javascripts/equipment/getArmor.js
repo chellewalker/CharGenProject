@@ -22,7 +22,7 @@ function getHeavy(available,feats,talents) {
     let type = "Heavy";
 
     while (name == "") {
-        let randomNum = Math.floor(Math.random() * 3);
+        let randomNum = Math.floor(Math.random() * 6);
 
         if (randomNum == 0) {
             name = "Armored Space Suit";
@@ -59,6 +59,69 @@ function getHeavy(available,feats,talents) {
             reflex = 8;
             fortitude = 3;
             maxDex = 1;
+        }
+    }
+
+    return [name,reflex,fortitude,maxDex,type];
+}
+
+function getMedium(available,feats,talents) {
+    let name = "";
+    let reflex;
+    let fortitude;
+    let maxDex;
+    let type = "Medium";
+
+    while (name == "") {
+        let randomNum = Math.floor(Math.random() * 6);
+
+        if (randomNum == 0) {
+            name = "Battle Armor";
+            reflex = 8;
+            fortitude = 2;
+            maxDex = 2;
+        }
+        if (randomNum == 1 && available.includes("CR")) {
+            name = "Ceremonial Armor";
+            reflex = 7;
+            fortitude = 0;
+            maxDex = 2;
+        }
+        if (randomNum == 2 && available.includes("CR")) {
+            name = "Corellian Powersuit";
+            reflex = 7;
+            fortitude = 0;
+            maxDex = 3;
+        }
+        if (randomNum == 3 && available.includes("KotORCG")) {
+            name = "Mandalorian Battle Armor";
+            reflex = 8;
+            fortitude = 2;
+            maxDex = 2;
+        }
+        if (randomNum == 4 && available.includes("KotORCG")) {
+            name = "Mesh Armor";
+            reflex = 6;
+            fortitude = 2;
+            maxDex = 2;
+        }
+        if (randomNum == 5 && available.includes("KotORCG")) {
+            name = "Powered Battle Armor";
+            reflex = 7;
+            fortitude = 2;
+            maxDex = 2;
+        }
+        if (randomNum == 6 && available.includes("KotORCG")) {
+            name = "Republic Combat Armor";
+            reflex = 6;
+            fortitude = 2;
+            maxDex = 2;
+        }
+        if (randomNum == 7 && available.includes("KotORCG")) {
+            name = "Weave Armor";
+            reflex = 6;
+            fortitude = 2;
+            maxDex = 3;
         }
     }
 
