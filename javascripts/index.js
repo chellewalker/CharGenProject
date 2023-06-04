@@ -157,6 +157,17 @@ window.genCharacter = function genCharacter() {
                         forcePowers.push("Move Object");
                     }
                 }
+                if (speciesTraits.includes("Bonus Feat")) {
+                    feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                if (feats.findLast(findLast) == "Skill Training") {
+                    skills.push(getNewSkill(speciesTraits,classes,skills,feats));
+                }
+                if (feats.findLast(findLast) == "Force Training") {
+                    forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                    if (talents.includes("Telekinetic Prodigy")) {
+                        forcePowers.push("Move Object");
+                    }
+                }}
             }
             else {
                 thisLevel = getLevel(firstClass,classes);
