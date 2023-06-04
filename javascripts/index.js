@@ -292,7 +292,6 @@ window.genCharacter = function genCharacter() {
 
         //list features
         classList = classListing(firstClass,classes);
-        listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents);
         listTalents = displayTalents(talents);
         listFeats = displayFeats(feats);
         initiativeDisplay = getInitiative(level,dex,skills,feats);
@@ -420,6 +419,13 @@ window.genCharacter = function genCharacter() {
         equipment.push.apply(equipment, gearEquipment);
         equipment.push.apply(equipment, speciesEquipment);
         let equipmentList = displayEquipment(equipment);
+
+        if (equipment.includes("Neural Band (+2 Will, -2 Damage Threshold)")) {
+            will += 2;
+            damageThreshold -= 2;
+        }
+
+        listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents,equipment);
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,

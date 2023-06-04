@@ -22,18 +22,24 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
         gearEquipment.push("Field Kit");
     }
     if (skills.includes("Treat Injury")) {
-        gearEquipment.push("Medical Kit");
+        let randomNum = Math.floor(Math.random() * 2);
+        if (randomNum == 0) {
+            gearEquipment.push("Medical Kit");
+        }
+        else if (randomNum == 1) {
+            gearEquipment.push("Surgery Kit");
+        }
         gearEquipment.push("Medpac (2)");
     }
     if (skills.includes("Use Computer")) {
         gearEquipment.push("Portable Computer");
     }
 
-    let bonusGear = Math.floor(Math.random() * 9);
+    let bonusGear = Math.floor((Math.random() * 5) + 2);
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 17);
+        let randomNum = Math.floor(Math.random() * 30);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -135,6 +141,78 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             }
             else {
                 gearEquipment.push("Heat Sensor");
+        }}
+        if (randomNum == 17 && available.includes("KotORCG")) {
+            if (gearEquipment.includes("Aural Amplifier (+5 to Eavesdrop)")) {
+            }
+            else {
+                gearEquipment.push("Aural Amplifier (+5 to Eavesdrop)");
+        }}
+        if (randomNum == 18 && available.includes("KotORCG")) {
+            if (gearEquipment.includes("Demolitions Sensor (+5 to Notice Mines)")) {
+            }
+            else {
+                gearEquipment.push("Demolitions Sensor (+5 to Notice Mines)");
+        }}
+        if (randomNum == 19 && available.includes("KotORCG")) {
+            if (gearEquipment.includes("Motion Sensing Visor (+5 to Notice Targets)")) {
+            }
+            else {
+                gearEquipment.push("Motion Sensing Visor (+5 to Notice Targets)");
+        }}
+        if (randomNum == 20 && available.includes("KotORCG")) {
+            if (gearEquipment.includes("Neural Band (+2 Will, -2 Damage Threshold)")) {
+            }
+            else {
+                gearEquipment.push("Neural Band (+2 Will, -2 Damage Threshold)");
+        }}
+        if (randomNum == 21 && available.includes("KotORCG")) {
+            if (gearEquipment.includes("Stealth Field Generator")) {
+            }
+            else {
+                gearEquipment.push("Stealth Field Generator");
+        }}
+        if (randomNum == 22 && skills.includes("Mechanics") && available.includes("CR")) {
+            gearEquipment.push("Explosive Charge");
+        }
+        if (randomNum == 23 && skills.includes("Mechanics") && available.includes("CR")) {
+            gearEquipment.push("Detonite");
+        }
+        if (randomNum == 24 && available.includes("CR")) {
+            if (gearEquipment.includes("Aquata Breather")) {
+            }
+            else {
+                gearEquipment.push("Aquata Breather");
+        }}
+        if (randomNum == 25 && available.includes("CR")) {
+            if (gearEquipment.includes("Breath Mask")) {
+            }
+            else {
+                gearEquipment.push("Breath Mask");
+        }}
+        if (randomNum == 26 && available.includes("CR")) {
+            if (gearEquipment.includes("Vacuum Mask")) {
+            }
+            else {
+                gearEquipment.push("Vacuum Mask");
+        }}
+        if (randomNum == 27 && skills.includes("Treat Injury") && available.includes("TotG")) {
+            if (gearEquipment.includes("FastFlesh Medpac")) {
+            }
+            else {
+                gearEquipment.push("FastFlesh Medpac");
+        }}
+        if (randomNum == 28 && available.includes("TotG")) {
+            if (gearEquipment.includes("Medisensor")) {
+            }
+            else {
+                gearEquipment.push("Medisensor");
+        }}
+        if (randomNum == 29 && available.includes("KotORCG")) {
+            if (gearEquipment.includes("Medical Interface Visor (+2 Treat Injury)")) {
+            }
+            else {
+                gearEquipment.push("Medical Interface Visor (+2 Treat Injury)");
         }}
     }
 

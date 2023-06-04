@@ -155,7 +155,7 @@ export function getNewSkill(speciesTraits,classes,skills,feats) {
         return thisSkill;
 }
 
-export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits,feats,talents) {
+export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits,feats,talents,equipment) {
     let count;
     let listSkills = "";
     let special;
@@ -319,6 +319,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Use Computer)")) {
                     score += 5;
                 }
+                if (equipment.includes("Computer Interface Visor (+2 Use Computer)")) {
+                    score += 2;
+                }
             }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score + special;
@@ -351,6 +354,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
             if (trainedSkills[count] == "Treat Injury") {
                 if (feats.includes("Skill Focus (Treat Injury)")) {
                     score += 5;
+                }
+                if (equipment.includes("Medical Interface Visor (+2 Treat Injury)")) {
+                    score += 2;
                 }
             }
             if (score < 0) {
