@@ -25,6 +25,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 2;
             exoticMeleeDice = 2;
             exoticMeleeDie = 4;
+            if (speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && feats.includes("Weapon Focus (Simple Weapons)")) {
+                exoticMeleeAttackRaw++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Atlatl)") || 
                     speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && randomNum == 1) {
@@ -32,6 +35,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 1;
             exoticMeleeDice = 2;
             exoticMeleeDie = 4;
+            if (speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && feats.includes("Weapon Focus (Simple Weapons)")) {
+                exoticMeleeAttackRaw++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Amphistaff)") || 
                     speciesTraits.includes("Weapon Familiarity (Amphistaff)")) {
@@ -39,6 +45,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 2;
             exoticMeleeDice = 1;
             exoticMeleeDie = 6;
+            if (speciesTraits.includes("Weapon Familiarity (Amphistaff)") && feats.includes("Weapon Focus (Simple Weapons)")) {
+                exoticMeleeAttackRaw++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Arg'garok)") || 
                     speciesTraits.includes("Weapon Familiarity (Arg'garok)") && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
@@ -46,6 +55,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 2;
             exoticMeleeDice = 2;
             exoticMeleeDie = 12;
+            if (speciesTraits.includes("Weapon Familiarity (Arg'garok)") && feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
+                exoticMeleeAttackRaw++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Fira)") || 
                     talents.includes("Fira Mastery")) {
@@ -53,6 +65,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 1;
             exoticMeleeDice = 1;
             exoticMeleeDie = 8;
+            if (talents.includes("Fira Mastery")) {
+                exoticMeleeAttackRaw++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Shyarn)")) {
             exoticMeleeWeapon = "Shyarn";

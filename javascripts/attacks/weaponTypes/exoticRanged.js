@@ -32,12 +32,16 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             weaponSize = 2;
             exoticRangedDice = 3;
             exoticRangedDie = 10;
+            if (speciesTraits.includes("Weapon Familiarity (Bowcaster and Ryyk Blade)") && feats.includes("Weapon Focus (Rifles)")) {
+                exoticRangedAttackRaw++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Aurial Blaster)")) {
             exoticRangedWeapon = "Aurial Blaster";
             weaponSize = 1;
             exoticRangedDice = 3;
             exoticRangedDie = 6;
+            special = " (Sonic)";
         }
         else if (feats.includes("Exotic Weapon Proficiency (Massassi Lanvarok)") || 
                     speciesTraits.includes("Weapon Familiarity (Massassi Lanvarok)")) {
@@ -45,6 +49,9 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             weaponSize = 2;
             exoticRangedDice = 3;
             exoticRangedDie = 4;
+            if (speciesTraits.includes("Weapon Familiarity (Massassi Lanvarok)") && feats.includes("Weapon Focus (Simple Weapons)")) {
+                exoticRangedAttackRaw++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Sith Lanvarok)")) {
             exoticRangedWeapon = "Sith Lanvarok";
@@ -73,7 +80,7 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
     else {
         exoticRangedDamage = "+" + exoticRangedDamageRaw;
     }
-    string = exoticRangedWeapon + " " + exoticRangedAttack +" ("+ exoticRangedDice+"d"+exoticRangedDie+exoticRangedDamage + ")";
+    string = exoticRangedWeapon + " " + exoticRangedAttack +" ("+ exoticRangedDice+"d"+exoticRangedDie+exoticRangedDamage + special + ")";
     if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
         exoticRangedWeapon = exoticRangedWeapon + " (2)";
     }
