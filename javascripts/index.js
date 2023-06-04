@@ -211,6 +211,11 @@ window.genCharacter = function genCharacter() {
             }
 
         }}
+        if (feats.includes("Shake It Off")) {
+        }
+        else if (classes[3] > 0 && con >= 13 && skills.includes("Endurance")) {
+            feats.push("Shake It Off");
+        }
         talents.sort();
         feats.sort();
 
