@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="javascripts/index.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
     <title>Saga Character Generator</title>
@@ -111,7 +112,8 @@
             <input type="checkbox" id="web" name="web" value="WE" checked>
             <label for="web">Web Enhancements</label><br>
             <input type="checkbox" id="homebrew" name="homebrew" value="HC">
-            <label for="homebrew">Homebrew Content</label><br>
+            <label for="homebrew">Homebrew Content</label><br><br>
+            <input type="checkbox" id="selectAll" value="selectAll"> Select / Deselect All
         </div>
         </form>
     </div>
@@ -130,6 +132,18 @@
                 document.getElementById("planned-div").style.display = 'none';
             }
         }
+
+        $('#selectAll').click(function() {
+        if(this.checked) {
+            $(':checkbox').each(function() {
+                this.checked = true;                        
+            });
+        } else {
+            $(':checkbox').each(function() {
+                this.checked = false;                        
+            });
+        } 
+        });
     </script>
 </body>
 </html>
