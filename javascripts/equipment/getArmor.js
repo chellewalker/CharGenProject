@@ -73,7 +73,7 @@ function getMedium(available,feats,talents) {
     let type = "Medium";
 
     while (name == "") {
-        let randomNum = Math.floor(Math.random() * 6);
+        let randomNum = Math.floor(Math.random() * 8);
 
         if (randomNum == 0) {
             name = "Battle Armor";
@@ -121,6 +121,99 @@ function getMedium(available,feats,talents) {
             name = "Weave Armor";
             reflex = 6;
             fortitude = 2;
+            maxDex = 3;
+        }
+    }
+
+    return [name,reflex,fortitude,maxDex,type];
+}
+
+function getLight(available,feats,talents) {
+    let name = "";
+    let reflex;
+    let fortitude;
+    let maxDex;
+    let type = "Light";
+
+    while (name == "") {
+        let randomNum = Math.floor(Math.random() * 13);
+
+        if (randomNum == 0) {
+            name = "Armored Flight Suit";
+            reflex = 5;
+            fortitude = 2;
+            maxDex = 3;
+        }
+        if (randomNum == 1 && available.includes("CR")) {
+            name = "Blast Helmet and Vest";
+            reflex = 2;
+            fortitude = 0;
+            maxDex = 5;
+        }
+        if (randomNum == 2 && available.includes("CR")) {
+            name = "Combat Jumpsuit";
+            reflex = 4;
+            fortitude = 0;
+            maxDex = 4;
+        }
+        if (randomNum == 3 && available.includes("CR")) {
+            name = "Padded Flight Suit";
+            reflex = 3;
+            fortitude = 1;
+            maxDex = 4;
+        }
+        if (randomNum == 4 && available.includes("CR")) {
+            name = "Mesh Armor";
+            reflex = 6;
+            fortitude = 2;
+            maxDex = 2;
+        }
+        if (randomNum == 5 && available.includes("CR")) {
+            name = "Stormtrooper Armor";
+            reflex = 6;
+            fortitude = 2;
+            maxDex = 3;
+        }
+        if (randomNum == 6 && available.includes("LECG")) {
+            name = "Vonduun Crabshell";
+            reflex = 5;
+            fortitude = 5;
+            maxDex = 4;
+        }
+        if (randomNum == 7 && available.includes("KotORCG")) {
+            name = "Fiber Armor";
+            reflex = 4;
+            fortitude = 1;
+            maxDex = 2;
+        }
+        if (randomNum == 8 && available.includes("KotORCG")) {
+            name = "Light Battle Armor";
+            reflex = 5;
+            fortitude = 2;
+            maxDex = 3;
+        }
+        if (randomNum == 9 && available.includes("KotORCG")) {
+            name = "Light Powered Battle Armor";
+            reflex = 4;
+            fortitude = 2;
+            maxDex = 3;
+        }
+        if (randomNum == 10 && available.includes("KotORCG")) {
+            name = "Mandalorian Combat Suit";
+            reflex = 4;
+            fortitude = 1;
+            maxDex = 5;
+        }
+        if (randomNum == 11 && available.includes("KotORCG")) {
+            name = "Neo-Crusader Light Armor";
+            reflex = 6;
+            fortitude = 2;
+            maxDex = 3;
+        }
+        if (randomNum == 12 && available.includes("KotORCG")) {
+            name = "Republic Light Armor";
+            reflex = 4;
+            fortitude = 1;
             maxDex = 3;
         }
     }
