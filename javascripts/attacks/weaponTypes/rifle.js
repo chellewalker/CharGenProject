@@ -1,8 +1,20 @@
 export function getRifle(available,BAB,level,dex,feats,talents,size) {
     let rifleWeapon = "";
+    let weaponSize;
     let rifleDice;
     let rifleDie;
     let special = "";
+    let relativeSize;
+
+    if (size == "Small") {
+        relativeSize = 0;
+    }
+    else if (size == "Medium") {
+        relativeSize = 1;
+    }
+    else if (size == "Large") {
+        relativeSize = 2;
+    }
 
     let rifleAttackRaw = BAB + Math.floor((dex-10)/2);
     if (feats.includes("Weapon Focus (Rifles)")) {
@@ -13,32 +25,38 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
 
         if (randomNum == 0) {
             rifleWeapon = "Blaster Rifle";
+            weaponSize = 1;
             rifleDice = 3;
             rifleDie = 8;
         }
         if (randomNum == 1 && available.includes("CR")) {
             rifleWeapon = "Blaster Carbine";
+            weaponSize = 1;
             rifleDice = 3;
             rifleDie = 8;
         }
         if (randomNum == 2 && available.includes("CR")) {
             rifleWeapon = "Sporting Blaster Rifle";
+            weaponSize = 1;
             rifleDice = 3;
             rifleDie = 6;
         }
         if (randomNum == 3 && available.includes("CR")) {
             rifleWeapon = "Ion Rifle";
+            weaponSize = 1;
             rifleDice = 3;
             rifleDie = 8;
             special = " (Ion)";
         }
         if (randomNum == 4 && available.includes("CR")) {
             rifleWeapon = "Slugthrower Rifle";
+            weaponSize = 1;
             rifleDice = 2;
             rifleDie = 8;
         }
         if (randomNum == 5 && available.includes("CR") && size != "Small") {
             rifleWeapon = "Light Repeating Blaster";
+            weaponSize = 2;
             rifleDice = 3;
             rifleDie = 8;
             special = ", 2-Square Autofire";
@@ -46,32 +64,38 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         }
         if (randomNum == 6 && available.includes("CR") && size != "Small") {
             rifleWeapon = "Heavy Blaster Rifle";
+            weaponSize = 2;
             rifleDice = 3;
             rifleDie = 10;
         }
         if (randomNum == 7 && available.includes("KotORCG") && size != "Small") {
             rifleWeapon = "Assault Blaster Rifle";
+            weaponSize = 2;
             rifleDice = 3;
             rifleDie = 8;
         }
         if (randomNum == 8 && available.includes("KotORCG")) {
             rifleWeapon = "Commando Special Rifle";
+            weaponSize = 1;
             rifleDice = 3;
             rifleDie = 10;
         }
         if (randomNum == 9 && available.includes("KotORCG")) {
             rifleWeapon = "Ion Carbine";
+            weaponSize = 1;
             rifleDice = 3;
             rifleDie = 8;
             special = " (Ion)";
         }
         if (randomNum == 10 && available.includes("KotORCG")) {
             rifleWeapon = "Pulse-Wave Rifle";
+            weaponSize = 1;
             rifleDice = 2;
             rifleDie = 8;
         }
         if (randomNum == 11 && available.includes("KotORCG") && size != "Small") {
             rifleWeapon = "Repeating Blaster Carbine";
+            weaponSize = 2;
             rifleDice = 3;
             rifleDie = 10;
             special = ", 2-Square Autofire";
@@ -79,6 +103,7 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         }
         if (randomNum == 12 && available.includes("KotORCG")) {
             rifleWeapon = "Sonic Rifle";
+            weaponSize = 1;
             rifleDice = 2;
             rifleDie = 8;
             special = " (Sonic)";
