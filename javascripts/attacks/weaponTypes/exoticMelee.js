@@ -5,6 +5,7 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     let exoticMeleeDice;
     let exoticMeleeDie;
     let relativeSize;
+    let randomNum = Math.floor(Math.random() * 2);
 
     if (size == "Small") {
         relativeSize = 0;
@@ -19,14 +20,14 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     let exoticMeleeAttackRaw = BAB + Math.floor((str-10)/2);
 
         if (feats.includes("Exotic Weapon Proficiency (Cesta)") || 
-                speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)")) {
+                speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && randomNum == 0) {
             exoticMeleeWeapon = "Cesta";
             weaponSize = 2;
             exoticMeleeDice = 2;
             exoticMeleeDie = 4;
         }
         else if (feats.includes("Exotic Weapon Proficiency (Atlatl)") || 
-                    speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)")) {
+                    speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && randomNum == 1) {
             exoticMeleeWeapon = "Atlatl";
             weaponSize = 1;
             exoticMeleeDice = 2;
