@@ -74,10 +74,10 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             gearEquipment.push("Computer Spike (+2)");
         }
         if (randomNum == 6 && available.includes("TotG")) {
-            if (gearEquipment.includes("HiBaka 2000 Mem-Stik")) {
+            if (gearEquipment.includes("Mem-Stik")) {
             }
             else {
-                gearEquipment.push("HiBaka 2000 Mem-Stik");
+                gearEquipment.push("Mem-Stik");
         }}
         if (randomNum == 7 && skills.includes("Mechanics") && available.includes("TotG")) {
             gearEquipment.push("Lectroticker (+2)");
