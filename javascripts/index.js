@@ -423,7 +423,6 @@ window.genCharacter = function genCharacter() {
         gearEquipment.sort();
 
         if (feats.includes("Implant Training")) {
-            alert("test");
             implant = getImplant(available);
             equipment.push(implant);
             if (implant == "Cardio Implant") {
