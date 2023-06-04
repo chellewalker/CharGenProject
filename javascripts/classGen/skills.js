@@ -316,7 +316,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 }
             }
             if (trainedSkills[count] == "Use Computer") {
-                if (feats.includes("Skill Focus (Mechanics)")) {
+                if (feats.includes("Skill Focus (Use Computer)")) {
                     score += 5;
                 }
             }
