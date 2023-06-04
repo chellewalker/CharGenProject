@@ -20,6 +20,8 @@ import {getLevel} from './classGen/levelUp.js';
 import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {displayEquipment} from './equipment/display.js';
+import {getGear} from './equipment/getGear.js';
+import {getSpecial} from './equipment/getSpecial.js';
 import {getWill} from './defenses/will.js';
 import {getForcePower,compressForcePowers} from './forceAbilities/getForcePower.js';
 import {getGrapple} from './attacks/getGrapple.js';
@@ -401,15 +403,15 @@ window.genCharacter = function genCharacter() {
     forcePowers = compressForcePowers(forcePowers);
 
     //equipment
-    let gearEquipment = [];
+    let gearEquipment = getGear(available,feats,talents,skills);
+    let speciesEquipment = getSpecial(speciesTraits);
 
         tempEquipment.sort();
-        //gearEquipment.sort();
+        gearEquipment.sort();
 
-        equipment.push.apply(equipment, tempEquipment, gearEquipment);
-        if (talents.includes("Jet Pack Training")) {
-                equipment.push("Jet Pack");
-        }
+        equipment.push.apply(equipment, tempEquipment);
+        equipment.push.apply(equipment, gearEquipment);
+        equipment.push.apply(equipment, speciesEquipment);
         let equipmentList = displayEquipment(equipment);
 
         //output
