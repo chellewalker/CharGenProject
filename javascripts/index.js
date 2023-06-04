@@ -10,6 +10,7 @@ import {getOutput} from './getOutput.js';
 import {displayFeats} from './feats/featDisplay.js';
 import {speciesFeats} from './feats/speciesFeats.js';
 import {getFeat} from './feats/getFeat.js';
+import {getArmor} from './equipment/getArmor.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
 import {getTalent,displayTalents} from './talents/getTalent.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
@@ -309,6 +310,21 @@ window.genCharacter = function genCharacter() {
         let listLanguages = languageList(languages);
 
         //defenses
+        let equipment = [];
+        let armorTemp;
+        let armorRef = 0;
+        let armorFort = 0;
+        let maxDex = 10;
+        let armorType = "";
+        if (talents.includes("Armored Defense")) {
+            armorTemp = getArmor(available,feats,talents);
+            equipment.push(armorTemp[0]);
+            armorRef = armorTemp[1];
+            armorFort = armorTemp[2];
+            maxDex = armorTemp[3];
+            armorType = armorTemp[4];
+        }
+
         let reflex = getReflex(classes,dex,level,size,speciesTraits,feats);
             let flatFooted = getFlatFooted(reflex,dex,feats);
         let fortitude = getFortitude(classes,con,level,speciesTraits,feats);
@@ -320,7 +336,6 @@ window.genCharacter = function genCharacter() {
 
         //attacks and damage
         let unarmed = getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
-        let equipment = [];
         let temp;
         let temp2;
         let advancedMelee = "";
