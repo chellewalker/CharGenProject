@@ -39,7 +39,7 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 30);
+        let randomNum = Math.floor(Math.random() * 52);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -213,6 +213,135 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             }
             else {
                 gearEquipment.push("Medical Interface Visor (+2 Treat Injury)");
+        }}
+        if (randomNum == 30 && available.includes("CR")) {
+            if (gearEquipment.includes("All-Temperature Cloak")) {
+            }
+            else {
+                gearEquipment.push("All-Temperature Cloak");
+        }}
+        if (randomNum == 31 && available.includes("CR")) {
+            if (gearEquipment.includes("Chain")) {
+            }
+            else {
+                gearEquipment.push("Chain");
+        }}
+        if (randomNum == 32 && available.includes("CR")) {
+            if (gearEquipment.includes("Liquid Cable Dispenser")) {
+            }
+            else {
+                gearEquipment.push("Liquid Cable Dispenser");
+        }}
+        if (randomNum == 33 && available.includes("CR")) {
+                gearEquipment.push("Ration Pack") 
+            }
+        if (randomNum == 34 && available.includes("CR")) {
+            if (gearEquipment.includes("Syntherope")) {
+            }
+            else {
+                gearEquipment.push("Syntherope");
+        }}
+        if (randomNum == 35 && available.includes("CR")) {
+            if (gearEquipment.includes("Binder Cuffs")) {
+            }
+            else {
+                gearEquipment.push("Binder Cuffs");
+        }}
+        if (randomNum == 36 && available.includes("CR")) {
+            if (gearEquipment.includes("Fire Extinguisher")) {
+            }
+            else {
+                gearEquipment.push("Fire Extinguisher");
+        }}
+        if (randomNum == 37 && available.includes("CR")) {
+            if (gearEquipment.includes("Mesh Tape")) {
+            }
+            else {
+                gearEquipment.push("Mesh Tape");
+        }}
+        if (randomNum == 38 && available.includes("CR")) {
+            if (gearEquipment.includes("Power Recharger")) {
+            }
+            else {
+                gearEquipment.push("Power Recharger");
+        }}
+        if (randomNum == 39 && skills.includes("Mechanics")) {
+            if (gearEquipment.includes("Tool Kit")) {
+            }
+            else {
+                gearEquipment.push("Tool Kit");
+        }}
+        if (randomNum == 40 && skills.includes("Mechanics")) {
+            if (gearEquipment.includes("Security Kit")) {
+            }
+            else {
+                gearEquipment.push("Security Kit");
+        }}
+        if (randomNum == 41 && skills.includes("Treat Injury")) {
+            if (gearEquipment.includes("Medical Kit")) {
+            }
+            else {
+                gearEquipment.push("Medical Kit");
+        }}
+        if (randomNum == 42 && skills.includes("Treat Injury")) {
+            if (gearEquipment.includes("Surgery Kit")) {
+            }
+            else {
+                gearEquipment.push("Surgery Kit");
+        }}
+        if (randomNum == 43 && available.includes("CR")) {
+            if (gearEquipment.includes("Utility Belt")) {
+            }
+            else {
+                gearEquipment.push("Utility Belt");
+        }}
+        if (randomNum == 44 && available.includes("TotG")) {
+            if (gearEquipment.includes("Antisecurity Blades (+2 to Disable Devices)")) {
+            }
+            else {
+                gearEquipment.push("Antisecurity Blades (+2 to Disable Devices)");
+        }}
+        if (randomNum == 45 && available.includes("KotORCG")) {
+            if (gearEquipment.includes("Mechanical Interface Visor (+2 Mechanics)")) {
+            }
+            else {
+                gearEquipment.push("Mechanical Interface Visor (+2 Mechanics)");
+        }}
+        if (randomNum == 46 && available.includes("CR")) {
+            if (gearEquipment.includes("Bandolier")) {
+            }
+            else {
+                gearEquipment.push("Bandolier");
+        }}
+        if (randomNum == 47 && available.includes("CR")) {
+            if (gearEquipment.includes("Helmet Package (+2 Percepion, Low-Light Vision)")) {
+            }
+            else {
+                gearEquipment.push("Helmet Package (+2 Percepion, Low-Light Vision)");
+        }}
+        if (randomNum == 48 && available.includes("CR")) {
+            if (gearEquipment.includes("Holster (Concealed)") || gearEquipment.includes("Holster (Hip)")) {
+            }
+            else {
+                gearEquipment.push("Holster (Concealed)");
+        }}
+        if (randomNum == 49 && available.includes("CR")) {
+            if (gearEquipment.includes("Holster (Concealed)") || gearEquipment.includes("Holster (Hip)")) {
+            }
+            else {
+                gearEquipment.push("Holster (Hip)");
+        }}
+        if (randomNum == 50 && available.includes("CR")) {
+            if (gearEquipment.includes("Targeting Scope (Standard)") || gearEquipment.includes("Targeting Scope (Enhanced Low-Light)")) {
+            }
+            else {
+                gearEquipment.push("Targeting Scope (Standard)");
+        }}
+        if (randomNum == 51 && available.includes("CR")) {
+            if (gearEquipment.includes("Targeting Scope (Standard)") || gearEquipment.includes("Targeting Scope (Enhanced Low-Light)")) {
+            }
+            else {
+                gearEquipment.push("Targeting Scope (Enhanced Low-Light)");
         }}
     }
 

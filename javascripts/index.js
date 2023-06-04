@@ -294,8 +294,6 @@ window.genCharacter = function genCharacter() {
         classList = classListing(firstClass,classes);
         listTalents = displayTalents(talents);
         listFeats = displayFeats(feats);
-        initiativeDisplay = getInitiative(level,dex,skills,feats);
-        perceptionDisplay = getPerception(level,wis,skills,feats);
         grapple = getGrapple(BAB,str,dex,size,talents);
 
         if (feats.includes("ValidFeatNotFound")) {
@@ -426,6 +424,8 @@ window.genCharacter = function genCharacter() {
         }
 
         listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents,equipment);
+        initiativeDisplay = getInitiative(level,dex,skills,feats);
+        perceptionDisplay = getPerception(level,wis,skills,feats);
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,

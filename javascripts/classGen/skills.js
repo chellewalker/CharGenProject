@@ -314,6 +314,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Mechanics)")) {
                     score += 5;
                 }
+                if (equipment.includes("Mechanical Interface Visor (+2 Mechanics)")) {
+                    score += 2;
+                }
             }
             if (trainedSkills[count] == "Use Computer") {
                 if (feats.includes("Skill Focus (Use Computer)")) {
