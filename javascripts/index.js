@@ -336,6 +336,7 @@ window.genCharacter = function genCharacter() {
 
         //attacks and damage
         let unarmed = getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
+        let tempEquipment = [];
         let temp;
         let temp2;
         let advancedMelee = "";
@@ -351,44 +352,44 @@ window.genCharacter = function genCharacter() {
         temp2 = getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,size);
         advancedMelee = temp2[0];
         temp = temp2[1];
-        equipment.push(temp);
+        tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Heavy Weapons)")) {
         temp2 = getHeavyWeapon(available,BAB,level,dex,feats,talents,size);
         heavyWeapon = temp2[0];
         temp = temp2[1];
-        equipment.push(temp);
+        tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Lightsabers)")) {
         temp2 = getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size);
         lightsaber = temp2[0];
         temp = temp2[1];
-        equipment.push(temp);
+        tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Pistols)")) {
         temp2 = getPistol(available,BAB,level,dex,feats,talents,size);
         pistol = temp2[0];
         temp = temp2[1];
-        equipment.push(temp);
+        tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Rifles)")) {
         temp2 = getRifle(available,BAB,level,dex,feats,talents,size);
         rifle = temp2[0];
         temp = temp2[1];
-        equipment.push(temp);
+        tempEquipment.push(temp);
     }
 
         temp2 = getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
         if (temp2[1] != "") {
             otherMeleeAttack = temp2[0];
             temp = temp2[1];
-            equipment.push(temp);
+            tempEquipment.push(temp);
         }
         temp2 = getExoticRanged(available,BAB,level,dex,feats,talents,size,speciesTraits);
         if (temp2[1] != "") {
             otherRangedAttack = temp2[0];
             temp = temp2[1];
-            equipment.push(temp);
+            tempEquipment.push(temp);
         }
 
 
@@ -400,7 +401,12 @@ window.genCharacter = function genCharacter() {
     forcePowers = compressForcePowers(forcePowers);
 
     //equipment
-        equipment.sort();
+    let gearEquipment = [];
+
+        tempEquipment.sort();
+        //gearEquipment.sort();
+
+        equipment.push.apply(equipment, tempEquipment);
         if (talents.includes("Jet Pack Training")) {
                 equipment.push("Jet Pack");
         }

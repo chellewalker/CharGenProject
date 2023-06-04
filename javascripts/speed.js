@@ -8,7 +8,7 @@ export function getSpeed(speciesID,talents,feats,armorType) {
         else {
         speedValue = 3;
     }}
-    else if (armorType == "Medium" || armorType == "Heavy") {
+    else if (armorType == "Medium" && speedValue != 2 || armorType == "Heavy" && speedValue != 2) {
         if (talents.includes("Juggernaut")) {}
         else {
         speedValue -= 2;
