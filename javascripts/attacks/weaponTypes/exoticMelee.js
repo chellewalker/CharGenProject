@@ -78,8 +78,8 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
         else if (feats.includes("Exotic Weapon Proficiency (Zhaboka)")) {
             exoticMeleeWeapon = "Zhaboka";
             weaponSize = 2;
-            exoticMeleeDice = 3;
-            exoticMeleeDie = 4;
+            exoticMeleeDice = 2;
+            exoticMeleeDie = 6;
         }
 
     if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize < weaponSize) {

@@ -430,7 +430,7 @@ window.genCharacter = function genCharacter() {
 
         listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents,equipment);
         initiativeDisplay = getInitiative(level,dex,skills,feats);
-        perceptionDisplay = getPerception(level,wis,skills,feats);
+        perceptionDisplay = getPerception(level,wis,skills,feats,equipment);
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,

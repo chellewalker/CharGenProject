@@ -339,6 +339,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Perception)")) {
                     score += 5;
                 }
+                if (equipment.includes("Helmet Package (+2 Percepion, Low-Light Vision)")) {
+                    score += 2;
+                }
                 if (speciesTraits.includes("Heightened Awareness") && talents.includes("Acute Senses")) {
                     special = " (may reroll twice, must take second result)";
                 }
@@ -436,13 +439,16 @@ export function getInitiative(level,dex,skills,feats) {
     return initiativeDisplay;
 }
 
-export function getPerception(level,wis,skills,feats) {
+export function getPerception(level,wis,skills,feats,equipment) {
     let perception = Math.floor(level/2) + Math.floor((wis-10)/2);
         if (skills.includes("Perception")) {
             perception += 5;
         }
         if (feats.includes("Skill Focus (Perception)")) {
             perception += 5;
+        }
+        if (equipment.includes("Helmet Package (+2 Percepion, Low-Light Vision)")) {
+            perception += 2;
         }
         let perceptionDisplay = "";
         if (perception < 0) {
