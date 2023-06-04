@@ -155,7 +155,7 @@ export function getNewSkill(speciesTraits,classes,skills,feats) {
         return thisSkill;
 }
 
-export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits,feats,talents,equipment) {
+export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits,feats,talents,equipment,implant) {
     let count;
     let listSkills = "";
     let special;
@@ -404,6 +404,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
             if (trainedSkills[count] == "Use the Force") {
                 if (feats.includes("Skill Focus (Use the Force)")) {
                     score += 5;
+                }
+                if (implant != "") {
+                    score--;
                 }
                 if (speciesTraits.includes("Keen Force Sense")) {
                     special = " (may reroll to Search Your Feelings or Sense Force, may keep better result)";

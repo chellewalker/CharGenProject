@@ -417,12 +417,13 @@ window.genCharacter = function genCharacter() {
     //equipment
     let gearEquipment = getGear(available,feats,talents,skills,speciesTraits);
     let speciesEquipment = getSpecial(speciesTraits);
+    let implant = "";
 
         tempEquipment.sort();
         gearEquipment.sort();
 
         if (feats.includes("Implant Training")) {
-            let implant = getImplant(available);
+            implant = getImplant(available);
             tempEquipment.push(implant);
             if (implant == "Cardio Implant") {
                 hitPoints += parseInt(level);
@@ -438,7 +439,7 @@ window.genCharacter = function genCharacter() {
             damageThreshold -= 2;
         }
 
-        listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents,equipment);
+        listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents,equipment,implant);
         initiativeDisplay = getInitiative(level,dex,skills,feats);
         perceptionDisplay = getPerception(level,wis,skills,feats,equipment);
 
