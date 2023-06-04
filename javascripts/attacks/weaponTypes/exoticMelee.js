@@ -113,7 +113,7 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
         exoticMeleeDamage = "+" + exoticMeleeDamageRaw;
     }
     string = exoticMeleeWeapon + " " + exoticMeleeAttack +" ("+ exoticMeleeDice+"d"+exoticMeleeDie+exoticMeleeDamage + ")";
-    if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         exoticMeleeWeapon = exoticMeleeWeapon + " (2)";
     }
 

@@ -131,7 +131,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolDamage = "+" + pistolDamageRaw;
     }
     let string = pistolWeapon + " " + pistolAttack +" ("+ pistolDice+"d"+pistolDie+pistolDamage + special + ")";
-    if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         pistolWeapon = pistolWeapon + " (2)";
     }
 

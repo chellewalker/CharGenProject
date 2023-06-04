@@ -112,7 +112,7 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
         advancedMeleeDamage = "+" + advancedMeleeDamageRaw;
     }
     let string = advancedMeleeWeapon + " " + advancedMeleeAttack +" ("+ advancedMeleeDice+"d"+advancedMeleeDie+advancedMeleeDamage + ")";
-    if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         advancedMeleeWeapon = advancedMeleeWeapon + " (2)";
     }
 

@@ -81,7 +81,7 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
         exoticRangedDamage = "+" + exoticRangedDamageRaw;
     }
     string = exoticRangedWeapon + " " + exoticRangedAttack +" ("+ exoticRangedDice+"d"+exoticRangedDie+exoticRangedDamage + special + ")";
-    if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         exoticRangedWeapon = exoticRangedWeapon + " (2)";
     }
 

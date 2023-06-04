@@ -81,7 +81,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
     }
 
     let string = lightsaberWeapon + " " + lightsaberAttack +" ("+ lightsaberDice+"d"+lightsaberDie+lightsaberDamage + ")";
-    if (feats.includes("Dual Weapon Mastery I") && relativeSize <= weaponSize) {
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         lightsaberWeapon = lightsaberWeapon + " (2)";
     }
 

@@ -326,6 +326,13 @@ window.genCharacter = function genCharacter() {
             maxDex = armorTemp[3];
             armorType = armorTemp[4];
         }
+        if (talents.includes("Armor Mastery")) {
+            maxDex++;
+        }
+        if (talents.includes("Second Skin") && armorType != "") {
+            armorRef++;
+            armorFort++;
+        }
 
         let reflex = getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex);
             let flatFooted = getFlatFooted(reflex,dex,feats);
@@ -403,7 +410,7 @@ window.genCharacter = function genCharacter() {
     forcePowers = compressForcePowers(forcePowers);
 
     //equipment
-    let gearEquipment = getGear(available,feats,talents,skills);
+    let gearEquipment = getGear(available,feats,talents,skills,speciesTraits);
     let speciesEquipment = getSpecial(speciesTraits);
 
         tempEquipment.sort();
