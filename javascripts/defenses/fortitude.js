@@ -1,4 +1,4 @@
-export function getFortitude(classes,con,level,speciesTraits,feats) {
+export function getFortitude(classes,con,level,speciesTraits,feats,armorFort) {
 
     let classFortitude = 0;
 
@@ -18,7 +18,7 @@ export function getFortitude(classes,con,level,speciesTraits,feats) {
             classFortitude = Math.max(classFortitude,2);
         }
 
-    let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude;
+    let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude + armorFort;
         if (speciesTraits.includes("Great Fortitude")) {
             fortitude += 2;
         }

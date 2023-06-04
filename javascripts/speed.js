@@ -1,7 +1,18 @@
 import {parseXML} from './xmlGetter.js';
 
-export function getSpeed(speciesID,talents,feats) {
+export function getSpeed(speciesID,talents,feats,armorType) {
     let speedValue = parseInt(parseXML("xmls/species.xml","speed",speciesID));
+    if (armorType == "Medium" && speedValue == 4 ||
+            armorType == "Heavy" && speedValue == 4) {
+        if (talents.includes("Juggernaut")) {}
+        else {
+        speedValue = 3;
+    }}
+    else if (armorType == "Medium" || armorType == "Heavy") {
+        if (talents.includes("Juggernaut")) {}
+        else {
+        speedValue -= 2;
+    }}
         if (talents.includes("Long Stride")) {
             speedValue += 2;
         }

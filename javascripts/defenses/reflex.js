@@ -1,4 +1,4 @@
-export function getReflex(classes,dex,level,size,speciesTraits,feats) {
+export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex) {
 
     let classReflex = 0;
 
@@ -18,7 +18,7 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats) {
             classReflex = Math.max(classReflex,1);
         }
 
-    let reflex = 10 + Math.floor((dex-10)/2) + parseInt(level) + classReflex;
+    let reflex = 10 + Math.min(Math.floor((dex-10)/2),maxDex) + Math.max(parseInt(level),armorRef) + classReflex;
         if (size == "Small") {
             reflex++;
         }
@@ -48,6 +48,9 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats) {
         }
         if (feats.includes("Martial Arts III")) {
             reflex++;
+        }
+        if (talents.includes("Improved Armored Defense") && parseInt(level) > armorRef) {
+            reflex += Math.floor(armorRef/2);
         }
 
     return reflex;

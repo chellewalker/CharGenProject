@@ -325,14 +325,14 @@ window.genCharacter = function genCharacter() {
             armorType = armorTemp[4];
         }
 
-        let reflex = getReflex(classes,dex,level,size,speciesTraits,feats);
+        let reflex = getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex);
             let flatFooted = getFlatFooted(reflex,dex,feats);
-        let fortitude = getFortitude(classes,con,level,speciesTraits,feats);
+        let fortitude = getFortitude(classes,con,level,speciesTraits,feats,armorFort);
             let damageThreshold = getDamageThreshold(fortitude,size,feats);
         let will = getWill(classes,wis,level,speciesTraits,feats);
 
         //speed
-        let speed = getSpeed(speciesID,talents,feats);
+        let speed = getSpeed(speciesID,talents,feats,armorType);
 
         //attacks and damage
         let unarmed = getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
