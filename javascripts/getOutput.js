@@ -75,7 +75,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     if (other != "") {
         otherAttack = "<strong>Ranged:</strong> "+other+"<br>";
     }
-    if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "") {
+    if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "" && otherRangedAttack == "") {
         pistolAttack = "<strong>Ranged:</strong> By Weapon "+byWeapon+"<br>";
     }
 

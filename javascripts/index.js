@@ -21,6 +21,7 @@ import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {displayEquipment} from './equipment/display.js';
 import {getGear} from './equipment/getGear.js';
+import {getImplant} from './equipment/getImplant.js';
 import {getSpecial} from './equipment/getSpecial.js';
 import {getWill} from './defenses/will.js';
 import {getForcePower,compressForcePowers} from './forceAbilities/getForcePower.js';
@@ -296,6 +297,8 @@ window.genCharacter = function genCharacter() {
         talents = tempTalents;
 
         //list features
+        feats.sort();
+        talents.sort();
         classList = classListing(firstClass,classes);
         listTalents = displayTalents(talents);
         listFeats = displayFeats(feats);
@@ -417,6 +420,13 @@ window.genCharacter = function genCharacter() {
 
         tempEquipment.sort();
         gearEquipment.sort();
+
+        if (feats.includes("Implant Training")) {
+            let implant = getImplant(available);
+            tempEquipment.push(implant);
+            if (implant == "Cardio Implant") {
+                hitPoints += parseInt(level);
+            }}
 
         equipment.push.apply(equipment, tempEquipment);
         equipment.push.apply(equipment, gearEquipment);

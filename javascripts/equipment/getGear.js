@@ -295,13 +295,13 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             else {
                 gearEquipment.push("Utility Belt");
         }}
-        if (randomNum == 44 && available.includes("TotG")) {
+        if (randomNum == 44 && skills.includes("Mechanics") && available.includes("TotG")) {
             if (gearEquipment.includes("Antisecurity Blades (+2 to Disable Devices)")) {
             }
             else {
                 gearEquipment.push("Antisecurity Blades (+2 to Disable Devices)");
         }}
-        if (randomNum == 45 && available.includes("KotORCG")) {
+        if (randomNum == 45 && skills.includes("Mechanics") && available.includes("KotORCG")) {
             if (gearEquipment.includes("Mechanical Interface Visor (+2 Mechanics)")) {
             }
             else {
