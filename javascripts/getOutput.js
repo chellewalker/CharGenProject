@@ -138,8 +138,16 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers) {
 
+        let rangedWeapon = (BAB + Math.floor((dex-10)/2));
         let traitDisplay = "";
-        let powerDisplay;
+        let byWeapon = "";
+        let powerDisplay = "";
+        if (rangedWeapon < 0) {
+            byWeapon = rangedWeapon;
+        }
+        else {
+            byWeapon = "+" + rangedWeapon;
+        }
         let count;
         for (count = 0; count < speciesTraits.length; count++) {
             if (count != 0) {
@@ -184,7 +192,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         if (other != "") {
             otherAttack = "Ranged: "+other+"\n";
         }
-        if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "") {
+        if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "" && otherRangedAttack == "") {
             pistolAttack = "Ranged: By Weapon "+byWeapon+"<br>";
         }
 
