@@ -406,7 +406,7 @@ window.genCharacter = function genCharacter() {
         tempEquipment.sort();
         //gearEquipment.sort();
 
-        equipment.push.apply(equipment, tempEquipment);
+        equipment.push.apply(equipment, tempEquipment, gearEquipment);
         if (talents.includes("Jet Pack Training")) {
                 equipment.push("Jet Pack");
         }
