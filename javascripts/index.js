@@ -318,7 +318,7 @@ window.genCharacter = function genCharacter() {
         let armorFort = 0;
         let maxDex = 10;
         let armorType = "";
-        if (talents.includes("Armored Defense")) {
+        if (talents.includes("Armored Defense") && feats.includes("Armor Proficiency (Light)")) {
             armorTemp = getArmor(available,feats,talents);
             equipment.push(armorTemp[0]);
             armorRef = armorTemp[1];
