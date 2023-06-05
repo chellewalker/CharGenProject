@@ -81,7 +81,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-        advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,
+        advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,talents,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
 
         if (forcePowers != "") {
@@ -144,7 +144,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers) {
 
         let rangedWeapon = (BAB + Math.floor((dex-10)/2));
@@ -215,11 +215,20 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         powerDisplay = "Force Power Suite: "+forcePowers+"\n";
     }
 
+    let init = "Initiative: "+initiativeDisplay;
+    if (talents.includes("Force Intuition")) {
+        init = "Initiative (Use the Force): "+initiativeDisplay;
+    }
+    let senses = "Perception "+perceptionDisplay;
+    if (talents.includes("Force Perception")) {
+        senses = "Use the Force "+perceptionDisplay;
+    }
+
     let outputData = 
     name+" Statistics (CL "+level+")\n"+
         size+" "+species+" "+classList+"\n"+
         destiny+"Force Points: "+forcePoints+"\n"+
-        "Initiative: "+initiativeDisplay+"; Senses: Perception "+perceptionDisplay+"\n"+
+        init+"; Senses: "+senses+"\n"+
         "Languages: "+listLanguages+"\n"+
         "Defenses\n"+
         "Reflex Defense: "+reflex+" (Flat-Footed: "+flatFooted+"), Fortitude Defense: "+fortitude+", Will Defense: "+will+"\n"+
