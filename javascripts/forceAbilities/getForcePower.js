@@ -138,10 +138,22 @@ export function displayForcePowers(forcePowers) {
     let count;
     for (count = 0; count < forcePowers.length; count++) {
         if (count == 0) {
-            powers += "<i>"+forcePowers[count]+"</i>";
+            if (forcePowers[count].includes(" (")) {
+                let temp = forcePowers[count].split(" (");
+                powers += "<i>"+temp[0]+"</i> ("+temp[1];
+            }
+            else {
+                powers += "<i>"+forcePowers[count]+"</i>";
+            }
         }
         else {
-            powers += ", <i>"+forcePowers[count]+"</i>";
+            if (forcePowers[count].includes(" (")) {
+                let temp = forcePowers[count].split(" (");
+                powers += ", <i>"+temp[0]+"</i> ("+temp[1];
+            }
+            else {
+                powers += ", <i>"+forcePowers[count]+"</i>";
+            }
         }
     }
 
