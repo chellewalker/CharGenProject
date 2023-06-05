@@ -2,7 +2,7 @@ import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForc
 
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,
     forcePowers) {
     let destiny = "";
@@ -94,11 +94,20 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
             space = "<strong>Fighting Space:</strong> 2x2 Squares; <strong>Reach:</strong> 1 Square<br>";
         }
 
+    let init = "<strong>Initiative:</strong> "+initiativeDisplay;
+    if (talents.includes("Force Intuition")) {
+        init = "<strong>Initiative (Use the Force):</strong> "+initiativeDisplay;
+    }
+    let senses = "Perception "+perceptionDisplay;
+    if (talents.includes("Force Perception")) {
+        senses = "Use the Force "+perceptionDisplay;
+    }
+
     let output = 
     "<title>"+name+"</title><h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
         size+" "+species+" "+classList+"<br>"+
         destiny+"<strong>Force Points:</strong> "+forcePoints+"<br>"+
-        "<strong>Initiative:</strong> "+initiativeDisplay+"; <strong>Senses:</strong> Perception "+perceptionDisplay+"<br>"+
+        init+"; <strong>Senses:</strong> "+senses+"<br>"+
         "<strong>Languages:</strong> "+listLanguages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+
         "<strong>Reflex Defense:</strong> "+reflex+" (<strong>Flat-Footed:</strong> "+flatFooted+"), <strong>Fortitude Defense:</strong> "+fortitude+", <strong>Will Defense:</strong> "+will+"<br>"+

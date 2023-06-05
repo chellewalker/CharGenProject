@@ -440,13 +440,13 @@ window.genCharacter = function genCharacter() {
         }
 
         listSkills = displaySkills(str,dex,con,int,wis,cha,skills,size,level,speciesTraits,feats,talents,equipment,implant);
-        initiativeDisplay = getInitiative(level,dex,skills,feats);
-        perceptionDisplay = getPerception(level,wis,skills,feats,equipment);
+        initiativeDisplay = getInitiative(level,dex,skills,feats,talents,cha);
+        perceptionDisplay = getPerception(level,wis,skills,feats,equipment,talents,cha);
 
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
-            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,
+            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
     
         document.write(output);

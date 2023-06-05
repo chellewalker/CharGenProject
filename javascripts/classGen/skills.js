@@ -105,7 +105,7 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
             let thisSkill = "";
             while (thisSkill == "") {
                 thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
-                    let randomNum2 = Math.round(Math.random() * 4);
+                    let randomNum2 = Math.round(Math.random() * 3);
                     if (randomNum2 == 0) {
                         thisSkill = "Use the Force";
                     }
@@ -411,6 +411,36 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (speciesTraits.includes("Keen Force Sense")) {
                     special = " (may reroll to Search Your Feelings or Sense Force, may keep better result)";
                 }
+                if (talents.includes("Force Perception") || talents.includes("Force Pilot") || talents.includes("Force Persuasion") || talents.includes("Force Intuition")) {
+                    special = " (may substitute for ";
+                    let array = [];
+                    let count;
+                    if (talents.includes("Force Intuition")) {
+                        array.push("Initiative");
+                    }
+                    if (talents.includes("Force Perception")) {
+                        array.push("Perception");
+                    }
+                    if (talents.includes("Force Pilot")) {
+                        array.push("Pilot");
+                    }
+                    if (talents.includes("Force Persuasion")) {
+                        array.push("Persuasion");
+                    }
+                    for (count = 0; count < array.length; count++) {
+                        if (count != 0 && count != array.length) {
+                            special += ", ";
+                        }
+                        else if (count != 0 && count == array.length && array.length > 2) {
+                            special += ", and ";
+                        }
+                        else if (count != 0 && count == array.length) {
+                            special += " and ";
+                        }
+                        special += array[count];
+                    }
+                    special += " checks)";
+                }
             }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score + special;
@@ -424,13 +454,22 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         return listSkills;
 }
 
-export function getInitiative(level,dex,skills,feats) {
+export function getInitiative(level,dex,skills,feats,talents,cha) {
     let initiative = Math.floor(level/2) + Math.floor((dex-10)/2);
         if (skills.includes("Initiative")) {
             initiative += 5;
         }
         if (feats.includes("Skill Focus (Initiative)")) {
             initiative += 5;
+        }
+        if (talents.includes("Force Intuition")) {
+            initiative = Math.floor(level/2) + Math.floor((cha-10)/2);
+            if (skills.includes("Use the Force")) {
+                initiative += 5;
+            }
+            if (feats.includes("Skill Focus (Use the Force)")) {
+                initiative += 5;
+            }
         }
         let initiativeDisplay = "";
         if (initiative < 0) {
@@ -442,7 +481,7 @@ export function getInitiative(level,dex,skills,feats) {
     return initiativeDisplay;
 }
 
-export function getPerception(level,wis,skills,feats,equipment) {
+export function getPerception(level,wis,skills,feats,equipment,talents,cha) {
     let perception = Math.floor(level/2) + Math.floor((wis-10)/2);
         if (skills.includes("Perception")) {
             perception += 5;
@@ -452,6 +491,15 @@ export function getPerception(level,wis,skills,feats,equipment) {
         }
         if (equipment.includes("Helmet Package (+2 Percepion, Low-Light Vision)")) {
             perception += 2;
+        }
+        if (talents.includes("Force Perception")) {
+            perception = Math.floor(level/2) + Math.floor((cha-10)/2);
+            if (skills.includes("Use the Force")) {
+                perception += 5;
+            }
+            if (feats.includes("Skill Focus (Use the Force)")) {
+                perception += 5;
+            }
         }
         let perceptionDisplay = "";
         if (perception < 0) {
