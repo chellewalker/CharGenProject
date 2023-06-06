@@ -39,7 +39,7 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 55);
+        let randomNum = Math.floor(Math.random() * 56);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -349,6 +349,12 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             else {
                 gearEquipment.push("Spare Energy Cell (2)");
                 gearEquipment.push("Spare Power Pack (2)");
+        }}
+        if (randomNum == 55 && available.includes("CR")) {
+            if (gearEquipment.includes("Net")) {
+            }
+            else {
+                gearEquipment.push("Net");
         }}
     }
 
