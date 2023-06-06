@@ -76,6 +76,9 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                     feat = "Double Attack (Simple Weapons)";
                     check = 1;
                 }
+                if (count == 20) {
+                    check = 1;
+                }
             }
         }
         else if (randomNum == 22 && available.includes("CR") && dex >= 13 && BAB >= 1 ||
@@ -101,19 +104,19 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                 if (randomNum2 == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
-                else if (randomNum2 == 1 && available.includes("LECG")) {
+                else if (randomNum2 == 1 && available.includes("LECG") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Amphistaff)";
                 }
-                else if (randomNum2 == 2 && available.includes("CR")) {
+                else if (randomNum2 == 2 && available.includes("CR") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Cesta)";
                 }
                 else if (randomNum2 == 3 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Flamethrower)";
                 }
-                else if (randomNum2 == 4 && available.includes("CR")) {
+                else if (randomNum2 == 4 && available.includes("CR") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Bowcaster)";
                 }
-                else if (randomNum2 == 5 && available.includes("KotORCG")) {
+                else if (randomNum2 == 5 && available.includes("KotORCG") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Arg'garok)";
                 }
                 else if (randomNum2 == 6 && available.includes("KotORCG")) {
@@ -122,13 +125,13 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                 else if (randomNum2 == 7 && available.includes("KotORCG")) {
                     feat = "Exotic Weapon Proficiency (Shyarn)";
                 }
-                else if (randomNum2 == 8 && available.includes("KotORCG")) {
+                else if (randomNum2 == 8 && available.includes("KotORCG") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Zhaboka)";
                 }
                 else if (randomNum2 == 9 && available.includes("KotORCG")) {
                     feat = "Exotic Weapon Proficiency (Aurial Blaster)";
                 }
-                else if (randomNum2 == 10 && available.includes("KotORCG")) {
+                else if (randomNum2 == 10 && available.includes("KotORCG") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Massassi Lanvarok)";
                 }
                 else if (randomNum2 == 11 && available.includes("KotORCG")) {
@@ -284,6 +287,9 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                     feat = "Triple Crit (Simple Weapons)";
                     check = 1;
                 }
+                if (count == 20) {
+                    check = 1;
+                }
             }
         }
         else if (randomNum == 95 && available.includes("CR") && skills.includes("Pilot")) {
@@ -321,6 +327,9 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                 }
                 else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
                     feat = "Weapon Focus (Simple Weapons)";
+                    check = 1;
+                }
+                if (count == 20) {
                     check = 1;
                 }
             }
