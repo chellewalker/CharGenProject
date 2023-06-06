@@ -3,7 +3,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 261);
+        let randomNum = Math.floor(Math.random() * 266);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -518,7 +518,12 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     randomNum == 165 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
                     randomNum == 166 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
                     randomNum == 167 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
-                    randomNum == 168 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot")) {
+                    randomNum == 168 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
+                    randomNum == 261 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
+                    randomNum == 262 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
+                    randomNum == 263 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
+                    randomNum == 264 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot") ||
+                    randomNum == 265 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot")) {
             feat = "Starship Tactics";
         }
         else if (randomNum == 169 && available.includes("SotG") && feats.includes("Starship Tactics") && feats.includes("Tech Specialist") && skills.includes("Mechanics")) {
