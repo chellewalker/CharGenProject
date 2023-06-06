@@ -9,6 +9,7 @@ import {getBAB} from './classGen/getBAB.js';
 import {getOutput} from './getOutput.js';
 import {displayFeats} from './feats/featDisplay.js';
 import {speciesFeats} from './feats/speciesFeats.js';
+import {getStarshipManeuver,compressStarshipManeuvers} from './feats/getStarshipManeuver.js';
 import {getFeat} from './feats/getFeat.js';
 import {getArmor} from './equipment/getArmor.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
@@ -100,6 +101,7 @@ window.genCharacter = function genCharacter() {
         let feats = [];
         let skills = [];
         let forcePowers = [];
+        let starshipManeuvers = [];
         let BAB = 0;
         let classList;
         let listSkills;
@@ -151,6 +153,9 @@ window.genCharacter = function genCharacter() {
                         forcePowers.push("Move Object");
                     }
                 }
+                if (feats.findLast(findLast) == "Starship Tactics") {
+                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
+                }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 if (feats.findLast(findLast) == "Skill Training") {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats));
@@ -160,6 +165,9 @@ window.genCharacter = function genCharacter() {
                     if (talents.includes("Telekinetic Prodigy")) {
                         forcePowers.push("Move Object");
                     }
+                }
+                if (feats.findLast(findLast) == "Starship Tactics") {
+                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
                 }
                 if (speciesTraits.includes("Bonus Feat")) {
                     feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
@@ -171,6 +179,9 @@ window.genCharacter = function genCharacter() {
                     if (talents.includes("Telekinetic Prodigy")) {
                         forcePowers.push("Move Object");
                     }
+                }
+                if (feats.findLast(findLast) == "Starship Tactics") {
+                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
                 }}
             }
             else {
@@ -188,12 +199,6 @@ window.genCharacter = function genCharacter() {
                     if (feats.findLast(findLast) == "Skill Training") {
                         skills.push(getNewSkill(speciesTraits,classes,skills,feats));
                     }
-                    if (feats.findLast(findLast) == "Force Training") {
-                        forcePowers = getForcePower(forcePowers,available,wis,light,dark);
-                        if (talents.includes("Telekinetic Prodigy")) {
-                            forcePowers.push("Move Object");
-                        }
-                    }
                     skills.sort();
                 }
                 else {
@@ -208,7 +213,12 @@ window.genCharacter = function genCharacter() {
             }
             if (feats.findLast(findLast) == "Force Training") {
                 forcePowers = getForcePower(forcePowers,available,wis,light,dark);
-                forcePowers.sort();
+                if (talents.includes("Telekinetic Prodigy")) {
+                    forcePowers.push("Move Object");
+                }
+            }
+            if (feats.findLast(findLast) == "Starship Tactics") {
+                starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
             }
 
         }}
@@ -411,8 +421,10 @@ window.genCharacter = function genCharacter() {
         temp2 = getBellow(available,BAB,level,dex,feats,talents,size);
         otherAttack = temp2[0];
     }
-
+    forcePowers.sort();
+    starshipManeuvers.sort();
     forcePowers = compressForcePowers(forcePowers);
+    starshipManeuvers = compressStarshipManeuvers(starshipManeuvers);
 
     //equipment
     let gearEquipment = getGear(available,feats,talents,skills,speciesTraits);
@@ -446,7 +458,7 @@ window.genCharacter = function genCharacter() {
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
-            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,
+            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
     
         document.write(output);

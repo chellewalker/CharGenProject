@@ -1,8 +1,9 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
+import {displayStarshipManeuvers,displayRawStarshipManeuvers} from './feats/getStarshipManeuver.js';
 
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,
     forcePowers) {
     let destiny = "";
@@ -45,6 +46,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let otherAttack = "";
     let byWeapon = "";
     let powerDisplay = "";
+    let maneuverDisplay = "";
     if (rangedWeapon < 0) {
         byWeapon = rangedWeapon;
     }
@@ -82,11 +84,16 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
         advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,talents,
-        speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
+        speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers);
 
         if (forcePowers != "") {
             forcePowers = displayForcePowers(forcePowers);
             powerDisplay = "<strong>Force Power Suite:</strong> "+forcePowers+"<br>";
+        }
+
+        if (starshipManeuvers != "") {
+            starshipManeuvers = displayStarshipManeuvers(starshipManeuvers);
+            maneuverDisplay = "<strong>Starship Maneuver Suite:</strong> "+starshipManeuvers+"<br>";
         }
 
         let space = "";
@@ -125,6 +132,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         otherAttack+
         "<strong>Base Attack Bonus:</strong> +"+BAB+", <strong>Grapple:</strong> "+grappleDisplay+"<br>"+
         space+
+        maneuverDisplay+
         powerDisplay+
         "<strong>Species Traits ("+species+"):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
@@ -145,12 +153,13 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
-    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers) {
+    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers) {
 
         let rangedWeapon = (BAB + Math.floor((dex-10)/2));
         let traitDisplay = "";
         let byWeapon = "";
         let powerDisplay = "";
+        let maneuverDisplay = "";
         if (rangedWeapon < 0) {
             byWeapon = rangedWeapon;
         }
@@ -213,6 +222,11 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     if (forcePowers != "") {
         forcePowers = displayRawForcePowers(forcePowers);
         powerDisplay = "Force Power Suite: "+forcePowers+"\n";
+    }
+
+    if (starshipManeuvers != "") {
+        starshipManeuvers = displayRawStarshipManeuvers(starshipManeuvers);
+        maneuverDisplay = "Starship Maneuvers Suite: "+starshipManeuvers+"\n";
     }
 
     let init = "Initiative: "+initiativeDisplay;
