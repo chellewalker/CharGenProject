@@ -32,7 +32,7 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
         else if (feats.includes("Exotic Weapon Proficiency (Atlatl)") || 
                     speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && randomNum == 1) {
             exoticMeleeWeapon = "Atlatl";
-            weaponSize = 1;
+            weaponSize = 2;
             exoticMeleeDice = 2;
             exoticMeleeDie = 4;
             if (speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && feats.includes("Weapon Focus (Simple Weapons)")) {
@@ -115,6 +115,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     string = exoticMeleeWeapon + " " + exoticMeleeAttack +" ("+ exoticMeleeDice+"d"+exoticMeleeDie+exoticMeleeDamage + ")";
     if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         exoticMeleeWeapon = exoticMeleeWeapon + " (2)";
+    }
+    if (exoticMeleeWeapon == "Atlatl" || exoticMeleeWeapon == "Cesta") {
+        exoticMeleeWeapon = exoticMeleeWeapon + " (5 Energy Balls)";
     }
 
     return [string,exoticMeleeWeapon];
