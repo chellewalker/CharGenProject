@@ -39,7 +39,7 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 52);
+        let randomNum = Math.floor(Math.random() * 54);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -343,6 +343,12 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             else {
                 gearEquipment.push("Targeting Scope (Enhanced Low-Light)");
         }}
+        if (randomNum == 52) {
+            gearEquipment.push("Spare Energy Cell") 
+        }
+        if (randomNum == 53) {
+            gearEquipment.push("Spare Power Pack") 
+        }
     }
 
     return gearEquipment;
