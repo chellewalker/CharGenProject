@@ -344,10 +344,10 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
                 gearEquipment.push("Targeting Scope (Enhanced Low-Light)");
         }}
         if (randomNum == 52) {
-            gearEquipment.push("Spare Energy Cell") 
+            gearEquipment.push("Spare Energy Cell (2)") 
         }
         if (randomNum == 53) {
-            gearEquipment.push("Spare Power Pack") 
+            gearEquipment.push("Spare Power Pack (2)") 
         }
     }
 
