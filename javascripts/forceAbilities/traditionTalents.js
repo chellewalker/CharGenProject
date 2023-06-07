@@ -231,7 +231,7 @@ export function shasaTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     else if (randomNum == 3) {
         talent = "Waveform";
     }
-    else if (randomNum == 4 && available.includes("HB")) {
+    else if (randomNum == 4 && available.includes("HC")) {
         talent = "Fira Mastery";
     }
     if (talents.includes(talent)) {
