@@ -35,11 +35,15 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
         gearEquipment.push("Portable Computer");
     }
 
+    if (feats.includes("Weapon Proficiency (Pistols)") || feats.includes("Weapon Proficiency (Rifles)")) {
+        gearEquipment.push("Spare Power Pack (2)");
+    }
+
     let bonusGear = Math.floor((Math.random() * 5) + 2);
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 56);
+        let randomNum = Math.floor(Math.random() * 53);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -343,18 +347,17 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             else {
                 gearEquipment.push("Targeting Scope (Enhanced Low-Light)");
         }}
-        if (randomNum == 52 || randomNum == 53 || randomNum == 54) {
-            if (gearEquipment.includes("Spare Energy Cell (2)") || gearEquipment.includes("Spare Power Pack (2)")) {
-            }
-            else {
-                gearEquipment.push("Spare Energy Cell (2)");
-                gearEquipment.push("Spare Power Pack (2)");
-        }}
-        if (randomNum == 55 && available.includes("CR")) {
+        if (randomNum == 52 && available.includes("CR")) {
             if (gearEquipment.includes("Net")) {
             }
             else {
                 gearEquipment.push("Net");
+        }}
+        if (randomNum == 53 && available.includes("CR")) {
+            if (gearEquipment.includes("Spare Energy Cell")) {
+            }
+            else {
+                gearEquipment.push("Spare Energy Cell");
         }}
     }
 
