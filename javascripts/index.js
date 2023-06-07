@@ -33,6 +33,8 @@ import {getHeavyWeapon} from './attacks/weaponTypes/heavyWeapon.js';
 import {getLightsaber} from './attacks/weaponTypes/lightsaber.js';
 import {getPistol} from './attacks/weaponTypes/pistol.js';
 import {getRifle} from './attacks/weaponTypes/rifle.js';
+import {getSimpleMelee} from './attacks/weaponTypes/simpleMelee.js';
+import {getSimpleRanged} from './attacks/weaponTypes/simpleRanged.js';
 import {getExoticMelee} from './attacks/weaponTypes/exoticMelee.js';
 import {getExoticRanged} from './attacks/weaponTypes/exoticRanged.js';
 import {getBellow} from './attacks/getBellow.js';
@@ -369,6 +371,8 @@ window.genCharacter = function genCharacter() {
         let pistol = "";
         let rifle = "";
         let otherAttack = "";
+        let simpleMelee = "";
+        let simpleRanged = "";
         let otherMeleeAttack = "";
         let otherRangedAttack = "";
 
@@ -401,6 +405,21 @@ window.genCharacter = function genCharacter() {
         rifle = temp2[0];
         temp = temp2[1];
         tempEquipment.push(temp);
+    }
+    if (speciesTraits.includes("Primitive") || feats.includes("Weapon Focus (Simple Weapons)")) {
+        let simpleRandom = Math.floor(Math.random() * 2);
+        if (simpleRandom == 0) {
+            temp2 = getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size);
+            simpleMelee = temp2[0];
+            temp = temp2[1];
+            tempEquipment.push(temp);
+        }
+        else {
+            temp2 = getSimpleRanged(available,BAB,level,dex,str,feats,talents,size);
+            simpleRanged = temp2[0];
+            temp = temp2[1];
+            tempEquipment.push(temp);
+        }
     }
 
         temp2 = getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
@@ -458,7 +477,7 @@ window.genCharacter = function genCharacter() {
         //output
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
-            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,
+            advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
             speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
     
         document.write(output);

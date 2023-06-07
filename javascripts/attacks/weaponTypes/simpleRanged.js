@@ -79,7 +79,7 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
             simpleRangedDie = 8;
         }
         if (randomNum == 9 && available.includes("HC")) {
-            simpleRangedWeapon = "Pulley Bow";
+            simpleRangedWeapon = "Pulley Bow (10 Arrows)";
             weaponSize = 2;
             simpleRangedDice = 1;
             simpleRangedDie = 8;
@@ -98,7 +98,7 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
     if (talents.includes("Weapon Specialization (Simple Weapons)")) {
         simpleRangedDamageRaw += 2;
     }
-    if (simpleRangedWeapon == "Bow" || simpleRangedWeapon == "Sling" || simpleRangedWeapon == "Pulley Bow") {
+    if (simpleRangedWeapon == "Bow (10 Arrows)" || simpleRangedWeapon == "Sling (10 Stones)" || simpleRangedWeapon == "Pulley Bow (10 Arrows)") {
         simpleRangedDamageRaw += Math.floor((str-10)/2);
     }
     let simpleRangedDamage = "";
