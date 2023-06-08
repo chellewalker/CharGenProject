@@ -90,8 +90,8 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-        advancedMeleeAttack,lightsaberAttack,pistolAttack,rifleAttack,heavyWeaponAttack,otherAttack,BAB,grappleDisplay,talents,
+        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMelee,otherRanged,damageReduction,
+        advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged);
 
         if (forcePowers != "") {
@@ -153,17 +153,38 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<strong>Possessions:</strong> "+equipmentList+"<br><br>"+
         "<div style='padding-left: 10%;'><button type='submit'>"+
         "<a onclick='location.href = \"index.html\"'>Make New Character</a>"+
-        "</button><button type='submit'>"+
-        "<a onclick='print()'>Download Character</a>"+
+        "<button onclick='"+download_txt(name,outputData)+"'>Download Character</button type='submit'>"+
         "</button></div>";
 
     return output;
 }
 
+export function download_txt(name,outputData) {
+    var textToSave = outputData;
+    var hiddenElement = document.createElement('a');
+  
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.download = name + '.txt';
+    hiddenElement.click();
+  }
+  
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged) {
+
+        if (Math.floor(level/5) > 0) {
+            destiny = "Destiny Points: " + Math.floor(level/5) + "; ";
+        }
+
+        damageReduction = 0;
+        let reductionDisplay = "";
+        if (speciesTraits.includes("Damage Reduction 2")) {
+            damageReduction += 2;
+        }
+        if (damageReduction != 0) {
+            reductionDisplay = ", Damage Reduction: "+damageReduction;
+        }
 
         let rangedWeapon = (BAB + Math.floor((dex-10)/2));
         let traitDisplay = "";
@@ -182,10 +203,6 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
                 traitDisplay += ", ";
             }
             traitDisplay += speciesTraits[count];
-        }
-        let reductionDisplay = "";
-        if (damageReduction != 0) {
-            reductionDisplay = ", Damage Reduction: "+damageReduction;
         }
 
         let otherMelee = "";
@@ -229,7 +246,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
             otherAttack = "Ranged: "+other+"\n";
         }
         if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "" && otherRangedAttack == "") {
-            pistolAttack = "Ranged: By Weapon "+byWeapon+"<br>";
+            pistolAttack = "Ranged: By Weapon "+byWeapon+"\n";
         }
 
     let space = "";
@@ -261,10 +278,10 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         size+" "+species+" "+classList+"\n"+
         destiny+"Force Points: "+forcePoints+"\n"+
         init+"; Senses: "+senses+"\n"+
-        "Languages: "+listLanguages+"\n"+
+        "Languages: "+listLanguages+"\n\n"+
         "Defenses\n"+
         "Reflex Defense: "+reflex+" (Flat-Footed: "+flatFooted+"), Fortitude Defense: "+fortitude+", Will Defense: "+will+"\n"+
-        "Hit Points: "+hitPoints+reductionDisplay+", Damage Threshold: "+damageThreshold+"\n"+
+        "Hit Points: "+hitPoints+reductionDisplay+", Damage Threshold: "+damageThreshold+"\n\n"+
         "Offense\n"+
         "Speed: "+speed+"\n"+
         "Melee: "+unarmed+"\n"+
@@ -282,7 +299,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         space+
         powerDisplay+
         maneuverDisplay+
-        "Species Traits ("+species+"): "+traitDisplay+"\n"+
+        "Species Traits ("+species+"): "+traitDisplay+"\n\n"+
         "Base Stats\n"+
         "Abilities: Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"\n"+
         "Talents: "+listTalents+"\n"+
