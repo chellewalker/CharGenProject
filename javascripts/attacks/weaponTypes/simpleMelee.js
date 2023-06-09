@@ -3,6 +3,7 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     let weaponSize;
     let simpleMeleeDice;
     let simpleMeleeDie;
+    let special = "";
     let relativeSize;
 
     if (size == "Small") {
@@ -149,7 +150,7 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     else {
         simpleMeleeDamage = "+" + simpleMeleeDamageRaw;
     }
-    let string = simpleMeleeWeapon + " " + simpleMeleeAttack +" ("+ simpleMeleeDice+"d"+simpleMeleeDie+simpleMeleeDamage + ")";
+    let string = simpleMeleeWeapon + " " + simpleMeleeAttack +" ("+ simpleMeleeDice+"d"+simpleMeleeDie+simpleMeleeDamage + special + ")";
     if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         simpleMeleeWeapon = simpleMeleeWeapon + " (2)";
     }

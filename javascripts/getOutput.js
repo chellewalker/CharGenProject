@@ -153,17 +153,22 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<strong>Possessions:</strong> "+equipmentList+"<br><br>"+
         "<div style='padding-left: 10%;'><button type='submit'>"+
         "<a onclick='location.href = \"index.html\"'>Make New Character</a>"+
-        "<button onclick='"+download_txt(name,outputData)+"'>Download Character</button type='submit'>"+
-        "</button></div>";
+        "<button id='download'>Download Character</button>"+
+        "</button></div>"+
+        "<script>"+
+        "document.getElementById('download').addEventListener('click', function() {"+
+            "alert('test');"+
+        "});"+
+        "</script>";
 
     return output;
 }
 
 export function download_txt(name,outputData) {
-    var textToSave = outputData;
     var hiddenElement = document.createElement('a');
+    var text = outputData;
   
-    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(text);
     hiddenElement.download = name + '.txt';
     hiddenElement.click();
   }
