@@ -101,6 +101,9 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
     if (talents.includes("Weapon Specialization (Advanced Melee Weapons)")) {
         advancedMeleeDamageRaw += 2;
     }
+    if (talents.includes("Melee Smash")) {
+        advancedMeleeDamageRaw++;
+    }
     let advancedMeleeDamage = "";
     if (advancedMeleeDamageRaw == 0) {
         advancedMeleeDamage = "";

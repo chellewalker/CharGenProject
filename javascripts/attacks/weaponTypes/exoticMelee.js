@@ -102,6 +102,10 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
 
     let exoticMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
 
+    if (talents.includes("Melee Smash")) {
+        exoticMeleeDamageRaw++;
+    }
+
     let exoticMeleeDamage = "";
     if (exoticMeleeDamageRaw == 0) {
         exoticMeleeDamage = "";

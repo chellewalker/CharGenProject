@@ -69,6 +69,9 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
     if (talents.includes("Weapon Specialization (Lightsabers)")) {
         lightsaberDamageRaw += 2;
     }
+    if (talents.includes("Melee Smash")) {
+        lightsaberDamageRaw++;
+    }
     let lightsaberDamage = "";
     if (lightsaberDamageRaw == 0) {
         lightsaberDamage = "";

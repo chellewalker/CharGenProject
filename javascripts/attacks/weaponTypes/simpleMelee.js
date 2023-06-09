@@ -140,6 +140,9 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     if (talents.includes("Weapon Specialization (Simple Weapons)")) {
         simpleMeleeDamageRaw += 2;
     }
+    if (talents.includes("Melee Smash")) {
+        simpleMeleeDamageRaw++;
+    }
     let simpleMeleeDamage = "";
     if (simpleMeleeDamageRaw == 0) {
         simpleMeleeDamage = "";
