@@ -45,9 +45,9 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
         }
         if (randomNum == 5 && available.includes("TotG") && size != "Small") {
             heavyWeaponWeapon = "Light Concussion Missile Launcher";
-            heavyWeaponDice = 4;
+            heavyWeaponDice = "(4";
             heavyWeaponDie = 10;
-            special = "x2, 2-Square Splash";
+            special = ")x2, 2-Square Splash";
         }
         if (randomNum == 6 && available.includes("KotORCG") && size != "Small") {
             heavyWeaponWeapon = "Carbonite Rifle";
