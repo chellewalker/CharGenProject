@@ -157,7 +157,12 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "</button></div>"+
         "<script>"+
         "document.getElementById('download').addEventListener('click', function() {"+
-            "alert('test');"+
+            "var hiddenElement = document.createElement('a');"+
+            "var text = 'test';"+
+        
+            "hiddenElement.href = 'data:attachment/text,' + encodeURI(text);"+
+            "hiddenElement.download = '"+name+"' + '.txt';"+
+            "hiddenElement.click();"+
         "});"+
         "</script>";
 
