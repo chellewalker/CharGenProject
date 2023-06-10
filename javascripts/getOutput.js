@@ -90,7 +90,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
-        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMelee,otherRanged,damageReduction,
+        reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
         advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged);
 
@@ -185,6 +185,8 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         classList = classList.replace(/ /g, "%20");
         species = species.replace(/ /g, "%20");
         species = species.replace(/'/g, "%27");
+        name = name.replace(/ /g, "%20");
+        name = name.replace(/'/g, "%27");
         listLanguages = listLanguages.replace(/ /g, "%20");
         listLanguages = listLanguages.replace(/'/g, "%27");
         speed = speed.replace(/ /g, "%20");
