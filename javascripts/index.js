@@ -22,6 +22,7 @@ import {getFlatFooted, getReflex} from './defenses/reflex.js';
 import {getDamageThreshold, getFortitude} from './defenses/fortitude.js';
 import {displayEquipment} from './equipment/display.js';
 import {getGear} from './equipment/getGear.js';
+import {getShields} from './equipment/getShields.js';
 import {getImplant} from './equipment/getImplant.js';
 import {getSpecial} from './equipment/getSpecial.js';
 import {getWill} from './defenses/will.js';
@@ -343,6 +344,17 @@ window.genCharacter = function genCharacter() {
             maxDex = armorTemp[3];
             armorType = armorTemp[4];
         }
+
+        let shieldTemp = [];
+        let SR = 0;
+        if (talents.includes("Shield Expert") && feats.includes("Armor Proficiency (Light)")) {
+            shieldTemp = getShields(available,feats,talents);
+            equipment.push(shieldTemp[0]);
+            SR = shieldTemp[1];
+            maxDex = Math.min(maxDex,shieldTemp[2]);
+            armorType = shieldTemp[3];
+        }
+
         if (talents.includes("Armor Mastery")) {
             maxDex++;
         }
@@ -478,7 +490,7 @@ window.genCharacter = function genCharacter() {
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
-            speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers);
+            speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,SR);
     
         document.write(output);
 }

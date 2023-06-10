@@ -11,7 +11,7 @@ export function getArmor(available,feats,talents) {
         armor = getLight(available,feats,talents);
     }
 
-    return armor
+    return armor;
 }
 
 function getHeavy(available,feats,talents) {

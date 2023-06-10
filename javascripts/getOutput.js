@@ -5,7 +5,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,simpleMelee,simpleRanged,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,
-    forcePowers) {
+    forcePowers,SR) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
@@ -18,6 +18,11 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         }
         if (damageReduction != 0) {
             reductionDisplay = ", <strong>Damage Reduction:</strong> "+damageReduction;
+        }
+
+        let shieldRating = "";
+        if (SR != 0) {
+            shieldRating = ", <strong>Shield Rating:</strong> "+SR;
         }
 
         forcePowers.sort();
@@ -91,7 +96,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-        advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
+        advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,
         speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged);
 
         if (forcePowers != "") {
@@ -126,7 +131,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<strong>Languages:</strong> "+listLanguages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+
         "<strong>Reflex Defense:</strong> "+reflex+" (<strong>Flat-Footed:</strong> "+flatFooted+"), <strong>Fortitude Defense:</strong> "+fortitude+", <strong>Will Defense:</strong> "+will+"<br>"+
-        "<strong>Hit Points:</strong> "+hitPoints+reductionDisplay+", <strong>Damage Threshold:</strong> "+damageThreshold+"<br>"+
+        "<strong>Hit Points:</strong> "+hitPoints+reductionDisplay+shieldRating+", <strong>Damage Threshold:</strong> "+damageThreshold+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Offense</strong></u></p>"+
         "<strong>Speed:</strong> "+speed+"<br>"+
         "<strong>Melee:</strong> "+unarmed+"<br>"+
@@ -179,7 +184,7 @@ export function download_txt(name,outputData) {
   
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged) {
 
         classList = classList.replace(/ /g, "%20");
@@ -231,6 +236,11 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         }
         if (damageReduction != 0) {
             reductionDisplay = ",%20Damage%20Reduction:%20"+damageReduction;
+        }
+
+        let shieldRating = "";
+        if (SR != 0) {
+            shieldRating = ",%20Shield%20Rating:%20"+SR;
         }
 
         let rangedWeapon = (BAB + Math.floor((dex-10)/2));
@@ -333,7 +343,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         "Languages:%20"+listLanguages+"%0A%0A"+
         "Defenses%0A"+
         "Reflex%20Defense:%20"+reflex+"%20(Flat-Footed:%20"+flatFooted+"),%20Fortitude%20Defense:%20"+fortitude+",%20Will%20Defense:%20"+will+"%0A"+
-        "Hit%20Points:%20"+hitPoints+reductionDisplay+",%20Damage%20Threshold:%20"+damageThreshold+"%0A%0A"+
+        "Hit%20Points:%20"+hitPoints+reductionDisplay+shieldRating+",%20Damage%20Threshold:%20"+damageThreshold+"%0A%0A"+
         "Offense%0A"+
         "Speed:%20"+speed+"%0A"+
         "Melee:%20"+unarmed+"%0A"+
