@@ -59,6 +59,5 @@ export function speciesFeats(feats,speciesTraits,skills) {
         feats.push("Force Training");
     }
     
-    feats.sort();
     return feats;
 }
