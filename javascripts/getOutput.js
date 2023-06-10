@@ -158,9 +158,8 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<script>"+
         "document.getElementById('download').addEventListener('click', function() {"+
             "var hiddenElement = document.createElement('a');"+
-            "var text = 'test';"+
         
-            "hiddenElement.href = 'data:attachment/text,' + encodeURI(text);"+
+            "hiddenElement.href = 'data:attachment/text,' + '"+outputData+"';"+
             "hiddenElement.download = '"+name+"' + '.txt';"+
             "hiddenElement.click();"+
         "});"+
@@ -183,8 +182,44 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,
     speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged) {
 
+        classList = classList.replace(/ /g, "%20");
+        species = species.replace(/ /g, "%20");
+        species = species.replace(/'/g, "%27");
+        listLanguages = listLanguages.replace(/ /g, "%20");
+        listLanguages = listLanguages.replace(/'/g, "%27");
+        speed = speed.replace(/ /g, "%20");
+        unarmed = unarmed.replace(/ /g, "%20");
+        otherMeleeAttack = otherMeleeAttack.replace(/ /g, "%20");
+        otherMeleeAttack = otherMeleeAttack.replace(/'/g, "%27");
+        otherRangedAttack = otherRangedAttack.replace(/ /g, "%20");
+        otherRangedAttack = otherRangedAttack.replace(/'/g, "%27");
+        advancedMelee = advancedMelee.replace(/ /g, "%20");
+        advancedMelee = advancedMelee.replace(/'/g, "%27");
+        lightsaber = lightsaber.replace(/ /g, "%20");
+        lightsaber = lightsaber.replace(/'/g, "%27");
+        pistol = pistol.replace(/ /g, "%20");
+        pistol = pistol.replace(/'/g, "%27");
+        rifle = rifle.replace(/ /g, "%20");
+        rifle = rifle.replace(/'/g, "%27");
+        heavyWeapon = heavyWeapon.replace(/ /g, "%20");
+        heavyWeapon = heavyWeapon.replace(/'/g, "%27");
+        other = other.replace(/ /g, "%20");
+        other = other.replace(/'/g, "%27");
+        listTalents = listTalents.replace(/ /g, "%20");
+        listFeats = listFeats.replace(/ /g, "%20");
+        listSkills = listSkills.replace(/ /g, "%20");
+        equipmentList = equipmentList.replace(/ /g, "%20");
+        listTalents = listTalents.replace(/'/g, "%27");
+        listFeats = listFeats.replace(/'/g, "%27");
+        listSkills = listSkills.replace(/'/g, "%27");
+        equipmentList = equipmentList.replace(/'/g, "%27");
+        simpleMelee = simpleMelee.replace(/ /g, "%20");
+        simpleMelee = simpleMelee.replace(/'/g, "%27");
+        simpleRanged = simpleRanged.replace(/ /g, "%20");
+        simpleRanged = simpleRanged.replace(/'/g, "%27");
+
         if (Math.floor(level/5) > 0) {
-            destiny = "Destiny Points: " + Math.floor(level/5) + "; ";
+            destiny = "Destiny%20Points:%20" + Math.floor(level/5) + ";%20";
         }
 
         damageReduction = 0;
@@ -193,7 +228,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
             damageReduction += 2;
         }
         if (damageReduction != 0) {
-            reductionDisplay = ", Damage Reduction: "+damageReduction;
+            reductionDisplay = ",%20Damage%20Reduction:%20"+damageReduction;
         }
 
         let rangedWeapon = (BAB + Math.floor((dex-10)/2));
@@ -210,10 +245,12 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         let count;
         for (count = 0; count < speciesTraits.length; count++) {
             if (count != 0) {
-                traitDisplay += ", ";
+                traitDisplay += ",%20";
             }
             traitDisplay += speciesTraits[count];
         }
+        traitDisplay = traitDisplay.replace(/ /g, "%20");
+        traitDisplay = traitDisplay.replace(/'/g, "%27");
 
         let otherMelee = "";
         let advancedMeleeAttack = "";
@@ -226,75 +263,78 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         let heavyWeaponAttack = "";
         let otherAttack = "";
         if (otherMeleeAttack != "") {
-            otherMelee = "Melee: "+otherMeleeAttack+"\n";
+            otherMelee = "Melee:%20"+otherMeleeAttack+"%0A";
         }
         if (advancedMelee != "") {
-            advancedMeleeAttack = "Melee: "+advancedMelee+"\n";
+            advancedMeleeAttack = "Melee:%20"+advancedMelee+"%0A";
         }
         if (lightsaber != "") {
-            lightsaberAttack = "Melee: "+lightsaber+"\n";
+            lightsaberAttack = "Melee:%20"+lightsaber+"%0A";
         }
         if (simpleMelee != "") {
-            simpleMeleeAttack = "Melee: "+simpleMelee+"\n";
+            simpleMeleeAttack = "Melee:%20"+simpleMelee+"%0A";
         }
         if (simpleRanged != "") {
-            simpleRangedAttack = "Ranged: "+simpleRanged+"\n";
+            simpleRangedAttack = "Ranged:%20"+simpleRanged+"%0A";
         }
         if (otherRangedAttack != "") {
-            otherRanged = "Ranged: "+otherRangedAttack+"\n";
+            otherRanged = "Ranged:%20"+otherRangedAttack+"%0A";
         }
         if (pistol != "") {
-            pistolAttack = "Ranged: "+pistol+"\n";
+            pistolAttack = "Ranged:%20"+pistol+"%0A";
         }
         if (rifle != "") {
-            rifleAttack = "Ranged: "+rifle+"\n";
+            rifleAttack = "Ranged:%20"+rifle+"%0A";
         }
         if (heavyWeapon != "") {
-            heavyWeaponAttack = "Ranged: "+heavyWeapon+"\n";
+            heavyWeaponAttack = "Ranged:%20"+heavyWeapon+"%0A";
         }
         if (other != "") {
-            otherAttack = "Ranged: "+other+"\n";
+            otherAttack = "Ranged:%20"+other+"%0A";
         }
         if (pistol == "" && rifle == "" && heavyWeapon == "" && other == "" && otherRangedAttack == "") {
-            pistolAttack = "Ranged: By Weapon "+byWeapon+"\n";
+            pistolAttack = "Ranged:%20By%20Weapon%20"+byWeapon+"%0A";
         }
 
     let space = "";
     if (size == "Large") {
-        space = "Fighting Space: 2x2 Squares; Reach: 1 Square\n";
+        space = "Fighting%20Space:%202x2%20Squares;%20Reach:%201%20Square%0A";
     }
 
     if (forcePowers != "") {
         forcePowers = displayRawForcePowers(forcePowers);
-        powerDisplay = "Force Power Suite: "+forcePowers+"\n";
+        powerDisplay = "Force%20Power%20Suite:%20"+forcePowers+"%0A";
     }
 
     if (starshipManeuvers != "") {
         starshipManeuvers = displayRawStarshipManeuvers(starshipManeuvers);
-        maneuverDisplay = "Starship Maneuvers Suite: "+starshipManeuvers+"\n";
+        maneuverDisplay = "Starship%20Maneuvers%20Suite:%20"+starshipManeuvers+"%0A";
     }
 
-    let init = "Initiative: "+initiativeDisplay;
+    powerDisplay = powerDisplay.replace(/ /g, "%20");
+    maneuverDisplay = maneuverDisplay.replace(/ /g, "%20");
+
+    let init = "Initiative:%20"+initiativeDisplay;
     if (talents.includes("Force Intuition")) {
-        init = "Initiative (Use the Force): "+initiativeDisplay;
+        init = "Initiative%20(Use%20the%20Force):%20"+initiativeDisplay;
     }
-    let senses = "Perception "+perceptionDisplay;
+    let senses = "Perception%20"+perceptionDisplay;
     if (talents.includes("Force Perception")) {
-        senses = "Use the Force "+perceptionDisplay;
+        senses = "Use%20the%20Force%20"+perceptionDisplay;
     }
 
     let outputData = 
-    name+" Statistics (CL "+level+")\n"+
-        size+" "+species+" "+classList+"\n"+
-        destiny+"Force Points: "+forcePoints+"\n"+
-        init+"; Senses: "+senses+"\n"+
-        "Languages: "+listLanguages+"\n\n"+
-        "Defenses\n"+
-        "Reflex Defense: "+reflex+" (Flat-Footed: "+flatFooted+"), Fortitude Defense: "+fortitude+", Will Defense: "+will+"\n"+
-        "Hit Points: "+hitPoints+reductionDisplay+", Damage Threshold: "+damageThreshold+"\n\n"+
-        "Offense\n"+
-        "Speed: "+speed+"\n"+
-        "Melee: "+unarmed+"\n"+
+    name+"%20Statistics%20(CL%20"+level+")%0A"+
+        size+"%20"+species+"%20"+classList+"%0A"+
+        destiny+"Force%20Points:%20"+forcePoints+"%0A"+
+        init+";%20Senses:%20"+senses+"%0A"+
+        "Languages:%20"+listLanguages+"%0A%0A"+
+        "Defenses%0A"+
+        "Reflex%20Defense:%20"+reflex+"%20(Flat-Footed:%20"+flatFooted+"),%20Fortitude%20Defense:%20"+fortitude+",%20Will%20Defense:%20"+will+"%0A"+
+        "Hit%20Points:%20"+hitPoints+reductionDisplay+",%20Damage%20Threshold:%20"+damageThreshold+"%0A%0A"+
+        "Offense%0A"+
+        "Speed:%20"+speed+"%0A"+
+        "Melee:%20"+unarmed+"%0A"+
         simpleMeleeAttack+
         otherMelee+
         advancedMeleeAttack+
@@ -305,17 +345,17 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         rifleAttack+
         heavyWeaponAttack+
         otherAttack+
-        "Base Attack Bonus: +"+BAB+", Grapple: "+grappleDisplay+"\n"+
+        "Base%20Attack%20Bonus:%20+"+BAB+",%20Grapple:%20"+grappleDisplay+"%0A"+
         space+
         powerDisplay+
         maneuverDisplay+
-        "Species Traits ("+species+"): "+traitDisplay+"\n\n"+
-        "Base Stats\n"+
-        "Abilities: Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"\n"+
-        "Talents: "+listTalents+"\n"+
-        "Feats: "+listFeats+"\n"+        
-        "Skills: "+listSkills+"\n"+
-        "Possessions: "+equipmentList;
+        "Species%20Traits%20("+species+"):%20"+traitDisplay+"%0A%0A"+
+        "Base%20Stats%0A"+
+        "Abilities:%20Strength%20"+str+",%20Dexterity%20"+dex+",%20Constitution%20"+con+",%20Intelligence%20"+int+",%20Wisdom%20"+wis+",%20Charisma%20"+cha+""+"%0A"+
+        "Talents:%20"+listTalents+"%0A"+
+        "Feats:%20"+listFeats+"%0A"+        
+        "Skills:%20"+listSkills+"%0A"+
+        "Possessions:%20"+equipmentList;
 
     return outputData;
 }
