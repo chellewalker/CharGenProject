@@ -343,6 +343,15 @@ window.genCharacter = function genCharacter() {
             armorFort = armorTemp[2];
             maxDex = armorTemp[3];
             armorType = armorTemp[4];
+
+            if (talents.includes("Second Skin") && armorType != "") {
+                armorRef++;
+                armorFort++;
+            }
+            if (talents.includes("Attune Armor") && armorType != "") {
+                armorRef += 2;
+                maxDex++;
+            }
         }
 
         let shieldTemp = [];
@@ -357,10 +366,6 @@ window.genCharacter = function genCharacter() {
 
         if (talents.includes("Armor Mastery")) {
             maxDex++;
-        }
-        if (talents.includes("Second Skin") && armorType != "") {
-            armorRef++;
-            armorFort++;
         }
 
         let reflex = getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex);
