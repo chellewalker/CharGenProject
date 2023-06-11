@@ -350,7 +350,6 @@ window.genCharacter = function genCharacter() {
             }
             if (talents.includes("Attune Armor") && armorType != "") {
                 armorRef += 2;
-                maxDex++;
             }
         }
 
@@ -365,6 +364,10 @@ window.genCharacter = function genCharacter() {
         }
 
         if (talents.includes("Armor Mastery")) {
+            maxDex++;
+        }
+
+        if (talents.includes("Attune Armor") && armorType != "") {
             maxDex++;
         }
 
