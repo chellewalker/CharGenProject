@@ -170,7 +170,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
 
     for (count = 0; count < trainedSkills.length; count++) {
         special = "";
-        if (count != 0) {
+        if (count != 0 && trainedSkills[count] != "") {
             listSkills += ", ";
         }
         if (strSkills.includes(trainedSkills[count])) {
