@@ -72,13 +72,17 @@ else {
 export function displayTalents(talents) {
     let talentDisplay = "";
     let count;
+    let count2;
     for (count = 0; count < talents.length; count++) {
         if (count != 0) {
             talentDisplay += ", ";
         }
         if (talents[count].includes(" (")) {
             let temp = talents[count].split(" (");
-            talentDisplay += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a> ("+temp[1];
+            talentDisplay += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a>";
+            for (count2 = 1; count2 < temp.length; count2++) {
+                talentDisplay += " ("+temp[count2];
+            }
         }
         else {
             talentDisplay += "<a href='https://swse.fandom.com/wiki/"+talents[count]+"'>"+talents[count]+"</a>";
