@@ -12,7 +12,7 @@ import {getStarshipManeuver,compressStarshipManeuvers} from './feats/getStarship
 import {getFeat} from './feats/getFeat.js';
 import {getArmor} from './equipment/getArmor.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
-import {getTalent} from './Talents/getTalent.js';
+import {getTalent} from './talents/getTalent.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
 import {classFirst,classListing} from './classGen/classGen.js';
 import {finalAbilities} from './abilities/abilityGen.js';

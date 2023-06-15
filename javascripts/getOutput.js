@@ -1,7 +1,7 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
 import {displayStarshipManeuvers,displayRawStarshipManeuvers} from './feats/getStarshipManeuver.js';
-import {displayTalents,displayRawTalents} from './Talents/getTalent.js';
-import {displayFeats,displayRawFeats} from './Feats/featDisplay.js';
+import {displayTalents,displayRawTalents} from './talents/getTalent.js';
+import {displayFeats,displayRawFeats} from './feats/featDisplay.js';
 
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
