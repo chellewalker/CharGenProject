@@ -140,19 +140,19 @@ export function displayForcePowers(forcePowers) {
         if (count == 0) {
             if (forcePowers[count].includes(" (")) {
                 let temp = forcePowers[count].split(" (");
-                powers += "<i>"+temp[0]+"</i> ("+temp[1];
+                powers += "<i><a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a></i> ("+temp[1];
             }
             else {
-                powers += "<i>"+forcePowers[count]+"</i>";
+                powers += "<i><a href='https://swse.fandom.com/wiki/"+forcePowers[count]+"'>"+forcePowers[count]+"</a></i>";
             }
         }
         else {
             if (forcePowers[count].includes(" (")) {
                 let temp = forcePowers[count].split(" (");
-                powers += ", <i>"+temp[0]+"</i> ("+temp[1];
+                powers += ", <i><a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a></i> ("+temp[1];
             }
             else {
-                powers += ", <i>"+forcePowers[count]+"</i>";
+                powers += ", <i><a href='https://swse.fandom.com/wiki/"+forcePowers[count]+"'>"+forcePowers[count]+"</a></i>";
             }
         }
     }

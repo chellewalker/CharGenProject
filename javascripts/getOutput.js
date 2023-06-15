@@ -1,15 +1,20 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
 import {displayStarshipManeuvers,displayRawStarshipManeuvers} from './feats/getStarshipManeuver.js';
+import {displayTalents,displayRawTalents} from './Talents/getTalent.js';
+import {displayFeats,displayRawFeats} from './Feats/featDisplay.js';
 
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,simpleMelee,simpleRanged,
-    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,
+    speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,
     forcePowers,SR) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
         }
+
+        let listTalents = displayTalents(talents);
+        let listFeats = displayFeats(feats);
 
         let damageReduction = 0;
         let reductionDisplay = "";
@@ -160,8 +165,8 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-        advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,
-        speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged);
+        advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,
+        speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged);
 
         if (forcePowers != "") {
             forcePowers = displayForcePowers(forcePowers);
@@ -248,8 +253,11 @@ export function download_txt(name,outputData) {
   
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,
-    speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged) {
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,
+    speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged) {
+
+        let listTalents = displayRawTalents(talents);
+        let listFeats = displayRawFeats(feats);
 
         classList = classList.replace(/ /g, "%20");
         species = species.replace(/ /g, "%20");

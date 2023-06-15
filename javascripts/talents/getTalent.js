@@ -76,6 +76,25 @@ export function displayTalents(talents) {
         if (count != 0) {
             talentDisplay += ", ";
         }
+        if (talents[count].includes(" (")) {
+            let temp = talents[count].split(" (");
+            talentDisplay += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a> ("+temp[1];
+        }
+        else {
+            talentDisplay += "<a href='https://swse.fandom.com/wiki/"+talents[count]+"'>"+talents[count]+"</a>";
+        }
+    }
+
+    return talentDisplay;
+}
+
+export function displayRawTalents(talents) {
+    let talentDisplay = "";
+    let count;
+    for (count = 0; count < talents.length; count++) {
+        if (count != 0) {
+            talentDisplay += ", ";
+        }
         talentDisplay += talents[count];
     }
 

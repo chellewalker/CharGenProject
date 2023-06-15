@@ -7,13 +7,12 @@ import {getLanguages,languageList} from './language.js';
 import {getSkills,getNewSkill,displaySkills,getInitiative,getPerception} from './classGen/skills.js';
 import {getBAB} from './classGen/getBAB.js';
 import {getOutput} from './getOutput.js';
-import {displayFeats} from './feats/featDisplay.js';
 import {speciesFeats} from './feats/speciesFeats.js';
 import {getStarshipManeuver,compressStarshipManeuvers} from './feats/getStarshipManeuver.js';
 import {getFeat} from './feats/getFeat.js';
 import {getArmor} from './equipment/getArmor.js';
 import {classFeats,multiclassFeat} from './feats/classFeats.js';
-import {getTalent,displayTalents} from './talents/getTalent.js';
+import {getTalent} from './Talents/getTalent.js';
 import {getFirstHitPoints,getMoreHitPoints} from './classGen/hitPoints.js';
 import {classFirst,classListing} from './classGen/classGen.js';
 import {finalAbilities} from './abilities/abilityGen.js';
@@ -108,8 +107,6 @@ window.genCharacter = function genCharacter() {
         let BAB = 0;
         let classList;
         let listSkills;
-        let listTalents;
-        let listFeats;
         let initiativeDisplay;
         let perceptionDisplay;
         let grapple;
@@ -313,8 +310,6 @@ window.genCharacter = function genCharacter() {
         feats.sort();
         talents.sort();
         classList = classListing(firstClass,classes);
-        listTalents = displayTalents(talents);
-        listFeats = displayFeats(feats);
         grapple = getGrapple(BAB,str,dex,size,talents);
 
         if (feats.includes("ValidFeatNotFound")) {
@@ -498,7 +493,7 @@ window.genCharacter = function genCharacter() {
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
-            speciesTraits,str,dex,con,int,wis,cha,listTalents,listFeats,listSkills,equipmentList,forcePowers,SR);
+            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR);
     
         document.write(output);
 }
