@@ -62,30 +62,94 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
     if (otherMeleeAttack != "") {
         otherMelee = "<strong>Melee:</strong> "+otherMeleeAttack+"<br>";
+        if (otherMeleeAttack.includes(" -")) {
+            let otherMeleeAttackTemp = otherMeleeAttack.split(" -");
+            otherMelee = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherMeleeAttackTemp[0]+"'>"+otherMeleeAttackTemp[0]+"</a> -"+otherMeleeAttackTemp[1]+"<br>";
+        }
+        else {
+            let otherMeleeAttackTemp = otherMeleeAttack.split(" +");
+            otherMelee = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherMeleeAttackTemp[0]+"'>"+otherMeleeAttackTemp[0]+"</a> +"+otherMeleeAttackTemp[1]+"<br>";
+        }
     }
     if (advancedMelee != "") {
-        advancedMeleeAttack = "<strong>Melee:</strong> "+advancedMelee+"<br>";
+        if (advancedMelee.includes(" -")) {
+            let advancedMeleeTemp = advancedMelee.split(" -");
+            advancedMeleeAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+advancedMeleeTemp[0]+"'>"+advancedMeleeTemp[0]+"</a> -"+advancedMeleeTemp[1]+"<br>";
+        }
+        else {
+            let advancedMeleeTemp = advancedMelee.split(" +");
+            advancedMeleeAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+advancedMeleeTemp[0]+"'>"+advancedMeleeTemp[0]+"</a> +"+advancedMeleeTemp[1]+"<br>";
+        }
     }
     if (lightsaber != "") {
-        lightsaberAttack = "<strong>Melee:</strong> "+lightsaber+"<br>";
+        if (lightsaber.includes(" -")) {
+            let lightsaberTemp = lightsaber.split(" -");
+            lightsaberAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+lightsaberTemp[0]+"'>"+lightsaberTemp[0]+"</a> -"+lightsaberTemp[1]+"<br>";
+        }
+        else {
+            let lightsaberTemp = lightsaber.split(" +");
+            lightsaberAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+lightsaberTemp[0]+"'>"+lightsaberTemp[0]+"</a> +"+lightsaberTemp[1]+"<br>";
+        }
     }
     if (simpleMelee != "") {
-        simpleMeleeAttack = "<strong>Melee:</strong> "+simpleMelee+"<br>";
+        if (simpleMelee.includes(" -")) {
+            let simpleMeleeTemp = simpleMelee.split(" -");
+            simpleMeleeAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleMeleeTemp[0]+"'>"+simpleMeleeTemp[0]+"</a> -"+simpleMeleeTemp[1]+"<br>";
+        }
+        else {
+            let simpleMeleeTemp = simpleMelee.split(" +");
+            simpleMeleeAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleMeleeTemp[0]+"'>"+simpleMeleeTemp[0]+"</a> +"+simpleMeleeTemp[1]+"<br>";
+        }
     }
     if (simpleRanged != "") {
-        simpleRangedAttack = "<strong>Ranged:</strong> "+simpleRanged+"<br>";
+        if (simpleRanged.includes(" -")) {
+            let simpleRangedTemp = simpleRanged.split(" -");
+            simpleRangedAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleRangedTemp[0]+"'>"+simpleRangedTemp[0]+"</a> -"+simpleRangedTemp[1]+"<br>";
+        }
+        else {
+            let simpleRangedTemp = simpleRanged.split(" +");
+            simpleRangedAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleRangedTemp[0]+"'>"+simpleRangedTemp[0]+"</a> +"+simpleRangedTemp[1]+"<br>";
+        }
     }
     if (otherRangedAttack != "") {
-        otherRanged = "<strong>Ranged:</strong> "+otherRangedAttack+"<br>";
+        if (otherRangedAttack.includes(" -")) {
+            let otherRangedAttackTemp = otherRangedAttack.split(" -");
+            otherRanged = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherRangedAttackTemp[0]+"'>"+otherRangedAttackTemp[0]+"</a> -"+otherRangedAttackTemp[1]+"<br>";
+        }
+        else {
+            let otherRangedAttackTemp = otherRangedAttack.split(" +");
+            otherRanged = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherRangedAttackTemp[0]+"'>"+otherRangedAttackTemp[0]+"</a> +"+otherRangedAttackTemp[1]+"<br>";
+        }
     }
     if (pistol != "") {
-        pistolAttack = "<strong>Ranged:</strong> "+pistol+"<br>";
+        if (pistol.includes(" -")) {
+            let pistolTemp = pistol.split(" -");
+            pistolAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+pistolTemp[0]+"'>"+pistolTemp[0]+"</a> -"+pistolTemp[1]+"<br>";
+        }
+        else {
+            let pistolTemp = pistol.split(" +");
+            pistolAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+pistolTemp[0]+"'>"+pistolTemp[0]+"</a> +"+pistolTemp[1]+"<br>";
+        }
     }
     if (rifle != "") {
-        rifleAttack = "<strong>Ranged:</strong> "+rifle+"<br>";
+        if (rifle.includes(" -")) {
+            let rifleTemp = rifle.split(" -");
+            rifleAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+rifleTemp[0]+"'>"+rifleTemp[0]+"</a> -"+rifleTemp[1]+"<br>";
+        }
+        else {
+            let rifleTemp = rifle.split(" +");
+            rifleAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+rifleTemp[0]+"'>"+rifleTemp[0]+"</a> +"+rifleTemp[1]+"<br>";
+        }
     }
     if (heavyWeapon != "") {
-        heavyWeaponAttack = "<strong>Ranged:</strong> "+heavyWeapon+"<br>";
+        if (heavyWeapon.includes(" -")) {
+            let heavyWeaponTemp = heavyWeapon.split(" -");
+            heavyWeaponAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+heavyWeaponTemp[0]+"'>"+heavyWeaponTemp[0]+"</a> -"+heavyWeaponTemp[1]+"<br>";
+        }
+        else {
+            let heavyWeaponTemp = heavyWeapon.split(" +");
+            heavyWeaponAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+heavyWeaponTemp[0]+"'>"+heavyWeaponTemp[0]+"</a> +"+heavyWeaponTemp[1]+"<br>";
+        }
     }
     if (other != "") {
         otherAttack = "<strong>Ranged:</strong> "+other+"<br>";
@@ -149,7 +213,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         space+
         maneuverDisplay+
         powerDisplay+
-        "<strong>Species Traits ("+species+"):</strong> "+traitDisplay+"<br>"+
+        "<strong>Species Traits (<a href='https://swse.fandom.com/wiki/"+species+"'>"+species+"</a>):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
         "<strong>Talents:</strong> "+listTalents+"<br>"+

@@ -70,10 +70,10 @@ export function influenceTalents(talents,available,skills,feats,BAB,forcePowers,
     if (randomNum == 0 && available.includes("CR")) {
         talent = "Presence";
     }
-    else if (randomNum == 1 && available.includes("CR") && talents.includes("Presence") && talents.includes("Improved Weaken Resolve")) {
+    else if (randomNum == 1 && available.includes("CR") && talents.includes("Presence")) {
         talent = "Demand Surrender";
     }
-    else if (randomNum == 2 && available.includes("CR") && talents.includes("Presence")) {
+    else if (randomNum == 2 && available.includes("CR") && talents.includes("Presence") && talents.includes("Weaken Resolve")) {
         talent = "Improved Weaken Resolve";
     }
     else if (randomNum == 3 && available.includes("CR") && talents.includes("Presence")) {

@@ -24,13 +24,13 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
         let randomNum = Math.floor(Math.random() * 10);
 
         if (randomNum == 0) {
-            simpleRangedWeapon = "Bow (10 Arrows)";
+            simpleRangedWeapon = "Bow";
             weaponSize = 2;
             simpleRangedDice = 1;
             simpleRangedDie = 6;
         }
         if (randomNum == 1 && available.includes("CR")) {
-            simpleRangedWeapon = "Sling (10 Stones)";
+            simpleRangedWeapon = "Sling";
             weaponSize = 0;
             simpleRangedDice = 1;
             simpleRangedDie = 4;
@@ -48,13 +48,13 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
             simpleRangedDie = 10;
         }
         if (randomNum == 4 && available.includes("LECG")) {
-            simpleRangedWeapon = "Razor Bug (3)";
+            simpleRangedWeapon = "Razor Bug";
             weaponSize = 0;
             simpleRangedDice = 2;
             simpleRangedDie = 8;
         }
         if (randomNum == 5 && available.includes("LECG")) {
-            simpleRangedWeapon = "Thud Bug (3)";
+            simpleRangedWeapon = "Thud Bug";
             weaponSize = 0;
             simpleRangedDice = 2;
             simpleRangedDie = 8;
@@ -79,7 +79,7 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
             simpleRangedDie = 8;
         }
         if (randomNum == 9 && available.includes("HC")) {
-            simpleRangedWeapon = "Pulley Bow (10 Arrows)";
+            simpleRangedWeapon = "Pulley Bow";
             weaponSize = 2;
             simpleRangedDice = 1;
             simpleRangedDie = 8;
@@ -114,6 +114,15 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
     let string = simpleRangedWeapon + " " + simpleRangedAttack +" ("+ simpleRangedDice+"d"+simpleRangedDie+simpleRangedDamage + special + ")";
     if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         simpleRangedWeapon = simpleRangedWeapon + " (2)";
+    }
+    if (simpleRangedWeapon == "Bow" || simpleRangedWeapon == "Pulley Bow" || simpleRangedWeapon == "Crossbow") {
+        simpleRangedWeapon = simpleRangedWeapon + " (10 Arrows)";
+    }
+    else if (simpleRangedWeapon == "Sling") {
+        simpleRangedWeapon = simpleRangedWeapon + " (10 Stones)";
+    }
+    else if (simpleRangedWeapon == "Razor Bug" || simpleRangedWeapon == "Thud Bug") {
+        simpleRangedWeapon = simpleRangedWeapon + " (3)";
     }
 
     return [string,simpleRangedWeapon];
