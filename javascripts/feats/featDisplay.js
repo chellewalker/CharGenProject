@@ -15,7 +15,7 @@ export function displayFeats(feats) {
             }
         }
         else {
-            featDisplay += "<a href='https://swse.fandom.com/wiki/"+feats[count]+"'>"+feats[count]+"</a>";
+            featDisplay += "<a href='https://swse.fandom.com/wiki/"+feats[count]+"' target='_blank' rel='noopener noreferrer'>"+feats[count]+"</a>";
         }
     }
 

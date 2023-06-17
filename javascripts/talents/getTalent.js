@@ -85,7 +85,7 @@ export function displayTalents(talents) {
             }
         }
         else {
-            talentDisplay += "<a href='https://swse.fandom.com/wiki/"+talents[count]+"'>"+talents[count]+"</a>";
+            talentDisplay += "<a href='https://swse.fandom.com/wiki/"+talents[count]+"' target='_blank' rel='noopener noreferrer'>"+talents[count]+"</a>";
         }
     }
 

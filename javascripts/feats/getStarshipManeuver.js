@@ -143,19 +143,19 @@ export function displayStarshipManeuvers(starshipManeuvers) {
         if (count == 0) {
             if (starshipManeuvers[count].includes(" (")) {
                 let temp = starshipManeuvers[count].split(" (");
-                maneuvers += "<i><a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a></i> ("+temp[1];
+                maneuvers += "<i><a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a></i> ("+temp[1];
             }
             else {
-                maneuvers += "<i><a href='https://swse.fandom.com/wiki/"+starshipManeuvers[count]+"'>"+starshipManeuvers[count]+"</a></i>";
+                maneuvers += "<i><a href='https://swse.fandom.com/wiki/"+starshipManeuvers[count]+"' target='_blank' rel='noopener noreferrer'>"+starshipManeuvers[count]+"</a></i>";
             }
         }
         else {
             if (starshipManeuvers[count].includes(" (")) {
                 let temp = starshipManeuvers[count].split(" (");
-                maneuvers += ", <i><a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a></i> ("+temp[1];
+                maneuvers += ", <i><a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a></i> ("+temp[1];
             }
             else {
-                maneuvers += ", <i><a href='https://swse.fandom.com/wiki/"+starshipManeuvers[count]+"'>"+starshipManeuvers[count]+"</a></i>";
+                maneuvers += ", <i><a href='https://swse.fandom.com/wiki/"+starshipManeuvers[count]+"' target='_blank' rel='noopener noreferrer'>"+starshipManeuvers[count]+"</a></i>";
             }
         }
     }

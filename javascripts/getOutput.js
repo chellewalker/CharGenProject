@@ -69,91 +69,91 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         otherMelee = "<strong>Melee:</strong> "+otherMeleeAttack+"<br>";
         if (otherMeleeAttack.includes(" -")) {
             let otherMeleeAttackTemp = otherMeleeAttack.split(" -");
-            otherMelee = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+otherMeleeAttackTemp[0]+"'>"+otherMeleeAttackTemp[0]+"</a> -"+otherMeleeAttackTemp[1]+"<br>";
+            otherMelee = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+otherMeleeAttackTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+otherMeleeAttackTemp[0]+"</a> -"+otherMeleeAttackTemp[1]+"<br>";
         }
         else {
             let otherMeleeAttackTemp = otherMeleeAttack.split(" +");
-            otherMelee = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+otherMeleeAttackTemp[0]+"'>"+otherMeleeAttackTemp[0]+"</a> +"+otherMeleeAttackTemp[1]+"<br>";
+            otherMelee = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+otherMeleeAttackTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+otherMeleeAttackTemp[0]+"</a> +"+otherMeleeAttackTemp[1]+"<br>";
         }
     }
     if (advancedMelee != "") {
         if (advancedMelee.includes(" -")) {
             let advancedMeleeTemp = advancedMelee.split(" -");
-            advancedMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+advancedMeleeTemp[0]+"'>"+advancedMeleeTemp[0]+"</a> -"+advancedMeleeTemp[1]+"<br>";
+            advancedMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+advancedMeleeTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+advancedMeleeTemp[0]+"</a> -"+advancedMeleeTemp[1]+"<br>";
         }
         else {
             let advancedMeleeTemp = advancedMelee.split(" +");
-            advancedMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+advancedMeleeTemp[0]+"'>"+advancedMeleeTemp[0]+"</a> +"+advancedMeleeTemp[1]+"<br>";
+            advancedMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+advancedMeleeTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+advancedMeleeTemp[0]+"</a> +"+advancedMeleeTemp[1]+"<br>";
         }
     }
     if (lightsaber != "") {
         if (lightsaber.includes(" -")) {
             let lightsaberTemp = lightsaber.split(" -");
-            lightsaberAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+lightsaberTemp[0]+"'>"+lightsaberTemp[0]+"</a> -"+lightsaberTemp[1]+"<br>";
+            lightsaberAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+lightsaberTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+lightsaberTemp[0]+"</a> -"+lightsaberTemp[1]+"<br>";
         }
         else {
             let lightsaberTemp = lightsaber.split(" +");
-            lightsaberAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+lightsaberTemp[0]+"'>"+lightsaberTemp[0]+"</a> +"+lightsaberTemp[1]+"<br>";
+            lightsaberAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+lightsaberTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+lightsaberTemp[0]+"</a> +"+lightsaberTemp[1]+"<br>";
         }
     }
     if (simpleMelee != "") {
         if (simpleMelee.includes(" -")) {
             let simpleMeleeTemp = simpleMelee.split(" -");
-            simpleMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+simpleMeleeTemp[0]+"'>"+simpleMeleeTemp[0]+"</a> -"+simpleMeleeTemp[1]+"<br>";
+            simpleMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+simpleMeleeTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+simpleMeleeTemp[0]+"</a> -"+simpleMeleeTemp[1]+"<br>";
         }
         else {
             let simpleMeleeTemp = simpleMelee.split(" +");
-            simpleMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+simpleMeleeTemp[0]+"'>"+simpleMeleeTemp[0]+"</a> +"+simpleMeleeTemp[1]+"<br>";
+            simpleMeleeAttack = "<strong>Melee:</strong> <a href='https://swse.fandom.com/wiki/"+simpleMeleeTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+simpleMeleeTemp[0]+"</a> +"+simpleMeleeTemp[1]+"<br>";
         }
     }
     if (simpleRanged != "") {
         if (simpleRanged.includes(" -")) {
             let simpleRangedTemp = simpleRanged.split(" -");
-            simpleRangedAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleRangedTemp[0]+"'>"+simpleRangedTemp[0]+"</a> -"+simpleRangedTemp[1]+"<br>";
+            simpleRangedAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleRangedTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+simpleRangedTemp[0]+"</a> -"+simpleRangedTemp[1]+"<br>";
         }
         else {
             let simpleRangedTemp = simpleRanged.split(" +");
-            simpleRangedAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleRangedTemp[0]+"'>"+simpleRangedTemp[0]+"</a> +"+simpleRangedTemp[1]+"<br>";
+            simpleRangedAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+simpleRangedTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+simpleRangedTemp[0]+"</a> +"+simpleRangedTemp[1]+"<br>";
         }
     }
     if (otherRangedAttack != "") {
         if (otherRangedAttack.includes(" -")) {
             let otherRangedAttackTemp = otherRangedAttack.split(" -");
-            otherRanged = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherRangedAttackTemp[0]+"'>"+otherRangedAttackTemp[0]+"</a> -"+otherRangedAttackTemp[1]+"<br>";
+            otherRanged = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherRangedAttackTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+otherRangedAttackTemp[0]+"</a> -"+otherRangedAttackTemp[1]+"<br>";
         }
         else {
             let otherRangedAttackTemp = otherRangedAttack.split(" +");
-            otherRanged = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherRangedAttackTemp[0]+"'>"+otherRangedAttackTemp[0]+"</a> +"+otherRangedAttackTemp[1]+"<br>";
+            otherRanged = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+otherRangedAttackTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+otherRangedAttackTemp[0]+"</a> +"+otherRangedAttackTemp[1]+"<br>";
         }
     }
     if (pistol != "") {
         if (pistol.includes(" -")) {
             let pistolTemp = pistol.split(" -");
-            pistolAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+pistolTemp[0]+"'>"+pistolTemp[0]+"</a> -"+pistolTemp[1]+"<br>";
+            pistolAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+pistolTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+pistolTemp[0]+"</a> -"+pistolTemp[1]+"<br>";
         }
         else {
             let pistolTemp = pistol.split(" +");
-            pistolAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+pistolTemp[0]+"'>"+pistolTemp[0]+"</a> +"+pistolTemp[1]+"<br>";
+            pistolAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+pistolTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+pistolTemp[0]+"</a> +"+pistolTemp[1]+"<br>";
         }
     }
     if (rifle != "") {
         if (rifle.includes(" -")) {
             let rifleTemp = rifle.split(" -");
-            rifleAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+rifleTemp[0]+"'>"+rifleTemp[0]+"</a> -"+rifleTemp[1]+"<br>";
+            rifleAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+rifleTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+rifleTemp[0]+"</a> -"+rifleTemp[1]+"<br>";
         }
         else {
             let rifleTemp = rifle.split(" +");
-            rifleAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+rifleTemp[0]+"'>"+rifleTemp[0]+"</a> +"+rifleTemp[1]+"<br>";
+            rifleAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+rifleTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+rifleTemp[0]+"</a> +"+rifleTemp[1]+"<br>";
         }
     }
     if (heavyWeapon != "") {
         if (heavyWeapon.includes(" -")) {
             let heavyWeaponTemp = heavyWeapon.split(" -");
-            heavyWeaponAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+heavyWeaponTemp[0]+"'>"+heavyWeaponTemp[0]+"</a> -"+heavyWeaponTemp[1]+"<br>";
+            heavyWeaponAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+heavyWeaponTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+heavyWeaponTemp[0]+"</a> -"+heavyWeaponTemp[1]+"<br>";
         }
         else {
             let heavyWeaponTemp = heavyWeapon.split(" +");
-            heavyWeaponAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+heavyWeaponTemp[0]+"'>"+heavyWeaponTemp[0]+"</a> +"+heavyWeaponTemp[1]+"<br>";
+            heavyWeaponAttack = "<strong>Ranged:</strong> <a href='https://swse.fandom.com/wiki/"+heavyWeaponTemp[0]+"' target='_blank' rel='noopener noreferrer'>"+heavyWeaponTemp[0]+"</a> +"+heavyWeaponTemp[1]+"<br>";
         }
     }
     if (other != "") {
@@ -218,7 +218,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         space+
         maneuverDisplay+
         powerDisplay+
-        "<strong>Species Traits (<a href='https://swse.fandom.com/wiki/"+species+"'>"+species+"</a>):</strong> "+traitDisplay+"<br>"+
+        "<strong>Species Traits (<a href='https://swse.fandom.com/wiki/"+species+"' target='_blank' rel='noopener noreferrer'>"+species+"</a>):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
         "<strong>Talents:</strong> "+listTalents+"<br>"+
