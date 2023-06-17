@@ -1,5 +1,6 @@
 export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,size) {
     let advancedMeleeWeapon = "";
+    let special = "";
     let weaponSize;
     let advancedMeleeDice;
     let advancedMeleeDie;
@@ -18,7 +19,7 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
     let advancedMeleeAttackRaw = BAB + Math.floor((str-10)/2);
 
     while (advancedMeleeWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 9);
+        let randomNum = Math.floor(Math.random() * 23);
 
         if (randomNum == 0) {
             advancedMeleeWeapon = "Vibroblade";
@@ -74,6 +75,93 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
             advancedMeleeDice = 2;
             advancedMeleeDie = 6;
         }
+        if (randomNum == 9 && available.includes("FUCG") && size != "Small") {
+            advancedMeleeWeapon = "Power Hammer";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 12;
+        }
+        if (randomNum == 10 && available.includes("FUCG") && size != "Small") {
+            advancedMeleeWeapon = "Vibrosword";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 8;
+        }
+        if (randomNum == 11 && available.includes("CWCG")) {
+            advancedMeleeWeapon = "Vibrorapier";
+            weaponSize = 1;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 12 && available.includes("LECG")) {
+            advancedMeleeWeapon = "Shock Whip";
+            weaponSize = 0;
+            advancedMeleeDice = 1;
+            advancedMeleeDie = 6;
+            special = ", 2-Square Reach";
+        }
+        if (randomNum == 13 && available.includes("JATM") && size != "Small") {
+            advancedMeleeWeapon = "San-Ni Staff";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 14 && available.includes("RECG") && size != "Small") {
+            advancedMeleeWeapon = "Energy Lance";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 8;
+        }
+        if (randomNum == 15 && available.includes("RECG") && size != "Small") {
+            advancedMeleeWeapon = "Power Lance";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 8;
+        }
+        if (randomNum == 16 && available.includes("GaW") && size != "Small") {
+            advancedMeleeWeapon = "Shock Stick";
+            weaponSize = 2;
+            advancedMeleeDice = 3;
+            advancedMeleeDie = 6;
+            special = " (Stun)";
+        }
+        if (randomNum == 17 && available.includes("GaW") && size != "Small") {
+            advancedMeleeWeapon = "Static Pike";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 18 && available.includes("GaW") && size != "Small") {
+            advancedMeleeWeapon = "Vibrolance";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 10;
+        }
+        if (randomNum == 19 && available.includes("UR")) {
+            advancedMeleeWeapon = "Electropole";
+            weaponSize = 1;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 8;
+        }
+        if (randomNum == 20 && available.includes("WE")) {
+            advancedMeleeWeapon = "Stun Bayonet";
+            weaponSize = 2;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 8;
+            special = " (Stun)";
+        }
+        if (randomNum == 21 && available.includes("HC")) {
+            advancedMeleeWeapon = "Devastator Vibroblade";
+            weaponSize = 0;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
+        if (randomNum == 22 && available.includes("HC")) {
+            advancedMeleeWeapon = "Vibroarbir Blade";
+            weaponSize = 0;
+            advancedMeleeDice = 2;
+            advancedMeleeDie = 6;
+        }
     }
 
     if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize < weaponSize) {
@@ -114,7 +202,7 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
     else {
         advancedMeleeDamage = "+" + advancedMeleeDamageRaw;
     }
-    let string = advancedMeleeWeapon + " " + advancedMeleeAttack +" ("+ advancedMeleeDice+"d"+advancedMeleeDie+advancedMeleeDamage + ")";
+    let string = advancedMeleeWeapon + " " + advancedMeleeAttack +" ("+ advancedMeleeDice+"d"+advancedMeleeDie+advancedMeleeDamage + special + ")";
     if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         advancedMeleeWeapon = advancedMeleeWeapon + " (2)";
     }
