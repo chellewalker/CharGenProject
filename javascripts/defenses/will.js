@@ -28,6 +28,9 @@ export function getWill(classes,wis,level,speciesTraits,feats) {
         if (feats.includes("Improved Defenses")) {
             will++;
         }
+        if (talents.includes("Force of Will")) {
+            will += 2;
+        }
 
     return will;
 }
