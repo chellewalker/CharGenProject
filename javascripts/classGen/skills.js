@@ -112,6 +112,9 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
                     if (randomNum2 == 0) {
                         thisSkill = "Use the Force";
                     }
+                    if (skills.includes(thisSkill)) {
+                        thisSkill = "";
+                    }
 
                 if (classSkills.includes(thisSkill) && thisSkill != "") {
                     return thisSkill;
