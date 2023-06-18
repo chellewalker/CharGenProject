@@ -112,18 +112,14 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
                     if (randomNum2 == 0) {
                         thisSkill = "Use the Force";
                     }
-                
-                if (skills.includes(thisSkill)) {
-                    thisSkill = "";
-                }
-                if (classSkills.includes(thisSkill)) {
 
+                if (classSkills.includes(thisSkill) && thisSkill != "") {
+                    return thisSkill;
                 }
                 else {
                     thisSkill = "";
                 }
         }
-        return thisSkill;
 }
 
 export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
@@ -141,14 +137,14 @@ export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
                     thisSkill = "";
                 }
                 if (thisSkill == "Use the Force") {
-                    if (feats.includes("Force Sensitivity")) {
+                    if (feats.includes("Force Sensitivity") && thisSkill != "") {
                         return thisSkill;
                     }
                     else {
                         thisSkill = "";
                     }
                 }
-                if (getClassSkills(speciesTraits,classes,feats,talents).includes(thisSkill)) {
+                if (getClassSkills(speciesTraits,classes,feats,talents).includes(thisSkill) && thisSkill != "") {
                     return thisSkill;
                 }
                 else {
