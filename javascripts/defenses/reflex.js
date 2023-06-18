@@ -56,7 +56,7 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
     return reflex;
 }
 
-export function getFlatFooted(reflex,dex,feats) {
+export function getFlatFooted(reflex,dex,feats,talents) {
     let flatFooted;
     if (dex > 11) {
         flatFooted = reflex - Math.floor((dex-10)/2);

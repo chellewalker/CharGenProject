@@ -1,57 +1,57 @@
-export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
     let count = 0;
     let talent = "";
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 16);
-        let randomNum = Math.floor(Math.random() * 5);
+        let randomNum = Math.floor(Math.random() * 6);
     if (randomNum == 0) {
-        talent = influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 1) {
-        talent = inspirationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = inspirationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 2) {
-        talent = leadershipTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = leadershipTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 3) {
-        talent = lineageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = lineageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 4 && available.includes("KotORCG")) {
-        talent = fencingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = fencingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 5 && available.includes("FUCG")) {
-        talent = ideologueTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = ideologueTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 6 && available.includes("SaV")) {
-        talent = disgraceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = disgraceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 7 && available.includes("CWCG")) {
-        talent = collaboratorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = collaboratorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 8 && available.includes("CWCG")) {
-        talent = loyalTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = loyalTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 9 && available.includes("LECG")) {
-        talent = provocateurTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = provocateurTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 10 && available.includes("RECG")) {
-        talent = gamblingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = gamblingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 11 && available.includes("GaW")) {
-        talent = anticipationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = anticipationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 12 && available.includes("GoI")) {
-        talent = masterTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = masterTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 13 && available.includes("GoI")) {
-        talent = skillTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = skillTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 14 && available.includes("GoI")) {
-        talent = superiorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = superiorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 15 && available.includes("UR")) {
-        talent = exileTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = exileTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";
@@ -60,7 +60,7 @@ export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     return talent;
 }
 
-export function influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -96,7 +96,7 @@ export function influenceTalents(talents,available,skills,feats,BAB,forcePowers,
     return talent;
 }
 
-export function inspirationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function inspirationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -135,7 +135,7 @@ export function inspirationTalents(talents,available,skills,feats,BAB,forcePower
     return talent;
 }
 
-export function leadershipTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function leadershipTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -186,7 +186,7 @@ export function leadershipTalents(talents,available,skills,feats,BAB,forcePowers
     return talent;
 }
 
-export function lineageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function lineageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -225,7 +225,7 @@ export function lineageTalents(talents,available,skills,feats,BAB,forcePowers,li
     return talent;
 }
 
-export function fencingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function fencingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -246,6 +246,39 @@ export function fencingTalents(talents,available,skills,feats,BAB,forcePowers,li
     }
     else if (randomNum == 4 && talents.includes("Noble Fencing Style") && BAB >= 5) {
         talent = "Transposing Strike";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function ideologueTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Instruction";
+    }
+    else if (randomNum == 1 && cha >= 13) {
+        talent = "Idealist";
+    }
+    else if (randomNum == 2) {
+        talent = "Know Your Enemy";
+    }
+    else if (randomNum == 3 && talents.includes("Know Your Enemy")) {
+        talent = "Known Dissident";
+    }
+    else if (randomNum == 4) {
+        talent = "Lead by Example";
     }
     if (talents.includes(talent)) {
         talent = "";

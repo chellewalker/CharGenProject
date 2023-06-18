@@ -1,4 +1,4 @@
-export function getFortitude(classes,con,level,speciesTraits,feats,armorFort) {
+export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,talents) {
 
     let classFortitude = 0;
 
@@ -32,7 +32,7 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort) {
     return fortitude;
 }
 
-export function getDamageThreshold(fortitude,size,feats) {
+export function getDamageThreshold(fortitude,size,feats,talents) {
     let damageThreshold = fortitude;
         if (size == "Large") {
             damageThreshold += 5;

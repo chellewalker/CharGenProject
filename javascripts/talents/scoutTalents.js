@@ -4,7 +4,7 @@ export function scoutTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 5);
+        let randomNum = Math.floor(Math.random() * 6);
     if (randomNum == 0) {
         talent = awarenessTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -243,6 +243,42 @@ export function hyperspaceTalents(talents,available,skills,feats,BAB,forcePowers
     }
     else if (randomNum == 5 && available.includes("UR") && skills.includes("Stealth")) {
         talent = "Silent Movement";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function spyTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 6);
+
+    if (randomNum == 0) {
+        talent = "Blend In";
+    }
+    else if (randomNum == 1 && talents.includes("Blend In")) {
+        talent = "Incognito";
+    }
+    else if (randomNum == 2 && talents.includes("Surveillance")) {
+        talent = "Improved Surveillance";
+    }
+    else if (randomNum == 3 && talents.includes("Surveillance")) {
+        talent = "Intimate Knowledge";
+    }
+    else if (randomNum == 4 && skills.includes("Perception")) {
+        talent = "Surveillance";
+    }
+    else if (randomNum == 5) {
+        talent = "Traceless Tampering";
     }
     if (talents.includes(talent)) {
         talent = "";

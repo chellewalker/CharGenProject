@@ -1,4 +1,4 @@
-export function getWill(classes,wis,level,speciesTraits,feats) {
+export function getWill(classes,wis,level,speciesTraits,feats,talents) {
 
     let classWill = 0;
 

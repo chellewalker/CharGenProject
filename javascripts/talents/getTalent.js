@@ -29,7 +29,7 @@ while (talent == "") {
         talent = jediTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (thisLevel == 1) {
-        talent = nobleTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = nobleTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (thisLevel == 2) {
         talent = scoundrelTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);

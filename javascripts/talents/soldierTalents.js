@@ -4,7 +4,7 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 13);
-        let randomNum = Math.floor(Math.random() * 5);
+        let randomNum = Math.floor(Math.random() * 6);
     if (randomNum == 0) {
         talent = armorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -20,7 +20,7 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
     else if (randomNum == 4 && available.includes("KotORCG")) {
         talent = rocketTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 5 && available.includes("FUCG")) {
+    else if (randomNum == 5) {
         talent = mercenaryTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 6 && available.includes("CWCG")) {
@@ -427,6 +427,51 @@ export function rocketTalents(talents,available,skills,feats,BAB,forcePowers,lig
     }
     else if (randomNum == 3 && talents.includes("Jet Pack Training")) {
         talent = "Jet Pack Withdraw";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function mercenaryTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 9);
+
+    if (randomNum == 0 && available.includes("FUCG")) {
+        talent = "Commanding Presence";
+    }
+    else if (randomNum == 1 && available.includes("FUCG")) {
+        talent = "Dirty Fighting";
+    }
+    else if (randomNum == 2 && available.includes("FUCG") && talents.includes("Commanding Presence")) {
+        talent = "Feared Warrior";
+    }
+    else if (randomNum == 3 && available.includes("FUCG")) {
+        talent = "Focused Warrior";
+    }
+    else if (randomNum == 4 && available.includes("FUCG") && talents.includes("Dirty Fighting")) {
+        talent = "Ruthless";
+    }
+    else if (randomNum == 5 && available.includes("TotG") && feats.includes("Coordinated Attack")) {
+        talent = "Combined Fire";
+    }
+    else if (randomNum == 6 && available.includes("TotG") && talents.includes("Mercenary's Grit")) {
+        talent = "Mercenary's Determination";
+    }
+    else if (randomNum == 7 && available.includes("TotG")) {
+        talent = "Mercenary's Grit";
+    }
+    else if (randomNum == 8 && available.includes("TotG") && talents.includes("Combined Fire")) {
+        talent = "Mercenary's Teamwork";
     }
     if (talents.includes(talent)) {
         talent = "";

@@ -158,7 +158,7 @@ window.genCharacter = function genCharacter() {
                 }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 if (feats.findLast(findLast) == "Skill Training") {
-                    skills.push(getNewSkill(speciesTraits,classes,skills,feats));
+                    skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
                 if (feats.findLast(findLast) == "Force Training") {
                     forcePowers = getForcePower(forcePowers,available,wis,light,dark);
@@ -172,7 +172,7 @@ window.genCharacter = function genCharacter() {
                 if (speciesTraits.includes("Bonus Feat")) {
                     feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 if (feats.findLast(findLast) == "Skill Training") {
-                    skills.push(getNewSkill(speciesTraits,classes,skills,feats));
+                    skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
                 if (feats.findLast(findLast) == "Force Training") {
                     forcePowers = getForcePower(forcePowers,available,wis,light,dark);
@@ -197,7 +197,7 @@ window.genCharacter = function genCharacter() {
                 if (classes[thisLevel] % 2 == 0) {
                     feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                     if (feats.findLast(findLast) == "Skill Training") {
-                        skills.push(getNewSkill(speciesTraits,classes,skills,feats));
+                        skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                     }
                     skills.sort();
                 }
@@ -208,7 +208,7 @@ window.genCharacter = function genCharacter() {
             if ((count-2) % 3 == 0) {
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
             if (feats.findLast(findLast) == "Skill Training") {
-                skills.push(getNewSkill(speciesTraits,classes,skills,feats));
+                skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 skills.sort();
             }
             if (feats.findLast(findLast) == "Force Training") {
@@ -367,10 +367,10 @@ window.genCharacter = function genCharacter() {
         }
 
         let reflex = getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex);
-            let flatFooted = getFlatFooted(reflex,dex,feats);
-        let fortitude = getFortitude(classes,con,level,speciesTraits,feats,armorFort);
-            let damageThreshold = getDamageThreshold(fortitude,size,feats);
-        let will = getWill(classes,wis,level,speciesTraits,feats);
+            let flatFooted = getFlatFooted(reflex,dex,feats,talents);
+        let fortitude = getFortitude(classes,con,level,speciesTraits,feats,armorFort,talents);
+            let damageThreshold = getDamageThreshold(fortitude,size,feats,talents);
+        let will = getWill(classes,wis,level,speciesTraits,feats,talents);
 
         //speed
         let speed = getSpeed(speciesID,talents,feats,armorType);

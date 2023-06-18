@@ -11,7 +11,7 @@ export function getSkills (int,firstClass,speciesTraits,classes) {
     return skills;
 }
 
-export function getClassSkills(speciesTraits,classes,feats) {
+export function getClassSkills(speciesTraits,classes,feats,talents) {
     
         let jediSkills = "Acrobatics,Endurance,Initiative,Jump,Knowledge (Bureaucracy),Knowledge (Galactic Lore),Knowledge (Life Sciences),Knowledge (Physical Sciences),Knowledge (Social Sciences),Knowledge (Tactics),Knowledge (Technology),Mechanics,Perception,Pilot";
         let nobleSkills = "Deception,Gather Information,Initiative,Knowledge (Bureaucracy),Knowledge (Galactic Lore),Knowledge (Life Sciences),Knowledge (Physical Sciences),Knowledge (Social Sciences),Knowledge (Tactics),Knowledge (Technology),Perception,Persuasion,Pilot,Ride,Treat Injury,Use Computer";
@@ -40,6 +40,9 @@ export function getClassSkills(speciesTraits,classes,feats) {
         }
         if (feats.includes("Force Sensitivity")) {
             classSkills += "Use the Force,";
+        }
+        if (talents.includes("Commanding Presence")) {
+            classSkills += "Persuasion,";
         }
 
     return classSkills;
@@ -123,7 +126,7 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
         return thisSkill;
 }
 
-export function getNewSkill(speciesTraits,classes,skills,feats) {
+export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
     let skillsList = ["Acrobatics","Climb","Deception","Endurance","Gather Information","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Persuasion","Pilot","Ride","Stealth","Survival","Swim","Treat Injury","Use Computer","Use the Force"];
     
             let thisSkill = "";
@@ -139,20 +142,19 @@ export function getNewSkill(speciesTraits,classes,skills,feats) {
                 }
                 if (thisSkill == "Use the Force") {
                     if (feats.includes("Force Sensitivity")) {
-
+                        return thisSkill;
                     }
                     else {
                         thisSkill = "";
                     }
                 }
-                /*if (getClassSkills(speciesTraits,classes,feats).includes(thisSkill)) {
-
+                if (getClassSkills(speciesTraits,classes,feats,talents).includes(thisSkill)) {
+                    return thisSkill;
                 }
                 else {
                     thisSkill = "";
-                }*/
+                }
         }
-        return thisSkill;
 }
 
 export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,speciesTraits,feats,talents,equipment,implant) {
