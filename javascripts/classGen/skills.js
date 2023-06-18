@@ -108,7 +108,7 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
             let thisSkill = "";
             while (thisSkill == "") {
                 thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
-                    let randomNum2 = Math.round(Math.random() * 3);
+                    let randomNum2 = Math.round(Math.random() * 2);
                     if (randomNum2 == 0) {
                         thisSkill = "Use the Force";
                     }
