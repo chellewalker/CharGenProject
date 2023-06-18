@@ -1,11 +1,18 @@
 export function getSkills (int,firstClass,speciesTraits,classes) {
     let skills = [];
+    let temp = "";
 
         let trained = getAvailSkills(int,firstClass,speciesTraits);
         let count = 0;
 
         for (count = 0; count < trained; count++) {
-            skills.push(getFirstSkills(speciesTraits,firstClass,skills));
+            temp = getFirstSkills(speciesTraits,firstClass,skills);
+            if (temp != "") {
+                skills.push(temp);
+            }
+            else {
+                count--;
+            }
     }
 
     return skills;
@@ -112,6 +119,10 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
                     if (randomNum2 == 0) {
                         thisSkill = "Use the Force";
                     }
+                    let randomNum3 = Math.round(Math.random() * 2);
+                    if (randomNum3 == 0) {
+                        thisSkill = "Survival";
+                    }
                     if (skills.includes(thisSkill)) {
                         thisSkill = "";
                     }
@@ -134,6 +145,10 @@ export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
                     let randomNum2 = Math.round(Math.random() * 2);
                     if (randomNum2 == 0 && feats.includes("Force Sensitivity")) {
                         thisSkill = "Use the Force";
+                    }
+                    let randomNum3 = Math.round(Math.random() * 2);
+                    if (randomNum3 == 0) {
+                        thisSkill = "Survival";
                     }
                 
                 if (skills.includes(thisSkill)) {
