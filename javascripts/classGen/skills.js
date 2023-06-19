@@ -18,43 +18,6 @@ export function getSkills (int,firstClass,speciesTraits,classes) {
     return skills;
 }
 
-export function getClassSkills(speciesTraits,classes,feats,talents) {
-    
-        let jediSkills = "Acrobatics,Endurance,Initiative,Jump,Knowledge (Bureaucracy),Knowledge (Galactic Lore),Knowledge (Life Sciences),Knowledge (Physical Sciences),Knowledge (Social Sciences),Knowledge (Tactics),Knowledge (Technology),Mechanics,Perception,Pilot";
-        let nobleSkills = "Deception,Gather Information,Initiative,Knowledge (Bureaucracy),Knowledge (Galactic Lore),Knowledge (Life Sciences),Knowledge (Physical Sciences),Knowledge (Social Sciences),Knowledge (Tactics),Knowledge (Technology),Perception,Persuasion,Pilot,Ride,Treat Injury,Use Computer";
-        let scoundrelSkills = "Acrobatics,Deception,Gather Information,Initiative,Knowledge (Bureaucracy),Knowledge (Galactic Lore),Knowledge (Life Sciences),Knowledge (Physical Sciences),Knowledge (Social Sciences),Knowledge (Tactics),Knowledge (Technology),Mechanics,Perception,Persuasion,Pilot,Stealth,Use Computer";
-        let scoutSkills = "Climb,Endurance,Initiative,Jump,Knowledge (Bureaucracy),Knowledge (Galactic Lore),Knowledge (Life Sciences),Knowledge (Physical Sciences),Knowledge (Social Sciences),Knowledge (Tactics),Knowledge (Technology),Mechanics,Perception,Pilot,Ride,Stealth,Survival,Swim";
-        let soldierSkills = "Climb,Endurance,Initiative,Jump,Knowledge (Tactics),Mechanics,Perception,Pilot,Swim,Treat Injury,Use Computer";
-    
-        let classSkills;
-        if (classes[0] > 0) {
-            classSkills += jediSkills + ",";
-        }
-        if (classes[1] > 0) {
-            classSkills += nobleSkills + ",";
-        }
-        if (classes[2] > 0) {
-            classSkills += scoundrelSkills + ",";
-        }
-        if (classes[3] > 0) {
-            classSkills += scoutSkills + ",";
-        }
-        if (classes[0] > 4) {
-            classSkills += soldierSkills + ",";
-        }
-        if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
-            classSkills += "Climb,Stealth,";
-        }
-        if (feats.includes("Force Sensitivity")) {
-            classSkills += "Use the Force,";
-        }
-        if (talents.includes("Commanding Presence")) {
-            classSkills += "Persuasion,";
-        }
-
-    return classSkills;
-}
-
 export function getAvailSkills(int,firstClass,speciesTraits) {
     
     let trained = 0;
@@ -137,8 +100,39 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
 }
 
 export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
-    let skillsList = ["Acrobatics","Climb","Deception","Endurance","Gather Information","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Persuasion","Pilot","Ride","Stealth","Survival","Swim","Treat Injury","Use Computer","Use the Force"];
+    let skillsList = ["Acrobatics","Climb","Deception","Endurance","Gather Information","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Persuasion","Pilot","Ride","Stealth","Survival","Swim","Treat Injury","Use Computer"];
     
+    let classSkills;
+    let jediSkills = ["Acrobatics","Endurance","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Pilot","Use the Force"];
+    let nobleSkills = ["Deception","Gather Information","Initiative","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Perception","Persuasion","Pilot","Ride","Treat Injury","Use Computer"];
+    let scoundrelSkills = ["Acrobatics","Deception","Gather Information","Initiative","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Persuasion","Pilot","Stealth","Use Computer"];
+    let scoutSkills = ["Climb","Endurance","Initiative","Jump","Knowledge (Bureaucracy)","Knowledge (Galactic Lore)","Knowledge (Life Sciences)","Knowledge (Physical Sciences)","Knowledge (Social Sciences)","Knowledge (Tactics)","Knowledge (Technology)","Mechanics","Perception","Pilot","Ride","Stealth","Survival","Swim"];
+    let soldierSkills = ["Climb","Endurance","Initiative","Jump","Knowledge (Tactics)","Mechanics","Perception","Pilot","Swim","Treat Injury","Use Computer"];
+
+    if (classes[0] > 0) {
+        classSkills += jediSkills;
+    }
+    if (classes[1] > 0) {
+        classSkills += nobleSkills;
+    }
+    if (classes[2] > 0) {
+        classSkills += scoundrelSkills;
+    }
+    if (classes[3] > 0) {
+        classSkills += scoutSkills;
+    }
+    if (classes[4] > 0) {
+        classSkills += soldierSkills;
+    }
+    if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
+        classSkills += "Climb","Stealth";
+    }
+    if (feats.includes("Force Sensitivity")) {
+        classSkills += "Use the Force";
+    }
+    if (talents.includes("Commanding Presence")) {
+        classSkills += "Persuasion";
+    }    
             let thisSkill = "";
             while (thisSkill == "") {
                 thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
@@ -162,7 +156,7 @@ export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
                         thisSkill = "";
                     }
                 }
-                if (getClassSkills(speciesTraits,classes,feats,talents).includes(thisSkill) && thisSkill != "") {
+                if (classSkills.includes(thisSkill) && thisSkill != "") {
                     return thisSkill;
                 }
                 else {
