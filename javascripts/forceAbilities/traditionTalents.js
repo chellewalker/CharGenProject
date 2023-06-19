@@ -24,6 +24,12 @@ export function traditionTalents(talents,available,skills,feats,BAB,forcePowers,
     else if (tradition == 8 && available.includes("KotORCG")) {
         talent = shasaTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
+    else if (tradition == 9 && available.includes("FUCG")) {
+        talent = agentsTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+    }
+    else if (tradition == 10 && available.includes("FUCG")) {
+        talent = felucianTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+    }
     if (count == 500) {
         talent = "ValidTalentNotFound";
     }
@@ -233,6 +239,76 @@ export function shasaTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     }
     else if (randomNum == 4 && available.includes("HC")) {
         talent = "Fira Mastery";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function agentsTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0) {
+        talent = "Buried Presence";
+    }
+    else if (randomNum == 1 && talents.includes("Buried Presence")) {
+        talent = "Conceal Other";
+    }
+    else if (randomNum == 2 && feats.includes("Weapon Proficiency (Pistols)") ||
+                randomNum == 2 && feats.includes("Weapon Proficiency (Rifles)")) {
+        talent = "Insightful Aim";
+    }
+    else if (randomNum == 3) {
+        talent = "Vanish";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function felucianTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 7);
+
+    if (randomNum == 0) {
+        talent = "Charm Beast";
+    }
+    else if (randomNum == 1 && talents.includes("Charm Beast")) {
+        talent = "Command Beast";
+    }
+    else if (randomNum == 2 && forcePowers.includes("Force Blast")) {
+        talent = "Detonate";
+    }
+    else if (randomNum == 3) {
+        talent = "Hive Mind";
+    }
+    else if (randomNum == 4) {
+        talent = "Infuse Weapon";
+    }
+    else if (randomNum == 5 && forcePowers.includes("Force Blast")) {
+        talent = "Sickening Blast";
+    }
+    else if (randomNum == 6 && available.includes("HC")) {
+        talent = "Skullblade Mastery";
     }
     if (talents.includes(talent)) {
         talent = "";
