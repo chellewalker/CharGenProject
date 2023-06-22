@@ -355,7 +355,6 @@ window.genCharacter = function genCharacter() {
             equipment.push(shieldTemp[0]);
             SR = shieldTemp[1];
             maxDex = Math.min(maxDex,shieldTemp[2]);
-            armorType = shieldTemp[3];
         }
 
         if (talents.includes("Armor Mastery")) {

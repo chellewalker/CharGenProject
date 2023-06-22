@@ -189,15 +189,48 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Climb)")) {
                     score += 5;
                 }
+                if (talents.includes("Shield Expert")) {
+                    if (feats.includes("Armor Proficiency (Heavy)")) {
+                        score -= 10;
+                    }
+                    else if (feats.includes("Armor Proficiency (Medium)")) {
+                        score -= 5;
+                    }
+                    else if (feats.includes("Armor Proficiency (Light)")) {
+                        score -= 2;
+                    }
+                }
             }
             if (trainedSkills[count] == "Jump") {
                 if (feats.includes("Skill Focus (Jump)")) {
                     score += 5;
                 }
+                if (talents.includes("Shield Expert")) {
+                    if (feats.includes("Armor Proficiency (Heavy)")) {
+                        score -= 10;
+                    }
+                    else if (feats.includes("Armor Proficiency (Medium)")) {
+                        score -= 5;
+                    }
+                    else if (feats.includes("Armor Proficiency (Light)")) {
+                        score -= 2;
+                    }
+                }
             }
             if (trainedSkills[count] == "Swim") {
                 if (feats.includes("Skill Focus (Swim)")) {
                     score += 5;
+                }
+                if (talents.includes("Shield Expert")) {
+                    if (feats.includes("Armor Proficiency (Heavy)")) {
+                        score -= 10;
+                    }
+                    else if (feats.includes("Armor Proficiency (Medium)")) {
+                        score -= 5;
+                    }
+                    else if (feats.includes("Armor Proficiency (Light)")) {
+                        score -= 2;
+                    }
                 }
                 if (speciesTraits.includes("Expert Swimmer")) {
                     special = " (may reroll, must take second result)";
@@ -216,10 +249,32 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Acrobatics)")) {
                     score += 5;
                 }
+                if (talents.includes("Shield Expert")) {
+                    if (feats.includes("Armor Proficiency (Heavy)")) {
+                        score -= 10;
+                    }
+                    else if (feats.includes("Armor Proficiency (Medium)")) {
+                        score -= 5;
+                    }
+                    else if (feats.includes("Armor Proficiency (Light)")) {
+                        score -= 2;
+                    }
+                }
             }
             if (trainedSkills[count] == "Initiative") {
                 if (feats.includes("Skill Focus (Initiative)")) {
                     score += 5;
+                }
+                if (talents.includes("Shield Expert")) {
+                    if (feats.includes("Armor Proficiency (Heavy)")) {
+                        score -= 10;
+                    }
+                    else if (feats.includes("Armor Proficiency (Medium)")) {
+                        score -= 5;
+                    }
+                    else if (feats.includes("Armor Proficiency (Light)")) {
+                        score -= 2;
+                    }
                 }
                 if (speciesTraits.includes("Intuitive Initiative") && talents.includes("Improved Initiative")) {
                     special = " (may reroll twice, must take second result)";
@@ -254,6 +309,17 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 else if (size == "Large") {
                 score -= 5;
                 }
+                if (talents.includes("Shield Expert")) {
+                    if (feats.includes("Armor Proficiency (Heavy)")) {
+                        score -= 10;
+                    }
+                    else if (feats.includes("Armor Proficiency (Medium)")) {
+                        score -= 5;
+                    }
+                    else if (feats.includes("Armor Proficiency (Light)")) {
+                        score -= 2;
+                    }
+                }
                 if (speciesTraits.includes("Sneaky") && talents.includes("Improved Stealth")) {
                     special = " (may reroll twice, must take second result)";
                 }
@@ -274,6 +340,17 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
             if (trainedSkills[count] == "Endurance") {
                 if (feats.includes("Skill Focus (Endurance)")) {
                     score += 5;
+                }
+                if (talents.includes("Shield Expert")) {
+                    if (feats.includes("Armor Proficiency (Heavy)")) {
+                        score -= 10;
+                    }
+                    else if (feats.includes("Armor Proficiency (Medium)")) {
+                        score -= 5;
+                    }
+                    else if (feats.includes("Armor Proficiency (Light)")) {
+                        score -= 2;
+                    }
                 }
             }
             if (score < 0) {
@@ -479,6 +556,17 @@ export function getInitiative(level,dex,skills,feats,talents,cha) {
             }
             if (feats.includes("Skill Focus (Use the Force)")) {
                 initiative += 5;
+            }
+        }
+        if (talents.includes("Shield Expert")) {
+            if (feats.includes("Armor Proficiency (Heavy)")) {
+                initiative -= 10;
+            }
+            else if (feats.includes("Armor Proficiency (Medium)")) {
+                initiative -= 5;
+            }
+            else if (feats.includes("Armor Proficiency (Light)")) {
+                initiative -= 2;
             }
         }
         let initiativeDisplay = "";
