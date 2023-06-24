@@ -3,7 +3,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 60);
+        let randomNum = Math.floor(Math.random() * 62);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -223,6 +223,29 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
         }
         else if (randomNum == 59 && available.includes("KotORCG") && BAB >= 5) {
             feat = "Withdrawal Strike";
+        }
+        else if (randomNum == 60 && available.includes("FUCG")) {
+            if (feats.includes("Double Attack (Simple Weapons)")) {
+                feat = "Savage Attack (Simple Weapons)";
+            }
+            if (feats.includes("Double Attack (Advanced Melee Weapons)")) {
+                feat = "Savage Attack (Advanced Melee Weapons)";
+            }
+            if (feats.includes("Double Attack (Heavy Weapons)")) {
+                feat = "Savage Attack (Heavy Weapons)";
+            }
+            if (feats.includes("Double Attack (Lightsabers)")) {
+                feat = "Savage Attack (Lightsabers)";
+            }
+            if (feats.includes("Double Attack (Pistols)")) {
+                feat = "Savage Attack (Pistols)";
+            }
+            if (feats.includes("Double Attack (Rifles)")) {
+                feat = "Savage Attack (Rifles)";
+            }
+        }
+        else if (randomNum == 61 && available.includes("FUCG") && feats.includes("Coordinated Attack")) {
+            feat = "Swarm";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

@@ -67,8 +67,9 @@ window.genCharacter = function genCharacter() {
         }
 
         //generate species
-        let speciesID = speciesGen(tempSpecies,available);
-        species = parseXML("xmls/species.xml","name",speciesID);
+        let speciesID;
+        onload = (speciesID = speciesGen(tempSpecies,available));
+        onload = (species = parseXML("xmls/species.xml","name",speciesID));
         let speciesMod = parseXML("xmls/species.xml","abilityMods",speciesID);
         let speciesTraits = parseXML("xmls/species.xml","speciesTraits",speciesID).split(", ");
         let tradition = getTradition(light,dark,species,available);

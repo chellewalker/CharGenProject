@@ -448,10 +448,19 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                     score += 2;
                 }
                 if (speciesTraits.includes("Heightened Awareness") && talents.includes("Acute Senses")) {
-                    special = " (may reroll twice, must take second result)";
+                    special = " (may reroll twice, must take second result";
                 }
                 else if (speciesTraits.includes("Heightened Awareness") || talents.includes("Acute Senses")) {
-                    special = " (may reroll, must take second result)";
+                    special = " (may reroll, must take second result";
+                }
+                if (feats.includes("Informer") && special != "") {
+                    special += "; may substitute for Gather Information checks";
+                }
+                else if (feats.includes("Informer")) {
+                    special += "(may substitute for Gather Information checks";
+                }
+                if (special != "") {
+                    special += ")";
                 }
             }
             if (trainedSkills[count] == "Survival") {

@@ -164,13 +164,13 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
         }
     }
 
-    if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize < weaponSize) {
+    if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize > weaponSize) {
         advancedMeleeAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((dex-10)/2),Math.floor((str-10)/2));
     }
-    else if (talents.includes("Noble Fencing Style") && relativeSize < weaponSize) {
+    else if (talents.includes("Noble Fencing Style") && relativeSize > weaponSize) {
         advancedMeleeAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((str-10)/2));
     }
-    else if (feats.includes("Weapon Finesse") && relativeSize < weaponSize) {
+    else if (feats.includes("Weapon Finesse") && relativeSize > weaponSize) {
         advancedMeleeAttackRaw = BAB + Math.max(Math.floor((dex-10)/2),Math.floor((str-10)/2));
     }
     if (feats.includes("Weapon Focus (Advanced Melee Weapons)")) {

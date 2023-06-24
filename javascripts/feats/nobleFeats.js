@@ -3,7 +3,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 35);
+        let randomNum = Math.floor(Math.random() * 38);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -110,6 +110,21 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         }
         else if (randomNum == 34 && available.includes("KotORCG")) {
             feat = "Quick Skill";
+        }
+        else if (randomNum == 35 && available.includes("FUCG") && skills.includes("Perception")) {
+            feat = "Informer";
+        }
+        else if (randomNum == 36 && available.includes("FUCG") && wis >= 13) {
+            feat = "Rapport";
+        }
+        else if (randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Bureaucracy)") ||
+                    randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Galactic Lore)") ||
+                    randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Life Sciences)") ||
+                    randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Physical Sciences)") ||
+                    randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Social Sciences)") ||
+                    randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Tactics)") ||
+                    randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Technology)")) {
+            feat = "Recall";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

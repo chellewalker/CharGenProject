@@ -3,7 +3,7 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 47);
+        let randomNum = Math.floor(Math.random() * 52);
         if (randomNum == 0 && available.includes("CR") && feats.includes("Point-Blank Shot") && feats.includes("Precise Shot") && BAB >= 4) {
             feat = "Deadeye";
         }
@@ -90,6 +90,21 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
         }
         else if (randomNum == 46 && available.includes("KotORCG")) {
             feat = "Sniper Shot";
+        }
+        else if (randomNum == 47 && available.includes("FUCG") && BAB >= 1) {
+            feat = "Advantageous Attack";
+        }
+        else if (randomNum == 48 && available.includes("FUCG") && skills.includes("Stealth")) {
+            feat = "Advantageous Cover";
+        }
+        else if (randomNum == 49 && available.includes("FUCG")) {
+            feat = "Bad Feeling";
+        }
+        else if (randomNum == 50 && available.includes("FUCG") && feats.includes("Precise Shot") && BAB >= 6) {
+            feat = "Crossfire";
+        }
+        else if (randomNum == 51 && available.includes("FUCG")) {
+            feat = "Scavenger";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

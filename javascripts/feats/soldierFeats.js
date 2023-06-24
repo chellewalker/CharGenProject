@@ -3,7 +3,7 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 120);
+        let randomNum = Math.floor(Math.random() * 129);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -387,6 +387,50 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
         }
         else if (randomNum == 119 && available.includes("KotORCG")) {
             feat = "Withdrawal Strike";
+        }
+        else if (randomNum == 120 && available.includes("FUCG") && skills.includes("Stealth")) {
+            feat = "Advantageous Cover";
+        }
+        else if (randomNum == 121 && available.includes("FUCG") && dex >= 13) {
+            feat = "Angled Throw";
+        }
+        else if (randomNum == 122 && available.includes("FUCG") && feats.includes("Coordinated Attack")) {
+            feat = "Blaster Barrage";
+        }
+        else if (randomNum == 123 && available.includes("FUCG") && feats.includes("Precise Shot") && BAB >= 6) {
+            feat = "Crossfire";
+        }
+        else if (randomNum == 124 && available.includes("FUCG") && feats.includes("Bantha Rush") && str >= 15 && BAB >= 1) {
+            feat = "Improved Bantha Rush";
+        }
+        else if (randomNum == 125 && available.includes("FUCG") && str >= 13) {
+            feat = "Mighty Throw";
+        }
+        else if (randomNum == 126 && available.includes("FUCG") && wis >= 13) {
+            feat = "Rapport";
+        }
+        else if (randomNum == 127 && available.includes("FUCG")) {
+            if (feats.includes("Double Attack (Simple Weapons)")) {
+                feat = "Savage Attack (Simple Weapons)";
+            }
+            if (feats.includes("Double Attack (Advanced Melee Weapons)")) {
+                feat = "Savage Attack (Advanced Melee Weapons)";
+            }
+            if (feats.includes("Double Attack (Heavy Weapons)")) {
+                feat = "Savage Attack (Heavy Weapons)";
+            }
+            if (feats.includes("Double Attack (Lightsabers)")) {
+                feat = "Savage Attack (Lightsabers)";
+            }
+            if (feats.includes("Double Attack (Pistols)")) {
+                feat = "Savage Attack (Pistols)";
+            }
+            if (feats.includes("Double Attack (Rifles)")) {
+                feat = "Savage Attack (Rifles)";
+            }
+        }
+        else if (randomNum == 128 && available.includes("FUCG") && BAB >= 1) {
+            feat = "Strafe";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

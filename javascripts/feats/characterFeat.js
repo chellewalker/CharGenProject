@@ -11,7 +11,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     }
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 266);
+        let randomNum = Math.floor(Math.random() * 285);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -625,6 +625,86 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 260 && available.includes("KotORCG")) {
             feat = "Withdrawal Strike";
+        }
+        else if (randomNum == 266 && available.includes("FUCG") && BAB >= 1) {
+            feat = "Advantageous Attack";
+        }
+        else if (randomNum == 267 && available.includes("FUCG") && skills.includes("Stealth")) {
+            feat = "Advantageous Cover";
+        }
+        else if (randomNum == 268 && available.includes("FUCG") && dex >= 13) {
+            feat = "Angled Throw";
+        }
+        else if (randomNum == 269 && available.includes("FUCG")) {
+            feat = "Bad Feeling";
+        }
+        else if (randomNum == 270 && available.includes("FUCG") && feats.includes("Coordinated Attack")) {
+            feat = "Blaster Barrage";
+        }
+        else if (randomNum == 271 && available.includes("FUCG") && speciesTraits.includes("Rage")) {
+            feat = "Controlled Rage";
+        }
+        else if (randomNum == 272 && available.includes("FUCG") && feats.includes("Precise Shot") && BAB >= 6) {
+            feat = "Crossfire";
+        }
+        else if (randomNum == 273 && available.includes("FUCG")) {
+            feat = "Cunning Attack";
+        }
+        else if (randomNum == 274 && available.includes("FUCG") && speciesTraits.includes("Rage") && feats.includes("Controlled Rage")) {
+            feat = "Focused Rage";
+        }
+        else if (randomNum == 275 && available.includes("FUCG") && feats.includes("Bantha Rush") && str >= 15 && BAB >= 1) {
+            feat = "Improved Bantha Rush";
+        }
+        else if (randomNum == 276 && available.includes("FUCG") && skills.includes("Perception")) {
+            feat = "Informer";
+        }
+        else if (randomNum == 277 && available.includes("FUCG") && str >= 13) {
+            feat = "Mighty Throw";
+        }
+        else if (randomNum == 278 && available.includes("FUCG") && speciesTraits.includes("Rage")) {
+            feat = "Powerful Rage";
+        }
+        else if (randomNum == 279 && available.includes("FUCG") && wis >= 13) {
+            feat = "Rapport";
+        }
+        else if (randomNum == 280 && available.includes("FUCG") && skills.includes("Knowledge (Bureaucracy)") ||
+                    randomNum == 280 && available.includes("FUCG") && skills.includes("Knowledge (Galactic Lore)") ||
+                    randomNum == 280 && available.includes("FUCG") && skills.includes("Knowledge (Life Sciences)") ||
+                    randomNum == 280 && available.includes("FUCG") && skills.includes("Knowledge (Physical Sciences)") ||
+                    randomNum == 280 && available.includes("FUCG") && skills.includes("Knowledge (Social Sciences)") ||
+                    randomNum == 280 && available.includes("FUCG") && skills.includes("Knowledge (Tactics)") ||
+                    randomNum == 280 && available.includes("FUCG") && skills.includes("Knowledge (Technology)")) {
+            feat = "Recall";
+        }
+        else if (randomNum == 281 && available.includes("FUCG")) {
+            if (feats.includes("Double Attack (Simple Weapons)")) {
+                feat = "Savage Attack (Simple Weapons)";
+            }
+            if (feats.includes("Double Attack (Advanced Melee Weapons)")) {
+                feat = "Savage Attack (Advanced Melee Weapons)";
+            }
+            if (feats.includes("Double Attack (Heavy Weapons)")) {
+                feat = "Savage Attack (Heavy Weapons)";
+            }
+            if (feats.includes("Double Attack (Lightsabers)")) {
+                feat = "Savage Attack (Lightsabers)";
+            }
+            if (feats.includes("Double Attack (Pistols)")) {
+                feat = "Savage Attack (Pistols)";
+            }
+            if (feats.includes("Double Attack (Rifles)")) {
+                feat = "Savage Attack (Rifles)";
+            }
+        }
+        else if (randomNum == 282 && available.includes("FUCG")) {
+            feat = "Scavenger";
+        }
+        else if (randomNum == 283 && available.includes("FUCG") && BAB >= 1) {
+            feat = "Strafe";
+        }
+        else if (randomNum == 284 && available.includes("FUCG") && feats.includes("Coordinated Attack")) {
+            feat = "Swarm";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
                 feat == "Skill Focus (undefined)") {
