@@ -85,6 +85,24 @@ export function getForcePower(forcePowers,available,wis,light,dark) {
         if (randomNum == 25 && available.includes("KotORCG") && dark == 1) {
             temp = "Wound";
         }
+        if (randomNum == 25 && available.includes("FUCG") && dark == 1) {
+            temp = "Corruption";
+        }
+        if (randomNum == 25 && available.includes("FUCG")) {
+            temp = "Force Blast";
+        }
+        if (randomNum == 25 && available.includes("FUCG")) {
+            temp = "Force Shield";
+        }
+        if (randomNum == 25 && available.includes("FUCG") && dark == 1) {
+            temp = "Force Storm";
+        }
+        if (randomNum == 25 && available.includes("FUCG")) {
+            temp = "Kinetic Combat";
+        }
+        if (randomNum == 25 && available.includes("FUCG")) {
+            temp = "Repulse";
+        }
         if (count == 25) {
             temp = "ValidForcePowerNotFound";
         }
