@@ -81,6 +81,18 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             exoticMeleeDice = 2;
             exoticMeleeDie = 6;
         }
+        else if (feats.includes("Exotic Weapon Proficiency (Felucian Skullblade)") || speciesTraits.includes("Weapon Familiarity (Felucian Skullblade)")) {
+            exoticMeleeWeapon = "Felucian Skullblade";
+            weaponSize = 0;
+            exoticMeleeDice = 2;
+            exoticMeleeDie = 6;
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Ryyk Blade)") || speciesTraits.includes("Weapon Familiarity (Bowcaster and Ryyk Blade)")) {
+            exoticMeleeWeapon = "Ryyk Blade";
+            weaponSize = 1;
+            exoticMeleeDice = 2;
+            exoticMeleeDie = 10;
+        }
 
     if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize < weaponSize) {
         exoticMeleeAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((dex-10)/2),Math.floor((str-10)/2));

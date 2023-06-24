@@ -1,4 +1,10 @@
-export function speciesFeats(feats,speciesTraits,skills) {
+export function speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha) {
+    if (speciesTraits.includes("Bonus Feat (Force Sensitivity)")) {
+        if (feats.includes("Force Sensitivity")) {
+        }
+        else {
+        feats.push("Force Sensitivity");
+    }}
     if (speciesTraits.includes("Bonus Feat (Improved Damage Threshold)")) {
         feats.push("Improved Damage Threshold");
     }
@@ -46,6 +52,10 @@ export function speciesFeats(feats,speciesTraits,skills) {
         skills.includes("Perception")) {
         feats.push("Skill Focus (Perception)");
     }
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Mechanics))") && 
+        skills.includes("Mechanics")) {
+        feats.push("Skill Focus (Mechanics)");
+    }
     if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Persuasion))") && 
         skills.includes("Persuasion")) {
         feats.push("Skill Focus (Persuasion)");
@@ -57,6 +67,12 @@ export function speciesFeats(feats,speciesTraits,skills) {
     if (speciesTraits.includes("Conditional Bonus Feat (Force Training)") && 
         skills.includes("Use the Force")) {
         feats.push("Force Training");
+    }
+    if (speciesTraits.includes("Conditional Bonus Feat (Precise Shot)") && feats.includes("Point-Blank Shot")) {
+        feats.push("Precise Shot");
+    }
+    if (speciesTraits.includes("Conditional Bonus Feat (Running Attack)") && str >= 13) {
+        feats.push("Running Attack");
     }
     
     return feats;

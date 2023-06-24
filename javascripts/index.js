@@ -150,7 +150,7 @@ window.genCharacter = function genCharacter() {
                 talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
-                feats = speciesFeats(feats,speciesTraits,skills);
+                feats = speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha);
                 if (feats.findLast(findLast) == "Force Training") {
                     forcePowers = getForcePower(forcePowers,available,wis,light,dark);
                     if (talents.includes("Telekinetic Prodigy")) {
@@ -159,6 +159,9 @@ window.genCharacter = function genCharacter() {
                 }
                 if (feats.findLast(findLast) == "Starship Tactics") {
                     starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
+                }
+                if (speciesTraits.includes("Force Blast")) {
+                    forcePowers.push("Force Blast");
                 }
                 feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                 if (feats.findLast(findLast) == "Skill Training") {

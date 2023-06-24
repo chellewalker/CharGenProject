@@ -489,4 +489,158 @@
         <speciesTraits>Cold Resistance, Observant</speciesTraits>
         <languages>Snivvian</languages>
     </species>
+    <species>
+        <name>Aleena</name>
+        <value>aleena</value>
+        <speciesID>35</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Bogg Tyrell, Kazdan Paratus, Ratts Tyrell, Tsui Choi</exampleNames>
+        <abilityMods>dex,2;cha,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Energy Surge, Heightened Agility</speciesTraits>
+        <languages>Aleena, Basic</languages>
+    </species>
+    <species>
+        <name>Caamasi</name>
+        <value>caamasi</value>
+        <speciesID>36</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Elegos A'Kla, Ylenic It'kla, Releqy, Tegas Sulkec, Meqli Li karin</exampleNames>
+        <abilityMods>wis,4;str,-2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Memory Sharing, Pacifism, Silver Tongued</speciesTraits>
+        <languages>Basic, Caamasi</languages>
+    </species>
+    <species>
+        <name>Felucian</name>
+        <value>felucian</value>
+        <speciesID>37</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Gokkuul, Kargrek, Hagark</exampleNames>
+        <abilityMods>con,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Feat (Force Sensitivity), Breathe Underwater, Force Blast, Low-Light Vision, Natural Camouflage, Primitive, Weapon Familiarity (Felucian Skullblade)</speciesTraits>
+        <languages>Felucianese</languages>
+    </species>
+    <species>
+        <name>Gran</name>
+        <value>gran</value>
+        <speciesID>38</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Ainlee Teem, Aks Moe, Ask Aak, Baskol Yeesrim, Cera Vixe, Cruegar, Kea R- Lan, Mawhonic, Nadin Paal, Ree-Yees, Vee Naaq</exampleNames>
+        <abilityMods>cha,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Precise Shot), Darkvision, Innate Accuracy, Target Awareness</speciesTraits>
+        <languages>Basic, Gran</languages>
+    </species>
+    <species>
+        <name>Noghri</name>
+        <value>noghri</value>
+        <speciesID>39</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Cakhmaim clan Eikh'mir, Ekhrikhor clan Bakh'tor, Khabarakh clan Kim'bar, Ovkhevam clan Bakh'tor, Ruhk clan Baikh'vair, Sakhisakh clan Tlakh'sar</exampleNames>
+        <abilityMods>dex,2;wis,2;cha,-4</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Running Attack), Primitive, Scent</speciesTraits>
+        <languages>Honoghran</languages>
+    </species>
+    <species>
+        <name>Nosaurian</name>
+        <value>nosaurian</value>
+        <speciesID>40</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Fefar Blackeye, Bomo Greenbark, Clegg Holdfast, Churra Leafhorn, Moco Minkfruit</exampleNames>
+        <abilityMods>dex,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Class Skill (Climb), Natural Weapons, Survival Instinct</speciesTraits>
+        <languages>Basic, Nosaurian</languages>
+    </species>
+    <species>
+        <name>Talz</name>
+        <value>talz</value>
+        <speciesID>41</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Arvor, Bama Vook, Forfur, Foul Moudama, Gar, Muftak, Rugg, Toffik, Veefa, Voruf</exampleNames>
+        <abilityMods>con,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Mechanics)), Darkvision, Natural Weapons</speciesTraits>
+        <languages>Talz</languages>
+    </species>
+    <species>
+        <name>Togorian</name>
+        <value>togorian</value>
+        <speciesID>42</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Dankin, Dh'rang, H'sishi, Keta, Mezgraf, Mrrov, Muuurgh, Qrrulla, Rowv, Ruukas, Sarrah, Seendar</exampleNames>
+        <abilityMods>str,4;int,-2;wis,-2</abilityMods>
+        <size>Large</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Feline Reflexes, Low-Light Vision, Physically Intimidating</speciesTraits>
+        <languages>Basic, Togorian</languages>
+    </species>
+    <species>
+        <name>Togruta</name>
+        <value>togruta</value>
+        <speciesID>43</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Ahsoka Tano, Ashla, Codi Ty, Creev Zrgaat, Dyani Zaan, Jir Taalan, Qusak Laal, Raana Tey, Shaak Ti, Vika Saaris</exampleNames>
+        <abilityMods>dex,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Pack Hunter, Sneaky, Spatial Awareness</speciesTraits>
+        <languages>Basic, Togruti</languages>
+    </species>
+    <species>
+        <name>Whiphid</name>
+        <value>whiphid</value>
+        <speciesID>44</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>J'Quille, K'Kruhk, Jempa, Wapnji, Aiks Fwa, Ch'Unkk, D'Wopp, Fillin Ta, Valarian, Waroopa</exampleNames>
+        <abilityMods>str,4;int,-2;wis,-2</abilityMods>
+        <size>Large</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Cold Resistance, Natural Weapons, Scent</speciesTraits>
+        <languages>Whiphid</languages>
+    </species>
+    <species>
+        <name>Yarkora</name>
+        <value>yarkora</value>
+        <speciesID>45</speciesID>
+        <weight>1</weight>
+        <source>FUCG</source>
+        <exampleNames>Adaka-Vanae, Haesh-Rulan, Nemor-Jelak, Rault-Sanik, Saelt-Marae, Schurk-Heren</exampleNames>
+        <abilityMods>wis,2;cha,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Bonus Class Skill (Gather Information), Confusion, Deceptive</speciesTraits>
+        <languages>Basic, Yarkora</languages>
+    </species>
 </species_list>

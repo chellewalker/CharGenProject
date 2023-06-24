@@ -21,7 +21,7 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         rifleAttackRaw++;
     }
     while (rifleWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 13);
+        let randomNum = Math.floor(Math.random() * 17);
 
         if (randomNum == 0) {
             rifleWeapon = "Blaster Rifle";
@@ -107,6 +107,31 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
             rifleDice = 2;
             rifleDie = 8;
             special = " (Sonic)";
+        }
+        if (randomNum == 13 && available.includes("FUCG")) {
+            rifleWeapon = "Bryar Rifle";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 14 && available.includes("FUCG")) {
+            rifleWeapon = "Disruptor Rifle";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 15 && available.includes("FUCG")) {
+            rifleWeapon = "Incinerator Rifle";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 6;
+        }
+        if (randomNum == 16 && available.includes("FUCG")) {
+            rifleWeapon = "Stokhli Spray Stick";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+            special = " (Stun)";
         }
     }
 

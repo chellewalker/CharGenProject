@@ -38,6 +38,9 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
         if (speciesTraits.includes("Natural Armor (+2)")) {
             reflex += 2;
         }
+        if (speciesTraits.includes("Feline Reflexes")) {
+            reflex++;
+        }
         if (speciesTraits.includes("Superior Defenses")) {
             reflex++;
         }

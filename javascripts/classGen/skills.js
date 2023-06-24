@@ -71,6 +71,12 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
     if (firstClass == 4) {
         classSkills = soldierSkills;
     }
+    if (speciesTraits.includes("Bonus Class Skill (Climb)")) {
+        classSkills += "Climb";
+    }
+    if (speciesTraits.includes("Bonus Class Skill (Gather Information)")) {
+        classSkills += "Gather Information";
+    }
     if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
         classSkills.push("Climb","Stealth");
     }
@@ -123,6 +129,12 @@ export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
     }
     if (classes[4] > 0) {
         classSkills += soldierSkills;
+    }
+    if (speciesTraits.includes("Bonus Class Skill (Climb)")) {
+        classSkills += "Climb";
+    }
+    if (speciesTraits.includes("Bonus Class Skill (Gather Information)")) {
+        classSkills += "Gather Information";
     }
     if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
         classSkills += "Climb","Stealth";
@@ -260,6 +272,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                         score -= 2;
                     }
                 }
+                if (speciesTraits.includes("Heightened Agility")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Initiative") {
                 if (feats.includes("Skill Focus (Initiative)")) {
@@ -326,6 +341,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 else if (speciesTraits.includes("Sneaky") || talents.includes("Improved Stealth")) {
                     special = " (may reroll, must take second result)";
                 }
+                if (speciesTraits.includes("Natural Camouflage")) {
+                    special = " (may reroll, may keep better result)";
+                } 
             }
             
             if (score < 0) {

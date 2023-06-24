@@ -21,7 +21,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolAttackRaw++;
     }
     while (pistolWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 13);
+        let randomNum = Math.floor(Math.random() * 15);
 
         if (randomNum == 0) {
             pistolWeapon = "Blaster Pistol";
@@ -105,6 +105,18 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
             pistolDice = 2;
             pistolDie = 6;
             special = " (Sonic)";
+        }
+        if (randomNum == 13 && available.includes("FUCG")) {
+            pistolWeapon = "Bryar Pistol";
+            weaponSize = 1;
+            pistolDice = 3;
+            pistolDie = 4;
+        }
+        if (randomNum == 14 && available.includes("FUCG")) {
+            pistolWeapon = "Disruptor Pistol";
+            weaponSize = 1;
+            pistolDice = 3;
+            pistolDie = 6;
         }
     }
 

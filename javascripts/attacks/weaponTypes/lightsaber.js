@@ -1,5 +1,6 @@
 export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size) {
     let lightsaberWeapon = "";
+    let special = "";
     let weaponSize;
     let lightsaberDice;
     let lightsaberDie;
@@ -29,7 +30,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
         lightsaberAttackRaw++;
     }
     while (lightsaberWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 4);
+        let randomNum = Math.floor(Math.random() * 6);
 
         if (randomNum == 0) {
             lightsaberWeapon = "Lightsaber";
@@ -49,11 +50,24 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
             lightsaberDice = 2;
             lightsaberDie = 8;
         }
-        if (randomNum == 3 && available.includes("KotORCG")) {
+        if (randomNum == 3 && available.includes("TotG") || randomNum == 3 && available.includes("JATM")) {
+            lightsaberWeapon = "Lightwhip";
+            weaponSize = 0;
+            lightsaberDice = 2;
+            lightsaberDie = 4;
+            special = ", 2-Square Reach"
+        }
+        if (randomNum == 4 && available.includes("KotORCG") || randomNum == 4 && available.includes("JATM")) {
             lightsaberWeapon = "Lightfoil";
             weaponSize = 1;
             lightsaberDice = 2;
             lightsaberDie = 8;
+        }
+        if (randomNum == 5 && available.includes("FUCG") || randomNum == 5 && available.includes("JATM")) {
+            lightsaberWeapon = "Guard Shoto";
+            weaponSize = 0;
+            lightsaberDice = 2;
+            lightsaberDie = 4;
         }
     }
 
@@ -83,7 +97,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
         lightsaberDamage = "+" + lightsaberDamageRaw;
     }
 
-    let string = lightsaberWeapon + " " + lightsaberAttack +" ("+ lightsaberDice+"d"+lightsaberDie+lightsaberDamage + ")";
+    let string = lightsaberWeapon + " " + lightsaberAttack +" ("+ lightsaberDice+"d"+lightsaberDie+lightsaberDamage + special + ")";
     if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
         lightsaberWeapon = lightsaberWeapon + " (2)";
     }

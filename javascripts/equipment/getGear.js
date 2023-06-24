@@ -43,7 +43,7 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 53);
+        let randomNum = Math.floor(Math.random() * 57);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -358,6 +358,30 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             }
             else {
                 gearEquipment.push("Spare Energy Cell");
+        }}
+        if (randomNum == 54 && available.includes("FUCG")) {
+            if (gearEquipment.includes("Decoy Glow Rod")) {
+            }
+            else {
+                gearEquipment.push("Decoy Glow Rod");
+        }}
+        if (randomNum == 55 && available.includes("FUCG")) {
+            if (gearEquipment.includes("Holoshroud")) {
+            }
+            else {
+                gearEquipment.push("Holoshroud");
+        }}
+        if (randomNum == 56 && available.includes("FUCG")) {
+            if (gearEquipment.includes("Sound Sponge")) {
+            }
+            else {
+                gearEquipment.push("Sound Sponge");
+        }}
+        if (randomNum == 57 && available.includes("FUCG")) {
+            if (gearEquipment.includes("Repulsor Pad")) {
+            }
+            else {
+                gearEquipment.push("Repulsor Pad");
         }}
     }
 
