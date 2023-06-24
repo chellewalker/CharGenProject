@@ -78,12 +78,12 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
             let thisSkill = "";
             while (thisSkill == "") {
                 thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
-                    let randomNum2 = Math.round(Math.random() * 2);
-                    if (randomNum2 == 0) {
+                    let randomNum2 = Math.round(Math.random() * 3);
+                    if (randomNum2 != 0) {
                         thisSkill = "Use the Force";
                     }
-                    let randomNum3 = Math.round(Math.random() * 2);
-                    if (randomNum3 == 0) {
+                    let randomNum3 = Math.round(Math.random() * 3);
+                    if (randomNum3 != 0) {
                         thisSkill = "Survival";
                     }
                     if (skills.includes(thisSkill)) {
@@ -136,12 +136,12 @@ export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
             let thisSkill = "";
             while (thisSkill == "") {
                 thisSkill = skillsList[Math.round(Math.random() * skillsList.length)];
-                    let randomNum2 = Math.round(Math.random() * 2);
-                    if (randomNum2 == 0 && feats.includes("Force Sensitivity")) {
+                    let randomNum2 = Math.round(Math.random() * 3);
+                    if (randomNum2 != 0 && feats.includes("Force Sensitivity")) {
                         thisSkill = "Use the Force";
                     }
-                    let randomNum3 = Math.round(Math.random() * 2);
-                    if (randomNum3 == 0) {
+                    let randomNum3 = Math.round(Math.random() * 3);
+                    if (randomNum3 != 0) {
                         thisSkill = "Survival";
                     }
                 

@@ -1,6 +1,14 @@
 export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
     let feat = "";
     let count2 = 0;
+    let randomNumForce = Math.floor(Math.random() * 2);
+    if (randomNumForce == 0 && skills.includes("Use the Force") && feats.includes("Force Sensitivity")) {
+        feat = "Force Training";
+    }
+    let randomNumStarship = Math.floor(Math.random() * 4);
+    if (randomNumStarship == 0 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot")) {
+        feat = "Starship Tactics";
+    }
     while (feat == "") {
         count2++;
         let randomNum = Math.floor(Math.random() * 266);
