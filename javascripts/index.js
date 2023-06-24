@@ -159,7 +159,7 @@ window.genCharacter = function genCharacter() {
                     }
                 }
                 if (feats.findLast(findLast) == "Starship Tactics") {
-                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
+                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
                 }
                 if (speciesTraits.includes("Force Blast")) {
                     forcePowers.push("Force Blast");
@@ -175,7 +175,7 @@ window.genCharacter = function genCharacter() {
                     }
                 }
                 if (feats.findLast(findLast) == "Starship Tactics") {
-                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
+                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
                 }
                 if (speciesTraits.includes("Bonus Feat")) {
                     feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
@@ -189,7 +189,7 @@ window.genCharacter = function genCharacter() {
                     }
                 }
                 if (feats.findLast(findLast) == "Starship Tactics") {
-                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
+                    starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
                 }}
             }
             else {
@@ -229,7 +229,7 @@ window.genCharacter = function genCharacter() {
                 }
             }
             if (feats.findLast(findLast) == "Starship Tactics") {
-                starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis);
+                starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
             }
 
         }}

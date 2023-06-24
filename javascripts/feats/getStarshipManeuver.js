@@ -1,4 +1,4 @@
-export function getStarshipManeuver(starshipManeuvers,wis) {
+export function getStarshipManeuver(starshipManeuvers,wis,feats) {
     let temp;
     let count;
     let avail = 1 + Math.max(0,Math.floor((wis-10)/2));
@@ -79,7 +79,7 @@ export function getStarshipManeuver(starshipManeuvers,wis) {
         else if (randomNum == 23) {
             temp = "Target Lock";
         }
-        else if (randomNum == 24) {
+        else if (randomNum == 24 && feats.includes("Force Sensitivity")) {
             temp = "Target Sense";
         }
         else if (randomNum == 25) {
