@@ -53,19 +53,19 @@ export function displayQualities(qualities) {
         if (count == 0) {
             if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
-                tempQualities += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> ("+temp[1];
+                tempQualities += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (+"+temp[1];
             }
             else {
-                tempQualities += "<a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a>";
+                tempQualities += "<a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a> (+1)";
             }
         }
         else {
             if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
-                tempQualities += ", <a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> ("+temp[1];
+                tempQualities += ", <a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (+"+temp[1];
             }
             else {
-                tempQualities += ", <a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a>";
+                tempQualities += ", <a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a> (+1)";
             }
         }
     }
@@ -78,10 +78,22 @@ export function displayRawQualities(qualities) {
     let count;
     for (count = 0; count < qualities.length; count++) {
         if (count == 0) {
-            rawQualities += qualities[count];
+            if (qualities[count].includes(" (")) {
+                let temp = qualities[count].split(" (");
+                rawQualities += temp[0] + " (+"+temp[1];
+            }
+            else {
+                rawQualities += qualities[count]+" (+1)";
+            }
         }
         else {
-            rawQualities += ", "+qualities[count];
+            if (qualities[count].includes(" (")) {
+                let temp = qualities[count].split(" (");
+                rawQualities += ", " + temp[0] + " (+"+temp[1];
+            }
+            else {
+                rawQualities += ", " + qualities[count]+" (+1)";
+            }
         }
     }
     

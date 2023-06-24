@@ -18,9 +18,13 @@ export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,av
     else {
         let randomNum3 = Math.floor(Math.random() * 5);
         thisLevel = randomNum3;
+        if (classes[5] > 0) {
+        thisLevel = 5;
+    }
     }
 
-    if (curLevel >= 7 && skills.includes("Pilot") && feats.includes("Vehicular Combat") && available.includes("CR")) {
+    if (curLevel >= 7 && skills.includes("Pilot") && feats.includes("Vehicular Combat") && available.includes("CR")
+        && classes[5] == 0) {
         thisLevel = 5;
     }
 
