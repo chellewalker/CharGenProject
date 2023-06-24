@@ -1,4 +1,4 @@
-export function getLevel(firstClass,classes) {
+export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,available) {
     let thisLevel;
 
     let randomNum = Math.floor(Math.random() * 8);
@@ -8,7 +8,7 @@ export function getLevel(firstClass,classes) {
     else if (randomNum < 6) {
         let check = 0;
         while (check == 0) {
-        let randomNum2 = Math.floor(Math.random() * 5);
+        let randomNum2 = Math.floor(Math.random() * 6);
 
         if (classes[randomNum2] > 0 || randomNum2 == firstClass) {
             thisLevel = randomNum2;
@@ -18,6 +18,10 @@ export function getLevel(firstClass,classes) {
     else {
         let randomNum3 = Math.floor(Math.random() * 5);
         thisLevel = randomNum3;
+    }
+
+    if (curLevel >= 7 && skills.includes("Pilot") && feats.includes("Vehicular Combat") && available.includes("CR")) {
+        thisLevel = 5;
     }
 
     return thisLevel;

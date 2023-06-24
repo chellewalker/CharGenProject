@@ -17,6 +17,10 @@ export function getWill(classes,wis,level,speciesTraits,feats,talents) {
         if (classes[4] > 0) {
             classWill = Math.max(classWill,0);
         }
+        //Ace Pilot
+        if (classes[5] > 0) {
+            classWill = Math.max(classWill,2);
+        }
 
     let will = 10 + Math.floor((wis-10)/2) + parseInt(level) + classWill;
         if (speciesTraits.includes("Iron Will")) {

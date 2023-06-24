@@ -8,6 +8,7 @@ import {getSkills,getNewSkill,displaySkills,getInitiative,getPerception} from '.
 import {getBAB} from './classGen/getBAB.js';
 import {getOutput} from './getOutput.js';
 import {speciesFeats} from './feats/speciesFeats.js';
+import {getQuality,compressQualities} from './classGen/getQualities.js';
 import {getStarshipManeuver,compressStarshipManeuvers} from './feats/getStarshipManeuver.js';
 import {getFeat} from './feats/getFeat.js';
 import {getArmor} from './equipment/getArmor.js';
@@ -96,13 +97,16 @@ window.genCharacter = function genCharacter() {
 
     //Class generation (2,8,8)
     let failsafe = 0;
-    let classes = [0,0,0,0,0];
+    let classes = [0,0,0,0,0, //Jedi(0),Noble(1),Scoundrel(2),Scout(3),Soldier(4)
+            //Ace Pilot (5)
+            0];
         let firstClass;
         let hitPoints = 0;
         let talents = [];
         let feats = [];
         let skills = [];
         let forcePowers = [];
+        let qualities = [];
         let starshipManeuvers = [];
         let BAB = 0;
         let classList;
@@ -124,7 +128,7 @@ window.genCharacter = function genCharacter() {
     while (failsafe == 0) {
         safecount++;
         failsafe = 1;
-        classes = [0,0,0,0,0];
+        classes = [0,0,0,0,0,0];
         hitPoints = 0;
         talents = [];
         feats = [];
@@ -185,24 +189,27 @@ window.genCharacter = function genCharacter() {
                 }}
             }
             else {
-                thisLevel = getLevel(firstClass,classes);
+                thisLevel = getLevel(firstClass,classes,count,skills,feats,talents,BAB,available);
                 classes[thisLevel]++;
-                if (classes[thisLevel] == 1) {
+                if (classes[thisLevel] == 1 && thisLevel < 5) {
                     let temp = (multiclassFeat(thisLevel,feats,skills,int,con,speciesTraits));
                     if (temp != "") { 
                         feats.push(temp);
                 }}
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
-                if (classes[thisLevel] % 2 == 0) {
+                if (classes[thisLevel] % 2 == 0 && thisLevel < 5) {
                     feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
                     if (feats.findLast(findLast) == "Skill Training") {
                         skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                     }
                     skills.sort();
                 }
+                else if (classes[thisLevel] % 2 == 0 && thisLevel >= 5) {
+                    qualities.push(getQuality(thisLevel));
+                }
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis));
                 }
             }
             if ((count-2) % 3 == 0) {
@@ -222,6 +229,7 @@ window.genCharacter = function genCharacter() {
             }
 
         }}
+        //!!!!!!!!!!!!!!!!!!!!!!!FREEZING HAPPENS AFTER THIS POINT
         if (feats.includes("Shake It Off")) {
         }
         else if (classes[3] > 0 && con >= 13 && skills.includes("Endurance")) {
@@ -457,6 +465,7 @@ window.genCharacter = function genCharacter() {
     forcePowers.sort();
     starshipManeuvers.sort();
     forcePowers = compressForcePowers(forcePowers);
+    let qualityList = compressQualities(qualities);
     starshipManeuvers = compressStarshipManeuvers(starshipManeuvers);
 
     //equipment
@@ -492,7 +501,7 @@ window.genCharacter = function genCharacter() {
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
-            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR);
+            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR,qualityList);
     
         document.write(output);
 }

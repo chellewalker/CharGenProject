@@ -5,8 +5,9 @@ import {nobleTalents} from './nobleTalents.js';
 import {scoundrelTalents} from './scoundrelTalents.js';
 import {scoutTalents} from './scoutTalents.js';
 import {soldierTalents} from './soldierTalents.js';
+import {acePilotTalents} from './prestigeTalents/acePilotTalents.js';
 
-export function getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha) {
+export function getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis) {
     let talent = "";
     let count = 0;
 while (talent == "") {
@@ -59,6 +60,9 @@ else {
     }
     else if (thisLevel == 4) {
         talent = soldierTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+    }
+    else if (thisLevel == 5) {
+        talent = acePilotTalents(talents,available,skills,feats,BAB,starshipManeuvers,wis,cha);
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";

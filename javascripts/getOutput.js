@@ -1,13 +1,14 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
 import {displayStarshipManeuvers,displayRawStarshipManeuvers} from './feats/getStarshipManeuver.js';
 import {displayTalents,displayRawTalents} from './talents/getTalent.js';
+import {displayQualities,displayRawQualities} from './classGen/getQualities.js';
 import {displayFeats,displayRawFeats} from './feats/featDisplay.js';
 
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,simpleMelee,simpleRanged,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,
-    forcePowers,SR) {
+    forcePowers,SR,qualityList) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
@@ -46,6 +47,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         }
         let rangedWeapon = (BAB + Math.floor((dex-10)/2));
 
+        let listQualities = "";
     let advancedMeleeAttack = "";
     let lightsaberAttack = "";
     let pistolAttack = "";
@@ -165,7 +167,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-        advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,
+        advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
         speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged);
 
         if (forcePowers != "") {
@@ -176,6 +178,10 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         if (starshipManeuvers != "") {
             starshipManeuvers = displayStarshipManeuvers(starshipManeuvers);
             maneuverDisplay = "<strong>Starship Maneuver Suite:</strong> "+starshipManeuvers+"<br>";
+        }
+
+        if (qualityList != "") {
+            listQualities = "<strong>Qualities:</strong> "+displayQualities(qualityList)+"<br>";
         }
 
         let space = "";
@@ -221,6 +227,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<strong>Species Traits (<a href='https://swse.fandom.com/wiki/"+species+"' target='_blank' rel='noopener noreferrer'>"+species+"</a>):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
+        listQualities+
         "<strong>Talents:</strong> "+listTalents+"<br>"+
         "<strong>Feats:</strong> "+listFeats+"<br>"+        
         "<strong>Skills:</strong> "+listSkills+"<br>"+
@@ -253,7 +260,7 @@ export function download_txt(name,outputData) {
   
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
-    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,
+    advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged) {
 
         let listTalents = displayRawTalents(talents);
@@ -317,6 +324,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
 
         let rangedWeapon = (BAB + Math.floor((dex-10)/2));
         let traitDisplay = "";
+        let listQualities = "";
         let byWeapon = "";
         let powerDisplay = "";
         let maneuverDisplay = "";
@@ -395,6 +403,11 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         maneuverDisplay = "Starship%20Maneuvers%20Suite:%20"+starshipManeuvers+"%0A";
     }
 
+    if (qualityList != "") {
+        listQualities = "Qualities:%20"+displayRawQualities(qualityList)+"%0A";
+        listQualities = listQualities.replace(/ /g, "%20");
+    }
+
     powerDisplay = powerDisplay.replace(/ /g, "%20");
     maneuverDisplay = maneuverDisplay.replace(/ /g, "%20");
 
@@ -436,6 +449,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         "Species%20Traits%20("+species+"):%20"+traitDisplay+"%0A%0A"+
         "Base%20Stats%0A"+
         "Abilities:%20Strength%20"+str+",%20Dexterity%20"+dex+",%20Constitution%20"+con+",%20Intelligence%20"+int+",%20Wisdom%20"+wis+",%20Charisma%20"+cha+""+"%0A"+
+        listQualities+
         "Talents:%20"+listTalents+"%0A"+
         "Feats:%20"+listFeats+"%0A"+        
         "Skills:%20"+listSkills+"%0A"+

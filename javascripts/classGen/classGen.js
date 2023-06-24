@@ -122,36 +122,6 @@ export function classFirst(str,dex,con,int,wis,cha) {
     }
 }
 
-export function classSelection(firstClass,classes,level) {
-    level--;
-    let count;
-    let otherClass = [];
-
-    for (count = 0; count < level; count++) {
-
-    let randomNum = Math.floor(Math.random() * 8);
-    if (randomNum < 2) {
-        classes[firstClass]++;
-    }
-    else if (randomNum < 6) {
-        let check = 0;
-        while (check == 0) {
-        let randomNum3 = Math.floor(Math.random() * 5);
-
-        if (otherClass.includes(randomNum3) || randomNum3 == firstClass) {
-            classes[randomNum3]++;
-            check = 1;
-        }
-    }}
-    else {
-        let randomNum2 = Math.floor(Math.random() * 5);
-        classes[randomNum2]++;
-        otherClass.push(randomNum2);
-    }}
-
-    return classes;
-}
-
 export function classListing(firstClass,classes) {
     let classList = "";
     if (firstClass == 0) {
@@ -185,48 +155,10 @@ export function classListing(firstClass,classes) {
         if (classes[4] > 0 && firstClass != 4) {
             classList += "/Soldier "+classes[4];
         }
+        if (classes[5] > 0) {
+            classList += "/Ace Pilot "+classes[5];
+        }
     return classList;
-}
-
-export function getHitPoints(firstClass,classes,con) {
-    let hitPoints = 0;
-    let conMod = Math.floor((con-10)/2);
-
-    if (firstClass == 0) {
-        hitPoints += 30 + conMod;
-    }
-    if (firstClass == 1) {
-        hitPoints += 18 + conMod;
-    }
-    if (firstClass == 2) {
-        hitPoints += 18 + conMod;
-    }
-    if (firstClass == 3) {
-        hitPoints += 24 + conMod;
-    }
-    if (firstClass == 4) {
-        hitPoints += 30 + conMod;
-    }
-    classes[firstClass]--;
-    hitPoints += classes[0]*(6 + conMod);
-    hitPoints += classes[1]*(4 + conMod);
-    hitPoints += classes[2]*(4 + conMod);
-    hitPoints += classes[3]*(5 + conMod);
-    hitPoints += classes[4]*(6 + conMod);
-
-    return hitPoints;
-}
-
-export function getBAB(classes) {
-    let BAB = 0;
-
-    BAB += classes[0]*1;
-    BAB += Math.floor(classes[1]*0.75);
-    BAB += Math.floor(classes[2]*0.75);
-    BAB += Math.floor(classes[3]*0.75);
-    BAB += classes[4]*1;
-
-    return BAB;
 }
 
 export function availableFeats(level,classes,firstClass,speciesTraits) {

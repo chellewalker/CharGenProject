@@ -17,6 +17,10 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
         if (classes[4] > 0) {
             classReflex = Math.max(classReflex,1);
         }
+        //Ace Pilot
+        if (classes[5] > 0) {
+            classReflex = Math.max(classReflex,4);
+        }
 
     let reflex = 10 + Math.min(Math.floor((dex-10)/2),maxDex) + Math.max(parseInt(level),armorRef) + classReflex;
         if (size == "Small") {

@@ -6,6 +6,8 @@ export function getBAB(classes) {
     BAB += Math.floor(classes[2]*0.75);
     BAB += Math.floor(classes[3]*0.75);
     BAB += classes[4]*1;
+    //Ace Pilot
+    BAB += Math.floor(classes[5]*0.75);
 
     return BAB;
 }
