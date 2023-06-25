@@ -38,7 +38,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
             lightsaberDice = 2;
             lightsaberDie = 8;
         }
-        if (randomNum == 1 && available.includes("CR") && size != "Large") {
+        if (randomNum == 1 && available.includes("CR") && size == "Small") {
             lightsaberWeapon = "Short Lightsaber";
             weaponSize = 0;
             lightsaberDice = 2;

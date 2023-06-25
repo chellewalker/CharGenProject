@@ -2,7 +2,7 @@ import {parseXML} from './xmlGetter.js';
 
 export function speciesGen(tempSpecies,available) {
     tempSpecies = tempSpecies.toLowerCase();
-    let speciesCount = 46;
+    let speciesCount = 57;
     let speciesID = 0;
     let species;
         if (tempSpecies != "human") {
