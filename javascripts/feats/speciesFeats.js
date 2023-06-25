@@ -36,6 +36,14 @@ export function speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha)
     if (speciesTraits.includes("Bonus Feat (Weapon Proficiency (Advanced Melee Weapons))")) {
         feats.push("Weapon Proficiency (Advanced Melee Weapons)");
     }
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Acrobatics))") && 
+        skills.includes("Acrobatics")) {
+        feats.push("Skill Focus (Acrobatics)");
+    }
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Deception))") && 
+        skills.includes("Deception")) {
+        feats.push("Skill Focus (Deception)");
+    }
     if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Gather Information))") && 
         skills.includes("Gather Information")) {
         feats.push("Skill Focus (Gather Information)");

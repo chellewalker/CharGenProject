@@ -80,6 +80,9 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
     if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
         classSkills.push("Climb","Stealth");
     }
+    if (speciesTraits.includes("Tinkerer")) {
+        classSkills += "Mechanics";
+    }
 
             let thisSkill = "";
             while (thisSkill == "") {
@@ -138,6 +141,9 @@ export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
     }
     if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
         classSkills += "Climb","Stealth";
+    }
+    if (speciesTraits.includes("Tinkerer")) {
+        classSkills += "Mechanics";
     }
     if (feats.includes("Force Sensitivity")) {
         classSkills += "Use the Force";
@@ -422,6 +428,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (equipment.includes("Mechanical Interface Visor (+2 Mechanics)")) {
                     score += 2;
                 }
+                if (speciesTraits.includes("Tinkerer")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Use Computer") {
                 if (feats.includes("Skill Focus (Use Computer)")) {
@@ -507,6 +516,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 }
                 if (feats.includes("Skill Focus (Persuasion)")) {
                     score += 5;
+                }
+                if (speciesTraits.includes("Soothing Voice")) {
+                    special = " (may reroll, must take second result)";
                 }
                 if (speciesTraits.includes("Silver Tongued")) {
                     special = " (may reroll, may keep better result)";

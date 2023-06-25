@@ -643,4 +643,159 @@
         <speciesTraits>Bonus Class Skill (Gather Information), Confusion, Deceptive</speciesTraits>
         <languages>Basic, Yarkora</languages>
     </species>
+    <species>
+        <name>Balosar</name>
+        <value>balosar</value>
+        <speciesID>46</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Veya Bar'jaraka, Nina Dar'Eboros, Elan Sleazebaggano, Zirk Mer'darro</exampleNames>
+        <abilityMods>dex,2;cha,2;con,-2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Heightened Awareness, Mental Fortitude, Toxic Resistance</speciesTraits>
+        <languages>Basic, Balosar</languages>
+    </species>
+    <species>
+        <name>Blood Carver</name>
+        <value>blood carver</value>
+        <speciesID>47</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Ke Daiv, Pa Gara, Mu Fiev, Va'Tosh</exampleNames>
+        <abilityMods>dex,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Acrobatics)), Deathstrike</speciesTraits>
+        <languages>Basic, Batorese</languages>
+    </species>
+    <species>
+        <name>Clawdite</name>
+        <value>clawdite</value>
+        <speciesID>48</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Durbat, Renneyn, Rolsat Noviee, Torsayn, Zam Wesell</exampleNames>
+        <abilityMods>cha,2;str,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Shapeshift, Startle</speciesTraits>
+        <languages>Basic, Clawdite</languages>
+    </species>
+    <species>
+        <name>Falleen</name>
+        <value>falleen</value>
+        <speciesID>49</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Savan, Xad, Xist, Xizor, Xora, Zule, Zurros</exampleNames>
+        <abilityMods>cha,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Hold Breath, Pheromones, Pheromone Acclimation</speciesTraits>
+        <languages>Basic, Falleen</languages>
+    </species>
+    <species>
+        <name>Gand</name>
+        <value>gand</value>
+        <speciesID>50</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Muulish, Ooryl, Shoolush, Vaabesh, Zaabahn, Zuckuss</exampleNames>
+        <abilityMods>wis,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Darkvision, Hardy, Limb Regeneration, Special Equipment (Breathing Apparatus and Transliterator)</speciesTraits>
+        <languages>Gand</languages>
+    </species>
+    <species>
+        <name>Houk</name>
+        <value>houk</value>
+        <speciesID>51</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Agamor Krin, Egome Fass, Gorb Drig, Krelba Voss, Morg Nar, Roath Vogog</exampleNames>
+        <abilityMods>str,2;con,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Natural Armor (+1), Physically Intimidating</speciesTraits>
+        <languages>Basic, Houkese</languages>
+    </species>
+    <species>
+        <name>Jawa</name>
+        <value>jawa</value>
+        <speciesID>52</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Akkit, Het, Oklect, Klepti, Tikkit, Tteel</exampleNames>
+        <abilityMods>dex,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Darkvision, Desert Dweller, Scavenger, Tinkerer</speciesTraits>
+        <languages>Jawaese, Jawa Trade Language</languages>
+    </species>
+    <species>
+        <name>Ryn</name>
+        <value>ryn</value>
+        <speciesID>53</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Camarata, Cisgat, Clarani, Droma, Ferfer, Gaph, Lenya, Melisma, Mezza, Romany, R'vanna, Sapha</exampleNames>
+        <abilityMods>cha,2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Connections, Musical Obfuscation, Prehensile Tail</speciesTraits>
+        <languages>Basic, Ryn</languages>
+    </species>
+    <species>
+        <name>Toydarian</name>
+        <value>toydarian</value>
+        <speciesID>54</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Reti, Watto, Zlato</exampleNames>
+        <abilityMods>wis,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>6</hoveringSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Deception)), Flight, Force Resistance</speciesTraits>
+        <languages>Huttese, Toydarian</languages>
+    </species>
+    <species>
+        <name>Ubese</name>
+        <value>ubese</value>
+        <speciesID>55</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Boushh, Dazaks, Kabrak, Norouhj, Savax, Torhhks</exampleNames>
+        <abilityMods>dex,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Aggressive, Conditional Bonus Feat (Skill Focus (Perception)), Survival Instinct, Special Equipment (Environmental Suit)</speciesTraits>
+        <languages>Basic, Ubese, Ubeninal (understand only)</languages>
+    </species>
+    <species>
+        <name>Wroonian</name>
+        <value>wroonian</value>
+        <speciesID>56</speciesID>
+        <weight>1</weight>
+        <source>SaV</source>
+        <exampleNames>Fillio Androu, Azoora, Dasha Defano, Tis Dolan, Drixar, T'Charek Haathi, Nell Indigo, Llitishi, Linx Mallicker, Fume Pachoola, Pelf Pachoola, Kabalard Vinne, Iona Wince</exampleNames>
+        <abilityMods>dex,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Iron Will, Soothing Voice</speciesTraits>
+        <languages>Basic, Wroonian</languages>
+    </species>
 </species_list>

@@ -239,9 +239,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         "<script>"+
         "document.getElementById('download').addEventListener('click', function() {"+
             "var hiddenElement = document.createElement('a');"+
-        
+            
             "hiddenElement.href = 'data:attachment/text,' + '"+outputData+"';"+
-            "hiddenElement.download = '"+name+"' + '.txt';"+
+            "hiddenElement.download = '"+name.replace(/'/g, "’")+"' + '.txt';"+
             "hiddenElement.click();"+
         "});"+
         "</script>";

@@ -338,12 +338,12 @@ window.genCharacter = function genCharacter() {
 
         //defenses
         let equipment = [];
-        let armorTemp;
+        let armorTemp = [];
         let armorRef = 0;
         let armorFort = 0;
         let maxDex = 10;
         let armorType = "";
-        if (talents.includes("Armored Defense") && feats.includes("Armor Proficiency (Light)")) {
+        if (talents.includes("Armored Defense") && feats.includes("Armor Proficiency (Light)") && species != "Ubese") {
             armorTemp = getArmor(available,feats,talents);
             equipment.push(armorTemp[0]);
             armorRef = armorTemp[1];
@@ -358,6 +358,9 @@ window.genCharacter = function genCharacter() {
             if (talents.includes("Attune Armor") && armorType != "") {
                 armorRef += 2;
             }
+        }
+        if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
+            speciesEquipment.push("Environmental Suit (+4 Reflex, +2 Fortitude)");
         }
 
         let shieldTemp = [];
@@ -384,7 +387,7 @@ window.genCharacter = function genCharacter() {
         let will = getWill(classes,wis,level,speciesTraits,feats,talents);
 
         //speed
-        let speed = getSpeed(speciesID,talents,feats,armorType);
+        let speed = getSpeed(speciesID,talents,feats,armorType,armorTemp[0]);
 
         //attacks and damage
         let unarmed = getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
