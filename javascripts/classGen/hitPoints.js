@@ -28,6 +28,9 @@ export function getMoreHitPoints(thisLevel,con) {
     else if (thisLevel == 3 || thisLevel == 5) {
         hitPoints += 5 + conMod;
     }
+    else if (thisLevel == 6) {
+        hitPoints += 6 + conMod;
+    }
 
     return hitPoints;
 }

@@ -158,11 +158,14 @@ export function classListing(firstClass,classes) {
         if (classes[5] > 0) {
             classList += "/Ace Pilot "+classes[5];
         }
+        if (classes[6] > 0) {
+            classList += "/Bounty Hunter "+classes[6];
+        }
     return classList;
 }
 
 export function availableFeats(level,classes,firstClass,speciesTraits) {
-    let availableFeats = [0,0,0,0,0,0];
+    let availableFeats = [0,0,0,0,0,0,0];
     let score = Math.ceil(level/3);
     if (speciesTraits.split(", ").includes("Bonus Feat")) {
         score++;

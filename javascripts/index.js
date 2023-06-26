@@ -99,8 +99,9 @@ window.genCharacter = function genCharacter() {
     //Class generation (2,8,8)
     let failsafe = 0;
     let classes = [0,0,0,0,0, //Jedi(0),Noble(1),Scoundrel(2),Scout(3),Soldier(4)
-            //Ace Pilot (5)
-            0];
+            0, //Ace Pilot (5)
+            0  //Bounty Hunter (6) 
+            ];
         let firstClass;
         let hitPoints = 0;
         let talents = [];
@@ -129,7 +130,7 @@ window.genCharacter = function genCharacter() {
     while (failsafe == 0) {
         safecount++;
         failsafe = 1;
-        classes = [0,0,0,0,0,0];
+        classes = [0,0,0,0,0,0,0];
         hitPoints = 0;
         talents = [];
         feats = [];
@@ -148,7 +149,7 @@ window.genCharacter = function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha));
+                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,qualities));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha);
@@ -213,7 +214,7 @@ window.genCharacter = function genCharacter() {
                     qualities.push(getQuality(thisLevel));
                 }
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities));
                 }
             }
             if ((count-2) % 3 == 0) {

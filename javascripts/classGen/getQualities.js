@@ -4,6 +4,9 @@ export function getQuality(thisLevel) {
     if (thisLevel == 5) {
         quality = "Vehicle Dodge";
     }
+    if (thisLevel == 6) {
+        quality = "Familiar Foe";
+    }
     return quality;
 }
 

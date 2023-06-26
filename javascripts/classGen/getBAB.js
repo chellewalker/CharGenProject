@@ -8,6 +8,8 @@ export function getBAB(classes) {
     BAB += classes[4]*1;
     //Ace Pilot
     BAB += Math.floor(classes[5]*0.75);
+    //Bounty Hunter
+    BAB += classes[6]*1;
 
     return BAB;
 }

@@ -21,6 +21,10 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
         if (classes[5] > 0) {
             classReflex = Math.max(classReflex,4);
         }
+        //Ace Pilot
+        if (classes[6] > 0) {
+            classReflex = Math.max(classReflex,4);
+        }
 
         if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
             armorRef = 4;

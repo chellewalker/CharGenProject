@@ -10,7 +10,7 @@ export function acePilotTalents(talents,available,skills,feats,BAB,starshipManeu
     else if (randomNum == 1) {
         talent = gunnerTalents(talents,available,skills,feats,BAB,starshipManeuvers,wis);
     }
-    else if (randomNum == 2 && light == 1) {
+    else if (randomNum == 2) {
         talent = spacerTalents(talents,available,skills,feats,BAB);
     }
     else if (randomNum == 3 && available.includes("SotG")) {
