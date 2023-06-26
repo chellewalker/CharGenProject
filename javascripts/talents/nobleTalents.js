@@ -4,7 +4,7 @@ export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 16);
-        let randomNum = Math.floor(Math.random() * 6);
+        let randomNum = Math.floor(Math.random() * 7);
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
@@ -279,6 +279,42 @@ export function ideologueTalents(talents,available,skills,feats,BAB,forcePowers,
     }
     else if (randomNum == 4) {
         talent = "Lead by Example";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function disgraceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 6);
+
+    if (randomNum == 0 && talents.includes("Dirty Tactics")) {
+        talent = "Ambush";
+    }
+    else if (randomNum == 1) {
+        talent = "Castigate";
+    }
+    else if (randomNum == 2) {
+        talent = "Dirty Tactics";
+    }
+    else if (randomNum == 3 && talents.includes("Dirty Tactics")) {
+        talent = "Misplaced Loyalty";
+    }
+    else if (randomNum == 4 && talents.includes("Misplaced Loyalty")) {
+        talent = "Two-Faced";
+    }
+    else if (randomNum == 5) {
+        talent = "Unreadable";
     }
     if (talents.includes(talent)) {
         talent = "";
