@@ -99,8 +99,9 @@ window.genCharacter = function genCharacter() {
     //Class generation (2,8,8)
     let failsafe = 0;
     let classes = [0,0,0,0,0, //Jedi(0),Noble(1),Scoundrel(2),Scout(3),Soldier(4)
-            0, //Ace Pilot (5)
-            0  //Bounty Hunter (6) 
+            0,  //Ace Pilot (5)
+            0,  //Bounty Hunter (6) 
+            0   //Crime Lord (7)
             ];
         let firstClass;
         let hitPoints = 0;
@@ -130,7 +131,7 @@ window.genCharacter = function genCharacter() {
     while (failsafe == 0) {
         safecount++;
         failsafe = 1;
-        classes = [0,0,0,0,0,0,0];
+        classes = [0,0,0,0,0,0,0,0];
         hitPoints = 0;
         talents = [];
         feats = [];
@@ -212,7 +213,10 @@ window.genCharacter = function genCharacter() {
                 }
                 else if (classes[thisLevel] % 2 == 0 && thisLevel >= 5) {
                     qualities.push(getQuality(thisLevel));
-                }
+                    if (thisLevel == 7) {
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities));
+                }}
+                
                 else {
                     talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities));
                 }
@@ -360,8 +364,9 @@ window.genCharacter = function genCharacter() {
                 armorRef += 2;
             }
         }
+        let speciesEquipment = getSpecial(speciesTraits);
         if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
-            speciesEquipment.push("Environmental Suit (+4 Reflex, +2 Fortitude)");
+            equipment.push("Environmental Suit (+4 Reflex, +2 Fortitude)");
         }
 
         let shieldTemp = [];
@@ -478,7 +483,6 @@ window.genCharacter = function genCharacter() {
 
     //equipment
     let gearEquipment = getGear(available,feats,talents,skills,speciesTraits);
-    let speciesEquipment = getSpecial(speciesTraits);
     let implant = "";
 
         tempEquipment.sort();

@@ -1,4 +1,7 @@
 import {awarenessCounter} from "./talentCounter/awareness.js";
+import {fortuneCounter} from "./talentCounter/fortune.js";
+import {misfortuneCounter} from "./talentCounter/misfortune.js";
+import {lineageCounter} from "./talentCounter/lineage.js";
 
 export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,available) {
     let thisLevel;
@@ -20,16 +23,20 @@ export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,av
     else {
         let randomNum3 = Math.floor(Math.random() * 5);
         thisLevel = randomNum3;
-    if (classes[5] > 0 || classes[6] > 0) {
+    if (classes[5] > 0 || classes[6] > 0 || classes[7] > 0) {
         let check = 0;
         while (check == 0) {
-        let randomNum4 = Math.floor(Math.random() * 2);
+        let randomNum4 = Math.floor(Math.random() * 3);
         if (classes[5] && randomNum4 == 0) {
             thisLevel = 5;
             check = 1;
         }
-        else if (classes[6]) {
+        else if (classes[6] && randomNum4 == 1) {
             thisLevel = 6;
+            check = 1;
+        }
+        else if (classes[7]) {
+            thisLevel = 7;
             check = 1;
         }
     }}
@@ -45,6 +52,14 @@ export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,av
             let awarenessCount = awarenessCounter(talents);
             if (awarenessCount >= 2) {
                 thisLevel = 6;
+            }
+    }
+
+    if (curLevel >= 7 && skills.includes("Deception") && skills.includes("Deception") && available.includes("CR")
+        && classes[7] == 0) {
+            let fullCount = fortuneCounter(talents) + lineageCounter(talents) + misfortuneCounter(talents);
+            if (fullCount >= 1) {
+                thisLevel = 7;
             }
     }
 

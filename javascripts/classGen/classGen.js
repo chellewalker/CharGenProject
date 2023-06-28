@@ -161,6 +161,9 @@ export function classListing(firstClass,classes) {
         if (classes[6] > 0) {
             classList += "/Bounty Hunter "+classes[6];
         }
+        if (classes[7] > 0) {
+            classList += "/Crime Lord "+classes[7];
+        }
     return classList;
 }
 

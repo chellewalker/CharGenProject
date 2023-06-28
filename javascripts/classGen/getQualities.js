@@ -7,6 +7,10 @@ export function getQuality(thisLevel) {
     if (thisLevel == 6) {
         quality = "Familiar Foe";
     }
+    if (thisLevel == 7) {
+        quality = "Command Cover";
+    }
+
     return quality;
 }
 
