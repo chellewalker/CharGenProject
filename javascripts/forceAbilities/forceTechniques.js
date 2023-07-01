@@ -1,4 +1,4 @@
-export function getForceTechnique(available,light,dark,forcePowers,forceTechniques) {
+export function getForceTechnique(available,forcePowers,forceTechniques) {
     let forceTechnique = "";
     let count = 0;
 
@@ -12,7 +12,7 @@ export function getForceTechnique(available,light,dark,forcePowers,forceTechniqu
         if (randomNum == 1 && available.includes("CR")) {
             let randomNum2 = Math.floor(Math.random() * forcePowers.length);
             let temp = forcePowers[randomNum2];
-            forceTechnique = "Force Power Mastery ("+temp+")";
+            forceTechnique = "Force Power Mastery ("+temp;
         }
         if (randomNum == 2 && available.includes("CR")) {
             forceTechnique = "Improved Force Trance";
@@ -188,4 +188,46 @@ export function getForceTechnique(available,light,dark,forcePowers,forceTechniqu
     }
 
     return forceTechnique;
+}
+
+export function displayForceTechniques(forceTechniques) {
+    let tempForceTechniques = "";
+    let count;
+    for (count = 0; count < forceTechniques.length; count++) {
+        if (count == 0) {
+            if (tempForceTechniques[count].includes(" (")) {
+                let temp = tempForceTechniques[count].split(" (");
+                tempForceTechniques += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (<i><a href='https://swse.fandom.com/wiki/"+temp[1]+"' target='_blank' rel='noopener noreferrer'>"+temp[1]+"</a></i>)";
+            }
+            else {
+                tempForceTechniques += "<a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a> (+1)";
+            }
+        }
+        else {
+            if (tempForceTechniques[count].includes(" (")) {
+                let temp = tempForceTechniques[count].split(" (");
+                tempForceTechniques += ", <a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (<i><a href='https://swse.fandom.com/wiki/"+temp[1]+"' target='_blank' rel='noopener noreferrer'>"+temp[1]+"</a></i>)";
+            }
+            else {
+                tempForceTechniques += ", <a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a> (+1)";
+            }
+        }
+    }
+
+    return tempForceTechniques;
+}
+
+export function displayRawForceTechniques(forceTechniques) {
+    let rawForceTechniques = "";
+    let count;
+    for (count = 0; count < forceTechniques.length; count++) {
+        if (count == 0) {
+            rawForceTechniques += forceTechniques[count];
+        }
+        else {
+            rawForceTechniques += ", "+forceTechniques[count];
+        }
+    }
+    
+    return rawForceTechniques;
 }
