@@ -2,6 +2,7 @@ import {parseXML} from './xmlGetter.js';
 
 export function getSpeed(speciesID,talents,feats,armorType,armor) {
     let hovering = 0;
+    if (speciesID != 0) {
     try {
         hovering = parseInt(parseXML("xmls/species.xml","hoveringSpeed",speciesID));
                 if (armorType == "Medium" && hovering < 6 ||
@@ -17,6 +18,7 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
             }}
     }
     catch {}
+}
     let flying = 0;
     try {
         flying = parseInt(parseXML("xmls/species.xml","flySpeed",speciesID));
