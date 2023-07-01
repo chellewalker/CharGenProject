@@ -110,6 +110,8 @@ window.genCharacter = function genCharacter() {
         let feats = [];
         let skills = [];
         let forcePowers = [];
+        let forceTechniques = [];
+        let forceSecrets = [];
         let qualities = [];
         let starshipManeuvers = [];
         let BAB = 0;
@@ -480,6 +482,8 @@ window.genCharacter = function genCharacter() {
         otherAttack = temp2[0];
     }
     forcePowers.sort();
+    forceTechniques.sort();
+    forceSecrets.sort();
     starshipManeuvers.sort();
     forcePowers = compressForcePowers(forcePowers);
     let qualityList = compressQualities(qualities);
@@ -517,7 +521,8 @@ window.genCharacter = function genCharacter() {
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
-            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR,qualityList,qualities,armorFort);
+            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR,qualityList,qualities,armorFort,
+            forceTechniques,forceSecrets);
     
         document.write(output);
 }

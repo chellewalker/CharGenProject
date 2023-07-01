@@ -1,4 +1,6 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
+import {displayForceTechniques,displayRawForceTechniques} from './forceAbilities/forceTechniques.js';
+import {displayForceSecrets,displayRawForceSecrets} from './forceAbilities/forcesecrets.js';
 import {displayStarshipManeuvers,displayRawStarshipManeuvers} from './feats/getStarshipManeuver.js';
 import {displayTalents,displayRawTalents} from './talents/getTalent.js';
 import {displayQualities,displayRawQualities} from './classGen/getQualities.js';
@@ -8,7 +10,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,simpleMelee,simpleRanged,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,
-    forcePowers,SR,qualityList,qualities,armorFort) {
+    forcePowers,SR,qualityList,qualities,armorFort,forceTechniques,forceSecrets) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
@@ -69,6 +71,8 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let otherAttack = "";
     let byWeapon = "";
     let powerDisplay = "";
+    let techniqueDisplay = "";
+    let secretDisplay = "";
     let maneuverDisplay = "";
     if (rangedWeapon < 0) {
         byWeapon = rangedWeapon;
@@ -177,11 +181,22 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let outputData = getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
         advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
-        speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged);
+        speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
+        forceTechniques,forceSecrets);
 
         if (forcePowers != "") {
             forcePowers = displayForcePowers(forcePowers);
             powerDisplay = "<strong>Force Power Suite:</strong> "+forcePowers+"<br>";
+        }
+
+        if (forceTechniques != "") {
+            forceTechniques = displayForceTechniques(forceTechniques);
+            techniqueDisplay = "<strong>Force Techniques:</strong> "+forceTechniques+"<br>";
+        }
+
+        if (forceSecrets != "") {
+            forceSecrets = displayForceSecrets(forceSecrets);
+            secretDisplay = "<strong>Force Secrets:</strong> "+forceSecrets+"<br>";
         }
 
         if (starshipManeuvers != "") {
@@ -233,6 +248,8 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         space+
         maneuverDisplay+
         powerDisplay+
+        techniqueDisplay+
+        secretDisplay+
         "<strong>Species Traits (<a href='https://swse.fandom.com/wiki/"+species+"' target='_blank' rel='noopener noreferrer'>"+species+"</a>):</strong> "+traitDisplay+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Base Stats</strong></u></p>"+
         "<strong>Abilities:</strong> Strength "+str+", Dexterity "+dex+", Constitution "+con+", Intelligence "+int+", Wisdom "+wis+", Charisma "+cha+""+"<br>"+
@@ -270,7 +287,8 @@ export function download_txt(name,outputData) {
 export function getOutputData(destiny,forcePoints,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
-    speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged) {
+    speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
+    forceTechniques,forceSecrets) {
 
         let listTalents = displayRawTalents(talents);
         let listFeats = displayRawFeats(feats);
@@ -336,6 +354,8 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         let listQualities = "";
         let byWeapon = "";
         let powerDisplay = "";
+        let techniqueDisplay = "";
+        let secretDisplay = "";
         let maneuverDisplay = "";
         if (rangedWeapon < 0) {
             byWeapon = rangedWeapon;
@@ -407,6 +427,16 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         powerDisplay = "Force%20Power%20Suite:%20"+forcePowers+"%0A";
     }
 
+    if (forceTechniques != "") {
+        forceTechniques = displayRawForceTechniques(forceTechniques);
+        techniqueDisplay = "Force%20Techniques:%20"+forceTechniques+"%0A";
+    }
+
+    if (forceSecrets != "") {
+        forceSecrets = displayRawForceSecrets(forceSecrets);
+        secretDisplay = "Force%Secrets:%20"+forceSecrets+"%0A";
+    }
+
     if (starshipManeuvers != "") {
         starshipManeuvers = displayRawStarshipManeuvers(starshipManeuvers);
         maneuverDisplay = "Starship%20Maneuvers%20Suite:%20"+starshipManeuvers+"%0A";
@@ -453,8 +483,10 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         otherAttack+
         "Base%20Attack%20Bonus:%20+"+BAB+",%20Grapple:%20"+grappleDisplay+"%0A"+
         space+
-        powerDisplay+
         maneuverDisplay+
+        powerDisplay+
+        techniqueDisplay+
+        secretDisplay+
         "Species%20Traits%20("+species+"):%20"+traitDisplay+"%0A%0A"+
         "Base%20Stats%0A"+
         "Abilities:%20Strength%20"+str+",%20Dexterity%20"+dex+",%20Constitution%20"+con+",%20Intelligence%20"+int+",%20Wisdom%20"+wis+",%20Charisma%20"+cha+""+"%0A"+
