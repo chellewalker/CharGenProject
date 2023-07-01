@@ -1,7 +1,7 @@
 export function getTradition(light,dark,species,available) {
     let tradition = -1;
     while (tradition == -1) {
-        let randomNum = Math.floor(Math.random() * 13);
+        let randomNum = Math.floor(Math.random() * 14);
         if (randomNum == 0 && light == 1 && available.includes("CR")) {
             //Jedi
             tradition = 0;
@@ -51,9 +51,13 @@ export function getTradition(light,dark,species,available) {
             //Inquisitorius
             tradition = 11;
         }
-        else if (randomNum == 12 && dark == 1 && available.includes("SaV")) {
-            //Sable Dawn
+        else if (randomNum == 12 && dark == 1 && available.includes("CWCG")) {
+            //Bando Gora
             tradition = 12;
+        }
+        else if (randomNum == 13 && dark == 1 && available.includes("CWCG")) {
+            //Believers
+            tradition = 13;
         }
     }
     return tradition;

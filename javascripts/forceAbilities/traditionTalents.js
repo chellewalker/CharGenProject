@@ -30,6 +30,12 @@ export function traditionTalents(talents,available,skills,feats,BAB,forcePowers,
     else if (tradition == 10 && available.includes("FUCG")) {
         talent = felucianTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
+    else if (tradition == 12 && available.includes("FUCG")) {
+        talent = bandoGoraTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+    }
+    else if (tradition == 13 && available.includes("FUCG")) {
+        talent = believersTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+    }
     if (count == 500) {
         talent = "ValidTalentNotFound";
     }
@@ -309,6 +315,69 @@ export function felucianTalents(talents,available,skills,feats,BAB,forcePowers,l
     }
     else if (randomNum == 6 && available.includes("HC")) {
         talent = "Skullblade Mastery";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function bandoGoraTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0) {
+        talent = "Bando Gora Surge";
+    }
+    else if (randomNum == 1) {
+        talent = "Force Fighter";
+    }
+    else if (randomNum == 2) {
+        talent = "Resist Enervation";
+    }
+    else if (randomNum == 3 && feats.includes("Force Training")) {
+        talent = "Victorious Force Mastery";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function believersTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Believer Intuition";
+    }
+    else if (randomNum == 1) {
+        talent = "Defense Boost";
+    }
+    else if (randomNum == 2) {
+        talent = "Hardiness";
+    }
+    else if (randomNum == 3) {
+        talent = "High Impact";
+    }
+    else if (randomNum == 4) {
+        talent = "Sith Reverence";
     }
     if (talents.includes(talent)) {
         talent = "";
