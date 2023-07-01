@@ -126,7 +126,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
             feat = "Dual Weapon Mastery III";
         }
         else if (randomNum == 39 && BAB >= 1) {
-            let randomNum2 = Math.floor(Math.random() * 14);
+            let randomNum2 = Math.floor(Math.random() * 17);
                 if (randomNum2 == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
@@ -168,6 +168,15 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                 }
                 else if (randomNum2 == 13 && available.includes("FUCG")) {
                     feat = "Exotic Weapon Proficiency (Ryyk Blade)";
+                }
+                else if (randomNum2 == 14 && available.includes("SaV")) {
+                    feat = "Exotic Weapon Proficiency (Deck Sweeper)";
+                }
+                else if (randomNum2 == 15 && available.includes("SaV")) {
+                    feat = "Exotic Weapon Proficiency (Neural Inhibitor)";
+                }
+                else if (randomNum2 == 16 && available.includes("SaV")) {
+                    feat = "Exotic Weapon Proficiency (Pulse Rifle)";
                 }
         }
         else if (randomNum == 40 && available.includes("CR") && speciesTraits.includes("Rage")) {

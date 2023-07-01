@@ -21,7 +21,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolAttackRaw++;
     }
     while (pistolWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 15);
+        let randomNum = Math.floor(Math.random() * 16);
 
         if (randomNum == 0) {
             pistolWeapon = "Blaster Pistol";
@@ -117,6 +117,14 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
             weaponSize = 1;
             pistolDice = 3;
             pistolDie = 6;
+        }
+        if (randomNum == 15 && available.includes("SaV")) {
+            pistolWeapon = "Subrepeating Blaster";
+            weaponSize = 1;
+            pistolDice = 3;
+            pistolDie = 6;
+            special = ", 2-Square Autofire";
+            pistolAttackRaw -= 5;
         }
     }
 

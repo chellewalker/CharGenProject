@@ -59,6 +59,26 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             exoticRangedDice = 3;
             exoticRangedDie = 4;
         }
+        else if (feats.includes("Exotic Weapon Proficiency (Deck Sweeper)")) {
+            exoticRangedWeapon = "Deck Sweeper";
+            weaponSize = 2;
+            exoticRangedDice = 3;
+            exoticRangedDie = 6;
+            special = " (Stun), 6-Square Cone";
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Neural Inhibitor)")) {
+            exoticRangedWeapon = "Neural Inhibitor";
+            weaponSize = 1;
+            exoticRangedDice = 1;
+            exoticRangedDie = 6;
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Pulse Rifle)")) {
+            exoticRangedWeapon = "Pulse Rifle";
+            weaponSize = 1;
+            exoticRangedDice = 2;
+            exoticRangedDie = 8;
+            special = ", 6-Square Cone";
+        }
 
         let exoticRangedAttack = "";
         if (exoticRangedAttackRaw < 0) {

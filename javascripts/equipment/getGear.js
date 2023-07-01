@@ -43,7 +43,7 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 57);
+        let randomNum = Math.floor(Math.random() * 61);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -382,6 +382,24 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             }
             else {
                 gearEquipment.push("Repulsor Pad");
+        }}
+        if (randomNum == 58 && available.includes("SaV")) {
+            if (gearEquipment.includes("ABC Scrambler")) {
+            }
+            else {
+                gearEquipment.push("ABC Scrambler");
+        }}
+        if (randomNum == 59 && available.includes("SaV")) {
+            if (gearEquipment.includes("Lock Breaking Kit")) {
+            }
+            else {
+                gearEquipment.push("Lock Breaking Kit");
+        }}
+        if (randomNum == 60 && available.includes("SaV")) {
+            if (gearEquipment.includes("Spacer's Chest")) {
+            }
+            else {
+                gearEquipment.push("Spacer's Chest");
         }}
     }
 

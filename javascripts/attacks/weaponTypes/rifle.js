@@ -21,7 +21,7 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         rifleAttackRaw++;
     }
     while (rifleWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 17);
+        let randomNum = Math.floor(Math.random() * 20);
 
         if (randomNum == 0) {
             rifleWeapon = "Blaster Rifle";
@@ -132,6 +132,26 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
             rifleDice = 3;
             rifleDie = 8;
             special = " (Stun)";
+        }
+        if (randomNum == 17 && available.includes("SaV")) {
+            rifleWeapon = "Micro Grenade Launcher";
+            weaponSize = 1;
+            rifleDice = 4;
+            rifleDie = 6;
+            special = ", 2-Square Burst";
+        }
+        if (randomNum == 18 && available.includes("SaV")) {
+            rifleWeapon = "Snare Rifle";
+            weaponSize = 1;
+            rifleDice = 1;
+            rifleDie = 6;
+            special = " (Stun)";
+        }
+        if (randomNum == 19 && available.includes("SaV")) {
+            rifleWeapon = "Sniper Blaster Rifle";
+            weaponSize = 2;
+            rifleDice = 3;
+            rifleDie = 10;
         }
     }
 
