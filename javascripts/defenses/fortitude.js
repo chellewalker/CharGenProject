@@ -25,6 +25,10 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,tal
         if (classes[6] > 0) {
             classFortitude = Math.max(classFortitude,2);
         }
+        //Elite Trooper
+        if (classes[8] > 0) {
+            classFortitude = Math.max(classFortitude,4);
+        }
 
     let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude + armorFort;
         if (speciesTraits.includes("Great Fortitude")) {

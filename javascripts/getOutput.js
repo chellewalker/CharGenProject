@@ -8,7 +8,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,simpleMelee,simpleRanged,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,
-    forcePowers,SR,qualityList) {
+    forcePowers,SR,qualityList,qualities,armorFort) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
@@ -18,9 +18,18 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         let listFeats = displayFeats(feats);
 
         let damageReduction = 0;
+        let reductionCount;
+        for (reductionCount = 0; reductionCount < qualities.length; reductionCount++) {
+            if (qualities[reductionCount] == "Damage Reduction") {
+                damageReduction++;
+            }
+        }
+        if (talents.includes("Armored Mandalorian")) {
+            damageReduction += Math.min(armorFort,damageReduction)
+        }
         let reductionDisplay = "";
         if (speciesTraits.includes("Damage Reduction 2")) {
-            damageReduction += 2;
+            damageReduction = Math.max(damageReduction,2);
         }
         if (damageReduction != 0) {
             reductionDisplay = ", <strong>Damage Reduction:</strong> "+damageReduction;

@@ -10,6 +10,9 @@ export function getQuality(thisLevel) {
     if (thisLevel == 7) {
         quality = "Command Cover";
     }
+    if (thisLevel == 8) {
+        quality = "Damage Reduction";
+    }
 
     return quality;
 }
@@ -58,7 +61,10 @@ export function displayQualities(qualities) {
     let count;
     for (count = 0; count < qualities.length; count++) {
         if (count == 0) {
-            if (qualities[count].includes(" (")) {
+            if (qualities[count] == "Delay Damage") {
+                tempQualities += "<a href='https://swse.fandom.com/wiki/Delay_Damage' target='_blank' rel='noopener noreferrer'>Delay Damage</a>";
+            }
+            else if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
                 tempQualities += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (+"+temp[1];
             }
@@ -67,7 +73,10 @@ export function displayQualities(qualities) {
             }
         }
         else {
-            if (qualities[count].includes(" (")) {
+            if (qualities[count] == "Delay Damage") {
+                tempQualities += ", <a href='https://swse.fandom.com/wiki/Delay_Damage' target='_blank' rel='noopener noreferrer'>Delay Damage</a>";
+            }
+            else if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
                 tempQualities += ", <a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (+"+temp[1];
             }

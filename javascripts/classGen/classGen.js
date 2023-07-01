@@ -164,33 +164,8 @@ export function classListing(firstClass,classes) {
         if (classes[7] > 0) {
             classList += "/Crime Lord "+classes[7];
         }
+        if (classes[8] > 0) {
+            classList += "/Elite Trooper "+classes[8];
+        }
     return classList;
-}
-
-export function availableFeats(level,classes,firstClass,speciesTraits) {
-    let availableFeats = [0,0,0,0,0,0,0];
-    let score = Math.ceil(level/3);
-    if (speciesTraits.split(", ").includes("Bonus Feat")) {
-        score++;
-    }
-    availableFeats[0] = score;
-
-
-    if (Math.floor(classes[0]/2) > 0) {
-        availableFeats[1] = Math.floor(classes[0]/2);
-    }
-    if (Math.floor(classes[1]/2) > 0) {
-        availableFeats[2] = Math.floor(classes[1]/2);
-    }
-    if (Math.floor(classes[2]/2) > 0) {
-        availableFeats[3] = Math.floor(classes[2]/2);
-    }
-    if (Math.floor(classes[3]/2) > 0) {
-        availableFeats[4] = Math.floor(classes[3]/2);
-    }
-    if (Math.floor(classes[4]/2) > 0) {
-        availableFeats[5] = Math.floor(classes[4]/2);
-    }
-
-    return availableFeats;
 }

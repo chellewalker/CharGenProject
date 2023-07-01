@@ -12,6 +12,8 @@ export function getBAB(classes) {
     BAB += classes[6]*1;
     //Crime Lord
     BAB += Math.floor(classes[7]*0.75);
+    //Elite Trooper
+    BAB += classes[8]*1;
 
     return BAB;
 }

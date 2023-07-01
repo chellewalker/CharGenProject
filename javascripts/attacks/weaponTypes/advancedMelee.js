@@ -176,6 +176,9 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
     if (feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
         advancedMeleeAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Advanced Melee Weapons)")) {
+        advancedMeleeAttackRaw++;
+    }
 
         let advancedMeleeAttack = "";
         if (advancedMeleeAttackRaw < 0) {
@@ -187,6 +190,9 @@ export function getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,s
 
     let advancedMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     if (talents.includes("Weapon Specialization (Advanced Melee Weapons)")) {
+        advancedMeleeDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Advanced Melee Weapons)")) {
         advancedMeleeDamageRaw += 2;
     }
     if (talents.includes("Melee Smash")) {

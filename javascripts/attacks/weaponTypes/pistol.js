@@ -20,6 +20,9 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
     if (feats.includes("Weapon Focus (Pistols)")) {
         pistolAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Pistols)")) {
+        pistolAttackRaw++;
+    }
     while (pistolWeapon == "") {
         let randomNum = Math.floor(Math.random() * 16);
 
@@ -138,6 +141,9 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
 
     let pistolDamageRaw = Math.floor(level/2);
     if (talents.includes("Weapon Specialization (Pistols)")) {
+        pistolDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Pistols)")) {
         pistolDamageRaw += 2;
     }
     let pistolDamage = "";

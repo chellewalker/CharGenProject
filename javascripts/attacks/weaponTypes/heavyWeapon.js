@@ -8,6 +8,9 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
     if (feats.includes("Weapon Focus (Heavy Weapons)")) {
         heavyWeaponAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Heavy Weapons)")) {
+        heavyWeaponAttackRaw++;
+    }
     while (heavyWeaponWeapon == "") {
         let randomNum = Math.floor(Math.random() * 7);
 
@@ -67,6 +70,9 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
 
     let heavyWeaponDamageRaw = Math.floor(level/2);
     if (talents.includes("Weapon Specialization (Heavy Weapons)")) {
+        heavyWeaponDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Heavy Weapons)")) {
         heavyWeaponDamageRaw += 2;
     }
     let heavyWeaponDamage = "";

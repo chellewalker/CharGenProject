@@ -29,6 +29,10 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
         if (classes[7] > 0) {
             classReflex = Math.max(classReflex,2);
         }
+        //Elite Trooper
+        if (classes[8] > 0) {
+            classReflex = Math.max(classReflex,2);
+        }
 
         if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
             armorRef = 4;

@@ -8,8 +8,9 @@ import {soldierTalents} from './soldierTalents.js';
 import {acePilotTalents} from './prestigeTalents/acePilotTalents.js';
 import {bountyHunterTalents} from './prestigeTalents/bountyHunterTalents.js';
 import {crimeLordTalents} from './prestigeTalents/crimeLordTalents.js';
+import {eliteTrooperTalents} from './prestigeTalents/eliteTrooperTalents.js';
 
-export function getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities) {
+export function getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities,dex) {
     let talent = "";
     let count = 0;
 while (talent == "") {
@@ -71,6 +72,9 @@ else {
     }
     else if (thisLevel == 7) {
         talent = crimeLordTalents(talents,available,skills,feats,BAB,wis,cha,qualities);
+    }
+    else if (thisLevel == 8) {
+        talent = eliteTrooperTalents(talents,available,skills,feats,BAB,dex,wis,cha,qualities);
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";

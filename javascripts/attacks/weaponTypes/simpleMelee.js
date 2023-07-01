@@ -127,6 +127,9 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     if (feats.includes("Weapon Focus (Simple Weapons)")) {
         simpleMeleeAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Simple Weapons)")) {
+        simpleMeleeAttackRaw++;
+    }
 
         let simpleMeleeAttack = "";
         if (simpleMeleeAttackRaw < 0) {
@@ -138,6 +141,9 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
 
     let simpleMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+        simpleMeleeDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Simple Weapons)")) {
         simpleMeleeDamageRaw += 2;
     }
     if (talents.includes("Melee Smash")) {

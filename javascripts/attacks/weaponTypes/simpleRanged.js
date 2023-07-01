@@ -20,6 +20,9 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
     if (feats.includes("Weapon Focus (Simple Weapons)")) {
         simpleRangedAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Simple Weapons)")) {
+        simpleRangedAttackRaw++;
+    }
     while (simpleRangedWeapon == "") {
         let randomNum = Math.floor(Math.random() * 10);
 
@@ -96,6 +99,9 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
 
     let simpleRangedDamageRaw = Math.floor(level/2);
     if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+        simpleRangedDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Simple Weapons)")) {
         simpleRangedDamageRaw += 2;
     }
     if (simpleRangedWeapon == "Bow (10 Arrows)" || simpleRangedWeapon == "Sling (10 Stones)" || simpleRangedWeapon == "Pulley Bow (10 Arrows)") {

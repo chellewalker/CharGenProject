@@ -29,6 +29,9 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
     if (feats.includes("Weapon Focus (Lightsabers)")) {
         lightsaberAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Lightsabers)")) {
+        lightsaberAttackRaw++;
+    }
     while (lightsaberWeapon == "") {
         let randomNum = Math.floor(Math.random() * 6);
 
@@ -81,6 +84,9 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
 
     let lightsaberDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     if (talents.includes("Weapon Specialization (Lightsabers)")) {
+        lightsaberDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Lightsabers)")) {
         lightsaberDamageRaw += 2;
     }
     if (talents.includes("Melee Smash")) {

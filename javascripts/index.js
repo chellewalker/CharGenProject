@@ -101,7 +101,8 @@ window.genCharacter = function genCharacter() {
     let classes = [0,0,0,0,0, //Jedi(0),Noble(1),Scoundrel(2),Scout(3),Soldier(4)
             0,  //Ace Pilot (5)
             0,  //Bounty Hunter (6) 
-            0   //Crime Lord (7)
+            0,  //Crime Lord (7)
+            0   //Elite Trooper (8)
             ];
         let firstClass;
         let hitPoints = 0;
@@ -131,7 +132,7 @@ window.genCharacter = function genCharacter() {
     while (failsafe == 0) {
         safecount++;
         failsafe = 1;
-        classes = [0,0,0,0,0,0,0,0];
+        classes = [0,0,0,0,0,0,0,0,0];
         hitPoints = 0;
         talents = [];
         feats = [];
@@ -150,7 +151,7 @@ window.genCharacter = function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,qualities));
+                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,qualities,dex));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits);
                 feats = speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha);
@@ -214,11 +215,11 @@ window.genCharacter = function genCharacter() {
                 else if (classes[thisLevel] % 2 == 0 && thisLevel >= 5) {
                     qualities.push(getQuality(thisLevel));
                     if (thisLevel == 7) {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities,dex));
                 }}
                 
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities,dex));
                 }
             }
             if ((count-2) % 3 == 0) {
@@ -243,6 +244,9 @@ window.genCharacter = function genCharacter() {
         }
         else if (classes[3] > 0 && con >= 13 && skills.includes("Endurance")) {
             feats.push("Shake It Off");
+        }
+        if (classes[8] > 0) {
+            qualities.push("Delay Damage");
         }
         talents.sort();
         feats.sort();
@@ -513,7 +517,7 @@ window.genCharacter = function genCharacter() {
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
-            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR,qualityList);
+            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR,qualityList,qualities,armorFort);
     
         document.write(output);
 }

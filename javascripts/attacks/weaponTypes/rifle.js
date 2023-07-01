@@ -20,6 +20,9 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
     if (feats.includes("Weapon Focus (Rifles)")) {
         rifleAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Rifles)")) {
+        rifleAttackRaw++;
+    }
     while (rifleWeapon == "") {
         let randomNum = Math.floor(Math.random() * 20);
 
@@ -165,6 +168,9 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
 
     let rifleDamageRaw = Math.floor(level/2);
     if (talents.includes("Weapon Specialization (Rifles)")) {
+        rifleDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Rifles)")) {
         rifleDamageRaw += 2;
     }
     let rifleDamage = "";

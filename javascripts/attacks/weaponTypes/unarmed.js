@@ -24,6 +24,9 @@ export function getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTrait
     if (feats.includes("Weapon Focus (Simple Weapons)")) {
         unarmedAttackRaw++;
     }
+    if (talents.includes("Greater Weapon Focus (Simple Weapons)")) {
+        unarmedAttackRaw++;
+    }
 
         let unarmedAttack = "";
         if (unarmedAttackRaw < 0) {
@@ -34,6 +37,9 @@ export function getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTrait
         }
 
     let unarmedDice = 1;
+    if (talents.includes("Teräs Käsi Basics")) {
+        unarmedDice++;
+    }
 
     let unarmedList = [2,3,4,6,8,10,12];
         let unarmedDie = 2;
@@ -59,6 +65,9 @@ export function getUnarmed(BAB,level,str,dex,cha,feats,talents,size,speciesTrait
 
     let unarmedDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+        unarmedDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Simple Weapons)")) {
         unarmedDamageRaw += 2;
     }
     if (talents.includes("Melee Smash")) {
