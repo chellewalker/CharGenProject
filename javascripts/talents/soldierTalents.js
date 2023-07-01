@@ -4,7 +4,7 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 12);
-        let randomNum = Math.floor(Math.random() * 6);
+        let randomNum = Math.floor(Math.random() * 7);
     if (randomNum == 0) {
         talent = armorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -469,6 +469,39 @@ export function mercenaryTalents(talents,available,skills,feats,BAB,forcePowers,
     }
     else if (randomNum == 8 && available.includes("TotG") && talents.includes("Combined Fire")) {
         talent = "Mercenary's Teamwork";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function trooperTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Comrades in Arms";
+    }
+    else if (randomNum == 1 && talents.includes("Comrades in Arms")) {
+        talent = "Focused Targeting";
+    }
+    else if (randomNum == 2 && talents.includes("Watch Your Back")) {
+        talent = "Phalanx";
+    }
+    else if (randomNum == 3 && talents.includes("Comrades in Arms")) {
+        talent = "Stick Together";
+    }
+    else if (randomNum == 4) {
+        talent = "Watch Your Back";
     }
     if (talents.includes(talent)) {
         talent = "";

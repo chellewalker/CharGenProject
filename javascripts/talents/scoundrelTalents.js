@@ -4,7 +4,7 @@ export function scoundrelTalents(talents,available,skills,feats,BAB,forcePowers,
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 8);
+        let randomNum = Math.floor(Math.random() * 9);
     if (randomNum == 0) {
         talent = fortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -372,6 +372,39 @@ export function smugglingTalents(talents,available,skills,feats,BAB,forcePowers,
     }
     else if (randomNum == 4) {
         talent = "Surprise Strike";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function opportunistTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Advantageous Opening";
+    }
+    else if (randomNum == 1) {
+        talent = "Retribution";
+    }
+    else if (randomNum == 2) {
+        talent = "Slip By";
+    }
+    else if (randomNum == 3 && talents.includes("Advantageous Opening")) {
+        talent = "Thrive on Chaos";
+    }
+    else if (randomNum == 4 && talents.includes("Retribution")) {
+        talent = "Vindication";
     }
     if (talents.includes(talent)) {
         talent = "";

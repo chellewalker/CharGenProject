@@ -198,7 +198,7 @@ window.genCharacter = function genCharacter() {
                 }}
             }
             else {
-                thisLevel = getLevel(firstClass,classes,count,skills,feats,talents,BAB,available);
+                thisLevel = getLevel(firstClass,classes,count,skills,feats,talents,BAB,available,forceTechniques);
                 classes[thisLevel]++;
                 if (classes[thisLevel] == 1 && thisLevel < 5) {
                     let temp = (multiclassFeat(thisLevel,feats,skills,int,con,speciesTraits));

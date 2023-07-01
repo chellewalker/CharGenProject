@@ -7,7 +7,7 @@ import {mercenaryCounter} from "./talentCounter/mercenary.js";
 import {misfortuneCounter} from "./talentCounter/misfortune.js";
 import {weaponCounter} from "./talentCounter/weapon.js";
 
-export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,available) {
+export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,available,forceTechniques) {
     let thisLevel;
 
     let randomNum = Math.floor(Math.random() * 8);
