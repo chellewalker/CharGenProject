@@ -169,7 +169,7 @@ window.genCharacter = function genCharacter() {
                 if (speciesTraits.includes("Force Blast")) {
                     forcePowers.push("Force Blast");
                 }
-                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
+                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count,species,light,dark));
                 if (feats.findLast(findLast) == "Skill Training") {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
@@ -183,7 +183,7 @@ window.genCharacter = function genCharacter() {
                     starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
                 }
                 if (speciesTraits.includes("Bonus Feat")) {
-                    feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
+                    feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count,species,light,dark));
                 if (feats.findLast(findLast) == "Skill Training") {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
@@ -208,7 +208,7 @@ window.genCharacter = function genCharacter() {
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0 && thisLevel < 5) {
-                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
+                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count,species,light,dark));
                     if (feats.findLast(findLast) == "Skill Training") {
                         skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                     }
@@ -225,7 +225,7 @@ window.genCharacter = function genCharacter() {
                 }
             }
             if ((count-2) % 3 == 0) {
-                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
+                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count,species,light,dark));
             if (feats.findLast(findLast) == "Skill Training") {
                 skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 skills.sort();
@@ -396,7 +396,7 @@ window.genCharacter = function genCharacter() {
             let flatFooted = getFlatFooted(reflex,dex,feats,talents);
         let fortitude = getFortitude(classes,con,level,speciesTraits,feats,armorFort,talents);
             let damageThreshold = getDamageThreshold(fortitude,size,feats,talents);
-        let will = getWill(classes,wis,level,speciesTraits,feats,talents);
+        let will = getWill(classes,wis,level,speciesTraits,feats,talents,armorFort);
 
         //speed
         let speed = getSpeed(speciesID,talents,feats,armorType,armorTemp[0]);

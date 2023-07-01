@@ -471,6 +471,45 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
         else if (randomNum == 136 && available.includes("SaV") && skills.includes("Endurance")) {
             feat = "Stay Up";
         }
+        else if (randomNum == 137 && available.includes("CWCG")) {
+            feat = "Artillery Shot";
+        }
+        else if (randomNum == 138 && available.includes("CWCG") && feats.includes("Coordinated Attack") && BAB >= 5) {
+            feat = "Coordinated Barrage";
+        }
+        else if (randomNum == 139 && available.includes("CWCG")) {
+            feat = "Droid Hunter";
+        }
+        else if (randomNum == 140 && available.includes("CWCG") && skills.includes("Treat Injury")) {
+            feat = "Experienced Medic";
+        }
+        else if (randomNum == 141 && available.includes("CWCG")) {
+            feat = "Flash and Clear";
+        }
+        else if (randomNum == 142 && available.includes("CWCG")) {
+            feat = "Flood of Fire";
+        }
+        else if (randomNum == 143 && available.includes("CWCG") && feats.includes("Armor Proficiency (Light)")) {
+            feat = "Grand Army of the Republic Training";
+        }
+        else if (randomNum == 144 && available.includes("CWCG") && BAB >= 1) {
+            feat = "Gunnery Specialist";
+        }
+        else if (randomNum == 145 && available.includes("CWCG")) {
+            feat = "Overwhelming Attack";
+        }
+        else if (randomNum == 146 && available.includes("CWCG")) {
+            feat = "Separatist Military Training";
+        }
+        else if (randomNum == 147 && available.includes("CWCG")) {
+            feat = "Trench Warrior";
+        }
+        else if (randomNum == 148 && available.includes("CWCG")) {
+            feat = "Unstoppable Force";
+        }
+        else if (randomNum == 149 && available.includes("CWCG")) {
+            feat = "Wary Defender";
+        }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {
             feat = "";

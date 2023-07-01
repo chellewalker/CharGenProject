@@ -3,7 +3,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 47);
+        let randomNum = Math.floor(Math.random() * 51);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -167,6 +167,18 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         }
         else if (randomNum == 46 && available.includes("SaV") && feats.includes("Rapid Strike")) {
             feat = "Wicked Strike";
+        }
+        else if (randomNum == 47 && available.includes("CWCG") && skills.includes("Treat Injury")) {
+            feat = "Experienced Medic";
+        }
+        else if (randomNum == 48 && available.includes("CWCG")) {
+            feat = "Leader of Droids";
+        }
+        else if (randomNum == 49 && available.includes("CWCG") && skills.includes("Perception")) {
+            feat = "Unwavering Resolve";
+        }
+        else if (randomNum == 50 && available.includes("CWCG")) {
+            feat = "Wary Defender";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

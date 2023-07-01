@@ -1,4 +1,4 @@
-export function getWill(classes,wis,level,speciesTraits,feats,talents) {
+export function getWill(classes,wis,level,speciesTraits,feats,talents,armorFort) {
 
     let classWill = 0;
 
@@ -38,6 +38,9 @@ export function getWill(classes,wis,level,speciesTraits,feats,talents) {
         }
         if (talents.includes("Force of Will")) {
             will += 2;
+        }
+        if (feats.includes("Grand Army of the Republic Training")) {
+            will += armorFort;
         }
 
     return will;

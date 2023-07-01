@@ -1,4 +1,4 @@
-export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel) {
+export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species,light,dark) {
     let feat = "";
     let count2 = 0;
     let randomNumForce = Math.floor(Math.random() * 2);
@@ -30,12 +30,15 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         else if (randomNum == 5 && available.includes("CR") && feats.includes("Weapon Proficiency (Heavy Weapons)") ||
                     randomNum == 5 && available.includes("CR") && feats.includes("Vehicular Combat") ||
                     randomNum == 5 && available.includes("CR") && talents.includes("Spacehound") ||
+                    randomNum == 5 && available.includes("CR") && feats.includes("Gunnery Specialist") ||
                     randomNum == 6 && available.includes("CR") && feats.includes("Weapon Proficiency (Heavy Weapons)") ||
                     randomNum == 6 && available.includes("CR") && feats.includes("Vehicular Combat") ||
                     randomNum == 6 && available.includes("CR") && talents.includes("Spacehound") ||
+                    randomNum == 6 && available.includes("CR") && feats.includes("Gunnery Specialist") ||
                     randomNum == 7 && available.includes("CR") && feats.includes("Weapon Proficiency (Heavy Weapons)") ||
                     randomNum == 7 && available.includes("CR") && feats.includes("Vehicular Combat") ||
-                    randomNum == 7 && available.includes("CR") && talents.includes("Spacehound")) {
+                    randomNum == 7 && available.includes("CR") && talents.includes("Spacehound") ||
+                    randomNum == 7 && available.includes("CR") && feats.includes("Gunnery Specialist")) {
             feat = "Burst Fire";
         }
         else if (randomNum == 8 && available.includes("CR") && feats.includes("Point-Blank Shot") && BAB >= 2 ||
@@ -803,6 +806,69 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 311 && available.includes("SaV") && feats.includes("Rapid Strike")) {
             feat = "Wicked Strike";
+        }
+        else if (randomNum == 312 && available.includes("CWCG") && species == "Nelvaanian") {
+            feat = "Anointed Hunter";
+        }
+        else if (randomNum == 313 && available.includes("CWCG")) {
+            feat = "Artillery Shot";
+        }
+        else if (randomNum == 314 && available.includes("CWCG") && feats.includes("Coordinated Attack") && BAB >= 5) {
+            feat = "Coordinated Barrage";
+        }
+        else if (randomNum == 315 && available.includes("CWCG") && skills.includes("Mechanics")) {
+            feat = "Droidcraft";
+        }
+        else if (randomNum == 316 && available.includes("CWCG")) {
+            feat = "Droid Hunter";
+        }
+        else if (randomNum == 317 && available.includes("CWCG") && skills.includes("Treat Injury")) {
+            feat = "Experienced Medic";
+        }
+        else if (randomNum == 318 && available.includes("CWCG") && skills.includes("Mechanics")) {
+            feat = "Expert Droid Repair";
+        }
+        else if (randomNum == 319 && available.includes("CWCG")) {
+            feat = "Flash and Clear";
+        }
+        else if (randomNum == 320 && available.includes("CWCG")) {
+            feat = "Flood of Fire";
+        }
+        else if (randomNum == 321 && available.includes("CWCG") && feats.includes("Armor Proficiency (Light)")) {
+            feat = "Grand Army of the Republic Training";
+        }
+        else if (randomNum == 322 && available.includes("CWCG") && BAB >= 1) {
+            feat = "Gunnery Specialist";
+        }
+        else if (randomNum == 323 && available.includes("CWCG")) {
+            feat = "Jedi Familiarity";
+        }
+        else if (randomNum == 324 && available.includes("CWCG")) {
+            feat = "Leader of Droids";
+        }
+        else if (randomNum == 325 && available.includes("CWCG")) {
+            feat = "Overwhelming Attack";
+        }
+        else if (randomNum == 326 && available.includes("CWCG") && dark == 1) {
+            feat = "Pall of the Dark Side";
+        }
+        else if (randomNum == 327 && available.includes("CWCG")) {
+            feat = "Separatist Military Training";
+        }
+        else if (randomNum == 328 && available.includes("CWCG")) {
+            feat = "Spray Shot";
+        }
+        else if (randomNum == 329 && available.includes("CWCG")) {
+            feat = "Trench Warrior";
+        }
+        else if (randomNum == 330 && available.includes("CWCG")) {
+            feat = "Unstoppable Force";
+        }
+        else if (randomNum == 331 && available.includes("CWCG") && skills.includes("Perception")) {
+            feat = "Unwavering Resolve";
+        }
+        else if (randomNum == 332 && available.includes("CWCG")) {
+            feat = "Wary Defender";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
                 feat == "Skill Focus (undefined)") {

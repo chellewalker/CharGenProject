@@ -3,7 +3,7 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 67);
+        let randomNum = Math.floor(Math.random() * 71);
         if (randomNum == 0 && available.includes("CR") && feats.includes("Point-Blank Shot") && feats.includes("Precise Shot") && BAB >= 4) {
             feat = "Deadeye";
         }
@@ -150,6 +150,18 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
         }
         else if (randomNum == 66 && available.includes("SaV") && feats.includes("Tech Specialist") && int >= 17 && curLevel >= 9) {
             feat = "Superior Tech";
+        }
+        else if (randomNum == 67 && available.includes("CWCG") && skills.includes("Mechanics")) {
+            feat = "Droidcraft";
+        }
+        else if (randomNum == 68 && available.includes("CWCG")) {
+            feat = "Droid Hunter";
+        }
+        else if (randomNum == 69 && available.includes("CWCG") && skills.includes("Mechanics")) {
+            feat = "Expert Droid Repair";
+        }
+        else if (randomNum == 70 && available.includes("CWCG")) {
+            feat = "Overwhelming Attack";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

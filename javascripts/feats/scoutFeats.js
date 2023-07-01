@@ -3,7 +3,7 @@ export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 51);
+        let randomNum = Math.floor(Math.random() * 55);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -112,6 +112,18 @@ export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         }
         else if (randomNum == 50 && available.includes("FUCG")) {
             feat = "Cunning Attack";
+        }
+        else if (randomNum == 51 && available.includes("CWCG") && skills.includes("Mechanics")) {
+            feat = "Droidcraft";
+        }
+        else if (randomNum == 52 && available.includes("CWCG")) {
+            feat = "Droid Hunter";
+        }
+        else if (randomNum == 53 && available.includes("CWCG") && skills.includes("Mechanics")) {
+            feat = "Expert Droid Repair";
+        }
+        else if (randomNum == 54 && available.includes("CWCG")) {
+            feat = "Flash and Clear";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

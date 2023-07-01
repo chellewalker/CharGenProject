@@ -3,7 +3,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 73);
+        let randomNum = Math.floor(Math.random() * 76);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -279,6 +279,15 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
         }
         else if (randomNum == 72 && available.includes("SaV") && feats.includes("Rapid Strike")) {
             feat = "Wicked Strike";
+        }
+        else if (randomNum == 73 && available.includes("CWCG")) {
+            feat = "Unstoppable Force";
+        }
+        else if (randomNum == 74 && available.includes("CWCG") && skills.includes("Perception")) {
+            feat = "Unwavering Resolve";
+        }
+        else if (randomNum == 75 && available.includes("CWCG")) {
+            feat = "Wary Defender";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {
