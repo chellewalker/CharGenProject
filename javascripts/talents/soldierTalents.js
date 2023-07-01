@@ -3,7 +3,7 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 13);
+        //let randomNum = Math.floor(Math.random() * 12);
         let randomNum = Math.floor(Math.random() * 6);
     if (randomNum == 0) {
         talent = armorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
@@ -24,24 +24,21 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
         talent = mercenaryTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 6 && available.includes("CWCG")) {
-        talent = squadTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
-    }
-    else if (randomNum == 7 && available.includes("CWCG")) {
         talent = trooperTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 8 && available.includes("LECG")) {
+    else if (randomNum == 7 && available.includes("LECG")) {
         talent = bruteTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 9 && available.includes("RECG")) {
+    else if (randomNum == 8 && available.includes("RECG")) {
         talent = ambusherTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 10 && available.includes("GaW")) {
+    else if (randomNum == 9 && available.includes("GaW")) {
         talent = shockboxerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 11 && available.includes("GaW")) {
+    else if (randomNum == 10 && available.includes("GaW")) {
         talent = veteranTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 12 && available.includes("UR")) {
+    else if (randomNum == 11 && available.includes("UR")) {
         talent = warriorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     if (count == 500) {

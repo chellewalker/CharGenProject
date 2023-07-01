@@ -24,7 +24,7 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
         rifleAttackRaw++;
     }
     while (rifleWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 20);
+        let randomNum = Math.floor(Math.random() * 23);
 
         if (randomNum == 0) {
             rifleWeapon = "Blaster Rifle";
@@ -155,6 +155,24 @@ export function getRifle(available,BAB,level,dex,feats,talents,size) {
             weaponSize = 2;
             rifleDice = 3;
             rifleDie = 10;
+        }
+        if (randomNum == 20 && available.includes("CWCG")) {
+            rifleWeapon = "DLT-20A Longblaster";
+            weaponSize = 2;
+            rifleDice = 3;
+            rifleDie = 10;
+        }
+        if (randomNum == 21 && available.includes("CWCG")) {
+            rifleWeapon = "Adventurer Slugthrower";
+            weaponSize = 1;
+            rifleDice = 2;
+            rifleDie = 10;
+        }
+        if (randomNum == 22 && available.includes("CWCG")) {
+            rifleWeapon = "Firelance Blaster Rifle";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
         }
     }
 

@@ -19,7 +19,7 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     let simpleMeleeAttackRaw = BAB + Math.floor((str-10)/2);
 
     while (simpleMeleeWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 15);
+        let randomNum = Math.floor(Math.random() * 16);
 
         if (randomNum == 0 && available.includes("CR")) {
             simpleMeleeWeapon = "Bayonet";
@@ -112,6 +112,12 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 1;
             simpleMeleeDice = 1;
             simpleMeleeDie = 8;
+        }
+        if (randomNum == 15 && available.includes("CWCG")) {
+            simpleMeleeWeapon = "Snap Baton";
+            weaponSize = 0;
+            simpleMeleeDice = 2;
+            simpleMeleeDie = 4;
         }
     }
 

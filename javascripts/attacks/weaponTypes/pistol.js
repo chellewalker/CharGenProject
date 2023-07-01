@@ -24,7 +24,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
         pistolAttackRaw++;
     }
     while (pistolWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 16);
+        let randomNum = Math.floor(Math.random() * 21);
 
         if (randomNum == 0) {
             pistolWeapon = "Blaster Pistol";
@@ -128,6 +128,36 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
             pistolDie = 6;
             special = ", 2-Square Autofire";
             pistolAttackRaw -= 5;
+        }
+        if (randomNum == 16 && available.includes("CWCG")) {
+            pistolWeapon = "Adjudicator Slugthrower";
+            weaponSize = -1;
+            pistolDice = 2;
+            pistolDie = 4;
+        }
+        if (randomNum == 17 && available.includes("CWCG")) {
+            pistolWeapon = "Defender MicroBlaster";
+            weaponSize = -1;
+            pistolDice = 3;
+            pistolDie = 4;
+        }
+        if (randomNum == 18 && available.includes("CWCG")) {
+            pistolWeapon = "DH-23 Blaster Pistol";
+            weaponSize = 0;
+            pistolDice = 3;
+            pistolDie = 6;
+        }
+        if (randomNum == 19 && available.includes("CWCG")) {
+            pistolWeapon = "DT-12 Heavy Blaster";
+            weaponSize = 1;
+            pistolDice = 4;
+            pistolDie = 6;
+        }
+        if (randomNum == 20 && available.includes("CWCG")) {
+            pistolWeapon = "Model 434 DeathHammer";
+            weaponSize = 1;
+            pistolDice = 3;
+            pistolDie = 8;
         }
     }
 

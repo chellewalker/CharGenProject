@@ -22,7 +22,7 @@ function getHeavy(available,feats,talents) {
     let type = "Heavy";
 
     while (name == "") {
-        let randomNum = Math.floor(Math.random() * 6);
+        let randomNum = Math.floor(Math.random() * 7);
 
         if (randomNum == 0) {
             name = "Armored Space Suit (+9 Armor, +3 Fortitude)";
@@ -60,6 +60,12 @@ function getHeavy(available,feats,talents) {
             fortitude = 3;
             maxDex = 1;
         }
+        if (randomNum == 6 && available.includes("CWCG")) {
+            name = "Vacuum Pod (+4 Armor, +1 Fortitude)";
+            reflex = 4;
+            fortitude = 1;
+            maxDex = 0;
+        }
     }
 
     return [name,reflex,fortitude,maxDex,type];
@@ -73,7 +79,7 @@ function getMedium(available,feats,talents) {
     let type = "Medium";
 
     while (name == "") {
-        let randomNum = Math.floor(Math.random() * 8);
+        let randomNum = Math.floor(Math.random() * 9);
 
         if (randomNum == 0) {
             name = "Battle Armor (+8 Armor, +2 Fortitude)";
@@ -123,6 +129,11 @@ function getMedium(available,feats,talents) {
             fortitude = 2;
             maxDex = 3;
         }
+        if (randomNum == 8 && available.includes("CWCG")) {
+            name = "Camo Armor (+5 Armor)";
+            reflex = 5;
+            maxDex = 3;
+        }
     }
 
     return [name,reflex,fortitude,maxDex,type];
@@ -136,7 +147,7 @@ function getLight(available,feats,talents) {
     let type = "Light";
 
     while (name == "") {
-        let randomNum = Math.floor(Math.random() * 13);
+        let randomNum = Math.floor(Math.random() * 14);
 
         if (randomNum == 0) {
             name = "Armored Flight Suit (+5 Armor, +2 Fortitude)";
@@ -215,6 +226,12 @@ function getLight(available,feats,talents) {
             reflex = 4;
             fortitude = 1;
             maxDex = 3;
+        }
+        if (randomNum == 13 && available.includes("CWCG")) {
+            name = "Tracker Utility Vest (+1 Armor)";
+            reflex = 1;
+            fortitude = 0;
+            maxDex = 5;
         }
     }
 

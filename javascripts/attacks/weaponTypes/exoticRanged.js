@@ -79,6 +79,13 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             exoticRangedDie = 8;
             special = ", 6-Square Cone";
         }
+        else if (feats.includes("Exotic Weapon Proficiency (Wrist Rocket Launcher)")) {
+            exoticRangedWeapon = "Wrist Rocket Launcher";
+            weaponSize = 0;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+            special = ", 1-Square Burst";
+        }
 
         let exoticRangedAttack = "";
         if (exoticRangedAttackRaw < 0) {

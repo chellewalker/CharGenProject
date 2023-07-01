@@ -3,7 +3,7 @@ export function scoutTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 15);
+        //let randomNum = Math.floor(Math.random() * 14);
         let randomNum = Math.floor(Math.random() * 7);
     if (randomNum == 0 || randomNum == 1) {
         talent = awarenessTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
@@ -24,27 +24,24 @@ export function scoutTalents(talents,available,skills,feats,BAB,forcePowers,ligh
         talent = spyTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 7 && available.includes("CWCG")) {
-        talent = reconnaissanceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
-    }
-    else if (randomNum == 8 && available.includes("CWCG")) {
         talent = surveillanceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 9 && available.includes("LECG")) {
+    else if (randomNum == 8 && available.includes("LECG")) {
         talent = versatilityTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 10 && available.includes("RECG")) {
+    else if (randomNum == 9 && available.includes("RECG")) {
         talent = unpredictableTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 11 && available.includes("GaW")) {
+    else if (randomNum == 10 && available.includes("GaW")) {
         talent = patrolTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 12 && available.includes("GoI")) {
+    else if (randomNum == 11 && available.includes("GoI")) {
         talent = espionageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 13 && available.includes("UR")) {
+    else if (randomNum == 12 && available.includes("UR")) {
         talent = masterTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
-    else if (randomNum == 14 && available.includes("UR")) {
+    else if (randomNum == 13 && available.includes("UR")) {
         talent = mobileTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     if (count == 500) {

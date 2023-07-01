@@ -1,10 +1,7 @@
 import {parseXML} from './xmlGetter.js';
 
 export function getSpeed(speciesID,talents,feats,armorType,armor) {
-    let hovering = 0;
-    if (speciesID != 0) {
-    try {
-        hovering = parseInt(parseXML("xmls/species.xml","hoveringSpeed",speciesID));
+    let hovering = parseInt(parseXML("xmls/species.xml","hoveringSpeed",speciesID));
                 if (armorType == "Medium" && hovering < 6 ||
                     armorType == "Heavy" && hovering < 6) {
                 if (talents.includes("Juggernaut")) {}
@@ -16,12 +13,8 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 else {
                     hovering -= 2;
             }}
-    }
-    catch {}
-}
-    let flying = 0;
-    try {
-        flying = parseInt(parseXML("xmls/species.xml","flySpeed",speciesID));
+
+    let flying = parseInt(parseXML("xmls/species.xml","flySpeed",speciesID));
         if (armorType == "Medium" && flying < 6 ||
                     armorType == "Heavy" && flying < 6) {
                 if (talents.includes("Juggernaut")) {}
@@ -33,13 +26,8 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 else {
                     flying -= 2;
             }}
-    }
-    catch {}
-    let climbing = 0;
-    try {
-        climbing = parseInt(parseXML("xmls/species.xml","climbSpeed",speciesID));
-    }
-    catch {}
+
+    let climbing = parseInt(parseXML("xmls/species.xml","climbSpeed",speciesID));
     if (feats.includes("Increased Agility")) {
         climbing += 2;
     }
@@ -57,11 +45,8 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 else {
                     climbing -= 2;
             }}
-    let jumping = 0;
-    try {
-        jumping = parseInt(parseXML("xmls/species.xml","jumpSpeed",speciesID));
-    }
-    catch {}
+
+    let jumping = parseInt(parseXML("xmls/species.xml","jumpSpeed",speciesID));
     if (feats.includes("Increased Agility")) {
         jumping += 2;
     }
@@ -76,6 +61,7 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 else {
                     jumping -= 2;
             }}
+
     let speedValue = parseInt(parseXML("xmls/species.xml","speed",speciesID));
             if (armorType == "Medium" && speedValue < 6 ||
                     armorType == "Heavy" && speedValue < 6) {
@@ -91,7 +77,8 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 if (talents.includes("Long Stride")) {
                     speedValue += 2;
                 }
-        let swimSpeed = parseInt(parseXML("xmls/species.xml","swimSpeed",speciesID));
+
+    let swimSpeed = parseInt(parseXML("xmls/species.xml","swimSpeed",speciesID));
         if (armorType == "Medium" && swimSpeed < 6 ||
                     armorType == "Heavy" && swimSpeed < 6) {
                 if (talents.includes("Juggernaut")) {}
@@ -109,7 +96,8 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 if (feats.includes("Increased Agility")) {
                     swimSpeed += 2;
                 }
-        let jetPack = 0;
+
+    let jetPack = 0;
         if (armor == "Neo-Crusader Light Armor (+6 Reflex, +2 Fortitude)"
                 || armor == "Neo-Crusader Light Armor (+6 Reflex, +2 Fortitude)") {
             jetPack = 4;
@@ -127,7 +115,9 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
             if (talents.includes("Improved Trajectory")) {
                 jetPack += 2;
             }}
-        let speed = speedValue + " Squares (Walking)";
+
+
+    let speed = speedValue + " Squares (Walking)";
         if (swimSpeed > 0) {
             speed += ", " + swimSpeed + " Squares (Swimming)";
         }

@@ -93,6 +93,12 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             exoticMeleeDice = 2;
             exoticMeleeDie = 10;
         }
+        else if (feats.includes("Exotic Weapon Proficiency (Garrote)")) {
+            exoticMeleeWeapon = "Garrote";
+            weaponSize = 0;
+            exoticMeleeDice = 1;
+            exoticMeleeDie = 6;
+        }
 
     if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize > weaponSize) {
         exoticMeleeAttackRaw = BAB + Math.max(Math.floor((cha-10)/2),Math.floor((dex-10)/2),Math.floor((str-10)/2));

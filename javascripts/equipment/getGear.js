@@ -32,7 +32,13 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
         gearEquipment.push("Medpac (2)");
     }
     if (skills.includes("Use Computer")) {
-        gearEquipment.push("Portable Computer");
+        let randomNum = Math.floor(Math.random() * 2);
+        if (randomNum == 0) {
+            gearEquipment.push("Portable Computer");
+        }
+        else if (randomNum == 1) {
+            gearEquipment.push("Bracer Computer");
+        }
     }
 
     if (feats.includes("Weapon Proficiency (Pistols)") || feats.includes("Weapon Proficiency (Rifles)")) {
@@ -43,7 +49,7 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 61);
+        let randomNum = Math.floor(Math.random() * 64);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -400,6 +406,24 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             }
             else {
                 gearEquipment.push("Spacer's Chest");
+        }}
+        if (randomNum == 61 && available.includes("CWCG")) {
+            if (gearEquipment.includes("Visual Wrist Comm")) {
+            }
+            else {
+                gearEquipment.push("Visual Wrist Comm");
+        }}
+        if (randomNum == 62 && available.includes("CWCG")) {
+            if (gearEquipment.includes("Halo Lamp")) {
+            }
+            else {
+                gearEquipment.push("Halo Lamp");
+        }}
+        if (randomNum == 63 && available.includes("CWCG")) {
+            if (gearEquipment.includes("Bioscanner")) {
+            }
+            else {
+                gearEquipment.push("Bioscanner");
         }}
     }
 

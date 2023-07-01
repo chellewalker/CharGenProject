@@ -10,6 +10,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat, Bonus Trained Skill</speciesTraits>
         <languages>Basic</languages>
     </species>
@@ -24,6 +29,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat (Toughness), Breathe Underwater, Expert Swimmer</speciesTraits>
         <languages>Aqualish, Basic</languages>
     </species>
@@ -38,6 +48,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Gather Information)), Iron Will</speciesTraits>
         <languages>Basic, Bothese</languages>
     </species>
@@ -52,6 +67,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Initiative)), Intuitive Initiative</speciesTraits>
         <languages>Basic, Cerean</languages>
     </species>
@@ -66,6 +86,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Expert Pilot</speciesTraits>
         <languages>Basic, Durese</languages>
     </species>
@@ -80,6 +105,11 @@
         <size>Small</size>
         <speed>4</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Primitive, Scent, Sneaky</speciesTraits>
         <languages>Ewokese</languages>
     </species>
@@ -94,6 +124,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat (Improved Damage Threshold), Great Fortitude, Primitive, Weapon Familiarity (Arg'garok)</speciesTraits>
         <languages>Basic (understand only), Gamorrean</languages>
     </species>
@@ -108,6 +143,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>4</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Expert Swimmer, Hold Breath, Lightning Reflexes, Low-Light Vision, Weapon Familiarity (Gungan Weaponry)</speciesTraits>
         <languages>Basic, Gunganese</languages>
     </species>
@@ -122,6 +162,11 @@
         <size>Large</size>
         <speed>2</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Force Resistance, Supreme Stability, Silver Tongued</speciesTraits>
         <languages>Basic, Huttese</languages>
     </species>
@@ -136,6 +181,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bellow, Conditional Bonus Feat (Skill Focus (Knowledge (Life Sciences))), Iron Will, Survival Instinct</speciesTraits>
         <languages>Basic, Ithorese</languages>
     </species>
@@ -150,6 +200,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Keen Force Sense, Low-Light Vision, Special Equipment (Antiox Breath Mask)</speciesTraits>
         <languages>Basic, Kel Dor</languages>
     </species>
@@ -164,6 +219,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>4</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Breathe Underwater, Conditional Bonus Feat (Skill Focus (Perception)), Expert Swimmer, Low-Light Vision</speciesTraits>
         <languages>Basic, Mon Calamarian</languages>
     </species>
@@ -178,6 +238,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>4</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Breathe Underwater, Conditional Bonus Feat (Skill Focus (Persuasion)), Expert Swimmer, Low-Light Vision</speciesTraits>
         <languages>Basic, Quarrenese</languages>
     </species>
@@ -192,6 +257,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Heightened Awareness, Low-Light Vision</speciesTraits>
         <languages>Basic, Rodese</languages>
     </species>
@@ -206,6 +276,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Darkvision, Expert Climber, Heightened Awareness</speciesTraits>
         <languages>Basic, Sullustese</languages>
     </species>
@@ -220,6 +295,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat (Toughness), Darkvision, Limb Regeneration, Natural Armor (+1)</speciesTraits>
         <languages>Basic, Dosh</languages>
     </species>
@@ -234,6 +314,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Deceptive, Great Fortitude, Low-Light Vision</speciesTraits>
         <languages>Basic, Ryl</languages>
     </species>
@@ -248,6 +333,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Expert Climber, Extraordinary Recuperation, Intimidating Presence, Rage, Weapon Familiarity (Bowcaster and Ryyk Blade)</speciesTraits>
         <languages>Basic (understand only), Shyriiwook</languages>
     </species>
@@ -262,6 +352,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Heightened Awareness, Superior Defenses</speciesTraits>
         <languages>Basic, Zabrak</languages>
     </species>
@@ -276,6 +371,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Cold-Blooded, Damage Reduction 2, Rage</speciesTraits>
         <languages>Chistori</languages>
     </species>
@@ -290,6 +390,11 @@
         <size>Large</size>
         <speed>8</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Natural Armor (+2), Natural Weapons, Poison, Primitive, Rage</speciesTraits>
         <languages>Savrip</languages>
     </species>
@@ -304,6 +409,11 @@
         <size>Small</size>
         <speed>4</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Animal Handler, Cooperative, Low-Light Vision</speciesTraits>
         <languages>Utapese</languages>
     </species>
@@ -318,6 +428,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Darkvision, Flash of Genius, Logical Reasoning</speciesTraits>
         <languages>Arkanian, Basic</languages>
     </species>
@@ -332,6 +447,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat (Skill Focus), Determination</speciesTraits>
         <languages>Arkanian, Basic</languages>
     </species>
@@ -346,6 +466,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat (Skill Focus), Determination</speciesTraits>
         <languages>Arkanian, Basic</languages>
     </species>
@@ -360,6 +485,11 @@
         <size>Medium</size>
         <speed>8</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Class Skills (Climb and Stealth), Natural Weapons, Reactive Claw</speciesTraits>
         <languages>Basic, Catharese</languages>
     </species>
@@ -374,6 +504,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat (Weapon Proficiency (Advanced Melee Weapons)), Low-Light Vision, Natural Armor (+1), Natural Telepath</speciesTraits>
         <languages>Basic, Draethos</languages>
     </species>
@@ -388,6 +523,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Brutal, Great Fortitude, Inborn Resilience, Low-Light Vision, Stronger by Age</speciesTraits>
         <languages>Basic, Feeorin</languages>
     </species>
@@ -402,6 +542,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Cooperative Spirit, Dependable Worker, Self-Sustaining</speciesTraits>
         <languages>Basic, Khilese</languages>
     </species>
@@ -416,6 +561,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Inspired, Warrior's Awareness, Weapon Familiarity (Massassi Lanvarok)</speciesTraits>
         <languages>Basic, Sith</languages>
     </species>
@@ -430,6 +580,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Duty Bound, Primitive, Warrior's Awareness, Weapon Familiarity (Massassi Lanvarok)</speciesTraits>
         <languages>Basic</languages>
     </species>
@@ -444,6 +599,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Force Training), Force Sight</speciesTraits>
         <languages>Basic, Miralukese</languages>
     </species>
@@ -458,6 +618,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Ancient Knowledge, Bonus Feat (Weapon Focus (Simple Weapons)), Force Blind, Primitive, Rage, Weapon Familiarity (Rakatan Weapon Template)</speciesTraits>
         <languages>Rakata</languages>
     </species>
@@ -472,6 +637,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>4</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Able Healers, Breathe Underwater, Expert Swimmer</speciesTraits>
         <languages>Selkath</languages>
     </species>
@@ -486,6 +656,11 @@
         <size>Small</size>
         <speed>4</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Cold Resistance, Observant</speciesTraits>
         <languages>Snivvian</languages>
     </species>
@@ -500,6 +675,11 @@
         <size>Small</size>
         <speed>4</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Energy Surge, Heightened Agility</speciesTraits>
         <languages>Aleena, Basic</languages>
     </species>
@@ -514,6 +694,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Memory Sharing, Pacifism, Silver Tongued</speciesTraits>
         <languages>Basic, Caamasi</languages>
     </species>
@@ -528,6 +713,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Feat (Force Sensitivity), Breathe Underwater, Force Blast, Low-Light Vision, Natural Camouflage, Primitive, Weapon Familiarity (Felucian Skullblade)</speciesTraits>
         <languages>Felucianese</languages>
     </species>
@@ -542,6 +732,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Precise Shot), Darkvision, Innate Accuracy, Target Awareness</speciesTraits>
         <languages>Basic, Gran</languages>
     </species>
@@ -556,6 +751,11 @@
         <size>Small</size>
         <speed>4</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Running Attack), Primitive, Scent</speciesTraits>
         <languages>Honoghran</languages>
     </species>
@@ -570,6 +770,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Class Skill (Climb), Natural Weapons, Survival Instinct</speciesTraits>
         <languages>Basic, Nosaurian</languages>
     </species>
@@ -584,6 +789,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Mechanics)), Darkvision, Natural Weapons</speciesTraits>
         <languages>Talz</languages>
     </species>
@@ -598,6 +808,11 @@
         <size>Large</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Feline Reflexes, Low-Light Vision, Physically Intimidating</speciesTraits>
         <languages>Basic, Togorian</languages>
     </species>
@@ -612,6 +827,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Pack Hunter, Sneaky, Spatial Awareness</speciesTraits>
         <languages>Basic, Togruti</languages>
     </species>
@@ -626,6 +846,11 @@
         <size>Large</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Cold Resistance, Natural Weapons, Scent</speciesTraits>
         <languages>Whiphid</languages>
     </species>
@@ -640,6 +865,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Bonus Class Skill (Gather Information), Confusion, Deceptive</speciesTraits>
         <languages>Basic, Yarkora</languages>
     </species>
@@ -654,6 +884,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Heightened Awareness, Mental Fortitude, Toxic Resistance</speciesTraits>
         <languages>Basic, Balosar</languages>
     </species>
@@ -668,6 +903,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Acrobatics)), Deathstrike</speciesTraits>
         <languages>Basic, Batorese</languages>
     </species>
@@ -682,6 +922,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Shapeshift, Startle</speciesTraits>
         <languages>Basic, Clawdite</languages>
     </species>
@@ -696,6 +941,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Hold Breath, Pheromones, Pheromone Acclimation</speciesTraits>
         <languages>Basic, Falleen</languages>
     </species>
@@ -710,6 +960,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Darkvision, Hardy, Limb Regeneration, Special Equipment (Breathing Apparatus and Transliterator)</speciesTraits>
         <languages>Gand</languages>
     </species>
@@ -724,6 +979,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Natural Armor (+1), Physically Intimidating</speciesTraits>
         <languages>Basic, Houkese</languages>
     </species>
@@ -738,6 +998,11 @@
         <size>Small</size>
         <speed>4</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Darkvision, Desert Dweller, Scavenger, Tinkerer</speciesTraits>
         <languages>Jawaese, Jawa Trade Language</languages>
     </species>
@@ -752,6 +1017,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Connections, Musical Obfuscation, Prehensile Tail</speciesTraits>
         <languages>Basic, Ryn</languages>
     </species>
@@ -767,6 +1037,10 @@
         <speed>4</speed>
         <swimSpeed>0</swimSpeed>
         <hoveringSpeed>6</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Deception)), Flight, Force Resistance</speciesTraits>
         <languages>Huttese, Toydarian</languages>
     </species>
@@ -781,6 +1055,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Aggressive, Conditional Bonus Feat (Skill Focus (Perception)), Survival Instinct, Special Equipment (Environmental Suit)</speciesTraits>
         <languages>Basic, Ubese, Ubeninal (understand only)</languages>
     </species>
@@ -795,6 +1074,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Iron Will, Soothing Voice</speciesTraits>
         <languages>Basic, Wroonian</languages>
     </species>
@@ -809,6 +1093,11 @@
         <size>Small</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Athletic</speciesTraits>
         <languages>Dug</languages>
     </species>
@@ -823,6 +1112,11 @@
         <size>Large</size>
         <speed>8</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Fast Healing, Hibernation, Mental Instability, Regeneration, Resilient Physiology</speciesTraits>
         <languages>Basic, Gen'Dai</languages>
     </species>
@@ -837,8 +1131,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
         <flySpeed>6</flySpeed>
         <climbSpeed>3</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Flight, Low-Light Vision, Radiation Resistance</speciesTraits>
         <languages>Basic, Geonosian</languages>
     </species>
@@ -853,6 +1150,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Expert Pilot, Natural Armor (+1), Limited Precognition</speciesTraits>
         <languages>Basic, Iktotchese</languages>
     </species>
@@ -867,6 +1169,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Darkvision, Driven, Persistent</speciesTraits>
         <languages>Basic, Kaleesh</languages>
     </species>
@@ -881,6 +1188,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Conditional Bonus Feat (Skill Focus (Treat Injury)), Resilient</speciesTraits>
         <languages>Basic, Kaminoan</languages>
     </species>
@@ -895,6 +1207,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Predator's Heritage, Social Cunning</speciesTraits>
         <languages>Basic, Kerkoidese</languages>
     </species>
@@ -909,6 +1226,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>4</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Breathe Underwater, Damage Reduction 2, Expert Swimmer, Low-Light Vision, Pheromonal Sensor</speciesTraits>
         <languages>Basic, Nautila</languages>
     </species>
@@ -923,6 +1245,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Low-Light Vision, Primitive, Scent, Shadow Swiftness</speciesTraits>
         <languages>Nelvaanese</languages>
     </species>
@@ -937,6 +1264,11 @@
         <size>Medium</size>
         <speed>6</speed>
         <swimSpeed>4</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
         <speciesTraits>Breathe Underwater, Expert Swimmer, Placid, Survival Instinct</speciesTraits>
         <languages>Basic, Semblan</languages>
     </species>

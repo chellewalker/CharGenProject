@@ -3,7 +3,7 @@ export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 16);
+        //let randomNum = Math.floor(Math.random() * 15);
         let randomNum = Math.floor(Math.random() * 7);
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
@@ -29,28 +29,25 @@ export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     else if (randomNum == 7 && available.includes("CWCG")) {
         talent = collaboratorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
-    else if (randomNum == 8 && available.includes("CWCG")) {
-        talent = loyalTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
-    }
-    else if (randomNum == 9 && available.includes("LECG")) {
+    else if (randomNum == 8 && available.includes("LECG")) {
         talent = provocateurTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
-    else if (randomNum == 10 && available.includes("RECG")) {
+    else if (randomNum == 9 && available.includes("RECG")) {
         talent = gamblingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
-    else if (randomNum == 11 && available.includes("GaW")) {
+    else if (randomNum == 10 && available.includes("GaW")) {
         talent = anticipationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
-    else if (randomNum == 12 && available.includes("GoI")) {
+    else if (randomNum == 11 && available.includes("GoI")) {
         talent = masterTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
-    else if (randomNum == 13 && available.includes("GoI")) {
+    else if (randomNum == 12 && available.includes("GoI")) {
         talent = skillTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
-    else if (randomNum == 14 && available.includes("GoI")) {
+    else if (randomNum == 13 && available.includes("GoI")) {
         talent = superiorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
-    else if (randomNum == 15 && available.includes("UR")) {
+    else if (randomNum == 14 && available.includes("UR")) {
         talent = exileTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     if (count == 500) {
