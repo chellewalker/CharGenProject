@@ -34,6 +34,9 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,tal
         if (speciesTraits.includes("Great Fortitude")) {
             fortitude += 2;
         }
+        if (speciesTraits.includes("Resilient")) {
+            fortitude++;
+        }
         if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
             fortitude += 2;
         }

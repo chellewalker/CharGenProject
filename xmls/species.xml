@@ -798,4 +798,146 @@
         <speciesTraits>Iron Will, Soothing Voice</speciesTraits>
         <languages>Basic, Wroonian</languages>
     </species>
+    <species>
+        <name>Dug</name>
+        <value>dug</value>
+        <speciesID>57</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Drodwa, Flugello, Flugo, Gorlok, Langro Dis, Luvagwa, Pugwis, Rewulga, Sebulba, Sloor</exampleNames>
+        <abilityMods>dex,2;cha,-2</abilityMods>
+        <size>Small</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Athletic</speciesTraits>
+        <languages>Dug</languages>
+    </species>
+    <species>
+        <name>Gen'Dai</name>
+        <value>gen'dai</value>
+        <speciesID>58</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Durge, Grozm, Kranth, Lu'urn</exampleNames>
+        <abilityMods>con,4;wis,-2;cha,-2</abilityMods>
+        <size>Large</size>
+        <speed>8</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Fast Healing, Hibernation, Mental Instability, Regeneration, Resilient Physiology</speciesTraits>
+        <languages>Basic, Gen'Dai</languages>
+    </species>
+    <species>
+        <name>Geonosian</name>
+        <value>geonosian</value>
+        <speciesID>59</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Deetle, Eorlax, Hadiss, Krylla, Lysslo, Mazzag, Poggle, Qorn, Sollas, Vikkal</exampleNames>
+        <abilityMods>str,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <flySpeed>6</flySpeed>
+        <climbSpeed>3</climbSpeed>
+        <speciesTraits>Flight, Low-Light Vision, Radiation Resistance</speciesTraits>
+        <languages>Basic, Geonosian</languages>
+    </species>
+    <species>
+        <name>Iktotchi</name>
+        <value>iktotchi</value>
+        <speciesID>60</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Arctan Meeso, Daedar Xiese, Liiren Baelar, Niira Korl, Saesee Tiin, Seer Varree</exampleNames>
+        <abilityMods>con,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Expert Pilot, Natural Armor (+1), Limited Precognition</speciesTraits>
+        <languages>Basic, Iktotchese</languages>
+    </species>
+    <species>
+        <name>Kaleesh</name>
+        <value>kaleesh</value>
+        <speciesID>61</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Qymaen jai Sheelal, Ronderu lij Kummar, Bentilais san Sk'ar</exampleNames>
+        <abilityMods>con,2;cha,2;dex,-2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Darkvision, Driven, Persistent</speciesTraits>
+        <languages>Basic, Kaleesh</languages>
+    </species>
+    <species>
+        <name>Kaminoan</name>
+        <value>kaminoan</value>
+        <speciesID>62</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Ava Lim, Lama Su, Maru Lan, Tau Shei, Taga Sai, Seva Ke, Taun We</exampleNames>
+        <abilityMods>int,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Treat Injury)), Resilient</speciesTraits>
+        <languages>Basic, Kaminoan</languages>
+    </species>
+    <species>
+        <name>Kerkoiden</name>
+        <value>kerkoiden</value>
+        <speciesID>63</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Dram Bothren, Var Cashral, Pheel Hoshar, Whorm Loathsom</exampleNames>
+        <abilityMods>wis,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Predator's Heritage, Social Cunning</speciesTraits>
+        <languages>Basic, Kerkoidese</languages>
+    </species>
+    <species>
+        <name>Nautolan</name>
+        <value>nautolan</value>
+        <speciesID>64</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Hiskar Dorset, Kit Fisto, Ploss Niklos, Renko Losa, Pin Mako, Setel Yast</exampleNames>
+        <abilityMods>con,2;int,-2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>4</swimSpeed>
+        <speciesTraits>Breathe Underwater, Damage Reduction 2, Expert Swimmer, Low-Light Vision, Pheromonal Sensor</speciesTraits>
+        <languages>Basic, Nautila</languages>
+    </species>
+    <species>
+        <name>Nelvaanian</name>
+        <value>nelvaanian</value>
+        <speciesID>65</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Harvos, Orvos, Tuzes-Adaz</exampleNames>
+        <abilityMods>win,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <speciesTraits>Low-Light Vision, Primitive, Scent, Shadow Swiftness</speciesTraits>
+        <languages>Nelvaanese</languages>
+    </species>
+    <species>
+        <name>Vurk</name>
+        <value>vurk</value>
+        <speciesID>66</speciesID>
+        <weight>1</weight>
+        <source>CWCG</source>
+        <exampleNames>Coleman Trebor, Sweitt Concorkill, Wunitt Fodor</exampleNames>
+        <abilityMods>con,2;cha,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>4</swimSpeed>
+        <speciesTraits>Breathe Underwater, Expert Swimmer, Placid, Survival Instinct</speciesTraits>
+        <languages>Basic, Semblan</languages>
+    </species>
 </species_list>

@@ -72,6 +72,10 @@ export function speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha)
         skills.includes("Survival")) {
         feats.push("Skill Focus (Survival)");
     }
+    if (speciesTraits.includes("Conditional Bonus Feat (Skill Focus (Treat Injury))") && 
+        skills.includes("Treat Injury")) {
+        feats.push("Skill Focus (Treat Injury)");
+    }
     if (speciesTraits.includes("Conditional Bonus Feat (Force Training)") && 
         skills.includes("Use the Force")) {
         feats.push("Force Training");

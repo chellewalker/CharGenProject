@@ -218,6 +218,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                         score -= 2;
                     }
                 }
+                if (speciesTraits.includes("Athletic") || feats.includes("Conditioning")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Jump") {
                 if (feats.includes("Skill Focus (Jump)")) {
@@ -233,6 +236,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                     else if (feats.includes("Armor Proficiency (Light)")) {
                         score -= 2;
                     }
+                }
+                if (speciesTraits.includes("Athletic") || feats.includes("Conditioning")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             if (trainedSkills[count] == "Swim") {
@@ -250,7 +256,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                         score -= 2;
                     }
                 }
-                if (speciesTraits.includes("Expert Swimmer")) {
+                if (speciesTraits.includes("Expert Swimmer") || feats.includes("Conditioning")) {
                     special = " (may reroll, must take second result)";
                 }
             }
@@ -376,6 +382,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                         score -= 2;
                     }
                 }
+                if (speciesTraits.includes("Persistent") || feats.includes("Conditioning")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (score < 0) {
                 listSkills += trainedSkills[count] + " " + score + special;
@@ -498,6 +507,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
         if (chaSkills.includes(trainedSkills[count])) {
             let score = (Math.floor(level/2)+Math.floor((cha-10)/2)+5);
             if (trainedSkills[count] == "Deception") {
+                if (speciesTraits.includes("Social Cunning")) {
+                    score = (Math.floor(level/2)+Math.floor((Math.max(cha,wis)-10)/2)+5);
+                }
                 if (feats.includes("Skill Focus (Deception)")) {
                     score += 5;
                 }
@@ -513,6 +525,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
             if (trainedSkills[count] == "Persuasion") {
                 if (speciesTraits.includes("Logical Reasoning")) {
                     score = (Math.floor(level/2)+Math.floor((Math.max(cha,int)-10)/2)+5);
+                }
+                if (speciesTraits.includes("Social Cunning")) {
+                    score = (Math.floor(level/2)+Math.floor((Math.max(cha,wis)-10)/2)+5);
                 }
                 if (feats.includes("Skill Focus (Persuasion)")) {
                     score += 5;
