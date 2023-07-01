@@ -1,9 +1,9 @@
-export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
+export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel) {
     let feat = "";
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 38);
+        let randomNum = Math.floor(Math.random() * 47);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -125,6 +125,33 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
                     randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Tactics)") ||
                     randomNum == 37 && available.includes("FUCG") && skills.includes("Knowledge (Technology)")) {
             feat = "Recall";
+        }
+        else if (randomNum == 38 && available.includes("SaV")) {
+            feat = "Cornered";
+        }
+        else if (randomNum == 39 && available.includes("SaV") && skills.includes("Gather Information")) {
+            feat = "Friends in Low Places";
+        }
+        else if (randomNum == 40 && available.includes("SaV") && feats.includes("Tech Specialist")) {
+            feat = "Hasty Modification";
+        }
+        else if (randomNum == 41 && available.includes("SaV")) {
+            feat = "Impulsive Flight";
+        }
+        else if (randomNum == 42 && available.includes("SaV") && feats.includes("Combat Reflexes")) {
+            feat = "Opportunistic Retreat";
+        }
+        else if (randomNum == 43 && available.includes("SaV") && feats.includes("Tech Specialist")) {
+            feat = "Signature Device";
+        }
+        else if (randomNum == 44 && available.includes("SaV") && feats.includes("Tech Specialist") && int >= 17 && curLevel >= 9) {
+            feat = "Superior Tech";
+        }
+        else if (randomNum == 45 && available.includes("SaV") && feats.includes("Combat Reflexes")) {
+            feat = "Tactical Advantage";
+        }
+        else if (randomNum == 46 && available.includes("SaV") && feats.includes("Rapid Strike")) {
+            feat = "Wicked Strike";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

@@ -166,7 +166,7 @@ window.genCharacter = function genCharacter() {
                 if (speciesTraits.includes("Force Blast")) {
                     forcePowers.push("Force Blast");
                 }
-                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
                 if (feats.findLast(findLast) == "Skill Training") {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
@@ -180,7 +180,7 @@ window.genCharacter = function genCharacter() {
                     starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
                 }
                 if (speciesTraits.includes("Bonus Feat")) {
-                    feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                    feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
                 if (feats.findLast(findLast) == "Skill Training") {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
@@ -205,7 +205,7 @@ window.genCharacter = function genCharacter() {
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0 && thisLevel < 5) {
-                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                    feats.push(getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
                     if (feats.findLast(findLast) == "Skill Training") {
                         skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                     }
@@ -222,7 +222,7 @@ window.genCharacter = function genCharacter() {
                 }
             }
             if ((count-2) % 3 == 0) {
-                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size));
+                feats.push(getFeat(available,50,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,count));
             if (feats.findLast(findLast) == "Skill Training") {
                 skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 skills.sort();

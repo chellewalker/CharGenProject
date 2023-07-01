@@ -1,9 +1,9 @@
-export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
+export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel) {
     let feat = "";
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 52);
+        let randomNum = Math.floor(Math.random() * 67);
         if (randomNum == 0 && available.includes("CR") && feats.includes("Point-Blank Shot") && feats.includes("Precise Shot") && BAB >= 4) {
             feat = "Deadeye";
         }
@@ -105,6 +105,51 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
         }
         else if (randomNum == 51 && available.includes("FUCG")) {
             feat = "Scavenger";
+        }
+        else if (randomNum == 52 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Burst of Speed";
+        }
+        else if (randomNum == 53 && available.includes("SaV") && skills.includes("Acrobatics")) {
+            feat = "Close Combat Escape";
+        }
+        else if (randomNum == 54 && available.includes("SaV") && feats.includes("Rapid Shot") && BAB >= 6) {
+            feat = "Collateral Damage";
+        }
+        else if (randomNum == 55 && available.includes("SaV")) {
+            feat = "Cornered";
+        }
+        else if (randomNum == 56 && available.includes("SaV") && skills.includes("Initiative")) {
+            feat = "Deceptive Drop";
+        }
+        else if (randomNum == 57 && available.includes("SaV")) {
+            feat = "Desperate Gambit";
+        }
+        else if (randomNum == 58 && available.includes("SaV") && skills.includes("Stealth")) {
+            feat = "Duck and Cover";
+        }
+        else if (randomNum == 59 && available.includes("SaV") && feats.includes("Running Attack")) {
+            feat = "Fleet-Footed";
+        }
+        else if (randomNum == 60 && available.includes("SaV") && skills.includes("Gather Information")) {
+            feat = "Friends in Low Places";
+        }
+        else if (randomNum == 61 && available.includes("SaV") && feats.includes("Tech Specialist")) {
+            feat = "Hasty Modification";
+        }
+        else if (randomNum == 62 && available.includes("SaV")) {
+            feat = "Impulsive Flight";
+        }
+        else if (randomNum == 63 && available.includes("SaV") && skills.includes("Stealth") && feats.includes("Lightning Draw")) {
+            feat = "Knife Trick";
+        }
+        else if (randomNum == 64 && available.includes("SaV") && feats.includes("Quick Draw")) {
+            feat = "Lightning Draw";
+        }
+        else if (randomNum == 65 && available.includes("SaV") && feats.includes("Tech Specialist")) {
+            feat = "Signature Device";
+        }
+        else if (randomNum == 66 && available.includes("SaV") && feats.includes("Tech Specialist") && int >= 17 && curLevel >= 9) {
+            feat = "Superior Tech";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

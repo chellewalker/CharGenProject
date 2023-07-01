@@ -1,9 +1,9 @@
-export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
+export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel) {
     let feat = "";
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 62);
+        let randomNum = Math.floor(Math.random() * 73);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -246,6 +246,39 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
         }
         else if (randomNum == 61 && available.includes("FUCG") && feats.includes("Coordinated Attack")) {
             feat = "Swarm";
+        }
+        else if (randomNum == 62 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Burst of Speed";
+        }
+        else if (randomNum == 63 && available.includes("SaV") && skills.includes("Acrobatics")) {
+            feat = "Close Combat Escape";
+        }
+        else if (randomNum == 64 && available.includes("SaV") && con >= 13) {
+            feat = "Impetuous Move";
+        }
+        else if (randomNum == 65 && available.includes("SaV")) {
+            feat = "Impulsive Flight";
+        }
+        else if (randomNum == 66 && available.includes("SaV") && feats.includes("Quick Draw")) {
+            feat = "Lightning Draw";
+        }
+        else if (randomNum == 67 && available.includes("SaV") && feats.includes("Combat Reflexes")) {
+            feat = "Opportunistic Retreat";
+        }
+        else if (randomNum == 68 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Resurgence";
+        }
+        else if (randomNum == 69 && available.includes("SaV") && feats.includes("Dodge")) {
+            feat = "Slippery Maneuver";
+        }
+        else if (randomNum == 70 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Stay Up";
+        }
+        else if (randomNum == 71 && available.includes("SaV") && feats.includes("Combat Reflexes")) {
+            feat = "Tactical Advantage";
+        }
+        else if (randomNum == 72 && available.includes("SaV") && feats.includes("Rapid Strike")) {
+            feat = "Wicked Strike";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

@@ -1,4 +1,4 @@
-export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
+export function scoutFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel) {
     let feat = "";
     let count2 = 0;
     while (feat == "") {

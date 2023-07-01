@@ -1,4 +1,4 @@
-export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
+export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel) {
     let feat = "";
     let count2 = 0;
     let randomNumForce = Math.floor(Math.random() * 2);
@@ -11,7 +11,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     }
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 285);
+        let randomNum = Math.floor(Math.random() * 312);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -705,6 +705,89 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 284 && available.includes("FUCG") && feats.includes("Coordinated Attack")) {
             feat = "Swarm";
+        }
+        else if (randomNum == 285 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Burst of Speed";
+        }
+        else if (randomNum == 286 && available.includes("SaV") && skills.includes("Acrobatics")) {
+            feat = "Close Combat Escape";
+        }
+        else if (randomNum == 287 && available.includes("SaV") && feats.includes("Rapid Shot") && BAB >= 6) {
+            feat = "Collateral Damage";
+        }
+        else if (randomNum == 288 && available.includes("SaV")) {
+            feat = "Cornered";
+        }
+        else if (randomNum == 289 && available.includes("SaV") && feats.includes("Sniper") && skills.includes("Stealth") && BAB >= 9) {
+            feat = "Deadly Sniper";
+        }
+        else if (randomNum == 290 && available.includes("SaV") && skills.includes("Initiative")) {
+            feat = "Deceptive Drop";
+        }
+        else if (randomNum == 291 && available.includes("SaV")) {
+            feat = "Desperate Gambit";
+        }
+        else if (randomNum == 292 && available.includes("SaV") && skills.includes("Stealth")) {
+            feat = "Duck and Cover";
+        }
+        else if (randomNum == 293 && available.includes("SaV") && feats.includes("Running Attack")) {
+            feat = "Fleet-Footed";
+        }
+        else if (randomNum == 294 && available.includes("SaV") && skills.includes("Gather Information")) {
+            feat = "Friends in Low Places";
+        }
+        else if (randomNum == 295 && available.includes("SaV") && feats.includes("Tech Specialist")) {
+            feat = "Hasty Modification";
+        }
+        else if (randomNum == 296 && available.includes("SaV") && speciesTraits.includes("Shapeshift")) {
+            feat = "Hideous Visage";
+        }
+        else if (randomNum == 297 && available.includes("SaV") && speciesTraits.includes("Shapeshift") && feats.includes("Skill Focus (Deception)")) {
+            feat = "Impersonate";
+        }
+        else if (randomNum == 298 && available.includes("SaV") && con >= 13) {
+            feat = "Impetuous Move";
+        }
+        else if (randomNum == 299 && available.includes("SaV")) {
+            feat = "Impulsive Flight";
+        }
+        else if (randomNum == 300 && available.includes("SaV") && skills.includes("Stealth") && feats.includes("Lightning Draw")) {
+            feat = "Knife Trick";
+        }
+        else if (randomNum == 301 && available.includes("SaV") && feats.includes("Quick Draw")) {
+            feat = "Lightning Draw";
+        }
+        else if (randomNum == 302 && available.includes("SaV") && speciesTraits.includes("Shapeshift") && skills.includes("Deception") && con >= 13) {
+            feat = "Metamorph";
+        }
+        else if (randomNum == 303 && available.includes("SaV") && feats.includes("Combat Reflexes")) {
+            feat = "Opportunistic Retreat";
+        }
+        else if (randomNum == 304 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Resurgence";
+        }
+        else if (randomNum == 305 && available.includes("SaV") && feats.includes("Tech Specialist")) {
+            feat = "Signature Device";
+        }
+        else if (randomNum == 306 && available.includes("SaV") && feats.includes("Dodge")) {
+            feat = "Slippery Maneuver";
+        }
+        else if (randomNum == 307 && available.includes("SaV") && talents.includes("Sneak Attack") ||
+                    randomNum == 307 && available.includes("SaV") && feats.includes("Rapid Shot") ||
+                    randomNum == 307 && available.includes("SaV") && feats.includes("Rapid Strike")) {
+            feat = "Staggering Attack";
+        }
+        else if (randomNum == 308 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Stay Up";
+        }
+        else if (randomNum == 309 && available.includes("SaV") && feats.includes("Tech Specialist") && int >= 17 && curLevel >= 9) {
+            feat = "Superior Tech";
+        }
+        else if (randomNum == 310 && available.includes("SaV") && feats.includes("Combat Reflexes")) {
+            feat = "Tactical Advantage";
+        }
+        else if (randomNum == 311 && available.includes("SaV") && feats.includes("Rapid Strike")) {
+            feat = "Wicked Strike";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
                 feat == "Skill Focus (undefined)") {

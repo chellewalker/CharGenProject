@@ -1,9 +1,9 @@
-export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size) {
+export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel) {
     let feat = "";
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 129);
+        let randomNum = Math.floor(Math.random() * 137);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -431,6 +431,30 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
         }
         else if (randomNum == 128 && available.includes("FUCG") && BAB >= 1) {
             feat = "Strafe";
+        }
+        else if (randomNum == 129 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Burst of Speed";
+        }
+        else if (randomNum == 130 && available.includes("SaV") && feats.includes("Rapid Shot") && BAB >= 6) {
+            feat = "Collateral Damage";
+        }
+        else if (randomNum == 131 && available.includes("SaV") && feats.includes("Sniper") && skills.includes("Stealth") && BAB >= 9) {
+            feat = "Deadly Sniper";
+        }
+        else if (randomNum == 132 && available.includes("SaV") && con >= 13) {
+            feat = "Impetuous Move";
+        }
+        else if (randomNum == 133 && available.includes("SaV") && feats.includes("Quick Draw")) {
+            feat = "Lightning Draw";
+        }
+        else if (randomNum == 134 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Resurgence";
+        }
+        else if (randomNum == 135 && available.includes("SaV") && feats.includes("Dodge")) {
+            feat = "Slippery Maneuver";
+        }
+        else if (randomNum == 136 && available.includes("SaV") && skills.includes("Endurance")) {
+            feat = "Stay Up";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {
