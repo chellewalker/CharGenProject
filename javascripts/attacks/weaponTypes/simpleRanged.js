@@ -1,4 +1,4 @@
-export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) {
+export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size,speciesTraits) {
     let simpleRangedWeapon = "";
     let weaponSize;
     let simpleRangedDice;
@@ -14,6 +14,9 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size) 
     }
     else if (size == "Large") {
         relativeSize = 2;
+    }
+    if (speciesTraits.includes("Extra Arms")) {
+        relativeSize++;
     }
 
     let simpleRangedAttackRaw = BAB + Math.floor((dex-10)/2);

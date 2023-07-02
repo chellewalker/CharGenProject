@@ -16,6 +16,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     else if (size == "Large") {
         relativeSize = 2;
     }
+    if (speciesTraits.includes("Extra Arms")) {
+        relativeSize++;
+    }
 
     let exoticMeleeAttackRaw = BAB + Math.floor((str-10)/2);
 

@@ -1,4 +1,4 @@
-export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size) {
+export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits) {
     let simpleMeleeWeapon = "";
     let weaponSize;
     let simpleMeleeDice;
@@ -14,6 +14,9 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     }
     else if (size == "Large") {
         relativeSize = 2;
+    }
+    if (speciesTraits.includes("Extra Arms")) {
+        relativeSize++;
     }
 
     let simpleMeleeAttackRaw = BAB + Math.floor((str-10)/2);

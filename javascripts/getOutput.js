@@ -212,6 +212,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         if (size == "Large") {
             space = "<strong>Fighting Space:</strong> 2x2 Squares; <strong>Reach:</strong> 1 Square<br>";
         }
+        else if (speciesTraits.includes("Reach")) {
+            space = "<strong>Fighting Space:</strong> 1 Square; <strong>Reach:</strong> 2 Squares<br>";
+        }
 
     let init = "<strong>Initiative:</strong> "+initiativeDisplay;
     if (talents.includes("Force Intuition")) {
@@ -222,10 +225,15 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         senses = "Use the Force "+perceptionDisplay;
     }
 
+    let forcePointDisplay = "<strong>Force Points:</strong> "+forcePoints;
+        if (species == "Yuuzhan Vong") {
+            forcePointDisplay = "";
+        }
+
     let output = 
     "<title>"+name+"</title><h3 style='padding-bottom:-5%;'><u>"+name+" Statistics (CL "+level+")</u></h3>"+
         size+" "+species+" "+classList+"<br>"+
-        destiny+"<strong>Force Points:</strong> "+forcePoints+"<br>"+
+        destiny+forcePointDisplay+"<br>"+
         init+"; <strong>Senses:</strong> "+senses+"<br>"+
         "<strong>Languages:</strong> "+listLanguages+"<br>"+
         "<p style='font-size: large; margin-bottom: 0;'><u><strong>Defenses</strong></u></p>"+
@@ -289,6 +297,11 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
     forceTechniques,forceSecrets) {
+
+        let forcePointDisplay = "Force%20Points:%20"+forcePoints;
+        if (species == "Yuuzhan Vong") {
+            forcePointDisplay = "";
+        }
 
         let listTalents = displayRawTalents(talents);
         let listFeats = displayRawFeats(feats);
@@ -421,6 +434,9 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     if (size == "Large") {
         space = "Fighting%20Space:%202x2%20Squares;%20Reach:%201%20Square%0A";
     }
+    else if (speciesTraits.includes("Reach")) {
+        space = "Fighting%20Space:%201%20Square;%20Reach:%202%20Squares%0A";
+    }
 
     if (forcePowers != "") {
         forcePowers = displayRawForcePowers(forcePowers);
@@ -462,7 +478,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     let outputData = 
     name+"%20Statistics%20(CL%20"+level+")%0A"+
         size+"%20"+species+"%20"+classList+"%0A"+
-        destiny+"Force%20Points:%20"+forcePoints+"%0A"+
+        destiny+forcePointDisplay+"%0A"+
         init+";%20Senses:%20"+senses+"%0A"+
         "Languages:%20"+listLanguages+"%0A%0A"+
         "Defenses%0A"+

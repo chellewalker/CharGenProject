@@ -155,7 +155,7 @@ window.genCharacter = function genCharacter() {
                 BAB = getBAB(classes);
                 talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,qualities,dex));
                 hitPoints += getFirstHitPoints(firstClass,con);
-                feats = classFeats(thisLevel,int,con,skills,speciesTraits);
+                feats = classFeats(thisLevel,int,con,skills,speciesTraits,BAB,level);
                 feats = speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha);
                 if (feats.findLast(findLast) == "Force Training") {
                     forcePowers = getForcePower(forcePowers,available,wis,light,dark);
@@ -333,7 +333,7 @@ window.genCharacter = function genCharacter() {
         feats.sort();
         talents.sort();
         classList = classListing(firstClass,classes);
-        grapple = getGrapple(BAB,str,dex,size,talents);
+        grapple = getGrapple(BAB,str,dex,size,talents,speciesTraits);
 
         if (feats.includes("ValidFeatNotFound")) {
             failsafe = 0;
@@ -354,7 +354,8 @@ window.genCharacter = function genCharacter() {
         let armorFort = 0;
         let maxDex = 10;
         let armorType = "";
-        if (talents.includes("Armored Defense") && feats.includes("Armor Proficiency (Light)") && species != "Ubese") {
+        if (talents.includes("Armored Defense") && feats.includes("Armor Proficiency (Light)") 
+                && species != "Ubese" && species != "Celegian" && species != "Skakoan") {
             armorTemp = getArmor(available,feats,talents);
             equipment.push(armorTemp[0]);
             armorRef = armorTemp[1];
@@ -373,6 +374,58 @@ window.genCharacter = function genCharacter() {
         let speciesEquipment = getSpecial(speciesTraits);
         if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
             equipment.push("Environmental Suit (+4 Reflex, +2 Fortitude)");
+            armorRef = 4;
+            armorFort = 2;
+            maxDex = 4;
+
+            if (talents.includes("Second Skin") && armorType != "") {
+                armorRef++;
+                armorFort++;
+            }
+            if (talents.includes("Attune Armor") && armorType != "") {
+                armorRef += 2;
+            }
+        }
+        if (speciesTraits.includes("Special Equipment (Life-Support Chamber)")) {
+            equipment.push("Life-Support Chamber (+5 Fortitude)");
+            armorFort = 5;
+
+            if (talents.includes("Second Skin") && armorType != "") {
+                armorRef++;
+                armorFort++;
+            }
+            if (talents.includes("Attune Armor") && armorType != "") {
+                armorRef += 2;
+            }
+        }
+
+        if (speciesTraits.includes("Special Equipment (Pressure Suit)")) {
+            if (feats.includes("Armor Proficiency (Heavy)")) {
+                equipment.push("Heavy Pressure Suit (+9 Armor, +3 Fortitude)");
+                armorRef = 9;
+                armorFort = 3;
+                maxDex = 1;
+            }
+            else if (feats.includes("Armor Proficiency (Medium)")) {
+                equipment.push("Medium Pressure Suit (+8 Armor, +2 Fortitude)");
+                armorRef = 8;
+                armorFort = 2;
+                maxDex = 2;
+            }
+            else {
+                equipment.push("Light Pressure Suit (+5 Armor, +2 Fortitude)");
+                armorRef = 5;
+                armorFort = 2;
+                maxDex = 3;
+            }
+
+            if (talents.includes("Second Skin") && armorType != "") {
+                armorRef++;
+                armorFort++;
+            }
+            if (talents.includes("Attune Armor") && armorType != "") {
+                armorRef += 2;
+            }
         }
 
         let shieldTemp = [];
@@ -384,6 +437,10 @@ window.genCharacter = function genCharacter() {
             maxDex = Math.min(maxDex,shieldTemp[2]);
         }
 
+        if (speciesTraits.includes("Armor Training")) {
+            maxDex++;
+        }
+        
         if (talents.includes("Armor Mastery")) {
             maxDex++;
         }
@@ -395,8 +452,8 @@ window.genCharacter = function genCharacter() {
         let reflex = getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex);
             let flatFooted = getFlatFooted(reflex,dex,feats,talents);
         let fortitude = getFortitude(classes,con,level,speciesTraits,feats,armorFort,talents);
-            let damageThreshold = getDamageThreshold(fortitude,size,feats,talents);
-        let will = getWill(classes,wis,level,speciesTraits,feats,talents,armorFort);
+            let damageThreshold = getDamageThreshold(fortitude,size,feats,talents,speciesTraits);
+        let will = getWill(classes,wis,cha,level,speciesTraits,feats,talents,armorFort);
 
         //speed
         let speed = getSpeed(speciesID,talents,feats,armorType,armorTemp[0]);
@@ -418,31 +475,31 @@ window.genCharacter = function genCharacter() {
         let otherRangedAttack = "";
 
     if (feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
-        temp2 = getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,size);
+        temp2 = getAdvancedMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
         advancedMelee = temp2[0];
         temp = temp2[1];
         tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Heavy Weapons)")) {
-        temp2 = getHeavyWeapon(available,BAB,level,dex,feats,talents,size);
+        temp2 = getHeavyWeapon(available,BAB,level,dex,feats,talents,size,speciesTraits);
         heavyWeapon = temp2[0];
         temp = temp2[1];
         tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Lightsabers)")) {
-        temp2 = getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size);
+        temp2 = getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
         lightsaber = temp2[0];
         temp = temp2[1];
         tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Pistols)")) {
-        temp2 = getPistol(available,BAB,level,dex,feats,talents,size);
+        temp2 = getPistol(available,BAB,level,dex,feats,talents,size,speciesTraits);
         pistol = temp2[0];
         temp = temp2[1];
         tempEquipment.push(temp);
     }
     if (feats.includes("Weapon Proficiency (Rifles)")) {
-        temp2 = getRifle(available,BAB,level,dex,feats,talents,size);
+        temp2 = getRifle(available,BAB,level,dex,feats,talents,size,speciesTraits);
         rifle = temp2[0];
         temp = temp2[1];
         tempEquipment.push(temp);
@@ -450,13 +507,13 @@ window.genCharacter = function genCharacter() {
     if (speciesTraits.includes("Primitive") || feats.includes("Weapon Focus (Simple Weapons)")) {
         let simpleRandom = Math.floor(Math.random() * 2);
         if (simpleRandom == 0) {
-            temp2 = getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size);
+            temp2 = getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
             simpleMelee = temp2[0];
             temp = temp2[1];
             tempEquipment.push(temp);
         }
         else {
-            temp2 = getSimpleRanged(available,BAB,level,dex,str,feats,talents,size);
+            temp2 = getSimpleRanged(available,BAB,level,dex,str,feats,talents,size,speciesTraits);
             simpleRanged = temp2[0];
             temp = temp2[1];
             tempEquipment.push(temp);

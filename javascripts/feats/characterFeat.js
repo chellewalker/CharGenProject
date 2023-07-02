@@ -205,7 +205,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
             feat = "Force Boon";
         }
         else if (randomNum == 48 && available.includes("CR")) {
-            if (speciesTraits.includes("Force Blind")) {
+            if (speciesTraits.includes("Force Blind") || speciesTraits.includes("Force Immunity")) {
             }
             else {
                 feat = "Force Sensitivity";

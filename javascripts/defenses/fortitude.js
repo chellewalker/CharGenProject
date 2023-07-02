@@ -37,10 +37,13 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,tal
         if (speciesTraits.includes("Resilient")) {
             fortitude++;
         }
-        if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
+        if (speciesTraits.includes("Tough")) {
             fortitude += 2;
         }
         if (speciesTraits.includes("Superior Defenses")) {
+            fortitude++;
+        }
+        if (speciesTraits.includes("Carapace")) {
             fortitude++;
         }
         if (feats.includes("Improved Defenses")) {
@@ -50,13 +53,16 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,tal
     return fortitude;
 }
 
-export function getDamageThreshold(fortitude,size,feats,talents) {
+export function getDamageThreshold(fortitude,size,feats,talents,speciesTraits) {
     let damageThreshold = fortitude;
         if (size == "Large") {
             damageThreshold += 5;
         }
         if (feats.includes("Improved Damage Threshold")) {
             damageThreshold += 5;
+        }
+        if (speciesTraits.includes("Tough")) {
+            fortitude += 5;
         }
 
     return damageThreshold;

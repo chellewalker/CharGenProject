@@ -8,6 +8,9 @@ export function getSpecial(speciesTraits) {
         speciesEquipment.push("Breathing Apparatus");
         speciesEquipment.push("Transliterator");
     }
+    if (speciesTraits.includes("Special Equipment (Ultraviolet Visor)")) {
+        speciesEquipment.push("Ultraviolet Visor");
+    }
 
     return speciesEquipment;
 }

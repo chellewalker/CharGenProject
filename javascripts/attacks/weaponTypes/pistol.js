@@ -1,4 +1,4 @@
-export function getPistol(available,BAB,level,dex,feats,talents,size) {
+export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTraits) {
     let pistolWeapon = "";
     let weaponSize;
     let pistolDice;
@@ -14,6 +14,9 @@ export function getPistol(available,BAB,level,dex,feats,talents,size) {
     }
     else if (size == "Large") {
         relativeSize = 2;
+    }
+    if (speciesTraits.includes("Extra Arms")) {
+        relativeSize++;
     }
 
     let pistolAttackRaw = BAB + Math.floor((dex-10)/2);

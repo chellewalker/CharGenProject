@@ -1,4 +1,4 @@
-export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size) {
+export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits) {
     let lightsaberWeapon = "";
     let special = "";
     let weaponSize;
@@ -14,6 +14,9 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
     }
     else if (size == "Large") {
         relativeSize = 2;
+    }
+    if (speciesTraits.includes("Extra Arms")) {
+        relativeSize++;
     }
 
     let lightsaberAttackRaw = BAB + Math.floor((str-10)/2);

@@ -62,6 +62,19 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                     jumping -= 2;
             }}
 
+    let burrowing = parseInt(parseXML("xmls/species.xml","burrowSpeed",speciesID));
+        if (armorType == "Medium" && burrowing < 6 ||
+                    armorType == "Heavy" && burrowing < 6) {
+                if (talents.includes("Juggernaut")) {}
+                else {
+                    burrowing--;
+            }}
+            else if (burrowing > 0 && armorType == "Medium" || burrowing > 0 && armorType == "Heavy") {
+                if (talents.includes("Juggernaut")) {}
+                else {
+                    burrowing -= 2;
+            }}
+
     let speedValue = parseInt(parseXML("xmls/species.xml","speed",speciesID));
             if (armorType == "Medium" && speedValue < 6 ||
                     armorType == "Heavy" && speedValue < 6) {
@@ -96,6 +109,26 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 if (feats.includes("Increased Agility")) {
                     swimSpeed += 2;
                 }
+    if (speciesID == 128) {
+        if (feats.includes("Armor Proficiency (Medium)")) {
+            speedValue--;
+            swimSpeed--;
+            hovering--;
+            flying--;
+            climbing--;
+            jumping--;
+            burrowing--;
+        }
+        else {
+            speedValue -= 2;
+            swimSpeed -= 2;
+            hovering -= 2;
+            flying -= 2;
+            climbing -= 2;
+            jumping -= 2;
+            burrowing -= 2;
+        }
+    }
 
     let jetPack = 0;
         if (armor == "Neo-Crusader Light Armor (+6 Reflex, +2 Fortitude)"
@@ -117,7 +150,10 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
             }}
 
 
-    let speed = speedValue + " Squares (Walking)";
+    let speed = "";
+        if (speedValue > 0) {
+            speed += ", " + speedValue + " Squares (Walking)";
+        }
         if (swimSpeed > 0) {
             speed += ", " + swimSpeed + " Squares (Swimming)";
         }
@@ -136,6 +172,7 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
         if (jetPack > 0) {
             speed += ", " + jetPack + " Squares (Jet Pack)";
         }
+    speed = speed.slice(2);
 
     return speed;
 }

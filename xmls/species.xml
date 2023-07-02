@@ -1272,4 +1272,1752 @@
         <speciesTraits>Breathe Underwater, Expert Swimmer, Placid, Survival Instinct</speciesTraits>
         <languages>Basic, Semblan</languages>
     </species>
+    <species>
+        <name>Advozse</name>
+        <value>advozse</value>
+        <speciesID>67</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Bom Vindim, Gjeel Dhantra, Kol Nurn, Roda Lern, Vel Remdro</exampleNames>
+        <abilityMods>con,2;wis,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Heightened Awareness, Low-Light Vision, Natural Armor (+1)</speciesTraits>
+        <languages>Advb, Basic</languages>
+    </species>
+    <species>
+        <name>Chagrian</name>
+        <value>chagrian</value>
+        <speciesID>68</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Mas Amedda, Belar Tasseva, Myn Seda, Shiran Vallendri, Ketrias Gorran</exampleNames>
+        <abilityMods>str,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Breath Underwater, Low-Light Vision, Radiation Resistance</speciesTraits>
+        <languages>Basic, Chagri</languages>
+    </species>
+    <species>
+        <name>Chiss</name>
+        <value>chiss</value>
+        <speciesID>69</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Deel, Prakk, Karyce, Lev, Sorn, Szardra, Thrawn, Voss, Zilvad</exampleNames>
+        <abilityMods>int,2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Trained Skill, Low-Light Vision</speciesTraits>
+        <languages>Cheunh</languages>
+    </species>
+    <species>
+        <name>Codru-Ji</name>
+        <value>codru-ji</value>
+        <speciesID>70</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Adaavi, Deceven, Jorrdu, Ketanna, Merasska, Raiko, Veesani, Zallfric</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Dual Weapon Mastery I), Extra Arms, Skilled Grappler</speciesTraits>
+        <languages>Basic, Codruese</languages>
+    </species>
+    <species>
+        <name>Klatooinian</name>
+        <value>klatooinian</value>
+        <speciesID>71</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Barada, Bekure, Chokk, Drekk, Jarakar, Kuuvat, Massa, Rokar, Sovara</exampleNames>
+        <abilityMods>con,2;int,-2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Iron Will</speciesTraits>
+        <languages>Huttese</languages>
+    </species>
+    <species>
+        <name>Nagai</name>
+        <value>nagai</value>
+        <speciesID>72</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Den Siva, Harmon Sho, Hol B'shaki, Krai H'voc, Lusubrin T'shkali, Mendo, Nir Kento, Ozrei, Rei, Sin Shai, Tai, Taru</exampleNames>
+        <abilityMods>dex,2;cha,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Lightning Reflexes, Soothing Voice, Weapon Familiarity (Tehk'la Blades)</speciesTraits>
+        <languages>Basic, Nagaian</languages>
+    </species>
+    <species>
+        <name>Sakiyan</name>
+        <value>sakiyan</value>
+        <speciesID>73</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Ejaf Ya-Drun, Johr Penyk, Djas Puhr, Kol Rzad, Tudan Sal, Moja Skunax, Vihn Thas</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Perception)), Darkvision, Lightning Reflexes</speciesTraits>
+        <languages>Basic, Sakiyan</languages>
+    </species>
+    <species>
+        <name>Vahla</name>
+        <value>vahla</value>
+        <speciesID>74</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Vahe, Viau, Vahnda, Vahni, Vahl</exampleNames>
+        <abilityMods>int,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Force Sensitivity), Dark Side Stigma, Heightened Agility</speciesTraits>
+        <languages>Basic, Vahla</languages>
+    </species>
+    <species>
+        <name>Weequay</name>
+        <value>weequay</value>
+        <speciesID>75</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Adazian Liebke, Ak-buz, Ak-rev, Diergu-Rea Duhnes'rd, Fyg, Grimorg, Labansat, Nort Toom, Plaan, Que-Mars Redath-Gom, Solum'ke, Sora Bulq, Tas Kee</exampleNames>
+        <abilityMods>con,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Endurance)), Expressive Pheromones, Natural Armor (+1)</speciesTraits>
+        <languages>Sriluurian</languages>
+    </species>
+    <species>
+        <name>Yuuzhan Vong</name>
+        <value>vuuzhan vong</value>
+        <speciesID>76</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Nom Anor, Dooje Brolo, Malik Carr, Yomin Carr, Chine-kal, Nas Choka, Da'Gara, Elan. Kae Kwaad, Mezhan Kwaad, Kahlee Lah, Qurang Lah, Tsavong Lah, Ma'Shraid, Vua Rapuung, Shedao Shai, Taan, Tu Shoolb, Nem Yim</exampleNames>
+        <abilityMods>str,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Biotech Proficiency, Force Immunity, Primitive, Weapon Familiarity (Amphistaff)</speciesTraits>
+        <languages>Yuuzhan Vong</languages>
+    </species>
+    <species>
+        <name>Zeltron</name>
+        <value>zeltron</value>
+        <speciesID>77</speciesID>
+        <weight>1</weight>
+        <source>LECG</source>
+        <exampleNames>Adriav, Arno, Bahb, Dani, Deliah, Froedi, Heigren, Impella, Jahn, Jahz, Jakira, Joi, Kainae, Kieral, Leonie, Maeve, Mahd, Marrue, Nerus, Opalica, Rahuhl, Rhajani, Sian, Soleil, Spenori, Tamair, Tanai, Trix, Welarem, Yahja</exampleNames>
+        <abilityMods>cha,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Empathy, Soothing Pheromones</speciesTraits>
+        <languages>Basic</languages>
+    </species>
+    <species>
+        <name>Celegian</name>
+        <value>celegian</value>
+        <speciesID>78</speciesID>
+        <weight>1</weight>
+        <source>JATM</source>
+        <exampleNames>Ealu, Jolorr, Ooroo, Ruwaa</exampleNames>
+        <abilityMods>int,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>0</speed>
+        <swimSpeed>10</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>8</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Flight, Broadcast Telepath, Expert Swimmer, Special Equipment (Life-Support Chamber)</speciesTraits>
+        <languages>Basic (understand only)</languages>
+    </species>
+    <species>
+        <name>Vultan</name>
+        <value>vultan</value>
+        <speciesID>79</speciesID>
+        <weight>1</weight>
+        <source>JATM</source>
+        <exampleNames>Echari Di'San, Koss Toko, Oss Wilum, Zona Luka</exampleNames>
+        <abilityMods>int,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Trained Skill, Conditional Bonus Feat (Skill Focus (Knowledge))</speciesTraits>
+        <languages>Basic, Dromnyr</languages>
+    </species>
+    <species>
+        <name>Barabel</name>
+        <value>barabel</value>
+        <speciesID>80</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Baraduk, Ragath, Saba, Shaka-ka, Tesar, Tibor, Vangar</exampleNames>
+        <abilityMods>str,2;dex,-2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Darkvision, Intimidating Presence, Natural Armor (+2), Natural Weapons, Primitive, Radiation Resistance, Stun Resistance</speciesTraits>
+        <languages>Barabel</languages>
+    </species>
+    <species>
+        <name>Dashade</name>
+        <value>dashade</value>
+        <speciesID>81</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Tessun Kel, Nos Kellex, Alaris Koth, Ket Maliss, Tel Sorath</exampleNames>
+        <abilityMods>dex,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Environmental Adaptation, Force Resistance, Frightening Visage</speciesTraits>
+        <languages>Dashadi</languages>
+    </species>
+    <species>
+        <name>Lurmen</name>
+        <value>lurmen</value>
+        <speciesID>82</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Tee Wat Kaa, Tub, Wag Too</exampleNames>
+        <abilityMods>wis,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Expert Climber, Mender, Primitive, Roller</speciesTraits>
+        <languages>Basic, Lurmese</languages>
+    </species>
+    <species>
+        <name>Taung</name>
+        <value>taung</value>
+        <speciesID>83</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Atin (Persistent), Kot (Strength), Tor (Justice)</exampleNames>
+        <abilityMods>con,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Armor Training, Superior Defenses, Warrior Culture</speciesTraits>
+        <languages>Basic, Mando'a</languages>
+    </species>
+    <species>
+        <name>Thakwaash</name>
+        <value>thakwaash</value>
+        <speciesID>84</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Aythar Desh, Hohass Ekwesh, Shakwa Rahakas, Jiva Shelani, Wec Taskelor</exampleNames>
+        <abilityMods>str,4;dex,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Irrepressible Mind, Natural Armor (+1)</speciesTraits>
+        <languages>Thakwaashi</languages>
+    </species>
+    <species>
+        <name>Trianii</name>
+        <value>trianii</value>
+        <speciesID>85</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Atuarre, Duarrid, Keeheen, Pakka, Reakhas, Shearran, Tuunac</exampleNames>
+        <abilityMods>wis,2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Heightened Agility, Natural Weapons, Prehensile Tail</speciesTraits>
+        <languages>Trianii</languages>
+    </species>
+    <species>
+        <name>Yevetha</name>
+        <value>yevetha</value>
+        <speciesID>86</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Dar Bille, Eri Palle, Kez Haarl, Nil Spaar, Vol Noorr, Vor Duull, Zar Braan</exampleNames>
+        <abilityMods>str,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Mechanical Aptitude, Natural Weapons, Xenophobia</speciesTraits>
+        <languages>Yevethan</languages>
+    </species>
+    <species>
+        <name>Yuzzem</name>
+        <value>yuzzem</value>
+        <speciesID>87</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Dek, Gor, Hin, Kee, Pok, Rha, Wuk</exampleNames>
+        <abilityMods>str,4;wis,-2;cha,-2</abilityMods>
+        <size>Large</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Expert Climber, Natural Weapons, Physically Intimidating, Scent</speciesTraits>
+        <languages>Yuzz</languages>
+    </species>
+    <species>
+        <name>Zygerrian</name>
+        <value>zygerrian</value>
+        <speciesID>88</speciesID>
+        <weight>1</weight>
+        <source>GaW</source>
+        <exampleNames>Agruss, Darts D'Nar, Atai Molec, Miraj Scintel, Atlee Thanda, Marko Tyne, Zolghast</exampleNames>
+        <abilityMods>con,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Martial Arts I), Iron Will, Strength of Conviction</speciesTraits>
+        <languages>Basic</languages>
+    </species>
+    <species>
+        <name>Bith</name>
+        <value>bith</value>
+        <speciesID>89</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Doikk, Figrin, Jinkins, Lirin, Nalan, Tech, Tedn, Thai</exampleNames>
+        <abilityMods>int,2;cha,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Evolved Intellect, Meditative Trance, Scent</speciesTraits>
+        <languages>Basic, Bith</languages>
+    </species>
+    <species>
+        <name>Defel</name>
+        <value>defel</value>
+        <speciesID>90</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Arleil, Defeen, Klaar, Morr, Thar'quan, Vox</exampleNames>
+        <abilityMods>int,2;cha,2;con,-2</abilityMods>
+        <size>Small</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Partial Invisibility, Special Equipment (Ultraviolet Visor)</speciesTraits>
+        <languages>Basic, Defel</languages>
+    </species>
+    <species>
+        <name>Elomin</name>
+        <value>elomin</value>
+        <speciesID>91</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Brafid, Laerron, Monjai, Notoganarech, Rennimdius, Theosidicc, Verrinnefra</exampleNames>
+        <abilityMods>int,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Driven, Impose Order</speciesTraits>
+        <languages>Basic, Elomin</languages>
+    </species>
+    <species>
+        <name>Fosh</name>
+        <value>fosh</value>
+        <speciesID>92</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Larerre, Ootorr, Kourere, Vergere, Villatee</exampleNames>
+        <abilityMods>dex,2;cha,2;con,-2</abilityMods>
+        <size>Small</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Deceptive, Healing Glands</speciesTraits>
+        <languages>Basic, Fosh</languages>
+    </species>
+    <species>
+        <name>Givin</name>
+        <value>givin</value>
+        <speciesID>93</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Elis Helrot, Lersia Narth, Na-Soth Larr, Nisil Alarin, Siadru Nalas</exampleNames>
+        <abilityMods>int,2;str,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Damage Reduction 2, Deductive Reasoning, Great Fortitude, Vacuum Immunity</speciesTraits>
+        <languages>Basic, Givin</languages>
+    </species>
+    <species>
+        <name>Gotal</name>
+        <value>gotal</value>
+        <speciesID>94</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Abav Ghart, Glott, Kith Kark, Lishma, Mnor Nha, Pari Notgoth, Tolokai, To-yel</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Energy Reading, Low-Light Vision, Sensor Cones</speciesTraits>
+        <languages>Basic, Gotal</languages>
+    </species>
+    <species>
+        <name>Herglic</name>
+        <value>herglic</value>
+        <speciesID>95</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Stavros K'Hor, Udo Broxin, Fahjani Tohvar, Elbor Cruhn</exampleNames>
+        <abilityMods>str,4;dex,-4</abilityMods>
+        <size>Large</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Gather Information)), Sturdy</speciesTraits>
+        <languages>Basic, Herglic</languages>
+    </species>
+    <species>
+        <name>Mrlssi</name>
+        <value>mrlssi</value>
+        <speciesID>96</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Kepor Dagwa, Virssl Jasst, Crlisst Herssek, Krssibel Waray</exampleNames>
+        <abilityMods>int,2;cha,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Class Skill (Mechanics), Conditional Bonus Feat (Skill Focus (Persuasion)), Scholarly Inclination</speciesTraits>
+        <languages>Basic, Mrlsstese</languages>
+    </species>
+    <species>
+        <name>Neimoidian</name>
+        <value>neimoidian</value>
+        <speciesID>97</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Daultay Dofine, Hath Monchar, Jurnel Arrant, Kund Ekorr, Lott Dod, Lufa Danak, Nute Gunray, Rune Haako, Tey How</exampleNames>
+        <abilityMods>cha,2;str,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Deception)), Conditional Bonus Feat (Skill Focus (Persuasion))</speciesTraits>
+        <languages>Basic, Neimoidian</languages>
+    </species>
+    <species>
+        <name>Nyriaanan</name>
+        <value>nyriaanan</value>
+        <speciesID>98</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Bethanie Melan, Finvarra, Malvina, Taneith</exampleNames>
+        <abilityMods>wis,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Class Skill (Survival), Bonus Feat, Low-Light Vision</speciesTraits>
+        <languages>Nyriaanan</languages>
+    </species>
+    <species>
+        <name>Pa'lowick</name>
+        <value>pa'lowick</value>
+        <speciesID>99</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Aneeda Desha, Larisselle Chatrunis, Meep Erdles, Roopak Weelak, Sal Orbego, Sy Snootles</exampleNames>
+        <abilityMods>wis,2;str,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Expert Swimmer, Hold Breath, Primitive</speciesTraits>
+        <languages>Basic, Lowickese</languages>
+    </species>
+    <species>
+        <name>Umbaran</name>
+        <value>umbaran</value>
+        <speciesID>100</speciesID>
+        <weight>1</weight>
+        <source>GoI</source>
+        <exampleNames>Hant Tuff, Sly Moore, Zan Palton</exampleNames>
+        <abilityMods>dex,2;wis,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Gather Information)), Darkvision, Sneaky</speciesTraits>
+        <languages>Basic, Umbarese</languages>
+    </species>
+    <species>
+        <name>Altiri</name>
+        <value>altiri</value>
+        <speciesID>101</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Cediri, Prival, Shalla, Valtova</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Trained Skill, Visually Striking</speciesTraits>
+        <languages>Altirish, Basic</languages>
+    </species>
+    <species>
+        <name>Anzati</name>
+        <value>anzati</value>
+        <speciesID>102</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Akku Seii, Dannik Jerriko, Nikkos Tyris, Rath Kelk ko, Sa lje Tasha, Volfe Karkko</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Class Skills (Stealth and Survival), Energy Drain, Low-Light Vision, Mesmerize, Presence Sense</speciesTraits>
+        <languages>Anzat, Basic</languages>
+    </species>
+    <species>
+        <name>Anarrian</name>
+        <value>anarrian</value>
+        <speciesID>103</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Dilta, Lunaara, Kolrak, Secavar</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat, Strength Surge</speciesTraits>
+        <languages>Anarrese, Basic</languages>
+    </species>
+    <species>
+        <name>Chadra-Fan</name>
+        <value>chadra-fan</value>
+        <speciesID>104</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Fandar, Gudb, Kabe, T'achak T'andar, Tekli, Tutti Snibit</exampleNames>
+        <abilityMods>dex,2;wis,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Darkvision, Heightened Awareness, Quality Repairs</speciesTraits>
+        <languages>Basic, Chadra-Fan</languages>
+    </species>
+    <species>
+        <name>Ebruchi</name>
+        <value>ebruchi</value>
+        <speciesID>105</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Creysis, Ness, Common Cork, Firnees</exampleNames>
+        <abilityMods>str,2;con,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Improved Damage Threshold), Iron Will, Unsettling</speciesTraits>
+        <languages>Ebruchese</languages>
+    </species>
+    <species>
+        <name>Ishi Tib</name>
+        <value>ishi tib</value>
+        <speciesID>106</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Gume Saam, Suribran Tu, Thilis-Brin, Waks Trode, Vek Drow</exampleNames>
+        <abilityMods>int,2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>4</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Breathe Underwater, Ecological Awareness, Expert Swimmer, Low-Light Vision, Natural Weapons</speciesTraits>
+        <languages>Basic, Tibranese</languages>
+    </species>
+    <species>
+        <name>Killik</name>
+        <value>killik</value>
+        <speciesID>107</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Alaala, Jooj, Mueum, Saras, Wuluw</exampleNames>
+        <abilityMods>con,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Hive Mind, Joiners, Low-Light Vision, Multiple Limbs, Natural Armor (+1), Natural Weapons</speciesTraits>
+        <languages>Killik, Sy Bisti</languages>
+    </species>
+    <species>
+        <name>Krevaaki</name>
+        <value>krevaaki</value>
+        <speciesID>108</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Chal-Vosa, Craasadi, Jol Kion -Tas, Visto Skaasad, Vodo-Siosk Baas</exampleNames>
+        <abilityMods>wis,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Climb)), Carapace, Stoic, Grasping Tentacles</speciesTraits>
+        <languages>Basic, Kreva</languages>
+    </species>
+    <species>
+        <name>Lugubraa</name>
+        <value>lugubraa</value>
+        <speciesID>109</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Lorgrombo, Legumo, Laanrii, Liibooro</exampleNames>
+        <abilityMods>str,2;con,2;dex,-2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Accelerated Learning, Bonus Feat (Improved Damage Threshold), Darkvision, Lockbite, Natural Weapons</speciesTraits>
+        <languages>Lugubraal</languages>
+    </species>
+    <species>
+        <name>Nikto</name>
+        <value>nikto</value>
+        <speciesID>110</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Bok, Fi-Ek Sirch, Giran, Klaatu, Ma'kis'shaalas, Nysad, Wooof</exampleNames>
+        <abilityMods>str,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Great Fortitude, Natural Armor (+2), Survival Instinct</speciesTraits>
+        <languages>Huttese, Nikto</languages>
+    </species>
+    <species>
+        <name>O'reenian</name>
+        <value>o'reenian</value>
+        <speciesID>111</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Maximus, Magnus, Janus, Vesta, Felicitas</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Heightened Awareness, Persistent</speciesTraits>
+        <languages>O'reenian</languages>
+    </species>
+    <species>
+        <name>Shistavanen</name>
+        <value>shistavanen</value>
+        <speciesID>112</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Hovrak, Lak Sivrak, Riv Shiel, Severian, Voolvif Monn</exampleNames>
+        <abilityMods>dex,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Class Skill (Survival), Conditional Bonus Feat (Skill Focus (Perception)), Low-Light Vision, Natural Weapons, Quick Reflexes</speciesTraits>
+        <languages>Shistavanen</languages>
+    </species>
+    <species>
+        <name>Sluissi</name>
+        <value>sluissi</value>
+        <speciesID>113</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Hass Sonax, Mektiss Risohr, Secles Uslopos, Sekae N'sehnor, Sirlahn Alsek, Ten Dorne, Usahn L'sehl, Vsil Ejahsa</exampleNames>
+        <abilityMods>int,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Careful Worker, Conditional Bonus Feat (Tech Specialist), Serpentine</speciesTraits>
+        <languages>Basic, Sluiussese</languages>
+    </species>
+    <species>
+        <name>Squib</name>
+        <value>squib</value>
+        <speciesID>114</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Ebareebaveebeedee, Emala, Grees, Macemillian-winduarte, Sligh, Slythor, Smileredon-Verdont</exampleNames>
+        <abilityMods>dex,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Natural Diplomat, Tech Savvy, Weapon Familiarity (Squib Tensor Rifle)</speciesTraits>
+        <languages>Basic, Squibbian</languages>
+    </species>
+    <species>
+        <name>Ssi-Ruuk</name>
+        <value>ssi-ruuk</value>
+        <speciesID>115</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Firwirrung, Ivpikkis, Kirrsirri, Shreeftut, Sh'tk'ith, Skuwkrith</exampleNames>
+        <abilityMods>str,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Persuasion)), Force Blind, Natural Armor (+2), Silver Tongued</speciesTraits>
+        <languages>Ssi-Ruuvi</languages>
+    </species>
+    <species>
+        <name>Tof</name>
+        <value>tof</value>
+        <speciesID>116</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Bargthron, Sereno, Supreme</exampleNames>
+        <abilityMods>str,2;cha,2;dex,2;wis,-2</abilityMods>
+        <size>Large</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Rapid Shot), Conditional Bonus Feat (Mighty Swing), Fearless</speciesTraits>
+        <languages>Tof</languages>
+    </species>
+    <species>
+        <name>Tof</name>
+        <value>tof</value>
+        <speciesID>117</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Bargthron, Sereno, Supreme</exampleNames>
+        <abilityMods>str,2;cha,2;dex,2;wis,-2</abilityMods>
+        <size>Large</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Rapid Strike), Conditional Bonus Feat (Mighty Swing), Fearless</speciesTraits>
+        <languages>Tof</languages>
+    </species>
+    <species>
+        <name>Vagaari</name>
+        <value>vagaari</value>
+        <speciesID>118</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Bearsh, Estosh, Purpsh</exampleNames>
+        <abilityMods>str,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bioknowledge, Conditional Bonus Feat (Skill Focus (Deception)), Frightening Visage</speciesTraits>
+        <languages>Sy Bisti, Vagaari</languages>
+    </species>
+    <species>
+        <name>Verpine</name>
+        <value>verpine</value>
+        <speciesID>119</speciesID>
+        <weight>1</weight>
+        <source>UR</source>
+        <exampleNames>Garginoolaara, Jurfel, Kyli Ned'lx, Suskafoo, Zix, Zraii</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Mechanics)), Heightened Awareness, Hive Mind, Natural Armor (+1), Weapon Familiarity (Verpine Shattergun)</speciesTraits>
+        <languages>Basic, Verpine</languages>
+    </species>
+    <species>
+        <name>Amani</name>
+        <value>amani</value>
+        <speciesID>120</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Aja, Brenjandor, Jorodus, Jott, Ojat Wan, Tonjon, Trijit, Unjor</exampleNames>
+        <abilityMods>str,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Acceleration, Expert Climber, Primitive, Reach, Resilient</speciesTraits>
+        <languages>Amanese</languages>
+    </species>
+    <species>
+        <name>Arcona</name>
+        <value>arcona</value>
+        <speciesID>121</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Dutan Kelliv, Dutana Leara, Hem Dazon, Illist Mandrep, Kal Nkai, Kodu Terrafin, Shlith-Dan, Vegath Tist</exampleNames>
+        <abilityMods>cha,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Great Fortitude, Scent</speciesTraits>
+        <languages>Arconese, Basic</languages>
+    </species>
+    <species>
+        <name>Devaronian</name>
+        <value>devaronian</value>
+        <speciesID>122</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Dmaynel Kiph, Elassar Targon, Jubal, Kapp Dendo, Tyrn Jiton, Lak Jit, Oxbel, Saricia, Sires Vant, Trynic, Ulicx Vinaq, Vilmarh Grahrk</exampleNames>
+        <abilityMods>dex,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Deception)), Natural Curiosity</speciesTraits>
+        <languages>Basic, Devaronese</languages>
+    </species>
+    <species>
+        <name>Devaronian</name>
+        <value>devaronian</value>
+        <speciesID>123</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Dmaynel Kiph, Elassar Targon, Jubal, Kapp Dendo, Tyrn Jiton, Lak Jit, Oxbel, Saricia, Sires Vant, Trynic, Ulicx Vinaq, Vilmarh Grahrk</exampleNames>
+        <abilityMods>int,2;wis,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Deception)), Natural Curiosity</speciesTraits>
+        <languages>Basic, Devaronese</languages>
+    </species>
+    <species>
+        <name>Nazren</name>
+        <value>nazren</value>
+        <speciesID>124</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Karzen, Martook, Naktok, Razmor, Sartok</exampleNames>
+        <abilityMods>str,2;con,2;dex,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Resilience</speciesTraits>
+        <languages>Basic, Nazren</languages>
+    </species>
+    <species>
+        <name>Pau'an</name>
+        <value>pau'an</value>
+        <speciesID>125</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Timon Medon, Tion Medon, Lampay Fay</exampleNames>
+        <abilityMods>wis,2;cha,2;str,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Authority, Conditional Bonus Feat (Skill Focus (Persuasion)), Low-Light Vision</speciesTraits>
+        <languages>Basic, Utapese</languages>
+    </species>
+    <species>
+        <name>Phindian</name>
+        <value>phindian</value>
+        <speciesID>126</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Banikou, Guerra Derida, Paxxi Derida, Gerpha, Hem, Karke, Meerka, Teeyr Verke</exampleNames>
+        <abilityMods>int,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Trained Skill ((Knowledge (Technology)), Conditional Bonus Feat (Skill Focus (Mechanics))</speciesTraits>
+        <languages>Basic, Phindian</languages>
+    </species>
+    <species>
+        <name>Polis Massan</name>
+        <value>polis massan</value>
+        <speciesID>127</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Dznori Xam, Osh Scal, Maneeli Tuun, Selif Xam, Utani Xane</exampleNames>
+        <abilityMods>wis,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Treat Injury)), Darkvision, Limited Telepathy, Mute</speciesTraits>
+        <languages>Basic (understand only), Massan (understand only)</languages>
+    </species>
+    <species>
+        <name>Skakoan</name>
+        <value>skakoan</value>
+        <speciesID>128</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Zona Dreon, Pel Karmek, Girt Marko, Orna Meng, Vol Meybor, Madeca Rex, Wat Tambor, Gegon Valt, Taron Von</exampleNames>
+        <abilityMods>int,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Armor Proficiency (Light)), Conditional Bonus Feat (Skill Focus (Mechanics)), Mechanical Savant, Special Equipment (Pressure Suit)</speciesTraits>
+        <languages>Basic, Skakoform (understand only), Skakoverbal</languages>
+    </species>
+    <species>
+        <name>Stereb</name>
+        <value>stereb</value>
+        <speciesID>129</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Herdr'tui, Eldr'nol, Helr'ven</exampleNames>
+        <abilityMods>str,4;con,2;dex,-2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Mechanics)), Darkvision, Primitive, Subterranean, Tough</speciesTraits>
+        <languages>Stereb</languages>
+    </species>
+    <species>
+        <name>Tusken Raider</name>
+        <value>tusken raider</value>
+        <speciesID>130</speciesID>
+        <weight>1</weight>
+        <source>WE</source>
+        <exampleNames>Grk'kkrs'arr, K'Sheek, Rrr'ur'R, RR'uruurrr, UroRRuR'R'R, Ur'Ru'r</exampleNames>
+        <abilityMods>con,2;int,-2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Sneaky, Survival Instinct</speciesTraits>
+        <languages>Tusken</languages>
+    </species>
+    <species>
+        <name>Aing-Tii</name>
+        <value>aing-tii</value>
+        <speciesID>131</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Ben'Sur, Kulan'Pa, Laman'So, Looshen'Fel, Tadar'Ro, Te'Nuriel</exampleNames>
+        <abilityMods>wis,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Carapace, Prehensile Tail, Stoic</speciesTraits>
+        <languages>Aing-Tii</languages>
+    </species>
+    <species>
+        <name>Bimm (Near-Human)</name>
+        <value>bimm (near-human)</value>
+        <speciesID>132</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Vasnish Kay, Rayc Ryjerd, Rycar Ryjerd, Glah Ubooki, Rajah Ubooki</exampleNames>
+        <abilityMods>cha,2;str,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Inspired, Soothing Voice</speciesTraits>
+        <languages>Basic, Bimm</languages>
+    </species>
+    <species>
+        <name>Boltrunian</name>
+        <value>boltrunian</value>
+        <speciesID>133</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Maw, Shabba, Warto</exampleNames>
+        <abilityMods>str,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Extra Second Wind), High-Gravity Native, Physically Intimidating</speciesTraits>
+        <languages>Basic, Boltrunian</languages>
+    </species>
+    <species>
+        <name>Dulok</name>
+        <value>dulok</value>
+        <speciesID>134</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Boogutt, Gorneesh, Murgoob, Ulgo, Umwak, Urgah, Vulgarr</exampleNames>
+        <abilityMods>con,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Brutal, Low-Light Vision, Primitive, Scent, Survivalist</speciesTraits>
+        <languages>Dulok, Ewokese</languages>
+    </species>
+    <species>
+        <name>Gormak</name>
+        <value>gormak</value>
+        <speciesID>135</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Damek-Ol, Hadrik, Jokull, Nemok-Ta, Raklann, Xanar</exampleNames>
+        <abilityMods>str,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Tech Specialist), Natural Weapons, Xenophobia</speciesTraits>
+        <languages>Basic, Gormak</languages>
+    </species>
+    <species>
+        <name>Gree</name>
+        <value>gree</value>
+        <speciesID>136</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Birak'k, Lalat'k, Rodok'k, Rokak'k, Sharka'k, Varat'k</exampleNames>
+        <abilityMods>int,2;cha,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Extra Arms, Mechanical Savant, Skilled Grappler, Special Equipment (Antiox Breath Mask)</speciesTraits>
+        <languages>Gree</languages>
+    </species>
+    <species>
+        <name>Harch</name>
+        <value>harch</value>
+        <speciesID>137</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Ashton, Chiich, Ichiir, Trench</exampleNames>
+        <abilityMods>wis,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Intimidating Presence, Multiple Limbs, Predator's Heritage</speciesTraits>
+        <languages>Harch</languages>
+    </species>
+    <species>
+        <name>Hasikian</name>
+        <value>hasikian</value>
+        <speciesID>138</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>D'Hartayan, L'Whoroo, T'Seely</exampleNames>
+        <abilityMods>str,2;dex,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Mood Scales</speciesTraits>
+        <languages>Basic, Hasikian</languages>
+    </species>
+    <species>
+        <name>Kamarian</name>
+        <value>kamarian</value>
+        <speciesID>139</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Lisstik, Maashan</exampleNames>
+        <abilityMods>con,2;str,-2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Desert Dweller, Multiple Limbs, Prehensile Tail</speciesTraits>
+        <languages>Kamarian</languages>
+    </species>
+    <species>
+        <name>Melitto</name>
+        <value>melitto</value>
+        <speciesID>140</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Jakka Shiro, Mrimmin Jou, Sarco Plank, Toran</exampleNames>
+        <abilityMods>con,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Cilia, Conditional Bonus Feat (Skill Focus (Treat Injury)), Scent, Special Equipment (Antiox Breath Mask)</speciesTraits>
+        <languages>Basic, Melitto</languages>
+    </species>
+    <species>
+        <name>Mirialan</name>
+        <value>mirialan</value>
+        <speciesID>141</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Arwen Cohl, Bariss Offee, Fortris Gall, Hylo Visz, Luminara Unduli, Teela Kaarz</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat, Natural Telepath</speciesTraits>
+        <languages>Basic, Mirialan</languages>
+    </species>
+    <species>
+        <name>Murachaun</name>
+        <value>murachaun</value>
+        <speciesID>142</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Earsulo Osso, Fajiri Fevavi. Kufra Ahara, Saffi Ufadi, Sofassu Jaradu</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Natural Armor (+1), Tinkerer</speciesTraits>
+        <languages>Basic, Murachau</languages>
+    </species>
+    <species>
+        <name>Ortolan</name>
+        <value>ortolan</value>
+        <speciesID>143</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Bedo, Eembek, Miebar, Nabkess, Ooben, Rebo, Ruznee, Yddc</exampleNames>
+        <abilityMods>con,2;dex,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Survival)), Scent, Toxic Resistance</speciesTraits>
+        <languages>Basic, Ortolan</languages>
+    </species>
+    <species>
+        <name>Pantoran</name>
+        <value>pantoran</value>
+        <speciesID>144</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Arend Shen, Lassa Rhayme, Notluwiski Papanoida, Riyo Chuchi, Venlana Sipal</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Trained Skill, Cold Resistance, Social Cunning</speciesTraits>
+        <languages>Basic, Pantoran</languages>
+    </species>
+    <species>
+        <name>Patrolian</name>
+        <value>patrolian</value>
+        <speciesID>145</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Bannamu, Farks, Kanna, Robonino</exampleNames>
+        <abilityMods>int,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Breathe Underwater, Expert Swimmer, Stun Resistance</speciesTraits>
+        <languages>Patrolli</languages>
+    </species>
+    <species>
+        <name>Pho Ph'eahian</name>
+        <value>pho ph'eahian</value>
+        <speciesID>146</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Cho'ree, Darshev, Fe'heon, Garv, Le'shar, Lo'pho'r, Rova, Shev, Veerzan, Vo'ray</exampleNames>
+        <abilityMods>int,2;wis,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Cold Resistance, Conditional Bonus Feat (Skill Focus (Mechanics)), Extra Arms</speciesTraits>
+        <languages>Pho Ph'eahese</languages>
+    </species>
+    <species>
+        <name>Quermian</name>
+        <value>quermian</value>
+        <speciesID>147</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Ayra Foon, Naaz Hola, Tyan Maereth, Yarael Poof, Yrrani Basa</exampleNames>
+        <abilityMods>wis,2;con,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Broadcast Telepath, Extra Arms, Soothing Voice</speciesTraits>
+        <languages>Basic, Quermian</languages>
+    </species>
+    <species>
+        <name>Rakririan</name>
+        <value>rakririan</value>
+        <speciesID>148</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Endrigorn, Mogoyu, Sabodor</exampleNames>
+        <abilityMods>con,2;dex,-2</abilityMods>
+        <size>Large</size>
+        <speed>8</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Expert Climber, Heightened Awareness, Stability</speciesTraits>
+        <languages>Basic, Rakririan</languages>
+    </species>
+    <species>
+        <name>Rattataki</name>
+        <value>rattataki</value>
+        <speciesID>149</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Aidur, Charnagus, Jom Shomo, Kalyio Djannis, Vol Kolla, Yjar</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Improved Damage Threshold), Iron Will, Military Lifestyle</speciesTraits>
+        <languages>Rattataki</languages>
+    </species>
+    <species>
+        <name>Tarro</name>
+        <value>tarro</value>
+        <speciesID>150</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Kassar Kosciusko, Masakayan, Paraster Daskalion, Qatak Qantaras, Terrant Skayanestro, Ruskor Votaran</exampleNames>
+        <abilityMods>str,2;wis,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Iron Will, Natural Weapons, Physically Intimidating</speciesTraits>
+        <languages>Basic, Tarrese</languages>
+    </species>
+    <species>
+        <name>Tash</name>
+        <value>tash</value>
+        <speciesID>151</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Arranda, Hepsalum, Makuursh, Ploutonshaa</exampleNames>
+        <abilityMods>dex,2;wis,2;str,-2</abilityMods>
+        <size>Large</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Natural Armor (+1), Pacifism, Productive Artisans, Primitive</speciesTraits>
+        <languages>Tash</languages>
+    </species>
+    <species>
+        <name>Terrelian</name>
+        <value>terrelian</value>
+        <speciesID>152</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Cassie Cryar, Jango, Lika, Piolia</exampleNames>
+        <abilityMods>dex,2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Burst of Speed), Expert Jumper, Heightened Agility</speciesTraits>
+        <languages>Basic</languages>
+    </species>
+    <species>
+        <name>Tridactyl</name>
+        <value>tridactyl</value>
+        <speciesID>153</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Grogu, Minch, Vandar Tokare, Yaddle, Yoda</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat, Bonus Trained Skill</speciesTraits>
+        <languages>Basic</languages>
+    </species>
+    <species>
+        <name>Turazza</name>
+        <value>turazza</value>
+        <speciesID>154</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Nizzal, Rizzal, Vizzal</exampleNames>
+        <abilityMods>str,2;cha,-2</abilityMods>
+        <size>Small</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Stability, Strength Surge</speciesTraits>
+        <languages>Turazza</languages>
+    </species>
+    <species>
+        <name>Ugnaught</name>
+        <value>ugnaught</value>
+        <speciesID>155</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Aiza'ran, Dzabba, Grugnak, Inkur, Klaazian, Kyood Vurd, Maz'zt, Ozz, Scizzic, Ugarte, Ugloste, Vinzrik, Y'nzella, Yoxgit</exampleNames>
+        <abilityMods>con,2;int,2;dex,-2;cha,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Endurance)), Mechanical Savant</speciesTraits>
+        <languages>Ugnaught</languages>
+    </species>
+    <species>
+        <name>Vodran</name>
+        <value>vodran</value>
+        <speciesID>156</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Kl'ietu Mutela, Lakren Plooru, Meido Lycri, Saran Yydek, Xenon Nnaksta</exampleNames>
+        <abilityMods>con,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Driven, Natural Armor (+1), Survival Instinct</speciesTraits>
+        <languages>Huttese</languages>
+    </species>
+    <species>
+        <name>Xexto</name>
+        <value>xexto</value>
+        <speciesID>157</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Billibango, Freon Drevon, Gasgano, Medeon Holovar, Olot Aleego</exampleNames>
+        <abilityMods>con,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Extra Arms, Fearless, Limited Precognition</speciesTraits>
+        <languages>Basic, Xextese</languages>
+    </species>
+    <species>
+        <name>Yinchorri</name>
+        <value>yinchorri</value>
+        <speciesID>158</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Denrak, Emterrk, Jetar, Jorek, Kardek, Merzok, Qayayir, Solhek, Varuk, Vooma</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Cold-Blooded, Force Resistance, Great Fortitude</speciesTraits>
+        <languages>Basic, Yinchorri</languages>
+    </species>
 </species_list>

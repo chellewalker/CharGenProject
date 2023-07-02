@@ -1,7 +1,7 @@
 export function classFeats(firstClass,int,con,skills,speciesTraits) {
     let feats = [];
     if (firstClass == 0) {
-        if (speciesTraits.includes("Force Blind")) {
+        if (speciesTraits.includes("Force Blind") || speciesTraits.includes("Force Immunity")) {
         }
         else {
             feats.push("Force Sensitivity");
@@ -64,7 +64,7 @@ export function classFeats(firstClass,int,con,skills,speciesTraits) {
 export function multiclassFeat(thisLevel,feats,skills,con,int,speciesTraits) {
     let feat = "";
     if (thisLevel == 0) {
-        if (speciesTraits.includes("Force Blind")) {
+        if (speciesTraits.includes("Force Blind") || speciesTraits.includes("Force Immunity")) {
         }
         else {
             feat = "Force Sensitivity";
@@ -77,10 +77,11 @@ export function multiclassFeat(thisLevel,feats,skills,con,int,speciesTraits) {
         let check = 0;
         while (check == 0) {
             let avail = 2;
-            if (speciesTraits.includes("Force Blind") && feats.includes("Weapon Proficiency (Lightsabers)")) {
+            if (speciesTraits.includes("Force Blind") && feats.includes("Weapon Proficiency (Lightsabers)") ||
+                    speciesTraits.includes("Force Immunity") && feats.includes("Weapon Proficiency (Lightsabers)")) {
                 check = 1;
             }
-            else if (speciesTraits.includes("Force Blind")) {
+            else if (speciesTraits.includes("Force Blind") ||  speciesTraits.includes("Force Immunity")) {
                 feat = "Weapon Proficiency (Lightsabers)";
                 check = 1;
             }

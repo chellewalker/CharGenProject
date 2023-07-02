@@ -16,6 +16,9 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
     else if (size == "Large") {
         relativeSize = 2;
     }
+    if (speciesTraits.includes("Extra Arms")) {
+        relativeSize++;
+    }
 
     let exoticRangedAttackRaw = BAB + Math.floor((dex-10)/2);
 

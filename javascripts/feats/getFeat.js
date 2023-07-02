@@ -6,6 +6,9 @@ import {scoutFeats} from './scoutFeats.js';
 import {soldierFeats} from './soldierFeats.js';
 
 export function getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species) {
+if (BAB == 0 && speciesTraits.includes("Military Lifestyle")) {
+    BAB = 1;
+}
 let feat = "";
 let count = 0;
 while (feat == "") {

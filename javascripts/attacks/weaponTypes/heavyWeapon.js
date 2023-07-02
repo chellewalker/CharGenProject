@@ -1,4 +1,4 @@
-export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size) {
+export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size,speciesTraits) {
     let heavyWeaponWeapon = "";
     let heavyWeaponDice;
     let heavyWeaponDie;

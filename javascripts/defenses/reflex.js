@@ -37,13 +37,8 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
         if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
             armorRef = 4;
         }
-        let reflex;
-    if (talents.includes("Armored Defense")) {
-        reflex = 10 + Math.min(Math.floor((dex-10)/2),maxDex) + Math.max(parseInt(level),armorRef) + classReflex;
-    }
-    else {
-        reflex = 10 + Math.min(Math.floor((dex-10)/2),maxDex) + parseInt(level) + classReflex;
-    }    
+        let reflex = 10 + Math.min(Math.floor((dex-10)/2),maxDex) + Math.max(parseInt(level),armorRef) + classReflex;
+   
         if (size == "Small") {
             reflex++;
         }
@@ -52,6 +47,9 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
         }
         if (speciesTraits.includes("Lightning Reflexes")) {
             reflex += 2;
+        }
+        if (speciesTraits.includes("Carapace")) {
+            reflex++;
         }
         if (speciesTraits.includes("Natural Armor (+1)")) {
             reflex++;

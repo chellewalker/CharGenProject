@@ -5,6 +5,34 @@ export function getSkills (int,firstClass,speciesTraits,classes) {
         let trained = getAvailSkills(int,firstClass,speciesTraits);
         let count = 0;
 
+        if (speciesTraits.includes("Bonus Trained Skill ((Knowledge (Technology))")) {
+                skills.push("Knowledge (Technology)");
+            }
+        if (speciesTraits.includes("Scholarly Inclination")) {
+            let randomNum = Math.floor(Math.random() * 7);
+            if (randomNum == 0) {
+                skills.push("Knowledge (Bureaucracy)");
+            }
+            if (randomNum == 1) {
+                skills.push("Knowledge (Galactic Lore)");
+            }
+            if (randomNum == 2) {
+                skills.push("Knowledge (Life Sciences)");
+            }
+            if (randomNum == 3) {
+                skills.push("Knowledge (Physical Sciences)");
+            }
+            if (randomNum == 4) {
+                skills.push("Knowledge (Social Sciences)");
+            }
+            if (randomNum == 5) {
+                skills.push("Knowledge (Tactics)");
+            }
+            if (randomNum == 6 || randomNum == 7) {
+                skills.push("Knowledge (Technology)");
+            }
+        }
+
         for (count = 0; count < trained; count++) {
             temp = getFirstSkills(speciesTraits,firstClass,skills);
             if (temp != "") {
@@ -77,11 +105,20 @@ export function getFirstSkills(speciesTraits,firstClass,skills) {
     if (speciesTraits.includes("Bonus Class Skill (Gather Information)")) {
         classSkills += "Gather Information";
     }
+    if (speciesTraits.includes("Bonus Class Skill (Survival)")) {
+        classSkills += "Survival";
+    }
     if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
         classSkills.push("Climb","Stealth");
     }
-    if (speciesTraits.includes("Tinkerer")) {
+    if (speciesTraits.includes("Bonus Class Skills (Stealth and Survival)")) {
+        classSkills += "Survival","Stealth";
+    }
+    if (speciesTraits.includes("Tinkerer") || speciesTraits.includes("Bonus Class Skill (Mechanics)")) {
         classSkills += "Mechanics";
+    }
+    if (speciesTraits.includes("Natural Diplomat")) {
+        classSkills += "Persuasion";
     }
 
             let thisSkill = "";
@@ -139,11 +176,20 @@ export function getNewSkill(speciesTraits,classes,skills,feats,talents) {
     if (speciesTraits.includes("Bonus Class Skill (Gather Information)")) {
         classSkills += "Gather Information";
     }
+    if (speciesTraits.includes("Bonus Class Skill (Survival)")) {
+        classSkills += "Survival";
+    }
     if (speciesTraits.includes("Bonus Class Skills (Climb and Stealth)")) {
         classSkills += "Climb","Stealth";
     }
-    if (speciesTraits.includes("Tinkerer")) {
+    if (speciesTraits.includes("Bonus Class Skills (Stealth and Survival)")) {
+        classSkills += "Survival","Stealth";
+    }
+    if (speciesTraits.includes("Tinkerer") || speciesTraits.includes("Bonus Class Skill (Mechanics)")) {
         classSkills += "Mechanics";
+    }
+    if (speciesTraits.includes("Natural Diplomat")) {
+        classSkills += "Persuasion";
     }
     if (feats.includes("Force Sensitivity")) {
         classSkills += "Use the Force";
@@ -207,6 +253,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Climb)")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Grasping Tentacles")) {
+                    score += 2;
+                }
                 if (talents.includes("Shield Expert")) {
                     if (feats.includes("Armor Proficiency (Heavy)")) {
                         score -= 10;
@@ -237,7 +286,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                         score -= 2;
                     }
                 }
-                if (speciesTraits.includes("Athletic") || feats.includes("Conditioning")) {
+                if (speciesTraits.includes("Athletic") || speciesTraits.includes("Expert Jumper") || feats.includes("Conditioning")) {
                     special = " (may reroll, must take second result)";
                 }
             }
@@ -303,10 +352,11 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                         score -= 2;
                     }
                 }
-                if (speciesTraits.includes("Intuitive Initiative") && talents.includes("Improved Initiative")) {
+                if (speciesTraits.includes("Intuitive Initiative") && talents.includes("Improved Initiative") ||
+                        speciesTraits.includes("Quick Reflexes") && talents.includes("Improved Initiative")) {
                     special = " (may reroll twice, must take second result)";
                 }
-                else if (speciesTraits.includes("Intuitive Initiative") || talents.includes("Improved Initiative")) {
+                else if (speciesTraits.includes("Intuitive Initiative") || speciesTraits.includes("Quick Reflexes") || talents.includes("Improved Initiative")) {
                     special = " (may reroll, must take second result)";
                 }
             }
@@ -399,35 +449,59 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Knowledge (Bureaucracy))")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Deductive Reasoning")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Knowledge (Galactic Lore)") {
                 if (feats.includes("Skill Focus (Knowledge (Galactic Lore))")) {
                     score += 5;
+                }
+                if (speciesTraits.includes("Deductive Reasoning")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             if (trainedSkills[count] == "Knowledge (Life Sciences)") {
                 if (feats.includes("Skill Focus (Knowledge (Life Sciences))")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Bioknowledge") || speciesTraits.includes("Deductive Reasoning")) {
+                    special = " (may reroll, must take second result)";
+                }
+                if (speciesTraits.includes("Ecological Awareness")) {
+                    special = " (may reroll, may keep better result)";
+                }
             }
             if (trainedSkills[count] == "Knowledge (Physical Sciences)") {
                 if (feats.includes("Skill Focus (Knowledge (Physical Sciences))")) {
                     score += 5;
+                }
+                if (speciesTraits.includes("Deductive Reasoning")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             if (trainedSkills[count] == "Knowledge (Social Sciences)") {
                 if (feats.includes("Skill Focus (Knowledge (Social Sciences))")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Deductive Reasoning")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Knowledge (Tactics)") {
                 if (feats.includes("Skill Focus (Knowledge (Tactics))")) {
                     score += 5;
                 }
+                if (speciesTraits.includes("Warrior Culture") || speciesTraits.includes("Deductive Reasoning")) {
+                    special = " (may reroll, must take second result)";
+                }
             }
             if (trainedSkills[count] == "Knowledge (Technology)") {
                 if (feats.includes("Skill Focus (Knowledge (Technology))")) {
                     score += 5;
+                }
+                if (speciesTraits.includes("Tech Savvy") || speciesTraits.includes("Deductive Reasoning")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             if (trainedSkills[count] == "Mechanics") {
@@ -437,7 +511,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (equipment.includes("Mechanical Interface Visor (+2 Mechanics)")) {
                     score += 2;
                 }
-                if (speciesTraits.includes("Tinkerer")) {
+                if (speciesTraits.includes("Tinkerer") || speciesTraits.includes("Mechanics")) {
                     special = " (may reroll, must take second result)";
                 }
             }
@@ -495,6 +569,9 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 }
                 if (equipment.includes("Medical Interface Visor (+2 Treat Injury)")) {
                     score += 2;
+                }
+                if (speciesTraits.includes("Bioknowledge")) {
+                    special = " (may reroll, must take second result)";
                 }
             }
             if (score < 0) {
