@@ -13,7 +13,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     forcePowers,SR,qualityList,qualities,armorFort,forceTechniques,forceSecrets) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
-            destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5) + "; ";
+            destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5);
         }
 
         let listTalents = displayTalents(talents);
@@ -226,6 +226,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     }
 
     let forcePointDisplay = "<strong>Force Points:</strong> "+forcePoints;
+    if (destiny != "") {
+        forcePointDisplay = "; " + forcePointDisplay;
+    }
         if (species == "Yuuzhan Vong") {
             forcePointDisplay = "";
         }
@@ -298,11 +301,6 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
     forceTechniques,forceSecrets) {
 
-        let forcePointDisplay = "Force%20Points:%20"+forcePoints;
-        if (species == "Yuuzhan Vong") {
-            forcePointDisplay = "";
-        }
-
         let listTalents = displayRawTalents(talents);
         let listFeats = displayRawFeats(feats);
 
@@ -345,7 +343,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         simpleRanged = simpleRanged.replace(/'/g, "%27");
 
         if (Math.floor(level/5) > 0) {
-            destiny = "Destiny%20Points:%20" + Math.floor(level/5) + ";%20";
+            destiny = "Destiny%20Points:%20" + Math.floor(level/5);
         }
 
         damageReduction = 0;
@@ -474,6 +472,14 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     if (talents.includes("Force Perception")) {
         senses = "Use%20the%20Force%20"+perceptionDisplay;
     }
+
+    let forcePointDisplay = "Force%20Points:%20"+forcePoints;
+    if (destiny != "") {
+        forcePointDisplay = ";%20" + forcePointDisplay;
+    }
+        if (species == "Yuuzhan Vong") {
+            forcePointDisplay = "";
+        }
 
     let outputData = 
     name+"%20Statistics%20(CL%20"+level+")%0A"+
