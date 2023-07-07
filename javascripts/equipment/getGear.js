@@ -243,8 +243,11 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
                 gearEquipment.push("Liquid Cable Dispenser");
         }}
         if (randomNum == 33 && available.includes("CR")) {
-                gearEquipment.push("Ration Pack") 
+            if (gearEquipment.includes("Ration Pack (5)")) {
             }
+            else {
+                gearEquipment.push("Ration Pack (5)");
+        }}
         if (randomNum == 34 && available.includes("CR")) {
             if (gearEquipment.includes("Syntherope")) {
             }

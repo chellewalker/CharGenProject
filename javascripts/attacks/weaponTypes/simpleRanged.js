@@ -107,7 +107,7 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size,s
     if (talents.includes("Greater Weapon Specialization (Simple Weapons)")) {
         simpleRangedDamageRaw += 2;
     }
-    if (simpleRangedWeapon == "Bow (10 Arrows)" || simpleRangedWeapon == "Sling (10 Stones)" || simpleRangedWeapon == "Pulley Bow (10 Arrows)") {
+    if (simpleRangedWeapon == "Bow" || simpleRangedWeapon == "Sling" || simpleRangedWeapon == "Pulley Bow") {
         simpleRangedDamageRaw += Math.floor((str-10)/2);
     }
     let simpleRangedDamage = "";
