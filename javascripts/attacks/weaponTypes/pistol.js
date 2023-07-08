@@ -26,6 +26,8 @@ export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTrai
     if (talents.includes("Greater Weapon Focus (Pistols)")) {
         pistolAttackRaw++;
     }
+
+    let pistolDamageRaw = Math.floor(level/2);
     while (pistolWeapon == "") {
         let randomNum = Math.floor(Math.random() * 21);
 
@@ -91,6 +93,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTrai
             weaponSize = 0;
             pistolDice = 2;
             pistolDie = 6;
+            pistolDamageRaw += 4;
         }
         if (randomNum == 10 && available.includes("KotORCG")) {
             pistolWeapon = "Ripper";
@@ -172,7 +175,6 @@ export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTrai
             pistolAttack = "+" + pistolAttackRaw;
         }
 
-    let pistolDamageRaw = Math.floor(level/2);
     if (talents.includes("Weapon Specialization (Pistols)")) {
         pistolDamageRaw += 2;
     }

@@ -26,6 +26,8 @@ export function getRifle(available,BAB,level,dex,feats,talents,size,speciesTrait
     if (talents.includes("Greater Weapon Focus (Rifles)")) {
         rifleAttackRaw++;
     }
+
+    let rifleDamageRaw = Math.floor(level/2);
     while (rifleWeapon == "") {
         let randomNum = Math.floor(Math.random() * 23);
 
@@ -98,6 +100,7 @@ export function getRifle(available,BAB,level,dex,feats,talents,size,speciesTrait
             weaponSize = 1;
             rifleDice = 2;
             rifleDie = 8;
+            rifleDamageRaw += 5;
         }
         if (randomNum == 11 && available.includes("KotORCG") && size != "Small") {
             rifleWeapon = "Repeating Blaster Carbine";
@@ -187,7 +190,6 @@ export function getRifle(available,BAB,level,dex,feats,talents,size,speciesTrait
             rifleAttack = "+" + rifleAttackRaw;
         }
 
-    let rifleDamageRaw = Math.floor(level/2);
     if (talents.includes("Weapon Specialization (Rifles)")) {
         rifleDamageRaw += 2;
     }
