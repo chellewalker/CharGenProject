@@ -549,7 +549,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                     special += "; may substitute for Gather Information checks";
                 }
                 else if (feats.includes("Informer")) {
-                    special += "(may substitute for Gather Information checks";
+                    special += " (may substitute for Gather Information checks";
                 }
                 if (special != "") {
                     special += ")";
