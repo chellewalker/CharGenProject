@@ -15,6 +15,9 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
             }}
 
     let flying = parseInt(parseXML("xmls/species.xml","flySpeed",speciesID));
+    if (talents.includes("Long Stride") && flying > 0) {
+        flying += 2;
+    }
         if (armorType == "Medium" && flying < 6 ||
                     armorType == "Heavy" && flying < 6) {
                 if (talents.includes("Juggernaut")) {}
@@ -87,7 +90,7 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 else {
                 speedValue -= 2;
             }}
-                if (talents.includes("Long Stride")) {
+                if (talents.includes("Long Stride") && speedValue > 0) {
                     speedValue += 2;
                 }
 
@@ -103,10 +106,10 @@ export function getSpeed(speciesID,talents,feats,armorType,armor) {
                 else {
                     swimSpeed -= 2;
             }}
-                if (talents.includes("Long Stride")) {
+                if (feats.includes("Increased Agility")) {
                     swimSpeed += 2;
                 }
-                if (feats.includes("Increased Agility")) {
+                if (talents.includes("Long Stride") && swimSpeed > 0) {
                     swimSpeed += 2;
                 }
     if (speciesID == 128) {
