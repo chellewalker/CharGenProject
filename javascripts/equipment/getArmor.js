@@ -132,6 +132,7 @@ function getMedium(available,feats,talents) {
         if (randomNum == 8 && available.includes("CWCG")) {
             name = "Camo Armor (+5 Armor)";
             reflex = 5;
+            fortitude = 0;
             maxDex = 3;
         }
     }

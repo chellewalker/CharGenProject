@@ -1,4 +1,4 @@
-export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,speciesTraits) {
     let count = 0;
     let talent = "";
     while (talent == "") {
@@ -15,7 +15,7 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
         talent = commandoTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 3) {
-        talent = weaponTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = weaponTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,speciesTraits);
     }
     else if (randomNum == 4 && available.includes("KotORCG")) {
         talent = rocketTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
@@ -228,7 +228,7 @@ export function commandoTalents(talents,available,skills,feats,BAB,forcePowers,l
     return talent;
 }
 
-export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,speciesTraits) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {
@@ -261,10 +261,13 @@ export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,lig
                     talent = "Devastating Attack (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     talent = "Devastating Attack (Simple Weapons)";
                     check = 1;
-                }
+                }}
                 if (count == 20) {
                     check = 1;
                 }
@@ -296,10 +299,13 @@ export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,lig
                     talent = "Penetrating Attack (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Focus (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     talent = "Penetrating Attack (Simple Weapons)";
                     check = 1;
-                }
+                }}
                 if (count == 20) {
                     check = 1;
                 }
@@ -331,10 +337,13 @@ export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,lig
                     talent = "Weapon Specialization (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Focus (Simple Weapons)")) {
-                    talent = "Weapon Specialization (Simple Weapons)";
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
+                    talent = "Specialization Attack (Simple Weapons)";
                     check = 1;
-                }
+                }}
                 if (count == 20) {
                     check = 1;
                 }
@@ -357,22 +366,22 @@ export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,lig
                 randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Pistols)")  && int >= 13 && feats.includes("Improved Disarm") ||
                 randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Rifles)")  && int >= 13 && feats.includes("Improved Disarm") ||
                 randomNum == 5 && available.includes("KotORCG") && feats.includes("Weapon Specialization (Simple Weapons)")  && int >= 13 && feats.includes("Improved Disarm")) {
-        if (feats.includes("Weapon Specialization (Advanced Melee Weapons)")) {
+        if (talents.includes("Weapon Specialization (Advanced Melee Weapons)")) {
             talent = "Disarming Attack (Advanced Melee Weapons)";
         }
-        if (feats.includes("Weapon Specialization (Heavy Weapons)")) {
+        if (talents.includes("Weapon Specialization (Heavy Weapons)")) {
             talent = "Disarming Attack (Heavy Weapons)";
         }
-        if (feats.includes("Weapon Specialization (Lightsabers)")) {
+        if (talents.includes("Weapon Specialization (Lightsabers)")) {
             talent = "Disarming Attack (Lightsabers)";
         }
-        if (feats.includes("Weapon Specialization (Pistols)")) {
+        if (talents.includes("Weapon Specialization (Pistols)")) {
             talent = "Disarming Attack (Pistols)";
         }
-        if (feats.includes("Weapon Specialization (Rifles)")) {
+        if (talents.includes("Weapon Specialization (Rifles)")) {
             talent = "Disarming Attack (Rifles)";
         }
-        if (feats.includes("Weapon Specialization (Simple Weapons)")) {
+        if (talents.includes("Weapon Specialization (Simple Weapons)")) {
             talent = "Disarming Attack (Simple Weapons)";
         }
     }

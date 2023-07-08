@@ -44,10 +44,13 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
                     feat = "Double Attack (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     feat = "Double Attack (Simple Weapons)";
                     check = 1;
-                }
+                }}
             }
         }
         else if (randomNum == 8 && available.includes("CR") && speciesTraits.includes("Rage") && BAB >= 1) {
@@ -180,10 +183,13 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
                     feat = "Triple Crit (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     feat = "Triple Crit (Simple Weapons)";
                     check = 1;
-                }
+                }}
             }
         }
         else if (randomNum == 47 && available.includes("CR") && BAB >= 1 && dex >= str ||

@@ -72,10 +72,13 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                     feat = "Double Attack (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     feat = "Double Attack (Simple Weapons)";
                     check = 1;
-                }
+                }}
                 if (count == 20) {
                     check = 1;
                 }
@@ -304,10 +307,13 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                     feat = "Triple Crit (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     feat = "Triple Crit (Simple Weapons)";
                     check = 1;
-                }
+                }}
                 if (count == 20) {
                     check = 1;
                 }

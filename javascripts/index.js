@@ -153,7 +153,8 @@ window.genCharacter = function genCharacter() {
                 }
                 skills = getSkills(int,thisLevel,speciesTraits,classes);
                 BAB = getBAB(classes);
-                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,qualities,dex));
+                talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,
+                    dark,tradition,cha,starshipManeuvers,wis,qualities,dex,speciesTraits));
                 hitPoints += getFirstHitPoints(firstClass,con);
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits,BAB,level);
                 feats = speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha);
@@ -217,11 +218,13 @@ window.genCharacter = function genCharacter() {
                 else if (classes[thisLevel] % 2 == 0 && thisLevel >= 5) {
                     qualities.push(getQuality(thisLevel));
                     if (thisLevel == 7) {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities,dex));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,
+                        dark,tradition,cha,starshipManeuvers,wis,qualities,dex,speciesTraits));
                 }}
                 
                 else {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,dark,tradition,cha,starshipManeuvers,wis,qualities,dex));
+                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,
+                        dark,tradition,cha,starshipManeuvers,wis,qualities,dex,speciesTraits));
                 }
             }
             if ((count-2) % 3 == 0) {

@@ -110,10 +110,13 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     feat = "Double Attack (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     feat = "Double Attack (Simple Weapons)";
                     check = 1;
-                }
+                }}
             }
         }
         else if (randomNum == 35 && available.includes("CR") && speciesTraits.includes("Rage") && BAB >= 1) {
@@ -472,10 +475,13 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     feat = "Triple Crit (Rifles)";
                     check = 1;
                 }
-                else if (randomNum == 5 && feats.includes("Weapon Proficiency (Simple Weapons)")) {
+                else if (randomNum == 5) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
                     feat = "Triple Crit (Simple Weapons)";
                     check = 1;
-                }
+                }}
             }
         }
         else if (randomNum == 143 && available.includes("CR") && skills.includes("Pilot") ||
