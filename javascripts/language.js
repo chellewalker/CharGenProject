@@ -3,7 +3,9 @@ import {parseXML} from './xmlGetter.js';
 export function language(languages) {
     let language;
     let check = 0;
-    while (check == 0) {
+    let count = 0;
+    while (check == 0 && count < 20) {
+        count++;
     let randomNum = Math.floor(Math.random() * 16);
     if (randomNum == 0) {
         if (languages.includes("Basic") || languages.includes("Basic (understand only)")) {

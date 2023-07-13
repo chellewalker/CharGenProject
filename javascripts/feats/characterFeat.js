@@ -3,8 +3,14 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     let count2 = 0;
     let randomNumForce = Math.floor(Math.random() * 2);
     if (randomNumForce == 0 && skills.includes("Use the Force") && feats.includes("Force Sensitivity")) {
+        if (available.includes("CR") ||
+                available.includes("KotORCG") ||
+                available.includes("FUCG") ||
+                available.includes("CWCG") ||
+                available.includes("LECG") ||
+                available.includes("JATM")) {
         feat = "Force Training";
-    }
+    }}
     let randomNumStarship = Math.floor(Math.random() * 4);
     if (randomNumStarship == 0 && available.includes("SotG") && feats.includes("Vehicular Combat") && skills.includes("Pilot")) {
         feat = "Starship Tactics";
@@ -286,8 +292,14 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
                     randomNum == 239  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
                     randomNum == 240  && skills.includes("Use the Force") && feats.includes("Force Sensitivity") ||
                     randomNum == 241  && skills.includes("Use the Force") && feats.includes("Force Sensitivity")) {
+            if (available.includes("CR") ||
+                available.includes("KotORCG") ||
+                available.includes("FUCG") ||
+                available.includes("CWCG") ||
+                available.includes("LECG") ||
+                available.includes("JATM")) {
             feat = "Force Training";
-        }
+        }}
         else if (randomNum == 58 && available.includes("CR")  && feats.includes("Power Attack")  && feats.includes("Cleave") && str >= 13 && BAB >= 4) {
             feat = "Great Cleave";
         }
