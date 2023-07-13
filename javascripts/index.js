@@ -204,8 +204,10 @@ window.genCharacter = function genCharacter() {
                 if (classes[thisLevel] == 1 && thisLevel < 5) {
                     let temp = (multiclassFeat(thisLevel,feats,skills,int,con,speciesTraits));
                     if (temp != "") { 
+                        if (feats.includes(temp)) {}
+                        else {
                         feats.push(temp);
-                }}
+                }}}
                 BAB = getBAB(classes);
                 hitPoints += getMoreHitPoints(thisLevel,con);
                 if (classes[thisLevel] % 2 == 0 && thisLevel < 5) {

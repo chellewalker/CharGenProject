@@ -15,6 +15,7 @@ export function speciesGen(tempSpecies,available) {
                     if (check2 == tempSpecies) {
                         species = parseXML("xmls/species.xml","name",count);
                         speciesID = count;
+                        count = speciesCount;
                     }
                 }
                 if (speciesID == 0) {
