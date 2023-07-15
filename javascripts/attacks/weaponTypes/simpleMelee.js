@@ -20,9 +20,10 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     }
 
     let simpleMeleeAttackRaw = BAB + Math.floor((str-10)/2);
+    let simpleMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
 
     while (simpleMeleeWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 16);
+        let randomNum = Math.floor(Math.random() * 26);
 
         if (randomNum == 0 && available.includes("CR")) {
             simpleMeleeWeapon = "Bayonet";
@@ -122,6 +123,72 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             simpleMeleeDice = 2;
             simpleMeleeDie = 4;
         }
+        if (randomNum == 16 && available.includes("JATM")) {
+            simpleMeleeWeapon = "Wan-Shen";
+            weaponSize = 2;
+            simpleMeleeDice = 2;
+            simpleMeleeDie = 6;
+        }
+        if (randomNum == 17 && available.includes("RECG")) {
+            simpleMeleeWeapon = "Axe";
+            weaponSize = 1;
+            simpleMeleeDice = 1;
+            simpleMeleeDie = 8;
+        }
+        if (randomNum == 18 && available.includes("RECG")) {
+            simpleMeleeWeapon = "Gaderffii";
+            weaponSize = 2;
+            simpleMeleeDice = 2;
+            simpleMeleeDie = 4;
+        }
+        if (randomNum == 19 && available.includes("GaW")) {
+            simpleMeleeWeapon = "Entrenching Tool";
+            weaponSize = 0;
+            simpleMeleeDice = 1;
+            simpleMeleeDie = 6;
+            simpleMeleeAttackRaw -= 2;
+        }
+        if (randomNum == 20 && available.includes("GaW")) {
+            simpleMeleeWeapon = "Fire Blade";
+            weaponSize = 0;
+            simpleMeleeDice = 2;
+            simpleMeleeDie = 4;
+        }
+        if (randomNum == 21 && available.includes("UR")) {
+            simpleMeleeWeapon = "Contact Stunner";
+            weaponSize = 0;
+            simpleMeleeDice = 2;
+            simpleMeleeDie = 8;
+            special = " (Stun)";
+        }
+        if (randomNum == 22 && available.includes("UR")) {
+            simpleMeleeWeapon = "Survival Knife";
+            weaponSize = 0;
+            simpleMeleeDice = 1;
+            simpleMeleeDie = 6;
+        }
+        if (randomNum == 23 && available.includes("HC")) {
+            simpleMeleeWeapon = "Hook Blade";
+            weaponSize = -1;
+            simpleMeleeDice = 1;
+            simpleMeleeDie = 4;
+        }
+        if (randomNum == 24 && available.includes("HC")) {
+            simpleMeleeWeapon = "Slaver Blade";
+            weaponSize = 1;
+            simpleMeleeDice = 1;
+            simpleMeleeDie = 10;
+            if (str < 14) {
+                simpleMeleeAttackRaw -= 5;
+                simpleMeleeDamageRaw -= 5;
+            }
+        }
+        if (randomNum == 25 && available.includes("HC")) {
+            simpleMeleeWeapon = "Throwing Knife";
+            weaponSize = -1;
+            simpleMeleeDice = 1;
+            simpleMeleeDie = 4;
+        }
     }
 
     if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize > weaponSize) {
@@ -148,7 +215,6 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             simpleMeleeAttack = "+" + simpleMeleeAttackRaw;
         }
 
-    let simpleMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
     if (talents.includes("Weapon Specialization (Simple Weapons)")) {
         simpleMeleeDamageRaw += 2;
     }

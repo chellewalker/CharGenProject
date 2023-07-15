@@ -12,9 +12,9 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size,specie
         heavyWeaponAttackRaw++;
     }
     while (heavyWeaponWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 7);
+        let randomNum = Math.floor(Math.random() * 15);
 
-        if (randomNum == 0) {
+        if (randomNum == 0 || size == "Small") {
             heavyWeaponWeapon = "Grenade Launcher";
             heavyWeaponDice = 4;
             heavyWeaponDie = 6;
@@ -57,6 +57,55 @@ export function getHeavyWeapon(available,BAB,level,dex,feats,talents,size,specie
             heavyWeaponDice = 3;
             heavyWeaponDie = 10;
             special = " (Stun)";
+        }
+        if (randomNum == 7 && available.includes("FUCG") && size != "Small") {
+            heavyWeaponWeapon = "E-Web Missile Launcher";
+            heavyWeaponDice = 6;
+            heavyWeaponDie = 6;
+            special = ", 2-Square Area Attack";
+        }
+        if (randomNum == 8 && available.includes("LECG") && size != "Small") {
+            heavyWeaponWeapon = "Heavy Blaster Cannon";
+            heavyWeaponDice = 4;
+            heavyWeaponDie = 12;
+            special = ", 1-Square Splash";
+        }
+        if (randomNum == 9 && available.includes("RECG") && size != "Small") {
+            heavyWeaponWeapon = "PLX-2M Portable Missile Launcher";
+            heavyWeaponDice = 8;
+            heavyWeaponDie = 6;
+            special = ", 3-Square Burst";
+        }
+        if (randomNum == 10 && available.includes("RECG") && size != "Small") {
+            heavyWeaponWeapon = "Miniature Proton Torpedo Launcher";
+            heavyWeaponDice = 6;
+            heavyWeaponDie = 10;
+            special = ", 2-Square Burst";
+        }
+        if (randomNum == 11 && available.includes("GaW") && size != "Small") {
+            heavyWeaponWeapon = "Flame Cannon";
+            heavyWeaponDice = 5;
+            heavyWeaponDie = 6;
+            special = " (Fire), 12-Square Cone";
+        }
+        if (randomNum == 12 && available.includes("GaW") && size != "Small") {
+            heavyWeaponWeapon = "Mortar Launcher";
+            heavyWeaponDice = 4;
+            heavyWeaponDie = 6;
+            special = ", 2-Square Burst";
+        }
+        if (randomNum == 13 && available.includes("GaW") && size != "Small") {
+            heavyWeaponWeapon = "Rotary Blaster Cannon";
+            heavyWeaponDice = 3;
+            heavyWeaponDie = 10;
+            special = ", 2x4-Square Autofire";
+            heavyWeaponAttackRaw -= 10;
+        }
+        if (randomNum == 14 && available.includes("WE") && size != "Small") {
+            heavyWeaponWeapon = "HH-15 Projectile Launcher";
+            heavyWeaponDice = 6;
+            heavyWeaponDie = 6;
+            special = ", 1-Square Splash";
         }
     }
 

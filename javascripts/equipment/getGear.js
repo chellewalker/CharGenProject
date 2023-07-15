@@ -49,7 +49,7 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
     let count;
 
     for (count = 0; count < bonusGear; count++) {
-        let randomNum = Math.floor(Math.random() * 64);
+        let randomNum = Math.floor(Math.random() * 65);
         if (randomNum == 0 && available.includes("CR")) {
             if (gearEquipment.includes("Pocket Scrambler")) {
             }
@@ -427,6 +427,12 @@ export function getGear(available,feats,talents,skills,speciesTraits) {
             }
             else {
                 gearEquipment.push("Bioscanner");
+        }}
+        if (randomNum == 64 && available.includes("GaW") && feats.includes("Weapon Proficiency (Heavy Weapons)")) {
+            if (gearEquipment.includes("Tactical Tractor Beam")) {
+            }
+            else {
+                gearEquipment.push("Tactical Tractor Beam");
         }}
     }
 

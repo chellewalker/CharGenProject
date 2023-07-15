@@ -29,7 +29,7 @@ export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTrai
 
     let pistolDamageRaw = Math.floor(level/2);
     while (pistolWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 21);
+        let randomNum = Math.floor(Math.random() * 31);
 
         if (randomNum == 0) {
             pistolWeapon = "Blaster Pistol";
@@ -161,6 +161,68 @@ export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTrai
         }
         if (randomNum == 20 && available.includes("CWCG")) {
             pistolWeapon = "Model 434 DeathHammer";
+            weaponSize = 1;
+            pistolDice = 3;
+            pistolDie = 8;
+        }
+        if (randomNum == 21 && available.includes("LECG")) {
+            pistolWeapon = "Bluebolt Blaster Pistol";
+            weaponSize = 1;
+            pistolDice = 3;
+            pistolDie = 8;
+        }
+        if (randomNum == 22 && available.includes("LECG")) {
+            pistolWeapon = "Snap-Shot Blaster Pistol";
+            weaponSize = -1;
+            pistolDice = 3;
+            pistolDie = 6;
+        }
+        if (randomNum == 23 && available.includes("GaW")) {
+            pistolWeapon = "Ascension Gun";
+            weaponSize = 1;
+            pistolDice = 3;
+            pistolDie = 8;
+        }
+        if (randomNum == 24 && available.includes("GaW")) {
+            pistolWeapon = "Sidearm Blaster Pistol";
+            weaponSize = 0;
+            pistolDice = 3;
+            pistolDie = 6;
+        }
+        if (randomNum == 25 && available.includes("GoI")) {
+            pistolWeapon = "Snare Pistol";
+            weaponSize = 1;
+            pistolDice = 1;
+            pistolDie = 4;
+            special = " (Stun)";
+        }
+        if (randomNum == 26 && available.includes("GoI")) {
+            pistolWeapon = "Wrist Blaster";
+            weaponSize = -1;
+            pistolDice = 3;
+            pistolDie = 6;
+        }
+        if (randomNum == 27 && available.includes("UR")) {
+            pistolWeapon = "Black-Powder Pistol";
+            weaponSize = 0;
+            pistolDice = 2;
+            pistolDie = 4;
+        }
+        if (randomNum == 28 && available.includes("UR")) {
+            pistolWeapon = "Heavy Slugthrower Pistol";
+            weaponSize = 1;
+            pistolDice = 2;
+            pistolDie = 8;
+        }
+        if (randomNum == 29 && available.includes("UR")) {
+            pistolWeapon = "Stun Pistol";
+            weaponSize = 0;
+            pistolDice = 3;
+            pistolDie = 6;
+            special = " (Stun)";
+        }
+        if (randomNum == 30 && available.includes("WE")) {
+            pistolWeapon = "S-5 Heavy Blaster Pistol";
             weaponSize = 1;
             pistolDice = 3;
             pistolDie = 8;
