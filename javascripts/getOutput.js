@@ -452,11 +452,15 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
 
     if (forceTechniques != "") {
         forceTechniques = displayRawForceTechniques(forceTechniques);
+        forceTechniques = forceTechniques.replace(/ /g, "%20");
+        forceTechniques = forceTechniques.replace(/'/g, "%27");
         techniqueDisplay = "Force%20Techniques:%20"+forceTechniques+"%0A";
     }
 
     if (forceSecrets != "") {
         forceSecrets = displayRawForceSecrets(forceSecrets);
+        forceSecrets = forceSecrets.replace(/ /g, "%20");
+        forceSecrets = forceSecrets.replace(/'/g, "%27");
         secretDisplay = "Force%Secrets:%20"+forceSecrets+"%0A";
     }
 

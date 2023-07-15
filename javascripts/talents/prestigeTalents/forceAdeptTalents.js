@@ -79,7 +79,7 @@ export function adeptTalents(talents,available,skills,feats,BAB,forcePowers) {
     let randomNum = Math.floor(Math.random() * 6);
     randomNum = 0;
 
-    if (randomNum == 0 && available.includes("CR")) {
+    if (randomNum == 0 && available.includes("CR") && forcePowers.length > 0) {
         let randomNum2 = Math.floor(Math.random() * forcePowers.length);
         talent = "Force Power Adept" + " (" + forcePowers[randomNum2] + ")";
     }

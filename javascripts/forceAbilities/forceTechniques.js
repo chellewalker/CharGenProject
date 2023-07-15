@@ -222,10 +222,22 @@ export function displayRawForceTechniques(forceTechniques) {
     let count;
     for (count = 0; count < forceTechniques.length; count++) {
         if (count == 0) {
-            rawForceTechniques += forceTechniques[count];
+            if (forceTechniques[count].includes(" (")) {
+                let temp = forceTechniques[count].split(" (");
+                rawForceTechniques += temp[0]+" ("+temp[1]+")";
+            }
+            else {
+                rawForceTechniques += forceTechniques[count];
+            }
         }
         else {
-            rawForceTechniques += ", "+forceTechniques[count];
+            if (forceTechniques[count].includes(" (")) {
+                let temp = forceTechniques[count].split(" (");
+                rawForceTechniques += ", "+temp[0]+" ("+temp[1]+")";
+            }
+            else {
+                rawForceTechniques += ", "+forceTechniques[count];
+            }
         }
     }
     
