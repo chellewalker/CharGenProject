@@ -167,5 +167,11 @@ export function classListing(firstClass,classes) {
         if (classes[8] > 0) {
             classList += "/Elite Trooper "+classes[8];
         }
+        if (classes[9] > 0) {
+            classList += "/Force Adept "+classes[9];
+        }
+        if (classes[10] > 0) {
+            classList += "/Force Disciple "+classes[10];
+        }
     return classList;
 }

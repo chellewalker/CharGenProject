@@ -1,3 +1,4 @@
+import {getTradition} from '../forceAbilities/getTradition.js';
 import {forceTalents} from '../forceAbilities/forceTalents.js';
 import {traditionTalents} from '../forceAbilities/traditionTalents.js';
 import {jediTalents} from './jediTalents.js';
@@ -9,6 +10,7 @@ import {acePilotTalents} from './prestigeTalents/acePilotTalents.js';
 import {bountyHunterTalents} from './prestigeTalents/bountyHunterTalents.js';
 import {crimeLordTalents} from './prestigeTalents/crimeLordTalents.js';
 import {eliteTrooperTalents} from './prestigeTalents/eliteTrooperTalents.js';
+import {forceAdeptTalents,adeptTalents} from './prestigeTalents/forceAdeptTalents.js';
 
 export function getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,
                dark,tradition,cha,starshipManeuvers,wis,qualities,dex,speciesTraits) {
@@ -76,6 +78,24 @@ else {
     }
     else if (thisLevel == 8) {
         talent = eliteTrooperTalents(talents,available,skills,feats,BAB,dex,wis,cha,qualities);
+    }
+    else if (thisLevel == 9) {
+        talent = forceAdeptTalents(talents,available,skills,feats,BAB,dex,wis,cha,qualities,dark,tradition,forcePowers);
+    }
+    else if (thisLevel == 10) {
+        let randomNumD = Math.floor(Math.random() * 8);
+        if (randomNumD == 0) {
+            alert(forcePowers);
+            talent = adeptTalents(talents,available,skills,feats,BAB,dex,wis,cha,qualities,dark,tradition,forcePowers);
+        }
+        else {
+            while (talent == "" || talent == "ValidTalentNotFound") {
+            let randomNumT = 0;
+            while (randomNumT == 0 || randomNumT == 1 || randomNumT == 11) {
+                randomNumT = getTradition(light,dark,species,available);
+            }
+                talent = traditionTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,randomNumT);
+        }}
     }
     if (count == 500) {
         talent = "ValidTalentNotFound";

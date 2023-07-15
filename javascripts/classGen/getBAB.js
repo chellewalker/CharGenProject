@@ -14,6 +14,10 @@ export function getBAB(classes) {
     BAB += Math.floor(classes[7]*0.75);
     //Elite Trooper
     BAB += classes[8]*1;
+    //Force Adept
+    BAB += Math.floor(classes[9]*0.75);
+    //Force Disciple
+    BAB += Math.floor(classes[10]*0.75);
 
     return BAB;
 }

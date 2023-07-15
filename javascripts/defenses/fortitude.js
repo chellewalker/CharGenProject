@@ -29,6 +29,14 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,tal
         if (classes[8] > 0) {
             classFortitude = Math.max(classFortitude,4);
         }
+        //Force Adept
+        if (classes[9] > 0) {
+            classFortitude = Math.max(classFortitude,2);
+        }
+        //Force Disciple
+        if (classes[10] > 0) {
+            classFortitude = Math.max(classFortitude,3);
+        }
 
     let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude + armorFort;
         if (speciesTraits.includes("Great Fortitude")) {

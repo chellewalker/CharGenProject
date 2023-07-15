@@ -39,6 +39,8 @@ import {getSimpleRanged,getSimpleBug} from './attacks/weaponTypes/simpleRanged.j
 import {getExoticMelee} from './attacks/weaponTypes/exoticMelee.js';
 import {getExoticRanged} from './attacks/weaponTypes/exoticRanged.js';
 import {getBellow} from './attacks/getBellow.js';
+import {getForceTechnique} from './forceAbilities/forceTechniques.js';
+import {getForceSecret} from './forceAbilities/forceSecrets.js';
 
 window.genCharacter = function genCharacter() {
 
@@ -102,7 +104,9 @@ window.genCharacter = function genCharacter() {
             0,  //Ace Pilot (5)
             0,  //Bounty Hunter (6) 
             0,  //Crime Lord (7)
-            0   //Elite Trooper (8)
+            0,  //Elite Trooper (8)
+            0,  //Force Adept (9)
+            0   //Force Disciple (10)
             ];
         let firstClass;
         let hitPoints = 0;
@@ -134,7 +138,7 @@ window.genCharacter = function genCharacter() {
     while (failsafe == 0) {
         safecount++;
         failsafe = 1;
-        classes = [0,0,0,0,0,0,0,0,0];
+        classes = [0,0,0,0,0,0,0,0,0,0,0];
         hitPoints = 0;
         talents = [];
         feats = [];
@@ -199,7 +203,7 @@ window.genCharacter = function genCharacter() {
                 }}
             }
             else {
-                thisLevel = getLevel(firstClass,classes,count,skills,feats,talents,BAB,available,forceTechniques);
+                thisLevel = getLevel(firstClass,classes,count,skills,feats,talents,BAB,available,forcePowers,forceTechniques);
                 classes[thisLevel]++;
                 if (classes[thisLevel] == 1 && thisLevel < 5) {
                     let temp = (multiclassFeat(thisLevel,feats,skills,int,con,speciesTraits));
@@ -218,15 +222,22 @@ window.genCharacter = function genCharacter() {
                     skills.sort();
                 }
                 else if (classes[thisLevel] % 2 == 0 && thisLevel >= 5) {
-                    qualities.push(getQuality(thisLevel));
-                    if (thisLevel == 7) {
-                    talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,
-                        dark,tradition,cha,starshipManeuvers,wis,qualities,dex,speciesTraits));
-                }}
-                
+                    if (thisLevel == 9) {
+                        forceTechniques.push(getForceTechnique(available,forcePowers,forceTechniques));
+                    }
+                    else if (thisLevel == 10) {}
+                    else {
+                        qualities.push(getQuality(thisLevel));
+                        if (thisLevel == 7) {
+                        talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,
+                            dark,tradition,cha,starshipManeuvers,wis,qualities,dex,speciesTraits));
+                }}}
                 else {
                     talents.push(getTalent(thisLevel,available,skills,feats,talents,BAB,forcePowers,light,
                         dark,tradition,cha,starshipManeuvers,wis,qualities,dex,speciesTraits));
+                }
+                if (thisLevel == 10 && classes[thisLevel] != 1) {
+                    forceSecrets.push(getForceSecret(available,light,dark,forceSecrets));
                 }
             }
             if ((count-2) % 3 == 0) {
@@ -254,6 +265,10 @@ window.genCharacter = function genCharacter() {
         }
         if (classes[8] > 0) {
             qualities.push("Delay Damage");
+        }
+        if (classes[10] > 0) {
+            qualities.push("Indomitable");
+            qualities.push("Prophet");
         }
         talents.sort();
         feats.sort();
@@ -589,7 +604,7 @@ window.genCharacter = function genCharacter() {
         let output = getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
-            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,SR,qualityList,qualities,armorFort,
+            speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,classes,forcePowers,SR,qualityList,qualities,armorFort,
             forceTechniques,forceSecrets);
     
         document.write(output);

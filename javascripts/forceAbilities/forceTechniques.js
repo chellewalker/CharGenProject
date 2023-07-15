@@ -195,21 +195,21 @@ export function displayForceTechniques(forceTechniques) {
     let count;
     for (count = 0; count < forceTechniques.length; count++) {
         if (count == 0) {
-            if (tempForceTechniques[count].includes(" (")) {
-                let temp = tempForceTechniques[count].split(" (");
+            if (forceTechniques[count].includes(" (")) {
+                let temp = forceTechniques[count].split(" (");
                 tempForceTechniques += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (<i><a href='https://swse.fandom.com/wiki/"+temp[1]+"' target='_blank' rel='noopener noreferrer'>"+temp[1]+"</a></i>)";
             }
             else {
-                tempForceTechniques += "<a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a> (+1)";
+                tempForceTechniques += "<a href='https://swse.fandom.com/wiki/"+forceTechniques[count]+"' target='_blank' rel='noopener noreferrer'>"+forceTechniques[count]+"</a>";
             }
         }
         else {
-            if (tempForceTechniques[count].includes(" (")) {
-                let temp = tempForceTechniques[count].split(" (");
+            if (forceTechniques[count].includes(" (")) {
+                let temp = forceTechniques[count].split(" (");
                 tempForceTechniques += ", <a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a> (<i><a href='https://swse.fandom.com/wiki/"+temp[1]+"' target='_blank' rel='noopener noreferrer'>"+temp[1]+"</a></i>)";
             }
             else {
-                tempForceTechniques += ", <a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a> (+1)";
+                tempForceTechniques += ", <a href='https://swse.fandom.com/wiki/"+forceTechniques[count]+"' target='_blank' rel='noopener noreferrer'>"+forceTechniques[count]+"</a>";
             }
         }
     }

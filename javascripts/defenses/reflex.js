@@ -33,6 +33,14 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
         if (classes[8] > 0) {
             classReflex = Math.max(classReflex,2);
         }
+        //Force Adept
+        if (classes[9] > 0) {
+            classReflex = Math.max(classReflex,2);
+        }
+        //Force Disciple
+        if (classes[10] > 0) {
+            classReflex = Math.max(classReflex,3);
+        }
 
         if (speciesTraits.includes("Special Equipment (Environmental Suit)")) {
             armorRef = 4;

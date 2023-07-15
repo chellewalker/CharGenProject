@@ -61,8 +61,8 @@ export function displayQualities(qualities) {
     let count;
     for (count = 0; count < qualities.length; count++) {
         if (count == 0) {
-            if (qualities[count] == "Delay Damage") {
-                tempQualities += "<a href='https://swse.fandom.com/wiki/Delay_Damage' target='_blank' rel='noopener noreferrer'>Delay Damage</a>";
+            if (qualities[count] == "Delay Damage" || qualities[count] == "Prophet" || qualities[count] == "Indomitable") {
+                tempQualities += "<a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a>";
             }
             else if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
@@ -73,8 +73,8 @@ export function displayQualities(qualities) {
             }
         }
         else {
-            if (qualities[count] == "Delay Damage") {
-                tempQualities += ", <a href='https://swse.fandom.com/wiki/Delay_Damage' target='_blank' rel='noopener noreferrer'>Delay Damage</a>";
+            if (qualities[count] == "Delay Damage" || qualities[count] == "Prophet" || qualities[count] == "Indomitable") {
+                tempQualities += ", <a href='https://swse.fandom.com/wiki/"+qualities[count]+"' target='_blank' rel='noopener noreferrer'>"+qualities[count]+"</a>";
             }
             else if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
@@ -94,7 +94,10 @@ export function displayRawQualities(qualities) {
     let count;
     for (count = 0; count < qualities.length; count++) {
         if (count == 0) {
-            if (qualities[count].includes(" (")) {
+            if (qualities[count] == "Delay Damage" || qualities[count] == "Prophet" || qualities[count] == "Indomitable") {
+                rawQualities += qualities[count];
+            }
+            else if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
                 rawQualities += temp[0] + " (+"+temp[1];
             }
@@ -103,7 +106,10 @@ export function displayRawQualities(qualities) {
             }
         }
         else {
-            if (qualities[count].includes(" (")) {
+            if (qualities[count] == "Delay Damage" || qualities[count] == "Prophet" || qualities[count] == "Indomitable") {
+                rawQualities += ", "+qualities[count];
+            }
+            else if (qualities[count].includes(" (")) {
                 let temp = qualities[count].split(" (");
                 rawQualities += ", " + temp[0] + " (+"+temp[1];
             }

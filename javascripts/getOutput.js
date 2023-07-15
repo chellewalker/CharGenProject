@@ -1,6 +1,6 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
 import {displayForceTechniques,displayRawForceTechniques} from './forceAbilities/forceTechniques.js';
-import {displayForceSecrets,displayRawForceSecrets} from './forceAbilities/forcesecrets.js';
+import {displayForceSecrets,displayRawForceSecrets} from './forceAbilities/forceSecrets.js';
 import {displayStarshipManeuvers,displayRawStarshipManeuvers} from './feats/getStarshipManeuver.js';
 import {displayTalents,displayRawTalents} from './talents/getTalent.js';
 import {displayQualities,displayRawQualities} from './classGen/getQualities.js';
@@ -9,11 +9,14 @@ import {displayFeats,displayRawFeats} from './feats/featDisplay.js';
 export function getOutput(feats,name,level,size,species,classList,initiativeDisplay,perceptionDisplay,listLanguages,
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,simpleMelee,simpleRanged,
-    speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,
+    speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,classes,
     forcePowers,SR,qualityList,qualities,armorFort,forceTechniques,forceSecrets) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5);
+        }
+        if (classes[10] > 0) {
+            destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/3);
         }
 
         let listTalents = displayTalents(talents);
@@ -44,6 +47,9 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
 
         forcePowers.sort();
     let forcePoints = Math.max(Math.floor(level/2),1);
+        if (classes[9] > 0) {
+            forcePoints = forcePoints * 2;
+        }
         if (feats.includes("Force Boon")) {
             forcePoints += 3;
         }
@@ -182,7 +188,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
         advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
         speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
-        forceTechniques,forceSecrets);
+        forceTechniques,forceSecrets,classes);
 
         if (forcePowers != "") {
             forcePowers = displayForcePowers(forcePowers);
@@ -299,7 +305,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
-    forceTechniques,forceSecrets) {
+    forceTechniques,forceSecrets,classes) {
 
         let listTalents = displayRawTalents(talents);
         let listFeats = displayRawFeats(feats);
@@ -344,6 +350,9 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
 
         if (Math.floor(level/5) > 0) {
             destiny = "Destiny%20Points:%20" + Math.floor(level/5);
+        }
+        if (classes[10] > 0) {
+            destiny = "Destiny%20Points:%20" + Math.floor(level/3);
         }
 
         damageReduction = 0;
