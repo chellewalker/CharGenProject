@@ -341,7 +341,7 @@ export function weaponTalents(talents,available,skills,feats,BAB,forcePowers,lig
                     if (feats.includes("Weapon Focus (Simple Weapons)") ||
                         feats.includes("Martial Arts I") ||
                         speciesTraits.includes("Primitive")) {
-                    talent = "Specialization Attack (Simple Weapons)";
+                    talent = "Weapon Specialization (Simple Weapons)";
                     check = 1;
                 }}
                 if (count == 20) {
