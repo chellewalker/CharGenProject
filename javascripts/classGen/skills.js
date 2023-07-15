@@ -465,7 +465,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Knowledge (Life Sciences))")) {
                     score += 5;
                 }
-                if (speciesTraits.includes("Bioknowledge") || speciesTraits.includes("Deductive Reasoning")) {
+                if (talents.includes("Biotech Adept") || speciesTraits.includes("Bioknowledge") || speciesTraits.includes("Deductive Reasoning")) {
                     special = " (may reroll, must take second result)";
                 }
                 if (speciesTraits.includes("Ecological Awareness")) {

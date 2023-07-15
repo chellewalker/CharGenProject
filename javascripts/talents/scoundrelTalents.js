@@ -4,7 +4,7 @@ export function scoundrelTalents(talents,available,skills,feats,BAB,forcePowers,
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 9);
+        let randomNum = Math.floor(Math.random() * 10);
     if (randomNum == 0) {
         talent = fortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -405,6 +405,39 @@ export function opportunistTalents(talents,available,skills,feats,BAB,forcePower
     }
     else if (randomNum == 4 && talents.includes("Retribution")) {
         talent = "Vindication";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function biotechTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Biotech Adept";
+    }
+    else if (randomNum == 1) {
+        talent = "Bugbite";
+    }
+    else if (randomNum == 2 && talents.includes("Bugbite")) {
+        talent = "Curved Throw";
+    }
+    else if (randomNum == 3) {
+        talent = "Surprising Weapons";
+    }
+    else if (randomNum == 4 && skills.includes("Stealth")) {
+        talent = "Veiled Biotech";
     }
     if (talents.includes(talent)) {
         talent = "";

@@ -35,7 +35,7 @@ import {getLightsaber} from './attacks/weaponTypes/lightsaber.js';
 import {getPistol} from './attacks/weaponTypes/pistol.js';
 import {getRifle} from './attacks/weaponTypes/rifle.js';
 import {getSimpleMelee} from './attacks/weaponTypes/simpleMelee.js';
-import {getSimpleRanged} from './attacks/weaponTypes/simpleRanged.js';
+import {getSimpleRanged,getSimpleBug} from './attacks/weaponTypes/simpleRanged.js';
 import {getExoticMelee} from './attacks/weaponTypes/exoticMelee.js';
 import {getExoticRanged} from './attacks/weaponTypes/exoticRanged.js';
 import {getBellow} from './attacks/getBellow.js';
@@ -523,6 +523,12 @@ window.genCharacter = function genCharacter() {
             temp = temp2[1];
             tempEquipment.push(temp);
         }
+    }
+    if (talents.includes("Bugbite") || talents.includes("Surprising Weapons")) {
+            temp2 = getSimpleBug(available,BAB,level,dex,str,feats,talents,size,speciesTraits);
+            simpleMelee = temp2[0];
+            temp = temp2[1];
+            tempEquipment.push(temp);
     }
 
         temp2 = getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);

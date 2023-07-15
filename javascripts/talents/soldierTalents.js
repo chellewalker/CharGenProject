@@ -4,7 +4,7 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 12);
-        let randomNum = Math.floor(Math.random() * 7);
+        let randomNum = Math.floor(Math.random() * 8);
     if (randomNum == 0) {
         talent = armorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -511,6 +511,42 @@ export function trooperTalents(talents,available,skills,feats,BAB,forcePowers,li
     }
     else if (randomNum == 4) {
         talent = "Watch Your Back";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function bruteTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 6);
+
+    if (randomNum == 0) {
+        talent = "Gang Leader";
+    }
+    else if (randomNum == 1) {
+        talent = "Melee Assault";
+    }
+    else if (randomNum == 2) {
+        talent = "Melee Brute";
+    }
+    else if (randomNum == 3) {
+        talent = "Melee Opportunist";
+    }
+    else if (randomNum == 4) {
+        talent = "Squad Brutality";
+    }
+    else if (randomNum == 5) {
+        talent = "Squad Superiority";
     }
     if (talents.includes(talent)) {
         talent = "";

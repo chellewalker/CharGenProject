@@ -136,3 +136,89 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size,s
 
     return [string,simpleRangedWeapon];
 }
+
+export function getSimpleBug(available,BAB,level,dex,str,feats,talents,size,speciesTraits) {
+    let simpleRangedWeapon = "";
+    let weaponSize;
+    let simpleRangedDice;
+    let simpleRangedDie;
+    let special = "";
+    let relativeSize;
+
+    if (size == "Small") {
+        relativeSize = 0;
+    }
+    else if (size == "Medium") {
+        relativeSize = 1;
+    }
+    else if (size == "Large") {
+        relativeSize = 2;
+    }
+    if (speciesTraits.includes("Extra Arms")) {
+        relativeSize++;
+    }
+
+    let simpleRangedAttackRaw = BAB + Math.floor((dex-10)/2);
+    if (feats.includes("Weapon Focus (Simple Weapons)")) {
+        simpleRangedAttackRaw++;
+    }
+    if (talents.includes("Greater Weapon Focus (Simple Weapons)")) {
+        simpleRangedAttackRaw++;
+    }
+    while (simpleRangedWeapon == "") {
+        let randomNum = Math.floor(Math.random() * 2);
+
+        if (randomNum == 0) {
+            simpleRangedWeapon = "Razor Bug";
+            weaponSize = 0;
+            simpleRangedDice = 2;
+            simpleRangedDie = 8;
+        }
+        else {
+            simpleRangedWeapon = "Thud Bug";
+            weaponSize = 0;
+            simpleRangedDice = 2;
+            simpleRangedDie = 8;
+            special = " (Stun)";
+        }
+    }
+
+    if (talents.includes("Bugbite")) {
+        simpleRangedDice++;
+    }
+
+        let simpleRangedAttack = "";
+        if (simpleRangedAttackRaw < 0) {
+            simpleRangedAttack = simpleRangedAttackRaw;
+        }
+        else {
+            simpleRangedAttack = "+" + simpleRangedAttackRaw;
+        }
+
+    let simpleRangedDamageRaw = Math.floor(level/2);
+    if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+        simpleRangedDamageRaw += 2;
+    }
+    if (talents.includes("Greater Weapon Specialization (Simple Weapons)")) {
+        simpleRangedDamageRaw += 2;
+    }
+    let simpleRangedDamage = "";
+    if (simpleRangedDamageRaw == 0) {
+        simpleRangedDamage = "";
+    }
+    else if (simpleRangedDamageRaw < 0) {
+        simpleRangedDamage = simpleRangedDamageRaw;
+    }
+    else {
+        simpleRangedDamage = "+" + simpleRangedDamageRaw;
+    }
+    let string = simpleRangedWeapon + " " + simpleRangedAttack +" ("+ simpleRangedDice+"d"+simpleRangedDie+simpleRangedDamage + special + ")";
+    if (feats.includes("Dual Weapon Mastery I") && relativeSize >= weaponSize) {
+        simpleRangedWeapon = simpleRangedWeapon + " (2)";
+    }
+    else if (simpleRangedWeapon == "Razor Bug" || simpleRangedWeapon == "Thud Bug") {
+        simpleRangedWeapon = simpleRangedWeapon + " (3)";
+    }
+
+    return [string,simpleRangedWeapon];
+}

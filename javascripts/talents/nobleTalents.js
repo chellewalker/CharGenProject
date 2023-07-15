@@ -4,7 +4,7 @@ export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     while (talent == "") {
         count++;
         //let randomNum = Math.floor(Math.random() * 15);
-        let randomNum = Math.floor(Math.random() * 8);
+        let randomNum = Math.floor(Math.random() * 9);
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
@@ -345,6 +345,42 @@ export function collaboratorTalents(talents,available,skills,feats,BAB,forcePowe
     }
     else if (randomNum == 4 && talents.includes("Double Agent")) {
         talent = "Protection";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function provocateurTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 6);
+
+    if (randomNum == 0) {
+        talent = "Cast Suspicion";
+    }
+    else if (randomNum == 1) {
+        talent = "Distress to Discord";
+    }
+    else if (randomNum == 2 && talents.includes("Cast Suspicion")) {
+        talent = "Friend or Foe";
+    }
+    else if (randomNum == 3 && talents.includes("Distress to Discord")) {
+        talent = "Seize the Moment";
+    }
+    else if (randomNum == 4 && talents.includes("Cast Suspicion")) {
+        talent = "Stolen Advantage";
+    }
+    else if (randomNum == 5 && talents.includes("Friend or Foe")) {
+        talent = "True Betrayal";
     }
     if (talents.includes(talent)) {
         talent = "";
