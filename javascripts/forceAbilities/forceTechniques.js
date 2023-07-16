@@ -9,7 +9,7 @@ export function getForceTechnique(available,forcePowers,forceTechniques) {
         if (randomNum == 0 && available.includes("CR")) {
             forceTechnique = "Force Point Recovery";
         }
-        if (randomNum == 1 && available.includes("CR")) {
+        if (randomNum == 1 && available.includes("CR") && forcePowers.length > 0) {
             let randomNum2 = Math.floor(Math.random() * forcePowers.length);
             let temp = forcePowers[randomNum2];
             forceTechnique = "Force Power Mastery ("+temp;

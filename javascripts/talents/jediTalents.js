@@ -35,8 +35,10 @@ export function consularTalents(talents,available,skills,feats,BAB,forcePowers,l
         talent = "Adept Negotiator";
     }
     else if (randomNum == 1 && available.includes("CR") && talents.includes("Adept Negotiator")) {
-        talent = "Force Persuasion";
-    }
+        if (skills.includes("Persuasion")) {}
+        else {
+            talent = "Force Persuasion";
+    }}
     else if (randomNum == 2 && available.includes("CR") && talents.includes("Adept Negotiator")) {
         talent = "Master Negotiator";
     }

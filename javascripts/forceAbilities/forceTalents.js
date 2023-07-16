@@ -203,11 +203,15 @@ export function senseTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     let randomNum = Math.floor(Math.random() * 12);
 
     if (randomNum == 0 && available.includes("CR")) {
+        if (skills.includes("Perception")) {}
+        else {
         talent = "Force Perception";
-    }
+    }}
     else if (randomNum == 1 && available.includes("CR")) {
+        if (skills.includes("Pilot")) {}
+        else {
         talent = "Force Pilot";
-    }
+    }}
     else if (randomNum == 2 && available.includes("CR") && talents.includes("Force Perception")) {
         talent = "Foresight";
     }
