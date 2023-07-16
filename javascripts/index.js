@@ -257,7 +257,7 @@ window.genCharacter = function genCharacter() {
             }
 
         }}
-        //!!!!!!!!!!!!!!!!!!!!!!!FREEZING HAPPENS AFTER THIS POINT
+        //!!!!!!!!!!!!!!!!!!!!!!!FREEZING NOT CORE RULEBOOK
         if (feats.includes("Shake It Off")) {
         }
         else if (classes[3] > 0 && con >= 13 && skills.includes("Endurance")) {

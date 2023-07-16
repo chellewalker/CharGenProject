@@ -3020,4 +3020,23 @@
         <speciesTraits>Cold-Blooded, Force Resistance, Great Fortitude</speciesTraits>
         <languages>Basic, Yinchorri</languages>
     </species>
+    <species>
+        <name>Lepi</name>
+        <value>lepi</value>
+        <speciesID>159</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Augdon, Gagen, Javilla, Jaxxon, Lupher, Maximort, Nevlin, Roonis, Saper, Zylo</exampleNames>
+        <abilityMods>dex,2;str,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Bonus Feat (Martial Arts I), Expert Jumper, Spatial Awareness</speciesTraits>
+        <languages>Basic, Lepese</languages>
+    </species>
 </species_list>
