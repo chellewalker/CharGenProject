@@ -3,8 +3,7 @@ export function scoutTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 9);
+        let randomNum = Math.floor(Math.random() * 14);
     if (randomNum == 0 || randomNum == 1) {
         talent = awarenessTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -342,6 +341,170 @@ export function versatilityTalents(talents,available,skills,feats,BAB,forcePower
     }
     else if (randomNum == 4 && talents.includes("Adapt and Survive")) {
         talent = "Unbalancing Adaptation";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function unpredictableTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Aggressive Surge";
+    }
+    else if (randomNum == 1) {
+        talent = "Blast Back";
+    }
+    else if (randomNum == 2) {
+        talent = "Fade Away";
+    }
+    else if (randomNum == 3 && talents.includes("Blast Back")) {
+        talent = "Second Strike";
+    }
+    else if (randomNum == 4 && talents.includes("Fade Away")) {
+        talent = "Swerve";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function patrolTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0 && talents.includes("Watchful Step")) {
+        talent = "Forward Patrol";
+    }
+    else if (randomNum == 1 && talents.includes("Forward Patrol")) {
+        talent = "Mobile Combatant";
+    }
+    else if (randomNum == 2 && skills.includes("Survival")) {
+        talent = "Trailblazer";
+    }
+    else if (randomNum == 3) {
+        if (skills.includes("Initiative")) {}
+        else {
+        talent = "Watchful Step";
+    }}
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function espionageTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && skills.includes("Stealth")) {
+        talent = "Fade Out";
+    }
+    else if (randomNum == 1) {
+        talent = "Keep Together";
+    }
+    else if (randomNum == 2) {
+        talent = "Prudent Escape";
+    }
+    else if (randomNum == 3 && skills.includes("Stealth")) {
+        talent = "Reactive Stealth";
+    }
+    else if (randomNum == 4) {
+        talent = "Sizing Up";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function masterTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && talents.includes("Keen Shot")) {
+        talent = "Piercing Hit";
+    }
+    else if (randomNum == 1 && talents.includes("Tripwire")) {
+        talent = "Quicktrap";
+    }
+    else if (randomNum == 2 && talents.includes("Long Stride") && talents.includes("Surefooted") && skills.includes("Climb")) {
+        talent = "Speedclimber";
+    }
+    else if (randomNum == 3 && feats.includes("Skill Focus (Initiative)")) {
+        talent = "Surprisingly Quick";
+    }
+    else if (randomNum == 4 && talents.includes("Jury-Rigger") && skills.includes("Mechanics")) {
+        talent = "Tripwire";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function mobileTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && talents.includes("Keen Shot")) {
+        talent = "Battle Mount";
+    }
+    else if (randomNum == 1 && talents.includes("Expert Rider") && talents.includes("Terrain Guidance")) {
+        talent = "Quicktrap";
+    }
+    else if (randomNum == 2 && skills.includes("Ride")) {
+        talent = "Expert Rider";
+    }
+    else if (randomNum == 3 && skills.includes("Ride") || randomNum == 3 && skills.includes("Pilot")) {
+        talent = "Mechanized Rider";
+    }
+    else if (randomNum == 4 && skills.includes("Ride")) {
+        talent = "Terrain Guidance";
     }
     if (talents.includes(talent)) {
         talent = "";

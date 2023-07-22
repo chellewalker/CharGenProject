@@ -372,7 +372,7 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 if (feats.includes("Skill Focus (Ride)")) {
                     score += 5;
                 }
-                if (speciesTraits.includes("Animal Handler")) {
+                if (speciesTraits.includes("Animal Handler") || talents.includes("Expert Rider")) {
                     special = " (may reroll, must take second result)";
                 }
             }
@@ -550,6 +550,12 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                 }
                 else if (feats.includes("Informer")) {
                     special += " (may substitute for Gather Information checks";
+                }
+                if (talents.includes("Watchful Step") && special != "") {
+                    special += "; may substitute for Initiative checks";
+                }
+                else if (talents.includes("Watchful Step")) {
+                    special += " (may substitute for Initiative checks";
                 }
                 if (special != "") {
                     special += ")";
