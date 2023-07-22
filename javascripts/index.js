@@ -163,7 +163,7 @@ window.genCharacter = function genCharacter() {
                 feats = classFeats(thisLevel,int,con,skills,speciesTraits,BAB,level);
                 feats = speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha);
                 if (feats.findLast(findLast) == "Force Training") {
-                    forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                    forcePowers = getForcePower(forcePowers,available,wis,light,dark,feats);
                     if (talents.includes("Telekinetic Prodigy")) {
                         forcePowers.push("Move Object");
                     }
@@ -179,7 +179,7 @@ window.genCharacter = function genCharacter() {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
                 if (feats.findLast(findLast) == "Force Training") {
-                    forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                    forcePowers = getForcePower(forcePowers,available,wis,light,dark,feats);
                     if (talents.includes("Telekinetic Prodigy")) {
                         forcePowers.push("Move Object");
                     }
@@ -193,7 +193,7 @@ window.genCharacter = function genCharacter() {
                     skills.push(getNewSkill(speciesTraits,classes,skills,feats,talents));
                 }
                 if (feats.findLast(findLast) == "Force Training") {
-                    forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                    forcePowers = getForcePower(forcePowers,available,wis,light,dark,feats);
                     if (talents.includes("Telekinetic Prodigy")) {
                         forcePowers.push("Move Object");
                     }
@@ -247,7 +247,7 @@ window.genCharacter = function genCharacter() {
                 skills.sort();
             }
             if (feats.findLast(findLast) == "Force Training") {
-                forcePowers = getForcePower(forcePowers,available,wis,light,dark);
+                forcePowers = getForcePower(forcePowers,available,wis,light,dark,feats);
                 if (talents.includes("Telekinetic Prodigy")) {
                     forcePowers.push("Move Object");
                 }

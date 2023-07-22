@@ -1,4 +1,4 @@
-export function getForcePower(forcePowers,available,wis,light,dark) {
+export function getForcePower(forcePowers,available,wis,light,dark,feats) {
     let temp;
     let count;
     let avail = 1 + Math.max(0,Math.floor((wis-10)/2));
@@ -6,7 +6,13 @@ export function getForcePower(forcePowers,available,wis,light,dark) {
     for (count = 0; count < avail; count++) {
         temp = "";
     while (temp == "") {
-        let randomNum = Math.floor(Math.random() * 35);
+        let randomNum;
+        if (feats.includes("Weapon Focus (Lightsabers)")) {
+            randomNum = Math.floor(Math.random() * 76);
+        }
+        else {
+            randomNum = Math.floor(Math.random() * 52);
+        }
         if (randomNum == 0 && available.includes("CR")) {
             temp = "Battle Strike";
         }
@@ -129,6 +135,129 @@ export function getForcePower(forcePowers,available,wis,light,dark) {
         }
         else if (randomNum == 34 && available.includes("LECG")) {
             temp = "Stagger";
+        }
+        else if (randomNum == 35 && available.includes("JATM")) {
+            temp = "Blind";
+        }
+        else if (randomNum == 36 && available.includes("JATM")) {
+            temp = "Convection";
+        }
+        else if (randomNum == 37 && available.includes("JATM")) {
+            temp = "Crucitorn";
+        }
+        else if (randomNum == 38 && available.includes("JATM")) {
+            temp = "Cryokinesis";
+        }
+        else if (randomNum == 39 && available.includes("JATM")) {
+            temp = "Drain Energy";
+        }
+        else if (randomNum == 40 && available.includes("JATM")) {
+            temp = "Fold Space";
+        }
+        else if (randomNum == 41 && available.includes("JATM") && light == 1) {
+            temp = "Force Light";
+        }
+        else if (randomNum == 42 && available.includes("JATM") && dark == 1) {
+            temp = "Force Storm";
+        }
+        else if (randomNum == 43 && available.includes("JATM")) {
+            temp = "Force Track";
+        }
+        else if (randomNum == 44 && available.includes("JATM") && dark == 1) {
+            temp = "Hatred";
+        }
+        else if (randomNum == 45 && available.includes("JATM")) {
+            temp = "Inertia";
+        }
+        else if (randomNum == 46 && available.includes("JATM") && light == 1) {
+            temp = "Inspire";
+        }
+        else if (randomNum == 47 && available.includes("JATM")) {
+            temp = "Intercept";
+        }
+        else if (randomNum == 48 && available.includes("JATM") && dark == 1) {
+            temp = "Memory Walk";
+        }
+        else if (randomNum == 49 && available.includes("JATM")) {
+            temp = "Mind Shard";
+        }
+        else if (randomNum == 50 && available.includes("JATM")) {
+            temp = "Plant Surge";
+        }
+        else if (randomNum == 51 && available.includes("JATM")) {
+            temp = "Thought Bomb";
+        }
+        else if (randomNum == 52 && available.includes("JATM")) {
+            temp = "Assured Strike";
+        }
+        else if (randomNum == 53 && available.includes("JATM")) {
+            temp = "Barrier of Blades";
+        }
+        else if (randomNum == 54 && available.includes("JATM")) {
+            temp = "Circle of Shelter";
+        }
+        else if (randomNum == 55 && available.includes("JATM")) {
+            temp = "Contentious Opportunity";
+        }
+        else if (randomNum == 56 && available.includes("JATM")) {
+            temp = "Deflecting Slash";
+        }
+        else if (randomNum == 57 && available.includes("JATM")) {
+            temp = "Disarming Slash";
+        }
+        else if (randomNum == 58 && available.includes("JATM")) {
+            temp = "Draw Closer";
+        }
+        else if (randomNum == 59 && available.includes("JATM")) {
+            temp = "Falling Avalanche";
+        }
+        else if (randomNum == 60 && available.includes("JATM")) {
+            temp = "Fluid Riposte";
+        }
+        else if (randomNum == 61 && available.includes("JATM")) {
+            temp = "Hawk-Bat Swoop";
+        }
+        else if (randomNum == 62 && available.includes("JATM")) {
+            temp = "High Ground Defense";
+        }
+        else if (randomNum == 63 && available.includes("JATM")) {
+            temp = "Makashi Riposte";
+        }
+        else if (randomNum == 64 && available.includes("JATM")) {
+            temp = "Pass the Blade";
+        }
+        else if (randomNum == 65 && available.includes("JATM")) {
+            temp = "Pushing Slash";
+        }
+        else if (randomNum == 66 && available.includes("JATM")) {
+            temp = "Rising Whirlwind";
+        }
+        else if (randomNum == 67 && available.includes("JATM")) {
+            temp = "Saber Swarm";
+        }
+        else if (randomNum == 68 && available.includes("JATM")) {
+            temp = "Sarlacc Sweep";
+        }
+        else if (randomNum == 69 && available.includes("JATM")) {
+            temp = "Shien Deflection";
+        }
+        else if (randomNum == 70 && available.includes("JATM")) {
+            temp = "Swift Flank";
+        }
+        else if (randomNum == 71 && available.includes("JATM") && dark == 1) {
+            temp = "Tempered Aggression";
+        }
+        else if (randomNum == 72 && available.includes("JATM")) {
+            temp = "Twin Strike";
+        }
+        else if (randomNum == 73 && available.includes("JATM")) {
+            temp = "Unbalancing Block";
+        }
+        else if (randomNum == 74 && available.includes("JATM")) {
+            temp = "Unhindered Charge";
+        }
+        else if (randomNum == 75 && available.includes("JATM") && dark == 1) {
+            temp = "Vornskr's Ferocity";
         }
         if (count == 25) {
             temp = "ValidForcePowerNotFound";
