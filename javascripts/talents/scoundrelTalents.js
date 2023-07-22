@@ -3,8 +3,7 @@ export function scoundrelTalents(talents,available,skills,feats,BAB,forcePowers,
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 14);
-        let randomNum = Math.floor(Math.random() * 10);
+        let randomNum = Math.floor(Math.random() * 14);
     if (randomNum == 0) {
         talent = fortuneTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -438,6 +437,129 @@ export function biotechTalents(talents,available,skills,feats,BAB,forcePowers,li
     }
     else if (randomNum == 4 && skills.includes("Stealth")) {
         talent = "Veiled Biotech";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function recklessnessTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Find Openings";
+    }
+    else if (randomNum == 1) {
+        talent = "Hit the Deck";
+    }
+    else if (randomNum == 2 && talents.includes("Trick Step")) {
+        talent = "Lure Closer";
+    }
+    else if (randomNum == 3 && talents.includes("Find Openings")) {
+        talent = "Risk for Reward";
+    }
+    else if (randomNum == 4) {
+        talent = "Trick Step";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function brigandTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0 && skills.includes("Deception")) {
+        talent = "Cheap Trick";
+    }
+    else if (randomNum == 1 && talents.includes("Cheap Trick")) {
+        talent = "Easy Prey";
+    }
+    else if (randomNum == 2 && talents.includes("Cheap Trick")) {
+        talent = "Quick Strike";
+    }
+    else if (randomNum == 3 && talents.includes("Easy Prey")) {
+        talent = "Sly Combatant";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function revolutionaryTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0 && skills.includes("Mechanics")) {
+        talent = "Bomb Thrower";
+    }
+    else if (randomNum == 1 && talents.includes("Make an Example")) {
+        talent = "For the Cause";
+    }
+    else if (randomNum == 2) {
+        talent = "Make an Example";
+    }
+    else if (randomNum == 3) {
+        talent = "Revolutionary Rhetoric";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function outsiderTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0) {
+        talent = "Oafish";
+    }
+    else if (randomNum == 1 && skills.includes("Perception")) {
+        talent = "Outsider's Eye";
+    }
+    else if (randomNum == 2 && skills.includes("Persuasion")) {
+        talent = "Outsider's Query";
+    }
+    else if (randomNum == 3 && talents.includes("Outsider's Eye")) {
+        talent = "Wary";
     }
     if (talents.includes(talent)) {
         talent = "";
