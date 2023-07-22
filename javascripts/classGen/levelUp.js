@@ -92,7 +92,7 @@ export function getLevel(firstClass,classes,curLevel,skills,feats,talents,BAB,av
     if (BAB >= 7 && feats.includes("Armor Proficiency (Medium)") && feats.includes("Martial Arts I") && available.includes("CR")
         && classes[8] == 0 && feats.includes("Point-Blank Shot") ||
             BAB >= 7 && feats.includes("Armor Proficiency (Medium)") && feats.includes("Martial Arts I") && available.includes("CR")
-                && classes[8] == 0 && feats.includes("Point-Blank Shot")) {
+                && classes[8] == 0 && feats.includes("Flurry")) {
             let fullCount = armorCounter(talents) + commandoCounter(talents) + mercenaryCounter(talents) + weaponCounter(talents);
             if (fullCount >= 1) {
                 thisLevel = 8;
