@@ -103,7 +103,7 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
             feat = "Dual Weapon Mastery III";
         }
         else if (randomNum == 34 && BAB >= 1) {
-            let randomNum2 = Math.floor(Math.random() * 19);
+            let randomNum2 = Math.floor(Math.random() * 31);
                 if (randomNum2 == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
@@ -160,6 +160,42 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                 }
                 else if (randomNum2 == 18 && available.includes("CWCG")) {
                     feat = "Exotic Weapon Proficiency (Wrist Rocket Launcher)";
+                }
+                else if (randomNum2 == 19 && available.includes("LECG")) {
+                    feat = "Exotic Weapon Proficiency (Concealed Dart Launcher)";
+                }
+                else if (randomNum2 == 20 && available.includes("JATM")) {
+                    feat = "Exotic Weapon Proficiency (Discblade)";
+                }
+                else if (randomNum2 == 21 && available.includes("RECG")) {
+                    feat = "Exotic Weapon Proficiency (Siang Lance)";
+                }
+                else if (randomNum2 == 22 && available.includes("UR")) {
+                    feat = "Exotic Weapon Proficiency (Magna Caster)";
+                }
+                else if (randomNum2 == 23 && available.includes("UR")) {
+                    feat = "Exotic Weapon Proficiency (Squib Tensor Rifle)";
+                }
+                else if (randomNum2 == 24 && available.includes("UR")) {
+                    feat = "Exotic Weapon Proficiency (Verpine Shattergun)";
+                }
+                else if (randomNum2 == 25 && available.includes("WE") && size != "Small") {
+                    feat = "Exotic Weapon Proficiency (Blast Cannon)";
+                }
+                else if (randomNum2 == 26 && available.includes("HC")) {
+                    feat = "Exotic Weapon Proficiency (Energy Bow)";
+                }
+                else if (randomNum2 == 27 && available.includes("LECG")) {
+                    feat = "Exotic Weapon Proficiency (Tehk'la Blade)";
+                }
+                else if (randomNum2 == 28 && available.includes("GaW")) {
+                    feat = "Exotic Weapon Proficiency (Darksticks)";
+                }
+                else if (randomNum2 == 29 && available.includes("UR")) {
+                    feat = "Exotic Weapon Proficiency (Blastsword)";
+                }
+                else if (randomNum2 == 30 && available.includes("UR") && size != "Small") {
+                    feat = "Exotic Weapon Proficiency (Vibro-Saw)";
                 }
         }
         else if (randomNum == 35 && available.includes("CR") && feats.includes("Point-Blank Shot")) {

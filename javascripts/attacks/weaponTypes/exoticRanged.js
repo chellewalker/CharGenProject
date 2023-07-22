@@ -21,6 +21,7 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
     }
 
     let exoticRangedAttackRaw = BAB + Math.floor((dex-10)/2);
+    let exoticRangedDamageRaw = Math.floor(level/2);
 
         if (feats.includes("Exotic Weapon Proficiency (Flamethrower)")) {
             exoticRangedWeapon = "Flamethrower";
@@ -35,8 +36,13 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             weaponSize = 2;
             exoticRangedDice = 3;
             exoticRangedDie = 10;
-            if (speciesTraits.includes("Weapon Familiarity (Bowcaster and Ryyk Blade)") && feats.includes("Weapon Focus (Rifles)")) {
-                exoticRangedAttackRaw++;
+                if (speciesTraits.includes("Weapon Familiarity (Bowcaster and Ryyk Blade)")) {
+                    if (feats.includes("Weapon Focus (Rifles)")) {
+                        exoticRangedAttackRaw++;
+                    }
+                    if (talents.includes("Weapon Specialization (Rifles)")) {
+                        exoticRangedDamageRaw += 2;
+                    }
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Aurial Blaster)")) {
@@ -52,8 +58,13 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             weaponSize = 2;
             exoticRangedDice = 3;
             exoticRangedDie = 4;
-            if (speciesTraits.includes("Weapon Familiarity (Massassi Lanvarok)") && feats.includes("Weapon Focus (Simple Weapons)")) {
-                exoticRangedAttackRaw++;
+            if (speciesTraits.includes("Weapon Familiarity (Massassi Lanvarok)")) {
+                if (feats.includes("Weapon Focus (Simple Weapons)")) {
+                    exoticRangedAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticRangedDamageRaw += 2;
+                }
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Sith Lanvarok)")) {
@@ -89,6 +100,95 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             exoticRangedDie = 8;
             special = ", 1-Square Burst";
         }
+        else if (feats.includes("Exotic Weapon Proficiency (Concealed Dart Launcher)")) {
+            exoticRangedWeapon = "Concealed Dart Launcher";
+            weaponSize = 0;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+            special = " (Stun)";
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Discblade)") || talents.includes("Discblade Mastery")) {
+            exoticRangedWeapon = "Discblade";
+            weaponSize = 0;
+            exoticRangedDice = 2;
+            exoticRangedDie = 8;
+
+            if (talents.includes("Discblade Mastery")) {
+                exoticRangedAttackRaw++;
+                if (talents.includes("Weapon Specialization (Discblade)") || talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticRangedDamageRaw += 2;
+                }
+            }
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Siang Lance)") || 
+                talents.includes("Siang Lance Mastery") && feats.includes("Weapon Proficiency (Rifles)")) {
+            exoticRangedWeapon = "Siang Lance";
+            weaponSize = 1;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+
+            if (talents.includes("Siang Lance Mastery")) {
+                exoticRangedAttackRaw++;
+                if (talents.includes("Weapon Specialization (Rifles)")) {
+                    exoticRangedDamageRaw += 2;
+                }
+            }
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Magna Caster)")) {
+            exoticRangedWeapon = "Magna Caster";
+            weaponSize = 1;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Squib Tensor Rifle)") || 
+        speciesTraits.includes("Weapon Familiarity (Squib Tensor Rifle)")) {
+            exoticRangedWeapon = "Squib Tensor Rifle";
+            weaponSize = 1;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+            if (speciesTraits.includes("Weapon Familiarity (Squib Tensor Rifle)")) {
+                if (feats.includes("Weapon Focus (Rifles)")) {
+                    exoticRangedAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Rifles)")) {
+                    exoticRangedDamageRaw += 2;
+                }
+            }
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Verpine Shattergun)") || 
+        speciesTraits.includes("Weapon Familiarity (Verpine Shattergun)")) {
+            exoticRangedWeapon = "Verpine Shattergun";
+            weaponSize = 1;
+            exoticRangedDice = 3;
+            exoticRangedDie = 10;
+            if (speciesTraits.includes("Weapon Familiarity (Verpine Shattergun)")) {
+                if (feats.includes("Weapon Focus (Rifles)")) {
+                    exoticRangedAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Rifles)")) {
+                    exoticRangedDamageRaw += 2;
+                }
+            }
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Blast Cannon)")) {
+            exoticRangedWeapon = "Blast Cannon";
+            weaponSize = 2;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Energy Bow)") || talents.includes("Dathomiri Hunter")) {
+            exoticRangedWeapon = "Energy Bow";
+            weaponSize = 1;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+
+            if (talents.includes("Dathomiri Hunter")) {
+                exoticRangedAttackRaw++;
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticRangedDamageRaw += 2;
+                }
+            }
+        }
 
         let exoticRangedAttack = "";
         if (exoticRangedAttackRaw < 0) {
@@ -97,8 +197,6 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
         else {
             exoticRangedAttack = "+" + exoticRangedAttackRaw;
         }
-
-    let exoticRangedDamageRaw = Math.floor(level/2);
 
     let exoticRangedDamage = "";
     if (exoticRangedDamageRaw == 0) {

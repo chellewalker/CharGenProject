@@ -21,6 +21,7 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     }
 
     let exoticMeleeAttackRaw = BAB + Math.floor((str-10)/2);
+    let exoticMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
 
         if (feats.includes("Exotic Weapon Proficiency (Cesta)") || 
                 speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && randomNum == 0) {
@@ -28,8 +29,13 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 2;
             exoticMeleeDice = 2;
             exoticMeleeDie = 4;
-            if (speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && feats.includes("Weapon Focus (Simple Weapons)")) {
-                exoticMeleeAttackRaw++;
+            if (speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)")) {
+                if (feats.includes("Weapon Focus (Simple Weapons)")) {
+                    exoticMeleeAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Atlatl)") || 
@@ -38,8 +44,13 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 2;
             exoticMeleeDice = 2;
             exoticMeleeDie = 4;
-            if (speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)") && feats.includes("Weapon Focus (Simple Weapons)")) {
-                exoticMeleeAttackRaw++;
+            if (speciesTraits.includes("Weapon Familiarity (Gungan Weaponry)")) {
+                if (feats.includes("Weapon Focus (Simple Weapons)")) {
+                    exoticMeleeAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Amphistaff)") || 
@@ -48,8 +59,13 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 2;
             exoticMeleeDice = 1;
             exoticMeleeDie = 6;
-            if (speciesTraits.includes("Weapon Familiarity (Amphistaff)") && feats.includes("Weapon Focus (Simple Weapons)")) {
-                exoticMeleeAttackRaw++;
+            if (speciesTraits.includes("Weapon Familiarity (Amphistaff)")) {
+                if (feats.includes("Weapon Focus (Simple Weapons)")) {
+                    exoticMeleeAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Arg'garok)") || 
@@ -58,8 +74,13 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 2;
             exoticMeleeDice = 2;
             exoticMeleeDie = 12;
-            if (speciesTraits.includes("Weapon Familiarity (Arg'garok)") && feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
-                exoticMeleeAttackRaw++;
+            if (speciesTraits.includes("Weapon Familiarity (Arg'garok)")) {
+                if (feats.includes("Weapon Focus (Advanced Melee Weapons)")) {
+                    exoticMeleeAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Advanced Melee Weapons)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Fira)") || 
@@ -70,6 +91,9 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             exoticMeleeDie = 8;
             if (talents.includes("Fira Mastery")) {
                 exoticMeleeAttackRaw++;
+                if (talents.includes("Weapon Specialization (Fira)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Shyarn)")) {
@@ -89,18 +113,67 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = 0;
             exoticMeleeDice = 2;
             exoticMeleeDie = 6;
+            if (speciesTraits.includes("Weapon Familiarity (Felucian Skullblade)") || talents.includes("Skullblade Mastery")) {
+                if (feats.includes("Weapon Focus (Simple Weapons)")) {
+                    exoticMeleeAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Ryyk Blade)") || speciesTraits.includes("Weapon Familiarity (Bowcaster and Ryyk Blade)")) {
             exoticMeleeWeapon = "Ryyk Blade";
             weaponSize = 1;
             exoticMeleeDice = 2;
             exoticMeleeDie = 10;
+            if (speciesTraits.includes("Weapon Familiarity (Bowcaster and Ryyk Blade)")) {
+                if (feats.includes("Weapon Focus (Simple Weapons)")) {
+                    exoticMeleeAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Garrote)")) {
             exoticMeleeWeapon = "Garrote";
             weaponSize = 0;
             exoticMeleeDice = 1;
             exoticMeleeDie = 6;
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Tehk'la Blade)") || 
+                    speciesTraits.includes("Weapon Familiarity (Tehk'la Blade)")) {
+            exoticMeleeWeapon = "Tehk'la Blade";
+            weaponSize = -1;
+            exoticMeleeDice = 2;
+            exoticMeleeDie = 6;
+            if (speciesTraits.includes("Weapon Familiarity (Tehk'la Blade)")) {
+                if (feats.includes("Weapon Focus (Simple Weapons)")) {
+                    exoticMeleeAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticMeleeDamageRaw += 2;
+                }
+            }
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Darksticks)")) {
+            exoticMeleeWeapon = "Darksticks";
+            weaponSize = 0;
+            exoticMeleeDice = 2;
+            exoticMeleeDie = 8;
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Blastsword)")) {
+            exoticMeleeWeapon = "Blastsword";
+            weaponSize = 1;
+            exoticMeleeDice = 3;
+            exoticMeleeDie = 6;
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Vibro-Saw)")) {
+            exoticMeleeWeapon = "Vibro-Saw";
+            weaponSize = 2;
+            exoticMeleeDice = 2;
+            exoticMeleeDie = 10;
         }
 
     if (talents.includes("Noble Fencing Style") && feats.includes("Weapon Finesse") && relativeSize > weaponSize) {
@@ -120,8 +193,6 @@ export function getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,siz
         else {
             exoticMeleeAttack = "+" + exoticMeleeAttackRaw;
         }
-
-    let exoticMeleeDamageRaw = Math.floor(level/2) + Math.floor((str-10)/2);
 
     if (talents.includes("Melee Smash")) {
         exoticMeleeDamageRaw++;
