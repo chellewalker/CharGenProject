@@ -3,8 +3,7 @@ export function soldierTalents(talents,available,skills,feats,BAB,forcePowers,li
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 12);
-        let randomNum = Math.floor(Math.random() * 8);
+        let randomNum = Math.floor(Math.random() * 12);
     if (randomNum == 0) {
         talent = armorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
@@ -547,6 +546,141 @@ export function bruteTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     }
     else if (randomNum == 5) {
         talent = "Squad Superiority";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function ambusherTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 6);
+
+    if (randomNum == 0) {
+        talent = "Ambush Specialist";
+    }
+    else if (randomNum == 1 && talents.includes("Ambush Specialist")) {
+        talent = "Destructive Ambusher";
+    }
+    else if (randomNum == 2 && talents.includes("Ambush Specialist")) {
+        talent = "Keep It Going";
+    }
+    else if (randomNum == 3 && talents.includes("Ambush Specialist")) {
+        talent = "Keep Them Reeling";
+    }
+    else if (randomNum == 4 && talents.includes("Ambush Specialist")) {
+        talent = "Perceptive Ambusher";
+    }
+    else if (randomNum == 5) {
+        talent = "Spring the Trap";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function shockboxerTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && talents.includes("Retaliation Jab")) {
+        talent = "Defensive Jab";
+    }
+    else if (randomNum == 1) {
+        talent = "Nimble Dodge";
+    }
+    else if (randomNum == 2) {
+        talent = "Retaliation Jab";
+    }
+    else if (randomNum == 3) {
+        talent = "Stinging Jab";
+    }
+    else if (randomNum == 4 && talents.includes("Stinging Jab")) {
+        talent = "Stunning Shockboxer";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function veteranTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && skills.includes("Treat Injury")) {
+        talent = "Battlefield Remedy";
+    }
+    else if (randomNum == 1 && talents.includes("Seen It All")) {
+        talent = "Grizzled Warrior";
+    }
+    else if (randomNum == 2 && talents.includes("Tested in Battle")) {
+        talent = "Reckless ";
+    }
+    else if (randomNum == 3 && talents.includes("Tested in Battle") && skills.includes("Initiative")) {
+        talent = "Seen It All";
+    }
+    else if (randomNum == 4) {
+        talent = "Tested in Battle";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function warriorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && talents.includes("Warrior's Awareness") && talents.includes("Warrior's Determination")) {
+        talent = "Champion";
+    }
+    else if (randomNum == 1 && talents.includes("Warrior's Awareness")) {
+        talent = "Quick Study";
+    }
+    else if (randomNum == 2) {
+        talent = "Simple Opportunity ";
+    }
+    else if (randomNum == 3) {
+        talent = "Warrior's Awareness";
+    }
+    else if (randomNum == 4) {
+        talent = "Warrior's Determination";
     }
     if (talents.includes(talent)) {
         talent = "";
