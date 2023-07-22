@@ -3,8 +3,7 @@ export function nobleTalents(talents,available,skills,feats,BAB,forcePowers,ligh
     let talent = "";
     while (talent == "") {
         count++;
-        //let randomNum = Math.floor(Math.random() * 15);
-        let randomNum = Math.floor(Math.random() * 9);
+        let randomNum = Math.floor(Math.random() * 15);
     if (randomNum == 0) {
         talent = influenceTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
@@ -381,6 +380,214 @@ export function provocateurTalents(talents,available,skills,feats,BAB,forcePower
     }
     else if (randomNum == 5 && talents.includes("Friend or Foe")) {
         talent = "True Betrayal";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function gamblingTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Assault Gambit";
+    }
+    else if (randomNum == 1 && talents.includes("Assault Gambit")) {
+        talent = "Direct Fire";
+    }
+    else if (randomNum == 2) {
+        talent = "Face the Foe";
+    }
+    else if (randomNum == 3 && talents.includes("Face the Foe")) {
+        talent = "Lead From the Front";
+    }
+    else if (randomNum == 4 && talents.includes("Face the Foe")) {
+        talent = "Luck Favors the Bold";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function anticipationTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Anticipate Movement";
+    }
+    else if (randomNum == 1) {
+        talent = "Forewarn Allies";
+    }
+    else if (randomNum == 2) {
+        talent = "Get Down";
+    }
+    else if (randomNum == 3 && talents.includes("Forewarn Allies")) {
+        talent = "Heavy Fire Zone";
+    }
+    else if (randomNum == 4 && talents.includes("Get Down")) {
+        talent = "Summon Aid";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function masterTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0) {
+        talent = "Advanced Planning";
+    }
+    else if (randomNum == 1) {
+        talent = "Blend In";
+    }
+    else if (randomNum == 2) {
+        talent = "Get Into Position";
+    }
+    else if (randomNum == 3 && talents.includes("Advanced Planning") && talents.includes("Get Into Position")) {
+        talent = "Master Manipulator";
+    }
+    else if (randomNum == 4 && talents.includes("Advanced Planning")) {
+        talent = "Retaliation";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function skillTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 4);
+
+    if (randomNum == 0) {
+        talent = "Guaranteed Boon";
+    }
+    else if (randomNum == 1) {
+        talent = "Leading Skill";
+    }
+    else if (randomNum == 2) {
+        talent = "Learn from Mistakes";
+    }
+    else if (randomNum == 3) {
+        talent = "Try Your Luck";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function superiorTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 7);
+
+    if (randomNum == 0) {
+        let randomNum2 = Math.floor(Math.random() * skills.length);
+        talent = "Assured Skill ("+skills[randomNum2]+")";
+    }
+    else if (randomNum == 1) {
+        talent = "Critical Skill Success";
+    }
+    else if (randomNum == 2) {
+        let randomNum2 = Math.floor(Math.random() * skills.length);
+        talent = "Exceptional Skill ("+skills[randomNum2]+")";
+    }
+    else if (randomNum == 3) {
+        talent = "Reliable Boon";
+    }
+    else if (randomNum == 4) {
+        let randomNum2 = Math.floor(Math.random() * skills.length);
+        talent = "Skill Boon ("+skills[randomNum2]+")";
+    }
+    else if (randomNum == 5 && talents.includes("Critical Skill Success")) {
+        let randomNum2 = Math.floor(Math.random() * skills.length);
+        talent = "Skill Confidence ("+skills[randomNum2]+")";
+    }
+    else if (randomNum == 6) {
+        let randomNum2 = Math.floor(Math.random() * skills.length);
+        talent = "Skillful Recovery ("+skills[randomNum2]+")";
+    }
+    if (talents.includes(talent)) {
+        talent = "";
+    }
+    if (count == 500) {
+        talent = "ValidTalentNotFound";
+    }
+}
+
+    return talent;
+}
+
+export function exileTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
+    let talent = "";
+    let count = 0;
+    while (count < 20 && talent == "") {
+        count++;
+    let randomNum = Math.floor(Math.random() * 5);
+
+    if (randomNum == 0 && skills.includes("Persuasion")) {
+        talent = "Arrogant Bluster";
+    }
+    else if (randomNum == 1 && talents.includes("Galactic Guidance") && talents.includes("Self-Reliant") && skills.includes("Persuasion")) {
+        talent = "Band Together";
+    }
+    else if (randomNum == 2 && skills.includes("Knowledge (Galactic Lore)")) {
+        talent = "Galactic Guidance";
+    }
+    else if (randomNum == 3 && skills.includes("Persuasion")) {
+        talent = "Rant";
+    }
+    else if (randomNum == 4 && talents.includes("Bolster Ally") ||
+            randomNum == 4 && talents.includes("Inspire Confidence") ||
+            randomNum == 4 && talents.includes("Inspire Haste")) {
+        talent = "Self-Reliant";
     }
     if (talents.includes(talent)) {
         talent = "";
