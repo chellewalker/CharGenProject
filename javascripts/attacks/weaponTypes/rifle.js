@@ -29,7 +29,7 @@ export function getRifle(available,BAB,level,dex,feats,talents,size,speciesTrait
 
     let rifleDamageRaw = Math.floor(level/2);
     while (rifleWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 23);
+        let randomNum = Math.floor(Math.random() * 42);
 
         if (randomNum == 0) {
             rifleWeapon = "Blaster Rifle";
@@ -129,53 +129,169 @@ export function getRifle(available,BAB,level,dex,feats,talents,size,speciesTrait
             rifleDice = 3;
             rifleDie = 8;
         }
-        if (randomNum == 15 && available.includes("FUCG")) {
+        if (randomNum == 15 && available.includes("FUCG") && size != "Small") {
+            rifleWeapon = "Flechette Launcher";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+            special = ", 1-Square Splash";
+        }
+        if (randomNum == 16 && available.includes("FUCG")) {
             rifleWeapon = "Incinerator Rifle";
             weaponSize = 1;
             rifleDice = 3;
             rifleDie = 6;
         }
-        if (randomNum == 16 && available.includes("FUCG")) {
+        if (randomNum == 17 && available.includes("FUCG") && size != "Small") {
+            rifleWeapon = "Rail Detonator Gun";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+            special = ", 1-Square Splash";
+        }
+        if (randomNum == 18 && available.includes("FUCG")) {
             rifleWeapon = "Stokhli Spray Stick";
             weaponSize = 1;
             rifleDice = 3;
             rifleDie = 8;
             special = " (Stun)";
         }
-        if (randomNum == 17 && available.includes("SaV")) {
+        if (randomNum == 19 && available.includes("SaV")) {
             rifleWeapon = "Micro Grenade Launcher";
             weaponSize = 1;
             rifleDice = 4;
             rifleDie = 6;
             special = ", 2-Square Burst";
         }
-        if (randomNum == 18 && available.includes("SaV")) {
+        if (randomNum == 20 && available.includes("SaV")) {
             rifleWeapon = "Snare Rifle";
             weaponSize = 1;
             rifleDice = 1;
             rifleDie = 6;
             special = " (Stun)";
         }
-        if (randomNum == 19 && available.includes("SaV")) {
+        if (randomNum == 21 && available.includes("SaV")) {
             rifleWeapon = "Sniper Blaster Rifle";
             weaponSize = 2;
             rifleDice = 3;
             rifleDie = 10;
         }
-        if (randomNum == 20 && available.includes("CWCG")) {
+        if (randomNum == 22 && available.includes("CWCG") && size != "Small") {
             rifleWeapon = "DLT-20A Longblaster";
             weaponSize = 2;
             rifleDice = 3;
             rifleDie = 10;
         }
-        if (randomNum == 21 && available.includes("CWCG")) {
+        if (randomNum == 23 && available.includes("CWCG")) {
             rifleWeapon = "Adventurer Slugthrower";
             weaponSize = 1;
             rifleDice = 2;
             rifleDie = 10;
         }
-        if (randomNum == 22 && available.includes("CWCG")) {
+        if (randomNum == 24 && available.includes("CWCG")) {
             rifleWeapon = "Firelance Blaster Rifle";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 25 && available.includes("LECG")) {
+            rifleWeapon = "ARC-9965 Blaster";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 26 && available.includes("LECG")) {
+            rifleWeapon = "Double-Barreled Blaster Carbine";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 27 && available.includes("LECG") && size != "Small") {
+            rifleWeapon = "Heavy Assault Blaster";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 10;
+        }
+        if (randomNum == 28 && available.includes("LECG")) {
+            rifleWeapon = "Hunting Blaster Carbine";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 29 && available.includes("LECG")) {
+            rifleWeapon = "Sporting Blaster Carbine";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 30 && available.includes("RECG")) {
+            rifleWeapon = "ESPO 500 Riot Gun";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 31 && available.includes("RECG")) {
+            rifleWeapon = "SG-4 Blaster Rifle";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 32 && available.includes("GaW")) {
+            rifleWeapon = "Interchangeable Rifle System";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 33 && available.includes("GaW")) {
+            rifleWeapon = "Scattergun";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 34 && available.includes("GaW")) {
+            rifleWeapon = "Variable Blaster";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 4;
+        }
+        if (randomNum == 35 && available.includes("GaW") && size != "Small") {
+            rifleWeapon = "Heavy Variable Blaster";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 6;
+        }
+        if (randomNum == 36 && available.includes("GoI")) {
+            rifleWeapon = "Xerrol Nightstinger";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 6;
+        }
+        if (randomNum == 37 && available.includes("UR") && size != "Small") {
+            rifleWeapon = "Concussion Rifle";
+            weaponSize = 1;
+            rifleDice = 2;
+            rifleDie = 10;
+        }
+        if (randomNum == 38 && available.includes("UR")) {
+            rifleWeapon = "Targeting Blaster Rifle";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 6;
+        }
+        if (randomNum == 39 && available.includes("WE")) {
+            rifleWeapon = "Stealth Blaster Carbine";
+            weaponSize = 1;
+            rifleDice = 3;
+            rifleDie = 8;
+        }
+        if (randomNum == 40 && available.includes("HC")) {
+            rifleWeapon = "Black-Powder Rifle";
+            weaponSize = 1;
+            rifleDice = 2;
+            rifleDie = 6;
+        }
+        if (randomNum == 41 && available.includes("HC") && size != "Small") {
+            rifleWeapon = "WESTAR-M5 Blaster Rifle";
             weaponSize = 1;
             rifleDice = 3;
             rifleDie = 8;

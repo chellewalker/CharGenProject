@@ -36,7 +36,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
         lightsaberAttackRaw++;
     }
     while (lightsaberWeapon == "") {
-        let randomNum = Math.floor(Math.random() * 6);
+        let randomNum = Math.floor(Math.random() * 14);
 
         if (randomNum == 0) {
             lightsaberWeapon = "Lightsaber";
@@ -58,7 +58,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
         }
         if (randomNum == 3 && available.includes("TotG") || randomNum == 3 && available.includes("JATM")) {
             lightsaberWeapon = "Lightwhip";
-            weaponSize = 0;
+            weaponSize = 1;
             lightsaberDice = 2;
             lightsaberDie = 4;
             special = ", 2-Square Reach"
@@ -74,6 +74,56 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
             weaponSize = 0;
             lightsaberDice = 2;
             lightsaberDie = 4;
+        }
+        if (randomNum == 6 && available.includes("JATM")) {
+            lightsaberWeapon = "Archaic Lightsaber";
+            weaponSize = 1;
+            lightsaberDice = 2;
+            lightsaberDie = 6;
+        }
+        if (randomNum == 7 && available.includes("JATM")) {
+            lightsaberWeapon = "Crossguard Lightsaber";
+            weaponSize = 1;
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+        }
+        if (randomNum == 8 && available.includes("JATM")) {
+            lightsaberWeapon = "Dual-Phase Lightsaber";
+            weaponSize = 1;
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+            special = ", 2-Square Reach"
+        }
+        if (randomNum == 9 && available.includes("JATM")) {
+            lightsaberWeapon = "Dueling Lightsaber";
+            weaponSize = 1;
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+        }
+        if (randomNum == 10 && available.includes("JATM") && size != "Small" || randomNum == 10 && available.includes("FUCG") && size != "Small") {
+            lightsaberWeapon = "Lightsaber Pike";
+            weaponSize = 2;
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+            special = ", 2-Square Reach"
+        }
+        if (randomNum == 11 && available.includes("JATM") && size != "Small") {
+            lightsaberWeapon = "Long-Handle Lightsaber";
+            weaponSize = 2;
+            lightsaberDice = 2;
+            lightsaberDie = 8;
+        }
+        if (randomNum == 12 && available.includes("JATM")) {
+            lightsaberWeapon = "Modern Lightfoil";
+            weaponSize = 1;
+            lightsaberDice = 2;
+            lightsaberDie = 6;
+        }
+        if (randomNum == 13 && available.includes("JATM")) {
+            lightsaberWeapon = "Retrosaber";
+            weaponSize = 1;
+            lightsaberDice = 2;
+            lightsaberDie = 8;
         }
     }
 
