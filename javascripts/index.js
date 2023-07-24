@@ -541,7 +541,7 @@ window.genCharacter = function genCharacter() {
     }
     if (talents.includes("Bugbite") || talents.includes("Surprising Weapons")) {
             temp2 = getSimpleBug(available,BAB,level,dex,str,feats,talents,size,speciesTraits);
-            simpleMelee = temp2[0];
+            simpleRanged = temp2[0];
             temp = temp2[1];
             tempEquipment.push(temp);
     }
