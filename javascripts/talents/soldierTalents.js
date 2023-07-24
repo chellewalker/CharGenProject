@@ -674,7 +674,7 @@ export function warriorTalents(talents,available,skills,feats,BAB,forcePowers,li
         talent = "Quick Study";
     }
     else if (randomNum == 2) {
-        talent = "Simple Opportunity ";
+        talent = "Simple Opportunity";
     }
     else if (randomNum == 3) {
         talent = "Warrior's Awareness";
