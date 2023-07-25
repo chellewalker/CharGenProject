@@ -67,6 +67,9 @@ export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTrai
             weaponSize = 0;
             pistolDice = 2;
             pistolDie = 6;
+            if (feats.includes("Sport Hunter")) {
+                pistolDice++;
+            }
         }
         if (randomNum == 6 && available.includes("TotG")) {
             pistolWeapon = "Sonic Stunner";

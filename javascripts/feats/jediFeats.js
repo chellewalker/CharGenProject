@@ -23,6 +23,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
             let check = 0;
             let count = 0;
             while (check == 0 && count < 20) {
+                count++;
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
                     feat = "Double Attack (Advanced Melee Weapons)";
@@ -229,7 +230,27 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
             feat = "Tumble Defense";
         }
         else if (randomNum == 59 && available.includes("KotORCG") && BAB >= 5) {
-            feat = "Withdrawal Strike";
+            let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                count++;
+                let randomNum = Math.floor(Math.random() * 3);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
+                    feat = "Withdrawal Strike (Advanced Melee Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Lightsabers)")) {
+                    feat = "Withdrawal Strike (Lightsabers)";
+                    check = 1;
+                }
+                else if (randomNum == 2) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
+                    feat = "Withdrawal Strike (Simple Weapons)";
+                    check = 1;
+                }}
+            }
         }
         else if (randomNum == 60 && available.includes("FUCG")) {
             if (feats.includes("Double Attack (Simple Weapons)")) {

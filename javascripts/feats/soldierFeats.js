@@ -51,6 +51,7 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
             let check = 0;
             let count = 0;
             while (check == 0 && count < 20) {
+                count++;
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
                     feat = "Double Attack (Advanced Melee Weapons)";
@@ -444,7 +445,27 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
             feat = "Tumble Defense";
         }
         else if (randomNum == 119 && available.includes("KotORCG")) {
-            feat = "Withdrawal Strike";
+            let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                count++;
+                let randomNum = Math.floor(Math.random() * 3);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
+                    feat = "Withdrawal Strike (Advanced Melee Weapons)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Lightsabers)")) {
+                    feat = "Withdrawal Strike (Lightsabers)";
+                    check = 1;
+                }
+                else if (randomNum == 2) {
+                    if (feats.includes("Weapon Focus (Simple Weapons)") ||
+                        feats.includes("Martial Arts I") ||
+                        speciesTraits.includes("Primitive")) {
+                    feat = "Withdrawal Strike (Simple Weapons)";
+                    check = 1;
+                }}
+            }
         }
         else if (randomNum == 120 && available.includes("FUCG") && skills.includes("Stealth")) {
             feat = "Advantageous Cover";

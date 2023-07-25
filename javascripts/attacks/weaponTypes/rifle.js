@@ -61,6 +61,9 @@ export function getRifle(available,BAB,level,dex,feats,talents,size,speciesTrait
             weaponSize = 1;
             rifleDice = 2;
             rifleDie = 8;
+            if (feats.includes("Sport Hunter")) {
+                rifleDie = 12;
+            }
         }
         if (randomNum == 5 && available.includes("CR") && size != "Small") {
             rifleWeapon = "Light Repeating Blaster";
@@ -75,6 +78,9 @@ export function getRifle(available,BAB,level,dex,feats,talents,size,speciesTrait
             weaponSize = 2;
             rifleDice = 3;
             rifleDie = 10;
+            if (feats.includes("Riflemaster")) {
+                rifleDie = 12;
+            }
         }
         if (randomNum == 7 && available.includes("KotORCG") && size != "Small") {
             rifleWeapon = "Assault Blaster Rifle";
