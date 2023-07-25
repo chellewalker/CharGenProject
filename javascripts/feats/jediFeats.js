@@ -162,6 +162,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
             let check = 0;
             let count = 0;
             while (check == 0 && count < 20) {
+                count++;
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
                     feat = "Triple Crit (Advanced Melee Weapons)";

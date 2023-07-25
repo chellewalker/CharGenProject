@@ -27,6 +27,7 @@ import {getImplant} from './equipment/getImplant.js';
 import {getSpecial} from './equipment/getSpecial.js';
 import {getWill} from './defenses/will.js';
 import {getForcePower,compressForcePowers} from './forceAbilities/getForcePower.js';
+import {getForceRegimen} from './forceAbilities/forceRegimens.js';
 import {getGrapple} from './attacks/getGrapple.js';
 import {getUnarmed} from './attacks/weaponTypes/unarmed.js';
 import {getAdvancedMelee} from './attacks/weaponTypes/advancedMelee.js';
@@ -114,6 +115,7 @@ window.genCharacter = function genCharacter() {
         let feats = [];
         let skills = [];
         let forcePowers = [];
+        let forceRegimens = [];
         let forceTechniques = [];
         let forceSecrets = [];
         let qualities = [];
@@ -127,6 +129,7 @@ window.genCharacter = function genCharacter() {
         let linguist = 0;
         let forceTraining = 0;
         let skillTraining = 0;
+        let regimenMastery = 0;
         let startshipTactics = 0;
         let sneakAttack = 0;
         let lightsaberDefense = 0;
@@ -171,6 +174,9 @@ window.genCharacter = function genCharacter() {
                 if (feats.findLast(findLast) == "Starship Tactics") {
                     starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
                 }
+                if (feats.findLast(findLast) == "Force Regimen Mastery") {
+                    forceRegimens = getForceRegimen(available,feats,light,dark,forceRegimens,wis);
+                }
                 if (speciesTraits.includes("Force Blast")) {
                     forcePowers.push("Force Blast");
                 }
@@ -183,6 +189,9 @@ window.genCharacter = function genCharacter() {
                     if (talents.includes("Telekinetic Prodigy")) {
                         forcePowers.push("Move Object");
                     }
+                }
+                if (feats.findLast(findLast) == "Force Regimen Mastery") {
+                    forceRegimens = getForceRegimen(available,feats,light,dark,forceRegimens,wis);
                 }
                 if (feats.findLast(findLast) == "Starship Tactics") {
                     starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
@@ -197,6 +206,9 @@ window.genCharacter = function genCharacter() {
                     if (talents.includes("Telekinetic Prodigy")) {
                         forcePowers.push("Move Object");
                     }
+                }
+                if (feats.findLast(findLast) == "Force Regimen Mastery") {
+                    forceRegimens = getForceRegimen(available,feats,light,dark,forceRegimens,wis);
                 }
                 if (feats.findLast(findLast) == "Starship Tactics") {
                     starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
@@ -252,6 +264,9 @@ window.genCharacter = function genCharacter() {
                     forcePowers.push("Move Object");
                 }
             }
+            if (feats.findLast(findLast) == "Force Regimen Mastery") {
+                forceRegimens = getForceRegimen(available,feats,light,dark,forceRegimens,wis);
+            }
             if (feats.findLast(findLast) == "Starship Tactics") {
                 starshipManeuvers = getStarshipManeuver(starshipManeuvers,wis,feats);
             }
@@ -287,6 +302,9 @@ window.genCharacter = function genCharacter() {
             else if (feats[count] == "Starship Tactics") {
                 startshipTactics++;
             }
+            else if (feats[count] == "Force Regimen Mastery") {
+                regimenMastery++;
+            }
             else {
                 tempFeats.push(feats[count]);
             }
@@ -302,6 +320,12 @@ window.genCharacter = function genCharacter() {
         }
         else if (count == feats.length && forceTraining == 1) {
             tempFeats.push("Force Training");
+        }
+        if (count == feats.length && regimenMastery > 1) {
+            tempFeats.push("Force Regimen Mastery ("+regimenMastery+")");
+        }
+        else if (count == feats.length && regimenMastery == 1) {
+            tempFeats.push("Force Regimen Mastery");
         }
         if (count == feats.length && skillTraining > 1) {
             tempFeats.push("Skill Training ("+skillTraining+")");
@@ -539,7 +563,7 @@ window.genCharacter = function genCharacter() {
             tempEquipment.push(temp);
         }
     }
-    if (talents.includes("Bugbite") || talents.includes("Surprising Weapons")) {
+    if (talents.includes("Bugbite") || talents.includes("Surprising Weapons") || feats.includes("Returning Bug")) {
             temp2 = getSimpleBug(available,BAB,level,dex,str,feats,talents,size,speciesTraits);
             simpleRanged = temp2[0];
             temp = temp2[1];
@@ -565,6 +589,7 @@ window.genCharacter = function genCharacter() {
         otherAttack = temp2[0];
     }
     forcePowers.sort();
+    forceRegimens.sort();
     forceTechniques.sort();
     forceSecrets.sort();
     starshipManeuvers.sort();
@@ -605,7 +630,7 @@ window.genCharacter = function genCharacter() {
             reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
             advancedMelee,lightsaber,pistol,rifle,heavyWeapon,otherAttack,BAB,grapple,talents,starshipManeuvers,simpleMelee,simpleRanged,
             speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,classes,forcePowers,SR,qualityList,qualities,armorFort,
-            forceTechniques,forceSecrets);
+            forceTechniques,forceSecrets,forceRegimens);
     
         document.write(output);
 }

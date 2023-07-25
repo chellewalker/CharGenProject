@@ -1,4 +1,5 @@
 import {displayForcePowers,displayRawForcePowers} from './forceAbilities/getForcePower.js';
+import {displayForceRegimens,displayRawForceRegimens} from './forceAbilities/forceRegimens.js';
 import {displayForceTechniques,displayRawForceTechniques} from './forceAbilities/forceTechniques.js';
 import {displayForceSecrets,displayRawForceSecrets} from './forceAbilities/forceSecrets.js';
 import {displayStarshipManeuvers,displayRawStarshipManeuvers} from './feats/getStarshipManeuver.js';
@@ -10,7 +11,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,starshipManeuvers,simpleMelee,simpleRanged,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,classes,
-    forcePowers,SR,qualityList,qualities,armorFort,forceTechniques,forceSecrets) {
+    forcePowers,SR,qualityList,qualities,armorFort,forceTechniques,forceSecrets,forceRegimens) {
     let destiny = "";
         if (Math.floor(level/5) > 0) {
             destiny = "<strong>Destiny Points: </strong>" + Math.floor(level/5);
@@ -77,6 +78,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
     let otherAttack = "";
     let byWeapon = "";
     let powerDisplay = "";
+    let regimenDisplay = "";
     let techniqueDisplay = "";
     let secretDisplay = "";
     let maneuverDisplay = "";
@@ -188,11 +190,15 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
         advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
         speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
-        forceTechniques,forceSecrets,classes);
+        forceTechniques,forceSecrets,classes,forceRegimens);
 
         if (forcePowers != "") {
             forcePowers = displayForcePowers(forcePowers);
             powerDisplay = "<strong>Force Power Suite:</strong> "+forcePowers+"<br>";
+        }
+        if (forceRegimens != "") {
+            forceRegimens = displayForceRegimens(forceRegimens);
+            regimenDisplay = "<strong>Force Regimens:</strong> "+forceRegimens+"<br>";
         }
 
         if (forceTechniques != "") {
@@ -265,6 +271,7 @@ export function getOutput(feats,name,level,size,species,classList,initiativeDisp
         space+
         maneuverDisplay+
         powerDisplay+
+        regimenDisplay+
         techniqueDisplay+
         secretDisplay+
         "<strong>Species Traits (<a href='https://swse.fandom.com/wiki/"+species+"' target='_blank' rel='noopener noreferrer'>"+species+"</a>):</strong> "+traitDisplay+"<br>"+
@@ -305,7 +312,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
     reflex,flatFooted,fortitude,will,hitPoints,damageThreshold,speed,unarmed,otherMeleeAttack,otherRangedAttack,damageReduction,
     advancedMelee,lightsaber,pistol,rifle,heavyWeapon,other,BAB,grappleDisplay,talents,SR,feats,qualityList,
     speciesTraits,str,dex,con,int,wis,cha,listSkills,equipmentList,forcePowers,starshipManeuvers,simpleMelee,simpleRanged,
-    forceTechniques,forceSecrets,classes) {
+    forceTechniques,forceSecrets,classes,forceRegimens) {
 
         let listTalents = displayRawTalents(talents);
         let listFeats = displayRawFeats(feats);
@@ -374,6 +381,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         let listQualities = "";
         let byWeapon = "";
         let powerDisplay = "";
+        let regimenDisplay = "";
         let techniqueDisplay = "";
         let secretDisplay = "";
         let maneuverDisplay = "";
@@ -450,6 +458,11 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         powerDisplay = "Force%20Power%20Suite:%20"+forcePowers+"%0A";
     }
 
+    if (forceRegimens != "") {
+        forceRegimens = displayRawForceRegimens(forceRegimens);
+        regimenDisplay = "Force%Regimens:%20"+forceRegimens+"%0A";
+    }
+
     if (forceTechniques != "") {
         forceTechniques = displayRawForceTechniques(forceTechniques);
         forceTechniques = forceTechniques.replace(/ /g, "%20");
@@ -520,6 +533,7 @@ export function getOutputData(destiny,forcePoints,name,level,size,species,classL
         space+
         maneuverDisplay+
         powerDisplay+
+        regimenDisplay+
         techniqueDisplay+
         secretDisplay+
         "Species%20Traits%20("+species+"):%20"+traitDisplay+"%0A%0A"+

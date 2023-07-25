@@ -17,7 +17,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     }
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 312);
+        let randomNum = Math.floor(Math.random() * 369);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -502,6 +502,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
             let check = 0;
             let count = 0;
             while (check == 0 && count < 20) {
+                count++;
                 let randomNum = Math.floor(Math.random() * 6);
                 if (randomNum == 0 && feats.includes("Weapon Proficiency (Advanced Melee Weapons)")) {
                     feat = "Triple Crit (Advanced Melee Weapons)";
@@ -924,8 +925,147 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         else if (randomNum == 332 && available.includes("CWCG")) {
             feat = "Wary Defender";
         }
+        else if (randomNum == 333 && available.includes("LECG") && BAB >= 9 &&
+                    feats.includes("Attack Combo (Melee)") && feats.includes("Attack Combo (Ranged)")) {
+            feat = "Attack Combo (Fire and Strike)";
+        }
+        else if (randomNum == 334 && available.includes("LECG") && BAB >= 3) {
+            feat = "Attack Combo (Melee)";
+        }
+        else if (randomNum == 335 && available.includes("LECG") && BAB >= 3) {
+            feat = "Attack Combo (Ranged)";
+        }
+        else if (randomNum == 336 && available.includes("LECG") && feats.includes("Weapon Focus (Rifles)") ||
+                    randomNum == 336 && available.includes("LECG") && feats.includes("Weapon Focus (Heavy Weapons)")) {
+            feat = "Autofire Assault";
+        }
+        else if (randomNum == 337 && available.includes("LECG") && feats.includes("Weapon Focus (Rifles)") ||
+                    randomNum == 337 && available.includes("LECG") && feats.includes("Weapon Focus (Heavy Weapons)")) {
+            feat = "Autofire Sweep";
+        }
+        else if (randomNum == 338 && available.includes("LECG") && skills.includes("Mechanics")) {
+            feat = "Biotech Specialist";
+        }
+        else if (randomNum == 339 && available.includes("LECG") && skills.includes("Treat Injury")) {
+            feat = "Biotech Surgery";
+        }
+        else if (randomNum == 340 && available.includes("LECG")) {
+            feat = "Brink of Death";
+        }
+        else if (randomNum == 341 && available.includes("LECG") && str >= 13 && dex >= 13) {
+            feat = "Fatal Hit";
+        }
+        else if (randomNum == 342 && available.includes("LECG") && str >= 15) {
+            feat = "Feat of Strength";
+        }
+        else if (randomNum == 343 && available.includes("LECG")) {
+            feat = "Galactic Alliance Military Training";
+        }
+        else if (randomNum == 344 && available.includes("LECG")) {
+            feat = "Grapple Resistance";
+        }
+        else if (randomNum == 345 && available.includes("LECG") && str >= 13 && feats.includes("Multi-Grab")) {
+            feat = "Knock Heads";
+        }
+        else if (randomNum == 346 && available.includes("LECG") && dex >= 13) {
+            feat = "Multi-Grab";
+        }
+        else if (randomNum == 347 && available.includes("LECG") && str >= 15 && feats.includes("Crush") && feats.includes("Pin")) {
+            feat = "Rancor Crush";
+        }
+        else if (randomNum == 348 && available.includes("LECG") && dex >= 15 && feats.includes("Quick Draw")) {
+            let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                count++;
+                let randomNum = Math.floor(Math.random() * 2);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Pistols)")) {
+                    feat = "Return Fire (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Rifles)")) {
+                    feat = "Return Fire (Rifles)";
+                    check = 1;
+                }
+            }
+        }
+        else if (randomNum == 349 && available.includes("LECG")) {
+            feat = "Returning Bug";
+        }
+        else if (randomNum == 350 && available.includes("LECG") && feats.includes("Tech Specialist") && skills.includes("Mechanics")) {
+            feat = "Vehicle Systems Expertise";
+        }
+        else if (randomNum == 351 && available.includes("LECG") && feats.includes("Point-Blank Shot")) {
+            feat = "Zero Range";
+        }
+        else if (randomNum == 352 && available.includes("JATM")) {
+            feat = "Follow Through";
+        }
+        else if (randomNum == 353 && available.includes("JATM") && skills.includes("Use the Force")) {
+            feat = "Force Regimen Mastery";
+        }
+        else if (randomNum == 354 && available.includes("JATM")) {
+            feat = "Long Haft Strike";
+        }
+        else if (randomNum == 355 && available.includes("JATM") && feats.includes("Double Attack (Advanced Melee Weapons)")) {
+            feat = "Relentless Attack (Advanced Melee Weapons)";
+        }
+        else if (randomNum == 355 && available.includes("JATM") && feats.includes("Double Attack (Heavy Weapons)")) {
+            feat = "Relentless Attack (Heavy Weapons)";
+        }
+        else if (randomNum == 355 && available.includes("JATM") && feats.includes("Double Attack (Lightsabers)")) {
+            feat = "Relentless Attack (Lightsabers)";
+        }
+        else if (randomNum == 355 && available.includes("JATM") && feats.includes("Double Attack (Pistols)")) {
+            feat = "Relentless Attack (Pistols)";
+        }
+        else if (randomNum == 355 && available.includes("JATM") && feats.includes("Double Attack (Rifles)")) {
+            feat = "Relentless Attack (Rifles)";
+        }
+        else if (randomNum == 355 && available.includes("JATM") && feats.includes("Double Attack (Simple Weapons)")) {
+            feat = "Relentless Attack (Simple Weapons)";
+        }
+        else if (randomNum == 356 && available.includes("JATM") && BAB >= 2) {
+            feat = "Unswerving Resolve";
+        }
+        else if (randomNum == 357 && available.includes("RECG")) {
+            feat = "Assured Attack";
+        }
+        else if (randomNum == 358 && available.includes("RECG")) {
+            feat = "Deft Charge";
+        }
+        else if (randomNum == 359 && available.includes("RECG")) {
+            feat = "Fast Surge";
+        }
+        else if (randomNum == 360 && available.includes("RECG")) {
+            feat = "Imperial Military Training";
+        }
+        else if (randomNum == 361 && available.includes("RECG") && feats.includes("Dodge")) {
+            feat = "Moving Target";
+        }
+        else if (randomNum == 362 && available.includes("RECG") && feats.includes("Point-Blank Shot")) {
+            feat = "Prime Shot";
+        }
+        else if (randomNum == 363 && available.includes("RECG")) {
+            feat = "Rapid Reaction";
+        }
+        else if (randomNum == 364 && available.includes("RECG") && feats.includes("Running Attack")) {
+            feat = "Rebel Military Training";
+        }
+        else if (randomNum == 365 && available.includes("RECG")) {
+            feat = "Recovering Surge";
+        }
+        else if (randomNum == 366 && available.includes("RECG") && feats.includes("Extra Second Wind")) {
+            feat = "Unstoppable Combatant";
+        }
+        else if (randomNum == 367 && available.includes("RECG") && skills.includes("Pilot")) {
+            feat = "Vehicular Surge";
+        }
+        else if (randomNum == 368 && available.includes("RECG") && feats.includes("Extra Second Wind")) {
+            feat = "Vitality Surge";
+        }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
-                feat == "Skill Focus (undefined)") {
+                feat == "Skill Focus (undefined)" && feat != "Force Regimen Mastery") {
             feat = "";
         }
         if (count2 == 500) {
