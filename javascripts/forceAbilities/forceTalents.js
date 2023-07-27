@@ -11,7 +11,7 @@ export function forceTalents(talents,available,skills,feats,BAB,forcePowers,ligh
         talent = controlTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
     }
     else if (randomNum == 2 && dark == 1) {
-        talent = darkTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
+        talent = darkTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha);
     }
     else if (randomNum == 3) {
         talent = senseTalents(talents,available,skills,feats,BAB,forcePowers,light,dark);
@@ -147,7 +147,7 @@ export function controlTalents(talents,available,skills,feats,BAB,forcePowers,li
     return talent;
 }
 
-export function darkTalents(talents,available,skills,feats,BAB,forcePowers,light,dark) {
+export function darkTalents(talents,available,skills,feats,BAB,forcePowers,light,dark,cha) {
     let talent = "";
     let count = 0;
     while (count < 20 && talent == "") {

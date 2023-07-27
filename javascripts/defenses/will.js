@@ -35,7 +35,7 @@ export function getWill(classes,wis,cha,level,speciesTraits,feats,talents,armorF
         }
 
     let will = 10 + Math.floor((wis-10)/2) + parseInt(level) + classWill;
-    if (speciesTraits.includes("Strength of Conviction")) {
+    if (speciesTraits.includes("Strength of Conviction") || feats.includes("Force of Personality")) {
         will = 10 + Math.floor((Math.max(wis,cha)-10)/2) + parseInt(level) + classWill;
     }
         if (speciesTraits.includes("Iron Will")) {

@@ -55,6 +55,9 @@ export function getPistol(available,BAB,level,dex,feats,talents,size,speciesTrai
             pistolDice = 3;
             pistolDie = 6;
             special = " (Ion)";
+            if (feats.includes("Riflemaster")) {
+                pistolDie = 8;
+            }
         }
         if (randomNum == 4 && available.includes("CR")) {
             pistolWeapon = "Sporting Blaster Pistol";

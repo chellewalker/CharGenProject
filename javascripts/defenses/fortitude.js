@@ -1,4 +1,6 @@
-export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,talents) {
+import {getWill} from './will.js';
+
+export function getFortitude(classes,con,str,level,speciesTraits,feats,armorFort,talents) {
 
     let classFortitude = 0;
 
@@ -39,6 +41,9 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,tal
         }
 
     let fortitude = 10 + Math.floor((con-10)/2) + parseInt(level) + classFortitude + armorFort;
+    if (feats.includes("Resilient Strength")) {
+        fortitude = 10 + Math.floor((Math.max(con,str)-10)/2) + parseInt(level) + classFortitude + armorFort;
+    }
         if (speciesTraits.includes("Great Fortitude")) {
             fortitude += 2;
         }
@@ -61,8 +66,11 @@ export function getFortitude(classes,con,level,speciesTraits,feats,armorFort,tal
     return fortitude;
 }
 
-export function getDamageThreshold(fortitude,size,feats,talents,speciesTraits) {
+export function getDamageThreshold(fortitude,size,feats,talents,speciesTraits,classes,wis,cha,level,armorFort) {
     let damageThreshold = fortitude;
+    if (feats.includes("Fight Through Pain")) {
+        damageThreshold = getWill(classes,wis,cha,level,speciesTraits,feats,talents,armorFort);
+    }
         if (size == "Large") {
             damageThreshold += 5;
         }

@@ -1,4 +1,4 @@
-export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex) {
+export function getReflex(classes,dex,int,level,size,speciesTraits,feats,talents,armorRef,maxDex) {
 
     let classReflex = 0;
 
@@ -46,7 +46,10 @@ export function getReflex(classes,dex,level,size,speciesTraits,feats,talents,arm
             armorRef = 4;
         }
         let reflex = 10 + Math.min(Math.floor((dex-10)/2),maxDex) + Math.max(parseInt(level),armorRef) + classReflex;
-   
+        if (feats.includes("Predictive Defense")) {
+            reflex = 10 + Math.min(Math.floor((Math.max(dex,int)-10)/2),maxDex) + Math.max(parseInt(level),armorRef) + classReflex;
+        }
+        
         if (size == "Small") {
             reflex++;
         }

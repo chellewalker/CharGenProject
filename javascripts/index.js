@@ -493,10 +493,10 @@ window.genCharacter = function genCharacter() {
             maxDex++;
         }
 
-        let reflex = getReflex(classes,dex,level,size,speciesTraits,feats,talents,armorRef,maxDex);
+        let reflex = getReflex(classes,dex,int,level,size,speciesTraits,feats,talents,armorRef,maxDex);
             let flatFooted = getFlatFooted(reflex,dex,feats,talents);
-        let fortitude = getFortitude(classes,con,level,speciesTraits,feats,armorFort,talents);
-            let damageThreshold = getDamageThreshold(fortitude,size,feats,talents,speciesTraits);
+        let fortitude = getFortitude(classes,con,str,level,speciesTraits,feats,armorFort,talents);
+            let damageThreshold = getDamageThreshold(fortitude,size,feats,talents,speciesTraits,classes,wis,cha,level,armorFort);
         let will = getWill(classes,wis,cha,level,speciesTraits,feats,talents,armorFort);
 
         //speed

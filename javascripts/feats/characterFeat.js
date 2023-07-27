@@ -17,7 +17,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     }
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 369);
+        let randomNum = Math.floor(Math.random() * 390);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -1084,6 +1084,88 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 368 && available.includes("RECG") && feats.includes("Extra Second Wind")) {
             feat = "Vitality Surge";
+        }
+        else if (randomNum == 369 && available.includes("GaW") && BAB >= 1) {
+            feat = "Bantha Herder";
+        }
+        else if (randomNum == 370 && available.includes("GaW") && feats.includes("Bantha Rush") && feats.includes("Trip")) {
+            feat = "Battering Attack";
+        }
+        else if (randomNum == 371 && available.includes("GaW")) {
+            feat = "Destructive Force";
+        }
+        else if (randomNum == 372 && available.includes("GaW")) {
+            feat = "Disabler";
+        }
+        else if (randomNum == 373 && available.includes("GaW") && skills.includes("Jump")) {
+            feat = "Dive for Cover";
+        }
+        else if (randomNum == 374 && available.includes("GaW") && wis > con) {
+            feat = "Fight Through Pain";
+        }
+        else if (randomNum == 375 && available.includes("GaW") && BAB >= 1) {
+            feat = "Forceful Blast";
+        }
+        else if (randomNum == 376 && available.includes("GaW") && cha >= 13) {
+            feat = "Force of Personality";
+        }
+        else if (randomNum == 377 && available.includes("GaW") && con >= 13) {
+            feat = "Fortifying Recovery";
+        }
+        else if (randomNum == 378 && available.includes("GaW")) {
+            let randomNum2 = Math.floor(Math.random() * skills.length);
+            feat = "Mission Specialist ("+skills[randomNum2]+")";
+        }
+        else if (randomNum == 379 && available.includes("GaW") && skills.includes("Endurance")) {
+            feat = "Never Surrender";
+        }
+        else if (randomNum == 380 && available.includes("GaW")) {
+            feat = "Opportunistic Shooter";
+        }
+        else if (randomNum == 381 && available.includes("GaW") && feats.includes("Weapon Proficiency (Pistols)")) {
+            feat = "Pistoleer";
+        }
+        else if (randomNum == 382 && available.includes("GaW") && int >= 13) {
+            feat = "Predictive Defense";
+        }
+        else if (randomNum == 383 && available.includes("GaW") && str >= 13) {
+            feat = "Resilient Strength";
+        }
+        else if (randomNum == 384 && available.includes("GaW") && feats.includes("Weapon Proficiency (Rifles)")) {
+            feat = "Riflemaster";
+        }
+        else if (randomNum == 385 && available.includes("GaW") && skills.includes("Climb") ||
+                    randomNum == 385 && available.includes("GaW") && skills.includes("Jump")) {
+            feat = "Risk Taker";
+        }
+        else if (randomNum == 386 && available.includes("GaW") && feats.includes("Weapon Proficiency (Pistols)") ||
+                    randomNum == 386 && available.includes("GaW") && feats.includes("Weapon Proficiency (Rifles)")) {
+            feat = "Sport Hunter";
+        }
+        else if (randomNum == 387 && available.includes("GaW") && BAB >= 1) {
+            feat = "Staggering Attack";
+        }
+        else if (randomNum == 388 && available.includes("GaW") && feats.includes("Careful Shot")) {
+            feat = "Steadying Position";
+        }
+        else if (randomNum == 389 && available.includes("SGtD") && skills.includes("Mechanics") ||
+                    randomNum == 389 && available.includes("SGtD") && skills.includes("Use Computer")) {
+            let randomNum2 = Math.floor(Math.random() * 5);
+            if (randomNum2 == 0) {
+                feat = "Droid Focus (1st-Degree)";
+            }
+            else if (randomNum2 == 1) {
+                feat = "Droid Focus (2nd-Degree)";
+            }
+            else if (randomNum2 == 2) {
+                feat = "Droid Focus (3rd-Degree)";
+            }
+            else if (randomNum2 == 3) {
+                feat = "Droid Focus (4th-Degree)";
+            }
+            else {
+                feat = "Droid Focus (5th-Degree)";
+            }
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
                 feat == "Skill Focus (undefined)" && feat != "Force Regimen Mastery") {
