@@ -16,7 +16,7 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
     else if (size == "Large") {
         relativeSize = 2;
     }
-    if (speciesTraits.includes("Extra Arms")) {
+    if (speciesTraits.includes("Extra Arms") || feats.includes("Wookiee Grip")) {
         relativeSize++;
     }
 

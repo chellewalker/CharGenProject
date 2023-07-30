@@ -15,7 +15,7 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
     else if (size == "Large") {
         relativeSize = 2;
     }
-    if (speciesTraits.includes("Extra Arms")) {
+    if (speciesTraits.includes("Extra Arms") || feats.includes("Wookiee Grip")) {
         relativeSize++;
     }
 

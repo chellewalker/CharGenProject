@@ -15,7 +15,7 @@ export function getLightsaber(available,BAB,level,str,dex,cha,feats,talents,size
     else if (size == "Large") {
         relativeSize = 2;
     }
-    if (speciesTraits.includes("Extra Arms")) {
+    if (speciesTraits.includes("Extra Arms") || feats.includes("Wookiee Grip")) {
         relativeSize++;
     }
 

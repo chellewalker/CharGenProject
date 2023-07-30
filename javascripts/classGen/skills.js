@@ -450,7 +450,16 @@ export function displaySkills (str,dex,con,int,wis,cha,trainedSkills,size,level,
                     score += 5;
                 }
                 if (speciesTraits.includes("Deductive Reasoning")) {
-                    special = " (may reroll, must take second result)";
+                    special = " (may reroll, must take second result";
+                }
+                if (feats.includes("Cut the Red Tape") && special != "") {
+                    special += "; may substitute for Gather Information checks";
+                }
+                else if (feats.includes("Cut the Red Tape")) {
+                    special += " (may substitute for Gather Information checks";
+                }
+                if (special != "") {
+                    special += ")";
                 }
             }
             if (trainedSkills[count] == "Knowledge (Galactic Lore)") {

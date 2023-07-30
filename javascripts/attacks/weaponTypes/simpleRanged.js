@@ -15,7 +15,7 @@ export function getSimpleRanged(available,BAB,level,dex,str,feats,talents,size,s
     else if (size == "Large") {
         relativeSize = 2;
     }
-    if (speciesTraits.includes("Extra Arms")) {
+    if (speciesTraits.includes("Extra Arms") || feats.includes("Wookiee Grip")) {
         relativeSize++;
     }
 
@@ -154,7 +154,7 @@ export function getSimpleBug(available,BAB,level,dex,str,feats,talents,size,spec
     else if (size == "Large") {
         relativeSize = 2;
     }
-    if (speciesTraits.includes("Extra Arms")) {
+    if (speciesTraits.includes("Extra Arms") || feats.includes("Wookiee Grip")) {
         relativeSize++;
     }
 

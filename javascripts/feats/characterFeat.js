@@ -17,7 +17,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     }
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 390);
+        let randomNum = Math.floor(Math.random() * 414);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -1166,6 +1166,82 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
             else {
                 feat = "Droid Focus (5th-Degree)";
             }
+        }
+        else if (randomNum == 390 && available.includes("GoI") && feats.includes("Crush")) {
+            feat = "Bone Crusher";
+        }
+        else if (randomNum == 391 && available.includes("GoI") && int >= 13) {
+            feat = "Brilliant Defense";
+        }
+        else if (randomNum == 392 && available.includes("GoI") && speciesTraits.includes("Rage")) {
+            feat = "Channel Rage";
+        }
+        else if (randomNum == 393 && available.includes("GoI") && skills.includes("Knowledge (Bureaucracy)")) {
+            if (skills.includes("Gather Information")) {}
+            else {
+                feat = "Cut the Red Tape";
+        }}
+        else if (randomNum == 394 && available.includes("GoI") && cha >= 13) {
+            feat = "Demoralizing Strike";
+        }
+        else if (randomNum == 395 && available.includes("GoI") && skills.includes("Deception")) {
+            feat = "Disturbing Presence";
+        }
+        else if (randomNum == 396 && available.includes("GoI") && cha >= 13) {
+            feat = "Expert Briber";
+        }
+        else if (randomNum == 397 && available.includes("GoI") && BAB >= 1) {
+            feat = "Flèche";
+        }
+        else if (randomNum == 398 && available.includes("GoI") && feats.includes("Force Training")) {
+            feat = "Forceful Recovery";
+        }
+        else if (randomNum == 399 && available.includes("GoI") && feats.includes("Point-Blank Shot")) {
+            feat = "Grazing Shot";
+        }
+        else if (randomNum == 400 && available.includes("GoI") && talents.includes("Sneak Attack") ||
+                    randomNum == 400 && available.includes("GoI") && feats.includes("Rapid Shot") ||
+                    randomNum == 400 && available.includes("GoI") && feats.includes("Rapid Strike")) {
+            feat = "Grazing Shot";
+        }
+        else if (randomNum == 401 && available.includes("GoI") && feats.includes("Opportunistic Trickery")) {
+            feat = "Improved Opportunistic Trickery";
+        }
+        else if (randomNum == 402 && available.includes("GoI") && cha >= 13) {
+            feat = "Indomitable Personality";
+        }
+        else if (randomNum == 403 && available.includes("GoI") && cha >= 13 && skills.includes("Deception")) {
+            feat = "Master of Disguise";
+        }
+        else if (randomNum == 404 && available.includes("GoI") && BAB >= 4 && feats.includes("Precise Shot")) {
+            feat = "Meat Shield";
+        }
+        else if (randomNum == 405 && available.includes("GoI") && feats.includes("Combat Reflexes") && talents.includes("Sneak Attack")) {
+            feat = "Opportunistic Trickery";
+        }
+        else if (randomNum == 406 && available.includes("GoI") && BAB >= 1) {
+            feat = "Resolute Stance";
+        }
+        else if (randomNum == 407 && available.includes("GoI")) {
+            feat = "Sadistic Strike";
+        }
+        else if (randomNum == 408 && available.includes("GoI") && skills.includes("Persuasion")) {
+            feat = "Silver Tongue";
+        }
+        else if (randomNum == 409 && available.includes("GoI")) {
+            feat = "Skill Challenge: Catastrophic Avoidance";
+        }
+        else if (randomNum == 410 && available.includes("GoI")) {
+            feat = "Skill Challenge: Last Resort";
+        }
+        else if (randomNum == 411 && available.includes("GoI")) {
+            feat = "Skill Challenge: Recovery";
+        }
+        else if (randomNum == 412 && available.includes("GoI")) {
+            feat = "Stand Tall";
+        }
+        else if (randomNum == 413 && available.includes("GoI") && str >= 13) {
+            feat = "Wookiee Grip";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
                 feat == "Skill Focus (undefined)" && feat != "Force Regimen Mastery") {
