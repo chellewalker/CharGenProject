@@ -1,4 +1,4 @@
-export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species,light,dark) {
+export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species,light,dark,tradition) {
     let feat = "";
     let count2 = 0;
     let randomNumForce = Math.floor(Math.random() * 2);
@@ -17,7 +17,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
     }
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 414);
+        let randomNum = Math.floor(Math.random() * 438);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -1202,7 +1202,7 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         else if (randomNum == 400 && available.includes("GoI") && talents.includes("Sneak Attack") ||
                     randomNum == 400 && available.includes("GoI") && feats.includes("Rapid Shot") ||
                     randomNum == 400 && available.includes("GoI") && feats.includes("Rapid Strike")) {
-            feat = "Grazing Shot";
+            feat = "Hobbling Strike";
         }
         else if (randomNum == 401 && available.includes("GoI") && feats.includes("Opportunistic Trickery")) {
             feat = "Improved Opportunistic Trickery";
@@ -1242,6 +1242,95 @@ export function characterFeat(available,feats,talents,skills,str,dex,con,int,wis
         }
         else if (randomNum == 413 && available.includes("GoI") && str >= 13) {
             feat = "Wookiee Grip";
+        }
+        else if (randomNum == 414 && available.includes("UR") && str >= 13 && dex >= 13 && skills.includes("Acrobatics")) {
+            feat = "Acrobatic Ally";
+        }
+        else if (randomNum == 415 && available.includes("UR") && str >= 13 && feats.includes("Mobility") && skills.includes("Skill Focus (Acrobatics)")) {
+            feat = "Acrobatic Dodge";
+        }
+        else if (randomNum == 416 && available.includes("UR") && skills.includes("Deception")) {
+            feat = "Combat Trickery";
+        }
+        else if (randomNum == 417 && available.includes("UR") && feats.includes("Skill Focus (Knowledge (Social Sciences))") ||
+                    randomNum == 417 && available.includes("UR") && feats.includes("Skill Focus (Knowledge (Galactic Lore))")) {
+            feat = "Elder's Knowledge";
+        }
+        else if (randomNum == 418 && available.includes("UR") && BAB >= 4 && feats.includes("Cleave")) {
+            feat = "Frightening Cleave";
+        }
+        else if (randomNum == 419 && available.includes("UR") && dex >= 13) {
+            feat = "Grab Back";
+        }
+        else if (randomNum == 420 && available.includes("UR") && BAB >= 8 && feats.includes("Trip") && feats.includes("Weapon Focus")) {
+            feat = "Halt";
+        }
+        else if (randomNum == 421 && available.includes("UR") && feats.includes("Weapon Focus (Heavy Weapons)")) {
+            feat = "Heavy Hitter";
+        }
+        else if (randomNum == 422 && available.includes("UR") && skills.includes("Mechanics")) {
+            feat = "Hold Together";
+        }
+        else if (randomNum == 423 && available.includes("UR") && skills.includes("Use Computer")) {
+            feat = "Hyperblazer";
+        }
+        else if (randomNum == 424 && available.includes("UR") && dex >= 15 && skills.includes("Stealth") && feats.includes("Skill Focus (Deception)")) {
+            feat = "Improved Sleight of Hand";
+        }
+        else if (randomNum == 425 && available.includes("UR")) {
+            feat = "Improvised Weapon Mastery";
+        }
+        else if (randomNum == 426 && available.includes("UR")) {
+            feat = "Instinctive Attack";
+        }
+        else if (randomNum == 427 && available.includes("UR")) {
+            feat = "Instinctive Defense";
+        }
+        else if (randomNum == 428 && available.includes("UR") && skills.includes("Persuasion")) {
+            feat = "Intimidator";
+        }
+        else if (randomNum == 429 && available.includes("UR")) {
+            feat = "Maniacal Charge";
+        }
+        else if (randomNum == 430 && available.includes("UR") && skills.includes("Ride")) {
+            feat = "Mounted Combat";
+        }
+        else if (randomNum == 431 && available.includes("UR") && species == "Nikto") {
+            let randomNum2 = Math.floor(Math.random() * 5);
+            if (randomNum2 == 0) {
+                feat = "Nikto Survival (Desert)";
+            }
+            else if (randomNum2 == 1) {
+                feat = "Nikto Survival (Forest)";
+            }
+            else if (randomNum2 == 2) {
+                feat = "Nikto Survival (Mountains)";
+            }
+            else if (randomNum2 == 3) {
+                feat = "Nikto Survival (Ocean)";
+            }
+            else {
+                feat = "Nikto Survival (Arctic)";
+            }
+        }
+        else if (randomNum == 432 && available.includes("UR") && BAB >= 5) {
+            feat = "Targeted Area";
+        }
+        else if (randomNum == 433 && available.includes("UR") && skills.includes("Ride")) {
+            feat = "Trample";
+        }
+        else if (randomNum == 434 && available.includes("UR") && skills.includes("Survival")) {
+            feat = "Wilderness First Aid";
+        }
+        else if (randomNum == 435 && available.includes("WE") && cha >= 13 && tradition == 1) {
+            feat = "Dreadful Countenance";
+        }
+        else if (randomNum == 436 && available.includes("WE") && BAB >= 6 && feats.includes("Double Attack") ||
+                    randomNum == 436 && available.includes("WE") && BAB >= 6 && feats.includes("Dual Weapon Mastery I")) {
+            feat = "Rapid Assault";
+        }
+        else if (randomNum == 437 && available.includes("HC") && con >= 13 && skills.includes("Endurance")) {
+            feat = "Carouser";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics" ||
                 feat == "Skill Focus (undefined)" && feat != "Force Regimen Mastery") {

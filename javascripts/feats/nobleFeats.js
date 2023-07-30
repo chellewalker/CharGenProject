@@ -11,7 +11,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
             feat = "Cybernetic Surgery";
         }
         else if (randomNum == 2 && BAB >= 1) {
-            let randomNum2 = Math.floor(Math.random() * 31);
+            let randomNum2 = Math.floor(Math.random() * 79);
                 if (randomNum2 == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
@@ -215,6 +215,108 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
         }
         else if (randomNum == 50 && available.includes("CWCG")) {
             feat = "Wary Defender";
+        }
+        else if (randomNum == 51 && available.includes("LECG") && skills.includes("Mechanics")) {
+            feat = "Biotech Specialist";
+        }
+        else if (randomNum == 52 && available.includes("LECG") && skills.includes("Treat Injury")) {
+            feat = "Biotech Surgery";
+        }
+        else if (randomNum == 53 && available.includes("LECG") && dex >= 15 && feats.includes("Quick Draw")) {
+            let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                count++;
+                let randomNum = Math.floor(Math.random() * 2);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Pistols)")) {
+                    feat = "Return Fire (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Rifles)")) {
+                    feat = "Return Fire (Rifles)";
+                    check = 1;
+                }
+            }
+        }
+        else if (randomNum == 54 && available.includes("LECG")) {
+            feat = "Returning Bug";
+        }
+        else if (randomNum == 55 && available.includes("RECG")) {
+            feat = "Fast Surge";
+        }
+        else if (randomNum == 56 && available.includes("RECG")) {
+            feat = "Rapid Reaction";
+        }
+        else if (randomNum == 57 && available.includes("RECG")) {
+            feat = "Recovering Surge";
+        }
+        else if (randomNum == 58 && available.includes("GaW")) {
+            feat = "Disabler";
+        }
+        else if (randomNum == 59 && available.includes("GaW") && wis > con) {
+            feat = "Fight Through Pain";
+        }
+        else if (randomNum == 60 && available.includes("GaW") && cha >= 13) {
+            feat = "Force of Personality";
+        }
+        else if (randomNum == 61 && available.includes("GaW")) {
+            let randomNum2 = Math.floor(Math.random() * skills.length);
+            feat = "Mission Specialist ("+skills[randomNum2]+")";
+        }
+        else if (randomNum == 62 && available.includes("GaW") && int >= 13) {
+            feat = "Predictive Defense";
+        }
+        else if (randomNum == 63 && available.includes("GaW") && feats.includes("Weapon Proficiency (Pistols)") ||
+                    randomNum == 63 && available.includes("GaW") && feats.includes("Weapon Proficiency (Rifles)")) {
+            feat = "Sport Hunter";
+        }
+        else if (randomNum == 64 && available.includes("GoI") && int >= 13) {
+            feat = "Brilliant Defense";
+        }
+        else if (randomNum == 65 && available.includes("GoI") && skills.includes("Knowledge (Bureaucracy)")) {
+            if (skills.includes("Gather Information")) {}
+            else {
+                feat = "Cut the Red Tape";
+        }}
+        else if (randomNum == 66 && available.includes("GoI") && cha >= 13) {
+            feat = "Demoralizing Strike";
+        }
+        else if (randomNum == 67 && available.includes("GoI") && skills.includes("Deception")) {
+            feat = "Disturbing Presence";
+        }
+        else if (randomNum == 68 && available.includes("GoI") && cha >= 13) {
+            feat = "Expert Briber";
+        }
+        else if (randomNum == 69 && available.includes("GoI") && BAB >= 1) {
+            feat = "Flèche";
+        }
+        else if (randomNum == 70 && available.includes("GoI") && cha >= 13) {
+            feat = "Indomitable Personality";
+        }
+        else if (randomNum == 71 && available.includes("GoI") && cha >= 13 && skills.includes("Deception")) {
+            feat = "Master of Disguise";
+        }
+        else if (randomNum == 72 && available.includes("GoI")) {
+            feat = "Sadistic Strike";
+        }
+        else if (randomNum == 73 && available.includes("GoI") && skills.includes("Persuasion")) {
+            feat = "Silver Tongue";
+        }
+        else if (randomNum == 74 && available.includes("GoI")) {
+            feat = "Stand Tall";
+        }
+        else if (randomNum == 75 && available.includes("UR") && skills.includes("Deception")) {
+            feat = "Combat Trickery";
+        }
+        else if (randomNum == 76 && available.includes("UR") && feats.includes("Skill Focus (Knowledge (Social Sciences))") ||
+                    randomNum == 417 && available.includes("UR") && feats.includes("Skill Focus (Knowledge (Galactic Lore))")) {
+            feat = "Elder's Knowledge";
+        }
+        else if (randomNum == 77 && available.includes("UR") && skills.includes("Persuasion")) {
+            feat = "Intimidator";
+        }
+        else if (randomNum == 78 && available.includes("UR") && skills.includes("Ride")) {
+            feat = "Mounted Combat";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

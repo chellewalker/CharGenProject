@@ -3,7 +3,7 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 137);
+        let randomNum = Math.floor(Math.random() * 204);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -573,6 +573,176 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
         }
         else if (randomNum == 149 && available.includes("CWCG")) {
             feat = "Wary Defender";
+        }
+        else if (randomNum == 150 && available.includes("LECG") && BAB >= 9 &&
+                    feats.includes("Attack Combo (Melee)") && feats.includes("Attack Combo (Ranged)")) {
+            feat = "Attack Combo (Fire and Strike)";
+        }
+        else if (randomNum == 151 && available.includes("LECG") && BAB >= 3) {
+            feat = "Attack Combo (Melee)";
+        }
+        else if (randomNum == 152 && available.includes("LECG") && BAB >= 3) {
+            feat = "Attack Combo (Ranged)";
+        }
+        else if (randomNum == 153 && available.includes("LECG") && feats.includes("Weapon Focus (Rifles)") ||
+                    randomNum == 153 && available.includes("LECG") && feats.includes("Weapon Focus (Heavy Weapons)")) {
+            feat = "Autofire Assault";
+        }
+        else if (randomNum == 154 && available.includes("LECG") && feats.includes("Weapon Focus (Rifles)") ||
+                    randomNum == 154 && available.includes("LECG") && feats.includes("Weapon Focus (Heavy Weapons)")) {
+            feat = "Autofire Sweep";
+        }
+        else if (randomNum == 155 && available.includes("LECG")) {
+            feat = "Brink of Death";
+        }
+        else if (randomNum == 156 && available.includes("LECG") && str >= 13 && dex >= 13) {
+            feat = "Fatal Hit";
+        }
+        else if (randomNum == 157 && available.includes("LECG") && str >= 15) {
+            feat = "Feat of Strength";
+        }
+        else if (randomNum == 158 && available.includes("LECG")) {
+            feat = "Galactic Alliance Military Training";
+        }
+        else if (randomNum == 159 && available.includes("LECG")) {
+            feat = "Grapple Resistance";
+        }
+        else if (randomNum == 160 && available.includes("LECG") && str >= 13 && feats.includes("Multi-Grab")) {
+            feat = "Knock Heads";
+        }
+        else if (randomNum == 161 && available.includes("LECG") && str >= 15 && feats.includes("Crush") && feats.includes("Pin")) {
+            feat = "Rancor Crush";
+        }
+        else if (randomNum == 162 && available.includes("LECG") && feats.includes("Point-Blank Shot")) {
+            feat = "Zero Range";
+        }
+        else if (randomNum == 163 && available.includes("RECG")) {
+            feat = "Assured Attack";
+        }
+        else if (randomNum == 164 && available.includes("RECG")) {
+            feat = "Deft Charge";
+        }
+        else if (randomNum == 165 && available.includes("RECG")) {
+            feat = "Fast Surge";
+        }
+        else if (randomNum == 166 && available.includes("RECG")) {
+            feat = "Imperial Military Training";
+        }
+        else if (randomNum == 167 && available.includes("RECG") && feats.includes("Point-Blank Shot")) {
+            feat = "Prime Shot";
+        }
+        else if (randomNum == 168 && available.includes("RECG")) {
+            feat = "Rapid Reaction";
+        }
+        else if (randomNum == 169 && available.includes("RECG") && feats.includes("Running Attack")) {
+            feat = "Rebel Military Training";
+        }
+        else if (randomNum == 170 && available.includes("RECG")) {
+            feat = "Recovering Surge";
+        }
+        else if (randomNum == 171 && available.includes("RECG") && skills.includes("Pilot")) {
+            feat = "Vehicular Surge";
+        }
+        else if (randomNum == 172 && available.includes("GaW") && BAB >= 1) {
+            feat = "Bantha Herder";
+        }
+        else if (randomNum == 173 && available.includes("GaW") && feats.includes("Bantha Rush") && feats.includes("Trip")) {
+            feat = "Battering Attack";
+        }
+        else if (randomNum == 174 && available.includes("GaW")) {
+            feat = "Destructive Force";
+        }
+        else if (randomNum == 175 && available.includes("GaW")) {
+            feat = "Disabler";
+        }
+        else if (randomNum == 176 && available.includes("GaW") && skills.includes("Jump")) {
+            feat = "Dive for Cover";
+        }
+        else if (randomNum == 177 && available.includes("GaW") && BAB >= 1) {
+            feat = "Forceful Blast";
+        }
+        else if (randomNum == 178 && available.includes("GaW") && con >= 13) {
+            feat = "Fortifying Recovery";
+        }
+        else if (randomNum == 179 && available.includes("GaW")) {
+            let randomNum2 = Math.floor(Math.random() * skills.length);
+            feat = "Mission Specialist ("+skills[randomNum2]+")";
+        }
+        else if (randomNum == 180 && available.includes("GaW") && skills.includes("Endurance")) {
+            feat = "Never Surrender";
+        }
+        else if (randomNum == 181 && available.includes("GaW")) {
+            feat = "Opportunistic Shooter";
+        }
+        else if (randomNum == 182 && available.includes("GaW") && feats.includes("Weapon Proficiency (Pistols)")) {
+            feat = "Pistoleer";
+        }
+        else if (randomNum == 183 && available.includes("GaW") && str >= 13) {
+            feat = "Resilient Strength";
+        }
+        else if (randomNum == 184 && available.includes("GaW") && feats.includes("Weapon Proficiency (Rifles)")) {
+            feat = "Riflemaster";
+        }
+        else if (randomNum == 185 && available.includes("GaW") && skills.includes("Climb") ||
+                    randomNum == 185 && available.includes("GaW") && skills.includes("Jump")) {
+            feat = "Risk Taker";
+        }
+        else if (randomNum == 186 && available.includes("GaW") && feats.includes("Weapon Proficiency (Pistols)") ||
+                    randomNum == 186 && available.includes("GaW") && feats.includes("Weapon Proficiency (Rifles)")) {
+            feat = "Sport Hunter";
+        }
+        else if (randomNum == 187 && available.includes("GaW") && BAB >= 1) {
+            feat = "Staggering Attack";
+        }
+        else if (randomNum == 188 && available.includes("GaW") && feats.includes("Careful Shot")) {
+            feat = "Steadying Position";
+        }
+        else if (randomNum == 189 && available.includes("GoI") && feats.includes("Crush")) {
+            feat = "Bone Crusher";
+        }
+        else if (randomNum == 190 && available.includes("GoI") && BAB >= 1) {
+            feat = "Flèche";
+        }
+        else if (randomNum == 191 && available.includes("GoI") && feats.includes("Point-Blank Shot")) {
+            feat = "Grazing Shot";
+        }
+        else if (randomNum == 192 && available.includes("GoI") && talents.includes("Sneak Attack") ||
+                    randomNum == 192 && available.includes("GoI") && feats.includes("Rapid Shot") ||
+                    randomNum == 192 && available.includes("GoI") && feats.includes("Rapid Strike")) {
+            feat = "Hobbling Strike";
+        }
+        else if (randomNum == 193 && available.includes("GoI") && BAB >= 4 && feats.includes("Precise Shot")) {
+            feat = "Meat Shield";
+        }
+        else if (randomNum == 194 && available.includes("GoI") && BAB >= 1) {
+            feat = "Resolute Stance";
+        }
+        else if (randomNum == 195 && available.includes("GoI")) {
+            feat = "Sadistic Strike";
+        }
+        else if (randomNum == 196 && available.includes("GoI") && str >= 13) {
+            feat = "Wookiee Grip";
+        }
+        else if (randomNum == 197 && available.includes("UR") && BAB >= 4 && feats.includes("Cleave")) {
+            feat = "Frightening Cleave";
+        }
+        else if (randomNum == 198 && available.includes("UR") && dex >= 13) {
+            feat = "Grab Back";
+        }
+        else if (randomNum == 199 && available.includes("UR") && BAB >= 8 && feats.includes("Trip") && feats.includes("Weapon Focus")) {
+            feat = "Halt";
+        }
+        else if (randomNum == 200 && available.includes("UR") && feats.includes("Weapon Focus (Heavy Weapons)")) {
+            feat = "Heavy Hitter";
+        }
+        else if (randomNum == 201 && available.includes("UR")) {
+            feat = "Improvised Weapon Mastery";
+        }
+        else if (randomNum == 202 && available.includes("UR")) {
+            feat = "Maniacal Charge";
+        }
+        else if (randomNum == 203 && available.includes("UR") && BAB >= 5) {
+            feat = "Targeted Area";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

@@ -5,7 +5,7 @@ import {scoundrelFeats} from './scoundrelFeats.js';
 import {scoutFeats} from './scoutFeats.js';
 import {soldierFeats} from './soldierFeats.js';
 
-export function getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species) {
+export function getFeat(available,thisLevel,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species,light,dark,tradition) {
 if (BAB == 0 && speciesTraits.includes("Military Lifestyle")) {
     BAB = 1;
 }
@@ -30,7 +30,7 @@ while (feat == "") {
         feat = soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel);
     }
     else {
-        feat = characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species);
+        feat = characterFeat(available,feats,talents,skills,str,dex,con,int,wis,cha,BAB,speciesTraits,size,curLevel,species,light,dark,tradition);
     }
     /*if (feats.includes(feat) && feat != "Linguist" && feat != "Force Training" && feat != "Skill Training" && feat != "Starship Tactics") {
         feat = "";

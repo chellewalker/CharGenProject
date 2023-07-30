@@ -3,7 +3,7 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 76);
+        let randomNum = Math.floor(Math.random() * 100);
         if (randomNum == 0 && available.includes("CR") && skills.includes("Acrobatics")) {
             feat = "Acrobatic Strike";
         }
@@ -316,6 +316,81 @@ export function jediFeats(available,feats,talents,skills,str,dex,con,int,wis,cha
         }
         else if (randomNum == 75 && available.includes("CWCG")) {
             feat = "Wary Defender";
+        }
+        else if (randomNum == 76 && available.includes("LECG") && BAB >= 3) {
+            feat = "Attack Combo (Melee)";
+        }
+        else if (randomNum == 77 && available.includes("LECG")) {
+            feat = "Brink of Death";
+        }
+        else if (randomNum == 78 && available.includes("LECG") && str >= 15) {
+            feat = "Feat of Strength";
+        }
+        else if (randomNum == 79 && available.includes("LECG")) {
+            feat = "Grapple Resistance";
+        }
+        else if (randomNum == 80 && available.includes("RECG")) {
+            feat = "Assured Attack";
+        }
+        else if (randomNum == 81 && available.includes("RECG")) {
+            feat = "Deft Charge";
+        }
+        else if (randomNum == 82 && available.includes("RECG")) {
+            feat = "Fast Surge";
+        }
+        else if (randomNum == 83 && available.includes("RECG") && feats.includes("Dodge")) {
+            feat = "Moving Target";
+        }
+        else if (randomNum == 84 && available.includes("RECG")) {
+            feat = "Rapid Reaction";
+        }
+        else if (randomNum == 85 && available.includes("RECG")) {
+            feat = "Recovering Surge";
+        }
+        else if (randomNum == 86 && available.includes("GaW") && feats.includes("Bantha Rush") && feats.includes("Trip")) {
+            feat = "Battering Attack";
+        }
+        else if (randomNum == 87 && available.includes("GaW") && skills.includes("Jump")) {
+            feat = "Dive for Cover";
+        }
+        else if (randomNum == 88 && available.includes("GaW") && wis > con) {
+            feat = "Fight Through Pain";
+        }
+        else if (randomNum == 89 && available.includes("GaW") && cha >= 13) {
+            feat = "Force of Personality";
+        }
+        else if (randomNum == 90 && available.includes("GaW")) {
+            let randomNum2 = Math.floor(Math.random() * skills.length);
+            feat = "Mission Specialist ("+skills[randomNum2]+")";
+        }
+        else if (randomNum == 91 && available.includes("GaW") && str >= 13) {
+            feat = "Resilient Strength";
+        }
+        else if (randomNum == 92 && available.includes("GaW") && skills.includes("Climb") ||
+                    randomNum == 92 && available.includes("GaW") && skills.includes("Jump")) {
+            feat = "Risk Taker";
+        }
+        else if (randomNum == 93 && available.includes("GaW") && BAB >= 1) {
+            feat = "Staggering Attack";
+        }
+        else if (randomNum == 94 && available.includes("GoI") && int >= 13) {
+            feat = "Brilliant Defense";
+        }
+        else if (randomNum == 95 && available.includes("GoI") && BAB >= 1) {
+            feat = "Resolute Stance";
+        }
+        else if (randomNum == 96 && available.includes("GoI")) {
+            feat = "Stand Tall";
+        }
+        else if (randomNum == 97 && available.includes("UR") && feats.includes("Skill Focus (Knowledge (Social Sciences))") ||
+                    randomNum == 417 && available.includes("UR") && feats.includes("Skill Focus (Knowledge (Galactic Lore))")) {
+            feat = "Elder's Knowledge";
+        }
+        else if (randomNum == 98 && available.includes("UR")) {
+            feat = "Instinctive Attack";
+        }
+        else if (randomNum == 99 && available.includes("UR")) {
+            feat = "Instinctive Defense";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {

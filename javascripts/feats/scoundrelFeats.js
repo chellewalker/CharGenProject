@@ -3,7 +3,7 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 71);
+        let randomNum = Math.floor(Math.random() * 106);
         if (randomNum == 0 && available.includes("CR") && feats.includes("Point-Blank Shot") && feats.includes("Precise Shot") && BAB >= 4) {
             feat = "Deadeye";
         }
@@ -162,6 +162,127 @@ export function scoundrelFeats(available,feats,talents,skills,str,dex,con,int,wi
         }
         else if (randomNum == 70 && available.includes("CWCG")) {
             feat = "Overwhelming Attack";
+        }
+        else if (randomNum == 71 && available.includes("LECG") && BAB >= 3) {
+            feat = "Attack Combo (Ranged)";
+        }
+        else if (randomNum == 72 && available.includes("LECG") && str >= 13 && dex >= 13) {
+            feat = "Fatal Hit";
+        }
+        else if (randomNum == 73 && available.includes("LECG") && dex >= 15 && feats.includes("Quick Draw")) {
+            let check = 0;
+            let count = 0;
+            while (check == 0 && count < 20) {
+                count++;
+                let randomNum = Math.floor(Math.random() * 2);
+                if (randomNum == 0 && feats.includes("Weapon Proficiency (Pistols)")) {
+                    feat = "Return Fire (Pistols)";
+                    check = 1;
+                }
+                else if (randomNum == 1 && feats.includes("Weapon Proficiency (Rifles)")) {
+                    feat = "Return Fire (Rifles)";
+                    check = 1;
+                }
+            }
+        }
+        else if (randomNum == 74 && available.includes("LECG") && feats.includes("Tech Specialist") && skills.includes("Mechanics")) {
+            feat = "Vehicle Systems Expertise";
+        }
+        else if (randomNum == 75 && available.includes("LECG") && feats.includes("Point-Blank Shot")) {
+            feat = "Zero Range";
+        }
+        else if (randomNum == 76 && available.includes("RECG")) {
+            feat = "Fast Surge";
+        }
+        else if (randomNum == 77 && available.includes("RECG") && feats.includes("Dodge")) {
+            feat = "Moving Target";
+        }
+        else if (randomNum == 78 && available.includes("RECG") && feats.includes("Point-Blank Shot")) {
+            feat = "Prime Shot";
+        }
+        else if (randomNum == 79 && available.includes("RECG")) {
+            feat = "Rapid Reaction";
+        }
+        else if (randomNum == 80 && available.includes("RECG")) {
+            feat = "Recovering Surge";
+        }
+        else if (randomNum == 81 && available.includes("RECG") && skills.includes("Pilot")) {
+            feat = "Vehicular Surge";
+        }
+        else if (randomNum == 82 && available.includes("GaW") && BAB >= 1) {
+            feat = "Bantha Herder";
+        }
+        else if (randomNum == 83 && available.includes("GaW")) {
+            feat = "Disabler";
+        }
+        else if (randomNum == 84 && available.includes("GaW") && wis > con) {
+            feat = "Fight Through Pain";
+        }
+        else if (randomNum == 85 && available.includes("GaW") && cha >= 13) {
+            feat = "Force of Personality";
+        }
+        else if (randomNum == 86 && available.includes("GaW")) {
+            let randomNum2 = Math.floor(Math.random() * skills.length);
+            feat = "Mission Specialist ("+skills[randomNum2]+")";
+        }
+        else if (randomNum == 87 && available.includes("GaW") && feats.includes("Weapon Proficiency (Pistols)")) {
+            feat = "Pistoleer";
+        }
+        else if (randomNum == 88 && available.includes("GaW") && int >= 13) {
+            feat = "Predictive Defense";
+        }
+        else if (randomNum == 89 && available.includes("GaW") && feats.includes("Careful Shot")) {
+            feat = "Steadying Position";
+        }
+        else if (randomNum == 90 && available.includes("GoI") && skills.includes("Deception")) {
+            feat = "Disturbing Presence";
+        }
+        else if (randomNum == 91 && available.includes("GoI") && cha >= 13) {
+            feat = "Expert Briber";
+        }
+        else if (randomNum == 92 && available.includes("GoI") && talents.includes("Sneak Attack") ||
+                    randomNum == 92 && available.includes("GoI") && feats.includes("Rapid Shot") ||
+                    randomNum == 92 && available.includes("GoI") && feats.includes("Rapid Strike")) {
+            feat = "Hobbling Strike";
+        }
+        else if (randomNum == 93 && available.includes("GoI") && feats.includes("Opportunistic Trickery")) {
+            feat = "Improved Opportunistic Trickery";
+        }
+        else if (randomNum == 94 && available.includes("GoI") && cha >= 13) {
+            feat = "Indomitable Personality";
+        }
+        else if (randomNum == 95 && available.includes("GoI") && cha >= 13 && skills.includes("Deception")) {
+            feat = "Master of Disguise";
+        }
+        else if (randomNum == 96 && available.includes("GoI") && feats.includes("Combat Reflexes") && talents.includes("Sneak Attack")) {
+            feat = "Opportunistic Trickery";
+        }
+        else if (randomNum == 97 && available.includes("GoI")) {
+            feat = "Sadistic Strike";
+        }
+        else if (randomNum == 98 && available.includes("GoI") && skills.includes("Persuasion")) {
+            feat = "Silver Tongue";
+        }
+        else if (randomNum == 99 && available.includes("GoI")) {
+            feat = "Stand Tall";
+        }
+        else if (randomNum == 100 && available.includes("UR") && str >= 13 && dex >= 13 && skills.includes("Acrobatics")) {
+            feat = "Acrobatic Ally";
+        }
+        else if (randomNum == 101 && available.includes("UR") && str >= 13 && feats.includes("Mobility") && skills.includes("Skill Focus (Acrobatics)")) {
+            feat = "Acrobatic Dodge";
+        }
+        else if (randomNum == 102 && available.includes("UR") && skills.includes("Deception")) {
+            feat = "Combat Trickery";
+        }
+        else if (randomNum == 103 && available.includes("UR") && skills.includes("Mechanics")) {
+            feat = "Hold Together";
+        }
+        else if (randomNum == 104 && available.includes("UR") && dex >= 15 && skills.includes("Stealth") && feats.includes("Skill Focus (Deception)")) {
+            feat = "Improved Sleight of Hand";
+        }
+        else if (randomNum == 105 && available.includes("HC") && con >= 13 && skills.includes("Endurance")) {
+            feat = "Carouser";
         }
         if (feats.includes(feat) && feat != "Linguist" && feat != "Skill Training" ||
             feat == "Skill Focus (undefined)") {
