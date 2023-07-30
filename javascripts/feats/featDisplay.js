@@ -97,7 +97,7 @@ export function displayFeats(feats) {
         }
         if (feats[count].includes(" (")) {
             let temp = feats[count].split(" (");
-            featDisplay += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"'>"+temp[0]+"</a>";
+            featDisplay += "<a href='https://swse.fandom.com/wiki/"+temp[0]+"' target='_blank' rel='noopener noreferrer'>"+temp[0]+"</a>";
             for (count2 = 1; count2 < temp.length; count2++) {
                 featDisplay += " ("+temp[count2];
             }
