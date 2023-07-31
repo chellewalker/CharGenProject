@@ -133,6 +133,9 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
                     exoticRangedDamageRaw += 2;
                 }
             }
+            if (talents.includes("Empower Siang Lance")) {
+                exoticRangedDice++;
+            }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Magna Caster)")) {
             exoticRangedWeapon = "Magna Caster";
