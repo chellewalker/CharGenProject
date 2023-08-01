@@ -1,4 +1,4 @@
-export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits) {
+export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits,tradition) {
     let simpleMeleeWeapon = "";
     let weaponSize;
     let simpleMeleeDice;
@@ -188,6 +188,13 @@ export function getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,siz
             weaponSize = -1;
             simpleMeleeDice = 1;
             simpleMeleeDie = 4;
+        }
+        if (tradition == 18) {
+            simpleMeleeWeapon = "Wan-Shen";
+            weaponSize = 2;
+            simpleMeleeDice = 2;
+            simpleMeleeDie = 6;
+            special = "";
         }
     }
 

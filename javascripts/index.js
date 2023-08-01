@@ -569,6 +569,12 @@ window.genCharacter = function genCharacter() {
             temp = temp2[1];
             tempEquipment.push(temp);
     }
+    if (tradition == 18) {
+        temp2 = getSimpleMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits,tradition);
+        simpleRanged = temp2[0];
+        temp = temp2[1];
+        tempEquipment.push(temp);
+}
 
         temp2 = getExoticMelee(available,BAB,level,str,dex,cha,feats,talents,size,speciesTraits);
         if (temp2[1] != "") {
