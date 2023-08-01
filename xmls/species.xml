@@ -3039,4 +3039,23 @@
         <speciesTraits>Bonus Feat (Martial Arts I), Expert Jumper, Spatial Awareness</speciesTraits>
         <languages>Basic, Lepese</languages>
     </species>
+    <species>
+        <name>Abinyshi</name>
+        <value>abinyshi</value>
+        <speciesID>160</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Si Qurr, S'itl Thirr, Thi'in Lis</exampleNames>
+        <abilityMods>wis,2;cha,2;int,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Cold-Blooded, Prehensile Tail, Natural Armor (+1)</speciesTraits>
+        <languages>Abinyshi, Basic</languages>
+    </species>
 </species_list>
