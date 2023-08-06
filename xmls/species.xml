@@ -3058,4 +3058,42 @@
         <speciesTraits>Cold-Blooded, Prehensile Tail, Natural Armor (+1)</speciesTraits>
         <languages>Abinyshi, Basic</languages>
     </species>
+    <species>
+        <name>Ardennian</name>
+        <value>ardennian</value>
+        <speciesID>161</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Chal, Chio Fain, Rio Durant, Retar, Rone Main</exampleNames>
+        <abilityMods>cha,2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>2</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Expert Pilot, Extra Arms</speciesTraits>
+        <languages>Basic</languages>
+    </species>
+    <species>
+        <name>Baragwin</name>
+        <value>baragwin</value>
+        <speciesID>162</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Hermi Odle, Dagel Igara, Idalli Kodrue, Digo Fadani</exampleNames>
+        <abilityMods>con,2;int,2;dex,-4</abilityMods>
+        <size>Medium</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Natural Armor (+1), Heightened Awareness, Tinkerer</speciesTraits>
+        <languages>Basic</languages>
+    </species>
 </species_list>
