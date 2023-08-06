@@ -16,6 +16,18 @@ if (abilities == "standard") {
 }
 else if (abilities == "planned") {
     let planPoints = document.getElementById('planPoints').value;
+    if (planPoints == null) {
+        alert("Invalid Planned Generation total; defaulting to 25.");
+        planPoints = 25;
+    }
+    else if (planPoints < 15) {
+        alert("Invalid Planned Generation total; raising to 15.");
+        planPoints = 15;
+    }
+    else if (planPoints > 80) {
+        alert("Invalid Planned Generation total; lowering to 80.");
+        planPoints = 80;
+    }
     let statGen = plannedStats(planPoints);
     str = statGen[0];
     dex = statGen[1];

@@ -17,15 +17,6 @@ let check = 1;
 }
 
 export function planGetNumber(planPoints) {
-    if (planPoints == null) {
-        planPoints = 25;
-    }
-    else if (planPoints < 15) {
-        planPoints = 15;
-    }
-    else if (planPoints > 80) {
-        planPoints = 80;
-    }
 
     let abilities = [];
     let check;
