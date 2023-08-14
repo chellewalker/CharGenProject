@@ -3,7 +3,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
     let count2 = 0;
     while (feat == "") {
         count2++;
-        let randomNum = Math.floor(Math.random() * 51);
+        let randomNum = Math.floor(Math.random() * 79);
         if (randomNum == 0 && available.includes("CR")) {
             feat = "Armor Proficiency (Light)";
         }
@@ -11,7 +11,7 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
             feat = "Cybernetic Surgery";
         }
         else if (randomNum == 2 && BAB >= 1) {
-            let randomNum2 = Math.floor(Math.random() * 79);
+            let randomNum2 = Math.floor(Math.random() * 32);
                 if (randomNum2 == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
@@ -104,6 +104,9 @@ export function nobleFeats(available,feats,talents,skills,str,dex,con,int,wis,ch
                 }
                 else if (randomNum2 == 30 && available.includes("UR") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Vibro-Saw)";
+                }
+                else if (randomNum2 == 31 && available.includes("HC")) {
+                    feat = "Exotic Weapon Proficiency (Bo-Rifle)";
                 }
         }
         else if (randomNum == 3 && available.includes("CR") && int >= 13 ||

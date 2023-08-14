@@ -159,7 +159,7 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             }
         }
         else if (feats.includes("Exotic Weapon Proficiency (Verpine Shattergun)") || 
-        speciesTraits.includes("Weapon Familiarity (Verpine Shattergun)")) {
+        speciesTraits.includes("Weapon Familiarity (Verpine Shattergun)") && feats.inlcudes("Weapon Proficiency (Rifles)")) {
             exoticRangedWeapon = "Verpine Shattergun";
             weaponSize = 1;
             exoticRangedDice = 3;
@@ -188,6 +188,21 @@ export function getExoticRanged(available,BAB,level,dex,feats,talents,size,speci
             if (talents.includes("Dathomiri Hunter")) {
                 exoticRangedAttackRaw++;
                 if (talents.includes("Weapon Specialization (Simple Weapons)")) {
+                    exoticRangedDamageRaw += 2;
+                }
+            }
+        }
+        else if (feats.includes("Exotic Weapon Proficiency (Bo-Rifle)") || 
+        speciesTraits.includes("Weapon Familiarity (Bo-Rifle)" && feats.includes("Weapon Proficiency (Rifles)"))) {
+            exoticRangedWeapon = "Bo-Rifle";
+            weaponSize = 1;
+            exoticRangedDice = 3;
+            exoticRangedDie = 8;
+            if (speciesTraits.includes("Weapon Familiarity (Bo-Rifle)")) {
+                if (feats.includes("Weapon Focus (Rifles)")) {
+                    exoticRangedAttackRaw++;
+                }
+                if (talents.includes("Weapon Specialization (Rifles)")) {
                     exoticRangedDamageRaw += 2;
                 }
             }

@@ -3096,4 +3096,80 @@
         <speciesTraits>Natural Armor (+1), Heightened Awareness, Tinkerer</speciesTraits>
         <languages>Basic</languages>
     </species>
+    <species>
+        <name>Huralok</name>
+        <value>huralok</value>
+        <speciesID>163</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Ergihl Threk, Fehkla Gorr, Krad Dokahr, Liirk Ranguhl, Redkihl Rokk</exampleNames>
+        <abilityMods>0</abilityMods>
+        <size>Medium</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Expert Droid Repair), Intimidating Presence, Natural Weapons</speciesTraits>
+        <languages>Huralok</languages>
+    </species>
+    <species>
+        <name>Jablogian</name>
+        <value>jablogian</value>
+        <speciesID>164</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Azmorigan, Dyslogia Twang, Nazgorigan</exampleNames>
+        <abilityMods>int,2;dex,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Food Stores, Heightened Awareness, Hidden Pouch</speciesTraits>
+        <languages>Basic, Jablogian</languages>
+    </species>
+    <species>
+        <name>Lasat</name>
+        <value>lasat</value>
+        <speciesID>165</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Boscoface, Chava, Davin, Gron, Garazeb Orrelios</exampleNames>
+        <abilityMods>str,2;con,2;int,-2;cha,-2</abilityMods>
+        <size>Medium</size>
+        <speed>6</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>0</burrowSpeed>
+        <speciesTraits>Conditional Bonus Feat (Skill Focus (Jump)), Expert Climber, Low-Light Vision, Weapon Familiarity (Bo-Rifle)</speciesTraits>
+        <languages>Basic, Lasat</languages>
+    </species>
+    <species>
+        <name>Ranat</name>
+        <value>ranat</value>
+        <speciesID>166</speciesID>
+        <weight>1</weight>
+        <source>HC</source>
+        <exampleNames>Boscoface, Chava, Davin, Gron, Garazeb Orrelios</exampleNames>
+        <abilityMods>dex,2;int,-2;cha,-2</abilityMods>
+        <size>Small</size>
+        <speed>4</speed>
+        <swimSpeed>0</swimSpeed>
+        <hoveringSpeed>0</hoveringSpeed>
+        <flySpeed>0</flySpeed>
+        <climbSpeed>0</climbSpeed>
+        <jumpSpeed>0</jumpSpeed>
+        <burrowSpeed>2</burrowSpeed>
+        <speciesTraits>Darkvision, Natural Weapons, Primitive, Shadow Swiftness</speciesTraits>
+        <languages>Ranat</languages>
+    </species>
 </species_list>

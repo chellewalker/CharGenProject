@@ -83,6 +83,9 @@ export function speciesFeats(feats,speciesTraits,skills,str,dex,con,int,wis,cha,
         dex >= 13 && level >= 3) {
         feats.push("Dual Weapon Mastery I");
     }
+    if (speciesTraits.includes("Conditional Bonus Feat (Expert Droid Repair)") && skills.includes("Mechanics")) {
+        feats.push("Expert Droid Repair");
+    }
     if (speciesTraits.includes("Conditional Bonus Feat (Mighty Swing)") && str >= 13) {
         feats.push("Mighty Swing");
     }

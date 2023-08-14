@@ -104,7 +104,7 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
             feat = "Dual Weapon Mastery III";
         }
         else if (randomNum == 34 && BAB >= 1) {
-            let randomNum2 = Math.floor(Math.random() * 31);
+            let randomNum2 = Math.floor(Math.random() * 32);
                 if (randomNum2 == 0 && available.includes("CR")) {
                     feat = "Exotic Weapon Proficiency (Atlatl)";
                 }
@@ -197,6 +197,9 @@ export function soldierFeats(available,feats,talents,skills,str,dex,con,int,wis,
                 }
                 else if (randomNum2 == 30 && available.includes("UR") && size != "Small") {
                     feat = "Exotic Weapon Proficiency (Vibro-Saw)";
+                }
+                else if (randomNum2 == 31 && available.includes("HC")) {
+                    feat = "Exotic Weapon Proficiency (Bo-Rifle)";
                 }
         }
         else if (randomNum == 35 && available.includes("CR") && feats.includes("Point-Blank Shot")) {
